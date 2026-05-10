@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/royal-elementor-addons/
+  classification:
+    cpe: cpe:2.3:a:royal-elementor-addons:royal-elementor-addons:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: royal-elementor-addons
     wpscan: https://wpscan.com/plugin/royal-elementor-addons
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:royal-elementor-addons:royal-elementor-addons:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022043f442b9dd8440f232a81b4f3dcb09ac0437ae2f3ef420dca59b9e21e32ba08d022100f8fc8e3350d65786e6eb18cd5bbca521626294ab639f4c8b56ef2e2cf4d3aadc:922c64590222798bb761d5b6d8e72950

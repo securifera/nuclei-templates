@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/stops-core-theme-and-plugin-updates/
+  classification:
+    cpe: cpe:2.3:a:stops-core-theme-and-plugin-updates:stops-core-theme-and-plugin-updates:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: stops-core-theme-and-plugin-updates
     wpscan: https://wpscan.com/plugin/stops-core-theme-and-plugin-updates
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:stops-core-theme-and-plugin-updates:stops-core-theme-and-plugin-updates:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220084fb5a05aa9c197aa840e76bbf704dd52006ac123602279295f65ac212f4a9602206230e57ab37988a9a7270eab623bb5791553abba7d98e92b378ca9812221bd87:922c64590222798bb761d5b6d8e72950

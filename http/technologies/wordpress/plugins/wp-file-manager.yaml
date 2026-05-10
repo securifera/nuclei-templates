@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-file-manager/
+  classification:
+    cpe: cpe:2.3:a:wp-file-manager:wp-file-manager:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-file-manager
     wpscan: https://wpscan.com/plugin/wp-file-manager
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-file-manager:wp-file-manager:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100b6738902f1f1d55e285dc79415e51af14e7dc09dc1526cdbadc813f3e608481d022069532ee8e8da2c6956cd13014a195a60c3619250faf07a0e779fc37e5c75ae9a:922c64590222798bb761d5b6d8e72950

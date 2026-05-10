@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wordpress-seo/
+  classification:
+    cpe: cpe:2.3:a:wordpress-seo:wordpress-seo:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wordpress-seo
     wpscan: https://wpscan.com/plugin/wordpress-seo
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wordpress-seo:wordpress-seo:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402206d6f1080fd1297f847c701a7f18c6c0053249c2f427b2c402652ba8f644b81a902204548edfdfe4f190bcd8ae734a97bb4b7bf2e2e685c7e21b596a3a76ba4c93b75:922c64590222798bb761d5b6d8e72950

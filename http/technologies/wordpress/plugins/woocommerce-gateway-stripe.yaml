@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woocommerce-gateway-stripe/
+  classification:
+    cpe: cpe:2.3:a:woocommerce-gateway-stripe:woocommerce-gateway-stripe:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woocommerce-gateway-stripe
     wpscan: https://wpscan.com/plugin/woocommerce-gateway-stripe
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woocommerce-gateway-stripe:woocommerce-gateway-stripe:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022047e1c9443577248da09a807f88757748046784e0d57768613a4c75ef6a28f53d022100cb9c58940492a8b3b8b173fb356183018d8b6bae64a4beecf4ba98a837b03db2:922c64590222798bb761d5b6d8e72950

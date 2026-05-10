@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/wandb/wandb
     - https://wandb.ai/
+  classification:
+    cpe: cpe:2.3:a:wandb:weights-and-biases:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -35,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201c2ce59f9f6e2a4e715f8cb97b1b9614ba422e46d1c9bbc2408d403f4642f2cb022100b797b61d0c17da65eaba5f48bdb5f54f7cf8c3f860d7cd4f24cf65bf503676f4:922c64590222798bb761d5b6d8e72950

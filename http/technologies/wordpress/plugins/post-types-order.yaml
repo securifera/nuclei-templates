@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/post-types-order/
+  classification:
+    cpe: cpe:2.3:a:post-types-order:post-types-order:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: post-types-order
     wpscan: https://wpscan.com/plugin/post-types-order
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:post-types-order:post-types-order:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402204a31b6f97113271dead955d350b02a2d371c536c75173dedc5135a8ab612ec0e022035baadc30030d00cb659f50e4a2661e6a0ca9533658828af654836f95176a85a:922c64590222798bb761d5b6d8e72950

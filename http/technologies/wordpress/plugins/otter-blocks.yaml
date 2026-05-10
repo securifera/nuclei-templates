@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/otter-blocks/
+  classification:
+    cpe: cpe:2.3:a:otter-blocks:otter-blocks:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: otter-blocks
     wpscan: https://wpscan.com/plugin/otter-blocks
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:otter-blocks:otter-blocks:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402203913fb8c9f836b3d32ceabef3aea7c209009c4035b91500f191886f14d7d09e602201345e1ec3005257c172b4f4e72210c83f7912c06e4aba757fce45e9167e889f6:922c64590222798bb761d5b6d8e72950

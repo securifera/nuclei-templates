@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wpvivid-backuprestore/
+  classification:
+    cpe: cpe:2.3:a:wpvivid-backuprestore:wpvivid-backuprestore:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wpvivid-backuprestore
     wpscan: https://wpscan.com/plugin/wpvivid-backuprestore
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wpvivid-backuprestore:wpvivid-backuprestore:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100c86fd1714c6a0b5afafc773316a69b7b1275ee20e3624b0c801dfaf97ab0a0b0022000a7bdc90ce0ab0fa2f5ec2c3a539b68924965eee2945bd1610c939c2d8aaf88:922c64590222798bb761d5b6d8e72950

@@ -10,6 +10,8 @@ info:
     - https://inertiajs.com/
     - https://github.com/inertiajs/inertia
     - https://github.com/inertiajs/inertia-laravel
+  classification:
+    cpe: cpe:2.3:a:inertiajs:inertia:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     product: inertia
@@ -40,4 +42,3 @@ http:
         part: body
         regex:
           - "(?is)data-page\\s*=\\s*\"(?:[^\"\\\\]|\\\\.)*\\\\\"component\\\\\"(?:[^\"\\\\]|\\\\.)*\\\\\"props\\\\\"(?:[^\"\\\\]|\\\\.)*\\\\\"url\\\\\""
-# digest: 490a00463044022005bb2a6b3783297e7f6d9cdf10e9899892a88549ec28211af6be1c83e0bc282c02201da00a9d22f8c045a0685cbcd021172c1fb9f1af90a6ff339dc390254efe2dd9:922c64590222798bb761d5b6d8e72950

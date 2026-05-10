@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/meta-box/
+  classification:
+    cpe: cpe:2.3:a:meta-box:meta-box:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: meta-box
     wpscan: https://wpscan.com/plugin/meta-box
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:meta-box:meta-box:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220362500050aed67140b8e03bc9364143c445023ea3fea83778f368443bbac20a3022049bf6cd9d9d599ff0a911dcc8baca7edf73495381eeffbaca37c0005c039d3b0:922c64590222798bb761d5b6d8e72950

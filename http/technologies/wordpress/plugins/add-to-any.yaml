@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/add-to-any/
+  classification:
+    cpe: cpe:2.3:a:add-to-any:add-to-any:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: add-to-any
     wpscan: https://wpscan.com/plugin/add-to-any
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:add-to-any:add-to-any:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100bc2a0c5bb96ac435051b308d5eed5c771655337aacb5032febbc0a2a70d7fdcc02204fd0da8d30cc4b4839ad7bacd9c6789c8571b6e48eb1bf3040b75cd340c546c6:922c64590222798bb761d5b6d8e72950

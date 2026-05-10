@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wpforms-lite/
+  classification:
+    cpe: cpe:2.3:a:wpforms-lite:wpforms-lite:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wpforms-lite
     wpscan: https://wpscan.com/plugin/wpforms-lite
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wpforms-lite:wpforms-lite:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100cd31a8416104c26fa6a8348608aa40a06b2cbd188f3a09b231427d2d1b0444e8022055c7bb30d60ff9c9ae77b638bff5f9b483eed6dcdd11cc1a77059887be6c8485:922c64590222798bb761d5b6d8e72950

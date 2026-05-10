@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-crontrol/
+  classification:
+    cpe: cpe:2.3:a:wp-crontrol:wp-crontrol:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-crontrol
     wpscan: https://wpscan.com/plugin/wp-crontrol
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-crontrol:wp-crontrol:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220639b1fc5c20342dbbc97780805072e9bb128d1635f702027f65504a829f51435022100d9974f14de7fa7a3ac0ffd8c2793e2ed590f033cc146322d95221fe21dd17c27:922c64590222798bb761d5b6d8e72950

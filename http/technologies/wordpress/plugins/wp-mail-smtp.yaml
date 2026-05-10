@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-mail-smtp/
+  classification:
+    cpe: cpe:2.3:a:wp-mail-smtp:wp-mail-smtp:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-mail-smtp
     wpscan: https://wpscan.com/plugin/wp-mail-smtp
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-mail-smtp:wp-mail-smtp:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220591fed55ff88883ab5f357632251fb16468c10d28bcf472126a34cdc3dab440102202d57261154da28bd442a08f993a3e21f3c1bc0fd1a8f929e52611c64e535167d:922c64590222798bb761d5b6d8e72950

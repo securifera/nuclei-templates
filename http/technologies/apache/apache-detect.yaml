@@ -5,8 +5,12 @@ info:
   author: philippedelteil
   severity: info
   description: Some Apache servers have the version on the response header. The OpenSSL version can be also obtained
+  classification:
+    cpe: cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: apache
+    product: http_server
   tags: tech,apache,discovery
 
 http:
@@ -14,20 +18,18 @@ http:
     path:
       - "{{BaseURL}}"
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
       - type: regex
+        name: apache
+        cpe: cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
         part: header
         regex:
-          - "Apache+"
-
-      - type: status
-        status:
-          - 200
+          - "Apache[/ ]"
+        condition: or
 
     extractors:
       - type: kval
         part: header
         kval:
           - Server
-# digest: 4a0a00473045022100ba79259e193b4f27fe4ef6965d1c9506422c7680de5c65e110911bfb778a878902207180adcbbacf30d41942c9d30f1d270ca94f2db26d2e296f9d4c8ed8c3e8b875:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/hunk-companion/
+  classification:
+    cpe: cpe:2.3:a:hunk-companion:hunk-companion:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: hunk-companion
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:hunk-companion:hunk-companion:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100cf7c6c05aca3cff33d3ea611d885b5b53c0879af250ee55d2946a19fb3886123022100c9734927d3be11a30217be27099345905b9039c7e7d76d854432dad46f2c04d4:922c64590222798bb761d5b6d8e72950

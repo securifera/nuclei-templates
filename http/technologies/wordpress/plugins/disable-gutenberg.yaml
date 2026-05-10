@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/disable-gutenberg/
+  classification:
+    cpe: cpe:2.3:a:disable-gutenberg:disable-gutenberg:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: disable-gutenberg
     wpscan: https://wpscan.com/plugin/disable-gutenberg
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:disable-gutenberg:disable-gutenberg:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450221009397b78a7ce5712345b17536585a81ed200b65d75eeb490e919a3a7f1d332cde0220384603ccb873b77d60ae9b36085f898a78c65cf8493fbc8236f0f199da5c9b9d:922c64590222798bb761d5b6d8e72950

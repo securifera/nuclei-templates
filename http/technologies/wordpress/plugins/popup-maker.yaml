@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/popup-maker/
+  classification:
+    cpe: cpe:2.3:a:popup-maker:popup-maker:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: popup-maker
     wpscan: https://wpscan.com/plugin/popup-maker
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:popup-maker:popup-maker:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100ff5fb16dfc1aeb42b3ddd947e2bacc3633368bfff517614e8af0c3e0a571bd9702204bbfeaf41ce70f8e774dd57739ae899c769c1c223ed8ba3d375ecad8d80fe864:922c64590222798bb761d5b6d8e72950

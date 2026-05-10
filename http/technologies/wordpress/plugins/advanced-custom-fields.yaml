@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/advanced-custom-fields/
+  classification:
+    cpe: cpe:2.3:a:advanced-custom-fields:advanced-custom-fields:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: advanced-custom-fields
     wpscan: https://wpscan.com/plugin/advanced-custom-fields
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:advanced-custom-fields:advanced-custom-fields:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402207625446f5e6bd723e37ef87fdd066c620d1c81f08643da6aedba3f2dddb6328402207bde5f80df789dc78bffd590cfa4d88bf9f3807d5025f3f115cf26704c2212e4:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/ad-inserter/
+  classification:
+    cpe: cpe:2.3:a:ad-inserter:ad-inserter:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: ad-inserter
     wpscan: https://wpscan.com/plugin/ad-inserter
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:ad-inserter:ad-inserter:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100979a29997c09e92de2b83955bb9734a3699f5b17c45e65352a0be7b3a54dc6b00220118e01f19b0c19bf8a4ebba14b3e1195ba7677a23e69b7753095c5f234eb9893:922c64590222798bb761d5b6d8e72950

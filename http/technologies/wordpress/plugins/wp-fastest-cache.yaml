@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-fastest-cache/
+  classification:
+    cpe: cpe:2.3:a:wp-fastest-cache:wp-fastest-cache:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-fastest-cache
     wpscan: https://wpscan.com/plugin/wp-fastest-cache
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-fastest-cache:wp-fastest-cache:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100dd547743e586ffdeedfab3330bba03fa848ca1af99fbec5409033ad2e2428a02022100b844df07edf3a2f3c0b8e2c59cf1546ab3a9d58546a7926ebdacdf034821ddf6:922c64590222798bb761d5b6d8e72950

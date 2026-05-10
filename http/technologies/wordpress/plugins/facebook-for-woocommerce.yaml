@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/facebook-for-woocommerce/
+  classification:
+    cpe: cpe:2.3:a:facebook-for-woocommerce:facebook-for-woocommerce:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: facebook-for-woocommerce
     wpscan: https://wpscan.com/plugin/facebook-for-woocommerce
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:facebook-for-woocommerce:facebook-for-woocommerce:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220152e9f990b60f9ef6b0cad1822f4c200eedeb50129a9cf714f382c1008b671f0022100f9f2cddcef27245c876889b10af7914a1eb1a3e31442fe2d3de9cae7f0ce9294:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/backwpup/
+  classification:
+    cpe: cpe:2.3:a:backwpup:backwpup:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: backwpup
     wpscan: https://wpscan.com/plugin/backwpup
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:backwpup:backwpup:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100b1e1d9048a4cbd02484f9b647ba52ed4668e13d8916ab9382890cf7d1d41fa25022100f2d2f0715f7f45afdf48b076f4b6c08e17877e4f259b97e2bb770c759733512e:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/intuitive-custom-post-order/
+  classification:
+    cpe: cpe:2.3:a:intuitive-custom-post-order:intuitive-custom-post-order:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: intuitive-custom-post-order
     wpscan: https://wpscan.com/plugin/intuitive-custom-post-order
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:intuitive-custom-post-order:intuitive-custom-post-order:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100c2f71f58940026959a6493e4e54efe3ab82cc1200355a5c9e11b60f15fe8ccbf0220498373d725822aedbf874f41ab1bd108e989c4948cfcf910baad8a6512579e57:922c64590222798bb761d5b6d8e72950

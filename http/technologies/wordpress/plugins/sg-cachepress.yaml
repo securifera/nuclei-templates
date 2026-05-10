@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/sg-cachepress/
+  classification:
+    cpe: cpe:2.3:a:sg-cachepress:sg-cachepress:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: sg-cachepress
     wpscan: https://wpscan.com/plugin/sg-cachepress
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:sg-cachepress:sg-cachepress:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100ada7822edb3f3417b03dd4125d6e73b7758b50ba9b430d893ca9111888703a4e022076e8e40fd8b4b6b0c93d98d4e5b138784decd677582d6af781961c820f509865:922c64590222798bb761d5b6d8e72950

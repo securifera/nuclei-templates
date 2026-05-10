@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/enable-media-replace/
+  classification:
+    cpe: cpe:2.3:a:enable-media-replace:enable-media-replace:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: enable-media-replace
     wpscan: https://wpscan.com/plugin/enable-media-replace
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:enable-media-replace:enable-media-replace:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100dffbc2be69a939ab40fa01780261f74eed28ed6a2dec65146031986a8e9e8ee3022008f0e0223ec9eb92e69b53cfda4d76c7335df66a298c0e075ed22174cf6f8340:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
     Detected ChromaDB vector database instance publicly exposed. ChromaDB is an open-source AI-native vector database. Unauthenticated instances expose stored embeddings, collections, and metadata to unauthorized access.
   reference:
     - https://docs.trychroma.com/
+  classification:
+    cpe: cpe:2.3:a:chroma-core:chromadb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -45,4 +47,3 @@ http:
         part: body
         regex:
           - '"nanosecond heartbeat":\s*([0-9]+)'
-# digest: 4b0a00483046022100e929978728ed79d89b1d47fa1be189661e36a29120c770f13cc2286ad93a5ad4022100ea57e7fbe74802550652ab75de68bd4cc378e19892c25676c12f2748eee545d9:922c64590222798bb761d5b6d8e72950

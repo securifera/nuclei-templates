@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/marqo-ai/marqo
     - https://www.marqo.ai/
+  classification:
+    cpe: cpe:2.3:a:marqo-ai:marqo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -40,4 +42,3 @@ http:
         group: 1
         regex:
           - '"version":"([^"]+)"'
-# digest: 4a0a00473045022067ab7a0f4da91cc71cfaf20cdd1c5295f86fd933e8eb2c050a19d697f417f18d0221009d905e79bcd5ea7c5ad33cd79fa19f97fea1610d22a6eb8c2b906a586abbc857:922c64590222798bb761d5b6d8e72950

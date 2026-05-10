@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/all-404-redirect-to-homepage/
+  classification:
+    cpe: cpe:2.3:a:all-404-redirect-to-homepage:all-404-redirect-to-homepage:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: all-404-redirect-to-homepage
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:all-404-redirect-to-homepage:all-404-redirect-to-homepage:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100daa23a9d3313f3b06aa545bbd349f903af866aabed1c17fbaf4f470503d69d840220447580fdc88202ff8fae542072c139b1c76698e7745edbddb2f886a20201910e:922c64590222798bb761d5b6d8e72950

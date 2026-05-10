@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/yith-woocommerce-wishlist/
+  classification:
+    cpe: cpe:2.3:a:yith-woocommerce-wishlist:yith-woocommerce-wishlist:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: yith-woocommerce-wishlist
     wpscan: https://wpscan.com/plugin/yith-woocommerce-wishlist
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:yith-woocommerce-wishlist:yith-woocommerce-wishlist:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502200ab7e3e1207ebfcb1effc54325341986060113ce639aa3725555bf28e1307888022100bb49bd4efc6a41d5eeef082ba544cbcf6aa7f326bf260fb055ff057d3b834879:922c64590222798bb761d5b6d8e72950

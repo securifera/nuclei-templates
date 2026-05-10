@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woocommerce/
+  classification:
+    cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woocommerce
     wpscan: https://wpscan.com/plugin/woocommerce
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022056209cb81566622c13975560c67c7d5ffa616376616f9b1241a6f3aefebef655022100e55829cc8cad811f1765a0062b84dac42e2c70082b561547acb36bd77d3ee154:922c64590222798bb761d5b6d8e72950

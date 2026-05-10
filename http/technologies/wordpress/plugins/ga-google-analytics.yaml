@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/ga-google-analytics/
+  classification:
+    cpe: cpe:2.3:a:ga-google-analytics:ga-google-analytics:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: ga-google-analytics
     wpscan: https://wpscan.com/plugin/ga-google-analytics
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:ga-google-analytics:ga-google-analytics:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502206456cadd944d61f40955410879a468b5b0c48e0a6916b85943a91f4e0526bcbd022100d9d8fe6a1626cdfdc830323998fb142438b846391bfa7d0200a54f61d40b6844:922c64590222798bb761d5b6d8e72950

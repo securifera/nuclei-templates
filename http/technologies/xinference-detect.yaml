@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/xorbitsai/inference
     - https://inference.readthedocs.io/
+  classification:
+    cpe: cpe:2.3:a:xorbitsai:xinference:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -38,4 +40,3 @@ http:
           - contains(content_type, "application/json")
           - contains(header, "uvicorn")
         condition: and
-# digest: 490a004630440220239640566ba79ebc52bba903cccdd41590090dc4275e80202776af4004a9e913022074c5b65fc4603064cf82508c5f0767785d82bddd78925116e8577d219d959a26:922c64590222798bb761d5b6d8e72950

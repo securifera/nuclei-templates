@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/give/
+  classification:
+    cpe: cpe:2.3:a:give:give:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: give
     wpscan: https://wpscan.com/plugin/give
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:give:give:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100fb57d9fe553749ed5016d59230eef31d29f88303065e84aa1e09b1ff0708347002203fbd30b5b3b5974b8accd2aafd257adf5b910f9ba7717bac021bcf047ad1372e:922c64590222798bb761d5b6d8e72950

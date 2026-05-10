@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/yith-woocommerce-compare/
+  classification:
+    cpe: cpe:2.3:a:yith-woocommerce-compare:yith-woocommerce-compare:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: yith-woocommerce-compare
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:yith-woocommerce-compare:yith-woocommerce-compare:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502204331c51bd285ea93232d7e367c77d03fcd0ea668d341433b8611aeac3ea7a835022100c408017bff09774fbb7437e6a0abff519d2497ae905bbb2bd8476004d348f120:922c64590222798bb761d5b6d8e72950

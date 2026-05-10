@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/instagram-feed/
+  classification:
+    cpe: cpe:2.3:a:instagram-feed:instagram-feed:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: instagram-feed
     wpscan: https://wpscan.com/plugin/instagram-feed
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:instagram-feed:instagram-feed:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a00463044022060494ba3111bfa61a102d1026617020351919cacf837ffc4ba2d25d0cab9ec3702206752218c183b4cc0dacfb84b85c44e2707b00cb56815ee8faf085ef63b83291d:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/langflow-ai/langflow
     - https://docs.langflow.org/
+  classification:
+    cpe: cpe:2.3:a:langflow-ai:langflow:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -43,4 +45,3 @@ http:
         group: 1
         regex:
           - '"version"\s*:\s*"([0-9\.]+)"'
-# digest: 4a0a004730450221008bb687ac01a3844df0bc551b7a2268ed390d24d98f02f952dce03e0b4852f64602202253c00b97386c539135b2cc45968ebda3b8dbb53cdc94fe7699020ed7a349a6:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/duplicate-page/
+  classification:
+    cpe: cpe:2.3:a:duplicate-page:duplicate-page:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: duplicate-page
     wpscan: https://wpscan.com/plugin/duplicate-page
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:duplicate-page:duplicate-page:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402203abdc6acae3ec39c10857bb6592712132794af873b3bc4c9a79a6178ee84372a02206b87aa83bafbe15034d5a41b30f7de7dcc95e6017649c553614fdfa6f8a512e3:922c64590222798bb761d5b6d8e72950

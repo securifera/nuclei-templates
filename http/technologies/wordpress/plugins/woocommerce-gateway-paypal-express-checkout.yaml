@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woocommerce-gateway-paypal-express-checkout/
+  classification:
+    cpe: cpe:2.3:a:woocommerce-gateway-paypal-express-checkout:woocommerce-gateway-paypal-express-checkout:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: woocommerce-gateway-paypal-express-checkout
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woocommerce-gateway-paypal-express-checkout:woocommerce-gateway-paypal-express-checkout:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220361aee856fe59ad4287f9b6dd19a11db0d1fac4bcc1fb65e688c476025bd07f7022100962b5d1bfe16f301aead635b636c3498f821713c1a6c239d92be3f175f21fb51:922c64590222798bb761d5b6d8e72950

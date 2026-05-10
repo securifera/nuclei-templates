@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/w3-total-cache/
+  classification:
+    cpe: cpe:2.3:a:w3-total-cache:w3-total-cache:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: w3-total-cache
     wpscan: https://wpscan.com/plugin/w3-total-cache
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:w3-total-cache:w3-total-cache:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402203ee4cb48a178622482bff65115e28f2fd25817d34e9dba8eb0c25b5c78fa578c02200f371655896594bce43c743c4530ef2423e867996859ad48c676bd056f4ab8ca:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/coming-soon/
+  classification:
+    cpe: cpe:2.3:a:coming-soon:coming-soon:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: coming-soon
     wpscan: https://wpscan.com/plugin/coming-soon
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:coming-soon:coming-soon:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022021fd3440850fb30e43403d1cb89112a6a49846023c0e23ec8ae43da4ec9d234f022100b9e1b0a96bbd40cad0e8cbad5b56117c9d792e60d3a29495efe209b6360d5968:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/ewww-image-optimizer/
+  classification:
+    cpe: cpe:2.3:a:ewww-image-optimizer:ewww-image-optimizer:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: ewww-image-optimizer
     wpscan: https://wpscan.com/plugin/ewww-image-optimizer
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:ewww-image-optimizer:ewww-image-optimizer:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022050cdc4d9fe1a7c6916ab3529e6991cff912dcd8b8f8f3b969d6960a667f1e158022100ace95048cdbab919d4b0f004d9cbd8561a025efd5657cfd9b500fc3dd9dad485:922c64590222798bb761d5b6d8e72950

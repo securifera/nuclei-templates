@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/cookie-law-info/
+  classification:
+    cpe: cpe:2.3:a:cookie-law-info:cookie-law-info:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: cookie-law-info
     wpscan: https://wpscan.com/plugin/cookie-law-info
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:cookie-law-info:cookie-law-info:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402206e5ac1011e15c903a4084b6b6baf27baf5787854aff4024323f4b984e07cda7c022022cc025fba6f92dc5cb0666dab525743382be87bb8ba6dd51c428b10d7344e5b:922c64590222798bb761d5b6d8e72950

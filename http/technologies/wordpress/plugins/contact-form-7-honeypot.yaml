@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/contact-form-7-honeypot/
+  classification:
+    cpe: cpe:2.3:a:contact-form-7-honeypot:contact-form-7-honeypot:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: contact-form-7-honeypot
     wpscan: https://wpscan.com/plugin/contact-form-7-honeypot
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:contact-form-7-honeypot:contact-form-7-honeypot:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221009e86438b6bf514550131dfb641904bedfb36f18251587cec1a28012f684a10eb022100e7abd6d0ab5f3e2a4fdb7ecf44ddb256c7e454974aae8fce9a575acfaaa88731:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/child-theme-configurator/
+  classification:
+    cpe: cpe:2.3:a:child-theme-configurator:child-theme-configurator:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: child-theme-configurator
     wpscan: https://wpscan.com/plugin/child-theme-configurator
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:child-theme-configurator:child-theme-configurator:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100cb9d514340a53fc429b3aadda08f5b46d542f6825d75e598eba819603498f96f022059bc77a29a7a4afa61b9d729a9027abfd2d8e02df3fe798cdc3de24634dac9f8:922c64590222798bb761d5b6d8e72950

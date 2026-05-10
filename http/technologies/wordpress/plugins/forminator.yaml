@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/forminator/
+  classification:
+    cpe: cpe:2.3:a:forminator:forminator:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: forminator
     wpscan: https://wpscan.com/plugin/forminator
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:forminator:forminator:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100f833112c22a7947eb622630bfecf30eaf17c1d4fb1c5ba91e9700747fc58e15a02204091bd0f822fd831fc679ab70cd414377812d23d227c047b6129896849b8110d:922c64590222798bb761d5b6d8e72950

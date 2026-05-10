@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/simple-page-ordering/
+  classification:
+    cpe: cpe:2.3:a:simple-page-ordering:simple-page-ordering:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: simple-page-ordering
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:simple-page-ordering:simple-page-ordering:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100ebf5e8dd218a2c9a4114cc7d24d7201f6ee994bd7dba10cbc305275e3ff3dc3802204511543bd4b70cf64ffe5039ac88580e4d7d27f16d20b66f73b6e67ad41ad14e:922c64590222798bb761d5b6d8e72950

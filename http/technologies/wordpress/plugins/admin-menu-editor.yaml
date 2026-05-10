@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/admin-menu-editor/
+  classification:
+    cpe: cpe:2.3:a:admin-menu-editor:admin-menu-editor:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: admin-menu-editor
     wpscan: https://wpscan.com/plugin/admin-menu-editor
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:admin-menu-editor:admin-menu-editor:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502210099498b7ac0df1e83bd86c2be77af4024a6951686c62eba92f5538b5d5720d2fc0220745419fb4cfadc2dbe906150c44f8517438b68c553a15d6ca1fcb38665fabc3f:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-user-avatar/
+  classification:
+    cpe: cpe:2.3:a:wp-user-avatar:wp-user-avatar:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: wp-user-avatar
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-user-avatar:wp-user-avatar:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a004830460221008a1839c04752895af45ffc7313c821314a14895762620fa7120a6bd26a49df0b022100c4897e2277ca5f68a1fa8a2913a77c40ac9bd26c573226da98c7fd0a7b5a2486:922c64590222798bb761d5b6d8e72950

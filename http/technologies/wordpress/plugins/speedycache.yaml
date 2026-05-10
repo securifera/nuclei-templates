@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/speedycache/
+  classification:
+    cpe: cpe:2.3:a:speedycache:speedycache:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: speedycache
     wpscan: https://wpscan.com/plugin/speedycache
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:speedycache:speedycache:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100e97d9abb6a5eb953ffdf17e05cfff4bead44c8b573db53caf9e1ad2ea68424fc022100926576921db348b94190a79f9d1462012f64b3cce837de1e1b5da74d1300d5e5:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/ultimate-addons-for-gutenberg/
+  classification:
+    cpe: cpe:2.3:a:ultimate-addons-for-gutenberg:ultimate-addons-for-gutenberg:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: ultimate-addons-for-gutenberg
     wpscan: https://wpscan.com/plugin/ultimate-addons-for-gutenberg
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:ultimate-addons-for-gutenberg:ultimate-addons-for-gutenberg:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a00463044022026a13cb6c63dccc27204a047816cf0ba99d3aba82e61e4b5d0459ec9c8d42f26022062b5b1331520afb74f323b837a355f7572dc024310e9d8acbf47c60ddde529d8:922c64590222798bb761d5b6d8e72950

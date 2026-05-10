@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/redux-framework/
+  classification:
+    cpe: cpe:2.3:a:redux-framework:redux-framework:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: redux-framework
     wpscan: https://wpscan.com/plugin/redux-framework
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:redux-framework:redux-framework:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402206bbc43b225710b15c3f95b0c81b6ead51afb13196ace036cd91a3801e6965767022004897fc3c99293ac8cd9650af62130d4652d9e8f22ed220ced6dfdca0bee7290:922c64590222798bb761d5b6d8e72950

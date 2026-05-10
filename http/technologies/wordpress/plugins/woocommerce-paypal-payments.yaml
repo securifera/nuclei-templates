@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woocommerce-paypal-payments/
+  classification:
+    cpe: cpe:2.3:a:woocommerce-paypal-payments:woocommerce-paypal-payments:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woocommerce-paypal-payments
     wpscan: https://wpscan.com/plugin/woocommerce-paypal-payments
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woocommerce-paypal-payments:woocommerce-paypal-payments:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502201bc469146414f7a27e7601e7c501a988ed5998d0afeef422f54be0ec1f0364f0022100db150d95c999e75994b129fffe0112ad06069d26c3e7d53c31cf1b8881e98bad:922c64590222798bb761d5b6d8e72950

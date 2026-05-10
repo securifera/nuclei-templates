@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/easy-google-fonts/
+  classification:
+    cpe: cpe:2.3:a:easy-google-fonts:easy-google-fonts:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: easy-google-fonts
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:easy-google-fonts:easy-google-fonts:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100bab7eae26e9941594bcb4257c46ea6c32cfe299da930a9c7a66cd7b744fad5a802204a6e1b581f229150a836f9279aa4db88ad266168cdfa285e948918a79240c92a:922c64590222798bb761d5b6d8e72950

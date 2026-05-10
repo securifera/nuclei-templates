@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-sitemap-page/
+  classification:
+    cpe: cpe:2.3:a:wp-sitemap-page:wp-sitemap-page:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-sitemap-page
     wpscan: https://wpscan.com/plugin/wp-sitemap-page
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-sitemap-page:wp-sitemap-page:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220081319028d573b431f671563aa8fe3b32a1c11cef88e05eb40a0c16ec0948c81022012c6ac18a13bfba4d58b7ee7cd7003c0827e1729f3bae9e431d1bf0397e428b1:922c64590222798bb761d5b6d8e72950

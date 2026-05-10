@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/litespeed-cache/
+  classification:
+    cpe: cpe:2.3:a:litespeed-cache:litespeed-cache:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: litespeed-cache
     wpscan: https://wpscan.com/plugin/litespeed-cache
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:litespeed-cache:litespeed-cache:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220517728ce3f8086a0c3193e47231c59ec6af65282f65d1db6d549079466bfe816022100d735aebcf1f66cb55b747927c6f38f32be123a2fe4bcba1ab7f71677885eecc6:922c64590222798bb761d5b6d8e72950

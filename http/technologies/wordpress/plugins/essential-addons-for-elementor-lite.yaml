@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/essential-addons-for-elementor-lite/
+  classification:
+    cpe: cpe:2.3:a:essential-addons-for-elementor-lite:essential-addons-for-elementor-lite:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: essential-addons-for-elementor-lite
     wpscan: https://wpscan.com/plugin/essential-addons-for-elementor-lite
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:essential-addons-for-elementor-lite:essential-addons-for-elementor-lite:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220167310be5f94861bc09d926cf3f9b5909877544d651a0b86d9eafa893f36dd4c0220008431c14bf5ac3301764f395f7640f6d1a201612436458af24561c73318324d:922c64590222798bb761d5b6d8e72950

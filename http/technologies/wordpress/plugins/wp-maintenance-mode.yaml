@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-maintenance-mode/
+  classification:
+    cpe: cpe:2.3:a:wp-maintenance-mode:wp-maintenance-mode:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-maintenance-mode
     wpscan: https://wpscan.com/plugin/wp-maintenance-mode
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-maintenance-mode:wp-maintenance-mode:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100e0ee049c4596665593d41824c825a83897f28dd7ea5a9f91d30b074939d11dfe022100b787ba9a4a5bc5250604a22ef822c9a210aa55300ef34bcb403457ce1344df5d:922c64590222798bb761d5b6d8e72950

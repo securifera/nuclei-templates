@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woo-inpost/
+  classification:
+    cpe: cpe:2.3:a:woo-inpost:woo-inpost:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woo-inpost
     wpscan: https://wpscan.com/plugin/woo-inpost
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woo-inpost:woo-inpost:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022059ed279ea4cef70f2c4ee68f6115e4782084f98f3ffe19ec8b160266fc160d6f022100aca943f0c1fca6e5e6cfca86670e1c1ddb99195abe0b00012cbf674453f6524a:922c64590222798bb761d5b6d8e72950

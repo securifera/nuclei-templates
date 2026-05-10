@@ -4,6 +4,8 @@ info:
   name: Hikvision Panel
   author: pdteam,its0x08
   severity: info
+  classification:
+    cpe: cpe:2.3:a:hikvision:ds-2cd2026g2-iu\/sl_firmware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -30,12 +32,13 @@ http:
 
       - type: word
         name: server
+        cpe: cpe:2.3:a:hikvision:ds-2cd2026g2-iu\/sl_firmware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Hikvision-Webs"
 
       - type: dsl
         name: favicon
+        cpe: cpe:2.3:a:hikvision:ds-2cd2026g2-iu\/sl_firmware:*:*:*:*:*:*:*:*
         dsl:
           - "'999357577' == mmh3(base64_py(body))"
-# digest: 4a0a0047304502203ff89b1fbea47d2a0f8dd0a1e53b96e5223c31818a5e2e50fea3e9d9703f94ec022100c5035847976bf8dc4471196d8937439678506012619bd9a1299513b6f1a13cba:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/limit-login-attempts-reloaded/
+  classification:
+    cpe: cpe:2.3:a:limit-login-attempts-reloaded:limit-login-attempts-reloaded:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: limit-login-attempts-reloaded
     wpscan: https://wpscan.com/plugin/limit-login-attempts-reloaded
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:limit-login-attempts-reloaded:limit-login-attempts-reloaded:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502205b634be14e4b59ba282e32e1a594d30f13eef0992a1c08d40a8b0f2156bb9be0022100e06bc4e3786a05eaf3fa1c43e5c2ae7e1d6012475e06c780de3af33f7c3a26ab:922c64590222798bb761d5b6d8e72950

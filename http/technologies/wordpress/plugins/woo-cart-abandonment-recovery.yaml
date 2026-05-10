@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woo-cart-abandonment-recovery/
+  classification:
+    cpe: cpe:2.3:a:woo-cart-abandonment-recovery:woo-cart-abandonment-recovery:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woo-cart-abandonment-recovery
     wpscan: https://wpscan.com/plugin/woo-cart-abandonment-recovery
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woo-cart-abandonment-recovery:woo-cart-abandonment-recovery:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a00463044022041b12c3aed47c74664f3aacd5f6ff77aa93e24148e8280d7de5ab4a40aae56b30220506b6bcb92d7eb67c4bd83bc93ca8ea4313653fdcf77d08bdf2738519d44bd1d:922c64590222798bb761d5b6d8e72950

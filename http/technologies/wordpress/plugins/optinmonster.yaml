@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/optinmonster/
+  classification:
+    cpe: cpe:2.3:a:optinmonster:optinmonster:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: optinmonster
     wpscan: https://wpscan.com/plugin/optinmonster
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:optinmonster:optinmonster:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502206c6d2af845c5a4db1fb46839df9dcd974ac83156e7470dd0771856cf7d76547c022100ce647f495dfc62475d418cd94d3ae0132a729c24e72ee73cf2bf8be4fa60a22e:922c64590222798bb761d5b6d8e72950

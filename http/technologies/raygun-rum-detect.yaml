@@ -8,6 +8,8 @@ info:
     Detects ACTIVE Raygun (Raygun4JS) Error Tracking & Real User Monitoring implementations.
   reference:
     - https://raygun.com/
+  classification:
+    cpe: cpe:2.3:a:raygun:raygun4js:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
@@ -45,4 +47,3 @@ http:
           - "(?m)^[^/\\n]*rg4js\\s*\\(\\s*['\"]enableCrashReporting['\"]\\s*,\\s*(?:true|!)"
           - "(?m)^[^/\\n]*rg4js\\s*\\(\\s*['\"]enableRealUserMonitoring['\"]\\s*,\\s*true"
         condition: or
-# digest: 4a0a00473045022100a5749ed77978bf7be24811011ccdb7c0c999e5d7dfd3003e195b75cdcff32d330220799bec14460d3558449617bb131cf85686f2a9472db37f41a89883040ef2ef80:922c64590222798bb761d5b6d8e72950

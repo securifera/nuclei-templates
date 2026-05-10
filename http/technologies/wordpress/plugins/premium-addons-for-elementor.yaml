@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/premium-addons-for-elementor/
+  classification:
+    cpe: cpe:2.3:a:premium-addons-for-elementor:premium-addons-for-elementor:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: premium-addons-for-elementor
     wpscan: https://wpscan.com/plugin/premium-addons-for-elementor
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:premium-addons-for-elementor:premium-addons-for-elementor:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100906bf9e88112dbfdc6aa52a3f5ea0e1090a857dc27e04e6a011ad332dbddf9cf0220286bc0c4e4a5de32ce7c1ab19e7331a2b83fab84080b0e21e3038bd897f9dcdb:922c64590222798bb761d5b6d8e72950

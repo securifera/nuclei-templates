@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/userfeedback-lite/
+  classification:
+    cpe: cpe:2.3:a:userfeedback-lite:userfeedback-lite:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: userfeedback-lite
     wpscan: https://wpscan.com/plugin/userfeedback-lite
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:userfeedback-lite:userfeedback-lite:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100e05e51d03dedbfe4e43f841a68052fb22b9bc585046cf21c549add4470565906022100e137750d942a883735ae53ec904f8ba73e6253450de33a4c24a8d144f1d94b90:922c64590222798bb761d5b6d8e72950

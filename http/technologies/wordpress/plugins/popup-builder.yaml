@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/popup-builder/
+  classification:
+    cpe: cpe:2.3:a:popup-builder:popup-builder:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: popup-builder
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:popup-builder:popup-builder:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402201cda62dc7f3d575315bdff8692f368ad383996bb29c2f84d78b55ba3aac40ea20220779908fdcc4148e08209fc5ae8b952bef37e1b23a6c249cb0f646720f98251e7:922c64590222798bb761d5b6d8e72950

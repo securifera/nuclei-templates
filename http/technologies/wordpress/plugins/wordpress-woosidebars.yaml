@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woosidebars/
+  classification:
+    cpe: cpe:2.3:a:woosidebars:woosidebars:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: woosidebars
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woosidebars:woosidebars:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022000969ffcdd3bd1fa4ba39ba08b5759f2d6c5fec7831fc2aaf8dfb5b2fe3dbde8022100cc3c3d6d865b363eceff230feabbdb80147715b742fbe751028b355ceca92591:922c64590222798bb761d5b6d8e72950

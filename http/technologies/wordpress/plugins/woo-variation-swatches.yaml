@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woo-variation-swatches/
+  classification:
+    cpe: cpe:2.3:a:woo-variation-swatches:woo-variation-swatches:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woo-variation-swatches
     wpscan: https://wpscan.com/plugin/woo-variation-swatches
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woo-variation-swatches:woo-variation-swatches:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a0048304602210081c484e78f2c5ab381476278090c0d2dd706a1d3f35a350bc6d49eb30dab4e87022100e6acf11f96d6a74493fac445a2dd91de1895208fd5264afa083e2d7d998bf4f9:922c64590222798bb761d5b6d8e72950

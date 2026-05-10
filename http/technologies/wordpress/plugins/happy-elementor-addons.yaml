@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/happy-elementor-addons/
+  classification:
+    cpe: cpe:2.3:a:happy-elementor-addons:happy-elementor-addons:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: happy-elementor-addons
     wpscan: https://wpscan.com/plugin/happy-elementor-addons
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:happy-elementor-addons:happy-elementor-addons:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100840aa5d3361d8d84a294fe9f5495e02a38a3a0089b9c01892dba3748d25ac71d02207a67b15744f14f1eac79911b67ed63e4795764c58ef92a21449e4cae62f2974e:922c64590222798bb761d5b6d8e72950

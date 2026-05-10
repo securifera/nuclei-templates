@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/aryo-activity-log/
+  classification:
+    cpe: cpe:2.3:a:aryo-activity-log:aryo-activity-log:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: aryo-activity-log
     wpscan: https://wpscan.com/plugin/aryo-activity-log
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:aryo-activity-log:aryo-activity-log:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502203597753300eac546cfc985ea41978890279a6385e0ef5e9dd0d9c8edd5617915022100ee6494b24fa06bbc43a9f22669506b5c883a0c534af22524d47f762fccff6f38:922c64590222798bb761d5b6d8e72950

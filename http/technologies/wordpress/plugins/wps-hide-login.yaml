@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wps-hide-login/
+  classification:
+    cpe: cpe:2.3:a:wps-hide-login:wps-hide-login:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wps-hide-login
     wpscan: https://wpscan.com/plugin/wps-hide-login
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wps-hide-login:wps-hide-login:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022017e46bb1524d965932312fe03435dad7985f0553a8ee4617dc5a8dba97c956b202210090a3050ca9b97eabdd43eea891fd27e44317f630f2b787fd179512ad3143e157:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/kadence-blocks/
+  classification:
+    cpe: cpe:2.3:a:kadence-blocks:kadence-blocks:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: kadence-blocks
     wpscan: https://wpscan.com/plugin/kadence-blocks
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:kadence-blocks:kadence-blocks:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502202328f441962b9911ed0afba805a4d2db1b681d1e14aebaa7cdc5df9f61934e41022100e00ba96078cd05e6866f75fc9febd5c9493dbc1baaf04df381885a9be68298f0:922c64590222798bb761d5b6d8e72950

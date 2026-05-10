@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/woocommerce-legacy-rest-api/
+  classification:
+    cpe: cpe:2.3:a:woocommerce-legacy-rest-api:woocommerce-legacy-rest-api:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: woocommerce-legacy-rest-api
     wpscan: https://wpscan.com/plugin/woocommerce-legacy-rest-api
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:woocommerce-legacy-rest-api:woocommerce-legacy-rest-api:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a0048304602210081b59c66a12930550c402874c38c04948212eb2b02bd9ee2fffe6cbf9e5a4e26022100f68060fd4f0dc5ec2c1ea0efd65447d89633107101a704bb5f630e081870a694:922c64590222798bb761d5b6d8e72950

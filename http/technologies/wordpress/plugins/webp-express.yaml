@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/webp-express/
+  classification:
+    cpe: cpe:2.3:a:webp-express:webp-express:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: webp-express
     wpscan: https://wpscan.com/plugin/webp-express
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:webp-express:webp-express:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100f9be57e2fd619ac69374dbddf6d8db2a162834cf4dd50f889b51a8a67e9df01a022100fe66b002ef0fc8700ec41b3247ee5e19ed934a0f93c3a7cd2997505c26e14553:922c64590222798bb761d5b6d8e72950

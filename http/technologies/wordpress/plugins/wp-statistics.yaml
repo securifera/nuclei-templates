@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-statistics/
+  classification:
+    cpe: cpe:2.3:a:wp-statistics:wp-statistics:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: wp-statistics
     wpscan: https://wpscan.com/plugin/wp-statistics
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:wp-statistics:wp-statistics:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022048579d3759d8454d1520e6811ccb587c5bca0c499d20e32aa991f2e536028658022100b544929c96927268b548c7bf2e3f28cadd71aca001cef7158907aa5ec3bbc85e:922c64590222798bb761d5b6d8e72950

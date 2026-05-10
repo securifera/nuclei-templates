@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/hello-dolly/
+  classification:
+    cpe: cpe:2.3:a:hello-dolly:hello-dolly:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: hello-dolly
     wpscan: https://wpscan.com/plugin/hello-dolly
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:hello-dolly:hello-dolly:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502210085e6dc3c8b8f910fc7b290d57d946d96a4aaa7041cb5391d84b13ae699f3daf90220307f07f41b7f44aa062fbe90c1fc48f283a156a58ba82f379f8464c7636613f6:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/jetpack/
+  classification:
+    cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: jetpack
     wpscan: https://wpscan.com/plugin/jetpack
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220228c83cfb0cf87e3ac41b4bb1614a61679e89a68527cf529ef04678b1e7c03f0022100ee7c77ac432eea88ff765019eebcfe54ab0bbc41de030805bc4a72bf2dd4c6f8:922c64590222798bb761d5b6d8e72950

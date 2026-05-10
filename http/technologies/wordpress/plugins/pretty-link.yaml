@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/pretty-link/
+  classification:
+    cpe: cpe:2.3:a:pretty-link:pretty-link:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: pretty-link
     wpscan: https://wpscan.com/plugin/pretty-link
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:pretty-link:pretty-link:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100a37ce3933ee5abf5ad8ec5acc52429664c5451945071fec49cb29b288e37a789022100e2e4bc60c5d28868b89ab6ebb9e86aabd161b3c34948a7496e90b581e00212d9:922c64590222798bb761d5b6d8e72950

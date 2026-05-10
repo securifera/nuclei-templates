@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/adminimize/
+  classification:
+    cpe: cpe:2.3:a:adminimize:adminimize:*:*:*:*:*:wordpress:*:*
   metadata:
     max-request: 1
     plugin_namespace: adminimize
@@ -40,6 +42,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:adminimize:adminimize:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -47,4 +50,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a004630440220256682effe9f06b9ac1fad888acc1eedc93285b907eeee0dad92284a0bece9e602207646fd2eb66fa32fda2e63f62369e86faa6c827acf51d09312930187c6c69af1:922c64590222798bb761d5b6d8e72950

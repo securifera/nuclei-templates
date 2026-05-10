@@ -6,6 +6,8 @@ info:
   severity: info
   reference:
     - https://wordpress.org/plugins/all-in-one-seo-pack/
+  classification:
+    cpe: cpe:2.3:a:all-in-one-seo-pack:all-in-one-seo-pack:*:*:*:*:*:wordpress:*:*
   metadata:
     plugin_namespace: all-in-one-seo-pack
     wpscan: https://wpscan.com/plugin/all-in-one-seo-pack
@@ -39,6 +41,7 @@ http:
     matchers:
       - type: dsl
         name: "outdated_version"
+        cpe: cpe:2.3:a:all-in-one-seo-pack:all-in-one-seo-pack:*:*:*:*:*:wordpress:*:*
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
@@ -46,4 +49,3 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502202891fab857700974e9b14a0f2c5ff7ded2cf47758320133f204fde02f59f9857022100fb38372b3c43b51a5f2f72506f56e6240a7110bdbdd3118ac05fe599bf6cfa65:922c64590222798bb761d5b6d8e72950
