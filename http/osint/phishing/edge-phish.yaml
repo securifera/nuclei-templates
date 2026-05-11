@@ -8,8 +8,12 @@ info:
     A edge phishing website was detected
   reference:
     - https://www.microsoft.com/en-us/edge/download?form=MA13FJ&ch=1
+  classification:
+    cpe: cpe:2.3:a:edge:edge:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: edge
+    product: edge
   tags: phishing,edge,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: edge
+        cpe: cpe:2.3:a:edge:edge:*:*:*:*:*:*:*:*
         words:
           - 'Sign in - edge Accounts'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: edge-2
+        cpe: cpe:2.3:a:edge:edge:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"microsoft.com")'
-# digest: 490a00463044022065bc8beb25d009410f9274d582e08cee7f1688183d905fad2662804cad39b6f7022028f4343cf88f2286276d1ce82573750e981bf300983eeaf8d96b4e5805055dfd:922c64590222798bb761d5b6d8e72950

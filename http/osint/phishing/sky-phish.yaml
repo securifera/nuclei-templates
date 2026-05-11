@@ -8,8 +8,12 @@ info:
     A sky phishing website was detected
   reference:
     - https://sky.com
+  classification:
+    cpe: cpe:2.3:a:sky:sky:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sky
+    product: sky
   tags: phishing,sky,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sky
+        cpe: cpe:2.3:a:sky:sky:*:*:*:*:*:*:*:*
         words:
           - 'Discover TV, Broadband & Mobile Phone Packages with Sky'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: sky-2
+        cpe: cpe:2.3:a:sky:sky:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"sky.com")'
-# digest: 490a00463044022023dd5858ce1a4cd3853a55294669fdb1e86a6efcbb7d84b68e8b5eeb72224c36022071fcd92639cbf4b364dbef461d2d42f5a7bc0954a8ddf13e5529c7b65b7c5ade:922c64590222798bb761d5b6d8e72950

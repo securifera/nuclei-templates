@@ -6,11 +6,14 @@ info:
   severity: info
   description: Parler archived posts user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:parler-archived-posts:parler-archived-posts:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: parler-archived-posts
+    product: parler-archived-posts
   tags: osint,osint-archived,parler-archived-posts,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: parler-archived-posts
+        cpe: cpe:2.3:a:parler-archived-posts:parler-archived-posts:*:*:*:*:*:*:*:*
         part: body
         words:
           - "\"archived_snapshots\": {\"closest\""
-# digest: 490a0046304402200dd49ec608b4c462c26e912a894501c7739e675c3090287a42eecd64c0f6ed240220147e25e7f6c943927de54f3e904fcd3af828351c4e3c8d2a2c878a685c61e87b:922c64590222798bb761d5b6d8e72950

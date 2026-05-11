@@ -5,9 +5,13 @@ info:
   author: dhiyaneshDK
   severity: low
   description: ViewPoint System status page is exposed.
+  classification:
+    cpe: cpe:2.3:a:viewpoint:viewpoint:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"ViewPoint System Status"
+    vendor: viewpoint
+    product: viewpoint
   tags: status,exposure,viewpoint,misconfig,vuln
 
 http:
@@ -18,10 +22,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: viewpoint
+        cpe: cpe:2.3:a:viewpoint:viewpoint:*:*:*:*:*:*:*:*
         words:
           - '<title>ViewPoint System Status</title>'
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201496f0ce5af9a47d6cbfcc70792955c653ff0cb78f809ff3cccc5f639db17d96022100835b23015b7caf5b59bee5344ee61ca896ea536c713249d86948e9a9daf18028:922c64590222798bb761d5b6d8e72950

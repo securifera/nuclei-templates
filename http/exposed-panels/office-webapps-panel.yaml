@@ -33,6 +33,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: office_web_apps_server
+        cpe: cpe:2.3:a:microsoft:office_web_apps_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Provide a link that opens Word"
@@ -40,9 +42,10 @@ http:
         condition: and
 
       - type: word
+        name: office_web_apps_server-2
+        cpe: cpe:2.3:a:microsoft:office_web_apps_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "_OFUError"
           - "Wrong file type"
         condition: and
-# digest: 490a0046304402201e1cb00b45bee90f8fab6978c5de99446d08eec40b223521d3b4dcc5caac35580220223ac3d9b655ae52f51e47d952bf493490d40077ac77e164a459c1aa827d0410:922c64590222798bb761d5b6d8e72950

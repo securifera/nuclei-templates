@@ -6,11 +6,14 @@ info:
   severity: info
   description: F3 user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:f3:f3:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: f3
+    product: f3
   tags: osint,osint-social,f3,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: f3
+        cpe: cpe:2.3:a:f3:f3:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>@"
-# digest: 4a0a00473045022100f21f421e9bea5a95ecf1b8665a599be4035e78b24b55516f96f20bb07314f929022021c50d29c3b1fc53d1edfd4c1a628392ae5ce8d12069722b09c0ef2c363711ec:922c64590222798bb761d5b6d8e72950

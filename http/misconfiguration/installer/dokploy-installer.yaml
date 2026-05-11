@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Dokploy is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:dokploy:dokploy:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="Dokploy" && body="setup the server"
+    vendor: dokploy
+    product: dokploy
   tags: misconfig,dokploy,install,exposure,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dokploy
+        cpe: cpe:2.3:a:dokploy:dokploy:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Setup the server'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ca47874bb8fce053a412c36a732d88e930ace06519da437090e15ad1d9cb099a0220545214d6c6bf63e415da68077dd9984e0c36451903a0c682481e8f028cefc905:922c64590222798bb761d5b6d8e72950

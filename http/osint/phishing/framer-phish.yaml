@@ -8,8 +8,12 @@ info:
     A Framer phishing website was detected
   reference:
     - https://framer.com
+  classification:
+    cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: framer
+    product: framer
   tags: phishing,framer,design,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: framer
+        cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
         words:
           - '<title>Framer: Create a professional website, free. No code website builder loved by designers.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: framer-2
+        cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"framer.com")'
-# digest: 4a0a00473045022100867da4df1a4f4c91b42623d6539e7f85ed2b1760528bb93d4da4ba56da01ab7802203128b886eb1f59b3b718563b311c0c6aa897bb2aafc4ef704fe32e5793d432a0:922c64590222798bb761d5b6d8e72950

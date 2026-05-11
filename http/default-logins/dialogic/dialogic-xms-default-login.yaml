@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Dialogic XMS Admin Console was using default credentials and it was discovered.
+  classification:
+    cpe: cpe:2.3:a:dialogic:dialogic:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Dialogic XMS Admin Console"
+    vendor: dialogic
+    product: dialogic
   tags: dialogic,admin,default-login,vuln
 
 http:
@@ -31,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dialogic
+        cpe: cpe:2.3:a:dialogic:dialogic:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'DialogicDojo'
@@ -42,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200b25a677f4ec50ee7a298f91eead07cb655c4b239099faadb44fee777d468bd8022100cc70064109ad46efc59d82f5122eee81b6bc7d73a2a987b656789fc1824bae86:922c64590222798bb761d5b6d8e72950

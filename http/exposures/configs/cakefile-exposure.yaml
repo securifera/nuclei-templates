@@ -9,10 +9,13 @@ info:
   reference:
     - https://coffeescript.org/v2/#cake
   classification:
+    cpe: cpe:2.3:a:cakefile:cakefile:*:*:*:*:*:*:*:*
     cwe-id: CWE-538
   metadata:
     verified: true
     max-request: 7
+    vendor: cakefile
+    product: cakefile
   tags: exposure,config,coffeescript,cakefile
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cakefile
+        cpe: cpe:2.3:a:cakefile:cakefile:*:*:*:*:*:*:*:*
         words:
           - "task "
           - "require "
@@ -38,6 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: cakefile-2
+        cpe: cpe:2.3:a:cakefile:cakefile:*:*:*:*:*:*:*:*
         words:
           - "<!DOCTYPE"
           - "<html"
@@ -46,6 +53,8 @@ http:
         negative: true
 
       - type: word
+        name: cakefile-3
+        cpe: cpe:2.3:a:cakefile:cakefile:*:*:*:*:*:*:*:*
         words:
           - "coffee"
           - "spawn"
@@ -57,4 +66,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f82600ea5dbfc2305c0d346ba3013a73337b078657d69af9cf8acc6082bfeae9022100d1b6b92ffa0050f679f610eec3c89248a7a6ac4d8d539118b3aac49650077cad:922c64590222798bb761d5b6d8e72950

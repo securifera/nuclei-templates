@@ -8,8 +8,12 @@ info:
     A TD Bank phishing website was detected
   reference:
     - https://td.com
+  classification:
+    cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank
+    product: bank
   tags: phishing,td-bank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         words:
           - "Explore TD's online banking services, credit cards, checking accounts, savings accounts, loans and more financial products for you and your business."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-2
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"td.com")'
-# digest: 4a0a00473045022100a68ece06d903e4752f18c0e29554399f83a3bccb238df339bad7423b796b0d53022021fbad9226b04a05961f1a8b2aaacd83f8f33451c6e720f6e1ae4423d4b624f3:922c64590222798bb761d5b6d8e72950

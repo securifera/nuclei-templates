@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aerohive_netconfig
+        cpe: cpe:2.3:h:extremenetworks:aerohive_netconfig:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Aerohive NetConfig UI</title>'
@@ -39,4 +41,3 @@ http:
         group: 1
         regex:
           - 'version" align="right" valign="bottom">([0-9.a-z]+)<\/td>'
-# digest: 490a0046304402207cb64783aa74b01564c98830875ee985645dcf847d730ae2929b97351956037a02206c9705e3dba1b1cb70853a7d6544f04ff1a70b053382c600ac71be4232b19f9b:922c64590222798bb761d5b6d8e72950

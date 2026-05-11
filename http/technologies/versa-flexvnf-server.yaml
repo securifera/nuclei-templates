@@ -8,8 +8,12 @@ info:
     Versa FlexVNF Server Detection (magic request params exposes Server signature/version)
   reference:
     - https://versa-networks.com/products/components/
+  classification:
+    cpe: cpe:2.3:a:versa-networks:flexvnf:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: versa-networks
+    product: flexvnf
   tags: tech,versa,flexvnf,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: flexvnf
+        cpe: cpe:2.3:a:versa-networks:flexvnf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Server: Versa"
@@ -38,4 +44,3 @@ http:
         part: header
         kval:
           - Server
-# digest: 4b0a00483046022100a602587c66de95351f17ac65b688c84b3b41c5ae80ae0f49b3d8cef6e7b461c2022100e71e5b5366b28f28675583962d309b8a06ee6d8549e75bd4ec660eb66eb2d1d9:922c64590222798bb761d5b6d8e72950

@@ -5,10 +5,14 @@ info:
   author: tess
   severity: low
   description: Confluence Dashboard is exposed.
+  classification:
+    cpe: cpe:2.3:a:confluence:confluence:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Dashboard - Confluence"
+    vendor: confluence
+    product: confluence
   tags: misconfig,exposure,confluence,atlassian,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: confluence
+        cpe: cpe:2.3:a:confluence:confluence:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Dashboard - Confluence'
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: confluence-2
+        cpe: cpe:2.3:a:confluence:confluence:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fe42233bee6cdc149d8dcf764f55fe3a2b074afe7728ea405c842f82ba2200ac02200fd8861c7954bf83f0f6b4a977f0d362e97b9078fde73bb8b0107b368abeb48f:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6486
   classification:
+    cpe: cpe:2.3:a:tuxedo:tuxedo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tuxedo
+    product: tuxedo
   tags: panel,tuxedo,edb,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tuxedo
+        cpe: cpe:2.3:a:tuxedo:tuxedo:*:*:*:*:*:*:*:*
         words:
           - '<title>Tuxedo Connected Controller</title>'
         part: body
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205f6eca25f49da2ba26cc28e8722f91e90f1927dee75eb743bc8b6865d305694a02210085863b31187a7e6bc261447955046827e68aad1773a60cd0c8f5537e691e4e54:922c64590222798bb761d5b6d8e72950

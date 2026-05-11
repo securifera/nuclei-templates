@@ -9,10 +9,13 @@ info:
   reference:
     - https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/nginx
   classification:
+    cpe: cpe:2.3:a:status:status:*:*:*:*:*:*:*:*
     cwe-id: CWE-22
   metadata:
     verified: true
     shodan-query: "server:nginx"
+    vendor: status
+    product: status
   tags: nginx,status,disclosure,bypass,misconfig
 
 flow: http(1) && (http(2) || http (3))
@@ -24,6 +27,8 @@ http:
 
     matchers:
       - type: dsl
+        name: status
+        cpe: cpe:2.3:a:status:status:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 403"
         internal: true
@@ -52,6 +57,8 @@ http:
 
     matchers:
       - type: dsl
+        name: status-2
+        cpe: cpe:2.3:a:status:status:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "Active connections:")'
@@ -65,8 +72,9 @@ http:
 
     matchers:
       - type: dsl
+        name: status-3
+        cpe: cpe:2.3:a:status:status:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "Active connections:")'
         condition: and
-# digest: 4a0a00473045022100dfd848ecc70909cd1d833ea5051419a90b3fffe0fa3be5cd7a5b338277caecb402204e75641d67e37ed61daebaba3b336e03f17c1493e9ee34515b038cb467575651:922c64590222798bb761d5b6d8e72950

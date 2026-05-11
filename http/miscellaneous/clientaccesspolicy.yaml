@@ -4,8 +4,12 @@ info:
   name: Silverlight cross-domain policy
   author: emadshanab
   severity: info
+  classification:
+    cpe: cpe:2.3:a:clientaccesspolicy:clientaccesspolicy:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: clientaccesspolicy
+    product: clientaccesspolicy
   tags: miscellaneous,misc,vuln
 
 http:
@@ -16,6 +20,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: clientaccesspolicy
+        cpe: cpe:2.3:a:clientaccesspolicy:clientaccesspolicy:*:*:*:*:*:*:*:*
         words:
           - "<access-policy>"
           - "<cross-domain-access>"
@@ -25,4 +31,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210083a9a4251b8e7591d4a4c4392bec7beab036c981821244221feaefac6fedeea402207ebf48ea2c6d4d956639a1e4e5ca7dd9d5c9b00066480655d0a2516345695d4e:922c64590222798bb761d5b6d8e72950

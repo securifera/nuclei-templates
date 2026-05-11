@@ -8,8 +8,12 @@ info:
   reference:
     - https://holidayapi.com/docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/holiday-api
+  classification:
+    cpe: cpe:2.3:a:holidayapi:holidayapi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: holidayapi
+    product: holidayapi
   tags: token-spray,holidayapi
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: holidayapi
+        cpe: cpe:2.3:a:holidayapi:holidayapi:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"holidays":'
           - '"name":'
           - '"date":'
         condition: and
-# digest: 490a0046304402202d921d18cccd0fecae09629519819c7f953874eeb206c81a0aa8dc9620e1205e02201777caf4166c6abb7446d6bd914afa7c8dd54b4d177be5cc74b127686e822268:922c64590222798bb761d5b6d8e72950

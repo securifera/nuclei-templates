@@ -8,9 +8,12 @@ info:
   reference:
     - https://web.archive.org/web/20230414152023/https://noahblog.360.cn/apache-solr-rce/
   classification:
+    cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
     cwe-id: CWE-15,CWE-94,CWE-99
   metadata:
     max-request: 2
+    vendor: apache
+    product: solr
   tags: solr,apache,rce,oast,intrusive,vuln
 
 http:
@@ -35,12 +38,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: solr
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "http"
 
       - type: word
+        name: solr-2
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         part: interactsh_request
         words:
           - "User-Agent: Java"
-# digest: 490a00463044022064d72da0179e45a35d41b15a5cc6e64f7b541cf9195a8c1df950ea63bfcfa6f8022049d1861aca3193ec6bf9e65f8a038713fbd933eeda48787870a654daed5d9005:922c64590222798bb761d5b6d8e72950

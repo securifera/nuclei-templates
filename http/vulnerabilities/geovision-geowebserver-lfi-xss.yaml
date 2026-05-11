@@ -10,11 +10,14 @@ info:
     - https://www.geovision.com.tw/cyber_security.php
     - https://www.exploit-db.com/exploits/50211
   classification:
+    cpe: cpe:2.3:a:geovision:geowebserver:*:*:*:*:*:*:*:*
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 3
     shodan-query: title:"Geowebserver"
+    vendor: geovision
+    product: geowebserver
   tags: geovision,geowebserver,lfi,xss,vuln
 
 http:
@@ -36,6 +39,7 @@ http:
     matchers:
       - type: dsl
         name: lfi
+        cpe: cpe:2.3:a:geovision:geowebserver:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "for 16-bit", "[fonts]", "[extensions]")'
           - 'contains(content_type, "application/octet-stream")'
@@ -44,9 +48,9 @@ http:
 
       - type: dsl
         name: xss
+        cpe: cpe:2.3:a:geovision:geowebserver:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "<script>alert(document.domain)</script>={\"AeDebug")'
           - 'contains(content_type, "text/html")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100a16b53a625d9b169c6e33b0753fd23872f7577fe7c2541bf3a7599a897ccf27f02207b3b070c513af9c34b0c8e6b720b03434a4a6e2007433f8dc8749dfa905ea47e:922c64590222798bb761d5b6d8e72950

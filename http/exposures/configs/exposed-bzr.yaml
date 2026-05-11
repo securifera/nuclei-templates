@@ -8,11 +8,14 @@ info:
   reference:
     - http://doc.bazaar.canonical.com/beta/en/user-reference/configuration-help.html
   classification:
+    cpe: cpe:2.3:a:exposed-bzr:exposed-bzr:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: exposed-bzr
+    product: exposed-bzr
   tags: config,exposure,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: exposed-bzr
+        cpe: cpe:2.3:a:exposed-bzr:exposed-bzr:*:*:*:*:*:*:*:*
         words:
           - "parent_location"
           - "push_location"
@@ -33,7 +38,8 @@ http:
           - 200
 
       - type: word
+        name: exposed-bzr-2
+        cpe: cpe:2.3:a:exposed-bzr:exposed-bzr:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
-# digest: 490a004630440220089f14ac98cb85473408692b96af15b22520af2dcb49f9506e0ef3813d15fa780220784ec485341d7531f7afdf760e2944e39947d0ae2b72c8c80335f4769def22c0:922c64590222798bb761d5b6d8e72950

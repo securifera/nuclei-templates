@@ -7,8 +7,12 @@ info:
   description: secnet ac default admin credentials were successful.
   reference:
     - https://bbs.secnet.cn/post/t-30
+  classification:
+    cpe: cpe:2.3:a:secnet:secnet:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: secnet
+    product: secnet
   tags: default-login,secnet,vuln
 
 http:
@@ -30,11 +34,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: secnet
+        cpe: cpe:2.3:a:secnet:secnet:*:*:*:*:*:*:*:*
         part: body
         words:
           - "window.open('index.htm"
 
       - type: word
+        name: secnet-2
+        cpe: cpe:2.3:a:secnet:secnet:*:*:*:*:*:*:*:*
         part: header
         words:
           - "ac_userid={{username}},ac_passwd="
@@ -42,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f92b241502c844d5b0b44d7c547d2faf3cc8fa2018236f96bbff70492e5d6a1a0220698f670afd53f6840f8d940222a6c52ef5c61885a5d6c68ee81640c987a2e820:922c64590222798bb761d5b6d8e72950

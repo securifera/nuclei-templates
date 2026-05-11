@@ -9,12 +9,15 @@ info:
   reference:
     - https://docs.checkmarx.com/en/34965-44074-checkmarx-sast.html
   classification:
+    cpe: cpe:2.3:a:checkmarx:checkmarx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 3
     verified: true
     shodan-query: http.html:"CxSASTManagerUri"
+    vendor: checkmarx
+    product: checkmarx
   tags: panel,checkmarx,detect,login,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: checkmarx
+        cpe: cpe:2.3:a:checkmarx:checkmarx:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "cxsastmanageruri", "cxauthorityconfigurations", "/cxwebclient/webapp/", "sast_api", "sast_rest_api" , "sast-permissions", "hotfix")'
@@ -38,4 +43,3 @@ http:
         group: 1
         regex:
           - '(?i)"version":\s*"([0-9.]+)"'
-# digest: 490a004630440220040429bc0ecc85b68f759948347a179090fd2eb8fbf0bac84e6a1f18bbca4c2102205e9e906ddea6f170ac8f758fd725ee6b48c2ea1bf24554e0d4fb5c28deaa18a5:922c64590222798bb761d5b6d8e72950

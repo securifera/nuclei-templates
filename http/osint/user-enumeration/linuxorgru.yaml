@@ -6,11 +6,14 @@ info:
   severity: info
   description: Linux.org.ru user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:linuxorgru:linuxorgru:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: linuxorgru
+    product: linuxorgru
   tags: osint,osint-tech,linuxorgru,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: linuxorgru
+        cpe: cpe:2.3:a:linuxorgru:linuxorgru:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Дата регистрации"
-# digest: 4a0a0047304502206357239413511c3a6612e0ae6bbf25c57db7892d741a1d83c6eb5f5965ea538b022100e045898d879aa6a9bb825d01e76fe32a6759006c3eccf46224f52a228e337947:922c64590222798bb761d5b6d8e72950

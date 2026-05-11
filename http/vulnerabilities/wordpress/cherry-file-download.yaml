@@ -9,11 +9,14 @@ info:
     - https://wpscan.com/vulnerability/90034817-dee7-40c9-80a2-1f1cd1d033ee
     - https://github.com/CherryFramework/cherry-plugin
   classification:
+    cpe: cpe:2.3:a:cherry:cherry:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: cherry
+    product: cherry
   tags: wordpress,wp-plugin,lfi,wpscan,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cherry
+        cpe: cpe:2.3:a:cherry:cherry:*:*:*:*:*:*:*:*
         words:
           - "DB_NAME"
           - "DB_PASSWORD"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f360fcb19373f394d0a28000877b5b4271fa663945fadb9fdf2e6396a1daed4202201f0bfd5315a70332e01b954ef7c58800f68fb158d91457dae71f5e358e15760b:922c64590222798bb761d5b6d8e72950

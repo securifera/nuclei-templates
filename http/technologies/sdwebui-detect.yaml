@@ -29,6 +29,8 @@ http:
 
     matchers:
       - type: dsl
+        name: stable-diffusion-webui
+        cpe: cpe:2.3:a:automatic1111:stable-diffusion-webui:*:*:*:*:*:*:*:*
         dsl:
           - contains_all(body, "hires_fix.js", "AUTOMATIC1111", "gradio_config")
           - status_code == 200

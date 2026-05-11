@@ -8,8 +8,12 @@ info:
     A CustomInk phishing website was detected
   reference:
     - https://customink.com
+  classification:
+    cpe: cpe:2.3:a:customink:customink:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: customink
+    product: customink
   tags: phishing,customink,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: customink
+        cpe: cpe:2.3:a:customink:customink:*:*:*:*:*:*:*:*
         words:
           - 'CustomInk'
           - '<title>Custom T-shirts - Design T-shirts, Apparel & Promo Products Online'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: customink-2
+        cpe: cpe:2.3:a:customink:customink:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"customink.com")'
-# digest: 4a0a00473045022100c239fd1cc8e9382c96fb90d15b11499f5667dfb3adeeacbf2e956ba9faf4e49502207f7eb5d78951a94b5ebbf964467bdfb7639919b90a66326ec98ef6c4128cbe31:922c64590222798bb761d5b6d8e72950

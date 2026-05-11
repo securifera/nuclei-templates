@@ -29,11 +29,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ckan
+        cpe: cpe:2.3:a:okfn:ckan:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<option value="/en/?{alert(document.domain)}" selected="selected">'
 
       - type: word
+        name: ckan-2
+        cpe: cpe:2.3:a:okfn:ckan:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ckan 2.3'
@@ -41,6 +45,8 @@ http:
         condition: or
 
       - type: word
+        name: ckan-3
+        cpe: cpe:2.3:a:okfn:ckan:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -48,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f047bfa1cc4638ef5e3e8bb5b2647dedc940cab0a1c9530d953a1ba4d06a127a022100d01a4046fba36c4adf7a684dc52993e917395be4e80905eb9eb4773cb853a3ad:922c64590222798bb761d5b6d8e72950

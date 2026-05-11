@@ -9,10 +9,14 @@ info:
   reference:
     - https://gitee.com/cute-guy/Penetration_Testing_POC/blob/master/%E6%B3%9B%E5%BE%AEe-mobile%20ognl%E6%B3%A8%E5%85%A5.md
     - https://reconshell.com/vulnerability-research-list/
+  classification:
+    cpe: cpe:2.3:a:fanwei:emobile:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: app="泛微-eMobile"
+    vendor: fanwei
+    product: emobile
   tags: cnvd,cnvd2017,emobile,ognl,fanwei,vuln
 variables:
   num1: "{{rand_int(800000, 999999)}}"
@@ -30,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: emobile
+        cpe: cpe:2.3:a:fanwei:emobile:*:*:*:*:*:*:*:*
         part: body
         words:
           - "{{result}}"
@@ -37,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022020de98748c1d57f2d433fada54b18a5d694de50397596590fd676780994078d6022074431f0535d7762597eda2e137c90e7a608be2829164f8e202e54ea4b7ba3818:922c64590222798bb761d5b6d8e72950

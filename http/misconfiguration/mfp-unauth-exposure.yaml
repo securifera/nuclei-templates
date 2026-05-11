@@ -11,9 +11,13 @@ info:
     - https://support.princh.com/en/the-onboarding-process-1
     - https://mopria.org/spec-download
     - https://github.com/xJonathanLEI/escl-rs
+  classification:
+    cpe: cpe:2.3:a:mfp-unauth:mfp-unauth:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
+    vendor: mfp-unauth
+    product: mfp-unauth
   tags: network,iot,printer,misconfig,escl,vuln
 
 http:
@@ -24,12 +28,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mfp-unauth
+        cpe: cpe:2.3:a:mfp-unauth:mfp-unauth:*:*:*:*:*:*:*:*
         words:
           - "xmlns:pwg="
           - "<scan:ScannerCapabilities"
         condition: and
 
       - type: word
+        name: mfp-unauth-2
+        cpe: cpe:2.3:a:mfp-unauth:mfp-unauth:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/xml"
@@ -47,4 +55,3 @@ http:
           - '<(?:pwg:)?SerialNumber>([^<]+)</(?:pwg:)?SerialNumber>'
           - '<(?:pwg:)?Model>([^<]+)</(?:pwg:)?Model>'
           - '<(?:pwg:)?MakeAndModel>([^<]+)</(?:pwg:)?MakeAndModel>'
-# digest: 4b0a00483046022100f6798c80fcb058cae61ead76e0c647380af9ed31a918952732e075b2c32179aa022100f8b9372feffbdb530507473814ef619a323735b20c39f1f927b7a61474573895:922c64590222798bb761d5b6d8e72950

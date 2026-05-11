@@ -8,8 +8,12 @@ info:
     A norton phishing website was detected
   reference:
     - https://norton.com
+  classification:
+    cpe: cpe:2.3:a:norton:norton:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: norton
+    product: norton
   tags: phishing,norton,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: norton
+        cpe: cpe:2.3:a:norton:norton:*:*:*:*:*:*:*:*
         words:
           - 'Official Site | Norton™ - Antivirus &amp; Anti-Malware Software'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: norton-2
+        cpe: cpe:2.3:a:norton:norton:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"norton.com")'
-# digest: 4b0a00483046022100bffef9986652ececfc606496cc4abbf825a5dd62336c6dad276042b65167b610022100fc5946bd1e426fe043e528590839b5277189be32b5bec32ce8f79f2fc77311da:922c64590222798bb761d5b6d8e72950

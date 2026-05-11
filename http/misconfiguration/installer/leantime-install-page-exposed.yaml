@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/leantime/leantime
     - https://docs.leantime.io/installation/package-installation
+  classification:
+    cpe: cpe:2.3:a:leantime:leantime:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -25,9 +27,10 @@ http:
 
     matchers:
       - type: dsl
+        name: leantime
+        cpe: cpe:2.3:a:leantime:leantime:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "leantime-version", "create an administrator account")'
           - 'contains(content_type, "text/html")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022014480baafee16dc7853cecccce4dd40dee23648a9434d6a3bdba7875bad27134022100a0b71a1b7667ae7e6bc4eca35e07f1bbdb315c784be2b7ee156f65906b3170f1:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: high
   reference:
     - http://cdn.cnetcontent.com/73/f6/73f6abc0-ef95-48d8-a55f-5ea3f5816332.pdf
+  classification:
+    cpe: cpe:2.3:a:r470t:r470t:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "r470t"
+    vendor: r470t
+    product: r470t
   tags: tp-link,r470t,default-login,misconfig,vuln
 
 variables:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: r470t
+        cpe: cpe:2.3:a:r470t:r470t:*:*:*:*:*:*:*:*
         part: response
         words:
           - "SystemStatisticRpm"
@@ -39,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220296fa83beb9568920adfa03885276e52a8eab6b47eb988844b4edef6b64fa59102205a455c1d864ce149982eb970391bf07a6aab4308bd842978255dc74efbe4d97c:922c64590222798bb761d5b6d8e72950

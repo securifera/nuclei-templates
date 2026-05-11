@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDK
   severity: high
   description: Akeeba Backup is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:akeeba:akeeba:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Akeeba Backup"
+    vendor: akeeba
+    product: akeeba
   tags: misconfig,akeeba,install,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: akeeba
+        cpe: cpe:2.3:a:akeeba:akeeba:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Akeeba Backup Installer'
@@ -26,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204b761c758bbd3c7d9c9a2b4b4c2de81eac8bded21d9c7d321ea89ac5bdb68f2302203ef6ea42a2295adcf1780f75634d7926c881d82d8766905d0524cb3a8c21649b:922c64590222798bb761d5b6d8e72950

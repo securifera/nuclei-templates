@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/GREENHAT7/pxplan/blob/e2fc04893ca95e177021ddf61cc2134ecc120a8e/xray_pocs/yaml-poc-eqccd-eqccd_oa-sql_injection-CT-456760.yml#L8
   classification:
+    cpe: cpe:2.3:a:cloud:cloud:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="全程云办公" && body="/OA/WebResource.axd"
+    vendor: cloud
+    product: cloud
   tags: cloud,cloudoa,sqli,vuln
 variables:
   num: "999999999"
@@ -37,6 +40,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cloud
+        cpe: cpe:2.3:a:cloud:cloud:*:*:*:*:*:*:*:*
         part: body
         words:
           - "System.Data.SqlClient.SqlException"
@@ -44,6 +49,8 @@ http:
         condition: and
 
       - type: word
+        name: cloud-2
+        cpe: cpe:2.3:a:cloud:cloud:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/xml
@@ -51,4 +58,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4a0a00473045022100d386542cce5eff5f85853522f380647a1062a669e6bfa6f5b47492e623a8d50402200be0b8c6adc502fe3431743b98499d3d4894903b2146776cce65664f7873a101:922c64590222798bb761d5b6d8e72950

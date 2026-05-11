@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: royal-elementor-addons
+        cpe: cpe:2.3:a:royal-elementor-addons:royal-elementor-addons:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

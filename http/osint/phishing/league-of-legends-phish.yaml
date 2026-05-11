@@ -8,8 +8,12 @@ info:
     A League of Legends phishing website was detected
   reference:
     - https://leagueoflegends.com
+  classification:
+    cpe: cpe:2.3:a:league-of-legends:league-of-legends:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: league-of-legends
+    product: league-of-legends
   tags: phishing,league-of-legends,riot-games,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: league-of-legends
+        cpe: cpe:2.3:a:league-of-legends:league-of-legends:*:*:*:*:*:*:*:*
         words:
           - "League of Legends is a team-based game with over 140 champions to make epic plays with. Play now for free."
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: league-of-legends-2
+        cpe: cpe:2.3:a:league-of-legends:league-of-legends:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"leagueoflegends.com")'
           - '!contains(host,"riotgames.com")'
-# digest: 4b0a00483046022100c22d605a7d80c9b5e4387f23b30dba93fd7fead1280dfd0348a32b7f90bf17c8022100969fa3de66fbc26078795ce06b68c30d86a53d1f25eb5cc836193e6129b5e8c3:922c64590222798bb761d5b6d8e72950

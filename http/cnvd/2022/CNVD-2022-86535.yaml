@@ -10,9 +10,13 @@ info:
     - https://cn-sec.com/archives/1465289.html
     - https://blog.csdn.net/qq_60614981/article/details/128724640
     - https://www.cnvd.org.cn/flaw/show/CNVD-2022-86535
+  classification:
+    cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
+    vendor: thinkphp
+    product: thinkphp
   tags: cnvd,cnvd2022,thinkphp,rce,vuln
 
 http:
@@ -31,14 +35,17 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: thinkphp
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: set_cookie
         words:
           - "think_lang=..%2F..%2F..%2F..%2F"
 
       - type: word
+        name: thinkphp-2
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: body_3
         words:
           - "CONFIGURATION"
           - "Successfully created"
         condition: and
-# digest: 490a004630440220659e863fdc65f9f8f3274ff925429b4d4fff5a79bf41cae478bea2d10c9420c702204c7b685ccd81ca00f8bb308c28e65184da11db5ac1901ae80e529ea2c73465c3:922c64590222798bb761d5b6d8e72950

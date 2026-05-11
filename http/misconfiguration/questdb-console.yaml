@@ -8,6 +8,7 @@ info:
   reference:
     - https://questdb.io/docs/develop/web-console/
   classification:
+    cpe: cpe:2.3:a:questdb:questdb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"QuestDB · Console"
+    vendor: questdb
+    product: questdb
   tags: misconfig,questdb,exposure,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: questdb
+        cpe: cpe:2.3:a:questdb:questdb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "QuestDB · Console"
@@ -35,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: questdb-2
+        cpe: cpe:2.3:a:questdb:questdb:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -42,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220376c800a35d00a34f92a993cd9fa0ea6684001a54faf1a40c2de295e79bcc9cd0220495cd1d54ddd986f0f09e662f0c1c7da5120823fc32a09459cdc92b09a2b5a9f:922c64590222798bb761d5b6d8e72950

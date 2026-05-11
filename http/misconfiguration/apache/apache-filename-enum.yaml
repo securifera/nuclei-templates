@@ -8,8 +8,12 @@ info:
   reference:
     - https://hackerone.com/reports/210238
     - https://www.acunetix.com/vulnerabilities/web/apache-mod_negotiation-filename-bruteforcing/
+  classification:
+    cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: apache
+    product: apache
   tags: apache,misconfig,hackerone,vuln
 
 http:
@@ -27,9 +31,10 @@ http:
           - 406
 
       - type: word
+        name: apache
+        cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
         words:
           - "Not Acceptable"
           - "Available variants:"
           - "<address>Apache Server at"
         condition: and
-# digest: 490a0046304402207f982ee48d27ad07f6e8e9882292f013f9152f90b48454da5103b116869da0910220365d5d117a7bf0ba115cf87332612a045fcb362934b79f8befa6faa34fa00f2e:922c64590222798bb761d5b6d8e72950

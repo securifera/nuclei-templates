@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.tectuus.mx/
   classification:
+    cpe: cpe:2.3:a:tectuus:scada:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tectuus
+    product: scada
   tags: panel,tectuus,scada,discovery
 
 http:
@@ -26,7 +29,8 @@ http:
           - 200
 
       - type: word
+        name: scada
+        cpe: cpe:2.3:a:tectuus:scada:*:*:*:*:*:*:*:*
         words:
           - "<title>SCADAmonitor</title>"
         part: body
-# digest: 4a0a0047304502206feb79405f169f7f3d155f9890d565b094e06acfdab6024ae6a348d7141d5846022100b0bbea63d69fe260dd4e4abbcfa72b5a4dd55ff891c2947221f43184c6c6898d:922c64590222798bb761d5b6d8e72950

@@ -9,9 +9,13 @@ info:
     - https://www.wireguard.com/quickstart/
     - https://manpages.debian.org/testing/wireguard-tools/wg.8.en.html
     - https://gist.github.com/lanceliao/5d2977f417f34dda0e3d63ac7e217fd
+  classification:
+    cpe: cpe:2.3:a:wireguard:wireguard:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: wireguard
+    product: wireguard
   tags: wireguard,exposure,tokens,vuln
 
 http:
@@ -24,4 +28,3 @@ http:
         part: body
         regex:
           - PrivateKey\s*=\s*([A-Za-z0-9+/]{43}=)
-# digest: 4b0a00483046022100d1932c671c4de24876cc12370d5eb412c8fa3e68e68604cab9276992c5075213022100e73979f2b6a7d323258e67ad93ddaa0baf510b168304bc6a16ec10ff0379b788:922c64590222798bb761d5b6d8e72950

@@ -33,10 +33,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         words:
           - '<title>CRX Package Manager</title>'
 
       - type: word
+        name: experience_manager-2
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -44,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206ddfe39915fc86dc47543c25628ea2ee1b57e715c14b03c0d22c4d59e5628c82022100f4e25ae7a712ebaac4ef2d924c91e16e55cd7a4ebb4c5c96ea14da5c95a6307e:922c64590222798bb761d5b6d8e72950

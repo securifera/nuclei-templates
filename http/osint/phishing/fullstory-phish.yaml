@@ -8,8 +8,12 @@ info:
     A FullStory phishing website was detected
   reference:
     - https://fullstory.com
+  classification:
+    cpe: cpe:2.3:a:fullstory:fullstory:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: fullstory
+    product: fullstory
   tags: phishing,fullstory,analytics,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fullstory
+        cpe: cpe:2.3:a:fullstory:fullstory:*:*:*:*:*:*:*:*
         words:
           - '<title>FullStory | Digital Experience Intelligence Platform'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: fullstory-2
+        cpe: cpe:2.3:a:fullstory:fullstory:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"fullstory.com")'
-# digest: 4b0a00483046022100e2e979d674812dc475c5c9d23f30381c6a5cc676d7d16aca32539c41b5b23941022100ff0868808848204d74312c35cb567866e489f8f284e11dc1fe49bd92cd84fe06:922c64590222798bb761d5b6d8e72950

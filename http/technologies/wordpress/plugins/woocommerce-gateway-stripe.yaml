@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: woocommerce-gateway-stripe
+        cpe: cpe:2.3:a:woocommerce-gateway-stripe:woocommerce-gateway-stripe:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

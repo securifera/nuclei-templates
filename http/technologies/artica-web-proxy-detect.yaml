@@ -4,8 +4,12 @@ info:
   name: Artica Web Proxy Detect
   author: dwisiswant0
   severity: info
+  classification:
+    cpe: cpe:2.3:a:articatech:artica_web_proxy:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: articatech
+    product: artica_web_proxy
   tags: tech,artica,proxy,discovery
 
 http:
@@ -16,10 +20,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: artica_web_proxy
+        cpe: cpe:2.3:a:articatech:artica_web_proxy:*:*:*:*:*:*:*:*
         words:
           - "Welcome to the Artica Web Administration Interface"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e95e06ef47bf9c9e41bce0f00079bf09b95fc92972366ccc6b8d316c55320419022100f808e9f546ecb3fbd0ccac20fd59a7a6619aa76ec0d1e896230e0af52e2514b6:922c64590222798bb761d5b6d8e72950

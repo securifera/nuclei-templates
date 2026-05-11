@@ -6,11 +6,14 @@ info:
   severity: info
   description: Buymeacoffee user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:buymeacoffee:buymeacoffee:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: buymeacoffee
+    product: buymeacoffee
   tags: osint,osint-finance,buymeacoffee,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: buymeacoffee
+        cpe: cpe:2.3:a:buymeacoffee:buymeacoffee:*:*:*:*:*:*:*:*
         part: body
         words:
           - "supporters"
-# digest: 4a0a00473045022059811b3d9b52ae7cad0c5bd0ef9d79d66a03aceda9b358f487569e4d8f37e15c022100e24e71c7459fdb34f612116837752d652fa0e09268406e320ff8ff1ea0fb606a:922c64590222798bb761d5b6d8e72950

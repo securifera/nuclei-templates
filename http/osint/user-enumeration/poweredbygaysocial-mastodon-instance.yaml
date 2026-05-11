@@ -6,11 +6,14 @@ info:
   severity: info
   description: Poweredbygay.social (Mastodon Instance) user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:poweredbygaysocial-mastodon:poweredbygaysocial-mastodon:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: poweredbygaysocial-mastodon
+    product: poweredbygaysocial-mastodon
   tags: osint,osint-social,poweredbygaysocial-mastodon-instance,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: poweredbygaysocial-mastodon
+        cpe: cpe:2.3:a:poweredbygaysocial-mastodon:poweredbygaysocial-mastodon:*:*:*:*:*:*:*:*
         part: body
         words:
           - "display_name"
-# digest: 490a0046304402204bdba79fc6fba09f12bca5191c8f64eb2e9b7439323b5ab016394603c0d074e20220023a333d1d8246c21169966201ae13794315b9dfe2ae86b258e0a9a34ace311c:922c64590222798bb761d5b6d8e72950

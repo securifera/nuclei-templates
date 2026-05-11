@@ -7,9 +7,13 @@ info:
   description: Interact Software was detected.
   reference:
     - https://www.interactsoftware.com
+  classification:
+    cpe: cpe:2.3:a:interactsoftware:interact:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: interactsoftware
+    product: interact
   tags: panel,interactsoftware,interact,detect,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: interact
+        cpe: cpe:2.3:a:interactsoftware:interact:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'www.interactsoftware.com'
@@ -40,4 +46,3 @@ http:
         group: 1
         regex:
           - '(?:v=)([0-9]+\.[0-9]+\.?[0-9]*\.?[0-9]*)'
-# digest: 4a0a00473045022100f1d573c48590e5917d8bf47a45594e50317c6acc20b2468be920fc88e3611f1d02207fbc9e6b7296556832446973f07e268a91e5b8f3199426a45fdb8581e8f5de85:922c64590222798bb761d5b6d8e72950

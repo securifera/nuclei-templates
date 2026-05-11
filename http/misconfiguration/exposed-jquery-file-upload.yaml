@@ -9,11 +9,14 @@ info:
     - https://www.exploit-db.com/exploits/45584
     - https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/UploadHandler.php
   classification:
+    cpe: cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-434
   metadata:
     max-request: 1
+    vendor: jquery
+    product: jquery
   tags: exposure,jquery,edb,misconfig,vuln
 
 http:
@@ -24,12 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: jquery
+        cpe: cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*
         regex:
           - '^{\"files\":'
         part: body
 
       - type: word
+        name: jquery-2
+        cpe: cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*
         words:
           - "text/plain"
         part: header
-# digest: 4b0a00483046022100b94b260d4f9cbed33e0edfd1a865c5506e16e2c34486d62880955fd63d97cf73022100959b91ad139b88a83033dc488d100915fb46a0711442264da10456d1ea8d3454:922c64590222798bb761d5b6d8e72950

@@ -8,9 +8,13 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/newrelic.yml
     - https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys
     - https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#license-key
+  classification:
+    cpe: cpe:2.3:a:newrelic:newrelic:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: newrelic
+    product: newrelic
   tags: newrelic,exposure,tokens,vuln
 
 http:
@@ -23,4 +27,3 @@ http:
         part: body
         regex:
           - (?i)associated\ with\ your\ New\ Relic\ account\.\s+license_key:\s*([a-f0-9]{40})\b
-# digest: 490a004630440220242fb362fee296565790b302917129c1678ec9c544ecc46026db250da5070d2d022029f9c5ec848542ec030712fcced41845a4c9f288be7e1963336599a25d89878d:922c64590222798bb761d5b6d8e72950

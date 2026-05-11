@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
+  classification:
+    cpe: cpe:2.3:a:crossdomain-xml:crossdomain-xml:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: crossdomain-xml
+    product: crossdomain-xml
   tags: exposure,generic,files,vuln
 
 http:
@@ -22,7 +26,8 @@ http:
           - 200
 
       - type: word
+        name: crossdomain-xml
+        cpe: cpe:2.3:a:crossdomain-xml:crossdomain-xml:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<allow-access-from domain="*"/>'
-# digest: 4a0a00473045022048f00e35f70560b922beddaf8b8f50635bf2bc15cafb9300d23aad6455fb019c022100ebb96e6dee0d219cad41e802a2fb65b431b3cd46f2e19fb773ffb86f40fd582f:922c64590222798bb761d5b6d8e72950

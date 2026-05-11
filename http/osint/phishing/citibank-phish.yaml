@@ -8,8 +8,12 @@ info:
     A Citibank phishing website was detected
   reference:
     - https://citi.com
+  classification:
+    cpe: cpe:2.3:a:citibank:citibank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: citibank
+    product: citibank
   tags: phishing,citibank,citi,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: citibank
+        cpe: cpe:2.3:a:citibank:citibank:*:*:*:*:*:*:*:*
         words:
           - 'Citi'
           - 'Citibank is the consumer division of financial services multinational Citigroup. Citibank was founded in 1812 as the City Bank of New York, and later became First National City Bank of New York. Citibank provides credit cards, mortgages, personal loans, commercial loans, and lines of credit.'
@@ -32,7 +38,8 @@ http:
           - 200
 
       - type: dsl
+        name: citibank-2
+        cpe: cpe:2.3:a:citibank:citibank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"citi.com")'
           - '!contains(host,"citibank.com")'
-# digest: 4a0a00473045022100cb181ee91fa91a21c1aba3af67532983362ca2a996fafdda5cdbe7723ed876d80220329801f9bdd0d84898a91be50bccb7217930d4bbe8f5bd67fa4c45ec93a0250a:922c64590222798bb761d5b6d8e72950

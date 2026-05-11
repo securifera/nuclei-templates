@@ -5,10 +5,14 @@ info:
   author: ritikchaddha
   severity: medium
   description: Imprivata Appliance is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:imprivata:imprivata:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Appliance Setup Wizard"
+    vendor: imprivata
+    product: imprivata
   tags: misconfig,imprivata,install,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: imprivata
+        cpe: cpe:2.3:a:imprivata:imprivata:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Appliance Setup Wizard'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e2dea0f279e7892af50b79d97ee6984563051719461de22d01aaecd0fb4bf2e5022100a51d2924a35063fd06919816444669ab9808ba9f242c897d52aba7b5baa8fd5b:922c64590222798bb761d5b6d8e72950

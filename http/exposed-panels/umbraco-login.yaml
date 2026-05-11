@@ -35,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: umbraco_cms
+        cpe: cpe:2.3:a:umbraco:umbraco_cms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Umbraco.Sys'
@@ -44,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207986bff448506cd714b12e77af38664d88e75a5d475b673381e3f5b3a5374411022061516943106978ebc6325e0fdffc15d5d0e0802baeafc25557486c8f50db25e9:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
     WordPress Yoast SEO plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/wordpress-seo/
+  classification:
+    cpe: cpe:2.3:a:yoast:wordpress-seo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wordpress-seo
+        cpe: cpe:2.3:a:yoast:wordpress-seo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fatal error"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220138b9c2610d82da518df2c990e8237f199e33bc7b0cc75a4a0f2243015f7d67102203a4e706c6162f6757c720111a45e019c84a1733bddf521a2621bfd08f7a1cb6a:922c64590222798bb761d5b6d8e72950

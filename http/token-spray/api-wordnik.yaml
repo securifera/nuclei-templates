@@ -8,8 +8,12 @@ info:
   reference:
     - https://developer.wordnik.com/docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/wordnik
+  classification:
+    cpe: cpe:2.3:a:wordnik:wordnik:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wordnik
+    product: wordnik
   tags: token-spray,wordnik
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: wordnik
+        cpe: cpe:2.3:a:wordnik:wordnik:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"provider"'
           - '"year"'
           - '"rating"'
         condition: and
-# digest: 4b0a00483046022100ee314abacb93db81ea6d95b28bd872f4ef10d1e0deb1719b2fd0ce42d62055fa022100cfb3ea954c1b195ba4616f89015a038b96f3fb498c38404a01214c8aa6e36a82:922c64590222798bb761d5b6d8e72950

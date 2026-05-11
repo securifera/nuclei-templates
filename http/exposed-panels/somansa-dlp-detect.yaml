@@ -8,12 +8,15 @@ info:
   reference:
     - https://www.somansa.com/solution/integrated_solution/dlp/
   classification:
+    cpe: cpe:2.3:a:somansa:dlp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.html:"DLP system"
+    vendor: somansa
+    product: dlp
   tags: panel,somansa,dlp,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: dlp
+        cpe: cpe:2.3:a:somansa:dlp:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/DLPCenter/js/"
@@ -35,6 +40,7 @@ http:
         case-insensitive: true
 
       - type: dsl
+        name: dlp-2
+        cpe: cpe:2.3:a:somansa:dlp:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200 && (\"-1217239281\" == mmh3(base64_py(body)))"
-# digest: 490a004630440220143d4966bc457bf9522e884695a493edef0b90efb911ea3acdbd5213bf7bbf9a022005415b1580d3e3c825a1c03f5d964249adffcfd737e2818c52c007318253c925:922c64590222798bb761d5b6d8e72950

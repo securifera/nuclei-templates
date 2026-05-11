@@ -33,6 +33,8 @@ http:
 
     matchers:
       - type: dsl
+        name: payload
+        cpe: cpe:2.3:a:payloadcms:payload:*:*:*:*:*:*:*:*
         dsl:
           - "contains_any(body, '<title>Login - Payload', '<title>Payload Admin')"
           - 'status_code == 200'

@@ -8,11 +8,14 @@ info:
   reference:
     - https://gruntjs.com/sample-gruntfile
   classification:
+    cpe: cpe:2.3:a:gruntfile:gruntfile:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: gruntfile
+    product: gruntfile
   tags: config,exposure,vuln
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gruntfile
+        cpe: cpe:2.3:a:gruntfile:gruntfile:*:*:*:*:*:*:*:*
         part: body
         condition: and
         words:
@@ -36,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200dd7566b1b3389ed0d48008c6eb6087e2f2c1cd40f72df75663bbf9806c15363022063d26db0d70053c81ebb49cb11ec7cd8ee2c50d6621c5ad7c9540a77dae6e7f7:922c64590222798bb761d5b6d8e72950

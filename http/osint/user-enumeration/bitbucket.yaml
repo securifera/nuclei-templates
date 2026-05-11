@@ -6,11 +6,14 @@ info:
   severity: info
   description: Bitbucket user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:bitbucket:bitbucket:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: bitbucket
+    product: bitbucket
   tags: osint,osint-coding,bitbucket,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: bitbucket
+        cpe: cpe:2.3:a:bitbucket:bitbucket:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Repositories"
-# digest: 490a00463044022005d7fe9dacc2680acc39edfda828b5731099b75f923cba694be731c8b2ce60a1022007ef19d20a99f125fd318f8d7030d43410daf84dd6c2aac8fbe54a95cd420f43:922c64590222798bb761d5b6d8e72950

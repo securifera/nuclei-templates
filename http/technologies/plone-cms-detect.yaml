@@ -7,8 +7,12 @@ info:
   description: Detects Plone CMS
   reference:
     - https://github.com/plone/Products.CMFPlone
+  classification:
+    cpe: cpe:2.3:a:plone:plone:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: plone
+    product: plone
   tags: tech,plone,cms,discovery
 
 http:
@@ -18,6 +22,8 @@ http:
 
     matchers:
       - type: word
+        name: plone
+        cpe: cpe:2.3:a:plone:plone:*:*:*:*:*:*:*:*
         part: body
         condition: or
         words:
@@ -26,4 +32,3 @@ http:
           - '/++plone++static/plone-compiled.css'
           - '/++plone++static/tinymce-styles.css'
           - '>Powered by Plone &amp; Python</a>'
-# digest: 490a0046304402202c74fcde22d106dcd7cfd0fdb5757bc7d061f1bf17124cd75f37d795d5e4762902204bb135ba177d1db038045257b7e984d2b047cb37e558d06892f9d17e5e3e8bff:922c64590222798bb761d5b6d8e72950

@@ -30,11 +30,15 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: langflow
+        cpe: cpe:2.3:a:langflow-ai:langflow:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"package":"Langflow"'
 
       - type: word
+        name: langflow-2
+        cpe: cpe:2.3:a:langflow-ai:langflow:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Langflow</title>"

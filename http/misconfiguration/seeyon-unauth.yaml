@@ -8,10 +8,14 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/0AqdfTrZUVrwTMbKEKresg
     - https://github.com/chaitin/xray/blob/f90cf321bc4d294bbf6625a9c4853f3bfdf0a384/pocs/seeyon-oa-cookie-leak.yml
+  classification:
+    cpe: cpe:2.3:a:seeyon:seeyon:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: app="致远互联-OA"
+    vendor: seeyon
+    product: seeyon
   tags: misconfig,seeyon,unauth,vuln
 
 http:
@@ -43,6 +47,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: seeyon
+        cpe: cpe:2.3:a:seeyon:seeyon:*:*:*:*:*:*:*:*
         part: body
         words:
           - "当前已登录了一个用户，同一窗口中不能登录多个用户"
@@ -52,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f521f4c294560dd1156d9c330c15b23b73d1b2ea9cde0e97b7540a65caeb547c0220510cb25b54ab2b2ee9151486efd4c2b2c5407ea868b0a4aa41802a84697a7095:922c64590222798bb761d5b6d8e72950

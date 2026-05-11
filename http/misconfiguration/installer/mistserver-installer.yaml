@@ -12,6 +12,8 @@ info:
   impact: |
     An attacker can create an admin account on unconfigured MistServer instances,
     gaining full control over the streaming server configuration and content.
+  classification:
+    cpe: cpe:2.3:a:ddvtech:mistserver:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mistserver
+        cpe: cpe:2.3:a:ddvtech:mistserver:*:*:*:*:*:*:*:*
         part: body
         words:
           - "MistServer"
@@ -36,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: mistserver-2
+        cpe: cpe:2.3:a:ddvtech:mistserver:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Create new account"
@@ -46,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d5ab68393fd87d13255f0be1fef51cc689d17e942562e3c55ac66d8e7101cc5f02203124b201fc9386ec4907da77fea9300e5c79350012e71bc221b3e01db9fcf741:922c64590222798bb761d5b6d8e72950

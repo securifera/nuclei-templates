@@ -6,6 +6,7 @@ info:
   severity: info
   description: Swag Instance Default Page panel was detected.
   classification:
+    cpe: cpe:2.3:a:linuxserver:swag:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Welcome to your SWAG instance"
+    vendor: linuxserver
+    product: swag
   tags: panel,tech,discovery
 
 http:
@@ -23,10 +26,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: swag
+        cpe: cpe:2.3:a:linuxserver:swag:*:*:*:*:*:*:*:*
         words:
           - "<title>Welcome to your SWAG instance</title>"
 
       - type: word
+        name: swag-2
+        cpe: cpe:2.3:a:linuxserver:swag:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -34,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a2109e7620ada62a09a542172410f221d8049537b21749883facfae952017496022100e1533496c87225673fd9ba476920f048b4b872f680dcffc17b8248470ccef55d:922c64590222798bb761d5b6d8e72950

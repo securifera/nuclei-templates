@@ -9,11 +9,14 @@ info:
     - https://cxsecurity.com/issue/WLB-2020030151
     - https://www.jinfonet.com/product/download-jreport/
   classification:
+    cpe: cpe:2.3:a:jinfornet:jreport:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: jinfornet
+    product: jreport
   tags: jreport,jinfornet,lfi,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: jreport
+        cpe: cpe:2.3:a:jinfornet:jreport:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:[x*]:0:0"
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022051e459041809ac52a3420ac39479f3079efae63d29b73a1e214a455744542258022100beee37b5ecc719e5be15e561d14adb9767962e98386dc270df7e3858c53361ee:922c64590222798bb761d5b6d8e72950

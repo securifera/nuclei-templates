@@ -34,6 +34,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: fortisandbox
+        cpe: cpe:2.3:a:fortinet:fortisandbox:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>FortiSandbox</title>"
@@ -45,7 +47,8 @@ http:
         case-insensitive: true
 
       - type: regex
+        name: fortisandbox-2
+        cpe: cpe:2.3:a:fortinet:fortisandbox:*:*:*:*:*:*:*:*
         part: header
         regex:
           - 'Set-Cookie: FSA_SESSION_ID='
-# digest: 490a004630440220066b3d43b321748bc99e4e1293e928673a50e971313579ce9b8b8a0a901bfe6f02207439b50574944e5b77d606a4d8340b516411283e330ccb4addbbe000c6a45c8d:922c64590222798bb761d5b6d8e72950

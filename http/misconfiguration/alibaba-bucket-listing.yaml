@@ -9,10 +9,14 @@ info:
   reference:
     - https://www.alibabacloud.com/help/en/oss/user-guide/block-public-access
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/publicly-accessible-oss-bucket.html
+  classification:
+    cpe: cpe:2.3:a:alibaba:alibaba:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     google-query: site:aliyuncs.com "ListBucketResult" "<Contents>"
+    vendor: alibaba
+    product: alibaba
   tags: alibaba,cloud,bucket,misconfig,exposure,devops,cicd
 
 http:
@@ -22,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: alibaba
+        cpe: cpe:2.3:a:alibaba:alibaba:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/xml")'
@@ -35,4 +41,3 @@ http:
         group: 1
         regex:
           - '<Name>([^<]+)</Name>'
-# digest: 4a0a0047304502207411571ae91cb60263818aafc3652c142c0f0224a8ca9d86209e10a93e8124f7022100a0c798fd136ba6fbab40677653c864dcbe5c57303d7063d71ebe416dab512eb8:922c64590222798bb761d5b6d8e72950

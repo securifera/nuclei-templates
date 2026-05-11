@@ -35,12 +35,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ampache
+        cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Ampache :: For the Love of Music"
         case-insensitive: true
 
       - type: word
+        name: ampache-2
+        cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Music - Installation"
@@ -49,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b96a7c6c3b8269e6f726007568d408d99a018b2a839faefc29bb14d02f7677a5022100e973354bca67a7ef9881649a3a839a8253c000270f885dd9fe45e5a4148c30c9:922c64590222798bb761d5b6d8e72950

@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: child-theme-configurator
+        cpe: cpe:2.3:a:child-theme-configurator:child-theme-configurator:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

@@ -43,11 +43,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: apc-network-management-card
+        cpe: cpe:2.3:o:schneider-electric:network_management_card_firmware:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)Location: .*/NMC/"
 
       - type: regex
+        name: apc-network-management-card-2
+        cpe: cpe:2.3:o:schneider-electric:network_management_card_firmware:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)Set-Cookie: APC[^=]+=[^;]+"
@@ -55,4 +59,3 @@ http:
       - type: status
         status:
           - 303
-# digest: 4a0a0047304502210085aaf1ae1957fdae33cdc93620586078139eb1c7c211da70a3ea7054787c517702201bf6dc15b67a36399b346ce69298334e05becce166e2fd6d4591f52a99aa48f6:922c64590222798bb761d5b6d8e72950

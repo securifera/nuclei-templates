@@ -8,10 +8,14 @@ info:
     Open-source feature management solution built for developers.
   reference:
     - https://www.getunleash.io/
+  classification:
+    cpe: cpe:2.3:a:unleash:unleash:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: http.favicon.hash:-608690655
+    vendor: unleash
+    product: unleash
   tags: panel,unleash,login,detect,discovery
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: unleash
+        cpe: cpe:2.3:a:unleash:unleash:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Unleash'
@@ -35,6 +41,7 @@ http:
         condition: or
 
       - type: dsl
+        name: unleash-2
+        cpe: cpe:2.3:a:unleash:unleash:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200 && (\"-608690655\" == mmh3(base64_py(body)))"
-# digest: 490a0046304402203a41a8b2173297fefd86bbaf3437150a70b22f6cedd63b4e1b297cf2b2998b87022057507760e90c8134a977497b3f9720fbf0c17c8c16a1bb3c3f65eb621049db8c:922c64590222798bb761d5b6d8e72950

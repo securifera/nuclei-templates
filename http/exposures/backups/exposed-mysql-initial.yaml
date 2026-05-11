@@ -8,11 +8,14 @@ info:
   reference:
     - https://hackerone.com/reports/1081817
   classification:
+    cpe: cpe:2.3:a:exposed-mysql-initial:exposed-mysql-initial:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: exposed-mysql-initial
+    product: exposed-mysql-initial
   tags: config,exposure,hackerone,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: exposed-mysql-initial
+        cpe: cpe:2.3:a:exposed-mysql-initial:exposed-mysql-initial:*:*:*:*:*:*:*:*
         words:
           - "Roundcube Webmail initial database structure"
         part: body
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201b05c79ba805897082842fa65a06625196c3ff99c7e07304f3f372dd60bf57f70220095272a59dc72df6050f95be7905001a921b0e69b3265463d6804afc10796457:922c64590222798bb761d5b6d8e72950

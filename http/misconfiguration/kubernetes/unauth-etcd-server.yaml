@@ -9,10 +9,14 @@ info:
   remediation: https://etcd.io/docs/v2.3/authentication
   reference:
     - https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface
+  classification:
+    cpe: cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: product:"etcd"
+    vendor: etcd
+    product: etcd
   tags: tech,k8s,kubernetes,devops,etcd,unauth,anonymous,misconfig,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: etcd
+        cpe: cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"node":'
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: etcd-2
+        cpe: cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210089febf51eb643d7c6e7ebb4996b13c8356cafad2af6317838c61d818732fe1680220340e1272fa9785ac2807ce0c4b3bf91434f2712df0d398773ffa98c15c9097e6:922c64590222798bb761d5b6d8e72950

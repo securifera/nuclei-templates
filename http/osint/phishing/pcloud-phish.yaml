@@ -8,8 +8,12 @@ info:
     A pcloud phishing website was detected
   reference:
     - https://pcloud.com
+  classification:
+    cpe: cpe:2.3:a:pcloud:pcloud:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pcloud
+    product: pcloud
   tags: phishing,pcloud,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pcloud
+        cpe: cpe:2.3:a:pcloud:pcloud:*:*:*:*:*:*:*:*
         words:
           - "pCloud - Europe's Most Secure Cloud Storage"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: pcloud-2
+        cpe: cpe:2.3:a:pcloud:pcloud:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"pcloud.com")'
-# digest: 4a0a00473045022100dc95cfa47ad92f3bb8eae587b804aaa72726e4b7d0751aba3af79e8598422109022001caf650785eaa8b6570226ab31dba3f5bc11bda5034620d8c994cd5fe7f99ad:922c64590222798bb761d5b6d8e72950

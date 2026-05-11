@@ -8,8 +8,12 @@ info:
     A VALORANT phishing website was detected
   reference:
     - https://playvalorant.com
+  classification:
+    cpe: cpe:2.3:a:valorant:valorant:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: valorant
+    product: valorant
   tags: phishing,valorant,riot-games,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: valorant
+        cpe: cpe:2.3:a:valorant:valorant:*:*:*:*:*:*:*:*
         words:
           - "Riot Games presents VALORANT: a 5v5 character-based tactical FPS where precise gunplay meets unique agent abilities. Learn about VALORANT and its stylish cast"
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: valorant-2
+        cpe: cpe:2.3:a:valorant:valorant:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"playvalorant.com")'
           - '!contains(host,"riotgames.com")'
-# digest: 4a0a004730450220137fda8217c34018bbfa67e6832e9566d37b5c9d8f482df3a9124967a4dac4980221009ead6f4f9aac7d32083cc1faf1a9603d092c4809014d9d9f88f30dbeb7b400e3:922c64590222798bb761d5b6d8e72950

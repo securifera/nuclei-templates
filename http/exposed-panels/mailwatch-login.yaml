@@ -6,12 +6,15 @@ info:
   severity: info
   description: MailWatch login panel was detected.
   classification:
+    cpe: cpe:2.3:a:mailwatch:mailwatch:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"MailWatch Login Page"
+    vendor: mailwatch
+    product: mailwatch
   tags: panel,mailwatch,discovery
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mailwatch
+        cpe: cpe:2.3:a:mailwatch:mailwatch:*:*:*:*:*:*:*:*
         part: body
         words:
           - "MailWatch Login"
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220178413e2ae267c395887e7e27e450dc525f780dac73d4b372f2f3ee187a95dd7022100ee0a5dc3e357741739cc97aa0fa9c85227dd1d7ff69d95404722a96d8eb0327d:922c64590222798bb761d5b6d8e72950

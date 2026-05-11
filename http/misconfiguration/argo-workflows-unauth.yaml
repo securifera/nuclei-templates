@@ -14,6 +14,7 @@ info:
     - https://argo-workflows.readthedocs.io/en/latest/argo-server-auth-mode/
     - https://argo-workflows.readthedocs.io/en/latest/argo-server-sso/
   classification:
+    cpe: cpe:2.3:a:workflow:workflow:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L
     cvss-score: 9.4
     cwe-id: CWE-306
@@ -21,6 +22,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Argo Workflows"
+    vendor: workflow
+    product: workflow
   tags: misconfig,argo,kubernetes,unauth,workflow
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: workflow
+        cpe: cpe:2.3:a:workflow:workflow:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"metadata"'
@@ -38,6 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: workflow-2
+        cpe: cpe:2.3:a:workflow:workflow:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -45,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008eea12d714421f82dbea9ce90333d9f64875ca4f2dd43da0ced9e739fe85c3b9022100e212bf4c09eb4df846e6f32f1015922bb882e5e26935a4355cddf358712b4748:922c64590222798bb761d5b6d8e72950

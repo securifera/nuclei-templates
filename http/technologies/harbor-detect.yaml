@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: harbor
+        cpe: cpe:2.3:a:linuxfoundation:harbor:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"auth_mode"'

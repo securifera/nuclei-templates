@@ -8,11 +8,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/163860/geovisiongws533-lfixssxsrfexec.txt
   classification:
+    cpe: cpe:2.3:a:geowebserver:geowebserver:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 2
+    vendor: geowebserver
+    product: geowebserver
   tags: packetstorm,geowebserver,lfi,xss,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: geowebserver
+        cpe: cpe:2.3:a:geowebserver:geowebserver:*:*:*:*:*:*:*:*
         words:
           - "bit app support"
           - "fonts"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022039d57e83ca3aca98b077fe61ecc3e27d02b25e496c9fbca53cb9cec1053f63e502203a106940b52584a7b8ef795c290a942cdf373cd1ecc6efe941a366f192902157:922c64590222798bb761d5b6d8e72950

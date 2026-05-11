@@ -43,11 +43,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: platform
+        cpe: cpe:2.3:a:pega:platform:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: platform-2
+        cpe: cpe:2.3:a:pega:platform:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -75,4 +79,3 @@ http:
         kval:
           - location
         internal: true
-# digest: 4a0a0047304502200a59573de9667039ce51ccb27dc58d76cc054feb4dd14eaa59640485a17b8a9e022100d55f7ea547a7cae04669770d99595d5c23ad99467ef2758cbacf992c5babcd32:922c64590222798bb761d5b6d8e72950

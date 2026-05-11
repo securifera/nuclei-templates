@@ -7,10 +7,14 @@ info:
   description: Public Pantheon YAML Configuration Files might include sensitive info
   reference:
     - https://pantheon.io/docs/pantheon-yml
+  classification:
+    cpe: cpe:2.3:a:pantheon-upstream:pantheon-upstream:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     google-query: intitle:"index of" "pantheon.upstream.yml"
+    vendor: pantheon-upstream
+    product: pantheon-upstream
   tags: exposure,devops,patheon,config,files,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pantheon-upstream
+        cpe: cpe:2.3:a:pantheon-upstream:pantheon-upstream:*:*:*:*:*:*:*:*
         words:
           - 'database:'
           - 'protected_web_paths:'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220660c8958e513b5d66d2b68d11d52467a9acf906f6764ba2c071eb388a6e957ee022100c5870f9bcb16138d529574feece00e3f0a8b21fa77aeb9fc7ec1096e2aabc8e4:922c64590222798bb761d5b6d8e72950

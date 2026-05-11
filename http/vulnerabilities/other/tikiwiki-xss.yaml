@@ -8,6 +8,8 @@ info:
     Tiki Wiki CMS Groupware version 25.0 suffers from a cross site scripting vulnerability.
   reference:
     - https://packetstormsecurity.com/files/170446/Tiki-Wiki-CMS-Groupware-25.0-Cross-Site-Scripting.html
+  classification:
+    cpe: cpe:2.3:a:tiki:tikiwiki_cms\/groupware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -28,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tikiwiki_cms\/groupware
+        cpe: cpe:2.3:a:tiki:tikiwiki_cms\/groupware:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<script>alert(document.domain)</script>'
@@ -35,6 +39,8 @@ http:
         condition: and
 
       - type: word
+        name: tikiwiki_cms\/groupware-2
+        cpe: cpe:2.3:a:tiki:tikiwiki_cms\/groupware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -42,4 +48,3 @@ http:
       - type: status
         status:
           - 403
-# digest: 4a0a00473045022100efa2d655c39d0835a4999a61be87d1adc6196aa83ad2da1fb92b36e3b2cf60f00220139f1552d3823e5e74c77bf8800fcd4f73074da3b3352cce1afa2d584a0b739d:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A HubSpot phishing website was detected
   reference:
     - https://hubspot.com
+  classification:
+    cpe: cpe:2.3:a:hubspot:hubspot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hubspot
+    product: hubspot
   tags: phishing,hubspot,crm,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hubspot
+        cpe: cpe:2.3:a:hubspot:hubspot:*:*:*:*:*:*:*:*
         words:
           - '<title>HubSpot | Software &amp; Tools for your Business - Homepage'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: hubspot-2
+        cpe: cpe:2.3:a:hubspot:hubspot:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"hubspot.com")'
-# digest: 4a0a00473045022100a25173dd845fe51412bd1dca5675e0d8c96b4530f9eaca490523c1420cc4ad6402207b02cd4bf14ff3f668116c1ecf6c3d5142c1206946d572446f4537b321419578:922c64590222798bb761d5b6d8e72950

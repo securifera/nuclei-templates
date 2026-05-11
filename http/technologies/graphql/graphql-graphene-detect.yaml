@@ -3,8 +3,13 @@ info:
   name: Graphql Graphene Detect
   author: princechaddha
   severity: info
+  classification:
+    cpe: cpe:2.3:a:graphql-python:graphene:*:*:*:*:*:*:*:*
   reference:
     - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  metadata:
+    vendor: graphql-python
+    product: graphene
   tags: tech,graphql,graphene
 
 http:
@@ -26,21 +31,26 @@ http:
           - 200
 
       - type: word
+        name: graphene
+        cpe: cpe:2.3:a:graphql-python:graphene:*:*:*:*:*:*:*:*
         words:
           - 'Syntax Error GraphQL (1:1)'
         part: body
 
       - type: word
+        name: graphene-2
+        cpe: cpe:2.3:a:graphql-python:graphene:*:*:*:*:*:*:*:*
         words:
           - 'Content-Type: text/html'
         part: header
         negative: true
 
       - type: word
+        name: graphene-3
+        cpe: cpe:2.3:a:graphql-python:graphene:*:*:*:*:*:*:*:*
         words:
           - '<html'
           - '<body'
         part: body
         condition: or
         negative: true
-# digest: 4a0a00473045022012e2b64ade43e5fe6a77d2af1d7f0034ede7850f1deee1509f6e7f174f454574022100c485a3324d7f32161cdca3ed7b4b6bdc1ec29cdfd99f96c1a7fe6a1bfdd1780c:922c64590222798bb761d5b6d8e72950

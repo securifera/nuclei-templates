@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/50462
   classification:
+    cpe: cpe:2.3:a:umbraco:umbraco:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 6.8
     cwe-id: CWE-918
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 3
     shodan-query: http.html:"Umbraco"
+    vendor: umbraco
+    product: umbraco
   tags: oast,edb,ssrf,umbraco,vuln
 
 http:
@@ -29,13 +32,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: umbraco
+        cpe: cpe:2.3:a:umbraco:umbraco:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the HTTP Interaction
         words:
           - "http"
 
       - type: dsl
+        name: umbraco-2
+        cpe: cpe:2.3:a:umbraco:umbraco:*:*:*:*:*:*:*:*
         dsl:
           - "len(body_1)==0"
           - "len(body_2)==0"
           - "len(body_3)==0"
-# digest: 4a0a0047304502203f97e7629d4511631f7cba1f2f6a25b1c1e582e4a4c0c5c972591c4d6d23ca6502210081acb850266756ace7c0ed91df357b835a902e2b19c419fa4904a4ca132bac7f:922c64590222798bb761d5b6d8e72950

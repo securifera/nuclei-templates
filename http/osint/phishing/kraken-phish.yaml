@@ -8,8 +8,12 @@ info:
     A Kraken phishing website was detected
   reference:
     - https://kraken.com
+  classification:
+    cpe: cpe:2.3:a:kraken:kraken:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kraken
+    product: kraken
   tags: phishing,kraken,crypto,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kraken
+        cpe: cpe:2.3:a:kraken:kraken:*:*:*:*:*:*:*:*
         words:
           - 'Kraken'
           - 'Kraken: Buy and sell crypto securely'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: kraken-2
+        cpe: cpe:2.3:a:kraken:kraken:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"kraken.com")'
-# digest: 4b0a00483046022100ee304a8bd8ae8dc114d61c072319c25dbb0af8bb7a881a13d4661daf23070d08022100a807f92b25c08ca9ded5b5e0dd099cdd1ee9368a10ba44c7eba2e4fc4bf765c1:922c64590222798bb761d5b6d8e72950

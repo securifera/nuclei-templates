@@ -8,8 +8,12 @@ info:
   reference:
     - https://scrapestack.com/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/scrapestack
+  classification:
+    cpe: cpe:2.3:a:scrapestack:scrapestack:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: scrapestack
+    product: scrapestack
   tags: token-spray,scrapestack
 
 self-contained: true
@@ -21,7 +25,8 @@ http:
 
     matchers:
       - type: word
+        name: scrapestack
+        cpe: cpe:2.3:a:scrapestack:scrapestack:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<h1> Interactsh Server </h1>'
-# digest: 4a0a0047304502210095fa47224c5864470704008f7978eaf6fda46cb06da1ed0cb9507f9ab977891802203d658731147d88a8e8c1102f89469d57e46640bf1e4a93993254ba6cd87d6bea:922c64590222798bb761d5b6d8e72950

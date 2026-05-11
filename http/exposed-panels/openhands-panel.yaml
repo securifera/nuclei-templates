@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/All-Hands-AI/OpenHands
     - https://www.all-hands.dev/
+  classification:
+    cpe: cpe:2.3:a:all-hands-ai:openhands:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -28,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: openhands
+        cpe: cpe:2.3:a:all-hands-ai:openhands:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>OpenHands</title>"
@@ -35,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202ad573b07f27d66b524e13a0ba37df36b450532fe6df7c2b0ccd805bdfe53101022100c06037ab5c0aac4bcb83603abef64bcea6e2e9b3ec39014f90fb695315626f97:922c64590222798bb761d5b6d8e72950

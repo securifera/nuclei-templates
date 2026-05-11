@@ -4,8 +4,12 @@ info:
   name: Deadbolt Ransomware Detection
   author: pdteam
   severity: info
+  classification:
+    cpe: cpe:2.3:a:deadbolt:ransomware:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: deadbolt
+    product: ransomware
   tags: ransomware,deadbolt,vuln
 
 http:
@@ -15,6 +19,7 @@ http:
 
     matchers:
       - type: word
+        name: ransomware
+        cpe: cpe:2.3:a:deadbolt:ransomware:*:*:*:*:*:*:*:*
         words:
           - "<title>ALL YOUR FILES HAVE BEEN LOCKED BY DEADBOLT.</title>"
-# digest: 4a0a00473045022100e04e7eb030f2f3f0d72b1f4c0b083f2711d6fead4bd44aef2944d27e8a51522502205370ff939d78369204cd5e70c1eeaeaad2245a0a6b5260aecab319825466dd91:922c64590222798bb761d5b6d8e72950

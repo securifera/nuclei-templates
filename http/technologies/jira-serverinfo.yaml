@@ -10,10 +10,13 @@ info:
     - https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-server-info/
     - https://support.atlassian.com/jira/kb/restrict-unauthenticated-access-for-some-jira-endpoints/
   classification:
+    cpe: cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
+    vendor: atlassian
+    product: jira
   tags: jira,tech,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jira
+        cpe: cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"baseUrl"'
@@ -42,4 +47,3 @@ http:
         json:
           - ".baseUrl"
           - ".version"
-# digest: 480a00453043021f3d15467b6edbc2b1943eee980c33c0c8f42e0207f0b27510167d79f5d9e68d022066aa7aa73ad2a299855e63fb6fa8fc909f16fe068b63d9a0a419f333262c403c:922c64590222798bb761d5b6d8e72950

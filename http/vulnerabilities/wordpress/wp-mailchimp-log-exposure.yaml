@@ -9,12 +9,15 @@ info:
   reference:
     - https://wordpress.org/plugins/mailchimp-for-wp/
   classification:
+    cpe: cpe:2.3:a:mailchimp:mailchimp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 5
+    vendor: mailchimp
+    product: mailchimp
   tags: wordpress,wp-plugin,mailchimp,mc4wp,exposure,logs
 
 http:
@@ -28,10 +31,11 @@ http:
 
     matchers:
       - type: dsl
+        name: mailchimp
+        cpe: cpe:2.3:a:mailchimp:mailchimp:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "<?php exit; ?>")'
           - 'contains_any(body, "MailChimp API", "MailChimp lists", "mailchimp.com")'
           - 'regex("\\[(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\] (ERROR|WARNING):", body)'
         condition: and
-# digest: 4a0a0047304502201a195d6bd3c6b506760a5f8d5c5646762f5478b1393d4e2eb45b0f75c8b095080221008a42c9ed9f271b8a1557fbc2f9d001b5498368798294f1a90e66549d4adfef06:922c64590222798bb761d5b6d8e72950

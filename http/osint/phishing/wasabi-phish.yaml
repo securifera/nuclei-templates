@@ -8,8 +8,12 @@ info:
     A Wasabi phishing website was detected
   reference:
     - https://wasabi.com
+  classification:
+    cpe: cpe:2.3:a:wasabi:wasabi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wasabi
+    product: wasabi
   tags: phishing,wasabi,storage,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wasabi
+        cpe: cpe:2.3:a:wasabi:wasabi:*:*:*:*:*:*:*:*
         words:
           - '<title>Store More and Do More with Your Data | Wasabi'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: wasabi-2
+        cpe: cpe:2.3:a:wasabi:wasabi:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"wasabi.com")'
-# digest: 4a0a00473045022100caf494b85d7429338f2c11331254ca5bdd5091b3b627c0005d994f8ea8d1c40702207589ac9c87abc1c331ddf8650a51e24f7bc43bad0b523319840f81f5e48c8743:922c64590222798bb761d5b6d8e72950

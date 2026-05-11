@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: smart-slider-3
+        cpe: cpe:2.3:a:smart-slider-3:smart-slider-3:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: froxlor
+        cpe: cpe:2.3:a:froxlor:froxlor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DROP TABLE IF EXISTS"
@@ -34,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: froxlor-2
+        cpe: cpe:2.3:a:froxlor:froxlor:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/sql"
@@ -45,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202ee5d76cc50b2f5eb45c2d2097b25f8f28085e36b3941e9c471f2565e6e45bec0221009e1c15667de36bffb3a82bc81681dc40831eed5a6054fa20e650c215fd2e38b3:922c64590222798bb761d5b6d8e72950

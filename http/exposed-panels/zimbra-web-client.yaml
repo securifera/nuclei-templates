@@ -37,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zimbra_collaboration_suite
+        cpe: cpe:2.3:a:synacor:zimbra_collaboration_suite:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Zimbra Administration</title>"
@@ -51,4 +53,3 @@ http:
         group: 1
         regex:
           - 'AjxPackage\.setQueryString\("v=(.+)"\);'
-# digest: 490a0046304402202e357dc8222de39921b102b203be58ec8d581e9f75ebd0b645c4bd6573d5eb2602202b108e05ddccb3bf8180b538eea2d2df17ba815fa103f4a9f6e2992faee0c93b:922c64590222798bb761d5b6d8e72950

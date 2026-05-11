@@ -10,12 +10,15 @@ info:
     - https://packetstormsecurity.com/files/166479/Royale-Event-Management-System-1.0-Cross-Site-Scripting.html
     - https://www.sourcecodester.com/sites/default/files/download/oretnom23/Royal%20Event.zip
   classification:
+    cpe: cpe:2.3:a:royalevent:royalevent:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 1
+    vendor: royalevent
+    product: royalevent
   tags: xss,unauthenticated,cms,royalevent,packetstorm,vuln
 
 http:
@@ -29,10 +32,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: royalevent
+        cpe: cpe:2.3:a:royalevent:royalevent:*:*:*:*:*:*:*:*
         words:
           - 'value="><script>alert(document.domain)</script>" >'
 
       - type: status
         status:
           - 302
-# digest: 4a0a00473045022033f4c479f966d68527c36612b08e8d47b6e4287f13bf6f40adb31599ae49ae86022100e3b3f20d75261255ffde2872cb9dd3398595e13ee4b105adb72e59cb171a600f:922c64590222798bb761d5b6d8e72950

@@ -5,9 +5,13 @@ info:
   author: jcockhren
   severity: info
   description: Some deployments of OpenResty spill their version numbers.
+  classification:
+    cpe: cpe:2.3:a:openresty:openresty:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: product:"OpenResty"
+    vendor: openresty
+    product: openresty
   tags: tech,openresty,discovery
 
 http:
@@ -17,6 +21,8 @@ http:
 
     matchers:
       - type: word
+        name: openresty
+        cpe: cpe:2.3:a:openresty:openresty:*:*:*:*:*:*:*:*
         part: server
         words:
           - "openresty"
@@ -26,4 +32,3 @@ http:
         part: header
         regex:
           - 'openresty/[0-9.]+'
-# digest: 4b0a004830460221009fa9da73cd2b6f35fe239fb116234fb2a913a8b4e33c618c29d27f8ed510b3a902210085ee1cbbe6120577284484da1c3bedb68dec7401c1e0d7e332962506f18c71e9:922c64590222798bb761d5b6d8e72950

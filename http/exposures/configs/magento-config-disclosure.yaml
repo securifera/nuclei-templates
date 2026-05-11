@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: magento
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         part: body
         words:
           - "* Magento"
@@ -40,6 +42,8 @@ http:
         condition: and
 
       - type: word
+        name: magento-2
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/xml"
@@ -56,4 +60,3 @@ http:
           - "/config/global/resources/default_setup/connection/username"
           - "/config/global/resources/default_setup/connection/password"
           - "/config/global/resources/default_setup/connection/dbname"
-# digest: 4b0a00483046022100d231896c4e621ba4ea60c30d1f7688d2fb1dae8354a3e2fdc42a8f1ed300bbc1022100f53d235cb7566c568b8137a28ba6c346c5465d51c734c77bb4acf5fb55f46b95:922c64590222798bb761d5b6d8e72950

@@ -79,6 +79,8 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: graylog
+        cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains_any(header, 'X-Graylog-Node-Id', 'Graylog', 'graylog')"

@@ -28,9 +28,10 @@ http:
 
     matchers:
       - type: dsl
+        name: cdg
+        cpe: cpe:2.3:a:esafenet:cdg:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(content_type,"text/html")'
           - 'contains(body,"操作成功")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a004730450220244a7db11a141cc33c5646ac99db97b4e11efb54581802e730c8db192223f14a022100892c6b32b151e7635f412c37905d654daf1343348faae1f518ae1c257cd0e458:922c64590222798bb761d5b6d8e72950

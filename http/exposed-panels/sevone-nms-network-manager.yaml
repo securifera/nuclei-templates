@@ -4,10 +4,14 @@ info:
   name: SevOne NMS Network Manager
   author: pussycat0x
   severity: info
+  classification:
+    cpe: cpe:2.3:a:sevone:sevone:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"SevOne NMS - Network Manager"
+    vendor: sevone
+    product: sevone
   tags: sevone,manager,login,panel,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sevone
+        cpe: cpe:2.3:a:sevone:sevone:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SevOne NMS - Network Manager"
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100eddfca70b5f376476622d7e25856599609242887f37f5801ee21d3f8fad7c900022100da3b4f06837d92345ed110098a0c6cd1d62afed6f877c576969d46019c6764fe:922c64590222798bb761d5b6d8e72950

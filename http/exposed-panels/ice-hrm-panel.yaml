@@ -8,10 +8,14 @@ info:
     The ICE HRM login panel was discovered.
   reference:
     - https://icehrm.com
+  classification:
+    cpe: cpe:2.3:a:hrm:hrm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Ice Hrm Login"
+    vendor: hrm
+    product: hrm
   tags: icehrm,login,hrm,panel,web,detect,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: hrm
+        cpe: cpe:2.3:a:hrm:hrm:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)<title>ice hrm login</title>'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022039a220e0ff0c1f6b54bbeb9930a91a99ad3a4fd4c7d69c4596927868f84fcfc102200aad7f3683adbba6d4c2b323c27b1401624c0a01b21db716d4a8cf375a517b20:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     Frappe ERPNext Login Panel was discovered.
   reference:
     - https://frappeframework.com/
+  classification:
+    cpe: cpe:2.3:a:frappe:frappe:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Login to Frappe"
+    vendor: frappe
+    product: frappe
   tags: frappe,login,web,erp,detect,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: frappe
+        cpe: cpe:2.3:a:frappe:frappe:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<h4>Login to Frappe</h4>"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d5cd5507cbc238948db2fdc75fe8911c5f41bed17f75b980822e84354498b58d022100ade59a19518e82f5868ff793f9141f5e041cfc86862bdd70200faf774cff6073:922c64590222798bb761d5b6d8e72950

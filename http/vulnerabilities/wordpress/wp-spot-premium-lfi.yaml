@@ -8,8 +8,12 @@ info:
   reference:
     - https://wpscan.com/vulnerability/2d465fc4-d4fa-43bb-9c0d-71dcc3ee4eab
     - https://codeseekah.com/2017/02/09/javo-themes-spot-lfi-vulnerability/
+  classification:
+    cpe: cpe:2.3:a:wp-spot-premium:wp-spot-premium:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wp-spot-premium
+    product: wp-spot-premium
   tags: wordpress,backup,wpscan,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-spot-premium
+        cpe: cpe:2.3:a:wp-spot-premium:wp-spot-premium:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_NAME"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f5af523c9d88f8ee4de2137aad9e3117843fc73ab8e00671c34c6f8bdabd2eaa022071aa91dac8d895657615d55a06f5bb966c8299bb1946a76b2e2f74671ffa9697:922c64590222798bb761d5b6d8e72950

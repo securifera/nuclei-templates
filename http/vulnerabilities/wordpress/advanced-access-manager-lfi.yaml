@@ -11,11 +11,14 @@ info:
     - https://id.wordpress.org/plugins/advanced-access-manager/
     - https://wpscan.com/vulnerability/dfe62ff5-956c-4403-b3fd-55677628036b
   classification:
+    cpe: cpe:2.3:a:advanced-access:advanced-access:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22,CWE-73
   metadata:
     max-request: 1
+    vendor: advanced-access
+    product: advanced-access
   tags: wordpress,wp-plugin,lfi,wp,accessmanager,wpscan,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: advanced-access
+        cpe: cpe:2.3:a:advanced-access:advanced-access:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_NAME"
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220657f8b815d24b53046db84eff7fa2e1692026d56714e873951e5139e787d8c5a022074819dd0053d2d72dc638c72a3ceac52c7d590a75cf3f74580c93ef667650c64:922c64590222798bb761d5b6d8e72950

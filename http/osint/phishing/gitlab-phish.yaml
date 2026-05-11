@@ -8,8 +8,12 @@ info:
     A GitLab phishing website was detected
   reference:
     - https://gitlab.com
+  classification:
+    cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: gitlab
+    product: gitlab
   tags: phishing,gitlab,developer,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gitlab
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         words:
           - '<title>The most-comprehensive AI-powered DevSecOps platform'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: gitlab-2
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"gitlab.com")'
-# digest: 4a0a0047304502201ae3bbcfab36721c3b04874160c179b1bba47a96dba156b8fdb5adca9fb0657c022100e75c1541e3ba81439d2d62631aba654f435d922e9cd3df2bd3641e54a52cfd21:922c64590222798bb761d5b6d8e72950

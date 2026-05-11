@@ -9,11 +9,15 @@ info:
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-41972
     - https://github.com/hktalent/scan4all/blob/main/lib/goby/goby_pocs/AceNet_AceReporter_Report_component_Arbitrary_file_download.txt
+  classification:
+    cpe: cpe:2.3:a:acenet:acereporter:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1595726841
     fofa-query: body="Login @ Reporter"
+    vendor: acenet
+    product: acereporter
   tags: cnvd2021,cnvd,acenet,acereporter,lfi,vuln
 variables:
   filename: "{{to_lower(rand_text_alpha(5))}}"
@@ -26,11 +30,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: acereporter
+        cpe: cpe:2.3:a:acenet:acereporter:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
 
       - type: word
+        name: acereporter-2
+        cpe: cpe:2.3:a:acenet:acereporter:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'filename='
@@ -40,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201ba916b0c4544103b475477e5f6a564ab8b94c92ba8c1cdcb3019cbc12547ba302207f8eb39fbad2fded34f26920ac79fd26ece02b70d94879825b5a478c877112df:922c64590222798bb761d5b6d8e72950

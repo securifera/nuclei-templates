@@ -41,7 +41,8 @@ http:
           - 200
 
       - type: word
+        name: h2
+        cpe: cpe:2.3:a:h2database:h2:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"spring.datasource.hikari.connection-test-query":"CREATE ALIAS EXEC AS CONCAT'
-# digest: 490a004630440220087e85df7fae10903c6f4946055dcb08777fb715a61bee5129ccd901087ff150022040afe0630040331c8eb125f94f30fb85733322cab7debd1137b2806a733bcd28:922c64590222798bb761d5b6d8e72950

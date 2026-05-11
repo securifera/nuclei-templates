@@ -5,8 +5,12 @@ info:
   author: pdteam
   severity: info
   description: This global matcher detects WAFs
+  classification:
+    cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
   metadata:
     max-request: 0
+    vendor: global-waf
+    product: global-waf
   tags: waf-detect,discovery
 
 http:
@@ -15,12 +19,14 @@ http:
     matchers:
       - type: regex
         name: instart
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)instartrequestid'
         part: body
 
       - type: regex
         name: perimx
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)access.to.this.page.has.been.denied.because.we.believe.you.are.using.automation.tool'
           - '(?i)http(s)?://(www.)?perimeterx.\w+.whywasiblocked'
@@ -31,6 +37,7 @@ http:
 
       - type: regex
         name: webknight
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\bwebknight'
           - '(?i)webknight'
@@ -39,6 +46,7 @@ http:
 
       - type: regex
         name: zscaler
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)zscaler(.\d+(.\d+)?)?'
           - '(?i)zscaler'
@@ -47,6 +55,7 @@ http:
 
       - type: regex
         name: fortigate
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>powered.by.fortinet<.'
           - '(?i).>fortigate.ips.sensor<.'
@@ -63,6 +72,7 @@ http:
 
       - type: regex
         name: teros
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)st8(id|.wa|.wf)?.?(\d+|\w+)?='
         condition: or
@@ -70,6 +80,7 @@ http:
 
       - type: regex
         name: stricthttp
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)the.request.was.rejected.because.the.url.contained.a.potentially.malicious.string'
         condition: or
@@ -77,6 +88,7 @@ http:
 
       - type: regex
         name: stricthttp
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)rejected.by.url.scan'
           - '(?i)/rejected.by.url.scan'
@@ -85,6 +97,7 @@ http:
 
       - type: regex
         name: shadowd
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)<h\d>\d{3}.forbidden<.h\d>'
           - '(?i)request.forbidden.by.administrative.rules.'
@@ -93,6 +106,7 @@ http:
 
       - type: regex
         name: bigip
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\ATS\w{4,}='
           - '(?i)bigipserver(.i)?|bigipserverinternal'
@@ -104,6 +118,7 @@ http:
 
       - type: regex
         name: edgecast
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\Aecdf'
         condition: or
@@ -111,6 +126,7 @@ http:
 
       - type: regex
         name: radware
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).\bcloudwebsec.radware.com\b.'
           - '(?i).>unauthorized.activity.has.been.detected<.'
@@ -120,6 +136,7 @@ http:
 
       - type: regex
         name: varnish
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)varnish'
           - '(?i).>.?security.by.cachewall.?<.'
@@ -130,6 +147,7 @@ http:
 
       - type: regex
         name: infosafe
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)infosafe'
           - '(?i)by.(http(s)?(.//)?)?7i24.(com|net)'
@@ -140,6 +158,7 @@ http:
 
       - type: regex
         name: aliyundun
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)error(s)?.aliyun(dun)?.(com|net)'
           - '(?i)http(s)?://(www.)?aliyun.(com|net)'
@@ -148,6 +167,7 @@ http:
 
       - type: regex
         name: malcare
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)malcare'
           - '(?i).>login.protection<.+.><.+>powered.by<.+.>(<.+.>)?(.?malcare.-.pro|blogvault)?'
@@ -157,18 +177,21 @@ http:
 
       - type: regex
         name: wts
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)(<title>)?wts.wa(f)?(\w+(\w+(\w+)?)?)?'
         part: response
 
       - type: regex
         name: dw
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)dw.inj.check'
         part: response
 
       - type: regex
         name: denyall
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\Acondition.intercepted'
           - '(?i)\Asessioncookie='
@@ -177,6 +200,7 @@ http:
 
       - type: regex
         name: yunsuo
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)<img.class=.yunsuologo.'
           - '(?i)yunsuo.session'
@@ -185,12 +209,14 @@ http:
 
       - type: regex
         name: litespeed
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)litespeed.web.server'
         part: response
 
       - type: regex
         name: cloudfront
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)[a-zA-Z0-9]{,60}.cloudfront.net'
           - '(?i)cloudfront'
@@ -200,6 +226,7 @@ http:
 
       - type: regex
         name: anyu
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)sorry.{1,2}your.access.has.been.intercept(ed)?.by.anyu'
           - '(?i)anyu'
@@ -209,6 +236,7 @@ http:
 
       - type: regex
         name: googlewebservices
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)your.client.has.issued.a.malformed.or.illegal.request'
           - '(?i)our.systems.have.detected.unusual.traffic'
@@ -218,6 +246,7 @@ http:
 
       - type: regex
         name: didiyun
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)(http(s)?://)(sec-waf.|www.)?didi(static|yun)?.com(/static/cloudwafstatic)?'
           - '(?i)didiyun'
@@ -226,30 +255,35 @@ http:
 
       - type: regex
         name: blockdos
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)blockdos\.net'
         part: response
 
       - type: regex
         name: codeigniter
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)the.uri.you.submitted.has.disallowed.characters'
         part: response
 
       - type: regex
         name: stingray
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\AX-Mapping-'
         part: response
 
       - type: regex
         name: west263
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)wt\d*cdn'
         part: response
 
       - type: regex
         name: aws
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)<RequestId>[0-9a-zA-Z]{16,25}<.RequestId>'
           - '(?i)<Error><Code>AccessDenied<.Code>'
@@ -260,6 +294,7 @@ http:
 
       - type: regex
         name: yundun
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)YUNDUN'
           - '(?i)^yd.cookie='
@@ -270,6 +305,7 @@ http:
 
       - type: regex
         name: barracuda
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\Abarra.counter.session=?'
           - '(?i)(\A|\b)?barracuda.'
@@ -279,12 +315,14 @@ http:
 
       - type: regex
         name: dodenterpriseprotection
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)dod.enterprise.level.protection.system'
         part: response
 
       - type: regex
         name: secupress
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)<h\d*>secupress<.'
           - '(?i)block.id.{1,2}bad.url.contents.<.'
@@ -293,12 +331,14 @@ http:
 
       - type: regex
         name: aesecure
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)aesecure.denied.png'
         part: response
 
       - type: regex
         name: incapsula
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)incap_ses|visid_incap'
           - '(?i)incapsula'
@@ -308,6 +348,7 @@ http:
 
       - type: regex
         name: nexusguard
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)nexus.?guard'
           - '(?i)((http(s)?://)?speresources.)?nexusguard.com.wafpage'
@@ -316,6 +357,7 @@ http:
 
       - type: regex
         name: cloudflare
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)cloudflare.ray.id.|var.cloudflare.'
           - '(?i)cloudflare.nginx'
@@ -330,6 +372,7 @@ http:
 
       - type: regex
         name: akamai
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>access.denied<.'
           - '(?i)akamaighost'
@@ -339,6 +382,7 @@ http:
 
       - type: regex
         name: webseal
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)webseal.error.message.template'
           - '(?i)webseal.server.received.an.invalid.http.request'
@@ -347,12 +391,14 @@ http:
 
       - type: regex
         name: dotdefender
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)dotdefender.blocked.your.request'
         part: response
 
       - type: regex
         name: pk
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>pkSecurityModule\W..\WSecurity.Alert<.'
           - '(?i).http(s)?.//([w]{3})?.kitnetwork.\w'
@@ -362,6 +408,7 @@ http:
 
       - type: regex
         name: expressionengine
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>error.-.expressionengine<.'
           - '(?i).>:.the.uri.you.submitted.has.disallowed.characters.<.'
@@ -371,18 +418,21 @@ http:
 
       - type: regex
         name: comodo
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)protected.by.comodo.waf'
         part: response
 
       - type: regex
         name: ciscoacexml
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)ace.xml.gateway'
         part: response
 
       - type: regex
         name: barikode
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>barikode<.'
           - '(?i)<h\d{1}>forbidden.access<.h\d{1}>'
@@ -391,6 +441,7 @@ http:
 
       - type: regex
         name: watchguard
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)(request.denied.by.)?watchguard.firewall'
           - '(?i)watchguard(.technologies(.inc)?)?'
@@ -399,6 +450,7 @@ http:
 
       - type: regex
         name: binarysec
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)x.binarysec.via'
           - '(?i)x.binarysec.nocache'
@@ -408,6 +460,7 @@ http:
 
       - type: regex
         name: bekchy
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)bekchy.(-.)?access.denied'
           - '(?i)(http(s)?://)(www.)?bekchy.com(/report)?'
@@ -416,6 +469,7 @@ http:
 
       - type: regex
         name: bitninja
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)bitninja'
           - '(?i)security.check.by.bitninja'
@@ -425,6 +479,7 @@ http:
 
       - type: regex
         name: apachegeneric
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)apache'
           - '(?i).>you.don.t.have.permission.to.access+'
@@ -436,6 +491,7 @@ http:
 
       - type: regex
         name: greywizard
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)greywizard(.\d.\d(.\d)?)?'
           - '(?i)grey.wizard.block'
@@ -446,12 +502,14 @@ http:
 
       - type: regex
         name: configserver
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>the.firewall.on.this.server.is.blocking.your.connection.<+'
         part: response
 
       - type: regex
         name: viettel
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)<title>access.denied(...)?viettel.waf</title>'
           - '(?i)viettel.waf.system'
@@ -461,6 +519,7 @@ http:
 
       - type: regex
         name: safedog
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)(http(s)?)?(://)?(www|404|bbs|\w+)?.safedog.\w'
           - '(?i)waf(.?\d+.?\d+)'
@@ -469,12 +528,14 @@ http:
 
       - type: regex
         name: baidu
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)yunjiasu.nginx'
         part: response
 
       - type: regex
         name: alertlogic
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).>requested.url.cannot.be.found<.'
           - '(?i)proceed.to.homepage'
@@ -487,12 +548,14 @@ http:
 
       - type: regex
         name: armor
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)blocked.by.website.protection.from.armour'
         part: response
 
       - type: regex
         name: dosarrest
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)dosarrest'
           - '(?i)x.dis.request.id'
@@ -501,6 +564,7 @@ http:
 
       - type: regex
         name: paloalto
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - 'has.been.blocked.in.accordance.with.company.policy'
           - '.>Virus.Spyware.Download.Blocked<.'
@@ -509,6 +573,7 @@ http:
 
       - type: regex
         name: aspgeneric
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)this.generic.403.error.means.that.the.authenticated'
           - '(?i)request.could.not.be.understood'
@@ -527,6 +592,7 @@ http:
 
       - type: regex
         name: powerful
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)Powerful Firewall'
           - '(?i)http(s)?...tiny.cc.powerful.firewall'
@@ -535,6 +601,7 @@ http:
 
       - type: regex
         name: uewaf
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)http(s)?.//ucloud'
           - '(?i)uewaf(.deny.pages)'
@@ -543,6 +610,7 @@ http:
 
       - type: regex
         name: janusec
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)janusec'
           - '(?i)(http(s)?\W+(www.)?)?janusec.(com|net|org)'
@@ -551,6 +619,7 @@ http:
 
       - type: regex
         name: siteguard
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)>Powered.by.SiteGuard.Lite<'
           - '(?i)refuse.to.browse'
@@ -559,6 +628,7 @@ http:
 
       - type: regex
         name: sonicwall
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)This.request.is.blocked.by.the.SonicWALL'
           - '(?i)Dell.SonicWALL'
@@ -570,6 +640,7 @@ http:
 
       - type: regex
         name: jiasule
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)^jsl(_)?tracking'
           - '(?i)(__)?jsluid(=)?'
@@ -580,6 +651,7 @@ http:
 
       - type: regex
         name: nginxgeneric
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)nginx'
           - '(?i)you.do(not|n.t)?.have.permission.to.access.this.document'
@@ -588,6 +660,7 @@ http:
 
       - type: regex
         name: stackpath
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)action.that.triggered.the.service.and.blocked'
           - '(?i)<h2>sorry,.you.have.been.blocked.?<.h2>'
@@ -596,12 +669,14 @@ http:
 
       - type: regex
         name: sabre
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)dxsupport@sabre.com'
         part: response
 
       - type: regex
         name: wordfence
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)generated.by.wordfence'
           - '(?i)your.access.to.this.site.has.been.limited'
@@ -611,6 +686,7 @@ http:
 
       - type: regex
         name: '360'
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).wzws.waf.cgi.'
           - '(?i)wangzhan\.360\.cn'
@@ -622,6 +698,7 @@ http:
 
       - type: regex
         name: asm
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)the.requested.url.was.rejected..please.consult.with.your.administrator.'
         condition: or
@@ -629,6 +706,7 @@ http:
 
       - type: regex
         name: rsfirewall
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)com.rsfirewall.403.forbidden'
           - '(?i)com.rsfirewall.event'
@@ -639,6 +717,7 @@ http:
 
       - type: regex
         name: sucuri
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)access.denied.-.sucuri.website.firewall'
           - '(?i)sucuri.webSite.firewall.-.cloudProxy.-.access.denied'
@@ -649,24 +728,28 @@ http:
 
       - type: regex
         name: airlock
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)\Aal[.-]?(sess|lb)=?'
         part: response
 
       - type: regex
         name: xuanwudun
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)class=.(db)?waf.?(-row.)?>'
         part: response
 
       - type: regex
         name: chuangyudun
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)(http(s)?.//(www.)?)?365cyd.(com|net)'
         part: response
 
       - type: regex
         name: securesphere
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)<h2>error<.h2>'
           - '(?i)<b>error<.b>'
@@ -679,12 +762,14 @@ http:
 
       - type: regex
         name: anquanbao
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i).aqb_cc.error.'
         part: response
 
       - type: regex
         name: modsecurity
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)ModSecurity|NYOB'
           - '(?i)mod_security'
@@ -697,6 +782,7 @@ http:
 
       - type: regex
         name: modsecurityowasp
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)not.acceptable'
           - '(?i)additionally\S.a.406.not.acceptable'
@@ -705,6 +791,7 @@ http:
 
       - type: regex
         name: squid
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)squid'
           - '(?i)Access control configuration prevents'
@@ -714,6 +801,7 @@ http:
 
       - type: regex
         name: shieldsecurity
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)blocked.by.the.shield'
           - '(?i)transgression(\(s\))?.against.this'
@@ -723,6 +811,7 @@ http:
 
       - type: regex
         name: wallarm
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         regex:
           - '(?i)nginix.wallarm'
         part: response
@@ -730,6 +819,7 @@ http:
       - type: regex
         part: response
         name: huaweicloud
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         condition: and
         regex:
           - '(?i)content="CloudWAF"'
@@ -738,12 +828,14 @@ http:
 
       - type: word
         name: safe3webfirewall
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "safe3 Web Firewall"
 
       - type: word
         name: safedog
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Safe-Firewall"
@@ -752,6 +844,7 @@ http:
 
       - type: word
         name: squarespace
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Squarespace"
@@ -760,12 +853,14 @@ http:
 
       - type: word
         name: yunsuo
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: body
         words:
           - "yunsuologo"
 
       - type: word
         name: godaddywebprotection
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: body
         words:
           - "GoDaddy Security"
@@ -775,19 +870,21 @@ http:
 
       - type: word
         name: transipwebfirewall
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-TransIP-Balancer"
 
       - type: word
         name: xlabssecuritywaf
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Secured: By XLabs Security"
 
       - type: word
         name: shieldonfirewall
+        cpe: cpe:2.3:a:global-waf:global-waf:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Protected-By: shieldon.io"
-# digest: 4b0a00483046022100cc871de4c388fd86afa59d63e96f5e7cff108e8bf79af79ee053f6292fea6629022100963dbee44c850ad0f4bbd1104aab45338814a5b061499b4bb136fce825c683d2:922c64590222798bb761d5b6d8e72950

@@ -21,6 +21,8 @@ http:
 
     matchers:
       - type: dsl
+        name: nostromo
+        cpe: cpe:2.3:a:nostromo:nostromo:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(header, "nostromo")'
 

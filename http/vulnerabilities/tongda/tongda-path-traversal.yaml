@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/jas502n/OA-tongda-RCE
   classification:
+    cpe: cpe:2.3:a:tongda:tongda:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-23
   metadata:
     max-request: 1
+    vendor: tongda
+    product: tongda
   tags: tongda,lfi,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tongda
+        cpe: cpe:2.3:a:tongda:tongda:*:*:*:*:*:*:*:*
         part: body
         words:
           - "[mysql]"
@@ -35,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: tongda-2
+        cpe: cpe:2.3:a:tongda:tongda:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -42,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e7f1b2d414fc001d80d09403cfd712021732e10bb2686db6bcc8a5498110c85c0220318a978c5bdeca559078de84676abc1af32ebfe314d38069b4c876f9ae17a659:922c64590222798bb761d5b6d8e72950

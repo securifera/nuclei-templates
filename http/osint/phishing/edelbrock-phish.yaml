@@ -8,8 +8,12 @@ info:
     An Edelbrock phishing website was detected
   reference:
     - https://edelbrock.com
+  classification:
+    cpe: cpe:2.3:a:edelbrock:edelbrock:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: edelbrock
+    product: edelbrock
   tags: phishing,edelbrock,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: edelbrock
+        cpe: cpe:2.3:a:edelbrock:edelbrock:*:*:*:*:*:*:*:*
         words:
           - 'Edelbrock'
           - 'Edelbrock is the most respected name in performance! Since 1938, Edelbrock has manufactured its core products in the USA for quality and performance.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: edelbrock-2
+        cpe: cpe:2.3:a:edelbrock:edelbrock:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"edelbrock.com")'
-# digest: 4b0a0048304602210087b880650acd7a3ae44633d027e24fae3a5de4f6175832f6e80bef202948de13022100b14f6c9fb37006cf57d320d037a3bb4bdc7f19ccd1d21009df96a8670ba31b60:922c64590222798bb761d5b6d8e72950

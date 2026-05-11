@@ -8,8 +8,12 @@ info:
     A Zelle phishing website was detected
   reference:
     - https://zellepay.com
+  classification:
+    cpe: cpe:2.3:a:zelle:zelle:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: zelle
+    product: zelle
   tags: phishing,zelle,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zelle
+        cpe: cpe:2.3:a:zelle:zelle:*:*:*:*:*:*:*:*
         words:
           - "Zelle® is a direct and fast way to send and receive money with enrolled friends, family and others you trust. Look for Zelle® in your banking app to get started."
           - 'Send money with Zelle'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: zelle-2
+        cpe: cpe:2.3:a:zelle:zelle:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"zellepay.com")'
-# digest: 4a0a004730450221008d175a9e9dd9559edb947e0ea6c8e41296a38104e1334fa44f96e081066ffc2c02202cfc79913bfa65ad252f047c7221bf17d6c64d0a9a1ac3cf8cedb2c22530c6c2:922c64590222798bb761d5b6d8e72950

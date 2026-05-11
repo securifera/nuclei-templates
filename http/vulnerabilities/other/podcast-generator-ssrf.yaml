@@ -10,9 +10,13 @@ info:
     - https://www.exploit-db.com/exploits/51565
     - https://mirabbasagalarov.medium.com/podcastgenerator-3-2-9-blind-ssrf-via-xml-injection-3795804467df
     - https://github.com/PodcastGenerator/PodcastGenerator
+  classification:
+    cpe: cpe:2.3:a:podcast-generator:podcast-generator:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
+    vendor: podcast-generator
+    product: podcast-generator
   tags: podcastgenerator,ssrf,authenticated,intrusive,vuln
 variables:
   string: "{{rand_text_alpha(7)}}"
@@ -109,11 +113,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: podcast-generator
+        cpe: cpe:2.3:a:podcast-generator:podcast-generator:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
 
       - type: word
+        name: podcast-generator-2
+        cpe: cpe:2.3:a:podcast-generator:podcast-generator:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - "Main Information"
@@ -128,4 +136,3 @@ http:
         regex:
           - 'pe="hidden" name="token" value="([A-Za-z0-9]+)">'
         internal: true
-# digest: 4a0a0047304502203fb6a14112b7fee31c7885f199b474c87725874a02bbc6726b23092ba567c62b02210084ea1e22017afdd0b1f82ee43ad967aa44c53ad04edd7227afa153d234931f93:922c64590222798bb761d5b6d8e72950

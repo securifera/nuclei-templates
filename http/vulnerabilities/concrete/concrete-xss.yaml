@@ -10,11 +10,14 @@ info:
     - https://github.com/concrete5/concrete5/pull/7999
     - https://twitter.com/JacksonHHax/status/1389222207805661187
   classification:
+    cpe: cpe:2.3:a:concrete:concrete:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 1
+    vendor: concrete
+    product: concrete
   tags: hackerone,concrete,xss,cms,unauth,intrusive,vuln
 
 http:
@@ -25,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: concrete
+        cpe: cpe:2.3:a:concrete:concrete:*:*:*:*:*:*:*:*
         part: body
         words:
           - '</iframe><svg/onload=alert("{{randstr}}")>'
 
       - type: word
+        name: concrete-2
+        cpe: cpe:2.3:a:concrete:concrete:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220715b2cc187b4c5b531a1e6d558d5da347fa25b52afef4dc3f6195436ebee5fbd022100e2899eef18b2fcb378ed6475ddcc8f73128932e1f829726412182866ce9f1521:922c64590222798bb761d5b6d8e72950

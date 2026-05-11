@@ -6,11 +6,14 @@ info:
   severity: medium
   description: CircleCI ssh-config file was detected.
   classification:
+    cpe: cpe:2.3:a:circleci:circleci:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: circleci
+    product: circleci
   tags: config,exposure,circleci,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: circleci
+        cpe: cpe:2.3:a:circleci:circleci:*:*:*:*:*:*:*:*
         words:
           - "Host"
           - "HostName"
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220224b1c6a202fdc83e732a8150fbd02d96c127133f30009061d87273148080b4d022100fef1f0685fc197b156c44e0aa2392c6f65cfb674043b785a8b48babc0843cbe3:922c64590222798bb761d5b6d8e72950

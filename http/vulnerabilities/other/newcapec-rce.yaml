@@ -8,9 +8,13 @@ info:
     Newcapec front-end service management platform service.action interface has a remote command execution vulnerability, attackers can use the vulnerability to obtain server permissions.
   reference:
     - https://forum.butian.net/article/242
+  classification:
+    cpe: cpe:2.3:a:newcapec:newcapec:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     fofa-query: title="掌上校园服务管理平台"
+    vendor: newcapec
+    product: newcapec
   tags: newcapec,rce,intrusive,vuln
 
 variables:
@@ -34,10 +38,11 @@ http:
 
     matchers:
       - type: dsl
+        name: newcapec
+        cpe: cpe:2.3:a:newcapec:newcapec:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_1 == 200 && status_code_2 == 200'
           - 'contains(header_1, "text/plain") && contains(header_2, "text/plain")'
           - 'contains(body_1, "{\"_result\":")'
           - 'contains(body_2, "{{data}}")'
         condition: and
-# digest: 4b0a00483046022100ee87d2a68cd5a9a6b5fa0139e2a35606c7fcba93b8224745c4ad5f6fdcc8c0ff022100aba5ec819e86125b59b7399cf4dd55457046234a0cf5464b287bfaa617a04ab1:922c64590222798bb761d5b6d8e72950

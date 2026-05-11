@@ -6,11 +6,14 @@ info:
   severity: info
   description: Career.habr user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:careerhabr:careerhabr:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: careerhabr
+    product: careerhabr
   tags: osint,osint-business,careerhabr,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: careerhabr
+        cpe: cpe:2.3:a:careerhabr:careerhabr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "— Хабр Карьера</title>"
-# digest: 490a0046304402203b40fcc2e81ed574f2abca03b9be0be8c2061c252d998aa14b28e9818de05e990220020f34955b2258751740708c0142723a10d84953fe49e62b4ae266104e68ef9f:922c64590222798bb761d5b6d8e72950

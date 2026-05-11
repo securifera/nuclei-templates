@@ -7,8 +7,12 @@ info:
   description: Darkstat captures network traffic, calculates statistics about usage, and serves reports over HTTP
   reference:
     - https://unix4lyfe.org/darkstat/
+  classification:
+    cpe: cpe:2.3:a:darkstat:darkstat:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: darkstat
+    product: darkstat
   tags: darkstat,logs,exposure,discovery
 
 http:
@@ -21,11 +25,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: darkstat
+        cpe: cpe:2.3:a:darkstat:darkstat:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "[Ss]erver: darkstat.*"
 
       - type: word
+        name: darkstat-2
+        cpe: cpe:2.3:a:darkstat:darkstat:*:*:*:*:*:*:*:*
         part: body
         words:
           - "darkstat"
@@ -39,4 +47,3 @@ http:
         part: header
         kval:
           - server
-# digest: 4a0a0047304502203d688097e86c9681abd48be9f13021e547662be81c58f73d9d0e3c953f86b2be022100f81d268bbf0ae2f4006db0ea115f57f14c0b43d08be7ba4121b50c6164b12554:922c64590222798bb761d5b6d8e72950

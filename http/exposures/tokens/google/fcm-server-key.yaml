@@ -8,9 +8,12 @@ info:
   reference:
     - https://abss.me/posts/fcm-takeover
   classification:
+    cpe: cpe:2.3:a:fcm-server-key:fcm-server-key:*:*:*:*:*:*:*:*
     cwe-id: CWE-540
   metadata:
     max-request: 1
+    vendor: fcm-server-key
+    product: fcm-server-key
   tags: exposure,token,google,vuln
 
 http:
@@ -23,4 +26,3 @@ http:
         part: body
         regex:
           - "AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140}"
-# digest: 4a0a00473045022015b635bb7cb14973cbfe4323897cb637592d18c9b8aa4f7f2e0ffbe7a1670b5802210081c8e45be97059eb9bef31e179beb8b5f1109f4d6c730d48e8fd7dc372b0a24c:922c64590222798bb761d5b6d8e72950

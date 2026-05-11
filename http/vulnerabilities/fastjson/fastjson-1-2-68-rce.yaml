@@ -10,11 +10,14 @@ info:
     - https://github.com/tdtc7/qps/tree/4042cf76a969ccded5b30f0669f67c9e58d1cfd2/Fastjson
     - https://github.com/wyzxxz/fastjson_rce_tool
   classification:
+    cpe: cpe:2.3:a:fastjson:fastjson:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77,CWE-502
   metadata:
     max-request: 3
+    vendor: fastjson
+    product: fastjson
   tags: fastjson,rce,deserialization,oast,vuln
 
 http:
@@ -52,6 +55,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fastjson
+        cpe: cpe:2.3:a:fastjson:fastjson:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms DNS Interaction
         words:
           - "dns"
@@ -60,4 +65,3 @@ http:
         negative: true
         status:
           - 200
-# digest: 4a0a0047304502200cdbd56d0c3e20d45c7a94698d9aba44aa82a132e72e186c7b20a9c067aa5daf0221008c96b1758d172402ece19ae01bcf66153ead99c638f2818b80a947a42fb63ea0:922c64590222798bb761d5b6d8e72950

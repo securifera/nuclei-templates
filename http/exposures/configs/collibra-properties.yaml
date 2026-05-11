@@ -7,9 +7,13 @@ info:
   description: Detected exposed Collibra Properties.
   reference:
     - https://twitter.com/shaybt12/status/1662431219223605254
+  classification:
+    cpe: cpe:2.3:a:collibra:collibra:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
+    vendor: collibra
+    product: collibra
   tags: exposure,config,collibra-properties,collibra,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: collibra
+        cpe: cpe:2.3:a:collibra:collibra:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'collibra.url'
@@ -33,6 +39,8 @@ http:
         condition: or
 
       - type: word
+        name: collibra-2
+        cpe: cpe:2.3:a:collibra:collibra:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -40,6 +48,8 @@ http:
         condition: or
 
       - type: word
+        name: collibra-3
+        cpe: cpe:2.3:a:collibra:collibra:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -48,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207116a2503186a358e31a956a4878c11ed6915eb94ba79375268ad504dcea691b0221009414fd767ff58a307a8874922887685e030534394565f19d9c0b551570aa93c6:922c64590222798bb761d5b6d8e72950

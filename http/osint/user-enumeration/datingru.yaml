@@ -6,11 +6,14 @@ info:
   severity: info
   description: Dating.ru user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:datingru:datingru:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: datingru
+    product: datingru
   tags: osint,osint-dating,datingru,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: datingru
+        cpe: cpe:2.3:a:datingru:datingru:*:*:*:*:*:*:*:*
         part: body
         words:
           - "| dating.ru"
-# digest: 4a0a00473045022100b324e0ebb9c85aec60c746ff5c51a68f01ed99800077b94e77cb20bcbc085f1a02206f4ba5c10bee2b44626a62b6afcd1dfb647383cddec2fd236edef29576d90f4b:922c64590222798bb761d5b6d8e72950

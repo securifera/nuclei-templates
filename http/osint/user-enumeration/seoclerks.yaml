@@ -6,11 +6,14 @@ info:
   severity: info
   description: SEOClerks user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:seoclerks:seoclerks:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: seoclerks
+    product: seoclerks
   tags: osint,osint-social,seoclerks,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: seoclerks
+        cpe: cpe:2.3:a:seoclerks:seoclerks:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<div class=\"user-info container\">"
-# digest: 4b0a00483046022100fb6b031a139ddbae1ef42d8346b600e693efd0bfe7ee60ee8de180707d0c07ca022100ee64a815173d54942072fa241ee988902800f4505391da3f2285dabd9cf5def2:922c64590222798bb761d5b6d8e72950

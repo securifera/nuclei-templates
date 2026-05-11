@@ -5,9 +5,13 @@ info:
   author: dhiyaneshDK
   severity: low
   description: Lucee Stack Trace error exposed.
+  classification:
+    cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"Lucee"
+    vendor: lucee
+    product: lucee
   tags: lucee,exposure,vuln
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lucee
+        cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
         words:
           - 'lucee.runtime'
 
@@ -26,4 +32,3 @@ http:
           - 500
           - 200
         condition: or
-# digest: 4b0a00483046022100eade2158340d3b2c153280982b96bc2b833e4161b35c0251cd38d044075ac1240221008796addb7c32e041244e061346421e51ae1fc3beafc90483e654e1a26b82fc5c:922c64590222798bb761d5b6d8e72950

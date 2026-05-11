@@ -8,9 +8,13 @@ info:
     OpenAI plugins connect ChatGPT to third-party applications. These plugins enable ChatGPT to interact with APIs defined by developers, enhancing ChatGPT's capabilities and allowing it to perform a wide range of actions.
   reference:
     - https://platform.openai.com/docs/plugins/introduction
+  classification:
+    cpe: cpe:2.3:a:openai:chatgpt_plugin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: openai
+    product: chatgpt_plugin
   tags: tech,openai,plugin,discovery,ai
 
 http:
@@ -20,6 +24,8 @@ http:
 
     matchers:
       - type: word
+        name: chatgpt_plugin
+        cpe: cpe:2.3:a:openai:chatgpt_plugin:*:*:*:*:*:*:*:*
         words:
           - '"schema_version":'
           - '"name_for_model":'
@@ -29,4 +35,3 @@ http:
       - type: json
         json:
           - '.name_for_human'
-# digest: 4a0a00473045022025088ab4f989d64b738ea9f772b91e8df86db327bef7369e2d4217b08ffc6f92022100d5104d6ebdad285b3c10f4f1e3759ee1a42d0189db56ced823ecff2f9242fda8:922c64590222798bb761d5b6d8e72950

@@ -10,12 +10,15 @@ info:
     - https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
     - https://wordpress.org/support/article/backing-up-your-database/
   classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
   metadata:
     verified: true
     max-request: 12
+    vendor: wordpress
+    product: wordpress
   tags: exposure,wordpress,backup,database,sql,misconfig
 
 http:
@@ -41,9 +44,10 @@ http:
     max-size: 102400 # 100KB - Size in bytes - Max Size to read from server response
     matchers:
       - type: dsl
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(content_type, "application/x-sql")'
           - 'contains_any(body, "CREATE TABLE", "INSERT INTO", "DROP TABLE", "MySQL", "phpMyAdmin")'
         condition: and
-# digest: 4a0a00473045022100a98fa90405222dfba4b37c1e8b20bb97365a911737d69f9ca3ed9c3c963dcbe502200ec69276cfd3b366a7f19b0225d33f37037c84675dca667f7f12be67e43627e5:922c64590222798bb761d5b6d8e72950

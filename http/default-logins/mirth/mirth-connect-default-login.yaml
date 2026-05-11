@@ -10,6 +10,7 @@ info:
     - https://www.nextgen.com/products-and-services/integration-engine
     - https://docs.nextgen.com/bundle/Mirth_Connect_v4.4.1/page/connect/connect/topics/c_Getting_Started_mirth_connect_ug.html
   classification:
+    cpe: cpe:2.3:a:nextgen:mirth-connect:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-798
@@ -40,6 +41,8 @@ http:
 
     matchers:
       - type: dsl
+        name: mirth-connect
+        cpe: cpe:2.3:a:nextgen:mirth-connect:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -57,9 +60,10 @@ http:
 
     matchers:
       - type: dsl
+        name: mirth-connect-2
+        cpe: cpe:2.3:a:nextgen:mirth-connect:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/xml")'
           - 'contains_all(to_lower(body), "<username>", "admin")'
         condition: and
-# digest: 4a0a0047304502207651fa5ec89eeb4ebd8e179f46b0a51656104ee20d148f7b46fc51859f0296c4022100932a44137b1d50bed9bfb2bd114ccb4156ab2e36362551dc7bfa3d234c7e7997:922c64590222798bb761d5b6d8e72950

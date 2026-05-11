@@ -6,11 +6,14 @@ info:
   severity: info
   description: Biolink user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:biolink:biolink:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: biolink
+    product: biolink
   tags: osint,osint-misc,biolink,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: biolink
+        cpe: cpe:2.3:a:biolink:biolink:*:*:*:*:*:*:*:*
         part: body
         words:
           - "profile:username"
-# digest: 4a0a0047304502206bcce7d44cb43c9a0990fbdcbc7fab957f14eb50d933f4b1e66f88ac76e732d70221009311e06c2fc7d9880d4cf33c1d7de04b366560d5a57dfb036bfb702d224703e5:922c64590222798bb761d5b6d8e72950

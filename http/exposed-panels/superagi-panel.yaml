@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/TransformerOptimus/SuperAGI
     - https://superagi.com/
+  classification:
+    cpe: cpe:2.3:a:transformeroptimus:superagi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -29,8 +31,9 @@ http:
 
     matchers:
       - type: dsl
+        name: superagi
+        cpe: cpe:2.3:a:transformeroptimus:superagi:*:*:*:*:*:*:*:*
         dsl:
           - contains(body, "<title>SuperAGI</title>")
           - status_code == 200 || status_code == 404
         condition: and
-# digest: 4a0a00473045022068c96ede8c23cb3c992e794f7cc72795159dc408ebc55fefdf5044f14c1b489f022100eb3afd72e49ae1355b56fdd6194f4b36721f3e4f4d30a146c84f3ff86ebfe43c:922c64590222798bb761d5b6d8e72950

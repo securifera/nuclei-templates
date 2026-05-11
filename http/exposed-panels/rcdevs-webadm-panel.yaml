@@ -8,10 +8,14 @@ info:
     RCDevs WebADM Login Panel was detected.
   reference:
     - https://www.rcdevs.com/solutions/
+  classification:
+    cpe: cpe:2.3:a:rcdevs:webadm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: http.html:"WebADM"
+    vendor: rcdevs
+    product: webadm
   tags: panel,rcdevs,webadm,login,detect,discovery
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webadm
+        cpe: cpe:2.3:a:rcdevs:webadm:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'WebADM'
@@ -45,4 +51,3 @@ http:
         group: 1
         regex:
           - '(?i)webadm\s+(free|enterprise)\s+edition'
-# digest: 4a0a0047304502205e0e9a4aaefd901113456305cfe03446b854f96b5ccca45c5253c7f8aa998864022100b23908b23e6586511b3d1963d06235b73be262ef26fd425ca842fa770d0e55d8:922c64590222798bb761d5b6d8e72950

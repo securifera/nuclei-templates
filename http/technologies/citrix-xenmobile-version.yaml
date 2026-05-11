@@ -24,6 +24,8 @@ http:
 
     matchers:
       - type: dsl
+        name: xenmobile_server
+        cpe: cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 302'
           - 'contains(header, "Location: /zdm/login_xdm_uc.jsp")'

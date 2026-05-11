@@ -7,10 +7,14 @@ info:
   description: Detects Ansible AWX Instance
   reference:
     - https://github.com/ansible/awx
+  classification:
+    cpe: cpe:2.3:a:ansible:awx:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:'Select a frequency for snapshot retention'
+    vendor: ansible
+    product: awx
   tags: tech,ansible,awx,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: awx
+        cpe: cpe:2.3:a:ansible:awx:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"description":"AWX REST API"'
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c67677227a9cdbc860ff3034251f88a6e2f9558bd75b3e2e92aa393abd5c565a022100f4454c53682dda17caa227a62b3b28c6b85d59fc0de0733103210a2e6bedff15:922c64590222798bb761d5b6d8e72950

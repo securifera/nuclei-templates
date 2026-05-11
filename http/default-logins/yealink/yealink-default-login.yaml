@@ -8,10 +8,14 @@ info:
     Yealink CTP18 Default Administrator Credentials Discovered.
   reference:
     - https://support.yealink.com
+  classification:
+    cpe: cpe:2.3:a:yealink:yealink:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: Yealink CTP18
+    vendor: yealink
+    product: yealink
   tags: default-login,yealink,vuln
 
 http:
@@ -38,6 +42,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yealink
+        cpe: cpe:2.3:a:yealink:yealink:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"ret":"ok","data":true}'
@@ -45,6 +51,8 @@ http:
         condition: or
 
       - type: word
+        name: yealink-2
+        cpe: cpe:2.3:a:yealink:yealink:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - text/html
@@ -52,4 +60,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220318d054afb3340844a5206a9372fc759e7405e4518f7c0d2f1c95f36e35ed350022035953a9a4171eff1f8a2afc1b5e9b61ea384c3609eb0f95a6038ae8020ce430e:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/136658/RockMongo-1.1.8-Cross-Site-Request-Forgery-Cross-Site-Scripting.html
   classification:
+    cpe: cpe:2.3:a:rockmongo:rockmongo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 1
+    vendor: rockmongo
+    product: rockmongo
   tags: rockmongo,xss,packetstorm,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rockmongo
+        cpe: cpe:2.3:a:rockmongo:rockmongo:*:*:*:*:*:*:*:*
         words:
           - '"><script>alert(document.domain)</script>'
         part: body
@@ -37,7 +42,8 @@ http:
           - 200
 
       - type: word
+        name: rockmongo-2
+        cpe: cpe:2.3:a:rockmongo:rockmongo:*:*:*:*:*:*:*:*
         words:
           - 'Content-Type: text/html'
         part: header
-# digest: 4a0a00473045022050e643620031ad3361065352d497a9e42c8915b91ed66c59fe5507f1532839f40221008e243dd586eb416facde01c46d40546730e7f48e31b1b7c3734fa72d42f87ae6:922c64590222798bb761d5b6d8e72950

@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDK
   severity: unknown
   description: Multiple Ruby configuration files were detected.
+  classification:
+    cpe: cpe:2.3:a:config-rb:config-rb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: html:"config.rb"
+    vendor: config-rb
+    product: config-rb
   tags: ruby,devops,exposure,config,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: config-rb
+        cpe: cpe:2.3:a:config-rb:config-rb:*:*:*:*:*:*:*:*
         words:
           - 'images_dir'
           - 'css_dir'
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207358f896e208480399e21a8f0f86d8078a2705dc43b27cae05469c345f6adfa502206cc9319d987e385a7b94794b8fe3b1b908c9d27df6dca10576b126f0cd109401:922c64590222798bb761d5b6d8e72950

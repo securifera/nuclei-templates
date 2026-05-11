@@ -10,6 +10,7 @@ info:
     - https://en.panabit.com/wp-content/uploads/Panabit-Intelligent-Application-Gateway-04072020.pdf
     - https://topic.alibabacloud.com/a/panabit-monitoring-installation-tutorial_8_8_20054193.html
   classification:
+    cpe: cpe:2.3:a:panabit:panabit:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-1391
@@ -17,6 +18,8 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="Panabit-智能网关"
+    vendor: panabit
+    product: panabit
   tags: panabit,default-login,intrusive,vuln
 
 http:
@@ -50,6 +53,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: panabit
+        cpe: cpe:2.3:a:panabit:panabit:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<META HTTP-EQUIV=REFRESH CONTENT="0;URL=/index.htm">'
@@ -57,6 +62,8 @@ http:
         condition: and
 
       - type: word
+        name: panabit-2
+        cpe: cpe:2.3:a:panabit:panabit:*:*:*:*:*:*:*:*
         part: header
         words:
           - "paonline_admin"
@@ -64,4 +71,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022025ebcaba4d93fe7c9d8c6816e5adc936af3a345b881479ce7a902d7fbe189275022100894f0b42f47b8e7d40e47d4838903e18b216033f42abc41505ff96bcfe7d274b:922c64590222798bb761d5b6d8e72950

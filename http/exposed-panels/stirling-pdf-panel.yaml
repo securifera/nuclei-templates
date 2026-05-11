@@ -8,10 +8,14 @@ info:
     Stirling PDF panel was discovered.
   reference:
     - https://github.com/Stirling-Tools/Stirling-PDF
+  classification:
+    cpe: cpe:2.3:a:stirling-pdf:stirling-pdf:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="StirlingPDF"
+    vendor: stirling-pdf
+    product: stirling-pdf
   tags: panel,login,stirling-pdf,detect,discovery
 
 http:
@@ -23,8 +27,9 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: stirling-pdf
+        cpe: cpe:2.3:a:stirling-pdf:stirling-pdf:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(body, "<title>StirlingPDF - Sign in", "content=\"StirlingPDF", "window.stirlingPDF")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100c5241d50e68f198db96df5b13f0acaef195fa716daabf5dc25a6ca5d7f3b3be9022100cd49cdf9521e0201f450f4229a95ef0f35b51c3d8d0c882c0be5226f657bb1c4:922c64590222798bb761d5b6d8e72950

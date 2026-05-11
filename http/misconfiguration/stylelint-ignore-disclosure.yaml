@@ -8,11 +8,15 @@ info:
     The .stylelintignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
   reference:
     - https://stylelint.io/user-guide/ignore-code
+  classification:
+    cpe: cpe:2.3:a:stylelint-ignore:stylelint-ignore:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:".stylelintignore"
     fofa-query: body=".stylelintignore"
+    vendor: stylelint-ignore
+    product: stylelint-ignore
   tags: stylelintignore,config,exposure,disclosure
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: stylelint-ignore
+        cpe: cpe:2.3:a:stylelint-ignore:stylelint-ignore:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "len(body) > 30"
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: stylelint-ignore-2
+        cpe: cpe:2.3:a:stylelint-ignore:stylelint-ignore:*:*:*:*:*:*:*:*
         part: response
         words:
           - "MongoDB over HTTP on the native"
@@ -45,4 +53,3 @@ http:
           - "image/"
           - "Response xmlns"
         negative: true
-# digest: 4a0a0047304502202c98f8acfd1af18cb85ab88070703c627ab7d6c16670a893b3273b4408144c27022100b6279080900e4910f36cccd2d6dac6749d39271fe77e7bc65763adba22e0f874:922c64590222798bb761d5b6d8e72950

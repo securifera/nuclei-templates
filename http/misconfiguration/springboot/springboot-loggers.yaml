@@ -5,9 +5,13 @@ info:
   author: that_juan_,dwisiswant0,wdahlenb,TheZakMan
   severity: low
   description: Springboot Loggers is exposed.
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "\"loggers\"")'
@@ -28,10 +34,11 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"levels"'
           - '"configuredLevel"'
           - '"effectiveLevel"'
         condition: or
-# digest: 4a0a00473045022078e9088fde046fdecfc872985bb5ccd101b42802d0b444ec091fe70f3f6b2a31022100d1b8045371332c573892eb71494033d68bf66cca65fd4fc686c4472fd1137242:922c64590222798bb761d5b6d8e72950

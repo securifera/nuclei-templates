@@ -8,8 +8,12 @@ info:
     A LINE phishing website was detected
   reference:
     - https://line.me
+  classification:
+    cpe: cpe:2.3:a:line:line:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: line
+    product: line
   tags: phishing,line,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: line
+        cpe: cpe:2.3:a:line:line:*:*:*:*:*:*:*:*
         words:
           - "メッセンジャーアプリを超え、新しいコミュニケーションの形を目指して、新時代のインフラ体験をLINEはひとりひとりに届けていきます。"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: line-2
+        cpe: cpe:2.3:a:line:line:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"line.me")'
-# digest: 490a0046304402201a9d4d1520b4b29b6f87abd6cf33600c214676eb945a6cb3a01390906390b35c022015b8ba6e368db5cb9297cee365d5ce3bb73dc6f317a2cf1e439bd15e800b2b43:922c64590222798bb761d5b6d8e72950

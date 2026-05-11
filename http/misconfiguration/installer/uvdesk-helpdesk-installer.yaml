@@ -8,10 +8,14 @@ info:
     Detects exposed UVDesk Helpdesk Installation page.
   reference:
     - https://www.uvdesk.com/en/
+  classification:
+    cpe: cpe:2.3:a:uvdesk:helpdesk:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"UVDesk Helpdesk Community Edition - Installation Wizard"
+    vendor: uvdesk
+    product: helpdesk
   tags: misconfig,install,exposure,uvdesk,helpdesk,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: helpdesk
+        cpe: cpe:2.3:a:uvdesk:helpdesk:*:*:*:*:*:*:*:*
         part: body
         words:
           - "UVDesk Helpdesk Community Edition - Installation Wizard"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220361168f9a130c732c74fa905011b727957f5ce1d705e4658a52abc09db121fe30220021974c962990ba2710858385d580b086bf2ba5675c0051bba4f4a4504c4db97:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,7 @@ info:
   severity: info
   description: Tornado server panel was detected.
   classification:
+    cpe: cpe:2.3:a:tornadoweb:tornado:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Tornado - Login"
+    vendor: tornadoweb
+    product: tornado
   tags: panel,tornado,tech,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tornado
+        cpe: cpe:2.3:a:tornadoweb:tornado:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Welcome to Docmosis Tornado"
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210087e2d367c278698d67041a2eec77f3a94615357b4764289de12960bfcc744aa20221008e9b20c468f699cf54369453596f3c799b22137593821180cb465daaa3e22c13:922c64590222798bb761d5b6d8e72950

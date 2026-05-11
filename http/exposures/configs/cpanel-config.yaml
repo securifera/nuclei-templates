@@ -6,9 +6,13 @@ info:
   severity: medium
   description: |
     cPanel configuration file is exposed and accessible, potentially leading to sensitive information disclosure.
+  classification:
+    cpe: cpe:2.3:a:cpanel:cpanel:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: cpanel
+    product: cpanel
   tags: cpanel,config,exposure,discovery
 
 http:
@@ -18,8 +22,9 @@ http:
 
     matchers:
       - type: dsl
+        name: cpanel
+        cpe: cpe:2.3:a:cpanel:cpanel:*:*:*:*:*:*:*:*
         dsl:
           - "contains_all(body, 'configuration','user','access_log=')"
           - "status_code == 200"
         condition: and
-# digest: 490a00463044022046724c024398442587ee3f74b077fbc14d4446eb8d2e361d7fa0a3714bb858d802205db9a89ac68bb9848f5e6eed930e6b4d508b9654295057a4d0c71cc2f2a98736:922c64590222798bb761d5b6d8e72950

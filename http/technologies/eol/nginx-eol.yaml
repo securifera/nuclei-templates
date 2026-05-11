@@ -26,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         dsl:
           - compare_versions(version, '<1.28.0')
           - contains(server, 'nginx')

@@ -10,11 +10,14 @@ info:
     - https://github.com/Mohammedsaneem/wordpress-upload-information-disclosure/blob/main/worpress-upload.yaml
     - https://woocommerce.com/products/pdf-invoices/
   classification:
+    cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: woocommerce
+    product: woocommerce
   tags: wordpress,listing,exposure,woocommerce,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: woocommerce
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         words:
           - "Index of /wp-content/uploads/pdf-invoices"
           - "Parent Directory"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ce4000e5a9cdf32307ca12f6980618e5d78c7706ec239870a1f327bda0273032022023178dd9e844ddbc1fb510cccc27b114b3d456488f0ed6b4307d108beb7703a0:922c64590222798bb761d5b6d8e72950

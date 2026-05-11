@@ -8,8 +8,12 @@ info:
     A TeePublic phishing website was detected
   reference:
     - https://teepublic.com
+  classification:
+    cpe: cpe:2.3:a:teepublic:teepublic:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: teepublic
+    product: teepublic
   tags: phishing,teepublic,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: teepublic
+        cpe: cpe:2.3:a:teepublic:teepublic:*:*:*:*:*:*:*:*
         words:
           - "Artist-Made Apparel and Other Gift Ideas. BFCM Deals Up to 40% Off! | TeePublic"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: teepublic-2
+        cpe: cpe:2.3:a:teepublic:teepublic:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"teepublic.com")'
-# digest: 4a0a0047304502210085c08a0a8af825bd79ed34a673b0901e6e924a66aebb640212322a1ad7a1c43d022035fdb5e84de23353de00c9111a46e9353ec772266e38b37c010ef73fb88c8fd9:922c64590222798bb761d5b6d8e72950

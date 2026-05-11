@@ -34,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pulsar
+        cpe: cpe:2.3:a:apache:pulsar:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Pulsar Admin Console'
@@ -41,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008e0214e26ad3af7f07c3a74b518c32493fc85ee600683d303a44777184b646730220099b10517f7b3aff3feceaf31a421ee73167b12c29142e7f5df556404aa28fb7:922c64590222798bb761d5b6d8e72950

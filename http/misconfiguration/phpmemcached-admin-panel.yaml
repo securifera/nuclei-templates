@@ -5,10 +5,14 @@ info:
   author: tess
   severity: medium
   description: phpMemcachedAdmin Panel is exposed.
+  classification:
+    cpe: cpe:2.3:a:phpmemcached:phpmemcached:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"phpMemcachedAdmin"
+    vendor: phpmemcached
+    product: phpmemcached
   tags: phpmemcached,exposure,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpmemcached
+        cpe: cpe:2.3:a:phpmemcached:phpmemcached:*:*:*:*:*:*:*:*
         part: body
         words:
           - "phpMemcachedAdmin"
@@ -32,4 +38,3 @@ http:
         group: 1
         regex:
           - "MemcachedAdmin ([0-9.]+)"
-# digest: 490a00463044022058f01102f519fae1e075269292a340dbee676a81b93e185a0e2cf43988c415f202201b0569b31660ab3ebaf66f6ac2d20254519534fc366271b455e9900a492a8f86:922c64590222798bb761d5b6d8e72950

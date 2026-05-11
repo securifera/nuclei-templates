@@ -9,11 +9,14 @@ info:
   reference:
     - https://docs.retool.com/releases/edge/3.88#:~:text=Fixed%20an%20SVG%20XSS%20vulnerability%20by%20adding%20a%20CSP.%20(%2349381)
   classification:
+    cpe: cpe:2.3:a:retool:retool:*:*:*:*:*:*:*:*
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="x-retool"
+    vendor: retool
+    product: retool
   tags: retool,xss,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: retool
+        cpe: cpe:2.3:a:retool:retool:*:*:*:*:*:*:*:*
         part: body
         words:
           - "alert(document.domain);"
@@ -33,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: retool-2
+        cpe: cpe:2.3:a:retool:retool:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Content-Security-Policy: default-src 'none';"
@@ -41,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c47160445153a1e7e517d5b352149fac6becbf8be85c39c5e89d3a0042c5c658022100e22f6ed99a17f33d892f4ea4206187b9a7c4ba029af438ee4acfd58cadcf5587:922c64590222798bb761d5b6d8e72950

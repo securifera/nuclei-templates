@@ -10,10 +10,13 @@ info:
     - https://github.com/github/roadmap/issues/557
     - https://github.blog/changelog/2022-12-06-limit-scope-of-npm-tokens-with-the-new-granular-access-tokens/
   classification:
+    cpe: cpe:2.3:a:npm:npm:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: npm
+    product: npm
   tags: npm,token,exposure,vuln
 
 flow: http(1) && http(2)
@@ -27,6 +30,7 @@ http:
       - type: regex
         part: body
         name: token
+        cpe: cpe:2.3:a:npm:npm:*:*:*:*:*:*:*:*
         regex:
           - "(npm_[A-Za-z0-9]{36})"
         internal: true
@@ -41,6 +45,8 @@ http:
     disable-path-automerge: true
     matchers:
       - type: dsl
+        name: npm
+        cpe: cpe:2.3:a:npm:npm:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "username")'
@@ -51,4 +57,3 @@ http:
       - type: dsl
         dsl:
           - token
-# digest: 490a00463044022048737d2636f5fd36981a8b14a3aa524e3d06e34e316293b348740ecda76d943c02204d30beaa7fa025161f40713a93f861305772d8091aa394b9a96c99dbf14e3fa3:922c64590222798bb761d5b6d8e72950

@@ -8,9 +8,13 @@ info:
     Detects the presence of the SAP NetWeaver Process Integration / Composition Environment Tools page
   reference:
     - https://help.sap.com/doc/saphelp_scm700_ehp02/7.0.2/en-US/f6/2a7cb018bc4b239ea5b7af675a18ef/content.htm?no_cache=true
+  classification:
+    cpe: cpe:2.3:a:netweaver:netweaver:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:-266008933
+    vendor: netweaver
+    product: netweaver
   tags: sap,netweaver,cet,detect,discovery
 
 http:
@@ -21,11 +25,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: netweaver
+        cpe: cpe:2.3:a:netweaver:netweaver:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Composition Environment Tools"
 
       - type: word
+        name: netweaver-2
+        cpe: cpe:2.3:a:netweaver:netweaver:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022014758197b1d5d9665c58f8f22652fb791405b603bf9168873484efd600fcbada022100d36c3b9bf9f1c90b176589d8830f3219240140794b122bd62556615606bffcfe:922c64590222798bb761d5b6d8e72950

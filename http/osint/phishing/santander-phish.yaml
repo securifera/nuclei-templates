@@ -8,8 +8,12 @@ info:
     A Santander Bank phishing website was detected
   reference:
     - https://santander.com
+  classification:
+    cpe: cpe:2.3:a:santander:santander:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: santander
+    product: santander
   tags: phishing,santander,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: santander
+        cpe: cpe:2.3:a:santander:santander:*:*:*:*:*:*:*:*
         words:
           - "Our purpose is to help people and businesses prosper. We strive to make all we do Simple, Personal and Fair."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: santander-2
+        cpe: cpe:2.3:a:santander:santander:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"santander.com")'
-# digest: 4b0a00483046022100ad82056306b4308977d5445bcb4d8607517c4ce8d00f23c83428afc6201c7e95022100d26ec5d9fc61fdeff6e57015a4c47a76407347ed8eefded10c278e330a9786b3:922c64590222798bb761d5b6d8e72950

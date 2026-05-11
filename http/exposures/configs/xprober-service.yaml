@@ -9,11 +9,14 @@ info:
     - https://github.com/kmvan/x-prober
     - https://twitter.com/bugbounty_tips/status/1339984643517423616
   classification:
+    cpe: cpe:2.3:a:xprober-service:xprober-service:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: xprober-service
+    product: xprober-service
   tags: config,exposure,vuln
 
 http:
@@ -23,8 +26,9 @@ http:
 
     matchers:
       - type: word
+        name: xprober-service
+        cpe: cpe:2.3:a:xprober-service:xprober-service:*:*:*:*:*:*:*:*
         words:
           - '"appName":"X Prober"'
           - '<title>X Prober'
         condition: and
-# digest: 4a0a00473045022100c38f31b690e50fc63847ab6a6e1a249844a9f824777f2f4a7cd681bc363c683402202491aa5d56e196dbf90115e19270ee85e9108d257bdb70a07ca337079a51fc45:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     A Kedacom network keyboard console panel was detected.
+  classification:
+    cpe: cpe:2.3:a:network:network:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: 网络键盘控制台
+    vendor: network
+    product: network
   tags: panel,login,kedacom,network,discovery
 
 http:
@@ -20,10 +24,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: network
+        cpe: cpe:2.3:a:network:network:*:*:*:*:*:*:*:*
         words:
           - '网络键盘控制台'
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ddb207588841f72074b040424619b07636b81e30d239aac4afb208ea0dbad70e0220415d75e97a9e261a5eff6d8fe57d65eb04ee84fe814b99dc2bbfe616723558c4:922c64590222798bb761d5b6d8e72950

@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.fortinet.com/blog/threat-research/the-ghosts-of-mirai
   classification:
+    cpe: cpe:2.3:a:mirai:mirai:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 1
+    vendor: mirai
+    product: mirai
   tags: mirai,rce,oast,vuln
 
 http:
@@ -27,7 +30,8 @@ http:
 
     matchers:
       - type: word
+        name: mirai
+        cpe: cpe:2.3:a:mirai:mirai:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the HTTP Interaction
         words:
           - "http"
-# digest: 4a0a00473045022100f375bff2c3210b0091ae0b07284e744ceeff27d648258db049fdc2407317e0d10220198c59b3963f7f76ac4f56f5952a9d316ab9ffd750d5d5364eb58dd24fbed232:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/7288
   classification:
+    cpe: cpe:2.3:a:netsurveillance-web:netsurveillance-web:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     max-request: 1
     shodan-query: http.title:"NETSurveillance WEB"
     google-query: intitle:"NETSurveillance WEB"
+    vendor: netsurveillance-web
+    product: netsurveillance-web
   tags: tech,iot,edb,discovery
 
 http:
@@ -25,10 +28,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: netsurveillance-web
+        cpe: cpe:2.3:a:netsurveillance-web:netsurveillance-web:*:*:*:*:*:*:*:*
         words:
           - "<title>NetSurveillance WEB</title>"
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022009d5186029cea2aa9aa4fed11e4ec1fd2041afa1eff8554fdf4710fbce882cbc022100a3b6b661ae34addfc7c42db9d405a7931d9f0440b1013f4ea6e42bf8544fd022:922c64590222798bb761d5b6d8e72950

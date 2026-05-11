@@ -7,8 +7,12 @@ info:
   description: Apache Storm instance is exposed.
   reference:
     - https://storm.apache.org/releases/current/STORM-UI-REST-API.html
+  classification:
+    cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: apache
+    product: apache
   tags: apache,unauth,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: apache
+        cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"totalMem":'
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009240173d4a2921f99296be3e49bd3738cc68e6a90c02f000b8dd58d36744291702206f173376d50c70d700d83c347b5940c0535e0122ee64aaeca984193abb5cea91:922c64590222798bb761d5b6d8e72950

@@ -8,9 +8,13 @@ info:
     Detected exposed .gcloudignore files which may reveal directory structure,deployment configurations, and sensitive project information used by Google Cloud SDK (gcloud) during deployments.
   reference:
     - https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore
+  classification:
+    cpe: cpe:2.3:a:gcloud:gcloud:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: gcloud
+    product: gcloud
   tags: exposure,gcloud,google,config,files,cloud
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gcloud
+        cpe: cpe:2.3:a:gcloud:gcloud:*:*:*:*:*:*:*:*
         part: body
         words:
           - "deployment"
@@ -28,6 +34,8 @@ http:
         condition: or
 
       - type: word
+        name: gcloud-2
+        cpe: cpe:2.3:a:gcloud:gcloud:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/octet-stream"
@@ -35,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210099dfd1e6b4e3663b6ea3ed55feadce9940623ced67e4c193ff2934036b6bc983022100a36c738567625aa9b0c4aea57f57606bd3237b87b55e6cddd8ee80acf7e3cace:922c64590222798bb761d5b6d8e72950

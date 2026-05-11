@@ -8,10 +8,14 @@ info:
     Detected OpenLiteSpeed WebAdmin Console was using default credentials.
   reference:
     - https://www.digitalocean.com/community/tutorials/how-to-install-the-openlitespeed-web-server-on-ubuntu-18-04
+  classification:
+    cpe: cpe:2.3:a:openlitespeed:openlitespeed:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="OpenLiteSpeed WebAdmin"
+    vendor: openlitespeed
+    product: openlitespeed
   tags: default-login,openlitespeed,litespeed,webadmin
 
 variables:
@@ -29,8 +33,9 @@ http:
 
     matchers:
       - type: dsl
+        name: openlitespeed
+        cpe: cpe:2.3:a:openlitespeed:openlitespeed:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 302'
           - 'contains_all(header, "LSID", "LSPA", "Location: /index.php")'
         condition: and
-# digest: 4a0a0047304502210086e3f15499d21f86845420b2b801a30bea4392bbffaaf580b9d2787f532a4054022042c2cb22efc6196bfc12685dbf97e3b0eb4de9a64e9a4a2868ff0214a91e85c3:922c64590222798bb761d5b6d8e72950

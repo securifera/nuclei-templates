@@ -11,6 +11,7 @@ info:
     - https://blog.csdn.net/qq_48985780/article/details/122211136
     - https://github.com/star7th/showdoc/pull/1059
   classification:
+    cpe: cpe:2.3:a:showdoc:showdoc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:L
     cvss-score: 9.9
     cwe-id: CWE-434
@@ -18,6 +19,8 @@ info:
     verified: true
     max-request: 2
     fofa-query: app="ShowDoc"
+    vendor: showdoc
+    product: showdoc
   tags: cnvd,cnvd2020,showdoc,fileupload,intrusive,vuln
 variables:
   str1: "{{randstr}}"
@@ -41,6 +44,8 @@ http:
 
     matchers:
       - type: dsl
+        name: showdoc
+        cpe: cpe:2.3:a:showdoc:showdoc:*:*:*:*:*:*:*:*
         dsl:
           - status_code_2 == 200
           - body_2 == str1
@@ -62,4 +67,3 @@ http:
         regex:
           - '(\d{4}-\d{2}-\d{2})\\/([a-f0-9]+\.txt)'
         internal: true
-# digest: 4b0a00483046022100d96187e451d184367c6bbd2e34f0d1b9fe3438a0186dc96d866947a11571751f022100ded6be77b68d2aedd657fe4cd12e684c1954a8afeaab0f4c34a9e1cf204d0943:922c64590222798bb761d5b6d8e72950

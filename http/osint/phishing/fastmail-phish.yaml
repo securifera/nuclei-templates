@@ -8,8 +8,12 @@ info:
     A Fastmail phishing website was detected
   reference:
     - https://fastmail.com
+  classification:
+    cpe: cpe:2.3:a:fastmail:fastmail:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: fastmail
+    product: fastmail
   tags: phishing,fastmail,email,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fastmail
+        cpe: cpe:2.3:a:fastmail:fastmail:*:*:*:*:*:*:*:*
         words:
           - '<title>Email and calendar made better | Fastmail'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: fastmail-2
+        cpe: cpe:2.3:a:fastmail:fastmail:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"fastmail.com")'
-# digest: 4a0a00473045022100a74820e498d40f498bb6dc7428356e8e219cb14366f6d952e9937e1c71a3982202202e7db209be8360f17d14964a00d5b94cea3dcdb22a80d7c85762dbb621b3050d:922c64590222798bb761d5b6d8e72950

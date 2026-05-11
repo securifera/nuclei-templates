@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6863
   classification:
+    cpe: cpe:2.3:a:polycom:polycom:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: polycom
+    product: polycom
   tags: edb,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: polycom
+        cpe: cpe:2.3:a:polycom:polycom:*:*:*:*:*:*:*:*
         words:
           - "<title>Polycom Login</title>"
         part: body
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022017d64489d0646b31e2a2332fa3f23a920a8e31abc8eafbdb67610f10a887035f02202b45d6accd56c4f2b8f858d031a5a4b8e5f90f3f21d67ac6e8d3c89f7be7519c:922c64590222798bb761d5b6d8e72950

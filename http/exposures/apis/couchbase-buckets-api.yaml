@@ -9,11 +9,14 @@ info:
     - https://docs.couchbase.com/server/current/rest-api/rest-bucket-intro.html
     - https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-metricset-couchbase-bucket.html
   classification:
+    cpe: cpe:2.3:a:couchbase:couchbase:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: couchbase
+    product: couchbase
   tags: exposure,couchbase,discovery
 
 http:
@@ -28,6 +31,8 @@ http:
           - 200
 
       - type: word
+        name: couchbase
+        cpe: cpe:2.3:a:couchbase:couchbase:*:*:*:*:*:*:*:*
         words:
           - '"couchbase":'
           - '"bucket":'
@@ -35,7 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: couchbase-2
+        cpe: cpe:2.3:a:couchbase:couchbase:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
-# digest: 4a0a00473045022100d557cd70886daff1b7f89dd4a20fa35ae77b8a2ee03d362b885bd9e62c92211a0220045f5b50d06fd202442f74a46ccb19f99e226c18a194ab5afb85ff7f024eb74e:922c64590222798bb761d5b6d8e72950

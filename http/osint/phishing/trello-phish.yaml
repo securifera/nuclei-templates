@@ -8,8 +8,12 @@ info:
     A Trello phishing website was detected
   reference:
     - https://trello.com
+  classification:
+    cpe: cpe:2.3:a:trello:trello:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: trello
+    product: trello
   tags: phishing,trello,productivity,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: trello
+        cpe: cpe:2.3:a:trello:trello:*:*:*:*:*:*:*:*
         words:
           - "Make the impossible, possible with Trello. The ultimate tool to boost your productivity. Escape the clutter and chaos—stay efficient with Inbox, Boards, and Planner from anywhere, even on mobile."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: trello-2
+        cpe: cpe:2.3:a:trello:trello:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"trello.com")'
-# digest: 490a004630440220235406c03341f8b4beb11badb0e7b978231d473fc0f5e0a96a695cdc797e978602200218b607b25f37ba66842eba4e02245571e4a9e51e79d7cca17797db50dc709d:922c64590222798bb761d5b6d8e72950

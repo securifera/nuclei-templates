@@ -3,8 +3,13 @@ info:
   name: Graphql Go Detect
   author: princechaddha
   severity: info
+  classification:
+    cpe: cpe:2.3:a:graphql-go:graphql-go:*:*:*:*:*:*:*:*
   reference:
     - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  metadata:
+    vendor: graphql-go
+    product: graphql-go
   tags: tech,graphql,go
 
 http:
@@ -27,7 +32,8 @@ http:
           - 400
 
       - type: word
+        name: graphql-go
+        cpe: cpe:2.3:a:graphql-go:graphql-go:*:*:*:*:*:*:*:*
         words:
           - 'Must provide an operation.'
         part: body
-# digest: 4a0a0047304502200febe011e21cad0d3aa6f8b115961048d2bbd105d5b791a83765147f4ae85b09022100a21abcfe9efcb75be0f1d15496ab4dbe6573b3fa70641976baa853b9126309ee:922c64590222798bb761d5b6d8e72950

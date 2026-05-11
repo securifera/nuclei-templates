@@ -40,6 +40,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tooljet
+        cpe: cpe:2.3:a:tooljet:tooljet:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"auth_token":'
@@ -47,6 +49,8 @@ http:
         condition: and
 
       - type: word
+        name: tooljet-2
+        cpe: cpe:2.3:a:tooljet:tooljet:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -54,4 +58,3 @@ http:
       - type: status
         status:
           - 201
-# digest: 4a0a00473045022100b24b383d96271b1ce7ef2318b72093950aa1233a4ee49d6f86e2e4f20c981d7402202847c4fc9ceedf4d79d3acad372af9b78e14f70ab42dfb956de8041941e69c11:922c64590222798bb761d5b6d8e72950

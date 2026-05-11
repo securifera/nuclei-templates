@@ -6,6 +6,8 @@ info:
   severity: medium
   description: |
     Atlantis Dashboard was discovered.
+  classification:
+    cpe: cpe:2.3:a:runatlantis:atlantis:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -26,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: atlantis
+        cpe: cpe:2.3:a:runatlantis:atlantis:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<span>Repository</span>"
@@ -36,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ac28cc009b39d29920b33b2c38c10480700900ecaa0c034856b4d490b409651c0220764d0719d1183c4bad921273a3c3da9f9e6c1eff86bc0710915fea650edacb72:922c64590222798bb761d5b6d8e72950

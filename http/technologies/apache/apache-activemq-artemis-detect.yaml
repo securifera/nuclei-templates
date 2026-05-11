@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: activemq
+        cpe: cpe:2.3:a:apache:activemq:*:*:*:*:*:*:*:*
         words:
           - 'img/activemq.png'
           - 'ActiveMQ Artemis'

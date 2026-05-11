@@ -10,11 +10,14 @@ info:
     - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20download_ftp.jsp%20任意文件下载漏洞.html
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/wanhu-oa-download-ftp-file-read.yaml
   classification:
+    cpe: cpe:2.3:a:wanhu:wanhu:*:*:*:*:*:*:*:*
     cwe-id: CWE-23,CWE-73
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="万户网络-ezOFFICE"
+    vendor: wanhu
+    product: wanhu
   tags: wanhu,lfi,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wanhu
+        cpe: cpe:2.3:a:wanhu:wanhu:*:*:*:*:*:*:*:*
         words:
           - "<?xml version="
           - "web-app"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220738d6d4ff7c45d667e761055973daf2bb714aa033e023cf45b665b945f14e7c7022100c4cdea28ea025bdd390af4508df2acd92f5e57f1e87d20abe0653da7ca24e78e:922c64590222798bb761d5b6d8e72950

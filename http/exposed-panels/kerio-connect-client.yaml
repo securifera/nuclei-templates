@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kerio_connect
+        cpe: cpe:2.3:a:gfi:kerio_connect:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Kerio Connect Client</title>"
@@ -31,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022029685816e05311c2ea202395ab2b5d2045e5e0304765543999d1344983418cce022100da5329646b900a075aa8495504c16936c6aaae5b351609240b848a4653d7d0dd:922c64590222798bb761d5b6d8e72950

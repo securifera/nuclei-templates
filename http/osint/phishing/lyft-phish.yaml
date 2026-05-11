@@ -8,8 +8,12 @@ info:
     A Lyft phishing website was detected
   reference:
     - https://lyft.com
+  classification:
+    cpe: cpe:2.3:a:lyft:lyft:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: lyft
+    product: lyft
   tags: phishing,lyft,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lyft
+        cpe: cpe:2.3:a:lyft:lyft:*:*:*:*:*:*:*:*
         words:
           - 'Ride or drive with Lyft'
           - 'Lyft'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: lyft-2
+        cpe: cpe:2.3:a:lyft:lyft:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"lyft.com")'
-# digest: 4a0a0047304502205f0457b95a29c112bcd16dc1cea42351e139ce3c12be0de2bd710c71a9e4fe96022100c65a8c7178246af25811e9cb74635f2d7d128b95a0cd410e85257946a46671fb:922c64590222798bb761d5b6d8e72950

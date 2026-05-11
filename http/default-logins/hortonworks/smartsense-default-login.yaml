@@ -8,11 +8,14 @@ info:
   reference:
     - https://docs.cloudera.com/HDPDocuments/SS1/SmartSense-1.2.2/bk_smartsense_admin/content/manual_server_login.html
   classification:
+    cpe: cpe:2.3:a:smartsense:smartsense:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: smartsense
+    product: smartsense
   tags: hortonworks,smartsense,default-login,vuln
 
 http:
@@ -32,15 +35,18 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: smartsense
+        cpe: cpe:2.3:a:smartsense:smartsense:*:*:*:*:*:*:*:*
         words:
           - "Set-Cookie: SUPPORTSESSIONID"
         part: header
 
       - type: word
+        name: smartsense-2
+        cpe: cpe:2.3:a:smartsense:smartsense:*:*:*:*:*:*:*:*
         words:
           - "smartsenseId"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d04a6dcf649ec9cb7d499ad8d3a8de93b7b655e1cceb1e1d7e339c0d8d11edc9022100f5ef95c7b3b736f9d2f5deb3e91d484b00edc6f7ccce1215a2e30d46157e2664:922c64590222798bb761d5b6d8e72950

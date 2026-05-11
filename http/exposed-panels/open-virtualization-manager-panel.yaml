@@ -9,12 +9,15 @@ info:
     - https://www.ovirt.org/
     - https://www.ovirt.org/dropped/admin-guide/virt/console-client-resources.html
   classification:
+    cpe: cpe:2.3:a:open-virtualization:open-virtualization:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-668
   metadata:
     max-request: 2
     shodan-query: title:"Ovirt-Engine"
     google-query: intitle:"Ovirt-Engine"
+    vendor: open-virtualization
+    product: open-virtualization
   tags: panel,ovirt,oss,discovery
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: open-virtualization
+        cpe: cpe:2.3:a:open-virtualization:open-virtualization:*:*:*:*:*:*:*:*
         words:
           - '"application_title":"oVirt Engine User Portal"'
           - '"application_title":"oVirt Engine Web Administration"'
@@ -40,4 +45,3 @@ http:
         group: 1
         regex:
           - '"application_title":"(([a-zA-Z]+\s)*[a-zA-Z]+)"'
-# digest: 4a0a00473045022100cbc4374ae135bad71df6ee60a26a3ab7c911013193945e4a59eaf6825707c9d20220356d9d22673e42f5071c21de55a9ebd020c02714eb408f9c8ed9417a919152ab:922c64590222798bb761d5b6d8e72950

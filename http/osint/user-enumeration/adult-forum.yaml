@@ -6,11 +6,14 @@ info:
   severity: info
   description: Adult Forum user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:adult:adult:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: adult
+    product: adult
   tags: osint,osint-porn,adult-forum,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: adult
+        cpe: cpe:2.3:a:adult:adult:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Glamour Escorts "
-# digest: 4a0a004730450220633ece21564093d3756bdb7fd977f94b5dc29623407028a54ae3ae8336d127c0022100fc03dc8c220b1c90cf93d6129cde27daa960c03f6fa92540cb197ef24a894375:922c64590222798bb761d5b6d8e72950

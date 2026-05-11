@@ -8,8 +8,12 @@ info:
     A Private Internet Access phishing website was detected
   reference:
     - https://privateinternetaccess.com
+  classification:
+    cpe: cpe:2.3:a:pia:pia:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pia
+    product: pia
   tags: phishing,pia,vpn,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pia
+        cpe: cpe:2.3:a:pia:pia:*:*:*:*:*:*:*:*
         words:
           - '<title>Private Internet Access: The Best VPN Service For 10+ Years'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: pia-2
+        cpe: cpe:2.3:a:pia:pia:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"privateinternetaccess.com")'
-# digest: 4b0a00483046022100ea70672571b18c80d0eb2bbfd0988db9ff11bc6732e98614fb7989321bffb243022100ddeb887ee658fe0e67dd408eab069f901d2f887e74099978bcfa44efb5f05c83:922c64590222798bb761d5b6d8e72950

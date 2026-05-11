@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/outline/outline
     - https://www.getoutline.com/
+  classification:
+    cpe: cpe:2.3:a:outline:outline:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -28,6 +30,8 @@ http:
 
     matchers:
       - type: dsl
+        name: outline
+        cpe: cpe:2.3:a:outline:outline:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(to_lower(body), "<title>outline</title>") || contains(body, "data-outline-team")'
@@ -40,4 +44,3 @@ http:
         group: 1
         regex:
           - '<meta name="outline-version" content="([^"]+)"'
-# digest: 4b0a004830460221008f6985d1d13ae53765b867fa817daafc8e75f33cef815452679be46c08afde5e022100cbeaf530630cf717847dc5a6e5c86f67a32874eba91ac536d9261d4c845d4292:922c64590222798bb761d5b6d8e72950

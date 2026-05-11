@@ -9,10 +9,14 @@ info:
   reference:
     - https://molgenis.org/
     - https://github.com/molgenis/molgenis-emx2
+  classification:
+    cpe: cpe:2.3:a:molgenis:molgenis:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"MOLGENIS"
+    vendor: molgenis
+    product: molgenis
   tags: panel,molgenis,login,emx2,discovery
 
 http:
@@ -28,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: molgenis
+        cpe: cpe:2.3:a:molgenis:molgenis:*:*:*:*:*:*:*:*
         part: body
         words:
           - "molgenis-"
@@ -44,4 +50,3 @@ http:
         group: 1
         regex:
           - 'v([0-9]+\.[0-9]+\.[0-9]+)'
-# digest: 4a0a0047304502200bfb7fd9dbb769d48ab4a37e759a3715e301859dc00e9dda8a08c11d2613a0b6022100f2cfbb8bb6887a89b5dc5b3913d591f4b50eb5b17c9fbeb2de20a5740159bacf:922c64590222798bb761d5b6d8e72950

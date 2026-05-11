@@ -31,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: e-cology
+        cpe: cpe:2.3:a:weaver:e-cology:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{{md5(num)}}'
@@ -38,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204a6d45697b9fa7ff12d41140e9f98eb1801f08e646f6d211b004fc5bcd65679702203c5ffcfc7cfc45ce35dadaaf2284075cc4747795f4952b8c37ade6770b1b2e48:922c64590222798bb761d5b6d8e72950

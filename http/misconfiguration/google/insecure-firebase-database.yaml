@@ -7,9 +7,13 @@ info:
   description: If the owner of the app have set the security rules as true for both "read" & "write" an attacker can probably dump database and write his own data to firebase database.
   reference:
     - https://blog.securitybreached.org/2020/02/04/exploiting-insecure-firebase-database-bugbounty
+  classification:
+    cpe: cpe:2.3:a:firebase:firebase:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: firebase
+    product: firebase
   tags: firebase,google,misconfig,intrusive,vuln
 
 http:
@@ -27,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: firebase
+        cpe: cpe:2.3:a:firebase:firebase:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '{"id":"insecure-firebase-database"}'
 
       - type: word
+        name: firebase-2
+        cpe: cpe:2.3:a:firebase:firebase:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d5bde23dfa0675773730f2d04d376a36dcf0566b9d18b4b9313ac86986b120ca022008dc50d3790557a1d7c4b28f3ada87bfd183c34ff92aff20dedfd3a49793549a:922c64590222798bb761d5b6d8e72950

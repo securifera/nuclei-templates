@@ -27,10 +27,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gargoyle
+        cpe: cpe:2.3:a:gargoyle-router:gargoyle:*:*:*:*:*:*:*:*
         words:
           - "<title>Gargoyle Router Management Utility</title>"
 
       - type: word
+        name: gargoyle-2
+        cpe: cpe:2.3:a:gargoyle-router:gargoyle:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -38,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b74c34ce5ddf79274066f6e9dc44ee8e77352ad1310ad6a93dc22df0706df382022035b588202f54518235f091b9bbfe69bb70afd0835b96dcff89fa517e4142812e:922c64590222798bb761d5b6d8e72950

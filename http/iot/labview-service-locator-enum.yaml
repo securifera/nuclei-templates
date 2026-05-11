@@ -9,10 +9,14 @@ info:
     - https://www.ni.com/en/support/security/configuring-software-and-hardware-firewalls-to-support-national-.html
   description: |
     National Instruments (LabVIEW) Service Locator detected and enumerated. This services leaks a list of all services provided by the device, hardware capabilities and possibly versions. These hardware devices should not be exposed to the internet.
+  classification:
+    cpe: cpe:2.3:a:labview:labview:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:1192389544 port:3580
+    vendor: labview
+    product: labview
   tags: detect,labview,panel,enumeration,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: labview
+        cpe: cpe:2.3:a:labview:labview:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Service Locator URL Mappings"
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210090547852e6fb0fbe578fe1aa6dcc54c1846de3b7f68d08ba262c02c93cef2617022100917343015281843125f7400c7c6ee866e01d0cad34267a47acbacf85b56291a6:922c64590222798bb761d5b6d8e72950

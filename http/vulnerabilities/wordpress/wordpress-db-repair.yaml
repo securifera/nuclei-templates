@@ -5,8 +5,12 @@ info:
   author: _C0wb0y_
   severity: low
   description: Discover enabled Wordpress repair page.
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,config,fpd,vuln
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - "<title>WordPress"
 
@@ -25,10 +31,11 @@ http:
           - 200
 
       - type: word
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - "define"
           - "WP_ALLOW_REPAIR"
           - "true"
         condition: and
         negative: true
-# digest: 4a0a00473045022100ffe3639cd935b6ceda7e6448bf8d5fef61239eb716d40bfbaf9015bbbeab8153022045f7384c5f00039c364c3647cf25b9b3115e2b04893b3df715c17cba4f4cb9da:922c64590222798bb761d5b6d8e72950

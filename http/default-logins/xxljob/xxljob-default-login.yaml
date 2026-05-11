@@ -8,6 +8,7 @@ info:
   reference:
     - https://github.com/xuxueli/xxl-job
   classification:
+    cpe: cpe:2.3:a:xuxueli:xxl-job:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
@@ -46,6 +47,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xxl-job
+        cpe: cpe:2.3:a:xuxueli:xxl-job:*:*:*:*:*:*:*:*
         words:
           - '"code":200'
           - '"msg"'
@@ -53,6 +56,8 @@ http:
         condition: and
 
       - type: word
+        name: xxl-job-2
+        cpe: cpe:2.3:a:xuxueli:xxl-job:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -62,4 +67,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205890771846cad066977a909d1a02fc2f11cc427c2a4e8a706a34989911e8b94b0221008e510550e92c9da4c49095ff6e651558432f0dbc6231e969df4920cb7c113b0f:922c64590222798bb761d5b6d8e72950

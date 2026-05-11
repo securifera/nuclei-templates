@@ -8,8 +8,12 @@ info:
     A Authy phishing website was detected
   reference:
     - https://authy.com
+  classification:
+    cpe: cpe:2.3:a:authy:authy:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: authy
+    product: authy
   tags: phishing,authy,security,2fa,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: authy
+        cpe: cpe:2.3:a:authy:authy:*:*:*:*:*:*:*:*
         words:
           - '<title>Authy: Two-factor Authentication (2FA) App &amp; Guides | Authy'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: authy-2
+        cpe: cpe:2.3:a:authy:authy:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"authy.com")'
-# digest: 490a004630440220773b83a2a642376d3facc559cde94d76477ba8d0c26b7c5594e9a1befa8eb7dc02201d8bbe26ef7ba524b03286b91ddfd1217444260823e746f2396645aeae09c378:922c64590222798bb761d5b6d8e72950

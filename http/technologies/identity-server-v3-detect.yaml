@@ -27,6 +27,8 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: identity_server
+        cpe: cpe:2.3:a:wso2:identity_server:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "IdentityServer v3") && contains(body, "identityserver.github.io")'
@@ -38,4 +40,3 @@ http:
         group: 1
         regex:
           - '(?i)build\s+([a-z0-9.-]+)'
-# digest: 490a0046304402200dc53daace9ded2e829218937524a8aecb6e48a865b4e8a9fb086e54d3c3b02902204de45e0e29c448455fc811bfa890950e48ceba3c91d6a18b1a5dd3aff92d188d:922c64590222798bb761d5b6d8e72950

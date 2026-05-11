@@ -10,11 +10,14 @@ info:
     - https://wpscan.com/vulnerability/15f345e6-fc53-4bac-bc5a-de898181ea74
     - https://blog.nintechnet.com/high-severity-vulnerability-fixed-in-product-input-fields-for-woocommerce/
   classification:
+    cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: woocommerce
+    product: woocommerce
   tags: wordpress,woocommerce,lfi,wp-plugin,wp,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: woocommerce
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         words:
           - "DB_NAME"
           - "DB_PASSWORD"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022034a4fa0d5d22ef722b481133664a33eb2b8c59eb4206b0dffe10685268c656f702203038c3e6159e5b171fdc24c1a61a6defc352312557fe1edab71667e840af4fe7:922c64590222798bb761d5b6d8e72950

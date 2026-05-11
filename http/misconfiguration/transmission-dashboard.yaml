@@ -31,6 +31,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: transmission
+        cpe: cpe:2.3:a:transmissionbt:transmission:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'The Transmission Project'
@@ -38,7 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: transmission-2
+        cpe: cpe:2.3:a:transmissionbt:transmission:*:*:*:*:*:*:*:*
         part: server
         words:
           - 'Transmission'
-# digest: 490a00463044022078f097b6473c29fa34070ec46511fdd7e51d7e08508935852d915bc2255c0e0c022076aa07368d426240feddcbcc9076400e0070dce15f3a5e46fa89f3d199ae6f58:922c64590222798bb761d5b6d8e72950

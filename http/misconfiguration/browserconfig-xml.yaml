@@ -8,10 +8,14 @@ info:
     Browser Configuration "browserconfig.xml" File was exposed.
   reference:
     - https://www.sygnal.com/lessons/browserconfig-xml
+  classification:
+    cpe: cpe:2.3:a:browserconfig:browserconfig:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"browserconfig.xml"
+    vendor: browserconfig
+    product: browserconfig
   tags: browserconfig,misconfig,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: browserconfig
+        cpe: cpe:2.3:a:browserconfig:browserconfig:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<browserconfig>'
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: browserconfig-2
+        cpe: cpe:2.3:a:browserconfig:browserconfig:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/xml"
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100aa32c4533d1fb35e1ff47c538657cf2d32ac99c9310a2a806a01d76e85255b7a022020a3c33475b30965cc84e4929fe36660f8272b30317d8546bcce135e7f82f623:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: An elFinder implementation was discovered.
   classification:
+    cpe: cpe:2.3:a:std42:elfinder:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: std42
+    product: elfinder
   tags: tech,elfinder,discovery
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: elfinder
+        cpe: cpe:2.3:a:std42:elfinder:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<!-- Element where elFinder will be created (REQUIRED) -->"
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bbd095db579d7d29d293ea2eae2deaffbcbd9d2bcaecf127b12c4519f78a7c08022100845ba64d6fcb3d61c76cbf9c4dcf041190aafdfef0afe8fe200d28d7b419811e:922c64590222798bb761d5b6d8e72950

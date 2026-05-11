@@ -9,6 +9,7 @@ info:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
     - https://golangci-lint.run/usage/configuration/
   classification:
+    cpe: cpe:2.3:a:golang:golang:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 4
     github-query: filename:golangci.yml
+    vendor: golang
+    product: golang
   tags: exposure,golang,devops,cicd,vuln
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: golang
+        cpe: cpe:2.3:a:golang:golang:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'linters:'
@@ -40,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022024434a91b387f572bf53c6d5a95642a8e77ba36d47cd89af1a52a347c7ec1f5d022100c5a0e1dca7db24fb1b656a03903e941afee8c5d84e362098265b45bc06dc8b9d:922c64590222798bb761d5b6d8e72950

@@ -7,8 +7,12 @@ info:
   description: Checks for a valid avnil pdf generator account.
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
+  classification:
+    cpe: cpe:2.3:a:avnil-pdf:avnil-pdf:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: avnil-pdf
+    product: avnil-pdf
   tags: cloud,creds-stuffing,login-check,avnil-pdf,vuln
 
 self-contained: true
@@ -32,6 +36,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avnil-pdf
+        cpe: cpe:2.3:a:avnil-pdf:avnil-pdf:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"email":"'
@@ -40,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f25756a6fd701d7dce016ebe83d43573e2d3bd143de924cd6d2786d0ccfb3fa602205bd1544724388a336cba6887926237c3b7e05a97300ac65a8a5052ac05c50ab5:922c64590222798bb761d5b6d8e72950

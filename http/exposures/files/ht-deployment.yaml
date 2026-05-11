@@ -11,6 +11,7 @@ info:
     - https://github.com/dg/ftp-deployment/tree/master
     - https://github.com/dg/ftp-deployment/blob/master/src/Deployment/Deployer.php#L206
   classification:
+    cpe: cpe:2.3:a:dg:ftp-deployment:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
   metadata:
@@ -29,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ftp-deployment
+        cpe: cpe:2.3:a:dg:ftp-deployment:*:*:*:*:*:*:*:*
         part: body
         words:
           - "[config]"
@@ -36,9 +39,10 @@ http:
         condition: or
 
       - type: word
+        name: ftp-deployment-2
+        cpe: cpe:2.3:a:dg:ftp-deployment:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/octet-stream"
           - "text/plain"
         condition: or
-# digest: 4a0a00473045022100a7e46847957a8f2059a9f836bea489bebb15ac286442ac7cc717bda3ebc8cd460220577df23e25f8cd61a66f8a9a967941339bb519c986a5d3b3d916a7aa121b927f:922c64590222798bb761d5b6d8e72950

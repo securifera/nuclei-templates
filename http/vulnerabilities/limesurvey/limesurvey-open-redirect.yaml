@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/LimeSurvey/LimeSurvey/pull/4727
   classification:
+    cpe: cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
@@ -27,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: limesurvey
+        cpe: cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
 
       - type: word
+        name: limesurvey-2
+        cpe: cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'LS_AUTH_INIT'
@@ -39,4 +44,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a00473045022062ce4e2af5af00981890b96c4f667c3ec0dbe2eb80da02b433458fa5033a6c63022100a81ebc68484357f8ef61a3a89d7c4383f4c3c94e4d81c222904864a97d495852:922c64590222798bb761d5b6d8e72950

@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: emc_idrac_service_module
+        cpe: cpe:2.3:a:dell:emc_idrac_service_module:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<idrac-start-screen'
@@ -37,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a395cbbad4e1b31cd5bf9a099b324cc0e02149186b873a06c821bf0dd954351c02205be66ae91743f92e3ec57205f8404dcd8ec8d4de766b181a5022389e88b2126e:922c64590222798bb761d5b6d8e72950

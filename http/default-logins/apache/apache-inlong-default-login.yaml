@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: inlong
+        cpe: cpe:2.3:a:apache:inlong:1.13.0:*:*:*:*:*:*:*
         part: body
         words:
           - '"success":true'
@@ -41,6 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: inlong-2
+        cpe: cpe:2.3:a:apache:inlong:1.13.0:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -48,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f0db979922b8904ba1bc196b46a6f24f1ac6f03e364dcf12e167c522d56ba0e1022100e180b45c627483dc99e47d883e874d0f0c6fc3d854669e25bf466d67e68541c4:922c64590222798bb761d5b6d8e72950

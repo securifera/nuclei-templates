@@ -10,11 +10,14 @@ info:
     - https://www.henry4e36.top/index.php/archives/130.html#cl-1
     - https://forum.butian.net/article/213
   classification:
+    cpe: cpe:2.3:a:imo:imo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-78
   metadata:
     max-request: 3
+    vendor: imo
+    product: imo
   tags: imo,rce,vuln
 
 flow: http(1) && http(2)
@@ -29,6 +32,8 @@ http:
     max-redirects: 2
     matchers:
       - type: word
+        name: imo
+        cpe: cpe:2.3:a:imo:imo:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'imo'
@@ -47,12 +52,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: imo-2
+        cpe: cpe:2.3:a:imo:imo:*:*:*:*:*:*:*:*
         part: body_1
         regex:
           - 'home/www/html/[^"]*/file/NDisk'
 
       - type: regex
+        name: imo-3
+        cpe: cpe:2.3:a:imo:imo:*:*:*:*:*:*:*:*
         part: body_2
         regex:
           - "uid=[0-9]+.*gid=[0-9]+.*"
-# digest: 490a004630440220058497202047e0112f48c8b28f7c6e6b4176664f4d9fa13c0d68faa5cb530bd1022057fbbdc8102b7a80c61520f2c4f7608d84bf1feb0bf7044f16da4600408bf6d3:922c64590222798bb761d5b6d8e72950

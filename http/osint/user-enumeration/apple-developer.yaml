@@ -6,12 +6,15 @@ info:
   severity: info
   description: Apple Developer user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
+    vendor: apple
+    product: apple
   tags: osint,osint-coding,apple,discovery
 
 self-contained: true
@@ -28,9 +31,10 @@ http:
           - 200
 
       - type: word
+        name: apple
+        cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Apple Developer Forums"
           - "developer.apple.com"
         condition: and
-# digest: 490a004630440220505b5f8facbfdb3e9c9c38fbf921ee64ca4e95f46004302079de4b5ae32c484b022016d12dfa3032214c6256de60852ad3d84fea0e1ef03b2df990febcd704c5c503:922c64590222798bb761d5b6d8e72950

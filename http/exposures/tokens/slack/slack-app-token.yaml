@@ -10,9 +10,12 @@ info:
     - https://api.slack.com/authentication
     - https://api.slack.com/authentication/best-practices
   classification:
+    cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     max-request: 1
+    vendor: slack
+    product: slack
   tags: exposure,token,slack,vuln
 
 http:
@@ -25,4 +28,3 @@ http:
         part: body
         regex:
           - (?i)(xapp-\d-[A-Z0-9]+-\d+-[a-z0-9]+)
-# digest: 4a0a0047304502204e46aae52e4f0a0ea3eca3a7f4a9bbccca4603111e446dffb097118abbbef26002210080fcedf06ce40bc58e667f3146bca4f476926192c3cfdca35e6985bcf8b2a8fe:922c64590222798bb761d5b6d8e72950

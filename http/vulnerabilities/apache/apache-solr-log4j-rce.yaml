@@ -46,16 +46,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: solr
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'org.apache.solr'
 
       - type: word
+        name: solr-2
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: solr-3
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -76,4 +82,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a004730450221008e44a5e3fd456a362090e50753a5d55333b8841419e09c9b29dfca79a5514f97022036d5bf025479de6d5291a9c2c0f1542e44fab94dc65551f85fb0095d4baab710:922c64590222798bb761d5b6d8e72950

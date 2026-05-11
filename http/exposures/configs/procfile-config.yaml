@@ -6,6 +6,7 @@ info:
   severity: info
   description: Procfile configuration information was detected.
   classification:
+    cpe: cpe:2.3:a:procfile-config:procfile-config:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Procfile"
+    vendor: procfile-config
+    product: procfile-config
   tags: devops,exposure,config,vuln
 
 http:
@@ -23,10 +26,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: procfile-config
+        cpe: cpe:2.3:a:procfile-config:procfile-config:*:*:*:*:*:*:*:*
         regex:
           - '^web:'
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d0f70e9f5a156389c38ab696e96c22220e056c55cd2659c03443d236f684d7a802206466cf8eaab424da387a3bbe85333e7117fe32bf9828ef9c58d76929e8a978a7:922c64590222798bb761d5b6d8e72950

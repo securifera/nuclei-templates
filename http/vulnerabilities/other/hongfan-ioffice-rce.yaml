@@ -8,10 +8,14 @@ info:
     There is a SQL injection vulnerability in Hongfan iOffice 10 Hospital Edition, which can be exploited by attackers to obtain sensitive database information.
   reference:
     - https://github.com/FridaZhbk/pocscan/blob/main/%E7%BA%A2%E5%B8%86/oa%E7%BA%A2%E5%B8%86ioAssistance.asmx%E6%B3%A8%E5%85%A5RCE.py
+  classification:
+    cpe: cpe:2.3:a:hongfan:hongfan:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: app="红帆-ioffice"
+    vendor: hongfan
+    product: hongfan
   tags: hongfan,oa,sqli,vuln
 
 http:
@@ -38,6 +42,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: hongfan
+        cpe: cpe:2.3:a:hongfan:hongfan:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "Windows IP"
@@ -45,6 +51,8 @@ http:
         condition: or
 
       - type: word
+        name: hongfan-2
+        cpe: cpe:2.3:a:hongfan:hongfan:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/xml"
@@ -52,4 +60,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220250069b71ce4d69c71d646076730aaf294993ad034af4d8e4f795b199cf579d0022100fe92d183faacb0770502d7eb8493094f1c68e25bf6d66c6f201ee2064f9239a7:922c64590222798bb761d5b6d8e72950

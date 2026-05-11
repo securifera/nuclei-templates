@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     ICTBroadcast is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:ictbroadcast:ictbroadcast:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"ICTBroadcast"
+    vendor: ictbroadcast
+    product: ictbroadcast
   tags: misconfig,exposure,install,ictbroadcast,vuln
 
 http:
@@ -20,11 +24,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ictbroadcast
+        cpe: cpe:2.3:a:ictbroadcast:ictbroadcast:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ICTBroadcast[ICTBroadcast :: Installation]"
 
       - type: word
+        name: ictbroadcast-2
+        cpe: cpe:2.3:a:ictbroadcast:ictbroadcast:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/html"
@@ -32,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204909b48db3f5db826bcad8c1633d56bd3ff2c9c1086094f1801a23c80df29233022061da6b2e0f18eeba21f133661ac18fdf8dfc0c9fe78db157da2ff57cef972815:922c64590222798bb761d5b6d8e72950

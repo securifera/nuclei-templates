@@ -6,10 +6,13 @@ info:
   severity: info
   description: Start Element Manager panel was detected.
   classification:
+    cpe: cpe:2.3:a:start-element:start-element:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: start-element
+    product: start-element
   tags: panel,discovery
 
 http:
@@ -20,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: start-element
+        cpe: cpe:2.3:a:start-element:start-element:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Start Element Manager</title>"
@@ -27,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022044ee7ce50882d8f763ed5ea989300f6ae5eca443a6b56c1c327032a0c1384d700220220975ca3795b733d011d0444f30eadb980a42203ac7acab0cf596e217ba9dbb:922c64590222798bb761d5b6d8e72950

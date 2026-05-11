@@ -30,6 +30,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: inertia
+        cpe: cpe:2.3:a:inertiajs:inertia:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'data-page="'
@@ -39,6 +41,8 @@ http:
         condition: and
 
       - type: regex
+        name: inertia-2
+        cpe: cpe:2.3:a:inertiajs:inertia:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?is)data-page\\s*=\\s*\"(?:[^\"\\\\]|\\\\.)*\\\\\"component\\\\\"(?:[^\"\\\\]|\\\\.)*\\\\\"props\\\\\"(?:[^\"\\\\]|\\\\.)*\\\\\"url\\\\\""

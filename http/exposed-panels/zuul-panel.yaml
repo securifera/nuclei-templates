@@ -31,6 +31,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: zuul
+        cpe: cpe:2.3:a:zuul-ci:zuul:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"name":'
@@ -39,6 +41,7 @@ http:
         condition: and
 
       - type: word
+        name: zuul-2
+        cpe: cpe:2.3:a:zuul-ci:zuul:*:*:*:*:*:*:*:*
         words:
           - 'zuul_version'
-# digest: 4a0a0047304502203b0ec8163ae48af2d995ee0d7666d8d51fb942f9bb030a4f6d6fdafadc5f7a0d022100a9984f14c86468e702e1382b80433f7f945f025375897c958a629a7f5b7b8ec7:922c64590222798bb761d5b6d8e72950

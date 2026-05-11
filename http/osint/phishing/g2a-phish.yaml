@@ -8,8 +8,12 @@ info:
     A G2A phishing website was detected
   reference:
     - https://g2a.com
+  classification:
+    cpe: cpe:2.3:a:g2a:g2a:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: g2a
+    product: g2a
   tags: phishing,g2a,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: g2a
+        cpe: cpe:2.3:a:g2a:g2a:*:*:*:*:*:*:*:*
         words:
           - 'G2A'
           - 'G2A.COM - Open the Gate 2 Adventure in the Digital World'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: g2a-2
+        cpe: cpe:2.3:a:g2a:g2a:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"g2a.com")'
-# digest: 4a0a00473045022078952d402ee0c23c798d225229221bbdcf46357e7cc51fa3748e4b035aff32ef022100cb11ff98f7ca51346870ce20acf2dad67060dd05bf11806ed129cb0929536fec:922c64590222798bb761d5b6d8e72950

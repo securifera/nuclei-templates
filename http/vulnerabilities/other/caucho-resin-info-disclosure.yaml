@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/27888
   classification:
+    cpe: cpe:2.3:a:caucho:resin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: caucho
+    product: resin
   tags: exposure,resin,caucho,edb,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: resin
+        cpe: cpe:2.3:a:caucho:resin:*:*:*:*:*:*:*:*
         words:
           - "<web-app"
           - "</web-app>"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210082750cb5ea98d1c82d63f17f6736f62b6873bebdea9f25aa6e724c911cc5c4c20220636dbbcd6e246c6bd61c2b221732f7f69286a2b7075819d9a88d2c5d092ebacc:922c64590222798bb761d5b6d8e72950

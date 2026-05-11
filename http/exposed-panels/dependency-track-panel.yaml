@@ -8,10 +8,14 @@ info:
     Dependency Track login panel was discovered.
   reference:
     - https://docs.dependencytrack.org
+  classification:
+    cpe: cpe:2.3:a:dependency:track:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Dependency-Track"
+    vendor: dependency
+    product: track
   tags: panel,login,dependency,track,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: track
+        cpe: cpe:2.3:a:dependency:track:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Dependency-Track</title>"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210087bdf54ccaa44c0698c5c977ce98a962474ea9514d9ab8b747aebea42d145af902204f1a3bfe78c9bc6f0d0044851def116fe02faaaa4969b886fe9b028c53737b2e:922c64590222798bb761d5b6d8e72950

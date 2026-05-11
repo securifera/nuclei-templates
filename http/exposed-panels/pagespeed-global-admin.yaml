@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.modpagespeed.com/
   classification:
+    cpe: cpe:2.3:a:pagespeed:pagespeed:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: pagespeed
+    product: pagespeed
   tags: pagespeed,panel,discovery
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pagespeed
+        cpe: cpe:2.3:a:pagespeed:pagespeed:*:*:*:*:*:*:*:*
         words:
           - "X-Mod-Pagespeed"
         part: header
@@ -38,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022020444b60174326a1365d2f9bfb288c9819ba4bcc5edda5626fc91f1a22c78ee50220058b51a089cc51bb54cdcde53e3ea2caa43b7b8a795d34f50ab72104eceb9adc:922c64590222798bb761d5b6d8e72950

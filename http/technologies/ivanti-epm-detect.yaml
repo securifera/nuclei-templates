@@ -8,10 +8,14 @@ info:
     An Ivanti Endpoint Manager was detected.
   reference:
     - https://www.ivanti.com/en-gb/products/endpoint-manager
+  classification:
+    cpe: cpe:2.3:a:ivanti:endpoint_manager:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.favicon.hash:362091310
+    vendor: ivanti
+    product: endpoint_manager
   tags: detect,ivanti,emm,tech,mobileiron,epm,discovery
 
 http:
@@ -23,6 +27,7 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: endpoint_manager
+        cpe: cpe:2.3:a:ivanti:endpoint_manager:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200 && (\"362091310\" == mmh3(base64_py(body)))"
-# digest: 4a0a00473045022016ef36162357fba0752287edf7a9b370bab6e7f6d6b88756107ec98ba14d03b6022100ab24b61967e40e24dfac550491f7b74c95511002d13c8f6c07f45064685dfca8:922c64590222798bb761d5b6d8e72950

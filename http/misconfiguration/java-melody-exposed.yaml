@@ -8,8 +8,12 @@ info:
   reference:
     - https://www.acunetix.com/vulnerabilities/web/javamelody-publicly-accessible/
     - https://github.com/javamelody/javamelody/wiki/UserGuide#16-security
+  classification:
+    cpe: cpe:2.3:a:java:java:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: java
+    product: java
   tags: config,java,javamelody,misconfig,vuln
 
 http:
@@ -21,10 +25,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: java
+        cpe: cpe:2.3:a:java:java:*:*:*:*:*:*:*:*
         words:
           - 'Monitoring JavaMelody on'
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022027051ca89a25a36852ac6a2075b7b44edd781a53126517942bbff69f77e6eb620221008e2e770448d0e3acf9806ff836bf9c2606a24a77e8882110d137e832acc84ae8:922c64590222798bb761d5b6d8e72950

@@ -22,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: casbin-mcp-gateway
+        cpe: cpe:2.3:a:apache:casbin-mcp-gateway:*:*:*:*:*:*:*:*
         words:
           - '"service": "mcp-gateway"'
         condition: and

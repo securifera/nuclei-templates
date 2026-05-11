@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://docs.gitlab.com/ee/api/personal_access_tokens.html
+  classification:
+    cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: gitlab
+    product: gitlab
   tags: token-spray,gitlab
 
 self-contained: true
@@ -21,9 +25,10 @@ http:
       PRIVATE-TOKEN: "{{token}}"
     matchers:
       - type: word
+        name: gitlab
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"id":'
           - '"created_at":'
         condition: and
-# digest: 4b0a00483046022100a5f6132f34a58d03e6a0a1a9806ff4cee8be20c548c68d937283af7804f5dfbc022100ffc7159211470c1b71c1af7485310b7a8ac319c4edd3e86105f27b9ca6a926a9:922c64590222798bb761d5b6d8e72950

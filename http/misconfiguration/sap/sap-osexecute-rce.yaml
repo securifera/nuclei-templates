@@ -12,8 +12,12 @@ info:
     - https://help.sap.com/docs/SUPPORT_CONTENT/si/3362959700.html
     - https://docs.avantra.com/api/latest/js/sap-control.html
     - https://www.slideshare.net/slideshow/sap-insecurity-scrubbing-sap-clean-with-soap/9951290
+  classification:
+    cpe: cpe:2.3:a:sap:osexecute:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sap
+    product: osexecute
   tags: misconfig,sap,sapcontrol,soap,rce,osexecute
 
 http:
@@ -42,6 +46,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: osexecute
+        cpe: cpe:2.3:a:sap:osexecute:*:*:*:*:*:*:*:*
         part: body
         words:
           - "OSExecuteResponse"
@@ -49,6 +55,8 @@ http:
         condition: and
 
       - type: regex
+        name: osexecute-2
+        cpe: cpe:2.3:a:sap:osexecute:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "uid=[0-9]+\\("
@@ -56,4 +64,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100fdd55365de147610fb1f5bf7533cb30db2503c8249acddd78252a3a408ce8463022100d74d198c04760c503a757f43315763b9dbb01247b35e93f65a429e68194e0ab4:922c64590222798bb761d5b6d8e72950

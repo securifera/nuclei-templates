@@ -9,10 +9,14 @@ info:
   reference:
     - https://vuldb.com/?submit.496171
     - https://ftp.ogma.in/blog/understanding-and-mitigating-cve-2025-1359-siam-2-0-vulnerabilities
+  classification:
+    cpe: cpe:2.3:a:siam:siam:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"siam-convite"
+    vendor: siam
+    product: siam
   tags: siam,convite,xss,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: siam
+        cpe: cpe:2.3:a:siam:siam:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<img src=x onerror=alert(document.domain)>'
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: siam-2
+        cpe: cpe:2.3:a:siam:siam:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/html"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204c0ea4f7d21cf81d2216b7cf99c3f15c7ed582f0985520d8edd95f251019ef8e02205efd210221e7326749bf4e23aa5ef05895c97a71321bcf4a6d6b95dc3ad759d9:922c64590222798bb761d5b6d8e72950

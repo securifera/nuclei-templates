@@ -11,12 +11,15 @@ info:
     - https://wpscan.com/vulnerability/9898
     - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-all-in-one-wp-security-firewall-open-redirect-4-4-1
   classification:
+    cpe: cpe:2.3:a:wp-security-open:wp-security-open:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     verified: true
     max-request: 1
+    vendor: wp-security-open
+    product: wp-security-open
   tags: wp-plugin,redirect,wordpress,wp,wpscan,vuln
 
 http:
@@ -26,7 +29,8 @@ http:
 
     matchers:
       - type: regex
+        name: wp-security-open
+        cpe: cpe:2.3:a:wp-security-open:wp-security-open:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)interact\.sh\/?(\/|[^.].*)?$' # https://regex101.com/r/L403F0/1
-# digest: 4b0a00483046022100a9f7b22f1b454573d09ab301f7ac8a99b3f8d26b9ad50ce28c539566de8005c7022100b8d8cbcfd2fa55a7db261aa7138b2b508e8e98d59069125a3eea8013d951aab1:922c64590222798bb761d5b6d8e72950

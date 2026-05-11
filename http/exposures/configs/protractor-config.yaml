@@ -8,10 +8,14 @@ info:
     Protractor configuration file was detected.
   reference:
     - https://www.protractortest.org/#/api-overview
+  classification:
+    cpe: cpe:2.3:a:protractor:protractor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"protractor.conf.js"
+    vendor: protractor
+    product: protractor
   tags: devops,exposure,protractor,config,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: protractor
+        cpe: cpe:2.3:a:protractor:protractor:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'exports.config'
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: protractor-2
+        cpe: cpe:2.3:a:protractor:protractor:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/javascript"
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a7c549436562b7cf1e8e9967cf932987139fe836dcce53c8985e24ce4eabd367022042d9796971bd0f2db349777b9261bd04fb0710c82262e1fc8c4237bf020b24ce:922c64590222798bb761d5b6d8e72950

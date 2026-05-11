@@ -31,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: whatsup_gold
+        cpe: cpe:2.3:a:progress:whatsup_gold:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>WhatsUp Gold</title>"
@@ -38,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207be22e5e45d8e5010c215489f47524407b55d32fa7fa113776ed902348e724c702200d04a060e2acf965531374267622d62fd00843c2422c4253fcceb27226601460:922c64590222798bb761d5b6d8e72950

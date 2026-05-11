@@ -4,9 +4,13 @@ info:
   name: Find Pages with Old Copyright Dates
   author: geeknik
   severity: info
+  classification:
+    cpe: cpe:2.3:a:old-copyright:old-copyright:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: old-copyright
+    product: old-copyright
   tags: miscellaneous,misc,generic,vuln
 
 http:
@@ -20,12 +24,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: old-copyright
+        cpe: cpe:2.3:a:old-copyright:old-copyright:*:*:*:*:*:*:*:*
         part: body
         words:
           - '2026'
         negative: true
 
       - type: regex
+        name: old-copyright-2
+        cpe: cpe:2.3:a:old-copyright:old-copyright:*:*:*:*:*:*:*:*
         part: body
         regex:
           - 'Copyright [1-9]\d* ?\-? ?[1-9]?\d*'
@@ -41,4 +49,3 @@ http:
           - '© [1-9]\d* ?\-? ?[1-9]?\d*'
           - '&copy; [1-9]\d* ?\-? ?[1-9]?\d*'
           - '&#169; [1-9]\d* ?\-? ?[1-9]?\d*'
-# digest: 490a0046304402205893ba1cd2bc2023907317092917dbdd4c6221a92a2a97f833323505beb31b4d02200187d7b340cbc39b982a829da404cb5f794f775c8131bc2eef1e26340296355c:922c64590222798bb761d5b6d8e72950

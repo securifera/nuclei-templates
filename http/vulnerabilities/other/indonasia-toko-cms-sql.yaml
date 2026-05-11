@@ -9,11 +9,14 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2019030008
   classification:
+    cpe: cpe:2.3:a:toko:toko:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     google-query: inurl:"index.php?mnu=login"
+    vendor: toko
+    product: toko
   tags: sqli,toko,cms,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: toko
+        cpe: cpe:2.3:a:toko:toko:*:*:*:*:*:*:*:*
         part: body
         words:
           - "alert('Administrator"
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f130a188ca908ae017265e8e5cafc047a117bfee347b14aa13b00a925f2b6fa10221009e45bfad970fbc1f2e2bb13d6da3e3faa649ddf46e366f555caaa704929f17e5:922c64590222798bb761d5b6d8e72950

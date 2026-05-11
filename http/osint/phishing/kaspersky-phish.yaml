@@ -8,8 +8,12 @@ info:
     A kaspersky phishing website was detected
   reference:
     - https://kaspersky.co.uk
+  classification:
+    cpe: cpe:2.3:a:kaspersky:kaspersky:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kaspersky
+    product: kaspersky
   tags: phishing,kaspersky,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kaspersky
+        cpe: cpe:2.3:a:kaspersky:kaspersky:*:*:*:*:*:*:*:*
         words:
           - 'Kaspersky Cyber Security Solutions for Home and Business  | Kaspersky'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: kaspersky-2
+        cpe: cpe:2.3:a:kaspersky:kaspersky:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"kaspersky.co.uk")'
           - '!contains(host,"kaspersky.com")'
-# digest: 4a0a004730450221009efac217d1b0d1885b5d600e69b5d05e2cc3286c1fc4971d819e262e2b11dc7f022071a4ca7187075662d9ffe359ae31eb2cee2b78af5ab2733a7c06490e7987f5a2:922c64590222798bb761d5b6d8e72950

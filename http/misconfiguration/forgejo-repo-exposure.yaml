@@ -6,10 +6,14 @@ info:
   severity: medium
   description: |
     The Forgejo repo is being exposed publically.
+  classification:
+    cpe: cpe:2.3:a:forgejo:forgejo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Forgejo"
+    vendor: forgejo
+    product: forgejo
   tags: misconfig,exposure,forgejo,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: forgejo
+        cpe: cpe:2.3:a:forgejo:forgejo:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Powered by Forgejo'
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d28958923f4717092ab02d1212e03c3f2bca51e6956b9285ef535393912e8597022100a52c21dd98d1c5c23336056abdbfdaabf4b421f952267da715ef754fbc5181d4:922c64590222798bb761d5b6d8e72950

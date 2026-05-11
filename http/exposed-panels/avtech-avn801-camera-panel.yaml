@@ -8,11 +8,14 @@ info:
   reference:
     - http://www.avtech.com.tw
   classification:
+    cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: title:"login" product:"Avtech AVN801 network camera"
+    vendor: avtech
+    product: avtech
   tags: panel,avtech,iot,camera,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avtech
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         words:
           - "IP Surveillance for Your Life"
           - "avtech"
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220092d759102a24abf8a4a24712329d6b69a00c2ba4f85e2dc472a396b804373d9022100c10dc53f36f7d5b7b9d48fedc44598ca9870cce9388d07239e54c653723ec74c:922c64590222798bb761d5b6d8e72950

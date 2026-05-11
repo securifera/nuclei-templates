@@ -8,8 +8,12 @@ info:
     A Sling TV phishing website was detected
   reference:
     - https://sling.com
+  classification:
+    cpe: cpe:2.3:a:sling:sling:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sling
+    product: sling
   tags: phishing,sling,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sling
+        cpe: cpe:2.3:a:sling:sling:*:*:*:*:*:*:*:*
         words:
           - "Ditch cable & stream live TV for the best price with Sling. Watch live news, sports, movies, and entertainment + top channels like ESPN, TNT, TBS and more."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: sling-2
+        cpe: cpe:2.3:a:sling:sling:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"sling.com")'
-# digest: 4a0a0047304502210096b818782bf9e82fa621561068923ffaa69a7c71faf2a237b41229caa525b98c02204c371971d5b7374e5cbd48b23f8a3e16b0d13d5b3566794eca384b428c559ab3:922c64590222798bb761d5b6d8e72950

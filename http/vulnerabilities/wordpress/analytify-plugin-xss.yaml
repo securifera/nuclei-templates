@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: analytify_-_google_analytics_dashboard
+        cpe: cpe:2.3:a:analytify:analytify_-_google_analytics_dashboard:*:*:*:*:wordpress:*:*:*
         part: body
         words:
           - 'text/javascript">alert(/XSS/)</script>'
@@ -36,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: analytify_-_google_analytics_dashboard-2
+        cpe: cpe:2.3:a:analytify:analytify_-_google_analytics_dashboard:*:*:*:*:wordpress:*:*:*
         part: header
         words:
           - text/html
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 404
-# digest: 4a0a00473045022100c24b7cd181bc9d96441b2d60896c8969b56fec2f214336e063e744189fbc2bfe02200b29afe4a7302f57f98bbf7d845ca0ef4bf11420f2a133e1ac065fc1deb69a16:922c64590222798bb761d5b6d8e72950

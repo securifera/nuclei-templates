@@ -9,8 +9,12 @@ info:
   reference:
     - https://docs.spring.io/spring-boot/docs/3.0.0/actuator-api/htmlsingle/\#httpexchanges
     - https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"exchanges"'
@@ -32,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -42,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022068a3c3569e8a656cd97632bf5c94dc8ce4c22e875300786852d219349df4a212022077e748764c8bbdd418205fca8efa92c5d982645965e5ce3f6f2153ec38ce6f00:922c64590222798bb761d5b6d8e72950

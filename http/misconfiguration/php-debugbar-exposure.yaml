@@ -10,10 +10,14 @@ info:
     - https://hackerone.com/reports/1883806
     - http://phpdebugbar.com/
     - https://github.com/maximebf/php-debugbar
+  classification:
+    cpe: cpe:2.3:a:php:php:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: html:"phpdebugbar"
+    vendor: php
+    product: php
   tags: misconfig,php,phpdebug,exposure,debug,vuln
 
 http:
@@ -25,9 +29,10 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: php
+        cpe: cpe:2.3:a:php:php:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "phpdebugbar", "widget") && status_code == 200'
           - 'contains(header, "phpdebugbar-id")'
           - 'contains_all(body, "\"utime\"","\"datetime\"","{\"id") && contains(content_type, "application/json")'
         condition: or
-# digest: 4a0a0047304502205bd89db89e59c60cbe2d67897e2de6173ac9a8569b8a37f0175fd2ebf67f231d0221009401028add4df195443d94ef39005ce81e9cd1424aaf6aabb6489cf85aa96709:922c64590222798bb761d5b6d8e72950

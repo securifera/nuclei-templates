@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: GeniusOcean is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:geniusocean:geniusocean:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"GeniusOcean Installer"
+    vendor: geniusocean
+    product: geniusocean
   tags: misconfig,geniusocean,install,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: geniusocean
+        cpe: cpe:2.3:a:geniusocean:geniusocean:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'GeniusOcean - Script Installer'
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: geniusocean-2
+        cpe: cpe:2.3:a:geniusocean:geniusocean:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100bba9a1516028a5d505c6b7647a9c40f86ef53bf741c80b57243ed2e89b72f8e40220139abe1e4ec504e4a1914805c735f333b9c7d3cc450bd07228d060ba274f0ffc:922c64590222798bb761d5b6d8e72950

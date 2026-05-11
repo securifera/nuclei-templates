@@ -8,8 +8,12 @@ info:
     A Scribd phishing website was detected
   reference:
     - https://scribd.com
+  classification:
+    cpe: cpe:2.3:a:scribd:scribd:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: scribd
+    product: scribd
   tags: phishing,scribd,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: scribd
+        cpe: cpe:2.3:a:scribd:scribd:*:*:*:*:*:*:*:*
         words:
           - 'Scribd'
           - 'Get to the source. Specialized knowledge on any topic, and answers you won’t find anywhere else. Home to the world’s documents, 300M+ and counting.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: scribd-2
+        cpe: cpe:2.3:a:scribd:scribd:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"scribd.com")'
-# digest: 4a0a0047304502201305df5075edaacfe4dcaca0d55c6fd01dcfccfdf22559a739e34225da250ee2022100d4179c551864bfe12a8ea9e67978dc64610e700a475b27761389aba56c99d55b:922c64590222798bb761d5b6d8e72950

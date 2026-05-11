@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6941
   classification:
+    cpe: cpe:2.3:a:saferoads-vms:saferoads-vms:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: saferoads-vms
+    product: saferoads-vms
   tags: panel,edb,discovery
 
 http:
@@ -21,6 +24,7 @@ http:
 
     matchers:
       - type: word
+        name: saferoads-vms
+        cpe: cpe:2.3:a:saferoads-vms:saferoads-vms:*:*:*:*:*:*:*:*
         words:
           - 'Saferoads VMS'
-# digest: 4b0a00483046022100e7b082ebccd69c28c4f795bea69a60d4f5ee43078efaf0b93ef2e1e0deff32f1022100b8eb292d3f90cabb28eb05d07c42093ef53f4e70894421f3b9aef2c9ffcde53b:922c64590222798bb761d5b6d8e72950

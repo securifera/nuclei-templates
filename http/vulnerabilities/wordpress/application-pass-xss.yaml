@@ -12,6 +12,7 @@ info:
     - https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-core/wordpress-core-56-631-reflected-cross-site-scripting-via-application-password-requests?asset_slug=wordpress
     - https://wpscan.com/vulnerability/da1419cc-d821-42d6-b648-bdb3c70d91f2/
   classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-79,CWE-83
@@ -34,6 +35,8 @@ http:
 
     matchers:
       - type: dsl
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "/wp-content/plugins")'
         internal: true
@@ -52,9 +55,10 @@ http:
 
     matchers:
       - type: dsl
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_2, "javascript:alert(document.domain)")'
           - 'contains(content_type_2, "text/html")'
           - 'status_code_2 == 200'
         condition: and
-# digest: 490a0046304402205b844712fdda59b126db23a6d6bda483b9e9ae504aaa5c4c0ced8dba79d221eb02200971cdfc5184c3337cdea2d37c2e44478c13e382015eb55bd37b12d47c73dfee:922c64590222798bb761d5b6d8e72950

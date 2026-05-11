@@ -8,10 +8,14 @@ info:
     PowerBI Report Server was detected.
   reference:
     - https://www.microsoft.com/en-us/power-platform/products/power-bi/report-server
+  classification:
+    cpe: cpe:2.3:a:microsoft:power_bi_report_server:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"report server web portal"
+    vendor: microsoft
+    product: power_bi_report_server
   tags: panel,powerbi,detect,discovery
 
 http:
@@ -25,6 +29,8 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: power_bi_report_server
+        cpe: cpe:2.3:a:microsoft:power_bi_report_server:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "power bi report server", "powerbireportserver", "<title>report server web portal</title>")'
@@ -36,4 +42,3 @@ http:
         name: version
         json:
           - '.ProductVersion'
-# digest: 490a0046304402206c5c48064372c818524de6a1ca99d133b0ebd5b6deda5903a10ca42640db8adb0220158c856434e5ec8eaead0154eedad3312bfe202a10ed6794ff519bbdbe6b14c0:922c64590222798bb761d5b6d8e72950

@@ -4,9 +4,13 @@ info:
   name: Detect Springboot Actuators
   author: that_juan_,dwisiswant0,wdahlenb,dr0pd34d,TheZakMan
   severity: info
+  classification:
+    cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
     shodan-query: http.favicon.hash:116323821
+    vendor: vmware
+    product: spring_boot
   tags: tech,springboot,actuator,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: spring_boot
+        cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"_links":'
@@ -32,6 +38,7 @@ http:
 
       - type: dsl
         name: "favicon"
+        cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200 && (\"116323821\" == mmh3(base64_py(body)))"
 
@@ -40,4 +47,3 @@ http:
         name: available-endpoints
         json:
           - .[] | to_entries | .[].key
-# digest: 4b0a00483046022100e91077a42c41d049cae2dbd7905ef69553205ec5f0c906dcb0c502eda36c4601022100f2c3c3abd153a62214892aa3956fc8a2086ec555a361f33f01c942fcf7d6ef13:922c64590222798bb761d5b6d8e72950

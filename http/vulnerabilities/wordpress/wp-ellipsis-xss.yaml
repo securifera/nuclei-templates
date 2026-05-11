@@ -10,10 +10,14 @@ info:
     - https://wpscan.com/vulnerability/c0a138d8-93ac-463c-b650-d849352c0b44
     - https://packetstormsecurity.com/files/154393/
     - https://wordpress.org/plugins/ellipsis-human-presence-technology/
+  classification:
+    cpe: cpe:2.3:a:wp-ellipsis:wp-ellipsis:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     publicwww-query: "/wp-content/plugins/ellipsis-human-presence-technology/"
+    vendor: wp-ellipsis
+    product: wp-ellipsis
   tags: wpscan,packetstorm,wordpress,wp-plugin,ellipsis-human-presence-technology,xss,vuln
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-ellipsis
+        cpe: cpe:2.3:a:wp-ellipsis:wp-ellipsis:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<script>alert(document.location)</script>'
@@ -32,7 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: wp-ellipsis-2
+        cpe: cpe:2.3:a:wp-ellipsis:wp-ellipsis:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
-# digest: 4a0a004730450220232f1292267050552bac2fa4fb28045b1af4fa62ded83ff73bce671532c3bb2d022100bd89d3acfad55c8bd5f96c0f381f77b8b498839171ea9f63e6061e9f33827f79:922c64590222798bb761d5b6d8e72950

@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: big-ip_access_policy_manager
+        cpe: cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - "resterrorresponse"
@@ -40,4 +42,3 @@ http:
       - type: status
         status:
           - 401
-# digest: 490a0046304402201a60d64c7c28e9c76d1c5765cc9aa18506dc5b9061bad62507da09767119f5cc0220283399d7c7d7a3b8f93541eac2928002f22d121a93fefb78c9ac8c5bd61761c7:922c64590222798bb761d5b6d8e72950

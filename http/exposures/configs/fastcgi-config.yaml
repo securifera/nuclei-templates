@@ -6,9 +6,13 @@ info:
   severity: medium
   description: |
     FastCGI configuration file is exposed and accessible, potentially leading to sensitive information disclosure.
+  classification:
+    cpe: cpe:2.3:a:fastcgi:fastcgi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: fastcgi
+    product: fastcgi
   tags: fastcgi,config,exposure,vuln
 
 http:
@@ -21,8 +25,9 @@ http:
 
     matchers:
       - type: dsl
+        name: fastcgi
+        cpe: cpe:2.3:a:fastcgi:fastcgi:*:*:*:*:*:*:*:*
         dsl:
           - contains_all(body, 'fastcgi_param','fastcgi_script')
           - contains(content_type, 'application/octet-stream')
         condition: and
-# digest: 490a0046304402205911334c5f58189624b442af283bf27c408043767351ec5a5feac4e614245294022076d78723d466236fce61b3a245eb66dd029186be5bd95d6862cbc23abd258c4c:922c64590222798bb761d5b6d8e72950

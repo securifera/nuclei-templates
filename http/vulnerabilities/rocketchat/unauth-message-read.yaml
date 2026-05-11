@@ -10,11 +10,14 @@ info:
     - https://docs.rocket.chat/guides/security/security-updates
     - https://securifyinc.com/disclosures/rocketchat-unauthenticated-access-to-messages
   classification:
+    cpe: cpe:2.3:a:unauth-message-read:unauth-message-read:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-522
   metadata:
     max-request: 2
+    vendor: unauth-message-read
+    product: unauth-message-read
   tags: rocketchat,unauth,vuln
 variables:
   value: "{{to_lower(rand_text_alpha(5))}}"
@@ -41,6 +44,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: unauth-message-read
+        cpe: cpe:2.3:a:unauth-message-read:unauth-message-read:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"{\"msg\":\"result\",\"result\":{\"messages\"'
@@ -50,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d765588382cedef202e720cc09fa9498f495f0bf154c7803db399cd7ae44e5e6022100e33377b87887aba7d901f1993ae5456ac6e3346f49f146b2fa127a8552083c59:922c64590222798bb761d5b6d8e72950

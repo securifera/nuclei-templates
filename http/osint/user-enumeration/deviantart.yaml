@@ -6,11 +6,14 @@ info:
   severity: info
   description: DeviantArt user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:deviantart:deviantart:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: deviantart
+    product: deviantart
   tags: osint,osint-images,deviantart,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: deviantart
+        cpe: cpe:2.3:a:deviantart:deviantart:*:*:*:*:*:*:*:*
         part: body
         words:
           - " | DeviantArt</title>"
-# digest: 4a0a0047304502210090c8ab8fa190cab7dae54358a7b6d68dbaad9043cd16b038054f7f764d33a5b8022002d399449bcac1e042eb1cb9408577396b3578da63f95c37ffc881d4c162d443:922c64590222798bb761d5b6d8e72950

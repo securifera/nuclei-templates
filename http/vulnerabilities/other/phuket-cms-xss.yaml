@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.exploitalert.com/view-details.html?id=36234
   classification:
+    cpe: cpe:2.3:a:phuket:phuket:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-79
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 1
     google-query: intext:"Developed by Phuket Solution"
+    vendor: phuket
+    product: phuket
   tags: xss,phuket,phuket-cms,vuln
 
 http:
@@ -26,9 +29,10 @@ http:
 
     matchers:
       - type: dsl
+        name: phuket
+        cpe: cpe:2.3:a:phuket:phuket:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains(body, "<script>alert(document.domain)</script>") && contains(body, "Phuket Solution")'
         condition: and
-# digest: 4b0a00483046022100be4f770637b89fe160e873ba7282503eb6c10887bf28f1f325f0e504a40496ea022100e3a3a7ae8210d903cef2fb55a494d0f935d6e8b74d071e72ff8ae9a8f180b7b3:922c64590222798bb761d5b6d8e72950

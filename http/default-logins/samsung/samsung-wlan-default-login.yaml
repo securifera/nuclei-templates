@@ -8,11 +8,14 @@ info:
   reference:
     - https://securityforeveryone.com/tools/samsung-wlan-ap-wea453e-default-credentials-scanner
   classification:
+    cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: samsung
+    product: samsung
   tags: samsung,default-login,vuln
 
 http:
@@ -33,6 +36,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: samsung
+        cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
         part: body
         words:
           - "document.formParent2.changepasswd1.value"
@@ -41,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200af63f33627a572b625bf2befcb90aaa1c3c1cd3a03cf3f65239a3b9d67325970220276ae4b550c38a56d213f7556bc8a7130b114d340c5920fb9f9a2b7bcc7ed7c4:922c64590222798bb761d5b6d8e72950

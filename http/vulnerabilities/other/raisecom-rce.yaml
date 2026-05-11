@@ -10,10 +10,14 @@ info:
     Successful exploitation allows arbitrary command execution on the target device, enabling actions such as file manipulation or system control. This vulnerability affects multiple instances and does not require authentication.
   reference:
     - https://github.com/koishi0x01/CVE/blob/main/CVE_1.md
+  classification:
+    cpe: cpe:2.3:a:raisecom:raisecom:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: '"<TITLE>Web user login</TITLE>" && "<META content\==MSHTML 6.00.2900.5583\" name\=GENERATOR></HEAD>"'
+    vendor: raisecom
+    product: raisecom
   tags: raisecom,rce,intrusive,vuln
 
 variables:
@@ -30,6 +34,8 @@ http:
 
     matchers:
       - type: dsl
+        name: raisecom
+        cpe: cpe:2.3:a:raisecom:raisecom:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
@@ -48,9 +54,10 @@ http:
 
     matchers:
       - type: dsl
+        name: raisecom-2
+        cpe: cpe:2.3:a:raisecom:raisecom:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1 == 200 && status_code_2 == 200"
           - 'contains(content_type_2, "text/plain")'
           - "contains(body_2, '{{string}}')"
         condition: and
-# digest: 4b0a00483046022100ae7ce53eb008a7352e22a70a3c2f656173357db9d5d2cca142c3f97503b0f397022100a9484f06c2d63054f0432dc3d3a9bb20bae89bc9e315624c9ba12af6f97c1e2e:922c64590222798bb761d5b6d8e72950

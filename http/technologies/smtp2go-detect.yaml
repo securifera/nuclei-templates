@@ -4,9 +4,13 @@ info:
   name: SMTP2GO Detect
   author: pikpikcu,righettod
   severity: info
+  classification:
+    cpe: cpe:2.3:a:smtp2go:smtp2go:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"smtp2go"
+    vendor: smtp2go
+    product: smtp2go
   tags: tech,smtp2go,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: smtp2go
+        cpe: cpe:2.3:a:smtp2go:smtp2go:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>SMTP2GO</title>"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022072b8bae122ad6488a19a93b5501196293f6fc2df1cc061d9d683ca8e1fa2e8e5022100e2a46ef80191dca5738543bf62d3aa3da0bfc10e465199d25d5fd5806f1021ae:922c64590222798bb761d5b6d8e72950

@@ -21,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: azure_app_service_on_azure_stack
+        cpe: cpe:2.3:a:microsoft:azure_app_service_on_azure_stack:*:*:*:*:*:*:*:*
         words:
           - "<title>Microsoft Azure Web App - Error 404</title>"
           - "Custom domain has not been configured inside Azure. See how to map an existing domain to resolve this."
@@ -29,4 +31,3 @@ http:
       - type: status
         status:
           - 404
-# digest: 4a0a0047304502200f9fc25280ee2387138f2e1ba0e0fc7a2056f3eb6b3eb10ef91c053bf05c12c50221008549a25f45cf51d9714a72ffeecc9756a464505db4a78eb8ae1bc5a5caeb9133:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/dockerfile-hidden-disclosure.json
   classification:
+    cpe: cpe:2.3:a:dockerfile-hidden:dockerfile-hidden:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 3
+    vendor: dockerfile-hidden
+    product: dockerfile-hidden
   tags: exposure,config,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: dockerfile-hidden
+        cpe: cpe:2.3:a:dockerfile-hidden:dockerfile-hidden:*:*:*:*:*:*:*:*
         regex:
           - '^(?:FROM(?:CACHE)?|RUN|ADD|WORKDIR|ENV|EXPOSE|\#)\s+[ -~]+'
         part: body
@@ -34,8 +39,9 @@ http:
           - 200
 
       - type: word
+        name: dockerfile-hidden-2
+        cpe: cpe:2.3:a:dockerfile-hidden:dockerfile-hidden:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
         negative: true
-# digest: 4a0a004730450220090331a4e7e4085299a56c51a9860b0b97e9fa5d2ddd38996b24b157b50d2773022100dc5ea83df625877f375e4cd7dbfefc5bd792901c7d880c974eb0d736c7512e3a:922c64590222798bb761d5b6d8e72950

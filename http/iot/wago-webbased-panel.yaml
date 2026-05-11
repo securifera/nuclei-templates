@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
       WAGO WebBased Management was discovered.
+  classification:
+    cpe: cpe:2.3:a:wago:wago:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: title:"WAGO Ethernet Web-based Management"
     verified: true
     max-request: 1
+    vendor: wago
+    product: wago
   tags: panel,login,wago,iot,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wago
+        cpe: cpe:2.3:a:wago:wago:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Web-based Management"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022030a4f3301d66f26c61adfe1771dfa87925f1ac2117253a5630064eabc9c8300802210086810cf1537f3e7625d4562db694ddb702b160993c572bb4c8c435be07d99978:922c64590222798bb761d5b6d8e72950

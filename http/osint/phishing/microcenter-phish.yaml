@@ -8,8 +8,12 @@ info:
     A microcenter phishing website was detected
   reference:
     - https://microcenter.com
+  classification:
+    cpe: cpe:2.3:a:microcenter:microcenter:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: microcenter
+    product: microcenter
   tags: phishing,microcenter,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: microcenter
+        cpe: cpe:2.3:a:microcenter:microcenter:*:*:*:*:*:*:*:*
         words:
           - 'Micro Center - Computer & Electronics Retailer - Shop Now'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: microcenter-2
+        cpe: cpe:2.3:a:microcenter:microcenter:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"microcenter.com")'
-# digest: 4b0a00483046022100957efafb74f48c326e791d36923b45135f60c7e7f872ca00a2772e23a7232f75022100b2bff0eef4660b17446c23f8b9088ccb71c8a843e8173dd6b6524c2f91814f1b:922c64590222798bb761d5b6d8e72950

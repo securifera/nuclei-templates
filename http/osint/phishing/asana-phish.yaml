@@ -8,8 +8,12 @@ info:
     An Asana phishing website was detected
   reference:
     - https://asana.com
+  classification:
+    cpe: cpe:2.3:a:asana:asana:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: asana
+    product: asana
   tags: phishing,asana,productivity,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: asana
+        cpe: cpe:2.3:a:asana:asana:*:*:*:*:*:*:*:*
         words:
           - 'window.AsanaStorage.optanonWrapperInitialized'
           - 'Asana'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: asana-2
+        cpe: cpe:2.3:a:asana:asana:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"asana.com")'
-# digest: 490a004630440220684592c56f02f31a24cd3aaf7df4cc5aab33edc811da0750f6a8fe045107418d022065dbceba6250ab55a77ed87ff76d13e3c1f806f2b671cd49d4ebd0c5a85baebd:922c64590222798bb761d5b6d8e72950

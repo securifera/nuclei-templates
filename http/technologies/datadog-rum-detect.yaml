@@ -29,6 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: browser-rum
+        cpe: cpe:2.3:a:datadog:browser-rum:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DD_RUM.init"

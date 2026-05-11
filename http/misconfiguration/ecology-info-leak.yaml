@@ -8,11 +8,15 @@ info:
     The "ecology" component exposes a file that contains sensitive database credentials (dbuser/dbpass).
   reference:
     - https://github.com/xinyisleep/pocscan/blob/main/%E6%B3%9B%E5%BE%AE/oa%E6%B3%9B%E5%BE%AE0day%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.py
+  classification:
+    cpe: cpe:2.3:a:ecology:ecology:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: ecology_JSessionid
     fofa-query: app="泛微-协同办公OA"
+    vendor: ecology
+    product: ecology
   tags: ecology,unauth,misconfig,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ecology
+        cpe: cpe:2.3:a:ecology:ecology:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ecology.password"
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: ecology-2
+        cpe: cpe:2.3:a:ecology:ecology:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a2b2dcaeb19348f2dfdc8a40dffa818b7112f6193ac6ddb58a401d93f6440c63022100e2f0667c48b81e48701ef87b69418b71d91a8bb32df19d37105d46d37261e145:922c64590222798bb761d5b6d8e72950

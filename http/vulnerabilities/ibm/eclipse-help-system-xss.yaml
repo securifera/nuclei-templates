@@ -8,11 +8,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/131924/IBM-Eclipse-Help-System-IEHS-Cross-Site-Scripting.html
   classification:
+    cpe: cpe:2.3:a:eclipse-help-system:eclipse-help-system:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: eclipse-help-system
+    product: eclipse-help-system
   tags: ibm,xss,vuln
 
 http:
@@ -27,6 +30,8 @@ http:
           - 200
 
       - type: word
+        name: eclipse-help-system
+        cpe: cpe:2.3:a:eclipse-help-system:eclipse-help-system:*:*:*:*:*:*:*:*
         words:
           - "<script>alert(document.cookie)</script>"
           - "file not found"
@@ -34,7 +39,8 @@ http:
         part: body
 
       - type: word
+        name: eclipse-help-system-2
+        cpe: cpe:2.3:a:eclipse-help-system:eclipse-help-system:*:*:*:*:*:*:*:*
         words:
           - "text/html"
         part: header
-# digest: 490a0046304402203a1ca25cefd461f3af4435aa3948ddecbc379b4b5409fd9c15c0dd1914b2aa0d022010ada8e734c4be50cf7b1b824deba4487db3bd044fdbd9c681e369e651d909c4:922c64590222798bb761d5b6d8e72950

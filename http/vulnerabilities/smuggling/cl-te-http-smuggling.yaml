@@ -8,9 +8,13 @@ info:
     Detected a potential CL.TE request smuggling condition where conflicting Content-Length and Transfer-Encoding headers caused the gateway and backend to parse requests differently.
   reference:
     - https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te
+  classification:
+    cpe: cpe:2.3:a:smuggling:smuggling:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: smuggling
+    product: smuggling
   tags: cl-te,smuggling
 
 http:
@@ -43,6 +47,7 @@ http:
 
     matchers:
       - type: dsl
+        name: smuggling
+        cpe: cpe:2.3:a:smuggling:smuggling:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_2, "Unrecognized method GPOST")'
-# digest: 490a00463044022073f8bfc3708303eb69994eea872499475e24861107f1661fd4d59fa2e4e377b0022002551f2e8288a11d56bf0794bdfb05337053497351bba53e748269202e050c25:922c64590222798bb761d5b6d8e72950

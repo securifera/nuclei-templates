@@ -6,10 +6,13 @@ info:
   severity: info
   description: FastAPI Docs panel was detected.
   classification:
+    cpe: cpe:2.3:a:fastapi:fastapi:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 3
+    vendor: fastapi
+    product: fastapi
   tags: fastapi,tech,panel,discovery
 
 http:
@@ -21,9 +24,10 @@ http:
 
     matchers:
       - type: word
+        name: fastapi
+        cpe: cpe:2.3:a:fastapi:fastapi:*:*:*:*:*:*:*:*
         words:
           - "<title>FastAPI - Swagger UI</title>"
           - "<title>FastAPI - ReDoc</title>"
           - '{"title":"FastAPI"'
         condition: or
-# digest: 4a0a00473045022067e099c0cf96c42b5f2f25afe6c4462994250e68e4dd1ed377a3edd484046bda022100bf418d144827ee5fccd61c02293e4ede02c25d337c4123c4c35beb53b3a0df0b:922c64590222798bb761d5b6d8e72950

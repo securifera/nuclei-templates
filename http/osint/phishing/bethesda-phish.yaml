@@ -8,8 +8,12 @@ info:
     A Bethesda phishing website was detected
   reference:
     - https://bethesda.net
+  classification:
+    cpe: cpe:2.3:a:bethesda:bethesda:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bethesda
+    product: bethesda
   tags: phishing,bethesda,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bethesda
+        cpe: cpe:2.3:a:bethesda:bethesda:*:*:*:*:*:*:*:*
         words:
           - 'The official site for Bethesda, publisher of Fallout, DOOM, Dishonored, Skyrim, Wolfenstein, The Elder Scrolls, more. Your source for news, features &amp; community'
           - 'Bethesda'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: bethesda-2
+        cpe: cpe:2.3:a:bethesda:bethesda:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bethesda.net")'
-# digest: 490a0046304402206e4b74982edfcc4d6478f6f4a76a307fa506b917138663e429d8256bbf06454e02200e6575a962b9672183801612e7e1edf2e2d4bc6eb6c47d338bf43873e6294046:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,13 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/freshbooks-access-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/freshbooks-access-token.go
   classification:
+    cpe: cpe:2.3:a:freshbooks:freshbooks:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: freshbooks
+    product: freshbooks
   tags: freshbooks,exposure,tokens,vuln
 
 http:
@@ -24,4 +27,3 @@ http:
         part: body
         regex:
           - (?i)(?:freshbooks)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{64})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 4a0a00473045022100fdb59c07b97963f44688520f579d474c449c4740352cb49fa63bbbf91daad7d60220401e6340ffea79dc99d52838d5647f922b724b4eca2967ded6b47e959c97e309:922c64590222798bb761d5b6d8e72950

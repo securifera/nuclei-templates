@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: syncope
+        cpe: cpe:2.3:a:apache:syncope:*:*:*:*:*:*:*:*
         words:
           - '<title>Apache Syncope'
           - 'org.apache.syncope'

@@ -5,8 +5,12 @@ info:
   author: brenocss,Moritz Nentwig
   severity: info
   description: Searches for JavaServer Faces content on a URL.
+  classification:
+    cpe: cpe:2.3:a:oracle:javaserver_faces:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: oracle
+    product: javaserver_faces
   tags: jsf,tech,primefaces,richfaces,discovery
 
 http:
@@ -21,11 +25,13 @@ http:
     matchers:
       - type: dsl
         name: javafaces
+        cpe: cpe:2.3:a:oracle:javaserver_faces:*:*:*:*:*:*:*:*
         dsl:
           - "(contains(body, 'javax.faces.resource') || contains(body, 'javax.faces.ViewState'))"
 
       - type: dsl
         name: primefaces
+        cpe: cpe:2.3:a:oracle:javaserver_faces:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body, 'primefaces')"
           - "contains(body, 'javax.faces.resource') || contains(body, 'javax.faces.ViewState')"
@@ -33,8 +39,8 @@ http:
 
       - type: dsl
         name: richfaces
+        cpe: cpe:2.3:a:oracle:javaserver_faces:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body, 'richfaces')"
           - "contains(body, 'javax.faces.resource') || contains(body, 'javax.faces.ViewState')"
         condition: and
-# digest: 490a004630440220036ca5c7aaca1fcb03644a48ff785c05926d775685cd83584f1a0a51456f4954022064deefacbfea5befad677f09f02428f79456916fcbf4b373706a040bf6f521bd:922c64590222798bb761d5b6d8e72950

@@ -8,12 +8,15 @@ info:
   reference:
     - https://pre-commit.com/
   classification:
+    cpe: cpe:2.3:a:pre-commit-config:pre-commit-config:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
+    vendor: pre-commit-config
+    product: pre-commit-config
   tags: exposure,devops,config,cicd,vuln
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pre-commit-config
+        cpe: cpe:2.3:a:pre-commit-config:pre-commit-config:*:*:*:*:*:*:*:*
         part: body
         words:
           - "repos:"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ae22857c03566e1f1692385905c4b119f756cae7dde6423dabdd5a687cfcd7ea0221008f792dd0ad494f740e1ecd10e8d6bc05337c4eb666da433bae5f67cbb1b34c29:922c64590222798bb761d5b6d8e72950

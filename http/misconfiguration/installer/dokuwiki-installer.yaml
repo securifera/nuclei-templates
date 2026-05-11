@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dokuwiki
+        cpe: cpe:2.3:a:dokuwiki:dokuwiki:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DokuWiki Installer"
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: dokuwiki-2
+        cpe: cpe:2.3:a:dokuwiki:dokuwiki:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d1f6cb666b2aad4b3eac290436f4d958632a9eb805897dfd7417bac2f77db4ba02203be3a0a5a1d41253b25cab13327ce4ca3dcc28f391bd540bcb86f6cc99b7fc59:922c64590222798bb761d5b6d8e72950

@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpwind
+        cpe: cpe:2.3:a:phpwind:phpwind:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Powered by phpwind</title>'
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: phpwind-2
+        cpe: cpe:2.3:a:phpwind:phpwind:*:*:*:*:*:*:*:*
         part: body
         words:
           - "You have installed. To reinstall, you need to clear the data/install.lock file"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204a4118a5e0fab0d5254569892acf010c1b8d9c89f713eeffbbb8979168b0cdb40220793086885f1448dcaca192a01b328fee6b36f0502609bd149e7a7d33871d2797:922c64590222798bb761d5b6d8e72950

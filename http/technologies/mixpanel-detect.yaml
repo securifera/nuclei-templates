@@ -9,10 +9,14 @@ info:
   reference:
     - https://mixpanel.com/
     - https://developer.mixpanel.com/docs/javascript-quickstart
+  classification:
+    cpe: cpe:2.3:a:mixpanel:mixpanel:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"cdn.mxpnl.com"
+    vendor: mixpanel
+    product: mixpanel
   tags: tech,discovery,mixpanel
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mixpanel
+        cpe: cpe:2.3:a:mixpanel:mixpanel:*:*:*:*:*:*:*:*
         part: body
         words:
           - "cdn.mxpnl.com"
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200121aa6ac7e0dd02a63b8a89c06e8dd578f50c2ae4a96c9b71e276da01f6779b022100894415ec4180ccdc55aab39403ed714dc0818d396dffd3cff818b8d05ef0644d:922c64590222798bb761d5b6d8e72950

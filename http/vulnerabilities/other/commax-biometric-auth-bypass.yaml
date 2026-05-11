@@ -9,8 +9,12 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/50206
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5661.php
+  classification:
+    cpe: cpe:2.3:a:commax:commax:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: commax
+    product: commax
   tags: commax,auth-bypass,edb,vuln
 
 http:
@@ -25,11 +29,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: commax
+        cpe: cpe:2.3:a:commax:commax:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>::: COMMAX :::</title>"
 
       - type: word
+        name: commax-2
+        cpe: cpe:2.3:a:commax:commax:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022044535b875f7f2e249942e03eb6afc56e7365efa0cf250e98dc2f43d5e6cb710e02200c1d3f536afffc75025bbcfd9c54930a4b7ca4e65c1d30f9298d44adf8c77fe8:922c64590222798bb761d5b6d8e72950

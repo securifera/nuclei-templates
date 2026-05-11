@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: suitecrm
+        cpe: cpe:2.3:a:salesagility:suitecrm:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SuiteCRM Setup Wizard:"
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: suitecrm-2
+        cpe: cpe:2.3:a:salesagility:suitecrm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220632c8864e715ef69fe48239e6b5690f093b533f65be2b62aba0c0ba6db2983e1022052cc456846a83bb152d206bce0ee3f6400cbf8c5c82c1b65465c5d9b4c49a564:922c64590222798bb761d5b6d8e72950

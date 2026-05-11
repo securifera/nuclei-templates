@@ -6,11 +6,14 @@ info:
   severity: info
   description: Shopify user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:shopify:shopify:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: shopify
+    product: shopify
   tags: osint,osint-shopping,shopify,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: shopify
+        cpe: cpe:2.3:a:shopify:shopify:*:*:*:*:*:*:*:*
         part: body
         words:
           - "home"
-# digest: 4a0a0047304502204eb93693b2b8022ecd4f24dcf6ededfd0ef6ac718eb196c0862fd4c1d4e3cdd7022100d3ed02a008a1a0c1a0865469b42dd136c73a1ad345613e063caad107b88c7f44:922c64590222798bb761d5b6d8e72950

@@ -10,10 +10,14 @@ info:
     - https://experienceleague.adobe.com/docs/experience-manager-65/developing/platform/query-builder/querybuilder-api.html
     - https://slcyber.io/assetnote-security-research-center/finding-critical-bugs-in-adobe-experience-manager/
     - https://github.com/assetnote/hopgoblin
+  classification:
+    cpe: cpe:2.3:a:aem:querybuilder:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.component:"Adobe Experience Manager"
+    vendor: aem
+    product: querybuilder
   tags: aem,adobe,exposure,querybuilder
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: querybuilder
+        cpe: cpe:2.3:a:aem:querybuilder:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"rep:password"'
@@ -49,4 +55,3 @@ http:
       - type: dsl
         dsl:
           - '"Found password: " + password_count'
-# digest: 490a00463044022014b34a2a9306d1f9834ce81668534db86e638c68754c5d28261c393c11ffdf8c022009a66349730d16a6e5734945ae6d1cf1f50d33344d385062acb23bd854779c34:922c64590222798bb761d5b6d8e72950

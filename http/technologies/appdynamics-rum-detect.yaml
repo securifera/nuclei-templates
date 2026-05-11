@@ -8,10 +8,14 @@ info:
     Detects AppDynamics (Cisco) End User Monitoring (EUM) artifacts.
   reference:
     - https://docs.appdynamics.com/appd/24.x/latest/en/end-user-monitoring/browser-monitoring/browser-real-user-monitoring
+  classification:
+    cpe: cpe:2.3:a:cisco:appdynamics:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"adrum"
+    vendor: cisco
+    product: appdynamics
   tags: tech,discovery,rum,appdynamics
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: appdynamics
+        cpe: cpe:2.3:a:cisco:appdynamics:*:*:*:*:*:*:*:*
         part: body
         words:
           - "adrum-config"
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b25b4a556a141f5f217e2cb6553cd921be893c68e14816ed530370046b1e2b17022020ca154b2bf89fdeb8e09b91596b41e22ab15fba85a28cc43d9828b2fd008e5a:922c64590222798bb761d5b6d8e72950

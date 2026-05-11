@@ -6,9 +6,13 @@ info:
   severity: high
   description: |
     Detects potential exposure of sensitive file paths like /000~ROOT~000/.
+  classification:
+    cpe: cpe:2.3:a:root-path:root-path:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
+    vendor: root-path
+    product: root-path
   tags: misconfig,exposure,info-leak,listing,lfr,vuln
 
 http:
@@ -23,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: root-path
+        cpe: cpe:2.3:a:root-path:root-path:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "^root:.*:0:0:"
 
       - type: regex
+        name: root-path-2
+        cpe: cpe:2.3:a:root-path:root-path:*:*:*:*:*:*:*:*
         part: accept_ranges
         regex:
           - "bytes"
@@ -35,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cface6ef4dbf9b3956243f6375da0d1e2410283d03552ba3d82c79318bcd7842022100e8edb860c8280962a2af8a516da090c81fbcfb11a8dcb45d74045dadf1d811ea:922c64590222798bb761d5b6d8e72950

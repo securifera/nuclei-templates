@@ -34,6 +34,8 @@ http:
           - 200
 
       - type: word
+        name: metabase
+        cpe: cpe:2.3:a:metabase:metabase:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Metabase</title>"
@@ -47,4 +49,3 @@ http:
         group: 1
         regex:
           - '"(v\d+.\d+.\d+.?\d?)"'
-# digest: 4a0a0047304502204882b742277c7bc8d0256c52de56c497813df6427f600c1d7f57a68c529ed4cc022100a16f601d21a6060234c9a09c394c16e02229d6406f7451cd17d88872b2caa4c1:922c64590222798bb761d5b6d8e72950

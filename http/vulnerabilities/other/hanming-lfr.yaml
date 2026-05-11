@@ -8,11 +8,14 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/F-M21PT0xn9QOuwoC8llKA
   classification:
+    cpe: cpe:2.3:a:hanming:lfr:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 2
+    vendor: hanming
+    product: lfr
   tags: lfr,hanming,lfi,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: lfr
+        cpe: cpe:2.3:a:hanming:lfr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "bit app support"
@@ -34,6 +39,7 @@ http:
         condition: and
 
       - type: regex
+        name: lfr-2
+        cpe: cpe:2.3:a:hanming:lfr:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0:"
-# digest: 4b0a00483046022100efc2cf1e02e2b0a6303ce7eba2cabf7c9d23b4bbc46c6e98cd8ed5159b932178022100f42b19e2ed0ddb358908af83db738bc779fce414287c01bd3efa2c0d7c2f3230:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://httpd.apache.org/docs/current/configuring.html
   classification:
+    cpe: cpe:2.3:a:httpd:httpd:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: httpd
+    product: httpd
   tags: config,exposure,httpd,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: httpd
+        cpe: cpe:2.3:a:httpd:httpd:*:*:*:*:*:*:*:*
         words:
           - "LoadModule"
           - "# LoadModule"
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220706688a8923e575323ca0bbae0acfedf4623d4ef70c6b0587d6c332f4c6b4c74022100d658220dc6fcd91f8e9b2f95489b3cd2af776afab8a1a0de4538912ef4f35d06:922c64590222798bb761d5b6d8e72950

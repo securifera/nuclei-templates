@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://docs.particle.io/reference
+  classification:
+    cpe: cpe:2.3:a:particle:particle:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: particle
+    product: particle
   tags: token-spray,particle
 
 self-contained: true
@@ -24,9 +28,10 @@ http:
           - 200
 
       - type: word
+        name: particle
+        cpe: cpe:2.3:a:particle:particle:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"account_info":'
           - '"username":'
         condition: and
-# digest: 4a0a004730450220377b6116f1a7982d32f2b885b9f5301db16e2c8ad48891ff56547bf30f775729022100cbddf1b3f486a78e8e8b9e098516f35fbd4715665e811eb16b83675077fb640f:922c64590222798bb761d5b6d8e72950

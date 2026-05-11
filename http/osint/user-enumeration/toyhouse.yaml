@@ -6,11 +6,14 @@ info:
   severity: info
   description: Toyhou.se user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:toyhouse:toyhouse:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: toyhouse
+    product: toyhouse
   tags: osint,osint-hobby,toyhouse,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: toyhouse
+        cpe: cpe:2.3:a:toyhouse:toyhouse:*:*:*:*:*:*:*:*
         part: body
         words:
           - "display-user"
-# digest: 4a0a00473045022100f4118dcab407da585b10332acb326e8942a4028b9a232849568bcfabc2edda7b022060dbb00302b909f9400dd78e129f064770d3c6336ac08c13bada66f283f17812:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     PowerShell Universal default admin credentials were discovered.
   reference:
     - https://ironmansoftware.com/powershell-universal
+  classification:
+    cpe: cpe:2.3:a:powershell:powershell:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: "html:\"PowerShell Universal\""
+    vendor: powershell
+    product: powershell
   tags: default-login,powershell-universal,vuln
 
 http:
@@ -41,18 +45,23 @@ http:
           - 200
 
       - type: word
+        name: powershell
+        cpe: cpe:2.3:a:powershell:powershell:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'Set-Cookie'
 
       - type: word
+        name: powershell-2
+        cpe: cpe:2.3:a:powershell:powershell:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"returnUrl":"/admin"}'
 
       - type: word
+        name: powershell-3
+        cpe: cpe:2.3:a:powershell:powershell:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"errorMessage":"Bad username or password"}'
         negative: true
-# digest: 4b0a004830460221009c9d9249fba75f47b1da5350b8097e0841ab104a8679c036ec7e60f52a43f083022100e4ac5630db674e25ccf0a3735c9e765ff7c18ca05fecdf453d8fc04014877476:922c64590222798bb761d5b6d8e72950

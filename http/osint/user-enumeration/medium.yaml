@@ -6,11 +6,14 @@ info:
   severity: info
   description: Medium user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:medium:medium:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: medium
+    product: medium
   tags: osint,osint-social,medium,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: medium
+        cpe: cpe:2.3:a:medium:medium:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Followers"
-# digest: 4a0a00473045022100fdc5b262d4a8d342d947646079136d2f01e19172cfeded25d8fd961a831d8f7d022019d21f8a03ffbcfd9a8a3822059de558fca2a3f9a31c0c32ce38c7a91b9b8a1d:922c64590222798bb761d5b6d8e72950

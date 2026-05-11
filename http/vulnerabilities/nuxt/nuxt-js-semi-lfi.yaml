@@ -30,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: framework
+        cpe: cpe:2.3:a:nuxt:framework:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"plugin":'
@@ -38,7 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: framework-2
+        cpe: cpe:2.3:a:nuxt:framework:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
-# digest: 4a0a00473045022001c24d03a8b00f855eb84f36cc00b4302817e186f10f49a1b31665302c60e856022100ea4ba8cc579f09b5099093179044b185436312417a85304474e08815b1762474:922c64590222798bb761d5b6d8e72950

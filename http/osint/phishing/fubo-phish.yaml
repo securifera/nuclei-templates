@@ -8,8 +8,12 @@ info:
     A FuboTV phishing website was detected
   reference:
     - https://fubo.tv
+  classification:
+    cpe: cpe:2.3:a:fubo:fubo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: fubo
+    product: fubo
   tags: phishing,fubo,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fubo
+        cpe: cpe:2.3:a:fubo:fubo:*:*:*:*:*:*:*:*
         words:
           - "Watch ABC, CBS, FOX, ESPN and other top channels live - without cable TV. On your phone, TV and more. No contract. DVR included."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: fubo-2
+        cpe: cpe:2.3:a:fubo:fubo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"fubo.tv")'
-# digest: 480a00453043021f59863efa6eeff81f7669bf6442bff55e53b4991e3e7b0cf0d98ba2807cabe00220177f013786f8b3d973bc9965e11080ece55edf29441213d9e42c74808698f65f:922c64590222798bb761d5b6d8e72950

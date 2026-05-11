@@ -10,10 +10,14 @@ info:
     Attackers can obtain sever file paths, aiding in further exploitation of the website.
   reference:
     - https://wordpress.org/plugins/image-widget/
+  classification:
+    cpe: cpe:2.3:a:image-widget:image-widget:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-requests: 1
     publicwww-query: "/wp-content/plugins/image-widget/"
+    vendor: image-widget
+    product: image-widget
   tags: debug,wordpress,wp,wp-plugin,image-widget,fpd
 
 http:
@@ -23,8 +27,9 @@ http:
 
     matchers:
       - type: dsl
+        name: image-widget
+        cpe: cpe:2.3:a:image-widget:image-widget:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Fatal error", "Uncaught Error", "image-widget")'
         condition: and
-# digest: 4b0a00483046022100ff6e41593151b94b58153359589dc3c179fd2449c7a35f21a178a9ac04d5acaf022100990a72ea402f939012a66de2950e9601651025f36bf338303d1da93b73d93199:922c64590222798bb761d5b6d8e72950

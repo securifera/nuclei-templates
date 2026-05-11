@@ -8,11 +8,14 @@ info:
   reference:
     - https://datacadamia.com/ssh/known_hosts
   classification:
+    cpe: cpe:2.3:a:ssh:ssh:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: ssh
+    product: ssh
   tags: config,exposure,ssh,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ssh
+        cpe: cpe:2.3:a:ssh:ssh:*:*:*:*:*:*:*:*
         words:
           - "ssh-dss"
           - "ssh-ed25519"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022071762478af5eea67224481c2407a4f0426c75ef45c419f6aa112e28115264594022100f0c04ca52a5d5c6208f9a830be3cf61f03e4b34f5813bb91b9e62e06517e2611:922c64590222798bb761d5b6d8e72950

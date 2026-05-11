@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6784
   classification:
+    cpe: cpe:2.3:a:d-link-wireless:d-link-wireless:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: d-link-wireless
+    product: d-link-wireless
   tags: dlink,router,edb,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: d-link-wireless
+        cpe: cpe:2.3:a:d-link-wireless:d-link-wireless:*:*:*:*:*:*:*:*
         words:
           - '<title>D-LINK SYSTEMS, INC. | WIRELESS ROUTER | HOME</title>'
           - '<title>D-LINK SYSTEMS, INC. | WIRELESS ACCESS POINT | HOME</title>'
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ff1eb38042f00479533ee903aaa61489ca85773011a55cfae89414a7ee6b5bcc0220266280da5d54e632d970b43ad181e15b74caac4d0d918dff39f77d8b960fcb5a:922c64590222798bb761d5b6d8e72950

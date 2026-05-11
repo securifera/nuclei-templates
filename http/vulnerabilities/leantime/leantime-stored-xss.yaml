@@ -9,7 +9,11 @@ info:
   reference:
     - https://github.com/advisories/GHSA-c39w-3pjx-qc7m
   classification:
+    cpe: cpe:2.3:a:leantime:stored:*:*:*:*:*:*:*:*
     cwe-id: CWE-79,CWE-83
+  metadata:
+    vendor: leantime
+    product: stored
   tags: leantime,xss,stored,authenticated,vuln
 
 flow: http(1) && http(2) && http(3)
@@ -29,6 +33,8 @@ http:
 
     matchers:
       - type: word
+        name: stored
+        cpe: cpe:2.3:a:leantime:stored:*:*:*:*:*:*:*:*
         part: body
         words:
           - /dashboard/home
@@ -43,6 +49,8 @@ http:
 
     matchers:
       - type: word
+        name: stored-2
+        cpe: cpe:2.3:a:leantime:stored:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'message: "notification.api_key_created", style: "success"'
@@ -55,11 +63,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: stored-3
+        cpe: cpe:2.3:a:leantime:stored:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<img src=x onerror=alert(document.domain)>'
 
       - type: word
+        name: stored-4
+        cpe: cpe:2.3:a:leantime:stored:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -67,4 +79,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220539ede094737fc7b24a47aa6f8d656ff73aa0ec0dbb2c934418498060da7d2b60220766c2d2845c4276f6bdddfce144a12fad6a52b3c1dc0d0e80b476eaae2934db5:922c64590222798bb761d5b6d8e72950

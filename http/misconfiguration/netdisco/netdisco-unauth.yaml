@@ -8,11 +8,15 @@ info:
     Detects an unauth dashboard access of Netdisco.
   impact: |
     Attackers can potentially exploit this vulnerability to gain unauthorized access to sensitive information.
+  classification:
+    cpe: cpe:2.3:a:netdisco:netdisco:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Netdisco"
     fofa-query: title="Netdisco"
+    vendor: netdisco
+    product: netdisco
   tags: netdisco,misconfig,unauth,vuln
 
 http:
@@ -24,8 +28,9 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: netdisco
+        cpe: cpe:2.3:a:netdisco:netdisco:*:*:*:*:*:*:*:*
         dsl:
           - contains_all(body, "User Management", "/admin/discoverall", "Logged in as")
           - status_code == 200
         condition: and
-# digest: 4a0a0047304502206b92465851ca03a61244bf7cd6bd3066e58c547c8425d1661826febc1ddbb53b0221009d2ef0f96c1409aff0530159e64b317552fcbc4e74477bbf706c604552d9a594:922c64590222798bb761d5b6d8e72950

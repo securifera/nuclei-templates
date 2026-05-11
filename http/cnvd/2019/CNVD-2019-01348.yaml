@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2019-01348
   classification:
+    cpe: cpe:2.3:a:xiuno:xiuno_bbs:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
     cvss-score: 7.5
     cwe-id: CWE-284
   metadata:
     max-request: 1
+    vendor: xiuno
+    product: xiuno_bbs
   tags: cnvd2019,cnvd,xiuno,vuln
 
 http:
@@ -31,9 +34,10 @@ http:
           - 200
 
       - type: word
+        name: xiuno_bbs
+        cpe: cpe:2.3:a:xiuno:xiuno_bbs:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/view/js/xiuno.js"
           - "Choose Language (选择语言)"
         condition: and
-# digest: 490a00463044022022c8e80fb2b25c167a789ed337cda5c6d032c377a0bdaa8c4888cf80ba9e8ce40220305dd8af0e292cedfaf9b85cd51ecd7a54ad8ea20b488cab6f6e88b4e04a2414:922c64590222798bb761d5b6d8e72950

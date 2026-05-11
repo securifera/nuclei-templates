@@ -22,6 +22,8 @@ http:
 
     matchers:
       - type: regex
+        name: flowweb
+        cpe: cpe:2.3:a:flowweb:flowweb:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?i)FlowWeb/[0-9.]+'

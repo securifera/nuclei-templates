@@ -6,11 +6,14 @@ info:
   severity: info
   description: TMDB user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:tmdb:tmdb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tmdb
+    product: tmdb
   tags: osint,osint-social,tmdb,discovery
 
 self-contained: true
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tmdb
+        cpe: cpe:2.3:a:tmdb:tmdb:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Total Edits'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204cdccfd9ea2d4c273a36046c723c03408ff39d002ea245322574cc86f0e28efd02202012404bd42803e76828a058379fa1cda4260f24ce24209099121050010bab80:922c64590222798bb761d5b6d8e72950

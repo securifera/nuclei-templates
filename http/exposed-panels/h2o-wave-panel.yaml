@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/h2oai/wave
     - https://wave.h2o.ai/
+  classification:
+    cpe: cpe:2.3:a:h2oai:wave:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -28,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wave
+        cpe: cpe:2.3:a:h2oai:wave:*:*:*:*:*:*:*:*
         part: body
         words:
           - "h2o-wave"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402205e0206d9a7f5f2a65996f200a7a2d9305abf55b1de563fc2cd1ee5e9c664ae9c02206f24263a757045c8d8422bb9522868255d2d211879e142c2a8212db1766f29ee:922c64590222798bb761d5b6d8e72950

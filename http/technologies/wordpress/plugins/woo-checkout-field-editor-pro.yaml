@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: woo-checkout-field-editor-pro
+        cpe: cpe:2.3:a:woo-checkout-field-editor-pro:woo-checkout-field-editor-pro:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

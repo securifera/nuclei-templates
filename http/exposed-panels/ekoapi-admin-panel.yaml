@@ -7,6 +7,7 @@ info:
   description:
     EkoAPI Admin panel was detected.
   classification:
+    cpe: cpe:2.3:a:ekoapi:ekoapi:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -14,6 +15,8 @@ info:
     max-request: 1
     shodan-query: title:"EkoAPI Admin"
     fofa-query: title="EkoAPI Admin"
+    vendor: ekoapi
+    product: ekoapi
   tags: panel,ekoapi,discovery
 
 http:
@@ -27,10 +30,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ekoapi
+        cpe: cpe:2.3:a:ekoapi:ekoapi:*:*:*:*:*:*:*:*
         words:
           - '<title>EkoAPI Admin'
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203066a91d27e56c8839d97405a30f114ed53c4e3eb8bfb2cb29bd64992f7777b0022100bb4025248e04a83853a8d93ad2fc44f5b1be8b601936b2041ce38042471cdab7:922c64590222798bb761d5b6d8e72950

@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<img src="x" data onerror="alert(domain)"/>'
@@ -39,11 +41,15 @@ http:
         condition: or
 
       - type: word
+        name: experience_manager-2
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'data-coral-columnview-id'
 
       - type: word
+        name: experience_manager-3
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'text/html'
@@ -51,4 +57,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e80cd928fb39bf8708049a09059c9253ac550902016631edfc61cd93b72171e5022100fbd07441498dc9ed41165c0cf01ff0c26f45c5526aaf198b213012799ad3ed2e:922c64590222798bb761d5b6d8e72950

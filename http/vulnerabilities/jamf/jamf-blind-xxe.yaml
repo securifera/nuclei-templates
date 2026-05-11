@@ -8,9 +8,12 @@ info:
   reference:
     - https://www.synack.com/blog/a-deep-dive-into-xxe-injection/
   classification:
+    cpe: cpe:2.3:a:jamf:jamf:*:*:*:*:*:*:*:*
     cwe-id: CWE-611,CWE-918
   metadata:
     max-request: 1
+    vendor: jamf
+    product: jamf
   tags: xxe,ssrf,jamf,vuln
 
 http:
@@ -47,11 +50,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jamf
+        cpe: cpe:2.3:a:jamf:jamf:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "http"
 
       - type: word
+        name: jamf-2
+        cpe: cpe:2.3:a:jamf:jamf:*:*:*:*:*:*:*:*
         words:
           - "com.jamfsoftware.jss"
-# digest: 490a0046304402200a9d5d3229ff747af4bd70081008e1b607407f9023acc973ea74809433097ac10220613234f137875f1fbe03fde1565d638c78872d19c6c5d607170d033d4dec8623:922c64590222798bb761d5b6d8e72950

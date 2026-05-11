@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/11997
   classification:
+    cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-23
   metadata:
     max-request: 1
+    vendor: joomla
+    product: joomla
   tags: joomla,lfi,edb,vuln
 
 http:
@@ -24,10 +27,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e03ca26e4feb782392a74596f4e88f1b1df660d32847865bd5d0dbab8483a47a022100c29b633a3cb88e76f30310c5553bdb43498ce24d01600cdabb813b62ca6408c1:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
   reference:
     - https://docs.screenshotapi.net/?ref=webflow
     - https://github.com/daffainfo/all-about-apikey/tree/main/screenshot-api
+  classification:
+    cpe: cpe:2.3:a:screenshotapi:screenshotapi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: screenshotapi
+    product: screenshotapi
   tags: token-spray,screenshotapi
 
 self-contained: true
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: screenshotapi
+        cpe: cpe:2.3:a:screenshotapi:screenshotapi:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'screenshot'
@@ -34,4 +40,3 @@ http:
           - 401
           - 400
         negative: true
-# digest: 490a004630440220425eb41578e74d8a8d55186c29dc1eacd06dd819fa4378a634a6987ff52d95c902202ac3f175d5affab248976fdb2014ffa8599f23d1209fd5ce029d338901a88b8d:922c64590222798bb761d5b6d8e72950

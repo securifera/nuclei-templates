@@ -8,9 +8,12 @@ info:
   reference:
     - https://securityforeveryone.com/tools/dell-idrac6-7-8-default-login-scanner
   classification:
+    cpe: cpe:2.3:a:dell:idrac:*:*:*:*:*:*:*:*
     cwe-id: CWE-798
   metadata:
     max-request: 2
+    vendor: dell
+    product: idrac
   tags: dell,idrac,default-login,vuln
 
 http:
@@ -40,6 +43,7 @@ http:
           - 200
 
       - type: word
+        name: idrac
+        cpe: cpe:2.3:a:dell:idrac:*:*:*:*:*:*:*:*
         words:
           - '<authResult>0</authResult>'
-# digest: 4a0a00473045022100a55ec15d71d8171ebd6f721cfff13c44599f4205c7dcfad67c458e6278e3f14102202af405ea894e2f2e54fd108bbed019ffa1c9d40a185b4b56998d7eaa2d597bb0:922c64590222798bb761d5b6d8e72950

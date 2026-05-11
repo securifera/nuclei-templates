@@ -6,6 +6,8 @@ info:
   author: darses
   description: |
     Detects Tools4Ever Self-Service Reset Password Manager login panel.
+  classification:
+    cpe: cpe:2.3:a:tools4ever:self_service_reset_password_management:*:*:*:*:*:*:*:*
   metadata:
     vendor: tools4ever
     product: self_service_reset_password_management
@@ -33,6 +35,8 @@ http:
           - 200
 
       - type: word
+        name: self_service_reset_password_management
+        cpe: cpe:2.3:a:tools4ever:self_service_reset_password_management:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ssrpmbody"
@@ -45,4 +49,3 @@ http:
         group: 1
         regex:
           - '/Scripts/CommonFunctions\.js\?v=([\d]+)'
-# digest: 4b0a00483046022100874f0e1452a96a7a2a0cd1bb4ce4dc77e410fe1f5adedbde0a2d698f95adef3a0221008c9578bd6d54b6a8057b5c2b84f3d86b56787811f70b43cced3d7d1f240b8052:922c64590222798bb761d5b6d8e72950

@@ -37,6 +37,8 @@ http:
           - 200
 
       - type: word
+        name: cryptshare
+        cpe: cpe:2.3:a:pointsharp:cryptshare:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'name="generator" content="Cryptshare'

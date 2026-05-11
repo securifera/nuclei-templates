@@ -8,8 +8,12 @@ info:
     A YouTube Music phishing website was detected
   reference:
     - https://music.youtube.com
+  classification:
+    cpe: cpe:2.3:a:youtube-music:youtube-music:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: youtube-music
+    product: youtube-music
   tags: phishing,youtube-music,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: youtube-music
+        cpe: cpe:2.3:a:youtube-music:youtube-music:*:*:*:*:*:*:*:*
         words:
           - "Your browser is deprecated. Please upgrade."
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: youtube-music-2
+        cpe: cpe:2.3:a:youtube-music:youtube-music:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"music.youtube.com")'
           - '!contains(host,"youtube.com")'
-# digest: 490a004630440220066b54627beff231109514b63b646d6c9c858a42789fe2a729a47d4f66d8f2a60220658f52ca8e054a740c38e43f532368bc11095f383c2b6e88d88dbdcbcb4d095a:922c64590222798bb761d5b6d8e72950

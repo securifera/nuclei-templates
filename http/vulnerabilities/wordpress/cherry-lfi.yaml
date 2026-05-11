@@ -9,11 +9,14 @@ info:
     - https://wpscan.com/vulnerability/90034817-dee7-40c9-80a2-1f1cd1d033ee
     - https://support.alertlogic.com/hc/en-us/articles/115003048083-06-19-17-WordPress-CMS-Cherry-Plugin-Arbitrary-File-Upload-RCE
   classification:
+    cpe: cpe:2.3:a:cherry:cherry:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: cherry
+    product: cherry
   tags: wpscan,wordpress,wp-plugin,lfi,wp,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cherry
+        cpe: cpe:2.3:a:cherry:cherry:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_NAME"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022042df28ed2f30450a6081e23586cc03859a91a4d2303b3bcc7516adcccedb68a6022100bcd7a0938548db94ed29ab84213cdf5e9dfe1671f61e6b5a7a009bb3c83609ff:922c64590222798bb761d5b6d8e72950

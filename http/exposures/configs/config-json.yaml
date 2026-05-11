@@ -6,6 +6,7 @@ info:
   severity: medium
   description: Multiple configuration files were detected.
   classification:
+    cpe: cpe:2.3:a:config-json:config-json:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 4
     github-query: filename:config.json
+    vendor: config-json
+    product: config-json
   tags: config,exposure,files,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: config-json
+        cpe: cpe:2.3:a:config-json:config-json:*:*:*:*:*:*:*:*
         words:
           - '"api_keys":'
           - '"aws":'
@@ -39,6 +44,8 @@ http:
         condition: or
 
       - type: word
+        name: config-json-2
+        cpe: cpe:2.3:a:config-json:config-json:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/html"
@@ -48,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022068e0abaa65b733cc45599ff5dbeeb95002afe718061ad4e6d5cc78eeb45216070221008aa5a4294adf5f7e123cf804faae5a64c34ea0ae8dafa113dcc44c876cfa7abf:922c64590222798bb761d5b6d8e72950

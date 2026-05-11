@@ -4,8 +4,12 @@ info:
   name: Generic Tokens
   author: nadino,geeknik
   severity: unknown
+  classification:
+    cpe: cpe:2.3:a:general-tokens:general-tokens:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: general-tokens
+    product: general-tokens
   tags: exposure,token,generic,vuln
 
 http:
@@ -16,6 +20,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: general-tokens
+        cpe: cpe:2.3:a:general-tokens:general-tokens:*:*:*:*:*:*:*:*
         dsl:
           - regex("TOKEN[\\-|_|A-Z0-9]*(\'|\")?(:|=)(\'|\")?[\\-|_|A-Z0-9]{10}",replace(toupper(body),"",""))
           - regex("API[\\-|_|A-Z0-9]*(\'|\")?(:|=)(\'|\")?[\\-|_|A-Z0-9]{10}",replace(toupper(body),"",""))
@@ -25,6 +31,8 @@ http:
           - regex("PASSWORD[\\-|_|A-Z0-9]*(\'|\")?(:|=)(\'|\")?[\\-|_|A-Z0-9]{10}",replace(toupper(body),"",""))
 
       - type: regex
+        name: general-tokens-2
+        cpe: cpe:2.3:a:general-tokens:general-tokens:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)key(sinternal|up|down|press|boardnavigation|words?|board|ebrow|board_fill|_retry_interval|_fetched|_expiresat|board_shortcuts|s_close|s_previous|s_next|s_zoom|s_play_pause)'
@@ -46,4 +54,3 @@ http:
           - (S|s)(E|e)(C|c)(R|r)(E|e)(T|t)[\-|_|A-Za-z0-9]*(\''|")?( )*(:|=)()*(\''|")?[ 0-9A-Za-z\-_]+(\''|")?
           - (A|a)(U|u)(T|t)(H|h)(O|o)(R|r)(I|i)(Z|z)(A|a)(T|t)(I|i)(O|o)(N|n)[\-|_|A-Za-z0-9]*(\''|")?()*(:|=)( )*(\''|")?[ 0-9A-Za-z\-_]+(\''|")?
           - (P|p)(A|a)(S|s)(S|s)(W|w)(O|o)(R|r)(D|d)[\-|_|A-Za-z0-9]*(\''|")?()*(:|=)( )*(\''|")?[ 0-9A-Za-z\-_]+(\''|")?
-# digest: 4a0a00473045022100cd6d593567c2864e9699e54a72038ff0f37df4c8dc20be99ebdacb773f56283c022077f0c268faddc4851c6a6bf4f54b486ef3904c73a257b22f1870b8f0ccc9495d:922c64590222798bb761d5b6d8e72950

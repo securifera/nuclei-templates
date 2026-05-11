@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/Soulter/AstrBot
   classification:
+    cpe: cpe:2.3:a:soulter:astrbot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id:
@@ -32,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: astrbot
+        cpe: cpe:2.3:a:soulter:astrbot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>AstrBot"
@@ -60,6 +63,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: astrbot-2
+        cpe: cpe:2.3:a:soulter:astrbot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"token"'
@@ -67,4 +72,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a47b1fc2f035826fd2bc41b6e47055c5f5e668aef47e749ff75c54579a573d67022100f934a28de7f74f5accfedcae131935cc5f4eb9d1e4da4719b466c0e0867e0949:922c64590222798bb761d5b6d8e72950

@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: reports
+        cpe: cpe:2.3:a:oracle:reports:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Valid Reports Servlet Commands'
@@ -35,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: reports-2
+        cpe: cpe:2.3:a:oracle:reports:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c96142bbe273a0534e1b2ec1d29ece24225da2419715d73a0c1644702d94b24e0220239d925c74fd04daf7e8543a2ecd37b494a0c2e97cd78276d899261024906adb:922c64590222798bb761d5b6d8e72950

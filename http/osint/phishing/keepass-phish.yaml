@@ -8,8 +8,12 @@ info:
     A keepass phishing website was detected
   reference:
     - https://keepass.info
+  classification:
+    cpe: cpe:2.3:a:keepass:keepass:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: keepass
+    product: keepass
   tags: phishing,keepass,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: keepass
+        cpe: cpe:2.3:a:keepass:keepass:*:*:*:*:*:*:*:*
         words:
           - 'KeePass is a free open source password manager. Passwords can be stored in an encrypted database, which can be unlocked with one master key.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: keepass-2
+        cpe: cpe:2.3:a:keepass:keepass:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"keepass.info")'
-# digest: 4a0a0047304502204cf6484c3874888ed83854ec3db3044a289badea2c225b77e1c7ef84ef4aaa8f022100a2860e5acfa750dbafa55b35f1c0ddbdf1ed5ebbeae099762b9bf4bf3836d526:922c64590222798bb761d5b6d8e72950

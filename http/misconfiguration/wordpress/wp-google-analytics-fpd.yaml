@@ -8,9 +8,13 @@ info:
     Detected WordPress Google Analytics Dashboard Plugin for WordPress by MonsterInsights, potentially revealing analytics data, file paths, and errors.
   reference:
     - https://wordpress.org/plugins/google-analytics-for-wordpress/
+  classification:
+    cpe: cpe:2.3:a:wp-google-analytics:wp-google-analytics:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: wp-google-analytics
+    product: wp-google-analytics
   tags: debug,wordpress,fpd,wp-google-analytics,wp-plugin
 
 http:
@@ -20,8 +24,9 @@ http:
 
     matchers:
       - type: dsl
+        name: wp-google-analytics
+        cpe: cpe:2.3:a:wp-google-analytics:wp-google-analytics:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Fatal error", "Uncaught Error", "/google-analytics-for-wordpress/")'
         condition: and
-# digest: 4b0a00483046022100ef6e73f39efae1e19a9cbe6e0737f25d1cbfa815bb2128e18bdf8f2265c0dd8f022100c92c26873702d22431ddfc3ad7b7d883b0612232bad67881c0601d10c0e6f62b:922c64590222798bb761d5b6d8e72950

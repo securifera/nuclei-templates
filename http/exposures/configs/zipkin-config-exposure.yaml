@@ -4,10 +4,15 @@ info:
   name: Zipkin Configuration - Exposure
   author: theamanrawat
   severity: low
+  classification:
+    cpe: cpe:2.3:a:zipkin:zipkin:*:*:*:*:*:*:*:*
   description: |
     Detected the exposure of the Zipkin configuration endpoint (/config.json), which may reveal internal configuration details.
   reference:
     - https://zipkin.io/
+  metadata:
+    vendor: zipkin
+    product: zipkin
   tags: zipkin,exposure,config
 
 http:
@@ -20,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zipkin
+        cpe: cpe:2.3:a:zipkin:zipkin:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"queryLimit":'
@@ -29,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: zipkin-2
+        cpe: cpe:2.3:a:zipkin:zipkin:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -36,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204d6191b89e8a20f747d19afd968eccb13ac895c199d8005b70b6e1e241d4f45b0221009395f2d6394ab73dd980b4271e3bea7f8897fb3373fd62fe031135a5fea1e22b:922c64590222798bb761d5b6d8e72950

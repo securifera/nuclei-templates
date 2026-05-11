@@ -3,8 +3,13 @@ info:
   name: Graphql Ariadne Detect
   author: princechaddha
   severity: info
+  classification:
+    cpe: cpe:2.3:a:ariadnegraphql:ariadne:*:*:*:*:*:*:*:*
   reference:
     - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  metadata:
+    vendor: ariadnegraphql
+    product: ariadne
   tags: tech,graphql,ariadne
 
 http:
@@ -26,21 +31,26 @@ http:
           - 200
 
       - type: word
+        name: ariadne
+        cpe: cpe:2.3:a:ariadnegraphql:ariadne:*:*:*:*:*:*:*:*
         words:
           - "Unknown directive '@abc'."
         part: body
 
       - type: word
+        name: ariadne-2
+        cpe: cpe:2.3:a:ariadnegraphql:ariadne:*:*:*:*:*:*:*:*
         words:
           - 'Content-Type: text/html'
         part: header
         negative: true
 
       - type: word
+        name: ariadne-3
+        cpe: cpe:2.3:a:ariadnegraphql:ariadne:*:*:*:*:*:*:*:*
         words:
           - '<html'
           - '<body'
         part: body
         condition: or
         negative: true
-# digest: 4b0a00483046022100c785504f5b2af4eae915cfe152089af1dae4f01da595bb6aedbd6e0c3bd2fa22022100843879b27c14e543914f4ff57feecc2886bc33ce07a3cfec9a874bbe50d3f160:922c64590222798bb761d5b6d8e72950

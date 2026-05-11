@@ -8,8 +8,12 @@ info:
     A Scotiabank phishing website was detected
   reference:
     - https://scotiabank.com
+  classification:
+    cpe: cpe:2.3:a:scotiabank:scotiabank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: scotiabank
+    product: scotiabank
   tags: phishing,scotiabank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: scotiabank
+        cpe: cpe:2.3:a:scotiabank:scotiabank:*:*:*:*:*:*:*:*
         words:
           - "Scotiabank Global Site"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: scotiabank-2
+        cpe: cpe:2.3:a:scotiabank:scotiabank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"scotiabank.com")'
-# digest: 4a0a004730450220647dbdfac8360d78b8f35d3d81905135fcc9ec54c4b354263d07c8fb9e18efcb022100d19a2a3abea4b509b0760974643266f67e792a24fe0900af19179fbfa687ba04:922c64590222798bb761d5b6d8e72950

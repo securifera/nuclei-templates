@@ -8,6 +8,7 @@ info:
   reference:
     - https://vul.wangan.com/a/CNVD-2020-67113
   classification:
+    cpe: cpe:2.3:a:h5s:h5s_console:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-425
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"H5S CONSOLE"
+    vendor: h5s
+    product: h5s_console
   tags: cnvd,cnvd2020,h5s,unauth,h5sconsole,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: h5s_console
+        cpe: cpe:2.3:a:h5s:h5s_console:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'strUser'
@@ -35,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: h5s_console-2
+        cpe: cpe:2.3:a:h5s:h5s_console:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'H5_AUTO'
@@ -42,6 +49,8 @@ http:
         condition: or
 
       - type: word
+        name: h5s_console-3
+        cpe: cpe:2.3:a:h5s:h5s_console:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -49,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207b06b5c53aab70b41fdecf376793e54395c141f539dfa6d2a6437df188aa692702210096ec8ed29ac346bf1e815b24b85684769f4aa7f31e8ab038b0f801aa62f4df53:922c64590222798bb761d5b6d8e72950

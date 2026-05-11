@@ -28,6 +28,8 @@ http:
 
     matchers:
       - type: word
+        name: adonisjs
+        cpe: cpe:2.3:a:adonisjs:adonisjs:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Powered-By: AdonisJs"

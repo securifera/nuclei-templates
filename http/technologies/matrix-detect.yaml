@@ -7,8 +7,12 @@ info:
   description: Detects Matrix servers based on .well-known entries. See https://en.wikipedia.org/wiki/Matrix_(protocol)
   reference:
     - https://spec.matrix.org/v1.3/server-server-api/#getwell-knownmatrixserver, https://spec.matrix.org/v1.3/client-server-api/#getwell-knownmatrixclient
+  classification:
+    cpe: cpe:2.3:a:matrix:matrix:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: matrix
+    product: matrix
   tags: tech,matrix,discovery
 
 http:
@@ -22,10 +26,14 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: matrix
+        cpe: cpe:2.3:a:matrix:matrix:*:*:*:*:*:*:*:*
         regex:
           - '"m\.([a-z]+)":'
 
       - type: word
+        name: matrix-2
+        cpe: cpe:2.3:a:matrix:matrix:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -42,4 +50,3 @@ http:
           - '."m.server" | select( . != null )'
           - '."m.homeserver" | .base_url | select( . != null )'
           - '."m.identity_server" | .base_url | select( . != null )'
-# digest: 4a0a00473045022072b4ebbe443552d75459ce433fd4c06d021c9e592ba5a7abb24fc0e0f6243866022100dd5237b0789347bd910c8b671d437b527fc28a608c8a5f30a18368f31c476f75:922c64590222798bb761d5b6d8e72950

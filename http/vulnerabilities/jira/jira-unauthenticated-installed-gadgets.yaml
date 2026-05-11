@@ -5,9 +5,13 @@ info:
   author: philippedelteil
   severity: info
   description: Some Jira instances allow to read the installed gadgets (sometimes it's also possible to read config xml file for some gadgets)
+  classification:
+    cpe: cpe:2.3:a:jira:jira:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.component:"Atlassian Jira"
+    vendor: jira
+    product: jira
   tags: atlassian,jira,vuln
 
 http:
@@ -21,10 +25,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jira
+        cpe: cpe:2.3:a:jira:jira:*:*:*:*:*:*:*:*
         words:
           - 'jaxbDirectoryContents'
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022019c56e249ff469e989a9716fbf1e268223af3b5a3defd390ad620760c49eccaf022100e6856cc2805ab3169501c50af5b6ca5f7d50b69ed2ff27b2bd6f060081ffd10c:922c64590222798bb761d5b6d8e72950

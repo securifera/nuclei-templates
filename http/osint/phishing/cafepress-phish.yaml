@@ -8,8 +8,12 @@ info:
     A CafePress phishing website was detected
   reference:
     - https://cafepress.com
+  classification:
+    cpe: cpe:2.3:a:cafepress:cafepress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: cafepress
+    product: cafepress
   tags: phishing,cafepress,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cafepress
+        cpe: cpe:2.3:a:cafepress:cafepress:*:*:*:*:*:*:*:*
         words:
           - 'CafePress'
           - '<title> CafePress | Best merchandise to express yourself'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: cafepress-2
+        cpe: cpe:2.3:a:cafepress:cafepress:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"cafepress.com")'
-# digest: 490a0046304402204e4bef965db7895dd02203ec6111071f3c93655221a5cb5d637e44d77e9c6da402206af94db3b1a4b6492e43a2d6f17ba565d724416885c280b00de38b9a669cb38d:922c64590222798bb761d5b6d8e72950

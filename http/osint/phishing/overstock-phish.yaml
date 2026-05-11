@@ -8,8 +8,12 @@ info:
     An Overstock phishing website was detected
   reference:
     - https://overstock.com
+  classification:
+    cpe: cpe:2.3:a:overstock:overstock:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: overstock
+    product: overstock
   tags: phishing,overstock,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: overstock
+        cpe: cpe:2.3:a:overstock:overstock:*:*:*:*:*:*:*:*
         words:
           - 'Let Overstock.com help you discover designer brands and home goods at the lowest prices online. See for yourself why shoppers love our selection and award-winning customer service.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: overstock-2
+        cpe: cpe:2.3:a:overstock:overstock:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"overstock.com")'
-# digest: 4b0a0048304602210082eb798d5a5321e10da2ac37cf4c783e3f7800e2d8c447cad7561d8be47d80a0022100e6fff73167912c379b93bbe6e372d586f35b91f02c99a28f81226d0ebc87c42b:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,13 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/facebook.yml
     - https://developers.facebook.com/docs/facebook-login/access-tokens/
   classification:
+    cpe: cpe:2.3:a:facebook:facebook:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: facebook
+    product: facebook
   tags: facebook,token,exposure,vuln
 
 http:
@@ -24,4 +27,3 @@ http:
         part: body
         regex:
           - '\b(EAACEdEose0cBA[a-zA-Z0-9]+)\b'
-# digest: 490a00463044022016efc2a32be35df7cae63870b82c1564c84d857b989fe636b8b26f314950f1b4022015425cec31bc8678ce8d53df112f89208424f180df5a9e125093fb28409586a7:922c64590222798bb761d5b6d8e72950

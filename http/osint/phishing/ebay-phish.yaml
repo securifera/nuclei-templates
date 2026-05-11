@@ -8,8 +8,12 @@ info:
     A ebay phishing website was detected
   reference:
     - https://ebay.com
+  classification:
+    cpe: cpe:2.3:a:ebay:ebay:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ebay
+    product: ebay
   tags: phishing,ebay,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ebay
+        cpe: cpe:2.3:a:ebay:ebay:*:*:*:*:*:*:*:*
         words:
           - 'Electronics, Cars, Fashion, Collectibles &amp; More | eBay'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: ebay-2
+        cpe: cpe:2.3:a:ebay:ebay:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"ebay.com")'
-# digest: 4a0a00473045022100a2d22c67f81cb9b06f3d4279e76f4ef46744be24b981e3ffdd1c85d25c012b85022058733fb8381f99ca6ae9fc1974c1fa780066ef362d4251134f453f4b67151773:922c64590222798bb761d5b6d8e72950

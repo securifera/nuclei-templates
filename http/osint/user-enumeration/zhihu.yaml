@@ -6,11 +6,14 @@ info:
   severity: info
   description: Zhihu user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:zhihu:zhihu:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: zhihu
+    product: zhihu
   tags: osint,osint-social,zhihu,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: zhihu
+        cpe: cpe:2.3:a:zhihu:zhihu:*:*:*:*:*:*:*:*
         part: body
         words:
           - "zhihu:voteupCount"
-# digest: 4a0a00473045022100a54ab771de79820bcfd8452bc7696a8d2037d48ff24828d26c9eda39daf35d7f02205dabb0fd7e7b88cfc4b228ebacb4f8feefb7a234fe99ee805972f020dc483173:922c64590222798bb761d5b6d8e72950

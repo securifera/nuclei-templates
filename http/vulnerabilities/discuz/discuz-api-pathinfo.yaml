@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: discuz\\!
+        cpe: cpe:2.3:a:comsenz:discuz\\!:*:*:*:*:*:*:*:*
         part: body
         words:
           - '.php</b> on line'
@@ -34,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: discuz\\!-2
+        cpe: cpe:2.3:a:comsenz:discuz\\!:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -41,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b3bfbb7ee49b75db91b305e62ac61f1d3a20297fc876e50d48d9c306ec4fa862022100e71c9633e0b862a746ec4403ea88627bca94db27aee9961870cc69eb73037a64:922c64590222798bb761d5b6d8e72950

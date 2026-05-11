@@ -14,6 +14,7 @@ info:
     - https://docs.checkmk.com/latest/en/intro_setup.html
     - https://docs.checkmk.com/latest/en/wato_user.html
   classification:
+    cpe: cpe:2.3:a:checkmk:checkmk:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
     cvss-score: 9.1
     cwe-id: CWE-798
@@ -21,6 +22,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"Check_MK"
+    vendor: checkmk
+    product: checkmk
   tags: default-login,checkmk,monitoring
 
 flow: http(1) && http(2)
@@ -76,8 +79,9 @@ http:
 
     matchers:
       - type: dsl
+        name: checkmk
+        cpe: cpe:2.3:a:checkmk:checkmk:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 302'
           - 'contains_all(to_lower(header), "set-cookie", "auth_", "index.py")'
         condition: and
-# digest: 4a0a00473045022100e1180e8ec5da32883655719ec9b6c8fdcd5f8726028fc7d6512cb116dfe8c471022056625e9916b248931bd7a69623fe6e4720f9719d85525e173b9dc0cb3534d800:922c64590222798bb761d5b6d8e72950

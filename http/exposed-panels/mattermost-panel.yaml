@@ -6,12 +6,15 @@ info:
   severity: info
   description: |
     Mattermost Login Panel was discovered.
+  classification:
+    cpe: cpe:2.3:a:mattermost:mattermost:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-requests: 1
     shodan-query: html:'content="Mattermost"'
     fofa-query: 'content="Mattermost"'
     vendor: mattermost
+    product: mattermost
   tags: login,mattermost,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mattermost
+        cpe: cpe:2.3:a:mattermost:mattermost:*:*:*:*:*:*:*:*
         part: body
         words:
           - content="Mattermost"
@@ -38,4 +43,3 @@ http:
         group: 1
         regex:
           - 'X-Version-Id: (\d+\.\d+\.\d+)'
-# digest: 4a0a004730450220664d81dc65add34ad9ca1db26db0a1decefff1b08bae754355f876ce23328062022100b965be15d22b2193e67ff36cec05e01b628c142bc03092d4d1c18012316c0b64:922c64590222798bb761d5b6d8e72950

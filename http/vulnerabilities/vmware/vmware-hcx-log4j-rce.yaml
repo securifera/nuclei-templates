@@ -10,6 +10,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -18,6 +19,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"VMware HCX"
+    vendor: vmware
+    product: vmware
   tags: cve,cve2021,rce,jndi,log4j,vmware,kev,oast,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -42,11 +45,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vmware
+        cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: vmware-2
+        cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -67,4 +74,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 490a0046304402204b3aa645addfb74b83408148c5a3ce8fc03bac519bee4356c39e039088371c2b022018eabde1fefad9ecf52232a50352d260338ac6746c61562798209ff1f78b8cd9:922c64590222798bb761d5b6d8e72950

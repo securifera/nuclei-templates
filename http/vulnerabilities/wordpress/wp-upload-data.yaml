@@ -7,8 +7,12 @@ info:
   description: The remote WordPress installation contains a file 'data.txt' under the '/wp-content/uploads/' folder that has sensitive information inside it.
   reference:
     - https://www.exploit-db.com/ghdb/7040
+  classification:
+    cpe: cpe:2.3:a:wp-upload-data:wp-upload-data:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wp-upload-data
+    product: wp-upload-data
   tags: wordpress,listing,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-upload-data
+        cpe: cpe:2.3:a:wp-upload-data:wp-upload-data:*:*:*:*:*:*:*:*
         words:
           - "admin:"
 
       - type: word
+        name: wp-upload-data-2
+        cpe: cpe:2.3:a:wp-upload-data:wp-upload-data:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -30,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220432e37581c1a3606b5d121414234742f90edaf33014d1d19a8f3a242f501369c02203eb22ac0606210d97a7a3e5242cf7be9ea389f238344f052caf9324e70d32a3f:922c64590222798bb761d5b6d8e72950

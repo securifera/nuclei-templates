@@ -9,11 +9,14 @@ info:
     - https://github.com/HomeAdvisor/Kafdrop/issues/12
     - https://www.blackhatethicalhacking.com/news/apache-kafka-cloud-clusters-expose-sensitive-data-for-large-companies
   classification:
+    cpe: cpe:2.3:a:kafdrop:kafdrop:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79,CWE-83
   metadata:
     max-request: 1
+    vendor: kafdrop
+    product: kafdrop
   tags: kafdrop,xss,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kafdrop
+        cpe: cpe:2.3:a:kafdrop:kafdrop:*:*:*:*:*:*:*:*
         words:
           - 'Kafdrop'
           - '<img src=x onerror=alert(2)>'
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4a0a00473045022100cf275052c6088548a8b25a8e6ed21b8ae2fe9f66195de559959d49fe35ee6ca3022044a41396e86fdda4840583e53a8182acaf99a75974ce57c4a34458d7e5fc6236:922c64590222798bb761d5b6d8e72950

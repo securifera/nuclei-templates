@@ -6,9 +6,13 @@ info:
   severity: high
   description: |
     Unauthenticated access to the CockroachDB console allows viewing the cluster nodes and server version.
+  classification:
+    cpe: cpe:2.3:a:cockroachdb:cockroachdb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     shodan-query: product:cockroachdb
+    vendor: cockroachdb
+    product: cockroachdb
   tags: cockroachdb,exposure,misconfig,unauth
 
 flow: http(1) && http(2)
@@ -19,6 +23,8 @@ http:
       - "{{BaseURL}}"
     matchers:
       - type: dsl
+        name: cockroachdb
+        cpe: cpe:2.3:a:cockroachdb:cockroachdb:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "<title>Cockroach Console")'
@@ -31,8 +37,9 @@ http:
 
     matchers:
       - type: dsl
+        name: cockroachdb-2
+        cpe: cpe:2.3:a:cockroachdb:cockroachdb:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "nodes", "ServerVersion","buildInfo")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a0047304502205eb0d53b8f007092422e4d35f5f90fd20fef084bc3203b70b108129dd53af282022100c98f798942d1c8eb005f5f6b8d4841270331fedb43b97c8cbf9ae4a68a6a6c6d:922c64590222798bb761d5b6d8e72950

@@ -9,11 +9,15 @@ info:
   reference:
     - https://opensearch.org/docs/latest/security/access-control/users-roles/
     - https://github.com/opensearch-project/OpenSearch-Dashboards
+  classification:
+    cpe: cpe:2.3:a:opensearch:opensearch:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"OpenSearch"
     fofa-query: title="OpenSearch"
+    vendor: opensearch
+    product: opensearch
   tags: opensearch,default-login,misconfig,vuln
 
 variables:
@@ -32,9 +36,10 @@ http:
 
     matchers:
       - type: dsl
+        name: opensearch
+        cpe: cpe:2.3:a:opensearch:opensearch:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "username\":", "roles\":")'
           - 'contains(content_type, "application/json")'
         condition: and
-# digest: 4a0a00473045022008ef4d5f2dadfb63c16a8c38c5da1dd646d56e9c2c42888e917ffbb2b03b089d0221009fdf7532c722b8e49b77f3eea64b6101ffeb795a2d0b5ed11ababea3c6c09769:922c64590222798bb761d5b6d8e72950

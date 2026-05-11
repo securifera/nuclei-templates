@@ -5,8 +5,12 @@ info:
   author: that_juan_,dwisiswant0,wdahlenb
   severity: low
   description: Additional routes may be displayed
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "mappings"
@@ -28,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022035148ef4e912d907edfe4548e34460331c55eeaf19e2f7530856ec174b01d8d402203a46499700210625862e1421fac34228bb47f629ead62ccb227629d387f10a3c:922c64590222798bb761d5b6d8e72950

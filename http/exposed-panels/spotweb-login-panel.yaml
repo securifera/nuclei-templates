@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: spotweb
+        cpe: cpe:2.3:a:spotweb_project:spotweb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SpotWeb - overview"
@@ -35,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210085e7d69ad74c153916c6e1b9b585bfd89f34c5c2db8116663bb4d113d19079fd02207667cb3ec3ae8daef603c4216e1be64c5e3c3edeadc204747ab7080edc16f872:922c64590222798bb761d5b6d8e72950

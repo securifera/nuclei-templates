@@ -8,11 +8,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/download/133034/netsweeper-issues.tgz
   classification:
+    cpe: cpe:2.3:a:netsweeper:netsweeper:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     max-request: 1
+    vendor: netsweeper
+    product: netsweeper
   tags: netsweeper,redirect,packetstorm,vuln
 
 http:
@@ -22,7 +25,8 @@ http:
 
     matchers:
       - type: regex
+        name: netsweeper
+        cpe: cpe:2.3:a:netsweeper:netsweeper:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
-# digest: 490a004630440220222a714db2b9cab2aee480aafe4898e79b673b3ab5c27e041119331b4d414dc902202c5d15935c8df76554f0ba89086c7a719a8bfd2fc866aadd3f159dc8fc300968:922c64590222798bb761d5b6d8e72950

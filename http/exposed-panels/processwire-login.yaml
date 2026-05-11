@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: processwire
+        cpe: cpe:2.3:a:processwire:processwire:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ProcessWireAdminTheme.init();"
@@ -35,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a3d6ddd1d6b567b8def6cd734dc2972c518afb6db9e1f15f3e0163e93d51ea32022077722244767c40cfc85e6d8c45ed3f026a4b13764d15340c72697ee51d3da284:922c64590222798bb761d5b6d8e72950

@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: spip
+        cpe: cpe:2.3:a:spip:spip:*:*:*:*:*:*:*:*
         part: header
         regex:
           - 'Composed-By: SPIP'

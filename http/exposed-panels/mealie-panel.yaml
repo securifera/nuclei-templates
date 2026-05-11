@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/mealie-recipes/mealie
     - https://mealie.io/
+  classification:
+    cpe: cpe:2.3:a:mealie-recipes:mealie:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -30,6 +32,8 @@ http:
 
     matchers:
       - type: dsl
+        name: mealie
+        cpe: cpe:2.3:a:mealie-recipes:mealie:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(to_lower(body), "<title>mealie</title>")'
@@ -42,6 +46,8 @@ http:
 
     matchers:
       - type: dsl
+        name: mealie-2
+        cpe: cpe:2.3:a:mealie-recipes:mealie:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "\"production\"", "\"version\"", "\"demoStatus\"", "\"allowSignup\"")'
@@ -54,4 +60,3 @@ http:
         group: 1
         regex:
           - '"version"\s*:\s*"([^"]+)"'
-# digest: 490a004630440220793cf1c60a131c021ce4e0e06058380fad368c9290062343e7db5e5a0813959802200bde9c4f8b86bbcdd4929f6d552dc338f96a38927c40a151a1f99a1e9ffce4cb:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Confluence is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:confluence:confluence:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Choose your deployment type - Confluence"
+    vendor: confluence
+    product: confluence
   tags: misconfig,exposure,install,confluence,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: confluence
+        cpe: cpe:2.3:a:confluence:confluence:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Choose your deployment type - Confluence"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100860a4707fa989ca91461fbad1ff3adb2ca967e71e5e639481b5c0cca08349bf6022100f81e8c100c1a1d5d11ce497db28d084ca3d4df417c5087ff0e5d6da3c757ea6c:922c64590222798bb761d5b6d8e72950

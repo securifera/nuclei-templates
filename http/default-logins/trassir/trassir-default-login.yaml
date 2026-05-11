@@ -9,6 +9,7 @@ info:
   reference:
     - https://confluence.trassir.com/display/TKB/How+to+reset+the+administrator+password+on+the+TRASSIR+NVR
   classification:
+    cpe: cpe:2.3:a:trassir:trassir:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Trassir Webview"
+    vendor: trassir
+    product: trassir
   tags: default-login,trassir,webview,vuln
 
 http:
@@ -37,6 +40,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: trassir
+        cpe: cpe:2.3:a:trassir:trassir:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"success" :'
@@ -45,6 +50,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: trassir-2
+        cpe: cpe:2.3:a:trassir:trassir:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -52,4 +59,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d92212542fc556429fc9b07d2478665064bc7a67bc2649a6e03ac5fcad8ca0b5022100b4c3ece681f893de1afce5823cdbcebbf3667c76399530914f599fb377255de6:922c64590222798bb761d5b6d8e72950

@@ -5,8 +5,12 @@ info:
   author: pikpikcu
   severity: low
   description: ICEFlow VPN internal log file is exposed.
+  classification:
+    cpe: cpe:2.3:a:iceflow:iceflow:*:*:*:*:*:*:*:*
   metadata:
     max-request: 8
+    vendor: iceflow
+    product: iceflow
   tags: exposure,files,iceflow,logs,vuln
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: iceflow
+        cpe: cpe:2.3:a:iceflow:iceflow:*:*:*:*:*:*:*:*
         words:
           - 'ICEFLOW VPN:'
           - 'ICEFLOW SYSTEM'
@@ -38,9 +44,10 @@ http:
           - 200
 
       - type: word
+        name: iceflow-2
+        cpe: cpe:2.3:a:iceflow:iceflow:*:*:*:*:*:*:*:*
         words:
           - "text/plain"
           - 'ICEFLOW'
         part: header
         condition: and
-# digest: 4a0a00473045022100d9d40e170db27f67863d5654b88de60b27403873fa87dc22f416df12acf4501202205e3d0802c003fd890521c9aa7dd3a80970bd46d3dbfdda48b821ecb504cd3107:922c64590222798bb761d5b6d8e72950

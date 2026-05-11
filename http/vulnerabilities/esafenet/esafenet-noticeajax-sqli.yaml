@@ -7,6 +7,7 @@ info:
   description: |
     CDGServer3 NoticeAjax Interface Sql Injection.
   classification:
+    cpe: cpe:2.3:a:esafenet:electronic_document_security_management_system:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
@@ -30,9 +31,10 @@ http:
 
     matchers:
       - type: dsl
+        name: electronic_document_security_management_system
+        cpe: cpe:2.3:a:esafenet:electronic_document_security_management_system:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(content_type,"text/xml")'
           - 'contains(body,"OK")'
           - 'status_code == 200'
         condition: and
-# digest: 490a0046304402202d10376d3eb84c94492433f6d07761814ce59a95171ce0c4dab10c4745afd46202201a64e5dd53a07d27bcbfa88cc3c776a3c9ddb87a5c4c2b90f770fac5d2c15fe4:922c64590222798bb761d5b6d8e72950

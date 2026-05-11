@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/40850
   classification:
+    cpe: cpe:2.3:a:wp-vault:wp-vault:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: wp-vault
+    product: wp-vault
   tags: lfi,edb,wp-plugin,wordpress,vuln
 
 http:
@@ -23,10 +26,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: wp-vault
+        cpe: cpe:2.3:a:wp-vault:wp-vault:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200b958d1a5f1d9eb1c17acb8acbd00e7ded2d804fd3d576ab4d13142ef16f4c59022100f5a5ac1d03cd1e181b99658d9172ce5508833483968be8017370ee283ba61181:922c64590222798bb761d5b6d8e72950

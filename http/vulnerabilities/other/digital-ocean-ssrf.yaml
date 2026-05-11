@@ -6,11 +6,14 @@ info:
   severity: critical
   description: Digital Ocean instance is vulnerable to SSRF.
   classification:
+    cpe: cpe:2.3:a:digital-ocean:digital-ocean:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
     cvss-score: 9.3
     cwe-id: CWE-918
   metadata:
     max-request: 2
+    vendor: digital-ocean
+    product: digital-ocean
   tags: digitalocean,ssrf,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: digital-ocean
+        cpe: cpe:2.3:a:digital-ocean:digital-ocean:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"droplet_id":'
@@ -39,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a75af669fad696f82f5c39b7ce20665c86e8c1133f7ae651fe153a527532d47a0221008d59fd18f21846b8434b78f0ad9ed3b1de3ca207df3a4040ca350b56d769e820:922c64590222798bb761d5b6d8e72950

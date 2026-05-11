@@ -10,10 +10,14 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/wordpress-w3-total-cache-plugin-predictable-cache-filenames/
     - https://www.openwall.com/lists/oss-security/2012/12/30/3 (CVE-2012-6077 related discussion)
     - https://siteground.com/blog/w3-total-cache-vulnerability/
+  classification:
+    cpe: cpe:2.3:a:w3-total-cache:w3-total-cache:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="/wp-content/w3tc/dbcache/"
+    vendor: w3-total-cache
+    product: w3-total-cache
   tags: wordpress,wp-plugin,w3-total-cache,exposure,cache,misconfig
 
 http:
@@ -23,8 +27,9 @@ http:
 
     matchers:
       - type: dsl
+        name: w3-total-cache
+        cpe: cpe:2.3:a:w3-total-cache:w3-total-cache:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "wp-content/w3tc/dbcache", "Index of","Parent Directory")'
         condition: and
-# digest: 4b0a00483046022100f2ecb6ea22c9e2b0f200120ec2a8658d3ec65869076f6551a955ea151b9f2558022100b2f01dc82cd2be5778a2645490728c79ff007078ab037b8d398b3c7fb580ea1e:922c64590222798bb761d5b6d8e72950

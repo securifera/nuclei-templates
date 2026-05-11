@@ -9,10 +9,14 @@ info:
   reference:
     - https://symfony.com/doc/current/deployment/proxies.html
     - https://owasp.org/Top10/A05_2021-Security_Misconfiguration/
+  classification:
+    cpe: cpe:2.3:a:symfony:symfony:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Symfony"
+    vendor: symfony
+    product: symfony
   tags: misconfig,symfony,exposure,vuln
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: symfony
+        cpe: cpe:2.3:a:symfony:symfony:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Symfony\\Component\\HttpFoundation\\Exception\\ConflictingHeadersException"
@@ -34,4 +40,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4b0a004830460221009e50a9ac191cad4510d3de8a4117b9457fd462b47eb6106c8aa7be986feef56c022100c47bcac141335d13ce567241da8a61c3c8d971678accdf5b9057c2786d5396d2:922c64590222798bb761d5b6d8e72950

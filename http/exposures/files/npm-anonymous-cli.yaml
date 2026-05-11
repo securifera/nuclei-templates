@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  classification:
+    cpe: cpe:2.3:a:npm:npm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: html:"anonymous-cli-metrics.json"
+    vendor: npm
+    product: npm
   tags: exposure,npm,config,files,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: npm
+        cpe: cpe:2.3:a:npm:npm:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"metricId":'
@@ -31,7 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: npm-2
+        cpe: cpe:2.3:a:npm:npm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
-# digest: 4a0a00473045022011d151fe2857625dde76882273e16ad8dc244117e0101945bb113d3612a2c956022100f49ff53713035a9fddfd9c725d18a50dd922ab30ed3b104f082e594b31a2049f:922c64590222798bb761d5b6d8e72950

@@ -9,12 +9,15 @@ info:
   reference:
     - https://github.com/mailhog/MailHog
   classification:
+    cpe: cpe:2.3:a:mailhog:mailhog:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"mailhog"
+    vendor: mailhog
+    product: mailhog
   tags: panel,mailhog,mail,smtp,discovery
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mailhog
+        cpe: cpe:2.3:a:mailhog:mailhog:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'MailHog'
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a47c13fc1b749dad899f183d02e04e0442e7451c85a68be1bf08f28f25d62a1102210092f161409d7cf6b46d57aecb1c47a21a172c786e97776bd58814f61dae2853e3:922c64590222798bb761d5b6d8e72950

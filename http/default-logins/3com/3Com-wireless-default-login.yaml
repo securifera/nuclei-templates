@@ -8,9 +8,13 @@ info:
     3COM Wireless 8760 Dual Radio contains a default login vulnerability. Default admin login password 'password' was found.
   reference:
     - https://www.speedguide.net/routers/3com-wl-546-3com-wireless-8760-dual-radio-11abg-1256
+  classification:
+    cpe: cpe:2.3:a:3com:3com:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     fofa-query: "title=\"3COM\""
+    vendor: 3com
+    product: 3com
   tags: default-login,3com,vuln
 
 http:
@@ -40,6 +44,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: 3com
+        cpe: cpe:2.3:a:3com:3com:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'alt="Advanced Configuration"'
@@ -49,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b47ce01af846388be467dd94fd6a312521624bb283b97b1e49e7189323fa4afd022065037c23cd82aabdd7d1a194faa291f5afccea3d35b9ef969619ea3fa1aa801c:922c64590222798bb761d5b6d8e72950

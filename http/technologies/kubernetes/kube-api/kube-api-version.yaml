@@ -5,8 +5,12 @@ info:
   author: sharath,raesene
   severity: info
   description: Searches for exposed Kubernetes API servers which return version information unauthenticated
+  classification:
+    cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kubernetes
+    product: kubernetes
   tags: tech,k8s,kubernetes,devops,kube,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
           - 200
 
       - type: word
+        name: kubernetes
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"major":'
@@ -32,4 +38,3 @@ http:
       - type: json
         json:
           - ".gitVersion"
-# digest: 490a00463044022049b6d4cec1b8757345e67d32d05b38515f497909180953e6136c0dc28d76555202200ad48689004d28291f3399b346f4128eccb62a32b854d63457ba4e28b14c8c89:922c64590222798bb761d5b6d8e72950

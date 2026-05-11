@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://codingnconcepts.com/spring-boot/disable-whitelabel-error-page-spring-boot/
+  classification:
+    cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Whitelabel Error Page"
+    vendor: vmware
+    product: spring_boot
   tags: tech,spring,springboot,errorpage,discovery
 
 http:
@@ -25,12 +29,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: spring_boot
+        cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<h1>Whitelabel Error Page</h1>"
 
       - type: word
+        name: spring_boot-2
+        cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
-# digest: 490a0046304402202032e36a291470b2df70074679916e270cb7eed11d85fc4a27be44fa3e7175a2022017532bc9efae51332ebfc1d03b5da7624accd84dd9aedf724d3f32c42cb5892e:922c64590222798bb761d5b6d8e72950

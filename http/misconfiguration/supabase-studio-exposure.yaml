@@ -9,6 +9,8 @@ info:
   reference:
     - https://supabase.com/docs/guides/self-hosting/docker
     - https://supabase.com/docs/guides/self-hosting#securing-your-services
+  classification:
+    cpe: cpe:2.3:a:supabase:supabase-studio:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -26,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: supabase-studio
+        cpe: cpe:2.3:a:supabase:supabase-studio:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
@@ -39,9 +43,10 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: supabase-studio-2
+        cpe: cpe:2.3:a:supabase:supabase-studio:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "primary_email", "organizations", "projects")'
         condition: and
-# digest: 490a004630440220293bed90efadbf65074b2b588d2fbd620e6f4cfbc62e58fb4825e26018921b3602201493397c070bbf7fe0c7e5687c67181a34e8a19885e9e48be86b80ea3748ad5c:922c64590222798bb761d5b6d8e72950

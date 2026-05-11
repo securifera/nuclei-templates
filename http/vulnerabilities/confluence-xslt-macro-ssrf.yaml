@@ -9,6 +9,7 @@ info:
   reference:
     - https://jira.atlassian.com/browse/CONFSERVER-101489
   classification:
+    cpe: cpe:2.3:a:atlassian:confluence:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 6.5
     cve-id: CVE-2024-29415
@@ -45,6 +46,8 @@ http:
 
     matchers:
       - type: dsl
+        name: confluence
+        cpe: cpe:2.3:a:atlassian:confluence:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "contextConfigLocation")'
           - 'contains(interactsh_protocol, "http")'
@@ -73,9 +76,10 @@ http:
 
     matchers:
       - type: dsl
+        name: confluence-2
+        cpe: cpe:2.3:a:atlassian:confluence:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "contextConfigLocation")'
           - 'contains(interactsh_protocol, "http")'
           - 'status_code == 200'
         condition: and
-# digest: 490a004630440220219576a66bdc518888ccccc19b2682d2b734b49fb9ec0851c3e8f3e810e4fd820220075976fcf2f6dfe439bf28665c747bbb3c961aadb0cc3e3cba18e6e4db44475e:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Twilio phishing website was detected
   reference:
     - https://twilio.com
+  classification:
+    cpe: cpe:2.3:a:twilio:twilio:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: twilio
+    product: twilio
   tags: phishing,twilio,communication,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: twilio
+        cpe: cpe:2.3:a:twilio:twilio:*:*:*:*:*:*:*:*
         words:
           - '<title>Communications APIs with AI and data for SMS, Voice, Email | Twilio'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: twilio-2
+        cpe: cpe:2.3:a:twilio:twilio:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"twilio.com")'
-# digest: 490a0046304402206a98a917cb95511531e3cde4fabd3e72e2c2adde25b1f42011451d514020f96502204b77161a82aa11d697d554a8082d23ac8df265e94da365915e3efeae32f2f045:922c64590222798bb761d5b6d8e72950

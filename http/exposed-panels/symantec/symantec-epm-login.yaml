@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: endpoint_protection_manager
+        cpe: cpe:2.3:a:symantec:endpoint_protection_manager:*:*:*:*:*:*:*:*
         words:
           - "<title>Symantec Endpoint Protection Manager</title>"
         part: body
@@ -35,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022078e36d7ec693c6313be1d8b91aa4817802d7585b654263547cf1202522947d9a022020723e7e252cbb920c43f51e16bf383054ff32a8bcb0b95db6d06898e35b1abc:922c64590222798bb761d5b6d8e72950

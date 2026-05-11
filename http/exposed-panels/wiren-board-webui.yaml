@@ -6,6 +6,7 @@ info:
   severity: medium
   description: Wiren Board WebUI panel was detected.
   classification:
+    cpe: cpe:2.3:a:wiren:wiren:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Wiren Board Web UI"
+    vendor: wiren
+    product: wiren
   tags: panel,exposure,wiren,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wiren
+        cpe: cpe:2.3:a:wiren:wiren:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Wiren Board Web UI"
@@ -30,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: wiren-2
+        cpe: cpe:2.3:a:wiren:wiren:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -37,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220154dd2794bfb9dbfb82e9b231a88c64bb1813370fbe9185370c58bcd94ce3d96022100a35427247a24bbae04bae44436617494f96e7cedfff61c81e7e5a77497070b5c:922c64590222798bb761d5b6d8e72950

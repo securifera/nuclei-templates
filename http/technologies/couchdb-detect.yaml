@@ -5,10 +5,14 @@ info:
   severity: info
   description: |
     Detects instances of Apache CouchDB server.
+  classification:
+    cpe: cpe:2.3:a:apache:couchdb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:""couchdb":"
+    vendor: apache
+    product: couchdb
   tags: couchdb,tech,detect,db,discovery
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: couchdb
+        cpe: cpe:2.3:a:apache:couchdb:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"couchdb":'
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: couchdb-2
+        cpe: cpe:2.3:a:apache:couchdb:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -41,4 +49,3 @@ http:
         group: 1
         regex:
           - '"version":"([0-9]+\.[0-9]+\.[0-9]+)"'
-# digest: 4b0a00483046022100d96c574ffcc81b4efb6b556c555423d4d99fb2aca2e4de75dd7e56eeeceb4092022100eed38ed9c490eedf0bc5134b902bd59d7329da29c1a4c7ff90bb3e6120aef638:922c64590222798bb761d5b6d8e72950

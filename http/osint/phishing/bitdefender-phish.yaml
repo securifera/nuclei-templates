@@ -8,8 +8,12 @@ info:
     A bitdefender phishing website was detected
   reference:
     - https://bitdefender.com
+  classification:
+    cpe: cpe:2.3:a:bitdefender:bitdefender:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bitdefender
+    product: bitdefender
   tags: phishing,bitdefender,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bitdefender
+        cpe: cpe:2.3:a:bitdefender:bitdefender:*:*:*:*:*:*:*:*
         words:
           - 'Bitdefender - Global Leader in Cybersecurity Software'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: bitdefender-2
+        cpe: cpe:2.3:a:bitdefender:bitdefender:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bitdefender.com")'
           - '!contains(host,"bitdefender.co.uk")'
-# digest: 4a0a00473045022100d803129cb2303331d285ad145e7a261848b516e11f9d7bff2feca586e723656502203f19fef1cdbd1ee36a310bdd4168bbd7ce8ab003b1dea9f67379bef68c2dd7f9:922c64590222798bb761d5b6d8e72950

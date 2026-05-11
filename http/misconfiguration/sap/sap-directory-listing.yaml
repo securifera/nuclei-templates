@@ -5,8 +5,12 @@ info:
   author: dhiyaneshDK
   severity: medium
   description: SAP Directory Listing is enabled.
+  classification:
+    cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: listing
+    product: listing
   tags: sap,listing,misconfig,vuln
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: listing
+        cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
         words:
           - 'title="~system"'
           - 'NetWeaver'
@@ -27,7 +33,8 @@ http:
           - 200
 
       - type: word
+        name: listing-2
+        cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
         words:
           - "text/html"
         part: header
-# digest: 4a0a00473045022100b7b95acb3eaa10b6b2a21856b4b4f5e25b3496c8cfad5a122c764868fde4bd8f0220386176fbb2a3f064a60cdf53a0dd3024317f5be4b705fd27bd34251d9389aaf9:922c64590222798bb761d5b6d8e72950

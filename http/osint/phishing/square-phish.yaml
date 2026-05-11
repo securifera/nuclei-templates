@@ -8,8 +8,12 @@ info:
     A Square phishing website was detected
   reference:
     - https://squareup.com
+  classification:
+    cpe: cpe:2.3:a:square:square:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: square
+    product: square
   tags: phishing,square,payment,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: square
+        cpe: cpe:2.3:a:square:square:*:*:*:*:*:*:*:*
         words:
           - "Sell anywhere. Diversify revenue streams. Streamline operations. Manage your staff. Get paid faster. Sign up for Square today."
           - 'Square Dashboard'
@@ -32,7 +38,8 @@ http:
           - 200
 
       - type: dsl
+        name: square-2
+        cpe: cpe:2.3:a:square:square:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"squareup.com")'
           - '!contains(host,"square.com")'
-# digest: 490a00463044022051d43b736fbe56927e0b4c9c7c0b13507d368a8e02edb872ef770105c7e8ab7d022058f215ab2d2f49677e7933e09cf326ccbfb3d1be72b6f7f3fa16f6c8c30b7062:922c64590222798bb761d5b6d8e72950

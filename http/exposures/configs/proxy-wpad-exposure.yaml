@@ -8,6 +8,7 @@ info:
   reference:
     - https://en.wikipedia.org/wiki/Web_Proxy_Auto-Discovery_Protocol
   classification:
+    cpe: cpe:2.3:a:proxy:proxy:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"wpad.dat"
+    vendor: proxy
+    product: proxy
   tags: config,exposure,proxy,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: proxy
+        cpe: cpe:2.3:a:proxy:proxy:*:*:*:*:*:*:*:*
         words:
           - "FindProxyForURL"
           - "url"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100921202a956346b8cdaf8337dce520423d2645276d19a724e01d3d19396fb1fb802201409513218722591867821d495abb53047cd430df1365a939ac815e2dd2eab99:922c64590222798bb761d5b6d8e72950

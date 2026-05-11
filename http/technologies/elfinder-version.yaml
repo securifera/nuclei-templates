@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/Studio-42/elFinder/
   classification:
+    cpe: cpe:2.3:a:std42:elfinder:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-78
   metadata:
     max-request: 2
+    vendor: std42
+    product: elfinder
   tags: tech,elfinder,oss,discovery
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: elfinder
+        cpe: cpe:2.3:a:std42:elfinder:*:*:*:*:*:*:*:*
         part: body
         words:
           - "elFinder - file manager for web"
@@ -41,4 +46,3 @@ http:
         regex:
           - '\* Version (.+) \('
           - "elFinder.prototype.version = '([0-9.]+)';"
-# digest: 4b0a00483046022100c43eb224ad49f6a8516d0399576858fb7001c4a50e02b5f86138d6f09e05921d022100809f686639e2945afb9bfcb2ca6415b9e7db7a7e5ba37fd2dd4617b345ea30e3:922c64590222798bb761d5b6d8e72950

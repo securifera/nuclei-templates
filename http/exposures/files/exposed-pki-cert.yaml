@@ -6,9 +6,13 @@ info:
   severity: high
   description: |
     Detects exposed internal PKI infrastructure including CRL distribution points and OCSP responders
+  classification:
+    cpe: cpe:2.3:a:pki:pki:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 10
+    vendor: pki
+    product: pki
   tags: pki,exposure,misconfig,vuln
 
 http:
@@ -36,12 +40,16 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: pki
+        cpe: cpe:2.3:a:pki:pki:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(body, "Certificate Services", "CRL Distribution Point", "OCSP Responder")'
           - '!regex("(?i)^\\s*This is an OCSP responder\\.?\\s*$", body)'
         condition: and
 
       - type: regex
+        name: pki-2
+        cpe: cpe:2.3:a:pki:pki:*:*:*:*:*:*:*:*
         regex:
           - '\\bCN=[A-Za-z0-9-]+-CA\\b'
           - '(?i)href\s*=\s*"[^"]+\.(?:crl|cer|p7b)"'
@@ -53,4 +61,3 @@ http:
           - 'CN=[A-Za-z0-9-]+-CA'
           - 'O=[A-Za-z0-9 ]+'
           - 'OU=[A-Za-z0-9 ]+'
-# digest: 490a00463044022064e85761643bdce114bff0ec9fecda36293cb7ea7ed79b6313ef46ed7567f3ca02205744b10e40ee476989e9d68dc7307bd9fd6c24c56286ba262fa64fa37916d47b:922c64590222798bb761d5b6d8e72950

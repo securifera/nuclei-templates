@@ -6,9 +6,13 @@ info:
   severity: info
   reference:
     - https://platform.openai.com/docs/api-reference
+  classification:
+    cpe: cpe:2.3:a:openai:openai:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: openai
+    product: openai
   tags: token-spray,openai,ai
 
 self-contained: true
@@ -33,10 +37,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: openai
+        cpe: cpe:2.3:a:openai:openai:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Los Angeles Dodgers'
       - type: word
+        name: openai-2
+        cpe: cpe:2.3:a:openai:openai:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'invalid_request_error'
@@ -44,4 +52,3 @@ http:
           - 'invalid_api_key'
         condition: or
         negative: true
-# digest: 4a0a0047304502203477775d01a523f90d41a2afb63ab4ddc5b2a1acd762b1fcc46c13a0d50fd55f022100e896fbf5886033b9e3b4490c6e6e3e4dd730b14d166d03940b607cee3e0c1121:922c64590222798bb761d5b6d8e72950

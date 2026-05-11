@@ -8,8 +8,12 @@ info:
   reference:
     - https://clearbit.com/docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/clearbit
+  classification:
+    cpe: cpe:2.3:a:clearbit:clearbit:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: clearbit
+    product: clearbit
   tags: token-spray,clearbit
 
 self-contained: true
@@ -23,10 +27,11 @@ http:
 
     matchers:
       - type: word
+        name: clearbit
+        cpe: cpe:2.3:a:clearbit:clearbit:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"person":'
           - '"id":'
           - '"name":'
         condition: and
-# digest: 4b0a00483046022100f15f2345aeb780e083ad8bc17dcb3023c3b76c180119a46b021b409c4e74bab9022100ee628614fed435a0af2e0bbb7fe1d017de62fc143534746bfff9bb45896c3b1a:922c64590222798bb761d5b6d8e72950

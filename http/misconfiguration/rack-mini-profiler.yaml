@@ -5,8 +5,12 @@ info:
   author: vzamanillo
   severity: high
   description: rack-mini-profiler is prone to environmental information disclosure which could help an attacker formulate additional attacks.
+  classification:
+    cpe: cpe:2.3:a:rack-mini-profiler:rack-mini-profiler:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rack-mini-profiler
+    product: rack-mini-profiler
   tags: config,debug,rails,misconfig,vuln
 
 http:
@@ -17,10 +21,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rack-mini-profiler
+        cpe: cpe:2.3:a:rack-mini-profiler:rack-mini-profiler:*:*:*:*:*:*:*:*
         words:
           - "Rack Environment"
 
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220223820f9e8c9cf348101d8fc81414bef85889ba47a0f959235304fe15cf8a3fa022100c66fba4a071c53e12208acc22dd04fbe2a76bc7a62910bd3da7337fce5729daf:922c64590222798bb761d5b6d8e72950

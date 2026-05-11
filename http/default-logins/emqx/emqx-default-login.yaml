@@ -6,12 +6,15 @@ info:
   severity: high
   description: Emqx default admin credentials were discovered.
   classification:
+    cpe: cpe:2.3:a:emqx:emqx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:"-670975485"
+    vendor: emqx
+    product: emqx
   tags: emqx,default-login,vuln
 
 variables:
@@ -36,15 +39,18 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: emqx
+        cpe: cpe:2.3:a:emqx:emqx:*:*:*:*:*:*:*:*
         dsl:
           - body == "{\"code\":0}"
           - status_code == 200
         condition: and
 
       - type: dsl
+        name: emqx-2
+        cpe: cpe:2.3:a:emqx:emqx:*:*:*:*:*:*:*:*
         dsl:
           - contains(body, "\"token\":") && contains(body, "\"license\":")
           - contains(content_type, 'application/json')
           - status_code == 200
         condition: and
-# digest: 4a0a004730450221009ff107065f18c162d30b03d24387b2b0cc5a5bced13f53b652b1bc60d01d52d702207be130bcc77dad26716772ae1cc982b2dffcda4f474294e79f13afb5cec2c02d:922c64590222798bb761d5b6d8e72950

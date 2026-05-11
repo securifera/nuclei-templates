@@ -9,11 +9,15 @@ info:
   reference:
     - https://owncast.online/docs/configuration/
     - https://owncast.online/quickstart/configure/
+  classification:
+    cpe: cpe:2.3:a:owncast:owncast:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
     shodan-query: http.title:"Owncast"
     fofa-query: app="Owncast"
+    vendor: owncast
+    product: owncast
   tags: default-login,owncast,streaming,admin,vuln
 
 variables:
@@ -30,6 +34,8 @@ http:
 
     matchers:
       - type: dsl
+        name: owncast
+        cpe: cpe:2.3:a:owncast:owncast:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -45,9 +51,10 @@ http:
 
     matchers:
       - type: dsl
+        name: owncast-2
+        cpe: cpe:2.3:a:owncast:owncast:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "instanceDetails", "ffmpegPath")'
           - 'contains(content_type, "application/json")'
         condition: and
-# digest: 490a0046304402206df23179e55e671cf907cf48f873ec2562ee83a233f9bc772b39632b3da5c93d022064a9bca13ad3577539ec6dfb500e3dac150899795ca1c1e9504c17e92d8e4896:922c64590222798bb761d5b6d8e72950

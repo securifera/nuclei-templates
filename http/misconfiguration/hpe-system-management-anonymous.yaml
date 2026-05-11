@@ -5,8 +5,12 @@ info:
   author: divya_mudgal
   severity: low
   description: HPE system management anonymous access is enabled.
+  classification:
+    cpe: cpe:2.3:a:hpe-system-management-anonymous:hpe-system-management-anonymous:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hpe-system-management-anonymous
+    product: hpe-system-management-anonymous
   tags: hp,unauth,misconfig,vuln
 
 http:
@@ -17,9 +21,10 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hpe-system-management-anonymous
+        cpe: cpe:2.3:a:hpe-system-management-anonymous:hpe-system-management-anonymous:*:*:*:*:*:*:*:*
         condition: and
         words:
           - "username = \"hpsmh_anonymous\";"
           - "var host_addr = '"
           - "var ip_addr   = '"
-# digest: 4a0a004730450220015fa3d0210ecdf0a7f93341825b39732b7216cee5c8a67b78f143c26f52844d022100fd07b599bfd3d8730ab776f113dd016971be69c0a054cdb7d63c52aafd39e566:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,15 @@ info:
     Cyber Stealer C2 Login Panel was discovered.
   reference:
     - https://x.com/solostalking/status/1947143367336534254
+  classification:
+    cpe: cpe:2.3:a:cyber:cyber:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Cyber Stealer - Secure Access"
     fofa-query: title="Cyber Stealer - Secure Access"
+    vendor: cyber
+    product: cyber
   tags: c2,cyber-stealer,stealer,panel,login,vuln
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cyber
+        cpe: cpe:2.3:a:cyber:cyber:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Cyber Stealer - Secure Access"
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203fdf7b1ac858dfa280a6df0b6ee525786b27452ab35b77c07f94d425680ea5dd022001e26a41666a4e2f6b54ba4f13e16265cba134eeb546fa5ac723602bc81d878c:922c64590222798bb761d5b6d8e72950

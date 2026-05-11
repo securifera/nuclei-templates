@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/xinyisleep/pocscan/blob/main/%E9%94%90%E6%8D%B7/%E9%94%90%E6%8D%B7_EG%E6%98%93%E7%BD%91%E5%85%B3_WEB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F_%E5%89%8D%E5%8F%B0RCE.py
   classification:
+    cpe: cpe:2.3:a:ruijie:ruijie:*:*:*:*:*:*:*:*
     cwe-id: CWE-77
   metadata:
     verified: true
     max-request: 2
     fofa-query: body="请输入您的RG-EG易网关的用户名和密码"
+    vendor: ruijie
+    product: ruijie
   tags: ruijie,router,iot,rce,vuln
 flow: http(1) && http(2)
 
@@ -24,6 +27,8 @@ http:
 
     matchers:
       - type: dsl
+        name: ruijie
+        cpe: cpe:2.3:a:ruijie:ruijie:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -36,8 +41,9 @@ http:
 
     matchers:
       - type: dsl
+        name: ruijie-2
+        cpe: cpe:2.3:a:ruijie:ruijie:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'regex("uid=([0-9(a-z)]+) gid=([0-9(a-z)]+)", body)'
         condition: and
-# digest: 4a0a004730450220550ef8db3aeb918e2b592f04f51353a7d406d96b7b77382ac619f23902c1f15a0221009dcd6506352cb4a3241f0bbec250e2e6dd3d008ebba1442fe20d1bd01fe519f7:922c64590222798bb761d5b6d8e72950

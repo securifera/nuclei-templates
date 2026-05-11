@@ -7,11 +7,14 @@ info:
   description: |
     Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.
   classification:
+    cpe: cpe:2.3:a:generic:windows:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 22
+    vendor: generic
+    product: windows
   tags: azure,windows,lfi,generic,vuln
 
 http:
@@ -46,10 +49,11 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
+        name: windows
+        cpe: cpe:2.3:a:generic:windows:*:*:*:*:*:*:*:*
         part: body
         words:
           - "bit app support"
           - "fonts"
           - "extensions"
         condition: and
-# digest: 4a0a00473045022064729254146130888cffa96f92b740ef96c9a1699d3cebe54e949698d846f581022100bb1936bf9ad769b512db311a584e5df7f0208b08628839fe70839102b9dba890:922c64590222798bb761d5b6d8e72950

@@ -10,11 +10,14 @@ info:
     - https://blog.csdn.net/bigblue00/article/details/108434009
     - https://cn-sec.com/archives/721509.html
   classification:
+    cpe: cpe:2.3:a:sangfor:edr:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 1
+    vendor: sangfor
+    product: edr
   tags: cnvd,cnvd2020,sangfor,rce,vuln
 
 http:
@@ -24,10 +27,11 @@ http:
 
     matchers:
       - type: dsl
+        name: edr
+        cpe: cpe:2.3:a:sangfor:edr:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "$show_input = function($info)")'
           - 'contains(body, "$strip_slashes($host)")'
           - 'contains(body, "Log Helper")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100fa3e1466f1917407d550cca9f8f2d3366b96cd15b4fb4cd8124bfa4afefec00d02210080f178b41c0b17d8d71e12a0e9dd53c2ad215808f47ba0b108c51bfa78c07051:922c64590222798bb761d5b6d8e72950

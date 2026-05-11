@@ -26,12 +26,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: npm
+        cpe: cpe:2.3:a:npmjs:npm:*:*:*:*:*:*:*:*
         words:
           - "version"
           - "dependencies"
         condition: and
 
       - type: word
+        name: npm-2
+        cpe: cpe:2.3:a:npmjs:npm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e26b6b0e51fa2d946fda740678759f1afde0403c798d45a4fc208e969f2bf491022100a5a2c888febbfc09ed569057ca709e945115eb2b7a79f22b5f2d3df5d58d1343:922c64590222798bb761d5b6d8e72950

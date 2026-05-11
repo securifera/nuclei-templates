@@ -10,11 +10,14 @@ info:
     - https://github.com/lal0ne/vulnerability/blob/main/%E7%BA%A2%E5%B8%86OA/iOffice_sqlscan/sql.py
     - https://github.com/MrWQ/vulnerability-paper/blob/master/bugs/%E3%80%90%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0%E3%80%91%E7%BA%A2%E5%B8%86%E5%8C%BB%E7%96%97%E4%BA%91%20OA%20udfmr.asmx%20SQL%20%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:
+    cpe: cpe:2.3:a:hongfan:hongfan:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="红帆-ioffice"
+    vendor: hongfan
+    product: hongfan
   tags: hongfan,oa,sqli,vuln
 
 http:
@@ -37,6 +40,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hongfan
+        cpe: cpe:2.3:a:hongfan:hongfan:*:*:*:*:*:*:*:*
         part: body
         words:
           - "System.Data.SqlClient.SqlException:"
@@ -44,6 +49,8 @@ http:
         condition: and
 
       - type: word
+        name: hongfan-2
+        cpe: cpe:2.3:a:hongfan:hongfan:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/xml"
@@ -51,4 +58,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4b0a00483046022100a76e58c9ff13c350ce8bb5e407060e452bc1f7207d7c36e68372bdbb4018808a022100ad2b09859b4d8dd3dedf2f83bda743457aa4cb612f7b286b7674da10712a7248:922c64590222798bb761d5b6d8e72950

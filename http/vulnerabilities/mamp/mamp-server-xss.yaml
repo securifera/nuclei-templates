@@ -13,6 +13,7 @@ info:
   reference:
     - https://octagon.net/blog/2022/01/26/mamp-server-preauth-xss-leading-to-host-compromise-0day/
   classification:
+    cpe: cpe:2.3:a:mamp:mamp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-79,CWE-83
@@ -21,6 +22,8 @@ info:
     max-request: 1
     shodan-query: title:"MAMP"
     fofa-query: title="MAMP"
+    vendor: mamp
+    product: mamp
   tags: mamp,server,xss,vuln
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mamp
+        cpe: cpe:2.3:a:mamp:mamp:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'MAMP'
@@ -38,6 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: mamp-2
+        cpe: cpe:2.3:a:mamp:mamp:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'text/html'
@@ -45,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022067550c7126c3c1f6d813245df9fc2b7b2ee6fdf434cd00feb34088af3437ec73022041bce7c6bd0a7f661ea1fdfa1c1935eeaf595b4f1861e03a8f71ee02cc52ab85:922c64590222798bb761d5b6d8e72950

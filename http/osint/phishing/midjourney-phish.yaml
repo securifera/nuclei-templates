@@ -8,8 +8,12 @@ info:
     A Midjourney phishing website was detected
   reference:
     - https://midjourney.com
+  classification:
+    cpe: cpe:2.3:a:midjourney:midjourney:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: midjourney
+    product: midjourney
   tags: phishing,midjourney,ai,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: midjourney
+        cpe: cpe:2.3:a:midjourney:midjourney:*:*:*:*:*:*:*:*
         words:
           - '<title>Midjourney'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: midjourney-2
+        cpe: cpe:2.3:a:midjourney:midjourney:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"midjourney.com")'
-# digest: 4a0a004730450221009d88ac3685abc6fdc6c836e51aa9e49c059958b4b79930863f5bda18411ac15202203f72301e60649e764a357be2c0274e314f3feebf874fbaf44a83b84010c8cf96:922c64590222798bb761d5b6d8e72950

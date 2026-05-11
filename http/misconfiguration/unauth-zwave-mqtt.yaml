@@ -7,10 +7,14 @@ info:
   description: ZWave To MQTT Console is exposed.
   reference:
     - https://github.com/OpenZWave/Zwave2Mqtt
+  classification:
+    cpe: cpe:2.3:a:zwave:zwave:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"ZWave To MQTT"
+    vendor: zwave
+    product: zwave
   tags: misconfig,zwave,mqtt,unauth,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zwave
+        cpe: cpe:2.3:a:zwave:zwave:*:*:*:*:*:*:*:*
         words:
           - 'ZWave To MQTT'
           - 'content="Zwavejs2Mqtt"'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c9f0c028a95bb5a0e6317b4cb90c0c3a6eb2b24351f20518fe6e51e4b7536ec50220543aa61404dbbd83b6077dc0051c8df3d043048db59c7fdda5cc1fb5e140e29d:922c64590222798bb761d5b6d8e72950

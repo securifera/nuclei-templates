@@ -10,6 +10,7 @@ info:
     - https://helpx.adobe.com/coldfusion/kb/securing-coldfusion.html
     - https://www.carnal0wnage.com/papers/LARES-ColdFusion.pdf
   classification:
+    cpe: cpe:2.3:a:coldfusion:coldfusion:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-548
@@ -18,6 +19,8 @@ info:
     verified: true
     shodan-query: http.title:"Index of" http.html:"CFIDE"
     fofa-query: title="Index of" && body="CFIDE"
+    vendor: coldfusion
+    product: coldfusion
   tags: misconfig,coldfusion,adobe,exposure,listing
 
 http:
@@ -27,9 +30,10 @@ http:
 
     matchers:
       - type: dsl
+        name: coldfusion
+        cpe: cpe:2.3:a:coldfusion:coldfusion:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Index of", "CFIDE")'
           - 'contains_any(body, "administrator", "scripts", "componentutils", "wizards", "adminapi")'
         condition: and
-# digest: 4a0a004730450221009f5d9c035944832ad0f3250a2c6b03e4c3f8587b7a79cd1961caced43d19eb55022056500b3df65cfdfbc3e2a1dab673b2e534e292c65d91a8f32b092cb6adfc362f:922c64590222798bb761d5b6d8e72950

@@ -9,11 +9,14 @@ info:
   reference:
     - https://medium.com/@utkarshporwal24/exposed-postman-collections-ed6086b96ba5
   classification:
+    cpe: cpe:2.3:a:postman:postman:*:*:*:*:*:*:*:*
     cwe-id: CWE-538
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"postman.json"
+    vendor: postman
+    product: postman
   tags: api,postman,exposure,discovery
 
 http:
@@ -30,16 +33,22 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: postman
+        cpe: cpe:2.3:a:postman:postman:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?i)content-type:\s*application/(json|vnd\.postman\.[^;\s]+)'
 
       - type: regex
+        name: postman-2
+        cpe: cpe:2.3:a:postman:postman:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)"info"\s*:\s*\{\s*"name"\s*:\s*".+?"'
 
       - type: regex
+        name: postman-3
+        cpe: cpe:2.3:a:postman:postman:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)"item"\s*:\s*\['
@@ -47,4 +56,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022004bd3403a9540a9a2816831fdddf3aab459099794b75b547b7b3d2dfb85adfc7022059f1f7d6449337b043f46c0f870dbb102b1b20754992723c88666a415fa5b61a:922c64590222798bb761d5b6d8e72950

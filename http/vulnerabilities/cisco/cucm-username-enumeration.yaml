@@ -9,6 +9,8 @@ info:
   reference:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#users
     - https://www.n00py.io/2022/01/unauthenticated-dumping-of-usernames-via-cisco-unified-call-manager-cucm/
+  classification:
+    cpe: cpe:2.3:a:cisco:unified_communications_manager:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     product: unified_communications_manager
@@ -32,6 +34,8 @@ http:
           - 200
 
       - type: word
+        name: unified_communications_manager
+        cpe: cpe:2.3:a:cisco:unified_communications_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<users'
@@ -41,6 +45,8 @@ http:
         condition: and
 
       - type: dsl
+        name: unified_communications_manager-2
+        cpe: cpe:2.3:a:cisco:unified_communications_manager:*:*:*:*:*:*:*:*
         dsl:
           - contains(tolower(content_type), 'application/xml')
           - contains(tolower(content_type), 'text/xml')
@@ -71,4 +77,3 @@ http:
         name: mobile_numbers
         xpath:
           - "/users/user/mobileNumber"
-# digest: 4a0a0047304502203e3f682fcf221ab03661942723f38a45ff8430a566bc8e663630b6509b5a53a5022100c375c2a204758b351ba684c82e8a3cc05a1c1c542b56a5dc230e81d065598dd7:922c64590222798bb761d5b6d8e72950

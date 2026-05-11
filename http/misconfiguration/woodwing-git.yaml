@@ -7,10 +7,14 @@ info:
   description: Woodwing Studio Server .git/config file exposed.
   reference:
     - https://twitter.com/ynsmroztas/status/1680961398011047936
+  classification:
+    cpe: cpe:2.3:a:woodwing:git:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     shodan-query: http.title:"WoodWing Studio Server"
     fofa-query: title=="WoodWing Studio Server"
+    vendor: woodwing
+    product: git
   tags: misconfig,woodwing,git,config,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: git
+        cpe: cpe:2.3:a:woodwing:git:*:*:*:*:*:*:*:*
         dsl:
           - "!contains_all(tolower(body), '<html', '<body')"
           - "contains_all(tolower(body), '[credentials]', '[core]')"
@@ -35,4 +41,3 @@ http:
           - "url ?= ?https?://(.*:.*)@"
           - "AUTHORIZATION: basic (.*)"
           - "pass = (.*)"
-# digest: 4a0a00473045022100b2cab17a543711543d37536053c9e9172b7c50b334a1d676ab07e041f67db3c902207853dcdfdc6c648c52e8cfc9da97bf5de169d84df91def58cf16dd4b3320d7a0:922c64590222798bb761d5b6d8e72950

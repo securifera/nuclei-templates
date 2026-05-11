@@ -6,10 +6,13 @@ info:
   severity: info
   description: SaltGUI login panel was detected.
   classification:
+    cpe: cpe:2.3:a:saltgui:saltgui:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: saltgui
+    product: saltgui
   tags: panel,saltgui,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: saltgui
+        cpe: cpe:2.3:a:saltgui:saltgui:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>SaltGUI</title>'
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009f4cba6f382197509103be2bb5f0f5433b17c58afa02be3fe68f09c41fb5236202203da94ef16afc2522813f598bace556053107a34430ea3d5046a5473493336e37:922c64590222798bb761d5b6d8e72950

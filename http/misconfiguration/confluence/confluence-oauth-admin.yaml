@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: confluence_server
+        cpe: cpe:2.3:a:atlassian:confluence_server:*:*:*:*:*:*:*:*
         words:
           - '<title>OAuth Consumer Information'
           - 'OAuth Administration'
@@ -32,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100969591bb3126cfa8bfa395db83559ea0be8d2e3e2cd81f08a3f0795d4bc2217602203833362f866cc6bbbacc5ef7ddd1f8518eccdb43d317c4c1522350df9dd180fe:922c64590222798bb761d5b6d8e72950

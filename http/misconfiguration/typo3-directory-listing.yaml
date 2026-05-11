@@ -8,8 +8,12 @@ info:
     Detects directory listing enabled on the TYPO3 temp directory. The typo3temp folder contains cached files, compiled assets, and temporary data that may reveal sensitive information about the application structure and configuration.
   reference:
     - https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/FileStructure/Index.html
+  classification:
+    cpe: cpe:2.3:a:directory-listing:directory-listing:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: http.component:"typo3"
+    vendor: directory-listing
+    product: directory-listing
   tags: typo3,directory-listing,exposure
 
 flow: http(1) && http(2)
@@ -22,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: directory-listing
+        cpe: cpe:2.3:a:directory-listing:directory-listing:*:*:*:*:*:*:*:*
         dsl:
           - '!contains_all(body, "Index of /", "PARENTDIR")'
         internal: true
@@ -33,6 +39,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: directory-listing-2
+        cpe: cpe:2.3:a:directory-listing:directory-listing:*:*:*:*:*:*:*:*
         words:
           - "Index of /typo3temp"
           - "Last modified"
@@ -42,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022061afdf86ebf3d3cf1ffff6c64ae1bbe4ae8172221e39222f5a05841135bda8510221008e181913ad2d1eaaaa6336c939a5670c87ea3e584ebaf85aeb6685f6195dd336:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A libre office phishing website was detected
   reference:
     - https://libreoffice.org
+  classification:
+    cpe: cpe:2.3:a:libre-office:libre-office:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: libre-office
+    product: libre-office
   tags: phishing,libre-office,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: libre-office
+        cpe: cpe:2.3:a:libre-office:libre-office:*:*:*:*:*:*:*:*
         words:
           - 'Home | LibreOffice - Free Office Suite - Based on OpenOffice - Compatible with Microsoft'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: libre-office-2
+        cpe: cpe:2.3:a:libre-office:libre-office:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"libreoffice.org")'
-# digest: 4b0a0048304602210098a10c79330319ead7ad2721c83d21f3bb882350a741da82482c370fcadcf1fd022100d788603dbb774900b3bf2faa969bb3638a76dd466e82becd73ba39c10d3a81a7:922c64590222798bb761d5b6d8e72950

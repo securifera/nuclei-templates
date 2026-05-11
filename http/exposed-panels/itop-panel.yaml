@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: itop
+        cpe: cpe:2.3:a:combodo:itop:*:*:*:*:*:*:*:*
         words:
           - "Welcome to iTop"
           - "iTop login"
@@ -33,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022034ccbdbc48a5e8f98e1e73524875a722759d59fd63acbe335e4a97a60eb7d406022100b69fca7f1f398714ca75adffe3220d1b369b2fedcc98f6d68020328ec9fd2392:922c64590222798bb761d5b6d8e72950

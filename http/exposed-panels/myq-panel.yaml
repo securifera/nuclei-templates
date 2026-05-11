@@ -4,6 +4,8 @@ info:
   name: MyQ Print Server Panel - Detect
   author: darses
   severity: info
+  classification:
+    cpe: cpe:2.3:a:myq:myq:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -20,6 +22,7 @@ info:
       - icon_hash="-2012429205"
       - icon_hash="-924708843"
       - title="MyQ"
+    product: myq
   tags: panel,myq,detect,discovery
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: myq
+        cpe: cpe:2.3:a:myq:myq:*:*:*:*:*:*:*:*
         words:
           - "<title>MyQ"
           - "Wsf_App"
@@ -45,4 +50,3 @@ http:
         group: 1
         regex:
           - "<span class=\"version\">MyQ ([\\d\\.\\w\\s\\(\\)]+)<\\/span>"
-# digest: 490a0046304402203ab79fb742a5fb37e7bd87e5d77d12f4a0eb28a203c1d6efcced9d30d13ede0102205c753044840d433496983264ae8d2211a4d19f3c5b6637263eed70af42b4eb82:922c64590222798bb761d5b6d8e72950

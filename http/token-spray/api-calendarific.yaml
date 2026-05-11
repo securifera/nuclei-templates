@@ -8,8 +8,12 @@ info:
   reference:
     - https://calendarific.com/api-documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/calendarific
+  classification:
+    cpe: cpe:2.3:a:calendarific:calendarific:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: calendarific
+    product: calendarific
   tags: token-spray,calendarific
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: calendarific
+        cpe: cpe:2.3:a:calendarific:calendarific:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"holidays"'
           - '"name"'
           - '"description"'
         condition: and
-# digest: 4b0a00483046022100e977f9aa5c830b7284ccc5563819a68db3808010969f24e6d1ff82df864644bd022100bff4c345230fb7409b2b8b32e8d9a10453bae168cd2f8a2df39dbbc5a442e0d3:922c64590222798bb761d5b6d8e72950

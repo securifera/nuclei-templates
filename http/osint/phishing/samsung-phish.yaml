@@ -8,8 +8,12 @@ info:
     A samsung phishing website was detected
   reference:
     - https://samsung.com
+  classification:
+    cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: samsung
+    product: samsung
   tags: phishing,samsung,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: samsung
+        cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
         words:
           - 'Samsung UK | Mobile | Home Electronics | Home Appliances | TV'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: samsung-2
+        cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"samsung.com")'
-# digest: 4b0a00483046022100c7da6d74dbfb5f83de90616394f0a908feb4e818fb27a8b58af0feee538a2be602210099487ef5e15efba73d6a41b96ad62cda04a03a8d4e5bf4ad8cea7afea8c3befc:922c64590222798bb761d5b6d8e72950

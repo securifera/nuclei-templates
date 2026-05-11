@@ -6,12 +6,15 @@ info:
   severity: info
   description: Giant Bomb user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:giant-bomb:giant-bomb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
+    vendor: giant-bomb
+    product: giant-bomb
   tags: osint,osint-gaming,giant-bomb,discovery
 
 self-contained: true
@@ -28,7 +31,8 @@ http:
           - 200
 
       - type: word
+        name: giant-bomb
+        cpe: cpe:2.3:a:giant-bomb:giant-bomb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "The largest video game database online"
-# digest: 4b0a00483046022100d185391fc05d7b72566f4d8eb5e88b38c755fd325413a7b3f9ae3f53ee9bd3b7022100e3321ed6cbad1a976d917ff007462ed128084dba8d758ca725220cfaee4aee35:922c64590222798bb761d5b6d8e72950

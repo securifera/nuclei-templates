@@ -5,11 +5,15 @@ info:
   author: ritikchaddha,HuTa0
   severity: medium
   description: Unauthenticated Tiny File Manager panel was detected.
+  classification:
+    cpe: cpe:2.3:a:tiny-file-manager-unauth:tiny-file-manager-unauth:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Tiny File Manager"
     zoomeye-query: app="Tiny File Manager"
+    vendor: tiny-file-manager-unauth
+    product: tiny-file-manager-unauth
   tags: misconfig,filemanager,detect,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tiny-file-manager-unauth
+        cpe: cpe:2.3:a:tiny-file-manager-unauth:tiny-file-manager-unauth:*:*:*:*:*:*:*:*
         words:
           - 'Tiny File Manager'
           - '<th>Actions'
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ab1622461613fe068d785137a20b4129a4b681acafdfd752c849ad8552745e130221009df7c84b09d2cd5f51b1d78c0f67104c408d8c5d2cdbc9a81cbce8a1f9e52a6d:922c64590222798bb761d5b6d8e72950

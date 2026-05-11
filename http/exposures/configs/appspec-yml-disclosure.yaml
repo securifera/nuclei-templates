@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/appsec-yml-disclosure.json
   classification:
+    cpe: cpe:2.3:a:appspec-yml:appspec-yml:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: appspec-yml
+    product: appspec-yml
   tags: exposure,config,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: appspec-yml
+        cpe: cpe:2.3:a:appspec-yml:appspec-yml:*:*:*:*:*:*:*:*
         words:
           - "version:"
           - "os:"
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: appspec-yml-2
+        cpe: cpe:2.3:a:appspec-yml:appspec-yml:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -40,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022070202f1c1cc0354db60a0e53722e22ed46b324d722917ab8203752a2228d80ba022100bec2a76bcbbf9277d6dfedf6013668e0794655892ce95b8f1878eae40f46de1e:922c64590222798bb761d5b6d8e72950

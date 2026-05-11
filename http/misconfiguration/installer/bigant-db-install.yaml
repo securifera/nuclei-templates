@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Bigant DataBase Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:install:install:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     fofa-query: body="BigAntSetup"
     max-request: 1
+    vendor: install
+    product: install
   tags: misconfig,install,bigant,database,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: install
+        cpe: cpe:2.3:a:install:install:*:*:*:*:*:*:*:*
         part: body
         words:
           - "BigAnt Database Upgrade Wizard1"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ae56518704ac7f17e64b58e3535721c052df197758bc3ddb8db483acd3e7872c0221009c928202df58248847dd980f3ab300f2c56e4582cefdad33303906871fb3dc81:922c64590222798bb761d5b6d8e72950

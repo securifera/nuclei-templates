@@ -8,8 +8,12 @@ info:
     A Society6 phishing website was detected
   reference:
     - https://society6.com
+  classification:
+    cpe: cpe:2.3:a:society6:society6:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: society6
+    product: society6
   tags: phishing,society6,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: society6
+        cpe: cpe:2.3:a:society6:society6:*:*:*:*:*:*:*:*
         words:
           - 'Society6'
           - 'Society6 features art prints, home decor, bed &amp; bath, iPhone cases, apparel and tech accessories you&#39;ll love with designs by artists worldwide.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: society6-2
+        cpe: cpe:2.3:a:society6:society6:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"society6.com")'
-# digest: 4b0a004830460221008080b7de0735f542b5a0cd5d6b94dbdbc0802cc8aa0fc7ea5ea1e64adf8169c10221009a132395664c848d5dbc07399a3f58a4e04ebc50b52992dc80c88991901d3f19:922c64590222798bb761d5b6d8e72950

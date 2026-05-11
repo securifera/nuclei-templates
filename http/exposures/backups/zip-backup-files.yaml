@@ -6,11 +6,14 @@ info:
   severity: medium
   description: Multiple compressed backup files were detected.
   classification:
+    cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1305
+    vendor: backup
+    product: backup
   tags: exposure,backup,vuln
 
 http:
@@ -102,6 +105,8 @@ http:
     matchers-condition: and
     matchers:
       - type: binary
+        name: backup
+        cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
         binary:
           - "7573746172202000" # tar
           - "7573746172003030" # tar
@@ -120,6 +125,8 @@ http:
         part: body
 
       - type: regex
+        name: backup-2
+        cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
         regex:
           - "application/[-\\w.]+"
         part: header
@@ -127,4 +134,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220282f2337bf193971f75703fcef230a54161419e65d37ebe2999dd85494bd5cb902207b4a40c251dda6eb65bef62271ef2d3cf31a427d2fdac57f538f4b5db1759f0d:922c64590222798bb761d5b6d8e72950

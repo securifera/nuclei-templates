@@ -9,9 +9,13 @@ info:
   reference:
     - https://miniprofiler.com/
     - https://umbraco.com/
+  classification:
+    cpe: cpe:2.3:a:umbraco:miniprofiler:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: http.title:"Umbraco"
     fofa-query: title="Umbraco"
+    vendor: umbraco
+    product: miniprofiler
   tags: umbraco,miniprofiler,exposure,debug,misconfig
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: miniprofiler
+        cpe: cpe:2.3:a:umbraco:miniprofiler:*:*:*:*:*:*:*:*
         part: body
         words:
           - "StartupProfiler"
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022063ffeaf43e6d2a4da2b987048d20eb293ce80f24c0e877bf9790b364c277df73022100e03e71beb6e0cb26ae0df343574a1166766e6929411b89df6bea6d7cd4162959:922c64590222798bb761d5b6d8e72950

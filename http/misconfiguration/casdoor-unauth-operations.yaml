@@ -6,10 +6,14 @@ info:
   severity: critical
   description: |
     Detects unauthorized SCIM (System for Cross-domain Identity Management) operations in Casdoor versions ≤1.811.0, allowing unauthenticated access to user management functionalities.
+  classification:
+    cpe: cpe:2.3:a:casdoor:casdoor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: html:"Casdoor"
+    vendor: casdoor
+    product: casdoor
   tags: casdoor,unauth,intrusive,misconfig,vuln
 
 variables:
@@ -25,6 +29,8 @@ http:
 
     matchers:
       - type: dsl
+        name: casdoor
+        cpe: cpe:2.3:a:casdoor:casdoor:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body,"urn:ietf:params:scim:schemas:core:2.0:User","Resources", "emails")'
           - 'contains(header,"casdoor_session_id") && status_code == 200'
@@ -41,6 +47,8 @@ http:
 
     matchers:
       - type: dsl
+        name: casdoor-2
+        cpe: cpe:2.3:a:casdoor:casdoor:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body,"urn:ietf:params:scim:schemas:core:2.0:User",username)'
           - 'status_code == 201'
@@ -57,6 +65,8 @@ http:
 
     matchers:
       - type: dsl
+        name: casdoor-3
+        cpe: cpe:2.3:a:casdoor:casdoor:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body,"\"status\": \"ok\"","data","msg","sub")'
           - 'status_code == 200'
@@ -67,4 +77,3 @@ http:
         dsl:
           - '"Username: " + username'
           - '"Password: " + password'
-# digest: 490a00463044022012e2c2f0eb3823a7d4efc21b7d629278c685e3f898212acedbc9f694111cd75302207eeff4ccc4c866dbd2c3940b51eaf01b5810d485aa21753c009944e19fe04c85:922c64590222798bb761d5b6d8e72950

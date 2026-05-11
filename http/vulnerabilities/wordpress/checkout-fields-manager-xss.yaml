@@ -9,12 +9,15 @@ info:
     - https://wpscan.com/vulnerability/ea617acd-348a-4060-a8bf-08ab3b569577
     - https://wordpress.org/plugins/woocommerce-checkout-manager
   classification:
+    cpe: cpe:2.3:a:checkout-fields:checkout-fields:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 2
+    vendor: checkout-fields
+    product: checkout-fields
   tags: xss,wp,wordpress,authenticated,woocommerce,wpscan,wp-plugin,vuln
 
 http:
@@ -34,11 +37,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: checkout-fields
+        cpe: cpe:2.3:a:checkout-fields:checkout-fields:*:*:*:*:*:*:*:*
         part: body
         words:
           - '>--><script>alert(1)</script>&action=wooccm_nuke_options&'
 
       - type: word
+        name: checkout-fields-2
+        cpe: cpe:2.3:a:checkout-fields:checkout-fields:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -46,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ec8ad1543ddff43a0993123b4e7f497203efbfbe560533c8ddf3cbbaedf93941022100e277e8b5501d14e637bf3e511708fac7e5dc8210bf807b5eedda0e254f63a832:922c64590222798bb761d5b6d8e72950

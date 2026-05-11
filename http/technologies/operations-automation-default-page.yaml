@@ -4,9 +4,13 @@ info:
   name: Operations Automation Default Page
   author: dhiyaneshDK
   severity: info
+  classification:
+    cpe: cpe:2.3:a:parallels:operations_automation:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"Operations Automation Default Page"
+    vendor: parallels
+    product: operations_automation
   tags: tech,default,discovery
 
 http:
@@ -17,10 +21,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: operations_automation
+        cpe: cpe:2.3:a:parallels:operations_automation:*:*:*:*:*:*:*:*
         words:
           - '<title>Operations Automation Default Page</title>'
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402200678f8aba4f2f314dc67bcf62401909d219e107a3903dba1d3130545af9e505f0220531acfe29e4c81e571f26481455eec38b3b8f8aff0031a1e60f21e98f9a2eb7f:922c64590222798bb761d5b6d8e72950

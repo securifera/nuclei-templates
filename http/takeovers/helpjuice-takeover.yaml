@@ -7,8 +7,12 @@ info:
   description: helpjuice takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:helpjuice:helpjuice:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: helpjuice
+    product: helpjuice
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: helpjuice
+        cpe: cpe:2.3:a:helpjuice:helpjuice:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: helpjuice-2
+        cpe: cpe:2.3:a:helpjuice:helpjuice:*:*:*:*:*:*:*:*
         words:
           - We could not find what you're looking for.
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 490a00463044022029a46154e0317eb44db389983c69a686eaff1f09e5f990b6dc366eb4e492e27802205968903af19f7676519ee27b2d3b6e6c515725935e2f0eb7960de4a32840cd84:922c64590222798bb761d5b6d8e72950

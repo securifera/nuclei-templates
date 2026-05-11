@@ -6,11 +6,15 @@ info:
   severity: info
   description: |
     Detects the presence of Cisco Web UI login panels
+  classification:
+    cpe: cpe:2.3:a:cisco:webui:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"webui-centerpanel"
     fofa-query: body="webui-centerpanel"
+    vendor: cisco
+    product: webui
   tags: webui,cisco,login,panel,detect,discovery
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webui
+        cpe: cpe:2.3:a:cisco:webui:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Cisco Systems"
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220263755cfb3c11cad5e280b80f2b10396318d7f73c70dc1ba782b276ce06dc665022100bb924dc4aa84d87a0b51a04560ccd1af45262ab4f4d7cf591de293c0e0869c09:922c64590222798bb761d5b6d8e72950

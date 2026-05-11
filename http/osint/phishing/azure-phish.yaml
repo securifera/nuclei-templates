@@ -8,8 +8,12 @@ info:
     A Microsoft Azure phishing website was detected
   reference:
     - https://azure.microsoft.com
+  classification:
+    cpe: cpe:2.3:a:azure:azure:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: azure
+    product: azure
   tags: phishing,azure,microsoft,cloud,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: azure
+        cpe: cpe:2.3:a:azure:azure:*:*:*:*:*:*:*:*
         words:
           - 'Invent with purpose, realize cost savings, and make your organization more efficient with Microsoft Azure’s open and flexible cloud computing platform.'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: azure-2
+        cpe: cpe:2.3:a:azure:azure:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"azure.com")'
           - '!contains(host,"microsoft.com")'
-# digest: 4a0a0047304502200e6248b2fd1a21694049c9f3740738581df5d94e19e778ac518f72dcad7455a4022100e0b894e387e62fddcec724c5d7f75f153ff9d0b839c95c4503a954f2f29ee3a4:922c64590222798bb761d5b6d8e72950

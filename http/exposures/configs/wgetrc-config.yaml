@@ -31,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wget
+        cpe: cpe:2.3:a:gnu:wget:*:*:*:*:*:*:*:*
         words:
           - '/etc/wgetrc'
           - 'wget.info'
 
       - type: word
+        name: wget-2
+        cpe: cpe:2.3:a:gnu:wget:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/octet-stream'
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c6edddbe66c28624dfbfd14aef62bc26e08b694b9abcf201eca338d1e8545aa102210083f060329ee68d817ec59ff5f405b957458c36248a980e9245a93c87801b4e11:922c64590222798bb761d5b6d8e72950

@@ -4,8 +4,12 @@ info:
   name: Jspxcms Detect
   author: princechaddha
   severity: info
+  classification:
+    cpe: cpe:2.3:a:jspxcms:jspxcms:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: jspxcms
+    product: jspxcms
   tags: tech,jspxcms,discovery
 
 http:
@@ -16,6 +20,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jspxcms
+        cpe: cpe:2.3:a:jspxcms:jspxcms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Jspxcms"
@@ -23,4 +29,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022000db89fa0c937a5d283e81c5cac9c27a218b61a4800e3ee7d9222f124d8df303022100c586e3159fcd912ef2854a9314d046396793e74804d1a2074ae7d9f4e758af65:922c64590222798bb761d5b6d8e72950

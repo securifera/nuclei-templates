@@ -8,8 +8,12 @@ info:
     A Mattermost phishing website was detected
   reference:
     - https://mattermost.com
+  classification:
+    cpe: cpe:2.3:a:mattermost:mattermost:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mattermost
+    product: mattermost
   tags: phishing,mattermost,communication,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mattermost
+        cpe: cpe:2.3:a:mattermost:mattermost:*:*:*:*:*:*:*:*
         words:
           - '<title>Mattermost | Collaboration Platform for Mission Critical Work'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: mattermost-2
+        cpe: cpe:2.3:a:mattermost:mattermost:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"mattermost.com")'
-# digest: 490a0046304402205cc04edd93626c757960969472cb684350fd102d075b7301291cb15e7cc01e7002207590b4ccea25fbc2ce9dbd10a1fc3419cdd709b404fd60edbc6d9b209b69582e:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/squizlabs/PHP_CodeSniffer
   classification:
+    cpe: cpe:2.3:a:phpcs:phpcs:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"phpcs.xml"
+    vendor: phpcs
+    product: phpcs
   tags: devops,exposure,php,phpcs,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpcs
+        cpe: cpe:2.3:a:phpcs:phpcs:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ruleset name'
@@ -34,6 +39,8 @@ http:
         condition: and
 
       - type: word
+        name: phpcs-2
+        cpe: cpe:2.3:a:phpcs:phpcs:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/xml"
@@ -41,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204857fbacaa93ff7d71839f1d207e97f268653ab86e409079b2e00dfd950ca27b02200520945cad81ffe2d6a2edcd753f8ca951e92c95252006a65a989cc1e1f84775:922c64590222798bb761d5b6d8e72950

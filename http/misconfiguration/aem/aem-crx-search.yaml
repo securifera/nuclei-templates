@@ -29,12 +29,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: acs_aem_commons
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         words:
           - '<title>Search</title>'
           - '"/crx/explorer/ui/";'
         condition: and
 
       - type: word
+        name: acs_aem_commons-2
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ab76d7ad67c9c3a469884f40fcbace45477436276d0bc89aa5abf57618b250a8022100e4318386cfa1354550b6279b6a3e811a15275ba0ca866f0c979ac39dcfaabb6f:922c64590222798bb761d5b6d8e72950

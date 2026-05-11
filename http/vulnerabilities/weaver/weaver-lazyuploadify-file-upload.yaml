@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/w-digital-scanner/w9scan/blob/master/plugins/weaver_oa/2158.py
   classification:
+    cpe: cpe:2.3:a:weaver:weaver:*:*:*:*:*:*:*:*
     cwe-id: CWE-434
   metadata:
     verified: true
     max-request: 3
     fofa-query: app="泛微-EOffice"
+    vendor: weaver
+    product: weaver
   tags: weaver,e-office,intrusive,rce,file-upload,vuln
 variables:
   filename: "{{to_lower(rand_base(5))}}"
@@ -59,12 +62,15 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: weaver
+        cpe: cpe:2.3:a:weaver:weaver:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body_2, 'attachmentID') && contains(body_2, 'attachmentName')"
         condition: and
 
       - type: word
+        name: weaver-2
+        cpe: cpe:2.3:a:weaver:weaver:*:*:*:*:*:*:*:*
         part: body_3
         words:
           - '{{md5(string)}}'
-# digest: 4a0a0047304502210087ea661a413b2905dd448f9bbbaa1ac3c0ade512443a3651663e6a42864ec5890220363d3ef62f38d626f635298ebcd23d71e5beeadac7e503421960b681bccee8cb:922c64590222798bb761d5b6d8e72950

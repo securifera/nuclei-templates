@@ -10,6 +10,7 @@ info:
     - https://dagster.io/
     - https://github.com/dagster-io/dagster
   classification:
+    cpe: cpe:2.3:a:dagster:dagster:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5
     cwe-id: CWE-200
@@ -18,6 +19,8 @@ info:
     max-request: 1
     shodan-query: http.title:"Dagster"
     fofa-query: title="Dagster"
+    vendor: dagster
+    product: dagster
   tags: dagster,data,exposure,panel
 
 http:
@@ -30,9 +33,10 @@ http:
 
     matchers:
       - type: dsl
+        name: dagster
+        cpe: cpe:2.3:a:dagster:dagster:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Dagster</title>", "initialization-data", "instanceId")'
           - 'contains_any(body, "liveDataPollRate", "telemetryEnabled", "pathPrefix") || contains(header, "X-Dagster")'
         condition: and
-# digest: 4a0a00473045022100b442313c9f9b1c616bb9f0f63431ab054cb3e28e6876103d4530d5dcf91d38dc02204200f0b8ac41f9a597815f4521e7d8dd50a0c5dd1217b706b0133675af927e63:922c64590222798bb761d5b6d8e72950

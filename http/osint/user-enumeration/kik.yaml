@@ -6,11 +6,14 @@ info:
   severity: info
   description: Kik user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:kik:kik:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: kik
+    product: kik
   tags: osint,osint-social,kik,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: kik
+        cpe: cpe:2.3:a:kik:kik:*:*:*:*:*:*:*:*
         part: body
         words:
           - "firstName"
-# digest: 4a0a0047304502200209bfb87a6ed92b007ce2dead17419ef106189dad97ba99cdd87bba87f23244022100933904c43bbc9eec7cac7d50d915caa705cebf747ea70799f8d13bb84f926e20:922c64590222798bb761d5b6d8e72950

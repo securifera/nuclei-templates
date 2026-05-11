@@ -5,8 +5,12 @@ info:
   author: pussycat0x
   severity: low
   description: Displays an auto-configuration report showing all auto-configuration candidates and the reason why they 'were' or 'were not' applied.
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "positiveMatches"
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100dc871c8d12b26fd89a76b33b09f16f0cd5e7c60c0328687df0a329a9c4ccb1ec0221009485bd7673bf7a291fcceda39ceb792baeb88e12e48600b811b71b2c914286aa:922c64590222798bb761d5b6d8e72950

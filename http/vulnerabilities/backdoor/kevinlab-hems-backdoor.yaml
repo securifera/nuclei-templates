@@ -8,8 +8,12 @@ info:
     KevinLAB HEMS has an undocumented backdoor account and these sets of credentials are never exposed to the end-user and cannot be changed through any normal operation of the solution through the RMI. An attacker could exploit this vulnerability by logging in using the backdoor account with highest privileges for administration and gain full system control. The backdoor user cannot be seen in the users settings in the admin panel and it also uses an undocumented privilege level (admin_pk=1) which allows full availability of the features that the HEMS is offering remotely.
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5654.php
+  classification:
+    cpe: cpe:2.3:a:kevinlab:kevinlab:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kevinlab
+    product: kevinlab
   tags: kevinlab,default-login,backdoor,vuln
 
 http:
@@ -26,16 +30,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kevinlab
+        cpe: cpe:2.3:a:kevinlab:kevinlab:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<meta http-equiv="refresh" content="0; url=/"></meta>'
 
       - type: word
+        name: kevinlab-2
+        cpe: cpe:2.3:a:kevinlab:kevinlab:*:*:*:*:*:*:*:*
         words:
           - '<script> alert'
         negative: true
 
       - type: word
+        name: kevinlab-3
+        cpe: cpe:2.3:a:kevinlab:kevinlab:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'PHPSESSID'
@@ -43,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a4392cb0f022334859e9a272f03636a1b18d07ddd2cd846540431f69fd74b28402206bda77cc499cc2c194ce22cb34e2ed35c5087ebdc533a3721cc48824d84fdee0:922c64590222798bb761d5b6d8e72950

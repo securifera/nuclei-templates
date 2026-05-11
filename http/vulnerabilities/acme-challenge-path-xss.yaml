@@ -10,9 +10,12 @@ info:
     - https://labs.detectify.com/security-guidance/xss-using-quirky-implementations-of-acme-http-01/
     - https://www.acunetix.com/vulnerabilities/web/cross-site-scripting-in-http-01-acme-challenge-implementation/
   classification:
+    cpe: cpe:2.3:a:acme:acme:*:*:*:*:*:*:*:*
     cwe-id: CWE-80
   metadata:
     shodan-query: html:"acme-challenge"
+    vendor: acme
+    product: acme
   tags: xss,acme,misconfig,vuln
 
 http:
@@ -22,8 +25,9 @@ http:
 
     matchers:
       - type: dsl
+        name: acme
+        cpe: cpe:2.3:a:acme:acme:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "<script>alert(document.domain)</script>")'
         condition: and
-# digest: 4b0a00483046022100ecd37df29ea4514944ce624ca57b347014f55b86a9664b0e6a9416586de9e824022100b141263f1358d891076f7d2812848e80906ec618ab18ee1f633231b1be6f4fe3:922c64590222798bb761d5b6d8e72950

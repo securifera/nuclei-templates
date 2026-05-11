@@ -6,11 +6,14 @@ info:
   severity: info
   description: Speedrun user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:speedrun:speedrun:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: speedrun
+    product: speedrun
   tags: osint,osint-gaming,speedrun,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: speedrun
+        cpe: cpe:2.3:a:speedrun:speedrun:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Runs - "
-# digest: 4a0a0047304502206fb6816df2357cda6de560d5857350d816d43631aa5c6439567b9e48cd11b3e2022100c53405e612003ad95d5165db1a0ae6e1466d4d1d2f957947e3f5d1709a0b77e0:922c64590222798bb761d5b6d8e72950

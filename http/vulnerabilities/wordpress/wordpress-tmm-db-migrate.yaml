@@ -4,8 +4,12 @@ info:
   name: WordPress ThemeMarkers DB Migration File
   author: dwisiswant0
   severity: info
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,wp-plugin,backup,vuln
 
 http:
@@ -18,11 +22,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - "application/zip"
         part: header
 
       - type: regex
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         regex:
           - "[a-z0-9_]+.dat"
         part: body
@@ -32,6 +40,7 @@ http:
           - 200
 
       - type: binary
+        name: wordpress-3
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         binary:
           - "504B0304" # zip
-# digest: 490a0046304402206ddb6796957833f78dd623d624981f4c6b84610830c2848be63df665fd3bc3a70220057dbaa0d947d579a065aacfed54847d583bb7f239d2c88519d29640a8f406a3:922c64590222798bb761d5b6d8e72950

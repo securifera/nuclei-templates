@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: contact-form-7-honeypot
+        cpe: cpe:2.3:a:contact-form-7-honeypot:contact-form-7-honeypot:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

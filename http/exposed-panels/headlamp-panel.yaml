@@ -10,6 +10,7 @@ info:
     - https://headlamp.dev/
     - https://github.com/kubernetes-sigs/headlamp
   classification:
+    cpe: cpe:2.3:a:kubernetes-sigs:headlamp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -33,8 +34,9 @@ http:
 
     matchers:
       - type: dsl
+        name: headlamp
+        cpe: cpe:2.3:a:kubernetes-sigs:headlamp:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Headlamp: Kubernetes Web UI", "headlampBaseUrl")'
         condition: and
-# digest: 4b0a004830460221009708e3ca820baa4469ce1815cfcdc787cd122b122f20a7558a9f4298be90a959022100c5d7473632883aa8c1c02cf31444f1cf567d968760bf739362ae40dc1d3480fe:922c64590222798bb761d5b6d8e72950

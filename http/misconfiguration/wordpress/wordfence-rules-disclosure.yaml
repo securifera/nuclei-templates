@@ -10,6 +10,7 @@ info:
     - https://wordpress.org/support/topic/files-created-in-wflogs-before-plugin-activated/
     - https://forum.ait-pro.com/forums/topic/wordfence-firewall-wp-contentwflogsconfig-php-file-quarantined/
   classification:
+    cpe: cpe:2.3:a:wordfence:rules:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -17,6 +18,8 @@ info:
     max-request: 1
     verified: true
     fofa-query: body="/plugins/wordfence"
+    vendor: wordfence
+    product: rules
   tags: wordpress,wp-plugin,wordfence,rules,disclosure,exposure
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rules
+        cpe: cpe:2.3:a:wordfence:rules:*:*:*:*:*:*:*:*
         part: body
         words:
           - "wfWAFrule"
@@ -36,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022052a72b463302339c60b0251a41d876e57837749b1078dcf7d19d920119432819022100ae1c0710398c8c12395264ddaa1953a4d0628991f88daf778e23cf583462e137:922c64590222798bb761d5b6d8e72950

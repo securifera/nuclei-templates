@@ -7,8 +7,12 @@ info:
   description: Checks for a valid datadog account.
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
+  classification:
+    cpe: cpe:2.3:a:datadog:datadog:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: datadog
+    product: datadog
   tags: cloud,creds-stuffing,login-check,datadog,vuln
 
 self-contained: true
@@ -43,6 +47,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: datadog
+        cpe: cpe:2.3:a:datadog:datadog:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'Set-Cookie: dogweb='
@@ -50,4 +56,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a0047304502207ffee6dea6b55c536124f12f76644e41caf3f789c5d9e70f3a2f2f5bae61b188022100c5e9fabafbc04710df4818c0958c53733a35df4505d9aa13611f55360074c044:922c64590222798bb761d5b6d8e72950

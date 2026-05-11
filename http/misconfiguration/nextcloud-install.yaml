@@ -7,8 +7,12 @@ info:
   description: Nextcloud installation is exposed.
   reference:
     - https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html
+  classification:
+    cpe: cpe:2.3:a:nextcloud:nextcloud:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: nextcloud
+    product: nextcloud
   tags: tech,nextcloud,storage,misconfig,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nextcloud
+        cpe: cpe:2.3:a:nextcloud:nextcloud:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<fieldset id="adminaccount"><legend>Create an <strong>admin account</strong></legend>'
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bc7c88dece3827baeecad89b88d5dfc33b1c717587819c23e6d196fc9bd8e114022100e90813165f2f0ff5821c1cc30a0382e00dee27f50e165fb93c778b4b2512b7cc:922c64590222798bb761d5b6d8e72950

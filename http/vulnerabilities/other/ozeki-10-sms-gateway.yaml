@@ -9,9 +9,13 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/51646
     - https://ozeki-sms-gateway.com/attachments/702/installwindows_1689352737_OzekiSMSGateway_10.3.208.zip
+  classification:
+    cpe: cpe:2.3:a:ozeki:ozeki:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: ozeki
+    product: ozeki
   tags: ozeki,lfi,unauth,vuln
 
 http:
@@ -21,8 +25,9 @@ http:
 
     matchers:
       - type: dsl
+        name: ozeki
+        cpe: cpe:2.3:a:ozeki:ozeki:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/octet-stream") && contains(body, "Mail") && contains(body, "files")'
         condition: and
-# digest: 4b0a00483046022100b4ca1d71fa0d99cb0c364110cb39c51878d81dc634b01a896cbab6847a8b6079022100ba5e83cb4841cea8c39e8c664eee6c70ee2edaa8b7e006db805f441b2d707fb0:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A vodafone phishing website was detected
   reference:
     - https://vodafone.co.uk
+  classification:
+    cpe: cpe:2.3:a:vodafone:vodafone:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: vodafone
+    product: vodafone
   tags: phishing,vodafone,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vodafone
+        cpe: cpe:2.3:a:vodafone:vodafone:*:*:*:*:*:*:*:*
         words:
           - 'Vodafone &ndash; Our Best Ever Network'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: vodafone-2
+        cpe: cpe:2.3:a:vodafone:vodafone:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"vodafone.co.uk")'
-# digest: 4b0a0048304602210092c6a10f4db2802eeff4f0099a1e5a6697d4fbc7c94c6b3cf92c4efde964c192022100c8028615e6daa51c47a6e516657ffc4be9a05be52dfad3b686de86762b885185:922c64590222798bb761d5b6d8e72950

@@ -10,11 +10,14 @@ info:
     - https://netty.io/wiki/reference-counted-objects.html
     - https://my.oschina.net/u/4581879/blog/4753320
   classification:
+    cpe: cpe:2.3:a:alibaba:alibaba:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: alibaba
+    product: alibaba
   tags: config,exposure,alibaba,vuln
 
 http:
@@ -32,15 +35,18 @@ http:
           - 200
 
       - type: word
+        name: alibaba
+        cpe: cpe:2.3:a:alibaba:alibaba:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         condition: and
         part: header
 
       - type: word
+        name: alibaba-2
+        cpe: cpe:2.3:a:alibaba:alibaba:*:*:*:*:*:*:*:*
         words:
           - "ncanal.aliyun.accessKey"
           - "ncanal.aliyun.secretKey"
         condition: and
         part: body
-# digest: 4a0a004730450220664c69fe5cd2b98a36c1b0b2b54d589393a987e7cca14ece9f540632f8ed13e00221009d7a1befd01c8f62c5dae87ce98e615bd2c71d8f916c248f6202d493c52637d1:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Boosty user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:boosty:boosty:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: boosty
+    product: boosty
   tags: osint,osint-social,boosty,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: boosty
+        cpe: cpe:2.3:a:boosty:boosty:*:*:*:*:*:*:*:*
         part: body
         words:
           - "- exclusive content on Boosty</title>"
-# digest: 4a0a0047304502210094ca0abf6efdd4b01fd0cbd126b0990e1cd933cdf4abecb945dbd5c2544eeb0402205f6c70eb1a875b69c2a1c5839431c22a9f606c5bb1865d7c030033efc78fc33c:922c64590222798bb761d5b6d8e72950

@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk,daffainfo
   severity: low
   description: Editor configuration file was detected.
+  classification:
+    cpe: cpe:2.3:a:editor:editor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"editorconfig"
+    vendor: editor
+    product: editor
   tags: config,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: editor
+        cpe: cpe:2.3:a:editor:editor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "= true"
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: editor-2
+        cpe: cpe:2.3:a:editor:editor:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022004397cbe61dc089cba520a670afe7777ddcdc97ef2fa38dbfdfe5ff9cae6d012022100a0fc42274bd5df6ec4ba2283b56fcf0eea469f73ebd6aa6c9fc9a023ad62ae57:922c64590222798bb761d5b6d8e72950

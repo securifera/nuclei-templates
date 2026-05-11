@@ -9,10 +9,14 @@ info:
   reference:
     - https://automatisch.io/
     - https://github.com/automatisch/automatisch
+  classification:
+    cpe: cpe:2.3:a:automatisch:automatisch:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"Automatisch"
+    vendor: automatisch
+    product: automatisch
   tags: panel,automatisch,detect,discovery
 
 http:
@@ -26,10 +30,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: automatisch
+        cpe: cpe:2.3:a:automatisch:automatisch:*:*:*:*:*:*:*:*
         words:
           - '<title>Automatisch'
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402206127f2401d973198ba8d6d5b699b46e0845f0ade88698b2114fc543416fb018302207f73bcdba4b2021a3d0406155202738c3cb68b5bc9683391488e369ea70d3e9e:922c64590222798bb761d5b6d8e72950

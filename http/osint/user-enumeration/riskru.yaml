@@ -6,11 +6,14 @@ info:
   severity: info
   description: Risk.ru user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:riskru:riskru:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: riskru
+    product: riskru
   tags: osint,osint-hobby,riskru,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: riskru
+        cpe: cpe:2.3:a:riskru:riskru:*:*:*:*:*:*:*:*
         part: body
         words:
           - "— Люди — Risk.ru"
-# digest: 490a00463044022039f9ca0772f70cd5d62b2e530e9c2d0cedaade7c226a1f5c8ac014e367b9ae3402201bbf7cf87be566e015f581e8f993ce96dac10f4923c03dd0ef64207411f19e8d:922c64590222798bb761d5b6d8e72950

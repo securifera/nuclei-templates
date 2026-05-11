@@ -4,9 +4,13 @@ info:
   name: Basic Auth Detection
   author: w4cky_,bhutch
   severity: info
+  classification:
+    cpe: cpe:2.3:a:ietf:http_basic_authentication:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: "www-authenticate:"
+    vendor: ietf
+    product: http_basic_authentication
   tags: tech,basic,auth,discovery
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: http_basic_authentication
+        cpe: cpe:2.3:a:ietf:http_basic_authentication:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)www-authenticate: basic"
@@ -31,4 +37,3 @@ http:
         group: 1
         regex:
           - '(?i)www-authenticate: (basic.*)\r\n'
-# digest: 4b0a00483046022100c7a7a5e525693a32d3b308765b3078719561bef9a8887896cc79ebd763b4e96a0221008293b3343a90b1c4a806f7a04972cb9cbba4f5b5362f7b3110cf6904230892a5:922c64590222798bb761d5b6d8e72950

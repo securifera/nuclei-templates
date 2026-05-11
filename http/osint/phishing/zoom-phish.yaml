@@ -8,8 +8,12 @@ info:
     A zoom phishing website was detected
   reference:
     - https://zoom.us
+  classification:
+    cpe: cpe:2.3:a:zoom:zoom:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: zoom
+    product: zoom
   tags: phishing,zoom,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zoom
+        cpe: cpe:2.3:a:zoom:zoom:*:*:*:*:*:*:*:*
         words:
           - 'One platform to connect | Zoom'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: zoom-2
+        cpe: cpe:2.3:a:zoom:zoom:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"zoom.us")'
-# digest: 490a0046304402203a904166384a4b38405a90995904ba5aef158e4dc64ce3058375b14a347754cf02203d860fdbdb93e91bbfe171b317232d8c2060aa29cda23a054537ae92189e4b4e:922c64590222798bb761d5b6d8e72950

@@ -39,11 +39,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: flexnet_publisher
+        cpe: cpe:2.3:a:flexera:flexnet_publisher:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: flexnet_publisher-2
+        cpe: cpe:2.3:a:flexera:flexnet_publisher:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
@@ -64,4 +68,3 @@ http:
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
         part: interactsh_request
-# digest: 4b0a00483046022100db2153555788b40fa0ec5d053b66aa512d1ff61bc64600cda1b12423893a2020022100d45b368cd6e68837d3fa5912cd6d15cf4b0731c22329c794a106aaeb8c1ad7be:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.freewebtools.com/IPTIME/
   classification:
+    cpe: cpe:2.3:a:iptime:iptime:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: iptime
+    product: iptime
   tags: iptime,default-login,vuln
 
 http:
@@ -38,10 +41,11 @@ http:
           - 200
 
       - type: word
+        name: iptime
+        cpe: cpe:2.3:a:iptime:iptime:*:*:*:*:*:*:*:*
         words:
           - "setCookie"
           - "efm_session_id"
           - "login.cgi"
         part: body
         condition: and
-# digest: 4a0a0047304502201927c4e9a728a93d3cabd296886588c2de77067b6176b05d58a4f09a93e16f8c022100c3a402daf8ec17e52207b197a51157bbaa2f44c18f58557f3634f48414b0a051:922c64590222798bb761d5b6d8e72950

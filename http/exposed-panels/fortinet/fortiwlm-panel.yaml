@@ -34,10 +34,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fortiwlm
+        cpe: cpe:2.3:a:fortinet:fortiwlm:*:*:*:*:*:*:*:*
         words:
           - "<title>FortiWLM Login</title>"
 
       - type: word
+        name: fortiwlm-2
+        cpe: cpe:2.3:a:fortinet:fortiwlm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -45,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202ca4ec8e9c96291b5abbf19faf09dfbaf02722cdb0e48068dbfeef5e82a46e6f022100ab125e02c4dcf7596662ae11ae7e004f28993142730f96ebfef8696346d3407e:922c64590222798bb761d5b6d8e72950

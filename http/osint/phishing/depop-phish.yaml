@@ -8,8 +8,12 @@ info:
     A Depop phishing website was detected
   reference:
     - https://depop.com
+  classification:
+    cpe: cpe:2.3:a:depop:depop:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: depop
+    product: depop
   tags: phishing,depop,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: depop
+        cpe: cpe:2.3:a:depop:depop:*:*:*:*:*:*:*:*
         words:
           - 'Depop'
           - 'Designer. Preloved. Vintage. Streetwear. Sneakers. Whatever your style. Find it on Depop.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: depop-2
+        cpe: cpe:2.3:a:depop:depop:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"depop.com")'
-# digest: 4a0a00473045022100c4b3d9feb1ac1da4308531b176b4739a4921ec4cfb5e5eb447645695b9287c9a022005a38ea72784e339da778a077a51df827e512fbdda359129a65930e5daea4306:922c64590222798bb761d5b6d8e72950

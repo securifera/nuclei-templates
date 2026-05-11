@@ -5,10 +5,14 @@ info:
   author: huowuzhao
   severity: high
   description: Upgrade.php page in Mautic is exposed.
+  classification:
+    cpe: cpe:2.3:a:mautic:mautic:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Mautic"
+    vendor: mautic
+    product: mautic
   tags: misconfig,unauth,mautic,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mautic
+        cpe: cpe:2.3:a:mautic:mautic:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Upgrade Mautic'
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: mautic-2
+        cpe: cpe:2.3:a:mautic:mautic:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100afbe3592b366a4351beb49b3509c0e30227e33932a0258d881bdd06ef6e9ec68022100ee854e980a1958e704cd35fee24ed26e500916d037a08c7d565ad0d420151e27:922c64590222798bb761d5b6d8e72950

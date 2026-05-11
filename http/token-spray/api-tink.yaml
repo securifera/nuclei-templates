@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://docs.tink.com/api
+  classification:
+    cpe: cpe:2.3:a:tink:tink:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: tink
+    product: tink
   tags: token-spray,tink
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
       Authorization: Bearer {{token}}
     matchers:
       - type: word
+        name: tink
+        cpe: cpe:2.3:a:tink:tink:*:*:*:*:*:*:*:*
         part: body
         words:
           - "appId"
           - "externalUserId"
           - "username"
         condition: and
-# digest: 4a0a0047304502210088bfd5c3e85a59c9a4ea2c163d0574b401fda63c903430e494ff4b56aa94cc3e02203a7d362cd116702ca850ed69e72ba820f4063fce33460a8988f64252d31a2de3:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Albicla user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:albicla:albicla:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: albicla
+    product: albicla
   tags: osint,osint-social,albicla,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 500
 
       - type: word
+        name: albicla
+        cpe: cpe:2.3:a:albicla:albicla:*:*:*:*:*:*:*:*
         part: body
         words:
           - "500 Post tymczasowo niedostępny"
-# digest: 4a0a00473045022059fe9856d51d23ad82af486370eb120ee32de07febf097e76e8b4966a10fe8a40221008a7ec880490d7ca446c4d0ee419ba765e1310c8df26098e402f174ad1f73fbaa:922c64590222798bb761d5b6d8e72950

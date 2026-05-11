@@ -6,9 +6,13 @@ info:
   severity: info
   description: |
     Detected servers using the MochiWeb framework through the Server header.
+  classification:
+    cpe: cpe:2.3:a:mochiweb:mochiweb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     shodan-query: http.component:"mochiweb" country:"US"
+    vendor: mochiweb
+    product: mochiweb
   tags: tech,mochiweb
 
 http:
@@ -18,6 +22,8 @@ http:
 
     matchers:
       - type: regex
+        name: mochiweb
+        cpe: cpe:2.3:a:mochiweb:mochiweb:*:*:*:*:*:*:*:*
         part: header
         regex:
           - 'MochiWeb'
@@ -28,4 +34,3 @@ http:
         group: 1
         regex:
           - 'MochiWeb/([0-9.]+)'
-# digest: 4a0a00473045022100c2bb79246d81ceee4f41c70adb8cf4d46586b552ee1f701521f7bed9c69d953802205483247d775f648b994832fd44ae564cd5901fb4d0b1e3d6d9c64ffb2a881efb:922c64590222798bb761d5b6d8e72950

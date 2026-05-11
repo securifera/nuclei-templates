@@ -8,10 +8,14 @@ info:
     OneDev is a Git Server with CI/CD, Kanban, and Packages.
   reference:
     - https://github.com/theonedev/onedev
+  classification:
+    cpe: cpe:2.3:a:onedev:onedev:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"OneDev"
+    vendor: onedev
+    product: onedev
   tags: tech,detect,onedev,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: onedev
+        cpe: cpe:2.3:a:onedev:onedev:*:*:*:*:*:*:*:*
         part: body
         words:
           - "OneDev"
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d930c2b5e66ac946d3c8acb29d1934990a6fce4624328007446e135946efd4800220080eac84ecd302cf6bd31277b7d2d8909aa1a282daceebaf9230a177397f5269:922c64590222798bb761d5b6d8e72950

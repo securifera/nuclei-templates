@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: astra-widgets
+        cpe: cpe:2.3:a:astra-widgets:astra-widgets:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

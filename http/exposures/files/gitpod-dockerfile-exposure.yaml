@@ -8,9 +8,13 @@ info:
     Detected exposed .gitpod.Dockerfile files. These files define the development environment and may disclose installed software versions, internal paths, or potentially hardcoded secrets.
   reference:
     - https://www.gitpod.io/docs/configure/docker
+  classification:
+    cpe: cpe:2.3:a:gitpod:gitpod:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: gitpod
+    product: gitpod
   tags: gitpod,docker,exposure,config
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: gitpod
+        cpe: cpe:2.3:a:gitpod:gitpod:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '^(?:FROM(?:CACHE)?|RUN|ADD|WORKDIR|ENV|EXPOSE|\#)\s+[ -~]+'
@@ -34,8 +40,9 @@ http:
           - 200
 
       - type: word
+        name: gitpod-2
+        cpe: cpe:2.3:a:gitpod:gitpod:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
         negative: true
-# digest: 4a0a0047304502210081ca92165aef7dea38d061753f2961022444bb7fd228cb69db1f8c3af46335e202204a866ee69dd980982f208988e8f9bea9bd3cff6afa5f4f0437bf82197d7bd8a3:922c64590222798bb761d5b6d8e72950

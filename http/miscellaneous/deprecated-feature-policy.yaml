@@ -11,9 +11,13 @@ info:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
     - https://www.w3.org/TR/permissions-policy-1/
     - https://github.com/w3c/webappsec-permissions-policy/blob/main/permissions-policy-explainer.md
+  classification:
+    cpe: cpe:2.3:a:feature-policy:feature-policy:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: feature-policy
+    product: feature-policy
   tags: misc,headers,deprecated,feature-policy,permissions
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: feature-policy
+        cpe: cpe:2.3:a:feature-policy:feature-policy:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Feature-Policy:"
@@ -34,4 +40,3 @@ http:
         part: header
         kval:
           - feature_policy
-# digest: 4b0a0048304602210081887af3f1c09f092e8a0a7d6050d3e3d702d9816033995e48906d6bc8a94d96022100a7636fa434590547bd8527be2e002a57b74eb00e49175c7e6f404ca2ac92c861:922c64590222798bb761d5b6d8e72950

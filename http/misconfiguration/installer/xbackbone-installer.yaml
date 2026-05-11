@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Checks for the presence of a XBackBone Installer.
+  classification:
+    cpe: cpe:2.3:a:xbackbone:xbackbone:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"XBackBone Installer"
+    vendor: xbackbone
+    product: xbackbone
   tags: install,xbackbone,exposure,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xbackbone
+        cpe: cpe:2.3:a:xbackbone:xbackbone:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>XBackBone Installer</title>"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200d9b43ced2ad926f521352184f1e2b395771c367dec7f81bd39332b0a839cfa0022100bd1893bce3f548f89336ed4f0607bd787363ef641581c2597a95f12b1ec2e02a:922c64590222798bb761d5b6d8e72950

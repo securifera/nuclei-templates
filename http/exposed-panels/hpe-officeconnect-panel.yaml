@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     The HPE OfficeConnect Switch was a network switch series built for small and medium businesses.It provided reliable connectivity, simple management, and PoE options to support growing networks.
+  classification:
+    cpe: cpe:2.3:a:hpe:officeconnect:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"HPE OfficeConnect"
+    vendor: hpe
+    product: officeconnect
   tags: panel,hp,hpe,officeconnect,login,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: officeconnect
+        cpe: cpe:2.3:a:hpe:officeconnect:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains(body, '<title>HPE OfficeConnect Switch')"
@@ -32,4 +38,3 @@ http:
         part: body
         regex:
           - 'HPE OfficeConnect Switch ([0-9A-Z a-z+()]+)'
-# digest: 4a0a00473045022100a2a15560fe99377a5cdfd798304b6e53999eb24f986b59ad70e9644d5c137d01022012944e122de8fc511c7e0e7cb19abec6bcf46b272789c24d75d4266f132638bd:922c64590222798bb761d5b6d8e72950

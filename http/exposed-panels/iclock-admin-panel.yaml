@@ -6,11 +6,14 @@ info:
   severity: info
   description: An iClock Automatic Data Master Server Admin login panel was detected.
   classification:
+    cpe: cpe:2.3:a:iclock:iclock:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
     shodan-query: html:"iClock Automatic"
+    vendor: iclock
+    product: iclock
   tags: panel,iclock,login,admin,discovery
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: iclock
+        cpe: cpe:2.3:a:iclock:iclock:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"site-name">iClock Automatic Data Master Server'
@@ -42,4 +47,3 @@ http:
         group: 1
         regex:
           - '<span style="float:right">\(v([0-9.-]+)\)</span>'
-# digest: 490a004630440220709bab076a55a1fd4a23a857af2718c69a947359e751773882891b4c5d246d09022064a012562edae1aafb61e769bf79dee23558792e8f7b4a8f5d6a52fff4d61067:922c64590222798bb761d5b6d8e72950

@@ -10,6 +10,7 @@ info:
     - https://flask-debugtoolbar.readthedocs.io/
     - https://github.com/flask-debugtoolbar/flask-debugtoolbar
   classification:
+    cpe: cpe:2.3:a:toolbar:toolbar:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -18,6 +19,8 @@ info:
     max-request: 1
     shodan-query: http.html:"flDebugToolbar"
     fofa-query: body="flDebugToolbar"
+    vendor: toolbar
+    product: toolbar
   tags: flask,python,debug,toolbar,exposure,misconfig
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: toolbar
+        cpe: cpe:2.3:a:toolbar:toolbar:*:*:*:*:*:*:*:*
         part: body
         words:
           - "flDebugToolbar"
@@ -38,6 +43,8 @@ http:
         condition: or
 
       - type: word
+        name: toolbar-2
+        cpe: cpe:2.3:a:toolbar:toolbar:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/_debug_toolbar/"
@@ -48,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b238a1ef069b75fe3f2cfbf94c663dca9d161a444390226edd3ae1294263077d02205c6d73f0eb058704cfaa234ccfc3e826f54f2c30f2e72360f6dc8d48d4707644:922c64590222798bb761d5b6d8e72950

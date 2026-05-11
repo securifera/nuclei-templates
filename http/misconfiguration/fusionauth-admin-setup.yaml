@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fusionauth
+        cpe: cpe:2.3:a:fusionauth:fusionauth:*:*:*:*:*:*:*:*
         words:
           - '<title>FusionAuth Setup Wizard'
           - 'FusionAuth is now installed and running'
@@ -32,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008bcc506c7b7ca393e7fdd7b29a6359b5ca3d95e2bf9017fded4169425d34d87b022100aa9bb1654a6c369776dd48e078c53a64023254c13962286fbe40463e777fe9d3:922c64590222798bb761d5b6d8e72950

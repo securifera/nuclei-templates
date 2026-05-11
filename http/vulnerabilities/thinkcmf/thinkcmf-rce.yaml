@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.freebuf.com/vuls/217586.html
   classification:
+    cpe: cpe:2.3:a:thinkcmf:thinkcmf:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-94
   metadata:
     max-request: 2
+    vendor: thinkcmf
+    product: thinkcmf
   tags: thinkcmf,rce,intrusive,vuln
 
 variables:
@@ -29,7 +32,8 @@ http:
 
     matchers:
       - type: word
+        name: thinkcmf
+        cpe: cpe:2.3:a:thinkcmf:thinkcmf:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '{{md5(string)}}'
-# digest: 4a0a00473045022100ef3a79522efff394f3d1701a444eef19411579af92582b630b61262c88b022f8022050a112965fd5384b1bdfa94a665f5e03e5803e14887294da8ab3e7c3d1328a3d:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: high
   reference:
     - https://www.ibm.com/docs/en/odm/8.5.1?topic=console-tutorial-getting-started-decision-center-enterprise
+  classification:
+    cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "html=\"Decision Center Enterprise console\""
+    vendor: ibm
+    product: ibm
   tags: ibm,default-login,decision-center,vuln
 
 http:
@@ -34,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ibm
+        cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Current action:"
@@ -43,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200c718ee2f8e4ab1e8d5596c36108618fc2c556782da72f466e7eccb404533367022100c32d6e6fca37fb0bc7ac11bc3af01144287ceb17bef96d6e8602b9f16988631d:922c64590222798bb761d5b6d8e72950

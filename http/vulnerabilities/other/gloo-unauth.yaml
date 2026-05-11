@@ -5,8 +5,12 @@ info:
   author: dhiyaneshDk
   severity: high
   description: Gloo UI is exposed to external users.
+  classification:
+    cpe: cpe:2.3:a:gloo:gloo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: gloo
+    product: gloo
   tags: unauth,gloo,vuln
 
 http:
@@ -21,11 +25,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gloo
+        cpe: cpe:2.3:a:gloo:gloo:*:*:*:*:*:*:*:*
         words:
           - "gke-remote"
         part: body
 
       - type: word
+        name: gloo-2
+        cpe: cpe:2.3:a:gloo:gloo:*:*:*:*:*:*:*:*
         words:
           - "application/grpc-web+proto"
         part: header
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009df1ed404d459b129ecef28cdeb175334e306490fb7b9d3d4627454e788efe6d022100d96b3acf846a841856c6c765e9fa0977906615eba351a7ec47b7c1d22286307e:922c64590222798bb761d5b6d8e72950

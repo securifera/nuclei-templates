@@ -11,10 +11,13 @@ info:
     - https://cxsecurity.com/issue/WLB-2023070080
     - https://cyberlegion.io/joomla-solidres-2-13-3-cross-site-scripting/
   classification:
+    cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
     cwe-id: CWE-79,CWE-83
   metadata:
     verified: true
     max-request: 1
+    vendor: joomla
+    product: joomla
   tags: xss,joomla,unauth,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'onfocus="confirm(document.domain)"autofocus'
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: joomla-2
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008fa7e7057a6741086737376d4d944bc2ab7775c552e3213dc0f7041b470eb4cc02204388125ada4cc544f2e7ee121254432239d0885de3fe450863723c91fae0a624:922c64590222798bb761d5b6d8e72950

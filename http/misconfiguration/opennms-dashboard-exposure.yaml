@@ -37,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: opennms
+        cpe: cpe:2.3:a:opennms:opennms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "OpenNMS Web Console"
@@ -44,6 +46,8 @@ http:
         condition: or
 
       - type: word
+        name: opennms-2
+        cpe: cpe:2.3:a:opennms:opennms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Status"
@@ -55,4 +59,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022045aa14dda00a76112ced53259f59e5909c04002aa815271885702b0c75db207e0221009cf75b4d5940a048d99a0d2a94923eabbae918fd48ebdb2fcd607220230d0e82:922c64590222798bb761d5b6d8e72950

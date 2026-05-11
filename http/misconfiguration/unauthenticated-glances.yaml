@@ -7,8 +7,12 @@ info:
   description: Glance running web server mode & Unauthenticated leads system monitoring to info disclosure
   reference:
     - https://glances.readthedocs.io/en/latest/quickstart.html#how-to-protect-your-server-or-web-server-with-a-login-password
+  classification:
+    cpe: cpe:2.3:a:glances:glances:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: glances
+    product: glances
   tags: exposure,glances,misconfig,vuln
 
 http:
@@ -23,7 +27,8 @@ http:
           - 200
 
       - type: word
+        name: glances
+        cpe: cpe:2.3:a:glances:glances:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Monitor</title>"
-# digest: 4b0a00483046022100dfcf1a3b1cf0194885a44797875fa000f410044443442dc966955264e8a9723c022100bf3f1234ced62760f208e0fa7867607adfb9a8693fbce15454cefa4190efa093:922c64590222798bb761d5b6d8e72950

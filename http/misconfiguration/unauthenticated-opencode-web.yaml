@@ -8,6 +8,8 @@ info:
     Unauthenticated network access to the OpenCode web interface was detected. When the OpenCode web server is started without setting the OPENCODE_SERVER_PASSWORD environment variable, the server is completely unsecured.
   reference:
     - https://opencode.ai/docs/tr/web/
+  classification:
+    cpe: cpe:2.3:a:opencode:opencode:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -27,8 +29,9 @@ http:
 
     matchers:
       - type: dsl
+        name: opencode
+        cpe: cpe:2.3:a:opencode:opencode:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "<title>OpenCode</title>", "opencode-theme-id")'
           - 'status_code == 200'
         condition: and
-# digest: 490a00463044022005f252aac448612ba8ef206eb62d56214998c348e009255c589bd2c80f079bb502207d728ba61f68b7de922f7d8cfbf41a8649de64ac9196a6d512d5bbe7ebf210f2:922c64590222798bb761d5b6d8e72950

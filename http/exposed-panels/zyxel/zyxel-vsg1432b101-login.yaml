@@ -4,10 +4,14 @@ info:
   name: Zyxel VSG1432-B101 - Login Detection
   author: princechaddha
   severity: info
+  classification:
+    cpe: cpe:2.3:a:zyxel:zyxel:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"VSG1432-B101"
+    vendor: zyxel
+    product: zyxel
   tags: tech,zyxel,modem,router,panel,discovery
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zyxel
+        cpe: cpe:2.3:a:zyxel:zyxel:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Welcome to ZyXEL VSG1432-B101::"
@@ -25,4 +31,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022055152dd05e08ff47444a45a8f26d5f69335f4ee0888f8a5701596efbebdd7d7d02203bf9aa2acd9ec8d51f462d677ecba976dd6b7a8198cf5630bdc0a21f12fe0ae1:922c64590222798bb761d5b6d8e72950

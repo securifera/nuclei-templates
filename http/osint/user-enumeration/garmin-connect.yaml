@@ -6,11 +6,14 @@ info:
   severity: info
   description: Garmin connect user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:garmin-connect:garmin-connect:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: garmin-connect
+    product: garmin-connect
   tags: osint,osint-health,garmin-connect,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: garmin-connect
+        cpe: cpe:2.3:a:garmin-connect:garmin-connect:*:*:*:*:*:*:*:*
         part: body
         words:
           - "window.ERROR_VIEW = null"
-# digest: 4b0a00483046022100ce346a2da6538e21e11bb96fe09121636b9d31495345654e4784208c67cf70fb022100acf55120c9789a42c52e86954395b821d34e21e2b67475290f08464d660f0490:922c64590222798bb761d5b6d8e72950

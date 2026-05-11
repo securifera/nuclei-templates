@@ -8,10 +8,14 @@ info:
   reference:
     - https://about.gitea.com/
     - https://docs.gitea.com/api
+  classification:
+    cpe: cpe:2.3:a:gitea:gitea:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Gitea"
+    vendor: gitea
+    product: gitea
   tags: tech,gitea,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gitea
+        cpe: cpe:2.3:a:gitea:gitea:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Powered by Gitea"
@@ -41,4 +47,3 @@ http:
           - "Gitea Version: ([0-9a-z+-.~]+)"
           - 'theme-gitea-auto.css\?v=([0-9a-z+-.~]+)'
           - 'encodeURIComponent.{2}([0-9a-z+-.~]+).{2}'
-# digest: 4a0a0047304502207026459b4e6c1bfb62c44df373e1860576d487b0ce21a37a1a72139d9aaf15a0022100e66dbbb78da8f2de070462027351e279242822585e4073bef6e9a51f5b768de0:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
    Detected Apache ActiveMQ Artemis console default login credentials were discovered.
   reference:
     - https://activemq.apache.org/components/artemis/documentation/latest/management-console.html
+  classification:
+    cpe: cpe:2.3:a:apache:activemq:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     vendor: apache
@@ -36,10 +38,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: activemq
+        cpe: cpe:2.3:a:apache:activemq:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(content_type, "application/json")'
 
       - type: word
+        name: activemq-2
+        cpe: cpe:2.3:a:apache:activemq:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"credentials"'
@@ -58,4 +64,3 @@ http:
         group: 0
         regex:
           - '{"credentials":.*}'
-# digest: 4a0a0047304502202bcfb2355b7ea94bfb42f9a22a6ced3db19ebb131375dfd6339d8f3a51b5cb79022100cfa9d6955d6f51948e3d2488be44e0bf112ac9017cd056688f8a8aea10ba7b4a:922c64590222798bb761d5b6d8e72950

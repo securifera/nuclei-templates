@@ -5,8 +5,12 @@ info:
   author: ritikchaddha
   severity: high
   description: Telecom Gateway default admin login credentials were successful.
+  classification:
+    cpe: cpe:2.3:a:telecom:gateway:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: telecom
+    product: gateway
   tags: default-login,telecom,gateway,vuln
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gateway
+        cpe: cpe:2.3:a:telecom:gateway:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>电信网关服务器管理后台</title>"
@@ -39,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210080782655ba38730784d57708d13c57bbf254470dcd2e2704a43d13830a845fea02210096bccdad217b88adfbbe9d97c2d1e0f63bf24db39906a687f5733de57b33c9fc:922c64590222798bb761d5b6d8e72950

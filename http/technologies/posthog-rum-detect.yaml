@@ -10,10 +10,14 @@ info:
     - https://posthog.com/docs/integrate/client/js
     - https://github.com/PostHog/posthog-js
     - https://www.npmjs.com/package/posthog-js
+  classification:
+    cpe: cpe:2.3:a:posthog:posthog:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"posthog.init"
+    vendor: posthog
+    product: posthog
   tags: tech,discovery,rum,posthog
 
 http:
@@ -25,10 +29,11 @@ http:
 
     matchers:
       - type: regex
+        name: posthog
+        cpe: cpe:2.3:a:posthog:posthog:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "window\\.posthog"
           - "api_host[\"']?\\s*:\\s*[\"'][^\"']*posthog"
           - "posthog\\.init\\s*\\("
         condition: or
-# digest: 4a0a00473045022100b588cb756f9a75d10525ccb720a35f950bd159fd4c98f2cdbfec7e74278ed5100220271948a98672196535a7c827be7b6b3d37e75d80fb51e6b9784e12ff0460d687:922c64590222798bb761d5b6d8e72950

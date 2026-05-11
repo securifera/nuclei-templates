@@ -6,11 +6,14 @@ info:
   severity: info
   description: Faktopedia user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:faktopedia:faktopedia:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: faktopedia
+    product: faktopedia
   tags: osint,osint-images,faktopedia,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: faktopedia
+        cpe: cpe:2.3:a:faktopedia:faktopedia:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Zamieszcza fakty od:"
-# digest: 4a0a00473045022100fd33f1684177b7da736eb94d0a30296bc9d714c4730eca1c66654d94c769698102203056fd9af651bf27800779dd12bf491d0386fc9324f6c739de24b0356f31e180:922c64590222798bb761d5b6d8e72950

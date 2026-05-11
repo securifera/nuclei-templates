@@ -6,11 +6,14 @@ info:
   severity: info
   description: Disqus user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:disqus:disqus:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: disqus
+    product: disqus
   tags: osint,osint-social,disqus,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: disqus
+        cpe: cpe:2.3:a:disqus:disqus:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Disqus Profile"
-# digest: 4a0a0047304502202a5c6978788b3869cad2fa7ee72d9493b63a232feeb932f1496d05b194c0fc960221009d88209523ad864fca72224315980b38b0e5401d6b66df2deb8945e7d6887e08:922c64590222798bb761d5b6d8e72950

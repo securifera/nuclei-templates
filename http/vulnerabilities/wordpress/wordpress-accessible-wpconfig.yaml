@@ -6,11 +6,14 @@ info:
   severity: high
   description: WordPress `wp-config` was discovered. This file is remotely accessible and its content available for reading.
   classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 32
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,backup,vuln
 
 http:
@@ -57,6 +60,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - "DB_NAME"
           - "DB_PASSWORD"
@@ -64,6 +69,8 @@ http:
         condition: and
 
       - type: word
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DBNAME"
@@ -71,9 +78,10 @@ http:
         condition: and
 
       - type: word
+        name: wordpress-3
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_USERNAME"
           - "DB_PASSWORD"
         condition: and
-# digest: 4b0a00483046022100944eda6fabca2de8243af6f8f09b0f5cbeb9cf521e2b110770d83435d4da3fd8022100feb96452becdbd8dbc910db8a43fbf608e2056757118ea41ad9cce2692a4332a:922c64590222798bb761d5b6d8e72950

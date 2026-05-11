@@ -23,6 +23,8 @@ http:
 
     matchers:
       - type: regex
+        name: websphere
+        cpe: cpe:2.3:a:ibm:websphere:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?i)WebSphere Application Server'

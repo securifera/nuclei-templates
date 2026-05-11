@@ -7,8 +7,12 @@ info:
   description: ASP.NET Trace.AXD Information was exposed.
   reference:
     - https://www.rapid7.com/db/vulnerabilities/spider-asp-dot-net-trace-axd/
+  classification:
+    cpe: cpe:2.3:a:trace-axd:trace-axd:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: trace-axd
+    product: trace-axd
   tags: logs,asp,exposure,discovery
 
 http:
@@ -19,10 +23,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: trace-axd
+        cpe: cpe:2.3:a:trace-axd:trace-axd:*:*:*:*:*:*:*:*
         words:
           - '<td><h1>Application Trace</h1></td>'
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402206fedea643fc44e3a658bf115d83d1eab8778f9a2daf6d79006fbab71ca2d18f302207c4c1c5219752a79b34aea36c7edd9941285a5563e53846a83eb5ae915b3aa78:922c64590222798bb761d5b6d8e72950

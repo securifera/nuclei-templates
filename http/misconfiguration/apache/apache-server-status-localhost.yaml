@@ -6,8 +6,12 @@ info:
   severity: low
   description: |
     Apache Server Status page is exposed, which may contain information about pages visited by the users, their IPs or sensitive information such as session tokens.
+  classification:
+    cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: apache
+    product: apache
   tags: apache,debug,misconfig,vuln
 
 flow: http(1) && http(2)
@@ -45,8 +49,9 @@ http:
 
     matchers:
       - type: word
+        name: apache
+        cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
         words:
           - "Apache Server Status"
           - "Server Version"
         condition: and
-# digest: 4a0a00473045022100a9f527e16363569985a535290a6696fb4c577e9e5160a424dd1abdc645fb41880220197c428da9ef4d89a9090c88db88e50a9c15ed61d5759ff037fd1addcf917d53:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
     TimeKeeper contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   reference:
     - https://fsmlabs.com
+  classification:
+    cpe: cpe:2.3:a:fsmlabs:timekeeper:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -33,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: timekeeper
+        cpe: cpe:2.3:a:fsmlabs:timekeeper:*:*:*:*:*:*:*:*
         part: body
         words:
           - "%7B%20%22username%22%20%3A%20%22admin%22%2C%20%22result%22%3A%20%22OK%22"
 
       - type: word
+        name: timekeeper-2
+        cpe: cpe:2.3:a:fsmlabs:timekeeper:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -45,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220756513879bb756914616ff172c2da18eaa757dd8260e7fee1922e6f2d3b2886f022100cf94bb79fc9dfa520808f214a511bf2237a24fb6ab8d7a1099478fc59bc133a5:922c64590222798bb761d5b6d8e72950

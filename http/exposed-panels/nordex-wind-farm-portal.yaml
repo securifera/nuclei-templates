@@ -8,12 +8,15 @@ info:
   reference:
     - https://www.nordex-online.com/en/
   classification:
+    cpe: cpe:2.3:a:nordex:nordex:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"Nordex Control"
+    vendor: nordex
+    product: nordex
   tags: panel,nordex,iot,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nordex
+        cpe: cpe:2.3:a:nordex:nordex:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Nordex Control"
@@ -36,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205900ffdf539600a51e4e80730209a3207489c52987bc9bc362dfd34841d37d65022100eeaa98e3e22e8e70165946ccd1ea891068030fb9c82e407dee0aad6615c662ad:922c64590222798bb761d5b6d8e72950

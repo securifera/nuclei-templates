@@ -8,8 +8,12 @@ info:
     Clockwork php page was exposed, which allows admins to profile and debug the application, view database queries, HTTP requests, and other details right from the browser's developer tools.
   reference:
     - https://twitter.com/damian_89_/status/1250721398747791360
+  classification:
+    cpe: cpe:2.3:a:clockwork:clockwork:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: clockwork
+    product: clockwork
   tags: tech,clockwork,exposure,vuln
 
 http:
@@ -24,9 +28,10 @@ http:
           - 200
 
       - type: word
+        name: clockwork
+        cpe: cpe:2.3:a:clockwork:clockwork:*:*:*:*:*:*:*:*
         words:
           - <title>Clockwork</title>
           - <html ng-app="Clockwork" ng-csp="">
         part: body
         condition: or
-# digest: 490a00463044022015136a19ce5c4460dd4386b14c9e7997f765f39761cdbcc899a00ffaed31ac5a02202b0941cb5b13b01c3af3b86c885c290aaf78c16da90dde845a1774ab1a0d7b95:922c64590222798bb761d5b6d8e72950

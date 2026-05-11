@@ -8,8 +8,12 @@ info:
     A battlenet phishing website was detected
   reference:
     - https://eu.account.battle.net/login
+  classification:
+    cpe: cpe:2.3:a:battlenet:battlenet:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: battlenet
+    product: battlenet
   tags: phishing,battlenet,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: battlenet
+        cpe: cpe:2.3:a:battlenet:battlenet:*:*:*:*:*:*:*:*
         words:
           - 'Battle.net Login'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: battlenet-2
+        cpe: cpe:2.3:a:battlenet:battlenet:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"battle.net")'
           - '!contains(host,"blizzard.com")'
-# digest: 4a0a00473045022100f6edd07997ea336dc77b9f9c4870804b98404311676ec8106d958d47539524e102206b0405cd8ebb744e9746ad34595d3577cf4289fbfaa2e9fa75eae5674b5273b3:922c64590222798bb761d5b6d8e72950

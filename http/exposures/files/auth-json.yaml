@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: auth.json file is exposed.
+  classification:
+    cpe: cpe:2.3:a:auth-json:auth-json:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"auth.json"
+    vendor: auth-json
+    product: auth-json
   tags: devops,exposure,files,auth,config,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: auth-json
+        cpe: cpe:2.3:a:auth-json:auth-json:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"http-basic": {'
@@ -27,6 +33,8 @@ http:
         condition: and
 
       - type: word
+        name: auth-json-2
+        cpe: cpe:2.3:a:auth-json:auth-json:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"github-oauth": {'
@@ -34,10 +42,11 @@ http:
         condition: and
 
       - type: word
+        name: auth-json-3
+        cpe: cpe:2.3:a:auth-json:auth-json:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"bitbucket-oauth":'
           - '"consumer-key":'
           - '"consumer-secret":'
         condition: and
-# digest: 4a0a0047304502200a78edc4bf6db34869337c785646dff584f09728075cbe10f54ee9a6f828dd26022100a3a9ae18fd5346c97315de76ca7536c2c7a1869b13c4eb0fed9bd9732c970620:922c64590222798bb761d5b6d8e72950

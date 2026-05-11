@@ -11,11 +11,14 @@ info:
     - https://vulners.com/zdt/1337DAY-ID-38725
     - https://codecanyon.net/item/stackposts-social-marketing-tool/21747459
   classification:
+    cpe: cpe:2.3:a:stackposts:stackposts:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"stackposts"
+    vendor: stackposts
+    product: stackposts
   tags: time-based-sqli,sqli,unauth,stackposts,vuln
 
 http:
@@ -30,10 +33,11 @@ http:
 
     matchers:
       - type: dsl
+        name: stackposts
+        cpe: cpe:2.3:a:stackposts:stackposts:*:*:*:*:*:*:*:*
         dsl:
           - 'duration>=7'
           - 'contains(content_type, "text/html")'
           - 'contains(body, "account you entered")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100cdb8e465fe37fbd9d7be4660af720464692724688ca343518cdabe9f6545e62b0220141d48c1133b36c00aed7e8a8e7e038cac325dce9abf9dc676157797972a5c31:922c64590222798bb761d5b6d8e72950

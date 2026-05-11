@@ -8,6 +8,7 @@ info:
   reference:
     - https://phpstan.org/
   classification:
+    cpe: cpe:2.3:a:phpstan-config:phpstan-config:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"phpstan.neon"
+    vendor: phpstan-config
+    product: phpstan-config
   tags: devops,exposure,vuln
 
 http:
@@ -25,10 +28,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpstan-config
+        cpe: cpe:2.3:a:phpstan-config:phpstan-config:*:*:*:*:*:*:*:*
         words:
           - 'parameters:'
 
       - type: word
+        name: phpstan-config-2
+        cpe: cpe:2.3:a:phpstan-config:phpstan-config:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d550dd786b4f77d81084637ef837af5095554e8195b21f6e25507516b4b15a9302202fa492414b08cf21f25b1aaae52a83d48c6488687306ba9c80c912495dda8fb4:922c64590222798bb761d5b6d8e72950

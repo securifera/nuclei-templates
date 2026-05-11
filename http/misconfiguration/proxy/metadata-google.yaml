@@ -18,11 +18,14 @@ info:
     - https://blog.projectdiscovery.io/abusing-reverse-proxies-metadata/
     - https://www.mcafee.com/blogs/enterprise/cloud-security/how-an-attacker-could-use-instance-metadata-to-breach-your-app-in-aws/
   classification:
+    cpe: cpe:2.3:a:metadata:google:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
     cvss-score: 9.3
     cwe-id: CWE-441
   metadata:
     max-request: 2
+    vendor: metadata
+    product: google
   tags: exposure,config,google,gcp,proxy,misconfig,metadata,vuln
 
 http:
@@ -39,7 +42,8 @@ http:
     unsafe: true
     matchers:
       - type: word
+        name: google
+        cpe: cpe:2.3:a:metadata:google:*:*:*:*:*:*:*:*
         part: body
         words:
           - "attributes/"
-# digest: 490a0046304402207f1d30a601187dc0050ab613be96bdbf82269a70a684899e0f7e34796805ce9d02203d6761dac864716709eb3dbb00c2e4dd5f19c919ecd17328c0d92d295c07db8e:922c64590222798bb761d5b6d8e72950

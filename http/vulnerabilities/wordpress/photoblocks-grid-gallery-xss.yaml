@@ -30,10 +30,11 @@ http:
 
     matchers:
       - type: dsl
+        name: gallery_photoblocks
+        cpe: cpe:2.3:a:wpchill:gallery_photoblocks:*:*:*:*:wordpress:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains(body, "<svg/onload=alert(document.domain)>")'
           - 'contains(body, "PhotoBlocks")'
         condition: and
-# digest: 4a0a0047304502201036e7c3475bc2f99e5e8da76990c5c3c242d9289ada203aa579f66f471c122a022100c946ed9e11e764750b430dffc93a5f936236c5ef5592b9e3c7d6e0232a3321a6:922c64590222798bb761d5b6d8e72950

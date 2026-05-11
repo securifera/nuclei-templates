@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Easy-WI is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:easy-wi:easy-wi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="Easy-WI Installer"
+    vendor: easy-wi
+    product: easy-wi
   tags: misconfig,exposure,install,easy-wi,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: easy-wi
+        cpe: cpe:2.3:a:easy-wi:easy-wi:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Welcome to the Easy-WI installer!"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100dbcdae14c9f9548d8c909e6cfd5bec7e6365c1352bf4a3c18da57980aa877ee8022100b7bc18f95db7887be8719e701310611f5fe6703e4dadb00be6368f9c6a7e2bb3:922c64590222798bb761d5b6d8e72950

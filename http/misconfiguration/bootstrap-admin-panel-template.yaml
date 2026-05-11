@@ -26,6 +26,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: responsive_bootstrap_admin_template
+        cpe: cpe:2.3:a:teamworktec:responsive_bootstrap_admin_template:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Dashboard - Bootstrap Admin Template"
@@ -33,7 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: responsive_bootstrap_admin_template-2
+        cpe: cpe:2.3:a:teamworktec:responsive_bootstrap_admin_template:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Bootstrap Admin Template"
-# digest: 4a0a004730450221008b6be141bfa4a912eb88ff5484a959bfeeacdc5eb2384a4270cb639e6a5249e9022027ec9ebed5524a6b422a5e4156bdaa0d3f282f92a8ceabf808da504d7bf56770:922c64590222798bb761d5b6d8e72950

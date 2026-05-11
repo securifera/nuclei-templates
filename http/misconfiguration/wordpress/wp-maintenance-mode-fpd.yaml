@@ -8,6 +8,8 @@ info:
     WordPress WP Maintenance Mode plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/wp-maintenance-mode/
+  classification:
+    cpe: cpe:2.3:a:developer:wp-maintenance-mode:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-maintenance-mode
+        cpe: cpe:2.3:a:developer:wp-maintenance-mode:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Fatal error'
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220779bbc545f41ce65896e6afb5eaa49ce44da0f91174c15148e15b1914a73286e022100a912115d26e5c9d9a342bffde96f252ba928ec4d1d86589da4b11c32d1d761a2:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/firebase/firebaseui-web/blob/master/demo/public/sample-config.js
   classification:
+    cpe: cpe:2.3:a:firebase:firebase:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 3
+    vendor: firebase
+    product: firebase
   tags: firebase,exposure,config,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: firebase
+        cpe: cpe:2.3:a:firebase:firebase:*:*:*:*:*:*:*:*
         words:
           - "apiKey:"
           - "authDomain:"
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f227e1b8c1c8700fa10e7a19f2b509173f815026d02a7322342951cf1927039302207c22b383728d9ce41a0077c74665760ee4b2bb6dd8d214e9cf588e894dff978d:922c64590222798bb761d5b6d8e72950

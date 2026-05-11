@@ -8,12 +8,15 @@ info:
   reference:
     - https://github.com/JcQSteven/blog/issues/20
   classification:
+    cpe: cpe:2.3:a:zzcms:zzcms:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     verified: true
     max-request: 2
+    vendor: zzcms
+    product: zzcms
   tags: zzcms,xss,authenticated,vuln
 
 http:
@@ -30,9 +33,10 @@ http:
 
     matchers:
       - type: dsl
+        name: zzcms
+        cpe: cpe:2.3:a:zzcms:zzcms:*:*:*:*:*:*:*:*
         dsl:
           - "contains(header_2, 'text/html')"
           - "status_code_2 == 200"
           - 'contains(body_2, "参数 1\"+alert(document.domain)+")'
         condition: and
-# digest: 4a0a00473045022046fd8bcb756a4a7c4ff482de89563f37ef7dcacbaf1c02bfc9d738de95e8484a0221009206db34650a5362e566049ca80200444f1f25e9b654aa472cdb2b08256e6fee:922c64590222798bb761d5b6d8e72950

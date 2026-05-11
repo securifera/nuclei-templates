@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/cvat-ai/cvat
     - https://cvat.ai/
+  classification:
+    cpe: cpe:2.3:a:cvat-ai:cvat:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -28,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cvat
+        cpe: cpe:2.3:a:cvat-ai:cvat:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Computer Vision Annotation Tool</title>"
@@ -35,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022061e5ae1c7e3371c57eeb4ed590286d32f292895da8034a4c7d472228f5b9a968022100f85c571d01019a9361db7afd2959847d1edfa19aaba22281c27739ea248312d3:922c64590222798bb761d5b6d8e72950

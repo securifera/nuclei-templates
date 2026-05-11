@@ -7,8 +7,12 @@ info:
   description: Helprace takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/115
+  classification:
+    cpe: cpe:2.3:a:helprace:helprace:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: helprace
+    product: helprace
   tags: takeover,helprace,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: helprace
+        cpe: cpe:2.3:a:helprace:helprace:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: helprace-2
+        cpe: cpe:2.3:a:helprace:helprace:*:*:*:*:*:*:*:*
         words:
           - "Alias not configured!"
           - "Admin of this Helprace account needs to set up domain alias"
@@ -31,4 +39,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a0047304502207d44783bfb57693fc819eb959f27a3e004db9ea618b07433e620e39aa18def67022100c9b240176064811b12bbe9b749de7afbcc443f83a9626ae2b60e0504c7560e82:922c64590222798bb761d5b6d8e72950

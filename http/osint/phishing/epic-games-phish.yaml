@@ -8,8 +8,12 @@ info:
     An Epic Games phishing website was detected
   reference:
     - https://epicgames.com
+  classification:
+    cpe: cpe:2.3:a:epic-games:epic-games:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: epic-games
+    product: epic-games
   tags: phishing,epic-games,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: epic-games
+        cpe: cpe:2.3:a:epic-games:epic-games:*:*:*:*:*:*:*:*
         words:
           - 'The Epic Games Store is now open.'
           - 'Epic Games'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: epic-games-2
+        cpe: cpe:2.3:a:epic-games:epic-games:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"epicgames.com")'
-# digest: 490a0046304402200b62d2f2ff2217a4b3570cbf4e9214320e2f48ac83dccea8368175f183d1f61402204fec2d3b6856126d8d94bc1a6aabdcea3ed2931bf5bf557e3b131638d0b4dbfa:922c64590222798bb761d5b6d8e72950

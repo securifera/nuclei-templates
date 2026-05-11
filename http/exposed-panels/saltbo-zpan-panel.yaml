@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zpan
+        cpe: cpe:2.3:a:saltbo:zpan:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>ZPan"
@@ -36,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202af8d81b58d85ce6b2182e01c7ea52288efc633793e7d6f3d5e3256a165256c7022100c2ae7f985e5e15fcc8c88f758e69e2bb0a28e13e985638e7fbb0d576e52ea622:922c64590222798bb761d5b6d8e72950

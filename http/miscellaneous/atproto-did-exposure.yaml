@@ -9,10 +9,14 @@ info:
     Presence of this well-known resource can expose implementation details or policies.
   reference:
     - https://atproto.com/specs/did
+  classification:
+    cpe: cpe:2.3:a:atproto:atproto:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     google-query: inurl:"/.well-known/atproto-did"
+    vendor: atproto
+    product: atproto
   tags: well-known,atproto,bluesky,misc,identity,miscellaneous,vuln
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: atproto
+        cpe: cpe:2.3:a:atproto:atproto:*:*:*:*:*:*:*:*
         words:
           - 'atproto'
           - 'did:plc'
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200c80333ef16aad2eaae6ad93dd16b1ed073493b6ee643ba1d033315d2a30a749022100be55b7e33c78cfdc786c05189fdb37a384f93bc6f2bbc370f645d39025ffd8e9:922c64590222798bb761d5b6d8e72950

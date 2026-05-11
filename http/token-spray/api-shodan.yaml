@@ -10,8 +10,12 @@ info:
     - https://shodan.io
     - https://developer.shodan.io
     - https://developer.shodan.io/api
+  classification:
+    cpe: cpe:2.3:a:shodan:shodan:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: shodan
+    product: shodan
   tags: recon,shodan,token-spray
 
 self-contained: true
@@ -23,10 +27,11 @@ http:
 
     matchers:
       - type: word
+        name: shodan
+        cpe: cpe:2.3:a:shodan:shodan:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"plan"'
           - '"unlocked"'
           - '"scan_credits"'
         condition: and
-# digest: 4a0a00473045022100d26ff386d852df77df1b3c25ae13df4546d68fa8bb44c3501419c11a303d7384022001dc102ea79dfc8ad415651ac44b67fa04edd9606194c4dc2845992d0d0edfe2:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A 1A Auto phishing website was detected
   reference:
     - https://1aauto.com
+  classification:
+    cpe: cpe:2.3:a:1a-auto:1a-auto:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: 1a-auto
+    product: 1a-auto
   tags: phishing,1a-auto,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: 1a-auto
+        cpe: cpe:2.3:a:1a-auto:1a-auto:*:*:*:*:*:*:*:*
         words:
           - '<title>1A Auto | Aftermarket Car Parts -  Buy Quality Auto Parts Online'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: 1a-auto-2
+        cpe: cpe:2.3:a:1a-auto:1a-auto:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"1aauto.com")'
-# digest: 4b0a004830460221008083a8a3c96d42bb8babc89874f892722f3ebf3135b10fdbd9dd7eb48483c627022100a3340dc36d29a3e4cbcfb9cb5b6b021ce790cbefcde17db7e40c52cf60286519:922c64590222798bb761d5b6d8e72950

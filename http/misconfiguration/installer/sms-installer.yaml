@@ -5,10 +5,14 @@ info:
   author: ritikchaddha
   severity: high
   description: SMS Gateway is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:sms:sms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"SMS Gateway | Installation"
+    vendor: sms
+    product: sms
   tags: misconfig,sms,install,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sms
+        cpe: cpe:2.3:a:sms:sms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'SMS Gateway | Installation'
@@ -26,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b0b434723c078055ddf4612c50bf53d0184adb8ffec19460a721af44e2f5a0530221009cd7261025dc1de7a3ae2d02e2fe8529aab3b048ec7c291e8b70732809b0ea02:922c64590222798bb761d5b6d8e72950

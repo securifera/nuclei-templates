@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: shenyu
+        cpe: cpe:2.3:a:apache:shenyu:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Apache ShenYu Gateway</title>'

@@ -8,6 +8,8 @@ info:
     CAREL Boss Mini login panel was detected. Boss Mini is a local supervisor solution by CAREL used for monitoring and managing HVAC/R systems in commercial facilities. Exposed panels may indicate misconfigured network segmentation.
   reference:
     - https://www.carel.com/
+  classification:
+    cpe: cpe:2.3:a:carel:boss-mini:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -23,8 +25,9 @@ http:
 
     matchers:
       - type: dsl
+        name: boss-mini
+        cpe: cpe:2.3:a:carel:boss-mini:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "boss_logo", "System administration", "Login")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100b6466e5cc9f7ea9cd3ee8a9d7e7b2fb057ecd2eb7eb058ff6f2ee92653268f1e022100f25b077da1ae2a0cd753c839840ae42101ded3b0f523a3c2190b10ad37a1da68:922c64590222798bb761d5b6d8e72950

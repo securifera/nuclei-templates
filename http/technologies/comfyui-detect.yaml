@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: comfyui
+        cpe: cpe:2.3:a:comfyanonymous:comfyui:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>ComfyUI'

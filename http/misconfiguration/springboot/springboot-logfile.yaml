@@ -7,10 +7,14 @@ info:
   description: Springboot Logfile Actuator is exposed.
   reference:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: title:"Eureka"
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'springframework.web.HttpRequestMethodNotSupportedException'
@@ -32,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100acaa2dceefa3cdf2ae95fc7607bf778f04d1ca3f9cda49780d1242417e298b7b02201e1684144f1ee28537e352d2fe9f8b917e7d63992e2b4d34bd45fe67ffeb78a1:922c64590222798bb761d5b6d8e72950

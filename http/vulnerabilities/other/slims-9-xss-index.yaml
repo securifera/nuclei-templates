@@ -8,6 +8,8 @@ info:
     SLiMS 9.5.2 (Bulian) vulnerable to Cross-Site Scripting in index.php. When injected, website will execute the payload repeatedly
   reference:
     - https://github.com/slims/slims9_bulian/issues/185
+  classification:
+    cpe: cpe:2.3:a:slims:senayan_library_management_system:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 8
@@ -33,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: senayan_library_management_system
+        cpe: cpe:2.3:a:slims:senayan_library_management_system:*:*:*:*:*:*:*:*
         words:
           - '<script>alert(document.domain)</script>'
           - 'SLiMS'
@@ -40,6 +44,8 @@ http:
         condition: and
 
       - type: word
+        name: senayan_library_management_system-2
+        cpe: cpe:2.3:a:slims:senayan_library_management_system:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/html"
@@ -47,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220373fd92bc65bc342d935d8fd89bdeaa412c6d1aced597d71c9bab08d835f3388022100ff104842d043a56b304a750198481a65b73852b4497252beb8d56744fa2c3f91:922c64590222798bb761d5b6d8e72950

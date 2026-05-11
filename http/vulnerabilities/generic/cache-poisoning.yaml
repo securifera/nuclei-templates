@@ -9,8 +9,12 @@ info:
     - https://web.archive.org/web/20210422000653/https://blog.melbadry9.xyz/fuzzing/nuclei-cache-poisoning
     - https://portswigger.net/research/practical-web-cache-poisoning
     - https://portswigger.net/web-security/web-cache-poisoning
+  classification:
+    cpe: cpe:2.3:a:cache:cache:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: cache
+    product: cache
   tags: cache,generic,vuln
 variables:
   cache_key: "{{to_lower(rand_base(6))}}"
@@ -30,6 +34,7 @@ http:
 
     matchers:
       - type: dsl
+        name: cache
+        cpe: cpe:2.3:a:cache:cache:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_2, cache_header)'
-# digest: 490a004630440220195871a98dcf91cf712d63e6b71a15236fa3b8e5ff457d23707058e8416c3af702200874a793ee3666f4273dcc650841fe825c0e7522d4259d61f27413aabeb09fa8:922c64590222798bb761d5b6d8e72950

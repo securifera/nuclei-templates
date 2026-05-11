@@ -10,6 +10,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -18,6 +19,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"vmw_nsx_logo-black-triangle-500w.png"
+    vendor: log4j
+    product: log4j
   tags: cve,cve2021,rce,jndi,log4j,graylog,kev,oast,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -38,16 +41,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: log4j
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: location
         words:
           - '/login.jsp?login_error=1'
 
       - type: word
+        name: log4j-2
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: log4j-3
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -68,4 +77,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 490a004630440220184647e685797a83fd2d41d6a3b0e83da0cf14be252e5171081552d5d99f192202207c4b802cc47cd2770fc616d4aee85fb37495dd0ea6eda33c662e1fc84d34ff9f:922c64590222798bb761d5b6d8e72950

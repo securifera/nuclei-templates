@@ -11,11 +11,14 @@ info:
     - https://cxsecurity.com/issue/WLB-2020110041
     - https://extensions.joomla.org/
   classification:
+    cpe: cpe:2.3:a:joomla:jvtwitter:*:*:*:*:*:*:*:*
     cwe-id: CWE-79,CWE-83
   metadata:
     verified: true
     max-request: 2
     google-query: inurl:mod_jvtwitter/jvtwitter.php?id=
+    vendor: joomla
+    product: jvtwitter
   tags: joomla,jvtwitter,xss,vuln
 
 http:
@@ -26,10 +29,11 @@ http:
 
     matchers:
       - type: dsl
+        name: jvtwitter
+        cpe: cpe:2.3:a:joomla:jvtwitter:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_1 == 200'
           - 'contains(content_type_1, "text/html")'
           - 'contains(body_1, "><img src=x onerror=prompt(document.domain)")'
           - 'contains(body_2,"{\"rs\":\"0")'
         condition: and
-# digest: 4a0a00473045022100d1872fcc2b3089c5b8ff1d9c37604248dfbdbcdd018d993f6f9b257edc01949d0220394acc8bc50f6ca68f4aa7bba64c1d7718aa5b73e18a63093d68b76fb5a0d366:922c64590222798bb761d5b6d8e72950

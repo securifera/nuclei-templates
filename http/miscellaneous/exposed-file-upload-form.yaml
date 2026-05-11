@@ -22,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: creativedream_file_uploader
+        cpe: cpe:2.3:a:creativedream_file_uploader_project:creativedream_file_uploader:*:*:*:*:*:*:*:*
         regex:
           - <form.*?method=("|')?post("|')?.*?>
           - <form.*?(?i)(?-i)enctype=("|')?multipart\/form-data("|')?.*?>
@@ -29,8 +31,9 @@ http:
         condition: or
 
       - type: regex
+        name: creativedream_file_uploader-2
+        cpe: cpe:2.3:a:creativedream_file_uploader_project:creativedream_file_uploader:*:*:*:*:*:*:*:*
         regex:
           - "type=[\"'](file)[\"']"
           - 'id="file"'
         condition: or
-# digest: 4b0a00483046022100f79af9ee93e5aed6aca7a2430349ee18c6a1a8723122cf796ca1a3e1b0ca4be602210085a11d87a7efc71a1330ee888a8244466b3cbace716e9f48e6e1531202bbde0e:922c64590222798bb761d5b6d8e72950

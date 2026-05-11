@@ -5,9 +5,13 @@ info:
   author: dhiyaneshDK
   severity: low
   description: Android Debug Manger is exposed.
+  classification:
+    cpe: cpe:2.3:a:android:android:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"Android Debug Database"
+    vendor: android
+    product: android
   tags: unauth,android,misconfig,vuln
 
 http:
@@ -18,10 +22,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: android
+        cpe: cpe:2.3:a:android:android:*:*:*:*:*:*:*:*
         words:
           - '<title>Android Debug Database</title>'
 
       - type: status
         status:
           - 200
-# digest: 490a00463044022006e8be7952c4e53f62de4fea02d7e17c215f02d73603498e86f2411947ad75a502200b2af2e632d1b604609853eb2707d4b67b2445101ce20daf893b6055d123cb7a:922c64590222798bb761d5b6d8e72950

@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         words:
           - '<title>Login</title>'
           - 'j_username'
@@ -40,6 +42,8 @@ http:
         condition: and
 
       - type: word
+        name: experience_manager-2
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -47,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022022b3e3af5e427c487851c07f4db36957b067edf3c964d40e3cf5c8d6ec41e267022100d0db9f2f19eab0e6d00dd9c1c39d10b631be3cfddf764995a1f4635c2dc5feb9:922c64590222798bb761d5b6d8e72950

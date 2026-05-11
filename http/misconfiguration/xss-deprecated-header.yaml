@@ -9,11 +9,14 @@ info:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
     - https://owasp.org/www-project-secure-headers/#x-xss-protection
   classification:
+    cpe: cpe:2.3:a:xss-deprecated-header:xss-deprecated-header:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-79
   metadata:
     max-request: 1
+    vendor: xss-deprecated-header
+    product: xss-deprecated-header
   tags: xss,misconfig,generic,vuln
 
 http:
@@ -24,12 +27,16 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: xss-deprecated-header
+        cpe: cpe:2.3:a:xss-deprecated-header:xss-deprecated-header:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)x-xss-protection: 0"
         negative: true
 
       - type: regex
+        name: xss-deprecated-header-2
+        cpe: cpe:2.3:a:xss-deprecated-header:xss-deprecated-header:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)x-xss-protection: 1+"
@@ -39,4 +46,3 @@ http:
         part: header
         kval:
           - x_xss_protection
-# digest: 4a0a00473045022100b743803e263c76218a25c17e35653994e5031450b736caaf8de40fed94ae0e6402202bfcf67e497100ab99f58b335b037142188806590ff3df931021a4796631bbb7:922c64590222798bb761d5b6d8e72950

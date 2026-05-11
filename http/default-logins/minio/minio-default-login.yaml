@@ -45,11 +45,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: minio
+        cpe: cpe:2.3:a:minio:minio:*:*:*:*:*:*:*:*
         words:
           - "Content-Type: application/json"
         part: header
 
       - type: word
+        name: minio-2
+        cpe: cpe:2.3:a:minio:minio:*:*:*:*:*:*:*:*
         words:
           - 'uiVersion'
           - 'token'
@@ -59,4 +63,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201d7565d66c1faae0380b56ef5ec72f58fc51643879d584b85aca210b9541c85b02206bbc72d60c297b273592f8cd8a61106757c78c141521222046a14e2ef156a436:922c64590222798bb761d5b6d8e72950

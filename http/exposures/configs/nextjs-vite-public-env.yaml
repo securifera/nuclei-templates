@@ -11,8 +11,12 @@ info:
     - https://nextjs.org/docs/app/building-your-application/configuring/environment-variables
     - https://vite.dev/guide/env-and-mode.html
     - https://supabase.com/docs/guides/api#api-keys
+  classification:
+    cpe: cpe:2.3:a:nextjs:nextjs:*:*:*:*:*:*:*:*
   metadata:
     verified: true
+    vendor: nextjs
+    product: nextjs
   tags: exposure,env,nextjs,vite,supabase,vuln
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: nextjs
+        cpe: cpe:2.3:a:nextjs:nextjs:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)"NEXT_PUBLIC_SUPABASE_URL"\s*:\s*"https?://[a-z0-9\.\-:/]+"'
@@ -64,4 +70,3 @@ http:
         regex:
           - '(?i)"(NEXT_PUBLIC_[A-Z0-9_]{2,})"\s*:\s*"([^"]{3,})"'
           - '(?i)"(VITE_[A-Z0-9_]{2,})"\s*:\s*"([^"]{3,})"'
-# digest: 4a0a004730450220384e4ace3a3e442ae6eec9014c77523cc929ca0f34161d32115ffc21f860081d022100fdb8290e4f2f1624155f59401f3e0852634c2106915f421e3e592e6be9968b6a:922c64590222798bb761d5b6d8e72950

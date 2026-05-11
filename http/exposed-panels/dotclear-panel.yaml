@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dotclear
+        cpe: cpe:2.3:a:dotclear:dotclear:*:*:*:*:*:*:*:*
         words:
           - '<body id="dotclear-admin" class="auth">'
           - '<title>Dotclear</title>'
@@ -37,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201e907f47bb73402822f7f80b53b3486de7a40c18ce7fa5ec14724afc478b91a8022100b6d04e2b2f49779fceaa9015fa96953eed7d8cda699521596e01a5929781545f:922c64590222798bb761d5b6d8e72950

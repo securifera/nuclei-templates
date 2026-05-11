@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nopcommerce
+        cpe: cpe:2.3:a:nopcommerce:nopcommerce:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'nopCommerce installation'
@@ -35,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: nopcommerce-2
+        cpe: cpe:2.3:a:nopcommerce:nopcommerce:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220122fb72631cbc566c684d4a2f84b88f60a873350f8bb71d6f955ec712aa392d202201c22f8cab5c74e4ba87c8204305c05a83bb5aa28217fafb9e3ddd74fa2505696:922c64590222798bb761d5b6d8e72950

@@ -5,10 +5,14 @@ info:
   author: pussycat0x
   severity: info
   description: Netsparker Enterprise is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:netsparker:netsparker:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1575154882
+    vendor: netsparker
+    product: netsparker
   tags: misconfig,exposure,install,netsparker,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: netsparker
+        cpe: cpe:2.3:a:netsparker:netsparker:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Netsparker Enterprise - Installation Wizard"
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: netsparker-2
+        cpe: cpe:2.3:a:netsparker:netsparker:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220424a52f337894969b9d9708028de7201deb320dc5429dc150d8a7953381bc06c022057e968ccf480ac1eac071cd5952d1b75120ffb27a0aea70d3c1269362ce6595d:922c64590222798bb761d5b6d8e72950

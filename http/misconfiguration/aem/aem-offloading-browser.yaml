@@ -26,12 +26,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: acs_aem_commons
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         words:
           - 'Offloading Browser'
           - '>CLUSTER</th>'
         condition: and
 
       - type: word
+        name: acs_aem_commons-2
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022065ebcb218f0deede4990dea65dacfd34052a4ce926df76980b8ef11edb45af1d022100b2bfda92af8b47afd406b7a329f284ee94bfd5bb99cda88f911409b0ded75297:922c64590222798bb761d5b6d8e72950

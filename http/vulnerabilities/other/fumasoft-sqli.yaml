@@ -7,6 +7,7 @@ info:
   description: |
     There is a SQL injection vulnerability in the AjaxMethod.ashx file of Fumasoft Cloud. Attackers can obtain server permissions through the vulnerability
   classification:
+    cpe: cpe:2.3:a:fumasoft:fumasoft:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-89
@@ -14,6 +15,8 @@ info:
     max-request: 1
     verified: true
     fofa-query: title="Fumeng Cloud"
+    vendor: fumasoft
+    product: fumasoft
   tags: fumasoft,sqli,vuln
 
 variables:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fumasoft
+        cpe: cpe:2.3:a:fumasoft:fumasoft:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{{md5(num)}}'
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4a0a0047304502210089ca10e7e8608a38997b910961aa9ba4c2a2b920c313bb532da5201db0600a4602200b449463c27277796959d1ffb361bac7b16c1a48a613e14e8dfc1452bed4a042:922c64590222798bb761d5b6d8e72950

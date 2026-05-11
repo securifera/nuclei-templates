@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/thumbs-db-disclosure.json
+  classification:
+    cpe: cpe:2.3:a:thumbs-db:thumbs-db:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: thumbs-db
+    product: thumbs-db
   tags: exposure,files,vuln
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: binary
+        name: thumbs-db
+        cpe: cpe:2.3:a:thumbs-db:thumbs-db:*:*:*:*:*:*:*:*
         binary:
           - 'D0CF11E0A1B11AE1'
         part: body
@@ -25,4 +31,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207cef7bec3d757ffd1d90ac52568246cca00cfaeef7a57f932db0a06f559dce0e022100f3a0d2f3069b12b5e804bfe0932acec0c8f28e372403142566f6f1e81c155807:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.riseup.ai/en/
   classification:
+    cpe: cpe:2.3:a:riseup:riseup:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
+    vendor: riseup
+    product: riseup
   tags: panel,riseup,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: riseup
+        cpe: cpe:2.3:a:riseup:riseup:*:*:*:*:*:*:*:*
         part: body
         words:
           - "cfg.envRiseUp"
@@ -31,6 +36,8 @@ http:
         condition: or
 
       - type: word
+        name: riseup-2
+        cpe: cpe:2.3:a:riseup:riseup:*:*:*:*:*:*:*:*
         part: body
         words:
           - "login-page"
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210083f8eb32af5804ff3d33be1c961feb96baa6dfcbc3554353665095b5d49e82c3022100d8f25c1df69bb62346b479cedeaf2af4616fcf90fbd2e190488b3026afcebdec:922c64590222798bb761d5b6d8e72950

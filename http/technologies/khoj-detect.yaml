@@ -7,10 +7,14 @@ info:
   description: Khoj was detected.
   reference:
     - https://github.com/khoj-ai/khoj
+  classification:
+    cpe: cpe:2.3:a:khoj:khoj:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-272853549"
+    vendor: khoj
+    product: khoj
   tags: tech,khoj,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: khoj
+        cpe: cpe:2.3:a:khoj:khoj:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Khoj AI'
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200d7f7063f3a24c9bad724a3a10d85e9b93c510d4e273a475dfa58981b2513d9b0221009453c30a52a12a909e0af92f1570389f0e02ad51fb065d9490f349467036ef8d:922c64590222798bb761d5b6d8e72950

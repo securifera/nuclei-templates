@@ -8,9 +8,13 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/telegram.yml
     - https://core.telegram.org/bots/api
     - https://core.telegram.org/bots/features#botfather
+  classification:
+    cpe: cpe:2.3:a:telegram:telegram:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: telegram
+    product: telegram
   tags: telegram,token,exposure,vuln
 
 flow: http(1) && http(2)
@@ -24,6 +28,7 @@ http:
       - type: regex
         part: body
         name: token
+        cpe: cpe:2.3:a:telegram:telegram:*:*:*:*:*:*:*:*
         regex:
           - '\b(\d+:AA[a-zA-Z0-9_-]{32,33})'
         internal: true
@@ -37,6 +42,8 @@ http:
     disable-path-automerge: true
     matchers:
       - type: dsl
+        name: telegram
+        cpe: cpe:2.3:a:telegram:telegram:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "is_bot") && contains(body, "can_join_groups")'
@@ -46,4 +53,3 @@ http:
       - type: dsl
         dsl:
           - token
-# digest: 4a0a00473045022076fb4ee56bdc7bfb65914764e614de6eea82003c712612490992f3295e3645ca022100bb7c142d1379445d591ef3682f064399258b374930d4eb965c3f2d81e8e280cd:922c64590222798bb761d5b6d8e72950

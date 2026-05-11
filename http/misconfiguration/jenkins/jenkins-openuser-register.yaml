@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jenkins
+        cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Create an account! [Jenkins]"
@@ -33,6 +35,8 @@ http:
           - "Register - Jenkins"
 
       - type: word
+        name: jenkins-2
+        cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -40,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d4796fa4f89a727de8b124cf9bdde231647e219aee0ecac55ec5402cc0cac75b02205d70567068aabbb0a670b96dc14e652555b1e4233c275c9c396de153e21691bc:922c64590222798bb761d5b6d8e72950

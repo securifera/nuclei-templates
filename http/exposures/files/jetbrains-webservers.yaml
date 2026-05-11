@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6648
   classification:
+    cpe: cpe:2.3:a:jetbrains:jetbrains:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 3
     google-query: intitle:"index of" "WebServers.xml"
+    vendor: jetbrains
+    product: jetbrains
   tags: jetbrains,config,edb,files,exposure,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jetbrains
+        cpe: cpe:2.3:a:jetbrains:jetbrains:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<?xml"
@@ -38,6 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: jetbrains-2
+        cpe: cpe:2.3:a:jetbrains:jetbrains:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/xml"
@@ -47,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100dc3688a32b7ae42de2a7d55e611ca8bbba346f03b6af279daf179865a656e2ed022040a5928c2fdccc6507def6c6ab937e69fe5e2f3604df25fada214e692f731b1f:922c64590222798bb761d5b6d8e72950

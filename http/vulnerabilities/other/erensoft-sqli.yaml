@@ -9,11 +9,14 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2023070055
   classification:
+    cpe: cpe:2.3:a:erensoft:erensoft:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     google-query: intext:"Kodlama:Erensoft"
+    vendor: erensoft
+    product: erensoft
   tags: sqli,unauth,erensoft,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: erensoft
+        cpe: cpe:2.3:a:erensoft:erensoft:*:*:*:*:*:*:*:*
         dsl:
           - duration >= 6
           - status_code == 200
@@ -33,6 +38,7 @@ http:
         condition: and
 
       - type: word
+        name: erensoft-2
+        cpe: cpe:2.3:a:erensoft:erensoft:*:*:*:*:*:*:*:*
         words:
           - class="entry-title"
-# digest: 4a0a00473045022100d2de40f9530fc61891492ce803d6f568cfcf6dffd81fd41b8ada8b118fcc791b02200c302a70e5aaf28f56388745a40c9cb32bc88b8f18066d18e3ba5e705849b44e:922c64590222798bb761d5b6d8e72950

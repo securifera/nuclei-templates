@@ -9,11 +9,14 @@ info:
     - https://wpscan.com/vulnerability/7869
     - https://wordpress.org/plugins/aspose-doc-exporter
   classification:
+    cpe: cpe:2.3:a:aspose:aspose:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: aspose
+    product: aspose
   tags: wordpress,wp-plugin,lfi,aspose,wpscan,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aspose
+        cpe: cpe:2.3:a:aspose:aspose:*:*:*:*:*:*:*:*
         words:
           - "DB_NAME"
           - "DB_PASSWORD"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220703de9b1fa3bbb2bf390e0c888afcd45863a4bc8074385e96bc3be6b969e7540022100fd5b86b5d02bcda6537f689fac760aee34d0785deac0dcfc20398fa9232df589:922c64590222798bb761d5b6d8e72950

@@ -30,6 +30,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: pi-hole
+        cpe: cpe:2.3:a:pi-hole:pi-hole:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Pi-hole"
@@ -38,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: pi-hole-2
+        cpe: cpe:2.3:a:pi-hole:pi-hole:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Pi-hole'
@@ -45,4 +49,3 @@ http:
           - 'Pi-hole: A black hole for Internet advertisements'
           - '<pre>sudo pihole -a -p</pre>'
         condition: or
-# digest: 490a0046304402200d437219493fa62acf9348ecf56a05b8846a10b6900be605179f92621dc1aa83022062e14d4d65e25b254b99f6aefcede8b79c7ed318ae3fb19a2a310dca4f1d5944:922c64590222798bb761d5b6d8e72950

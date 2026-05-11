@@ -9,10 +9,14 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2021120027
     - https://www.zhaket.com/web/megawp-wordpress-theme
+  classification:
+    cpe: cpe:2.3:a:mega:mega:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     google-query: Megawp-Theme
+    vendor: mega
+    product: mega
   tags: wp,wp-theme,wordpress,xss,mega,vuln
 
 http:
@@ -22,9 +26,10 @@ http:
 
     matchers:
       - type: dsl
+        name: mega
+        cpe: cpe:2.3:a:mega:mega:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains(body, "script&gt;alert(`document.domain`)&lt;/script") && contains(body, "mega-theme")'
         condition: and
-# digest: 4a0a004730450221009f82093ded0caf30daf35af21d74bd22f9e34e8a3c3e32836d5ba768d4f891d1022043d773f62f2e58d1634bcfda87e670c0d431a7ecd8093fa80e5b29151074d228:922c64590222798bb761d5b6d8e72950

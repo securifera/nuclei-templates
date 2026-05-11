@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: screenconnect
+        cpe: cpe:2.3:a:connectwise:screenconnect:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(header, "ScreenConnect")'
           - 'contains(body, "ConnectWise Control Remote Support")'
@@ -46,4 +48,3 @@ http:
         part: header
         kval:
           - Server
-# digest: 490a00463044022043b8c0501d987c7b1248a8f99b811d3fd731f3e2f92ef394976f942d07698b1002203e46106b743f04de22968c109f62ceb63d82586636fb06b23679c17cf0c9fe46:922c64590222798bb761d5b6d8e72950

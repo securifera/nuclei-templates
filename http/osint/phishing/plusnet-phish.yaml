@@ -8,8 +8,12 @@ info:
     A plusnet phishing website was detected
   reference:
     - https://plus.net
+  classification:
+    cpe: cpe:2.3:a:plusnet:plusnet:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: plusnet
+    product: plusnet
   tags: phishing,plusnet,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: plusnet
+        cpe: cpe:2.3:a:plusnet:plusnet:*:*:*:*:*:*:*:*
         words:
           - 'Multi-Award Winner with Even Faster UK Broadband | Plusnet'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: plusnet-2
+        cpe: cpe:2.3:a:plusnet:plusnet:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"plus.net")'
-# digest: 4a0a00473045022032c3f6f12184393916d0306a4c2e97b17158b3cee4536c4c918b7f2fd2c5bf220221008ab064f03588dc7d50ffbebc0310bed1ed1db0be8c2a30c2ea7ca3a2aa1e60cb:922c64590222798bb761d5b6d8e72950

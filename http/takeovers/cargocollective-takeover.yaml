@@ -7,8 +7,12 @@ info:
   description: CargoCollective takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/152
+  classification:
+    cpe: cpe:2.3:a:cargocollective:cargocollective:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: cargocollective
+    product: cargocollective
   tags: takeover,cargocollective,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: cargocollective
+        cpe: cpe:2.3:a:cargocollective:cargocollective:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: cargocollective-2
+        cpe: cpe:2.3:a:cargocollective:cargocollective:*:*:*:*:*:*:*:*
         words:
           - '<div class="notfound">'
           - '404 Not Found<br>'
@@ -32,4 +40,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100da3d6c79cbe606c097a92630d1c6a6e0e7dce7d8fcff4abd882058afaea47e1a022039221e83201b7c197dc55a1977092a20ee60dbe727a14790511218e44a03fa9b:922c64590222798bb761d5b6d8e72950

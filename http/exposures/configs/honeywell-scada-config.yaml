@@ -7,8 +7,12 @@ info:
   description: Honeywell Scada configuration file was detected. The downloaded file opens with the file name and contains critical information about the destination address.
   reference:
     - https://www.exploit-db.com/exploits/44734
+  classification:
+    cpe: cpe:2.3:a:scada:scada:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: scada
+    product: scada
   tags: scada,config,exposure,edb,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: scada
+        cpe: cpe:2.3:a:scada:scada:*:*:*:*:*:*:*:*
         words:
           - "DeviceSubClass"
           - "IPAddress"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210083088bb4485ad518203212f5a503a17db4787ed1fdaac26ea26b2a92615adfb502203d897eef87c6452148040e60b47f90cc1a27356ab175ff63ee0ba142866ca387:922c64590222798bb761d5b6d8e72950

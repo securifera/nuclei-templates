@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.beyondtrust.com/brand
   classification:
+    cpe: cpe:2.3:a:beyondtrust:beyondtrust:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: beyondtrust
+    product: beyondtrust
   tags: beyondtrust,pam,panel,discovery
 
 http:
@@ -26,6 +29,8 @@ http:
           - 200
 
       - type: regex
+        name: beyondtrust
+        cpe: cpe:2.3:a:beyondtrust:beyondtrust:*:*:*:*:*:*:*:*
         regex:
           - '"DomainName":"(.*)"'
           - '"domains":'
@@ -37,4 +42,3 @@ http:
         json:
           - ".domains[] | .DomainName"
           - ".domains[] | .ldapservers"
-# digest: 4b0a004830460221008f4385efe6992f04c25fd2c09c5175ded217fe31af254c81d56d99de7d307b0f022100e7ee245644f1b55d679b171ce617f0534f165ba5767322bfc24f768ab3e485be:922c64590222798bb761d5b6d8e72950

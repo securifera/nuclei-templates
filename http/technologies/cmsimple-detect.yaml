@@ -8,10 +8,14 @@ info:
     Detects the presence of CMSimple, a simple content management system that requires no database (flat-file).
   reference:
     - https://www.cmsimple.org/
+  classification:
+    cpe: cpe:2.3:a:cmsimple:cmsimple:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"CMSimple"
+    vendor: cmsimple
+    product: cmsimple
   tags: tech,cmsimple,discovery
 
 http:
@@ -22,11 +26,15 @@ http:
     matchers-condition: or
     matchers:
       - type: regex
+        name: cmsimple
+        cpe: cpe:2.3:a:cmsimple:cmsimple:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)content=["'']CMSimple(?:["''\s>])'
 
       - type: word
+        name: cmsimple-2
+        cpe: cpe:2.3:a:cmsimple:cmsimple:*:*:*:*:*:*:*:*
         part: body
         words:
           - "cmsimpleLocatorElement"
@@ -41,4 +49,3 @@ http:
         group: 1
         regex:
           - '(?i)content=["'']CMSimple ([0-9.]+)'
-# digest: 4b0a00483046022100b9a3dff83aa403834b9c30c78c319265ec4f8f3e6ceece64bd4ada500affc769022100af9386855c9820680cee8332736d219251a4db6ded9db57676b35ee4cf4973ff:922c64590222798bb761d5b6d8e72950

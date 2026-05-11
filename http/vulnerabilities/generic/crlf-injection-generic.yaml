@@ -7,8 +7,12 @@ info:
   description: CRLF sequences were not properly sanitized.
   reference:
     - https://hackerone.com/reports/858650
+  classification:
+    cpe: cpe:2.3:a:generic:generic:*:*:*:*:*:*:*:*
   metadata:
     max-request: 8
+    vendor: generic
+    product: generic
   tags: crlf,generic,hackerone,vuln
 
 http:
@@ -26,7 +30,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: regex
+        name: generic
+        cpe: cpe:2.3:a:generic:generic:*:*:*:*:*:*:*:*
         regex:
           - '(?m)^(?:Set-Cookie\s*?:(?:\s*?|.*?;\s*?))(crlfinjection=crlfinjection)(?:\s*?)(?:$|;)'
         part: header
-# digest: 490a004630440220049947ae0823548b9410c25d5ec2664201b3bef6211966970788fc7392b8f2fa02200334d125fb070125d3e1ce1c32683312fb27690a7de00cf7fa545e8957d223d5:922c64590222798bb761d5b6d8e72950

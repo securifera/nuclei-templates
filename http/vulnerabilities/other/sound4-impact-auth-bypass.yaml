@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2022-5727.php
   classification:
+    cpe: cpe:2.3:a:sound4:sound4:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1548359600
+    vendor: sound4
+    product: sound4
   tags: sqli,zeroscience,sound4,auth-bypass,vuln
 
 http:
@@ -29,8 +32,9 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: sound4
+        cpe: cpe:2.3:a:sound4:sound4:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Network Diagnostic:", "disconnect the user")'
         condition: and
-# digest: 4b0a004830460221008c50ecd1b5d18c107083b776ad9b90609275e357cd3ffd1c20378d692516ebfe022100c292789352bf963ba2a8e410b2801a331463739cbaac64a520fc6c8b2932340b:922c64590222798bb761d5b6d8e72950

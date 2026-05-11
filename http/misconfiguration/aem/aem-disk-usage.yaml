@@ -29,12 +29,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: acs_aem_commons
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         words:
           - 'Disk Usage /'
           - '<th>nodes</th>'
         condition: and
 
       - type: word
+        name: acs_aem_commons-2
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009cb845c7fdc1d95385ba405f87769cbf1cb0aecdfe95710198fe9098666deb42022076fc88981d19843c13c4eff7563acb290d379b87828e40ca5678cc2171b9e69d:922c64590222798bb761d5b6d8e72950

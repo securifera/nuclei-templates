@@ -31,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: framework
+        cpe: cpe:2.3:a:laravel:framework:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'vendor/laravel/framework/src/Illuminate/'
@@ -38,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: framework-2
+        cpe: cpe:2.3:a:laravel:framework:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'DB_PASSWORD'
@@ -52,4 +56,3 @@ http:
       - type: status
         status:
           - 405
-# digest: 490a0046304402202fb76b17102dfcaa5af85d514766aad419ea7df4cf704971ec7fefa98885a7e00220440c11d425166764622170a8a32ecea673430bb8966e27f72322fa7e68a27f17:922c64590222798bb761d5b6d8e72950

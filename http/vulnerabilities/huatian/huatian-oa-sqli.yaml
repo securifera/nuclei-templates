@@ -9,11 +9,14 @@ info:
   reference:
     - https://blog.csdn.net/qq_41617034/article/details/124305120
   classification:
+    cpe: cpe:2.3:a:huatian:oa:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: "app=\"华天动力-OA8000\""
+    vendor: huatian
+    product: oa
   tags: huatian,oa,sqli,vuln
 
 http:
@@ -29,9 +32,10 @@ http:
 
     matchers:
       - type: dsl
+        name: oa
+        cpe: cpe:2.3:a:huatian:oa:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "<list>" ,"<string>user()" ,"<length>")'
           - 'contains(header, "text/xml")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a004730450220242147f6365a3c670ce77383ec26752269391f3e7e9efb3cbf2d7f1381a2de27022100aa3b582b7725ae82150f89a9d5545fd00bf210caebe926402ab5d2f97050be14:922c64590222798bb761d5b6d8e72950

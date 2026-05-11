@@ -6,12 +6,15 @@ info:
   severity: info
   description: WebShell4 login panel was detected.
   classification:
+    cpe: cpe:2.3:a:webshell4:webshell4:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"webshell4"
+    vendor: webshell4
+    product: webshell4
   tags: webshell4,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webshell4
+        cpe: cpe:2.3:a:webshell4:webshell4:*:*:*:*:*:*:*:*
         words:
           - "/webshell4/index2.php"
           - "enter login name"
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d45779f6386af311584d375eda098eda65c196fccd8feb8ffc76e1f77d9249be02203341db82cc99a102371ad03dea909501a056e9df27aa04a96a924091ca8a6e84:922c64590222798bb761d5b6d8e72950

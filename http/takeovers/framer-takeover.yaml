@@ -8,10 +8,14 @@ info:
     Framer takeover was detected.
   reference:
     - https://www.framer.com/developers/
+  classification:
+    cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: html:"Site Not Found | Framer"
     fofa-query: body="Site Not Found | Framer"
+    vendor: framer
+    product: framer
   tags: takeover,framer,vuln
 
 http:
@@ -22,15 +26,21 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: framer
+        cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: framer-2
+        cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Site Not Found | Framer"
 
       - type: word
+        name: framer-3
+        cpe: cpe:2.3:a:framer:framer:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/html"
@@ -39,4 +49,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4b0a00483046022100a9416e15a0dbb2fcd50b810477671ff788c91c9e28c5a9e0ebe81e6f8992113402210097fbd8f191c485ab848ecb2dc0b19a3cd1f32f03cd92af640bc2339e452d30a2:922c64590222798bb761d5b6d8e72950

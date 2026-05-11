@@ -8,8 +8,12 @@ info:
     A Crunchyroll phishing website was detected
   reference:
     - https://crunchyroll.com
+  classification:
+    cpe: cpe:2.3:a:crunchyroll:crunchyroll:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: crunchyroll
+    product: crunchyroll
   tags: phishing,crunchyroll,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: crunchyroll
+        cpe: cpe:2.3:a:crunchyroll:crunchyroll:*:*:*:*:*:*:*:*
         words:
           - 'crunchyroll.com'
           - 'Crunchyroll'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: crunchyroll-2
+        cpe: cpe:2.3:a:crunchyroll:crunchyroll:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"crunchyroll.com")'
-# digest: 490a00463044022050dd9d8bca0245ff9e4ffc8d2bcb6a9571d38be0997fcd4d6409ef3511ccd31d02201a09e27ada5ffe7cce1c9553983f83e00b14a93d84cee4779011ff5907224d85:922c64590222798bb761d5b6d8e72950

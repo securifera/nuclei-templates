@@ -6,10 +6,14 @@ info:
   severity: medium
   description: |
     Exposed Lidarr was detected which can lead to sensitive information disclosure.
+  classification:
+    cpe: cpe:2.3:a:lidarr:lidarr:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Lidarr"
+    vendor: lidarr
+    product: lidarr
   tags: lidarr,dashboard,exposure,vuln
 
 http:
@@ -23,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lidarr
+        cpe: cpe:2.3:a:lidarr:lidarr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Lidarr</title>"
 
       - type: word
+        name: lidarr-2
+        cpe: cpe:2.3:a:lidarr:lidarr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Login - Lidarr"
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fab47881affa84f352733406dc4bc753e2eb692b00caef29414a7330f696a3ba022074b3827e9cdb6153be6ea48e01e41c32aebf219a47df66276657f61194300ce5:922c64590222798bb761d5b6d8e72950

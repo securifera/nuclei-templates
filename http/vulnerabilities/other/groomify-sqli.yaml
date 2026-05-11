@@ -10,10 +10,13 @@ info:
     - https://codecanyon.net/item/groomify-barbershop-salon-spa-booking-and-ecommerce-platform/45808114#
     - https://vulners.com/zdt/1337DAY-ID-38799
   classification:
+    cpe: cpe:2.3:a:groomify:groomify:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: "true"
     max-request: 1
+    vendor: groomify
+    product: groomify
   tags: time-based-sqli,sqli,groomify,unauth,vuln
 
 http:
@@ -26,10 +29,11 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: groomify
+        cpe: cpe:2.3:a:groomify:groomify:*:*:*:*:*:*:*:*
         dsl:
           - duration>=6
           - status_code == 200
           - contains(header, "text/html")
           - contains(body, 'value=\"deneme')
         condition: and
-# digest: 4a0a004730450220729eab5ecd73a79b8788757fe012e084a40d6c0e29fed726e4d57cac0506a5cc022100f5aeea6230f1fdf3623476a911c95209e5fcae097c9ccc06bdaf858330e1a82b:922c64590222798bb761d5b6d8e72950

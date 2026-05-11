@@ -5,10 +5,14 @@ info:
   author: tess
   severity: high
   description: Turbo Website Reviewer is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:turbo:turbo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Turbo Website Reviewer"
+    vendor: turbo
+    product: turbo
   tags: turbo,misconfig,exposure,install,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: turbo
+        cpe: cpe:2.3:a:turbo:turbo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Turbo Website Reviewer | Installer panel"
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: turbo-2
+        cpe: cpe:2.3:a:turbo:turbo:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100cb6e353e51df1a83db4d3b417d8e534b9be4d8b105500e585907a21302930040022012a99b24eecb90d1afb5c4f857779b3c9dd8717cf1c546aa81c9104d803980d5:922c64590222798bb761d5b6d8e72950

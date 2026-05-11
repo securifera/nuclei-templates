@@ -6,11 +6,14 @@ info:
   severity: info
   description: CD-Action user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:cd-action:cd-action:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: cd-action
+    product: cd-action
   tags: osint,osint-gaming,cd-action,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: cd-action
+        cpe: cpe:2.3:a:cd-action:cd-action:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Lista gier:"
-# digest: 4b0a00483046022100c98355748b6dd1fa6d15831d5578cdad53dabef1a63a81d2859e344e31295f68022100bc79e12166c004b8636295b3b5dd68c6131b0da7b7662e9ac2c753af9c246425:922c64590222798bb761d5b6d8e72950

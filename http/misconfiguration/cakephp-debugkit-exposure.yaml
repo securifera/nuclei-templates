@@ -10,6 +10,7 @@ info:
     - https://github.com/cakephp/debug_kit
     - https://book.cakephp.org/debugkit/
   classification:
+    cpe: cpe:2.3:a:cakephp:cakephp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -18,6 +19,8 @@ info:
     max-request: 2
     shodan-query: http.html:"debug_kit"
     fofa-query: body="debug_kit" && body="CakePHP"
+    vendor: cakephp
+    product: cakephp
   tags: cakephp,debug,toolkit,exposure,php
 
 http:
@@ -27,8 +30,9 @@ http:
 
     matchers:
       - type: dsl
+        name: cakephp
+        cpe: cpe:2.3:a:cakephp:cakephp:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(body, "DebugKit Dashboard", "__debug_kit")'
         condition: and
-# digest: 490a004630440220272834a7a2ca47849bef8a8e701be0307ec176e0036960cea91467dd5532d3cf022076325f87cc4c630ef012c0ab28d3b120870f14295b979cf80701b922418c3f49:922c64590222798bb761d5b6d8e72950

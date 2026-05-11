@@ -8,11 +8,14 @@ info:
   reference:
     - https://getcomposer.org/
   classification:
+    cpe: cpe:2.3:a:composer-config:composer-config:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 4
+    vendor: composer-config
+    product: composer-config
   tags: config,exposure,vuln
 
 http:
@@ -26,6 +29,7 @@ http:
     matchers:
       - type: dsl
         name: composer.lock
+        cpe: cpe:2.3:a:composer-config:composer-config:*:*:*:*:*:*:*:*
         dsl:
           - "contains_all(body, 'packages', 'getcomposer.org') && status_code == 200"
           - "contains_any(tolower(header), 'application/octet-stream', 'application/json', 'text/plain')"
@@ -33,6 +37,6 @@ http:
 
       - type: dsl
         name: composer.json
+        cpe: cpe:2.3:a:composer-config:composer-config:*:*:*:*:*:*:*:*
         dsl:
           - "contains_all(body, 'require', 'autoload') && contains(tolower(header), 'application/json') && status_code == 200"
-# digest: 490a0046304402201d4f196dc532b80958715a0791170daa5dff7be64bc15b72c1ba4bae0f39a77702205d3505b7ab8090f37d3161f489537cbbe5342397e1b6861f40eb26c1578d77a2:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/easydiffusion/easydiffusion
     - https://easydiffusion.github.io/
+  classification:
+    cpe: cpe:2.3:a:easydiffusion:easydiffusion:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -28,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: easydiffusion
+        cpe: cpe:2.3:a:easydiffusion:easydiffusion:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Easy Diffusion</title>"
@@ -35,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220602f7289025acf256361a61155f3a17209c0df842c6a5dcc37418a21aaa79277022100f26ae01dbc27d77d7ed39acec68208ddb120f578d3cabceec4c793fbfe06fbcb:922c64590222798bb761d5b6d8e72950

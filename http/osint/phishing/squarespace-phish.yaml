@@ -8,8 +8,12 @@ info:
     A Squarespace phishing website was detected
   reference:
     - https://squarespace.com
+  classification:
+    cpe: cpe:2.3:a:squarespace:squarespace:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: squarespace
+    product: squarespace
   tags: phishing,squarespace,website-builder,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: squarespace
+        cpe: cpe:2.3:a:squarespace:squarespace:*:*:*:*:*:*:*:*
         words:
           - '<title>Website Builder &mdash; Easily Create Your Own Website &mdash; Squarespace'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: squarespace-2
+        cpe: cpe:2.3:a:squarespace:squarespace:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"squarespace.com")'
-# digest: 4a0a0047304502206bc4c79059320edfe8ae06087dc01176f12b873d232251f705f0983ec0c8d2cf022100fe8d17d46281466d06346f0c49591bea2b0316ce419bb4a311e186d8143d041f:922c64590222798bb761d5b6d8e72950

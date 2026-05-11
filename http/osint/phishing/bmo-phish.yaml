@@ -8,8 +8,12 @@ info:
     A BMO phishing website was detected
   reference:
     - https://bmo.com
+  classification:
+    cpe: cpe:2.3:a:bmo:bmo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bmo
+    product: bmo
   tags: phishing,bmo,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bmo
+        cpe: cpe:2.3:a:bmo:bmo:*:*:*:*:*:*:*:*
         words:
           - 'BMO'
           - "We're here to help! BMO offers a wide range of personal and business banking services, including bank accounts, mortgages, credit cards, loans and more."
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: bmo-2
+        cpe: cpe:2.3:a:bmo:bmo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bmo.com")'
-# digest: 4a0a004730450220689d1c33c4a2538109a910e7a3daee65e718539bb791cb07f74120ef123867fe022100b357e0c956b2b4133599b09f3b435275202396533c8659e9fc8bc1795be015f9:922c64590222798bb761d5b6d8e72950

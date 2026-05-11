@@ -8,8 +8,12 @@ info:
     A ProtonVPN phishing website was detected
   reference:
     - https://protonvpn.com
+  classification:
+    cpe: cpe:2.3:a:protonvpn:protonvpn:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: protonvpn
+    product: protonvpn
   tags: phishing,protonvpn,vpn,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: protonvpn
+        cpe: cpe:2.3:a:protonvpn:protonvpn:*:*:*:*:*:*:*:*
         words:
           - '<title>The best VPN for speed and security'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: protonvpn-2
+        cpe: cpe:2.3:a:protonvpn:protonvpn:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"protonvpn.com")'
           - '!contains(host,"proton.me")'
-# digest: 490a00463044022030ac83be317b01f75b041a549192aad5b713324e5e3fcdcaa01031768967ec9a02201b0bd8dc2f4f3ab370cff341dae3a1ae819f41f44d82bc3c9f63033566b01445:922c64590222798bb761d5b6d8e72950

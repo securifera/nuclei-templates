@@ -6,11 +6,14 @@ info:
   severity: info
   description: hashnode.com user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:hashnode:hashnode:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: hashnode
+    product: hashnode
   tags: osint,osint-social,hashnode,discovery
 
 self-contained: true
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hashnode
+        cpe: cpe:2.3:a:hashnode:hashnode:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Member Since'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220175f0079c207bc964b3e1eb408a3b59431b05eb9c737f7955d3c85f1197c4653022100b7735c44e507602a6cb2cbfc711811237c6ba1fe09ebca4fe49737aed7958bfd:922c64590222798bb761d5b6d8e72950

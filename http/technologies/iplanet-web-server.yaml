@@ -4,9 +4,13 @@ info:
   name: Detect iPlanet Webserver Detection
   author: pussycat0x
   severity: info
+  classification:
+    cpe: cpe:2.3:a:oracle:iplanet_web_server:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     fofa-query: app="iPlanet-Web-Server,-Enterprise-Edition-4.1"
+    vendor: oracle
+    product: iplanet_web_server
   tags: tech,webserver,discovery
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: iplanet_web_server
+        cpe: cpe:2.3:a:oracle:iplanet_web_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "iPlanet"
@@ -24,4 +30,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202e6858622305bea71d8a87729a0872ae6cf30b0a327e0495f31f99f2baec3e250221008864da17532e5f5ecb887d51588f7d265ec7735b05b5401debd2f9d1bf3ef47b:922c64590222798bb761d5b6d8e72950

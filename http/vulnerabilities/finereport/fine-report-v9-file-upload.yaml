@@ -7,9 +7,13 @@ info:
   description: FineReport ( A business intelligence (BI) and reporting software ) is vulnerable to Arbitrary File Overwrite.
   reference:
     - https://github.com/NHPT/WebReportV9Exp/blob/main/WebReport_Exp.
+  classification:
+    cpe: cpe:2.3:a:fine-report-v9:fine-report-v9:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     fofa-query: app="帆软-FineReport"
+    vendor: fine-report-v9
+    product: fine-report-v9
   tags: finereport,fileupload,intrusive,vuln
 variables:
   string: '{{rand_base(8, "abc")}}'
@@ -29,7 +33,8 @@ http:
 
     matchers:
       - type: word
+        name: fine-report-v9
+        cpe: cpe:2.3:a:fine-report-v9:fine-report-v9:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - "{{string}}"
-# digest: 4b0a00483046022100857f5f53c4fa8e534bc32adba7d39766671cc1c65312d26494df0bdf8bf10d5502210090ab233fca409b42a11106726138c2fe00b033a99a5fef80189f2242f4ddefef:922c64590222798bb761d5b6d8e72950

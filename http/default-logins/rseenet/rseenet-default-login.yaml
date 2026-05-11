@@ -8,11 +8,14 @@ info:
   reference:
     - https://icr.advantech.cz/products/software/r-seenet
   classification:
+    cpe: cpe:2.3:a:rseenet:rseenet:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: rseenet
+    product: rseenet
   tags: rseenet,default-login,vuln
 
 http:
@@ -34,12 +37,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: rseenet
+        cpe: cpe:2.3:a:rseenet:rseenet:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '<title>R-SeeNet (.*)</title>'
 
       - type: word
+        name: rseenet-2
+        cpe: cpe:2.3:a:rseenet:rseenet:*:*:*:*:*:*:*:*
         part: body
         words:
           - "User is succesfully logged."
-# digest: 4a0a00473045022100ce2cb88f1f032317dbea8d243c886def620f2282c7da4058f7b24a3e50f59da002204c87c0f4541d2384b991df164503f274c2a6212034f7ee4e6180d159bf9f26ca:922c64590222798bb761d5b6d8e72950

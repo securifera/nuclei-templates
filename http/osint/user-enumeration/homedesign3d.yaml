@@ -6,11 +6,14 @@ info:
   severity: info
   description: HomeDesign3D user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:homedesign3d:homedesign3d:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: homedesign3d
+    product: homedesign3d
   tags: osint,osint-hobby,homedesign3d,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: homedesign3d
+        cpe: cpe:2.3:a:homedesign3d:homedesign3d:*:*:*:*:*:*:*:*
         part: body
         words:
           - "userspace"
-# digest: 490a00463044022064f28186da28ee59334f875321a0fd477046dca50d1389146d4146cebcfe5ff602204a7967bbdf4dff7d0eab9287202ad30f197949293362b256428ac1f0001d7f64:922c64590222798bb761d5b6d8e72950

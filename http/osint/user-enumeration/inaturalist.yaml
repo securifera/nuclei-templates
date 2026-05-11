@@ -6,11 +6,14 @@ info:
   severity: info
   description: Inaturalist user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:inaturalist:inaturalist:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: inaturalist
+    product: inaturalist
   tags: osint,osint-hobby,inaturalist,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: inaturalist
+        cpe: cpe:2.3:a:inaturalist:inaturalist:*:*:*:*:*:*:*:*
         part: body
         words:
           - "s Profile"
-# digest: 490a0046304402205983d8e949acdcf29d0a8d7ff7e63fe1120febd11c2a7717c0187c89da2fde1602200dd179d8d60ef8fc4df6951eb4739f43d3493295de27700ad4be657b3b03f441:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,13 @@ info:
   severity: info
   description: OpenBCMS login panel was detected.
   classification:
+    cpe: cpe:2.3:a:openbmcs:openbmcs:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: openbmcs
+    product: openbmcs
   tags: panel,openbmcs,detect,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: openbmcs
+        cpe: cpe:2.3:a:openbmcs:openbmcs:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'BMS - Login'
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022007a1b36c3df1eb38a445a9365a0a64375c1a9f49e29e9e29f844ed00cc43447f0221009aed63b38b10061342cecf1d1d119c106c20bec0fa8958803f489dda0149f776:922c64590222798bb761d5b6d8e72950

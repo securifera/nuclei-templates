@@ -8,6 +8,7 @@ info:
   reference:
     - https://securityforeveryone.com/tools/wifisky-default-password-scanner
   classification:
+    cpe: cpe:2.3:a:wifisky:wifisky:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
@@ -16,6 +17,8 @@ info:
     max-request: 1
     shodan-query: title:"WIFISKY-7层流控路由器"
     fofa-query: app="WIFISKY-7层流控路由器"
+    vendor: wifisky
+    product: wifisky
   tags: default-login,wifisky,vuln
 
 http:
@@ -40,11 +43,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wifisky
+        cpe: cpe:2.3:a:wifisky:wifisky:*:*:*:*:*:*:*:*
         words:
           - "text/html"
         part: header
 
       - type: word
+        name: wifisky-2
+        cpe: cpe:2.3:a:wifisky:wifisky:*:*:*:*:*:*:*:*
         words:
           - '"success":"true"'
           - '"data":'
@@ -54,4 +61,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207fb47bdab7f56f3eecf08ddcd5bb58f89cdd8c5f38e9e99ad1e9d94292bf12a202210092adcc8d459151e765e3a0931f646e00c9370a991aa38cca2a085f6da82dda44:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,13 @@ info:
   reference:
     - https://openvpn-monitor.openbytes.ie/
   classification:
+    cpe: cpe:2.3:a:openvpn:openvpn:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: openvpn
+    product: openvpn
   tags: openvpn,disclosure,panel,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
           - 200
 
       - type: word
+        name: openvpn
+        cpe: cpe:2.3:a:openvpn:openvpn:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'OpenVPN Status Monitor'
@@ -36,7 +41,8 @@ http:
         condition: and
 
       - type: word
+        name: openvpn-2
+        cpe: cpe:2.3:a:openvpn:openvpn:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
-# digest: 4a0a0047304502204fb2d36177be79e0715f0e1e39a5b3408e3bb9cd7c9493832d05fca463aa41cf022100c6534274e44f483c8d80b6d459828c38cee87f8106a3a886602b470f6f26ce6f:922c64590222798bb761d5b6d8e72950

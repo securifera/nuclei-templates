@@ -6,11 +6,14 @@ info:
   severity: info
   description: Xing user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:xing:xing:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: xing
+    product: xing
   tags: osint,osint-social,xing,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: xing
+        cpe: cpe:2.3:a:xing:xing:*:*:*:*:*:*:*:*
         part: body
         words:
           - " | XING</title>"
-# digest: 490a00463044022028135171d9c863ccf4340ae07945db34986a1d202fd11995c120491528c3374e022071911a7eaa229638ca5e6a629d44c4bcb2eb6f9901224f6a45bf6859af1d3bf8:922c64590222798bb761d5b6d8e72950

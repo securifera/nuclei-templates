@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gira_home_server_firmware
+        cpe: cpe:2.3:o:gira:gira_home_server_firmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Gira HomeServer 4"
@@ -32,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: gira_home_server_firmware-2
+        cpe: cpe:2.3:o:gira:gira_home_server_firmware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210087b4578c9fa9a782ff15377f1a4e867db35f5e86dfff55420b7d160802f148d1022100c2e0fbc8d298f6ef712a6b812f748988156a661889bf456c1654a25de6548a27:922c64590222798bb761d5b6d8e72950

@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: labkey_server
+        cpe: cpe:2.3:a:labkey:labkey_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "TCTU LabKey Server: /home"
@@ -40,6 +42,8 @@ http:
         condition: or
 
       - type: word
+        name: labkey_server-2
+        cpe: cpe:2.3:a:labkey:labkey_server:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -47,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220788b800bd0f065364327f2b55f3beac1c4b1f5b4345eb3ea8df21bbfe03e5a14022004090603d682fedf56ed19fc592c385621e70d311c09b7671d10444b3165afa9:922c64590222798bb761d5b6d8e72950

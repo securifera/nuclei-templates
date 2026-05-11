@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.uedbox.com/post/35188/
   classification:
+    cpe: cpe:2.3:a:xdcms:xdcms:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-89
   metadata:
     max-request: 1
+    vendor: xdcms
+    product: xdcms
   tags: sqli,xdcms,vuln
 variables:
   num: "999999999"
@@ -31,11 +34,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xdcms
+        cpe: cpe:2.3:a:xdcms:xdcms:*:*:*:*:*:*:*:*
         words:
           - "Content-Type: text/html"
         part: header
 
       - type: word
+        name: xdcms-2
+        cpe: cpe:2.3:a:xdcms:xdcms:*:*:*:*:*:*:*:*
         words:
           - '{{md5({{num}})}}'
         part: body
@@ -43,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100fa69fcdd4a1e3a557640e407cb7218f1e58a4d57db7be0f18931165a7d93623f022100f9b38f67708b1762bd210fb1a5256a9065e7dcb5ed87962812587fb6a12e8703:922c64590222798bb761d5b6d8e72950

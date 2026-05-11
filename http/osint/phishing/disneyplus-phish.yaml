@@ -8,8 +8,12 @@ info:
     A disneyplus phishing website was detected
   reference:
     - https://disneyplus.com
+  classification:
+    cpe: cpe:2.3:a:disneyplus:disneyplus:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: disneyplus
+    product: disneyplus
   tags: phishing,disneyplus,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: disneyplus
+        cpe: cpe:2.3:a:disneyplus:disneyplus:*:*:*:*:*:*:*:*
         words:
           - 'Disney+ | Stream new Originals, blockbusters and series'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: disneyplus-2
+        cpe: cpe:2.3:a:disneyplus:disneyplus:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"disneyplus.com")'
-# digest: 4a0a004730450220392818569d4ea7887f05c8a2ca66069cce2e1879a4300ccfabd2005af2748c68022100d4f2cf9bc404351962926bf9067e5713e17460f010fb191a7ab0e66de24caa07:922c64590222798bb761d5b6d8e72950

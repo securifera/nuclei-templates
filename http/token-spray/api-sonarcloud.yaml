@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://sonarcloud.io/web_api/api/authentication
+  classification:
+    cpe: cpe:2.3:a:sonarcloud:sonarcloud:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sonarcloud
+    product: sonarcloud
   tags: token-spray,sonarcloud
 
 self-contained: true
@@ -21,7 +25,8 @@ http:
       Authorization: Basic {{base64(token + ':')}}
     matchers:
       - type: word
+        name: sonarcloud
+        cpe: cpe:2.3:a:sonarcloud:sonarcloud:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"valid": true}'
-# digest: 4b0a00483046022100da74524fb3567f1f11487843947080f373dadf35d9eace4b972439a40837424502210098ec42527359eb978bb6330e0607db5e27b44f254b1084b6e80e3ccc56f47496:922c64590222798bb761d5b6d8e72950

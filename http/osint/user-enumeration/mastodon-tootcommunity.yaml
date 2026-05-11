@@ -6,11 +6,14 @@ info:
   severity: info
   description: Mastodon-Toot.Community user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:mastodon-tootcommunity:mastodon-tootcommunity:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: mastodon-tootcommunity
+    product: mastodon-tootcommunity
   tags: osint,osint-social,mastodon-tootcommunity,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: mastodon-tootcommunity
+        cpe: cpe:2.3:a:mastodon-tootcommunity:mastodon-tootcommunity:*:*:*:*:*:*:*:*
         part: body
         words:
           - "@toot.community) - toot.community</title>"
-# digest: 490a00463044022007bb2f74b475b47fbb3e706286d4467dffeb5690edcb1cb1040d1adc43efa469022025d04c20e5abbdc43b8bdbc758201b6ab5726949e610450df9d57cb1187f08aa:922c64590222798bb761d5b6d8e72950

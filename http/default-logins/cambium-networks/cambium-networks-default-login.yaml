@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Cambium Networks / Motorola Canopy 5750AP ADVANTAGE Access Point 5.7GHz login credentials were discovered.
+  classification:
+    cpe: cpe:2.3:a:cambium:cambium:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: "title=\"Welcome to Canopy\""
+    vendor: cambium
+    product: cambium
   tags: default-login,cambium,canopy,vuln
 
 http:
@@ -34,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cambium
+        cpe: cpe:2.3:a:cambium:cambium:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Logged in as root"
@@ -41,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b83ca69209d73a9249b8d655d5bf28060a8771e36f47e24119160712d94b621e02210096bb422927a65d3dbf5aad15d0b8a648b3c3ead5f1f2e5018021fb890baafa93:922c64590222798bb761d5b6d8e72950

@@ -9,12 +9,15 @@ info:
   reference:
     - https://jira.atlassian.com/browse/JRASERVER-38075
   classification:
+    cpe: cpe:2.3:a:jira:jira:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:2.0/AV:N/AC:M/Au:N/C:P/I:P/A:N
     cvss-score: 5.8
     cwe-id: CWE-601
   metadata:
     verified: true
     max-request: 1
+    vendor: jira
+    product: jira
   tags: confluence,atlassian,jira,redirect,atlassian,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: jira
+        cpe: cpe:2.3:a:jira:jira:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*)(?:https?://|//|/\\\\)?[a-zA-Z0-9._@-]*oast\.pro.*$'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a00473045022100da48ec9b8be56200daa7666baac206e31d4264dfb6b9aeb42c367fd281ddebb202200a2ca6a53bac5bf7e39dcf5f5cba9449a4380d77da482ce9fa27e0083198e911:922c64590222798bb761d5b6d8e72950

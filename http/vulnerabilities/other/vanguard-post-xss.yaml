@@ -8,11 +8,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/157099/Vanguard-2.1-Cross-Site-Scripting.html
   classification:
+    cpe: cpe:2.3:a:vanguard:vanguard:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 1
+    vendor: vanguard
+    product: vanguard
   tags: vanguard,xss,packetstorm,vuln
 
 http:
@@ -27,11 +30,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vanguard
+        cpe: cpe:2.3:a:vanguard:vanguard:*:*:*:*:*:*:*:*
         words:
           - "</script><script>alert(document.domain)</script>"
         part: body
 
       - type: word
+        name: vanguard-2
+        cpe: cpe:2.3:a:vanguard:vanguard:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205433fa0a41ce22ee20b4954836f06554c2a5eee31a4b3633f0cfdbc85ae87dc30221008f23d9c87f152382bf3c184ddba925ace35c47e67e05f0e776679b1f91fc806b:922c64590222798bb761d5b6d8e72950

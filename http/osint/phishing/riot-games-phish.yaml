@@ -8,8 +8,12 @@ info:
     A Riot Games phishing website was detected
   reference:
     - https://riotgames.com
+  classification:
+    cpe: cpe:2.3:a:riot-games:riot-games:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: riot-games
+    product: riot-games
   tags: phishing,riot-games,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: riot-games
+        cpe: cpe:2.3:a:riot-games:riot-games:*:*:*:*:*:*:*:*
         words:
           - "Riot Games. Developer of League of Legends, VALORANT, Teamfight Tactics, Legends of Runeterra, and Wild Rift. Creators of Arcane. Home of LOL and VALORANT Esports."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: riot-games-2
+        cpe: cpe:2.3:a:riot-games:riot-games:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"riotgames.com")'
-# digest: 490a00463044022078fc9500ac843de6fff04afd133b188e3bb4b65ee75a2b49a57b2c1390b939290220290bd5fc2c33499a31445bbb873f80a2f5114ad92000cc734b547ba7ef4d6b61:922c64590222798bb761d5b6d8e72950

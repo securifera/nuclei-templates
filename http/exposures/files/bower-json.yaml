@@ -8,8 +8,12 @@ info:
     Bower is a package manager which stores package information in the bower.json file
   reference:
     - https://github.com/bower/spec/blob/master/json.md
+  classification:
+    cpe: cpe:2.3:a:bower:bower:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bower
+    product: bower
   tags: exposure,files,bower,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bower
+        cpe: cpe:2.3:a:bower:bower:*:*:*:*:*:*:*:*
         part: body
         words:
           - "name"
@@ -28,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: bower-2
+        cpe: cpe:2.3:a:bower:bower:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -35,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cb19c944c33821696de98a5a9c79703c403c489fc8f02feb2ba5fbe317efc887022100c670d2c51b3cb2ae83447efb10ee9fd173cbd6fadabe289830befb9b8b775cec:922c64590222798bb761d5b6d8e72950

@@ -37,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: node-red
+        cpe: cpe:2.3:a:nodered:node-red:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'access_token":'
@@ -45,6 +47,8 @@ http:
         condition: and
 
       - type: word
+        name: node-red-2
+        cpe: cpe:2.3:a:nodered:node-red:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -52,4 +56,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206db19d2d6fff4667787260b4c71eaf7fa2a0d34bb5931dc644750b7f2b8af9000220371554b4ae826c69fe41f47b232d8631910f7c746a66ab6ea7a46e5119c0e4f9:922c64590222798bb761d5b6d8e72950

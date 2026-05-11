@@ -8,8 +8,12 @@ info:
     A Green Man Gaming phishing website was detected
   reference:
     - https://greenmangaming.com
+  classification:
+    cpe: cpe:2.3:a:green-man-gaming:green-man-gaming:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: green-man-gaming
+    product: green-man-gaming
   tags: phishing,green-man-gaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: green-man-gaming
+        cpe: cpe:2.3:a:green-man-gaming:green-man-gaming:*:*:*:*:*:*:*:*
         words:
           - "Buy games & game keys with Green Man Gaming - get the best prices, awesome bundles & exclusive game deals daily! Visit to explore Green Man Gaming now!"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: green-man-gaming-2
+        cpe: cpe:2.3:a:green-man-gaming:green-man-gaming:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"greenmangaming.com")'
-# digest: 4a0a00473045022100d9764d1629800e61132654e915ba65a38c09e625c4525dd69b32559465009f67022061c6aa43d6c956b0f112ba626ba6315e610a21f7bfc5ac9765057d00bcdb2f98:922c64590222798bb761d5b6d8e72950

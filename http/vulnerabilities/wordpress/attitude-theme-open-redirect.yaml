@@ -8,11 +8,14 @@ info:
   reference:
     - https://cxsecurity.com/issue/WLB-2020030185
   classification:
+    cpe: cpe:2.3:a:attitude-theme-open:attitude-theme-open:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     max-request: 1
+    vendor: attitude-theme-open
+    product: attitude-theme-open
   tags: wordpress,wp-theme,redirect,vuln
 
 http:
@@ -22,7 +25,8 @@ http:
 
     matchers:
       - type: regex
+        name: attitude-theme-open
+        cpe: cpe:2.3:a:attitude-theme-open:attitude-theme-open:*:*:*:*:*:*:*:*
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
         part: header
-# digest: 4a0a00473045022100cb97ad7f4e3cb7e0c06cd98ad921d8b9ef8f56fb1d57aab1447863e196f52993022070121d1442e83cea40b68a5849e16ecd947af524619f5893364df31ad1aa5692:922c64590222798bb761d5b6d8e72950

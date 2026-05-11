@@ -8,6 +8,8 @@ info:
     Detected potential Adobe Experience Manager (AEM) Dispatcher misconfigurations that could have allowed bypassing request filtering, exposing internal endpoints, or permitting unauthorised access to restricted resources.
   reference:
     - https://docs.google.com/presentation/d/1PypHgd0r3ZVII7e5fLX5JjZIJQfAsMEydLnug0yFb9k/edit?usp=sharing (Slide 18,22,24)
+  classification:
+    cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -36,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"success":true'
@@ -46,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100da86498b595a02839334744f5212bd29f0ec61431ba75b629567ec5f31b01da2022100c4da75bfb6ebc7569769c8cf9c9b75d1195b934b6761fbf539bd4ba8f11336b3:922c64590222798bb761d5b6d8e72950

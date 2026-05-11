@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: n8n
+        cpe: cpe:2.3:a:n8n:n8n:*:*:*:*:*:node.js:*:*
         part: body
         words:
           - 'isDocker'
@@ -37,6 +39,8 @@ http:
         condition: and
 
       - type: word
+        name: n8n-2
+        cpe: cpe:2.3:a:n8n:n8n:*:*:*:*:*:node.js:*:*
         part: content_type
         words:
           - 'application/json'
@@ -44,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c09abba60686832e468046c62e7ad40b0e60065dd7e7b9db668c821bffc5aed7022063dc70bbc40792e2069589dd0e2060515bc5e1e6728a9ee9aab2d6bec1e1efdd:922c64590222798bb761d5b6d8e72950

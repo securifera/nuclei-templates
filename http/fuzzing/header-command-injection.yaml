@@ -6,11 +6,14 @@ info:
   severity: critical
   description: Headers were tested for remote command injection vulnerabilities.
   classification:
+    cpe: cpe:2.3:a:header-command:header-command:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 7650
+    vendor: header-command
+    product: header-command
   tags: fuzz,rce,fuzzing,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: header-command
+        cpe: cpe:2.3:a:header-command:header-command:*:*:*:*:*:*:*:*
         words:
           - "uid="
           - "gid="
@@ -37,6 +42,7 @@ http:
         condition: and
 
       - type: regex
+        name: header-command-2
+        cpe: cpe:2.3:a:header-command:header-command:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
-# digest: 4a0a00473045022100eafec99827893ac236d9ecc25126b35fc2b206e65bbbb162a03539955f9e0f4602200e5fd3d7144526be4c439c6f3bb825fc47b2813210ad6c250f1defab93580c13:922c64590222798bb761d5b6d8e72950

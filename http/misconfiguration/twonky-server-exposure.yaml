@@ -9,10 +9,14 @@ info:
   reference:
     - https://lynxtechnology.com/twonky-server.html
     - https://download.twonky.com/
+  classification:
+    cpe: cpe:2.3:a:twonky:twonky:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-915768386
+    vendor: twonky
+    product: twonky
   tags: twonky,exposure,misconfig,vuln
 
 http:
@@ -22,8 +26,9 @@ http:
 
     matchers:
       - type: dsl
+        name: twonky
+        cpe: cpe:2.3:a:twonky:twonky:*:*:*:*:*:*:*:*
         dsl:
           - "contains_all(body, '<title>TwonkyMedia</title>','Settings')"
           - "status_code == 200"
         condition: and
-# digest: 4a0a0047304502204c70ea857f08f55e419a7a497f09223e384b21a8864bb99194855bf96abb4018022100e13446309f28456266d3c833222d7d5479d2ff1c4cdac4b99c2f1eb87d58f44d:922c64590222798bb761d5b6d8e72950

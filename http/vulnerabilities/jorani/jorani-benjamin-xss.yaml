@@ -9,6 +9,7 @@ info:
   reference:
     - https://packetstormsecurity.com/files/174341/Jorani-1.0.3-Cross-Site-Scripting.html
   classification:
+    cpe: cpe:2.3:a:jorani:jorani:*:*:*:*:*:*:*:*
     cwe-id: CWE-80
   metadata:
     verified: true
@@ -36,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jorani
+        cpe: cpe:2.3:a:jorani:jorani:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<script>alert(document.domain)</script>"
@@ -43,6 +46,8 @@ http:
         condition: and
 
       - type: word
+        name: jorani-2
+        cpe: cpe:2.3:a:jorani:jorani:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -59,4 +64,3 @@ http:
         regex:
           - 'name="csrf_test_jorani" value="([0-9a-z]+)"'
         internal: true
-# digest: 4a0a0047304502205f369f18107d9c7170aa6f35fc789097a682267d535d788a9ad5d1a78b4532af022100fefcc890555251b4bbc9e6574c193c9de034b5f155e642acb7fa9a45f66d7cbf:922c64590222798bb761d5b6d8e72950

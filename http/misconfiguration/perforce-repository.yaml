@@ -8,10 +8,14 @@ info:
     Detected an exposed .p4ignore file, which could have revealed ignored files, sensitive paths, or developer-specific information useful for further enumeration.
   reference:
     - https://help.perforce.com/helix-core/server-apps/cmdref/current/Content/CmdRef/P4IGNORE.html
+  classification:
+    cpe: cpe:2.3:a:perforce:perforce:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"Perforce"
+    vendor: perforce
+    product: perforce
   tags: exposure,perforce,repo,disclosure
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: perforce
+        cpe: cpe:2.3:a:perforce:perforce:*:*:*:*:*:*:*:*
         part: body
         words:
           - "*.log"
@@ -29,15 +35,18 @@ http:
         condition: or
 
       - type: word
+        name: perforce-2
+        cpe: cpe:2.3:a:perforce:perforce:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/octet-stream"
 
       - type: dsl
+        name: perforce-3
+        cpe: cpe:2.3:a:perforce:perforce:*:*:*:*:*:*:*:*
         dsl:
           - "!contains_any(tolower(body), '<html','<body','<!doctype')"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203d6aedbe40a197d84807e3b3cf3924d3c5cbb2454ad640d44383d252c8febfd2022100f3d3420785175e92d97fb4f0f4cefebf10b6ee6b95ab429da671d030f41dd110:922c64590222798bb761d5b6d8e72950

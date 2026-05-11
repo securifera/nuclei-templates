@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: movable_type
+        cpe: cpe:2.3:a:sixapart:movable_type:*:*:*:*:-:*:*:*
         part: body
         words:
           - "Movable Type Pro"
@@ -39,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022073552c365df9a5eb6bb7902878fd288d936fb74aeee7ef140ff918d6eb5a3ad1022100c59cfaffb12b590805c78a5a456a9ad3cd862a23f558394a0c19aa64cdd6655c:922c64590222798bb761d5b6d8e72950

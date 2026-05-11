@@ -11,10 +11,13 @@ info:
     - https://blog.securelayer7.net/sql-injection-vulnerability-in-xhibiter-nft-marketplace/
     - https://x.com/ExploitDB/status/1807782485549560196
   classification:
+    cpe: cpe:2.3:a:xhibiter:nft:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     publicwww-query: "/wp-content/themes/xhibiter/"
     max-request: 2
+    vendor: xhibiter
+    product: nft
   tags: xhibiter,sqli,time-based-sqli,wordpress,wp-theme,xhibiter,nft,vuln
 
 flow: http(1) && http(2)
@@ -27,6 +30,8 @@ http:
 
     matchers:
       - type: word
+        name: nft
+        cpe: cpe:2.3:a:xhibiter:nft:*:*:*:*:*:*:*:*
         part: body
         words:
           - '/wp-content/themes/xhibiter/'
@@ -40,8 +45,9 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: nft-2
+        cpe: cpe:2.3:a:xhibiter:nft:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'duration>=7'
         condition: and
-# digest: 4b0a00483046022100fdcf82c369760b0a2fb0f99c52cb2e9cf4753727873ba7679ebf5a4d62d8c33e0221009abee761457923afd81780876c836840f0458d05f796e0ea867002f77e8f2b4a:922c64590222798bb761d5b6d8e72950

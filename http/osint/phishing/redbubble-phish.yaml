@@ -8,8 +8,12 @@ info:
     A Redbubble phishing website was detected
   reference:
     - https://redbubble.com
+  classification:
+    cpe: cpe:2.3:a:redbubble:redbubble:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: redbubble
+    product: redbubble
   tags: phishing,redbubble,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: redbubble
+        cpe: cpe:2.3:a:redbubble:redbubble:*:*:*:*:*:*:*:*
         words:
           - 'Redbubble'
           - 'Over 700,000 creatives worldwide making things like shirts, stickers, phone cases, and pillows weirdly meaningful. Find your thing or open your own shop.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: redbubble-2
+        cpe: cpe:2.3:a:redbubble:redbubble:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"redbubble.com")'
-# digest: 4a0a0047304502210090c66ca55e490ca483f822742fcd70f166517abbe28704571650216cb33f785a022051c718ced8aca7018e4a26ece253027c8a80cc0b6df02a0973077f4b7465454b:922c64590222798bb761d5b6d8e72950

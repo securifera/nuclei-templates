@@ -6,6 +6,7 @@ info:
   severity: info
   description: Cypress Oxygen configuration page was detected.
   classification:
+    cpe: cpe:2.3:a:cypress:cypress:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"PendingInstallVZW - Web Page Configuration"
+    vendor: cypress
+    product: cypress
   tags: exposure,cypress,pendinginstallvzw,config,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cypress
+        cpe: cpe:2.3:a:cypress:cypress:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'PendingInstallVZW - Web Page Configuration'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022042edeee362866e545435722af056ca2fb7e6dda4d420a68e370bb044df097c5202205e51c6b76ead4c68f7e3980874f646a786a51805f8f8602685298799602295c1:922c64590222798bb761d5b6d8e72950

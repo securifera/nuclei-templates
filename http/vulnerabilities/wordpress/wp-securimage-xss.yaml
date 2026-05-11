@@ -9,11 +9,14 @@ info:
     - https://www.exploit-db.com/exploits/38510
     - http://web.archive.org/web/20210123054214/https://www.securityfocus.com/bid/59816/info
   classification:
+    cpe: cpe:2.3:a:wp-securimage:wp-securimage:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 2
+    vendor: wp-securimage
+    product: wp-securimage
   tags: edb,wordpress,xss,wp-plugin,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: wp-securimage
+        cpe: cpe:2.3:a:wp-securimage:wp-securimage:*:*:*:*:*:*:*:*
         internal: true
         words:
           - 'Securimage-WP'
@@ -39,11 +44,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-securimage-2
+        cpe: cpe:2.3:a:wp-securimage:wp-securimage:*:*:*:*:*:*:*:*
         words:
           - "<script>alert(1)</script>"
         part: body
 
       - type: word
+        name: wp-securimage-3
+        cpe: cpe:2.3:a:wp-securimage:wp-securimage:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -51,4 +60,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b19e65c5a18f73c3b2bf5b241ed59f461dcc4211b581b63db91027959c203ac6022100e6c6f7c5b739053bcdc9e1e390f4a5494e8afdc84c9f48c4e863f212610e6c5e:922c64590222798bb761d5b6d8e72950

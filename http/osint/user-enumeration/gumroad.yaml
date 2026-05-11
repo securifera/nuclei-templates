@@ -6,11 +6,14 @@ info:
   severity: info
   description: Gumroad user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:gumroad:gumroad:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: gumroad
+    product: gumroad
   tags: osint,osint-shopping,gumroad,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: gumroad
+        cpe: cpe:2.3:a:gumroad:gumroad:*:*:*:*:*:*:*:*
         part: body
         words:
           - "s profile picture"
-# digest: 4a0a004730450220231c1924915a3c917fa09f5bf291b020c63e8f3b4c8a053751b47fcfa75cd78c022100c555669e58efe236b3cd0427fed31b61eb0e4de6833d31d04870c5661691a731:922c64590222798bb761d5b6d8e72950

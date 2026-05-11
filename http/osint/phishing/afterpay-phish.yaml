@@ -8,8 +8,12 @@ info:
     A Afterpay phishing website was detected
   reference:
     - https://afterpay.com
+  classification:
+    cpe: cpe:2.3:a:afterpay:afterpay:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: afterpay
+    product: afterpay
   tags: phishing,afterpay,payment,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: afterpay
+        cpe: cpe:2.3:a:afterpay:afterpay:*:*:*:*:*:*:*:*
         words:
           - '<title>Buy Now Pay Later with Afterpay'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: afterpay-2
+        cpe: cpe:2.3:a:afterpay:afterpay:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"afterpay.com")'
-# digest: 4b0a00483046022100833695869b3cdea78f196b7c91143e716673774c9ead097008024b67a8c10f1f022100dda9a92848c00720ee9583ac30084766800e10034d2668d562108a104bb6f967:922c64590222798bb761d5b6d8e72950

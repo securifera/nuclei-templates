@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: web_vulnerability_scanner
+        cpe: cpe:2.3:a:acunetix:web_vulnerability_scanner:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Acunetix</title>"
@@ -32,6 +34,8 @@ http:
         condition: or
 
       - type: word
+        name: web_vulnerability_scanner-2
+        cpe: cpe:2.3:a:acunetix:web_vulnerability_scanner:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e36ad9f0b618269982250410074a95a3a23d8ab838f25ad4f8bdbc64095704de02210091ea27c8162931c79b2f92982137fc3f5a21e5ffa8e89fda9768e5c65b2e1ac8:922c64590222798bb761d5b6d8e72950

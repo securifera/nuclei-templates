@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Zebra default login credentials was discovered.
+  classification:
+    cpe: cpe:2.3:a:zebra:printer:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: title:"Zebra"
+    vendor: zebra
+    product: printer
   tags: zebra,default-login,misconfig,printer,vuln
 
 http:
@@ -33,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: printer
+        cpe: cpe:2.3:a:zebra:printer:*:*:*:*:*:*:*:*
         part: body
         words:
           - ">Access Granted. This IP Address now"
@@ -40,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200961a69312d7fbaeab2f5dddd0612850b60a4611056d5d052665b1935b8dbc2802205c5b75579b60a959356edfdbc9d6b7ca8911dbe07b7dadee91154766f695b634:922c64590222798bb761d5b6d8e72950

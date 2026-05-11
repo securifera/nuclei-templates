@@ -8,8 +8,12 @@ info:
     An avg phishing website was detected
   reference:
     - https://avg.com
+  classification:
+    cpe: cpe:2.3:a:avg:avg:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: avg
+    product: avg
   tags: phishing,avg,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avg
+        cpe: cpe:2.3:a:avg:avg:*:*:*:*:*:*:*:*
         words:
           - 'AVG 2024 | FREE Antivirus, VPN & TuneUp for All Your Devices'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: avg-2
+        cpe: cpe:2.3:a:avg:avg:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"avg.com")'
-# digest: 4b0a00483046022100cbf5b52f37a1ace257c2b7b381a7bf047bfded228e08ca420d239cda6e77828c022100fc8e48c70a8f104bfee74ce4774623847fdefc05b74d93842f942f4cd599325b:922c64590222798bb761d5b6d8e72950

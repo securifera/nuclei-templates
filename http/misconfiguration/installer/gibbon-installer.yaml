@@ -5,6 +5,8 @@ info:
   author: DhiyaneshDK
   severity: high
   description: Gibbon is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:gibbonedu:gibbon:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -22,11 +24,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gibbon
+        cpe: cpe:2.3:a:gibbonedu:gibbon:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Gibbon Installer</title>'
 
       - type: word
+        name: gibbon-2
+        cpe: cpe:2.3:a:gibbonedu:gibbon:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -34,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f8c591ccd3018d99f4cdadc42db6c5c248f337348e76f25e80273a32edc03db4022100f0a75942cf69b0cd6f587ffc0970ebc30d5b5921d987a77bf11b0984c5d1d1f1:922c64590222798bb761d5b6d8e72950

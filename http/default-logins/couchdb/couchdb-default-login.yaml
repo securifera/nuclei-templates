@@ -45,6 +45,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: couchdb
+        cpe: cpe:2.3:a:apache:couchdb:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"ok":true'
@@ -53,6 +55,8 @@ http:
         condition: and
 
       - type: word
+        name: couchdb-2
+        cpe: cpe:2.3:a:apache:couchdb:*:*:*:*:*:*:*:*
         part: header
         words:
           - application/json
@@ -62,4 +66,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f5181f8e4acb15683fe2d5ec19f007e0e006c8f30bdbf931534fe727c7eaed5c02202545885951638fa89adfd5303b4a564b2474b8d9e31fa53c565adde966f31a67:922c64590222798bb761d5b6d8e72950

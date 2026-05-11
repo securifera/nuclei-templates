@@ -6,11 +6,14 @@ info:
   severity: info
   description: MCUUID (Minecraft) user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:mcuuid-minecraft:mcuuid-minecraft:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: mcuuid-minecraft
+    product: mcuuid-minecraft
   tags: osint,osint-gaming,mcuuid-minecraft,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: mcuuid-minecraft
+        cpe: cpe:2.3:a:mcuuid-minecraft:mcuuid-minecraft:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Successfully found player by given ID."
-# digest: 490a0046304402201be1c76bc5582c324be85ad6175a8cc6bb6b351a03d4b10358775581820bcfbb0220226360ff220f05a3c243b93dfdb08596b6c2e43fcf19709e72bcf80ab1174dff:922c64590222798bb761d5b6d8e72950

@@ -9,12 +9,15 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/48673
   classification:
+    cpe: cpe:2.3:a:onlinefarm:onlinefarm:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     verified: true
     max-request: 1
+    vendor: onlinefarm
+    product: onlinefarm
   tags: onlinefarm,cms,xss,edb,vuln
 
 http:
@@ -32,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: onlinefarm
+        cpe: cpe:2.3:a:onlinefarm:onlinefarm:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<em style="color: black;"><script>alert(document.domain)</script>'
 
       - type: word
+        name: onlinefarm-2
+        cpe: cpe:2.3:a:onlinefarm:onlinefarm:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -44,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204b0b1da01374c804bdb169e427db816c78bea2ceddd155bf698b46b4dd7519d802207b2258e297ab6f1c7ee2cfc02894796f52d2f3839c17f5ff3b1467257f585537:922c64590222798bb761d5b6d8e72950

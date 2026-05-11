@@ -6,11 +6,14 @@ info:
   severity: info
   description: Sporcle user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:sporcle:sporcle:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: sporcle
+    product: sporcle
   tags: osint,osint-gaming,sporcle,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: sporcle
+        cpe: cpe:2.3:a:sporcle:sporcle:*:*:*:*:*:*:*:*
         part: body
         words:
           - "'s Sporcle Friends"
-# digest: 490a0046304402207010fbf728412ade93472afeb92f2d638076a9ddea50bf5cc29e4e3fe227eebb0220772930b72ada0f5ca9976adcc6bcddf4031e259a0a45b46124dcb9755e5d6c09:922c64590222798bb761d5b6d8e72950

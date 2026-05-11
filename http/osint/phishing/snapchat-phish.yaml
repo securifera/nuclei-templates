@@ -8,8 +8,12 @@ info:
     A Snapchat phishing website was detected
   reference:
     - https://snapchat.com
+  classification:
+    cpe: cpe:2.3:a:snapchat:snapchat:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: snapchat
+    product: snapchat
   tags: phishing,snapchat,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: snapchat
+        cpe: cpe:2.3:a:snapchat:snapchat:*:*:*:*:*:*:*:*
         words:
           - "Snapchat - Say It In A Snap"
           - 'Snapchat'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: snapchat-2
+        cpe: cpe:2.3:a:snapchat:snapchat:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"snapchat.com")'
-# digest: 4b0a00483046022100e8a93dac9f117511a1e031aed0ff475ebe2ceb5a8eb196cba8da7c0c019eda1a022100fa2d117d075a066e577e5765d7a010b83fcf766f65acb71f17063bc9adcbed17:922c64590222798bb761d5b6d8e72950

@@ -9,10 +9,13 @@ info:
   reference:
     - https://www.openservis.cz/prestashop-blog/nejcastejsi-utoky-v-roce-2023-seznam-deravych-modulu-nemate-nejaky-z-nich-na-e-shopu-i-vy/#pll_switcher
   classification:
+    cpe: cpe:2.3:a:prestashop:prestashop:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     shodan-query: http.component:"Prestashop"
+    vendor: prestashop
+    product: prestashop
   tags: time-based-sqli,prestashop,sqli,vuln
 
 http:
@@ -31,8 +34,9 @@ http:
     max-redirects: 3
     matchers:
       - type: dsl
+        name: prestashop
+        cpe: cpe:2.3:a:prestashop:prestashop:*:*:*:*:*:*:*:*
         dsl:
           - 'duration>=6'
           - 'contains(body, "module-apmarketplace-passwordrecovery")'
         condition: and
-# digest: 4a0a0047304502203be229c0bdaab9a715716d8e67df653a23d9f324d90d049ed39e36da45697b47022100b2c3ed23208ba09f0998b86a02fbabece53ff819b1724555d4a79e83418cab8a:922c64590222798bb761d5b6d8e72950

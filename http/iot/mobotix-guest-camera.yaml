@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6848
   classification:
+    cpe: cpe:2.3:a:mobotix-guest-camera:mobotix-guest-camera:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: mobotix-guest-camera
+    product: mobotix-guest-camera
   tags: iot,edb,discovery
 
 http:
@@ -23,10 +26,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mobotix-guest-camera
+        cpe: cpe:2.3:a:mobotix-guest-camera:mobotix-guest-camera:*:*:*:*:*:*:*:*
         words:
           - 'MOBOTIX'
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022067243bb7bb7142078a285aa2744a713133cb5609f153d560885545311633a13b0221009d054d0aa156915e11f4e50a2cfb53b738dc6f59f90f003d88f9612d1da33dfe:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A deliveroo phishing website was detected
   reference:
     - https://deliveroo.co.uk
+  classification:
+    cpe: cpe:2.3:a:deliveroo:deliveroo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: deliveroo
+    product: deliveroo
   tags: phishing,deliveroo,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: deliveroo
+        cpe: cpe:2.3:a:deliveroo:deliveroo:*:*:*:*:*:*:*:*
         words:
           - 'Deliveroo - Takeaway Food Delivery from Local Restaurants &amp; Shops'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: deliveroo-2
+        cpe: cpe:2.3:a:deliveroo:deliveroo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"deliveroo.com")'
           - '!contains(host,"deliveroo.co.uk")'
-# digest: 4b0a004830460221009ca7d5279f670aec9871936bb7fd98343eae99cf6a292181ebc9da58f22d1fda022100d2ec29a2bf0621ddb221566c38fa9d33ba9d25077ce45c46bd4b172df3f68a96:922c64590222798bb761d5b6d8e72950

@@ -9,11 +9,14 @@ info:
     - https://github.com/Hurdano/JavaMelody-XSS
     - https://github.com/javamelody/javamelody/pull/555
   classification:
+    cpe: cpe:2.3:a:java-melody:java-melody:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: java-melody
+    product: java-melody
   tags: xss,javamelody,vuln
 
 http:
@@ -24,10 +27,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: java-melody
+        cpe: cpe:2.3:a:java-melody:java-melody:*:*:*:*:*:*:*:*
         words:
           - '</script><script>alert(document.domain)</script>'
 
       - type: word
+        name: java-melody-2
+        cpe: cpe:2.3:a:java-melody:java-melody:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -35,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008d42436bc13f74aac6822a33df71deccd8355e01ac66bcb265cc0c4d8d282bf2022100a9f37cefb84eacb5bef8a0f2c8a3cd26cc69d9da6a65be496402e26d5e91e826:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: critical
   description: Jupyter was able to be accessed without authentication.
   classification:
+    cpe: cpe:2.3:a:jupyter:jupyter:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-288
   metadata:
     max-request: 1
+    vendor: jupyter
+    product: jupyter
   tags: unauth,jupyter,misconfig,vuln
 
 http:
@@ -25,8 +28,9 @@ http:
           - 200
 
       - type: word
+        name: jupyter
+        cpe: cpe:2.3:a:jupyter:jupyter:*:*:*:*:*:*:*:*
         words:
           - ipython/static/components
           - ipython/kernelspecs
         part: body
-# digest: 4b0a00483046022100cb88cb01f9d04ce2bedf371989c33d0e869e1faae8cc63ab66dc8b5efbfe1d4002210090426476e6181237f132782722fdb7564521586a9d7797627bfac7049d6700d8:922c64590222798bb761d5b6d8e72950

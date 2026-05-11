@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/Mintplex-Labs/anything-llm
     - https://anythingllm.com/
+  classification:
+    cpe: cpe:2.3:a:mintplex-labs:anything-llm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -28,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: anything-llm
+        cpe: cpe:2.3:a:mintplex-labs:anything-llm:*:*:*:*:*:*:*:*
         part: body
         words:
           - "AnythingLLM | Your personal LLM trained on anything"
@@ -35,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402205f54d747f8cacf92061e3e43ee691fa3b8969dda8ef694eac1111a1a906f2eff022073776fa88254bd33fea21c7d51c1564d77e9df86c124c247a567369669a77578:922c64590222798bb761d5b6d8e72950

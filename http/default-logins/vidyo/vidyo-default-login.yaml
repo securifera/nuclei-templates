@@ -8,11 +8,14 @@ info:
   reference:
     - https://support.vidyocloud.com/hc/en-us/articles/226265128
   classification:
+    cpe: cpe:2.3:a:vidyo:vidyo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
     cvss-score: 5.8
     cwe-id: CWE-522
   metadata:
     max-request: 2
+    vendor: vidyo
+    product: vidyo
   tags: vidyo,default-login,vuln
 
 http:
@@ -57,6 +60,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vidyo
+        cpe: cpe:2.3:a:vidyo:vidyo:*:*:*:*:*:*:*:*
         part: header
         words:
           - "/super/index.html"
@@ -64,4 +69,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a00473045022100ab519ee286767e58e20500afb410241f0fd6613cb3d24183b77601f14fbdfcfc0220755bedbabf97b4361e4694a9cda92937a41f80b6eb85732ff7aa5b8dd0c11226:922c64590222798bb761d5b6d8e72950

@@ -26,12 +26,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager_cloud_service
+        cpe: cpe:2.3:a:adobe:experience_manager_cloud_service:*:*:*:*:*:*:*:*
         words:
           - 'nodetypeadmin'
           - 'Registered Node Types'
         condition: and
 
       - type: word
+        name: experience_manager_cloud_service-2
+        cpe: cpe:2.3:a:adobe:experience_manager_cloud_service:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e4ecdb1a45d78f8e340e37b82ee4440a62b472ecd68e0d5b34ddf980312fb191022059faca8af5b1b5cd9f739684bc5fa81d7d70303862de95d8f0a9f62ba4e427dc:922c64590222798bb761d5b6d8e72950

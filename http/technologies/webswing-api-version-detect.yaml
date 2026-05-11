@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     WebSwing REST API version via the /rest/version endpoint.
+  classification:
+    cpe: cpe:2.3:a:webswing:webswing:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: 'Server: webswing.org'
+    vendor: webswing
+    product: webswing
   tags: webswing,rest,api,version,detect,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webswing
+        cpe: cpe:2.3:a:webswing:webswing:*:*:*:*:*:*:*:*
         part: server
         words:
           - "webswing.org"
@@ -34,4 +40,3 @@ http:
         regex:
           - '^(\d+(?:\.\d+)*)$'
         group: 1
-# digest: 4b0a00483046022100cf4b70cce2582ba624ccf2ab7b5aa5d494104e692dc543c77ea441e4c3c71b8a02210099dd66db163be8f47da312a81941458041945bfc3767c132c662d25d6d699b71:922c64590222798bb761d5b6d8e72950

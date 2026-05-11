@@ -6,9 +6,13 @@ info:
   severity: high
   description: |
     AmpJuke contains a default login vulnerability. Default admin login password 'pass' was found.
+  classification:
+    cpe: cpe:2.3:a:ampjuke:ampjuke:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
     shodan-query: "http.favicon.hash:-121681558"
+    vendor: ampjuke
+    product: ampjuke
   tags: default-login,ampjuke,vuln
 
 http:
@@ -38,6 +42,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ampjuke
+        cpe: cpe:2.3:a:ampjuke:ampjuke:*:*:*:*:*:*:*:*
         part: body_3
         words:
           - 'AmpJuke'
@@ -59,4 +65,3 @@ http:
         regex:
           - 'name="uuid" value="([./a-z0-9-]+)">'
         internal: true
-# digest: 4a0a004730450220192793481d66e9b4e93267371db4f3f5be275c31f6716eeae307dff942783168022100b5a454179aa6b76122cc2600453c2d72ef0dc743526f8303411d97f082362f06:922c64590222798bb761d5b6d8e72950

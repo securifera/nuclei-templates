@@ -8,8 +8,12 @@ info:
     A evernote phishing website was detected
   reference:
     - https://evernote.com
+  classification:
+    cpe: cpe:2.3:a:evernote:evernote:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: evernote
+    product: evernote
   tags: phishing,evernote,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: evernote
+        cpe: cpe:2.3:a:evernote:evernote:*:*:*:*:*:*:*:*
         words:
           - 'Best Note Taking App - Organize Your Notes with Evernote'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: evernote-2
+        cpe: cpe:2.3:a:evernote:evernote:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"evernote.com")'
-# digest: 4a0a004730450221008bc0132a27f9e2cb0355fa45ec034bea24deb35aefaa3867ec3793c846ab07c7022077fd76757a75a764e2c481b9bb97d09e8f0aa92e1941fc3753b97882e5642182:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Fark user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:fark:fark:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: fark
+    product: fark
   tags: osint,osint-social,fark,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: fark
+        cpe: cpe:2.3:a:fark:fark:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fark account number"
-# digest: 4b0a00483046022100fb8f28eb73a90d5b2701bb8805345794db4c058bea419609569b05046639d986022100d3bbd61667f486b897f5d1cb7bf2928976ac811f814c22d5687f9dedc177634c:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     An Expedia phishing website was detected
   reference:
     - https://expedia.com
+  classification:
+    cpe: cpe:2.3:a:expedia:expedia:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: expedia
+    product: expedia
   tags: phishing,expedia,travel,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: expedia
+        cpe: cpe:2.3:a:expedia:expedia:*:*:*:*:*:*:*:*
         words:
           - 'Expedia'
           - '<title>Expedia Travel: Vacation Homes, Hotels, Car Rentals, Flights &amp; More'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: expedia-2
+        cpe: cpe:2.3:a:expedia:expedia:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"expedia.com")'
-# digest: 4a0a0047304502205293bbc21e52935943a3b3a2f2ba06732937ba58f532c3efa5a99b84549ce211022100a6e917037069ee370e838e0aef4d95e03451992eac881198dba6631e06f1d93d:922c64590222798bb761d5b6d8e72950

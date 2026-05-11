@@ -10,11 +10,14 @@ info:
     - https://www.exploit-db.com/exploits/50841
     - https://packetstormsecurity.com/files/166409/Drupal-Avatar-Upload-7.x-1.0-beta8-Cross-Site-Scripting.html
   classification:
+    cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: drupal
+    product: drupal
   tags: xss,drupal,edb,packetstorm,vuln
 
 http:
@@ -25,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: drupal
+        cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<div><script>alert(document.domain)</script></div>"
 
       - type: word
+        name: drupal-2
+        cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ec7496ee28b48183dcb531a7354a15ad0cdcb91a60c6dd385ed9b7bb8dd6f14b022100d38f5736bc7f93a258f6eb2ff70ad6a04980255213708b36f83143e0383fe91c:922c64590222798bb761d5b6d8e72950

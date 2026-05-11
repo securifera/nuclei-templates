@@ -8,10 +8,14 @@ info:
     This will reveal all parameters configured on the NPS, including the account username and password of the proxy.
   reference:
     - https://mari0er.club/post/nps.html/
+  classification:
+    cpe: cpe:2.3:a:nps:nps:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"window.nps"
+    vendor: nps
+    product: nps
   tags: nps,auth-bypass,vuln
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nps
+        cpe: cpe:2.3:a:nps:nps:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"VerifyKey":'
@@ -34,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: nps-2
+        cpe: cpe:2.3:a:nps:nps:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -41,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a0308b05fb9da755f6f66571306df099a3a1b32735a5bbf5df50f34f6a1e827e022100c9c92236479f69ee1a49b3ba4bc873a7b181066fd6b8d99c0fb173c8eb28e544:922c64590222798bb761d5b6d8e72950

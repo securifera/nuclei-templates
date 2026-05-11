@@ -9,10 +9,13 @@ info:
     - https://github.com/zentralopensource/zentral
     - https://zentral.io
   classification:
+    cpe: cpe:2.3:a:zentral:zentral:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: zentral
+    product: zentral
   tags: panel,zentral,oss,discovery
 
 http:
@@ -22,8 +25,9 @@ http:
 
     matchers:
       - type: word
+        name: zentral
+        cpe: cpe:2.3:a:zentral:zentral:*:*:*:*:*:*:*:*
         words:
           - '<title>Zentral</title>'
           - '<div class="panel-footer btn-group btn-group-justified"'
         condition: and
-# digest: 490a0046304402202889977dcde0e58084900f254f0850671a3ac2c7fe1a31ac76c4885904fd7598022044f7ead8f0f9b10eb78948e56c0c0ffda517c3b4b393e5431a3bf7e6d9dd68fb:922c64590222798bb761d5b6d8e72950

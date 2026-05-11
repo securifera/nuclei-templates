@@ -5,8 +5,12 @@ info:
   author: hahwul
   severity: info
   description: Find github page files(Gemfile / Gemfile.lock)
+  classification:
+    cpe: cpe:2.3:a:github-gemfile-files:github-gemfile-files:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: github-gemfile-files
+    product: github-gemfile-files
   tags: github,exposure,files,vuln
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: github-gemfile-files
+        cpe: cpe:2.3:a:github-gemfile-files:github-gemfile-files:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "https://rubygems.org")'
           - 'contains(body, "source")'
@@ -26,10 +32,11 @@ http:
         condition: and
 
       - type: dsl
+        name: github-gemfile-files-2
+        cpe: cpe:2.3:a:github-gemfile-files:github-gemfile-files:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "https://rubygems.org")'
           - 'contains(body, "remote")'
           - 'contains(body, "specs")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100d9836f9a5ba8bbce774efb5a25bfad3dc175bd5669f2004cec5bb7e9a50bd704022100fbdffe1312c2bde44623a6ee6e3ef6ef31e659bdb454f3d7214e8ffdf809e7e3:922c64590222798bb761d5b6d8e72950

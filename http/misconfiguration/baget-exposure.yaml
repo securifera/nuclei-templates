@@ -8,10 +8,14 @@ info:
     BaGet Package Manager is being exposed.
   reference:
     - https://loic-sharma.github.io/BaGet/
+  classification:
+    cpe: cpe:2.3:a:baget:baget:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"BaGet"
+    vendor: baget
+    product: baget
   tags: misconfig,glitchtip
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: baget
+        cpe: cpe:2.3:a:baget:baget:*:*:*:*:*:*:*:*
         words:
           - 'content="BaGet"'
           - 'BaGet.Web'
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d9e83771938701a2ad93222cd7067ba295b77f559b411881e8ea0e22366b992a02203356b28fcc43687d9e19e964141f928d51fe5ffd1d6170d5d475d0caf63db709:922c64590222798bb761d5b6d8e72950

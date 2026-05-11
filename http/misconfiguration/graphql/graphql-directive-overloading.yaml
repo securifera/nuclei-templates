@@ -13,9 +13,13 @@ info:
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/12-API_Testing/01-Testing_GraphQL
     - https://github.com/dolevf/graphql-cop/blob/main/lib/tests/dos_directive_overloading.py
+  classification:
+    cpe: cpe:2.3:a:graphql:graphql:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: graphql
+    product: graphql
   tags: graphql,misconfig,vuln
 
 http:
@@ -30,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: graphql
+        cpe: cpe:2.3:a:graphql:graphql:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "\\\"errors\\\":\\s*\\[.*?\\]"
@@ -37,7 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: graphql-2
+        cpe: cpe:2.3:a:graphql:graphql:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"
-# digest: 4b0a0048304602210097d562e2a894e1f5f434dd06bc23e0a24514d0026424bd30695e78452ac518d2022100e579ed2b37b4346062a20f8826c5254e45562e900aac9b6807c5ce6e3cb38426:922c64590222798bb761d5b6d8e72950

@@ -5,8 +5,12 @@ info:
   author: dhiyaneshDK,thevillagehacker
   severity: low
   description: Prometheus instance is exposed.
+  classification:
+    cpe: cpe:2.3:a:prometheus:prometheus:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
+    vendor: prometheus
+    product: prometheus
   tags: prometheus,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: prometheus
+        cpe: cpe:2.3:a:prometheus:prometheus:*:*:*:*:*:*:*:*
         words:
           - 'gateway_request_total'
           - 'logback_events_total'
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220538d6f4cd86e46ed8707cde073651b3a9de72ea41d1386efe4e1ef4e464c636c02202c02e1a54728f0fbbf3ce1fcc914afd09947f2baf0d09f19a1e5d9530b8a27b6:922c64590222798bb761d5b6d8e72950

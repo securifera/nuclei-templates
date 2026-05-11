@@ -6,10 +6,13 @@ info:
   severity: info
   description: Iomega LenovoEMC NAS login panel was detected.
   classification:
+    cpe: cpe:2.3:a:iomega-emc-shared-nas:iomega-emc-shared-nas:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: iomega-emc-shared-nas
+    product: iomega-emc-shared-nas
   tags: panel,discovery
 
 http:
@@ -24,6 +27,8 @@ http:
           - 200
 
       - type: word
+        name: iomega-emc-shared-nas
+        cpe: cpe:2.3:a:iomega-emc-shared-nas:iomega-emc-shared-nas:*:*:*:*:*:*:*:*
         words:
           - '"access":"read"'
           - '"access":"readwrite"'
@@ -31,7 +36,8 @@ http:
         part: body
 
       - type: word
+        name: iomega-emc-shared-nas-2
+        cpe: cpe:2.3:a:iomega-emc-shared-nas:iomega-emc-shared-nas:*:*:*:*:*:*:*:*
         words:
           - "iomega"
         part: header
-# digest: 4a0a00473045022100fbbbdfd2529df626a335ff462f4e1b143de6f7624089eee6f1c36faf660c1c400220205eb5dce2e4cbf13451e60f7d9b0904a320390710b94ef3e8b8f30833102551:922c64590222798bb761d5b6d8e72950

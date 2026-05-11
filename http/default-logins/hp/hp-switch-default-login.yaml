@@ -8,12 +8,15 @@ info:
   reference:
     - https://support.hpe.com/hpesc/public/docDisplay?docId=a00077779en_us&docLocale=en_US
   classification:
+    cpe: cpe:2.3:a:hp-switch:hp-switch:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
     fofa-query: HP 1820-8G Switch J9979A
+    vendor: hp-switch
+    product: hp-switch
   tags: default-login,hp,vuln
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hp-switch
+        cpe: cpe:2.3:a:hp-switch:hp-switch:*:*:*:*:*:*:*:*
         condition: and
         words:
           - '"redirect": "/htdocs/pages/main/main.lsp"'
@@ -39,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022069731d67c98c081eb32de4b88c62b3db20b0aa5006ec20afda6898c0312ee2cb0220159dd858dd5f5b96994d0a0defbe94ad6ce689b08eaf24f949a360fad9ff2675:922c64590222798bb761d5b6d8e72950

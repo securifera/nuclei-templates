@@ -6,6 +6,8 @@ info:
   severity: high
   description: |
     Tests if Apache Doris Panel, it is an easy-to-use, high performance and unified analytics database, is using the default password on root/admin user accounts.
+  classification:
+    cpe: cpe:2.3:a:apache:doris:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -32,11 +34,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: doris
+        cpe: cpe:2.3:a:apache:doris:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'msg":"Login success!"'
 
       - type: word
+        name: doris-2
+        cpe: cpe:2.3:a:apache:doris:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -44,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206798965e4eb020b40b0391ddf2559221c70c163292a65b57e6c8a2103d42769402200a3f3fcdad3c5cce62ad1fa578d445bf2fc47c67690a1df7aaa2db044e2f5562:922c64590222798bb761d5b6d8e72950

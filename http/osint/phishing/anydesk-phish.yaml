@@ -8,8 +8,12 @@ info:
     An anydesk phishing website was detected
   reference:
     - https://anydesk.com
+  classification:
+    cpe: cpe:2.3:a:anydesk:anydesk:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: anydesk
+    product: anydesk
   tags: phishing,anydesk,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: anydesk
+        cpe: cpe:2.3:a:anydesk:anydesk:*:*:*:*:*:*:*:*
         words:
           - 'The Fast Remote Desktop Application – AnyDesk'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: anydesk-2
+        cpe: cpe:2.3:a:anydesk:anydesk:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"anydesk.com")'
-# digest: 490a0046304402203a79ac74ffb87b577d024e769ff0f9cc0a72fcefb50b5f53e0815b7d191ebf2d022066c16603b0cbedd6f57201eb4db0081c347b6af1b6a64336abc7c5e1a2e690b8:922c64590222798bb761d5b6d8e72950

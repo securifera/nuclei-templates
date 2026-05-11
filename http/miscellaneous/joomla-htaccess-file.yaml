@@ -5,8 +5,12 @@ info:
   author: oppsec
   severity: info
   description: Joomla!  has an htaccess file to store configurations about HTTP config, directory listing, etc.
+  classification:
+    cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: joomla
+    product: joomla
   tags: miscellaneous,misc,joomla,vuln
 
 http:
@@ -17,12 +21,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         words:
           - "Joomla"
           - "Open Source Matters. All rights reserved"
         condition: and
 
       - type: word
+        name: joomla-2
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -30,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202a327f7b5b6ff0f66fedc4605b12e086c77e567a65d2367d1b45a40e6eaa45410220781cd0aff118292e10cc9d9af4d28732106949c81a4ec0056716001899d6fe85:922c64590222798bb761d5b6d8e72950

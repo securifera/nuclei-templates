@@ -8,12 +8,15 @@ info:
   reference:
     - https://packetstormsecurity.com/files/151955/1C-Bitrix-Site-Management-Russia-2.0-Open-Redirection.html
   classification:
+    cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     max-request: 14
     shodan-query: "html:\"/bitrix/\""
+    vendor: bitrix
+    product: bitrix
   tags: redirect,bitrix,packetstorm,vuln
 
 http:
@@ -42,6 +45,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: bitrix
+        cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
         part: header
@@ -51,4 +56,3 @@ http:
         status:
           - 302
           - 301
-# digest: 4a0a00473045022100ac224cbd1123e2b4d7b61ff3de3328391e1b979b8bad0b20c12dd1d93e116eda022039cfbffe49bd69832fd3a9e9cb684fa7a739d467ca26c862940fdc7dab45ed22:922c64590222798bb761d5b6d8e72950

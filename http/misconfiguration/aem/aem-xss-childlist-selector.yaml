@@ -10,6 +10,7 @@ info:
     - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/xss/FlippingTypeWithChildrenlistSelector.java
     - https://cystack.net/en/plugins/cystack.remote.aem_childlist_selector_xss
   classification:
+    cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79,CWE-83
@@ -18,6 +19,8 @@ info:
     shodan-query:
       - http.title:"AEM Sign In"
       - http.component:"Adobe Experience Manager"
+    vendor: aem
+    product: aem
   tags: xss,aem,adobe,misconfig,vuln
 
 http:
@@ -28,12 +31,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aem
+        cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
         words:
           - '<svg onload=alert(document.domain)>'
           - '{"path":"/etc/designs/xh1x.childrenlist.json'
         condition: and
 
       - type: word
+        name: aem-2
+        cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -41,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207191e52ba50c992991fc74bc25dbf9dfc6c2b7b8cc26c6da3656140751a9b227022100bf6709cd32fdf95f27f9d3bbb69ddccc858079e8749b4a1bbef0220d62b4725c:922c64590222798bb761d5b6d8e72950

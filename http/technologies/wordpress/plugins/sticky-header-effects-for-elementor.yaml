@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: sticky-header-effects-for-elementor
+        cpe: cpe:2.3:a:sticky-header-effects-for-elementor:sticky-header-effects-for-elementor:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

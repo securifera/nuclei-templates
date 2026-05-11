@@ -32,11 +32,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: social_warfare
+        cpe: cpe:2.3:a:warfareplugins:social_warfare:*:*:*:*:wordpress:*:*:*
         part: body
         regex:
           - 'root:.*:0:0:'
 
       - type: word
+        name: social_warfare-2
+        cpe: cpe:2.3:a:warfareplugins:social_warfare:*:*:*:*:wordpress:*:*:*
         part: body
         words:
           - 'No changes made'
@@ -44,4 +48,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4a0a00473045022100b6f70dcdf81048f84f63ff3d255d8a63d3d746902296af8f6fcd73e9e6a67cf5022068e2fc8523ec48baef34d2619c0361ceab239a1c09cb0a72df188e700eebe76d:922c64590222798bb761d5b6d8e72950

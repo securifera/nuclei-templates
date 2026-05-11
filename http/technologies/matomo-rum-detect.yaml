@@ -12,10 +12,14 @@ info:
     - https://developer.matomo.org/api-reference/tracking-javascript
     - https://matomo.org/faq/on-premise/installing-matomo/
     - https://matomo.org/matomo-cloud/
+  classification:
+    cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"matomo.js"
+    vendor: matomo
+    product: matomo
   tags: tech,discovery,rum,matomo,piwik,analytics
 
 http:
@@ -29,16 +33,21 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: matomo
+        cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
         dsl:
           - "status_code >= 200 && status_code < 400"
 
       - type: dsl
+        name: matomo-2
+        cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
         dsl:
           - "contains(tolower(all_headers), 'text/html') || contains(tolower(body), '<html')"
 
       - type: regex
         part: body
         name: rum_indicators
+        cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
         regex:
           - "window\\._paq"
           - "_paq\\.push\\s*\\("
@@ -58,4 +67,3 @@ http:
           - "<img[^>]+src\\s*=\\s*['\"][^'\"]*(matomo|piwik)\\.php\\?idsite="
           - "name=['\"]generator['\"]\\s+content=['\"](Matomo|Piwik)"
         condition: or
-# digest: 4a0a00473045022100afd0961c0ab9f894b428dd7204344c398c1dd9891abb6baebb7b9dca3d3ac087022019c2c8e484417765720354501c3af1d83a6db4c3d9c4f8eb841aba63f5510fd1:922c64590222798bb761d5b6d8e72950

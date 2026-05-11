@@ -4,8 +4,12 @@ info:
   name: Google Geolocation API Test
   author: zzeitlin
   severity: info
+  classification:
+    cpe: cpe:2.3:a:google:geolocation:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: google
+    product: geolocation
   tags: token-spray,google,geolocation
 
 self-contained: true
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: geolocation
+        cpe: cpe:2.3:a:google:geolocation:*:*:*:*:*:*:*:*
         part: body
         negative: true
         words:
@@ -27,4 +33,3 @@ http:
         negative: true
         status:
           - 404
-# digest: 4a0a004730450221008f010e08d26861a4a2bc17e6da420528271c73c4f91756074db15d51c89b1acf0220792eee53682dca4202f461d3dd132b207dbdc3af03755dddbdc0c3bfad5f1f11:922c64590222798bb761d5b6d8e72950

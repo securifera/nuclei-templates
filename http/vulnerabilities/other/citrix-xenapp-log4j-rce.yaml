@@ -40,11 +40,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xenapp
+        cpe: cpe:2.3:a:citrix:xenapp:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: xenapp-2
+        cpe: cpe:2.3:a:citrix:xenapp:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
@@ -65,4 +69,3 @@ http:
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
         part: interactsh_request
-# digest: 4a0a0047304502203849eb6e23041df823fbff989f68d248dda058dcf3a676ea29706a16536e454f022100dc97ad7931877164d1fd1fd2157e466bddb99b28db3a6fe08dbee613e88289a5:922c64590222798bb761d5b6d8e72950

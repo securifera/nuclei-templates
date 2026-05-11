@@ -8,8 +8,12 @@ info:
     A Whereby phishing website was detected
   reference:
     - https://whereby.com
+  classification:
+    cpe: cpe:2.3:a:whereby:whereby:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: whereby
+    product: whereby
   tags: phishing,whereby,video,communication,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: whereby
+        cpe: cpe:2.3:a:whereby:whereby:*:*:*:*:*:*:*:*
         words:
           - '<title>Secure, customizable &amp; reliable WebRTC Video Calls| Whereby'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: whereby-2
+        cpe: cpe:2.3:a:whereby:whereby:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"whereby.com")'
-# digest: 490a004630440220179bf154aeefff3c4188d3a04384f5970d38e1c72ef891ca6252ef25df29874b02206f111715d01a3d5248480abb01fe9a1fff1bcf5c04401a28016f2744707e79a6:922c64590222798bb761d5b6d8e72950

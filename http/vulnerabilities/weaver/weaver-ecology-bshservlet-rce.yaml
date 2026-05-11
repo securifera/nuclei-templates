@@ -36,6 +36,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: e-cology
+        cpe: cpe:2.3:a:weaver:e-cology:*:*:*:*:*:*:*:*
         regex:
           - "BeanShell Test Servlet"
           - "(?i)<pre>(\n.*){{randstr}}"
@@ -44,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f1a2d556c9a5068fc8c40459028dfae0f69098c529448db0c0b2391306207139022100e7d5aff30efc7685e0864f55759b995d05a597f27639a3eaca499c53efccb95b:922c64590222798bb761d5b6d8e72950

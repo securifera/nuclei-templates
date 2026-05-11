@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fiori_launchpad
+        cpe: cpe:2.3:a:sap:fiori_launchpad:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Logon</title>"
@@ -36,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: fiori_launchpad-2
+        cpe: cpe:2.3:a:sap:fiori_launchpad:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b695beafa5ec8744dc7ece0d60d6d8a45ec9c59a7bd7b39a4a14e9cdd6cc4d57022100c4f7a12a63077b994ec9a18f8b7aaf5ab9dca33c5208c016b2b8042fcf59fd80:922c64590222798bb761d5b6d8e72950

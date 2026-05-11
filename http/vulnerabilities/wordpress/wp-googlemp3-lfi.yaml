@@ -9,10 +9,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/35460
     - https://wordpress.org/plugins/google-mp3-audio-player/
+  classification:
+    cpe: cpe:2.3:a:wp-googlemp3:wp-googlemp3:*:*:*:*:*:*:*:*
   metadata:
     verified: "true"
     max-request: 1
     publicwww-query: "/wp-content/plugins/google-mp3-audio-player/"
+    vendor: wp-googlemp3
+    product: wp-googlemp3
   tags: wp-plugin,wp,wordpress,lfi,google-mp3-audio-player,unauth,disclosure,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-googlemp3
+        cpe: cpe:2.3:a:wp-googlemp3:wp-googlemp3:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_USER"
@@ -32,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: wp-googlemp3-2
+        cpe: cpe:2.3:a:wp-googlemp3:wp-googlemp3:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/octet-stream"
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a5ebc48494b13066015c3b8c43b3f1645d7319a94dfcaf0a3dc91af8fbf5a835022100cabf1e6f73a067d65799cacf21117a545d8c711edf1a809d9c776b93bcf8cbc9:922c64590222798bb761d5b6d8e72950

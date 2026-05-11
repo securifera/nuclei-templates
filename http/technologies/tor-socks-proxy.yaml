@@ -4,8 +4,12 @@ info:
   name: Detect tor SOCKS proxy
   author: geeknik
   severity: info
+  classification:
+    cpe: cpe:2.3:a:torproject:tor:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: torproject
+    product: tor
   tags: tech,tor,proxy,discovery
 
 http:
@@ -16,6 +20,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tor
+        cpe: cpe:2.3:a:torproject:tor:*:*:*:*:*:*:*:*
         words:
           - "This is a SOCKS Proxy"
           - "HTTPTunnelPort"
@@ -25,4 +31,3 @@ http:
       - type: status
         status:
           - 501
-# digest: 4b0a00483046022100a437b4e3636f2dc06f4d4604df1eff03ddd846aa013805dfb85d44772eded31b022100df00806eef1bebc0867ba945712b3364ee248d9ff07ba94eaf0fdf1f53c25979:922c64590222798bb761d5b6d8e72950

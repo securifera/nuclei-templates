@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: angular
+        cpe: cpe:2.3:a:angularjs:angular:*:*:*:*:node.js:*:*:*
         part: body
         words:
           - '"root":'
@@ -36,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: angular-2
+        cpe: cpe:2.3:a:angularjs:angular:*:*:*:*:node.js:*:*:*
         part: header
         words:
           - "application/json"
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207a3e08136e5eec37cbee89215014d05c31199173b152ef4dc5f4f5b4d80d8400022052a7e48e8afcb8345772cae0c540469fd452983331f33190a1d9cdfa3c43bbc9:922c64590222798bb761d5b6d8e72950

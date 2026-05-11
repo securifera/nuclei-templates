@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: arcgis_enterprise
+        cpe: cpe:2.3:a:esri:arcgis_enterprise:*:*:*:*:*:*:*:*
         words:
           - 'ArcGIS Enterprise'
           - 'Installation and Deployment'
@@ -46,4 +48,3 @@ http:
         regex:
           - '(Released Version:</strong>[\n\t ]+(([0-9]+(.[0-9]+)?(.[0-9]+)?)([\n\t
             ]+\([A-Za-z]+[\t ]+20[0-9][0-9]\))?))'
-# digest: 4b0a00483046022100fc3aa2607b52d6612c320a8229b3b7ff70f2176f32f763ca73cab106cb7aacbb022100b7dbffd8ce02a158715b416db9f2d1f9178aeeafdac80978f15b056b7800c417:922c64590222798bb761d5b6d8e72950

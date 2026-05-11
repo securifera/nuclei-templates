@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/solarwinds/OrionSDK/wiki/REST
   classification:
+    cpe: cpe:2.3:a:solarwinds:solarwinds:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 2
+    vendor: solarwinds
+    product: solarwinds
   tags: solarwinds,default-login,vuln
 
 # Optional:
@@ -37,11 +40,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: solarwinds
+        cpe: cpe:2.3:a:solarwinds:solarwinds:*:*:*:*:*:*:*:*
         words:
           - "Content-Type: application/json"
         part: header
 
       - type: regex
+        name: solarwinds-2
+        cpe: cpe:2.3:a:solarwinds:solarwinds:*:*:*:*:*:*:*:*
         regex:
           - "(totalRow|result|swi)s(:\\/\\/)?"
           - "(Orion\\.|Poller(ID)?)s?"
@@ -51,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f092a4194b0a2296458abd76e4abddae3548cc4cce305544a94df9421edaa3f9022100efb221829be45ef717299d3033bf7d751d778608b9d726c1d2274273a589c6e3:922c64590222798bb761d5b6d8e72950

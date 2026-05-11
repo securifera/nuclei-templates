@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.monitorix.org/
   classification:
+    cpe: cpe:2.3:a:monitorix:monitorix:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: monitorix
+    product: monitorix
   tags: monitorix,exposure,logs,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: monitorix
+        cpe: cpe:2.3:a:monitorix:monitorix:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<!-- graph table begins -->"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201f876b218d5221a7f60254ce95af5e16a7f4c37c1804c984ee081482c1b67334022100c5ab3c6ee8e92138e0bc0e1799717d03cfb35301d44a7390bb8105675268ad5d:922c64590222798bb761d5b6d8e72950

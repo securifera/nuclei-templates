@@ -9,11 +9,14 @@ info:
     - http://web.archive.org/web/20210213220043/https://www.securityfocus.com/bid/54330/info
     - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-knews-multilingual-newsletters-ff-parameter-cross-site-scripting-1-1-0
   classification:
+    cpe: cpe:2.3:a:wp-knews:wp-knews:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 2
+    vendor: wp-knews
+    product: wp-knews
   tags: wordpress,xss,wp-plugin,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: wp-knews
+        cpe: cpe:2.3:a:wp-knews:wp-knews:*:*:*:*:*:*:*:*
         internal: true
         words:
           - 'Knews Multilingual Newsletters'
@@ -37,11 +42,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-knews-2
+        cpe: cpe:2.3:a:wp-knews:wp-knews:*:*:*:*:*:*:*:*
         words:
           - "</script><script>alert(document.domain)</script>"
         part: body
 
       - type: word
+        name: wp-knews-3
+        cpe: cpe:2.3:a:wp-knews:wp-knews:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -49,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204531ed91f2dc47830039bd7f3f526e7a51b275fab87b79f760fec4dcc37e5b650220416a1008fe7d305c08afa628af6637a62d64f924318265377772143ce93b8691:922c64590222798bb761d5b6d8e72950

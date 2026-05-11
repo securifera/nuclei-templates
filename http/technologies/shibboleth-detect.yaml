@@ -8,10 +8,14 @@ info:
     A Shibboleth SSO panel was detected
   reference:
     - https://www.shibboleth.net/
+  classification:
+    cpe: cpe:2.3:a:shibboleth:shibboleth:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Shibboleth IdP"
+    vendor: shibboleth
+    product: shibboleth
   tags: shibboleth,sso,detect,tech,discovery
 
 http:
@@ -28,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: shibboleth
+        cpe: cpe:2.3:a:shibboleth:shibboleth:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Shibboleth IdP</title>'
@@ -36,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b767eba2d8743faad09dd7f6834947ea48e6145fa288d6ab6e5dfe1ec8d63017022100ce5e644d8da56dd00080e93298c9ced1ddf6b4931cd53df7847c9fce05d12c46:922c64590222798bb761d5b6d8e72950

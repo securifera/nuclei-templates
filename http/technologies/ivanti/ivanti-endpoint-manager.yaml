@@ -7,6 +7,7 @@ info:
   description: |
     Detects the presence of Ivanti Endpoint Manager (formerly LANDesk Management Suite) servers.
   classification:
+    cpe: cpe:2.3:a:ivanti:endpoint_manager:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     shodan-query: html:"LANDesk"
     fofa-query: body="LANDesk"
+    vendor: ivanti
+    product: endpoint_manager
   tags: tech,ivanti,epm,detect,landdesk,discovery
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: endpoint_manager
+        cpe: cpe:2.3:a:ivanti:endpoint_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Ivanti Endpoint Manager"
@@ -43,6 +48,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: endpoint_manager-2
+        cpe: cpe:2.3:a:ivanti:endpoint_manager:*:*:*:*:*:*:*:*
         part: header
         words:
           - "LANDesk"
@@ -51,9 +58,10 @@ http:
         case-insensitive: true
 
       - type: regex
+        name: endpoint_manager-3
+        cpe: cpe:2.3:a:ivanti:endpoint_manager:*:*:*:*:*:*:*:*
         part: response
         regex:
           - '(?i)landdesk.*management'
           - '(?i)ivanti.*endpoint\s*manager'
         condition: or
-# digest: 4a0a0047304502204bc51be775e11e591b4a39d23d9d6ff7b5158241dd5241a25d6ec22929b4bb4d022100f18ab51876a3c6388b996fe0aa78c69d94569ce5ee9dba81fdd38e26c283446a:922c64590222798bb761d5b6d8e72950

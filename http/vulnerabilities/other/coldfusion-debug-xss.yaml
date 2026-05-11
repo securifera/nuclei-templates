@@ -28,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: coldfusion
+        cpe: cpe:2.3:a:adobe:coldfusion:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"cf_main_cf" src="javascript:alert(1)"'
 
       - type: word
+        name: coldfusion-2
+        cpe: cpe:2.3:a:adobe:coldfusion:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -40,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022002f358652f269f376110096e06c06793a8c5e34dcdd74e69fbad679f7c1a0d9a02200e6cae2562b7b496a73b1086dc626104232fcc0eb39dec5d91b2226897a34077:922c64590222798bb761d5b6d8e72950

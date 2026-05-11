@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nacos
+        cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"totalCount":'
@@ -42,6 +44,8 @@ http:
         condition: and
 
       - type: word
+        name: nacos-2
+        cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
         part: header
         words:
           - application/json
@@ -49,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f5347a9a9c1c0e755fea8bbe7f36c5cfadde3b78314e3cf9c9c16dc631157545022100bdde6548528729a5ab46b97f2eeab50c57ed98710cc57b8478624a8fc5702b0f:922c64590222798bb761d5b6d8e72950

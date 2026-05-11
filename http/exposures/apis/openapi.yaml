@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.openapis.org/
   classification:
+    cpe: cpe:2.3:a:openapi:openapi:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: openapi
+    product: openapi
   tags: exposure,api,discovery
 
 http:
@@ -23,12 +26,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: openapi
+        cpe: cpe:2.3:a:openapi:openapi:*:*:*:*:*:*:*:*
         words:
           - openapi
           - paths
         condition: and
 
       - type: word
+        name: openapi-2
+        cpe: cpe:2.3:a:openapi:openapi:*:*:*:*:*:*:*:*
         part: header
         words:
           - application/openapi+json
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200b6f8cf3f59dc7d908d88d11dafaef35edf603ce7cc76dbafb242c7d1dfa0acb022100d61e3b0e34490778848e731fc19bfc624bfdda128226237b4ec8c50686cefc9a:922c64590222798bb761d5b6d8e72950

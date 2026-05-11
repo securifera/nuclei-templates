@@ -6,6 +6,7 @@ info:
   severity: info
   description: Command API Explorer panel was detected.
   classification:
+    cpe: cpe:2.3:a:command-api-explorer:command-api-explorer:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"Command API Explorer"
+    vendor: command-api-explorer
+    product: command-api-explorer
   tags: panel,misconfig,vuln
 
 http:
@@ -23,10 +26,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: command-api-explorer
+        cpe: cpe:2.3:a:command-api-explorer:command-api-explorer:*:*:*:*:*:*:*:*
         words:
           - "<title>Command API Explorer</title>"
 
       - type: word
+        name: command-api-explorer-2
+        cpe: cpe:2.3:a:command-api-explorer:command-api-explorer:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -34,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022027fe4a24191253f89ee89fcdfda0dcf9a1b7ce13343bade8b44d71642953e6a502204c3c872799b46848f66a044063bbf536885a854655e7da8c77ecc59e61177e85:922c64590222798bb761d5b6d8e72950

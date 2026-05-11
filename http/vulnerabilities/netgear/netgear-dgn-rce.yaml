@@ -9,10 +9,14 @@ info:
   reference:
     - https://www.crowdsec.net/blog/netgear-rce-and-how-vulnerabilities-persist-in-the-wild
     - https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/linux/http/netgear_dgn1000_setup_unauth_exec.md
+  classification:
+    cpe: cpe:2.3:a:netgear:dgn:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "NETGEAR DGN"
+    vendor: netgear
+    product: dgn
   tags: rce,netgear,dgn,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: dgn
+        cpe: cpe:2.3:a:netgear:dgn:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body, '{{randstr}}')"
           - "!contains(body, 'echo {{randstr}}')"
@@ -29,4 +35,3 @@ http:
           - "contains(content_type, 'text/plain')"
           - "status_code== 200"
         condition: and
-# digest: 4a0a00473045022056dbdd63148ec6acbc3dfa27e3ed58d29a5902009cb720b91275088ff7bcb9240221008b99dc01a0f848b26a0cee9db5ff0b493f899339614e755724d598ec92bbe608:922c64590222798bb761d5b6d8e72950

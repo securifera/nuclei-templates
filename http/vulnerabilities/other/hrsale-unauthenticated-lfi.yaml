@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/48920
   classification:
+    cpe: cpe:2.3:a:hrsale:hrsale:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: hrsale
+    product: hrsale
   tags: hrsale,lfi,edb,vuln
 
 http:
@@ -23,10 +26,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: hrsale
+        cpe: cpe:2.3:a:hrsale:hrsale:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100cdf75ae490982a4c99383d2a2b2907ba5110356a5ca39b120b2b1c596b4667ea02204291a0b83edfb9df67d90e142034fba2d89bf644849ee6224e3fdc23895f65b1:922c64590222798bb761d5b6d8e72950

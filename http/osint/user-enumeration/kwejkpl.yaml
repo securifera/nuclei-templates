@@ -6,11 +6,14 @@ info:
   severity: info
   description: Kwejk.pl user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:kwejkpl:kwejkpl:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: kwejkpl
+    product: kwejkpl
   tags: osint,osint-images,kwejkpl,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: kwejkpl
+        cpe: cpe:2.3:a:kwejkpl:kwejkpl:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Kwejki użytkownika"
-# digest: 4a0a00473045022034d0ddfdb13121e1307ad490e715a634f19ef7c110ff456565070fc5b2819b71022100cbb7cca2df14bf86d0c8613d9f5fb787ceeb890f0051922cb7dd475c2aa91e8f:922c64590222798bb761d5b6d8e72950

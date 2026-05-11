@@ -8,8 +8,12 @@ info:
     A Comerica Bank phishing website was detected
   reference:
     - https://comerica.com
+  classification:
+    cpe: cpe:2.3:a:comerica:comerica:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: comerica
+    product: comerica
   tags: phishing,comerica,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: comerica
+        cpe: cpe:2.3:a:comerica:comerica:*:*:*:*:*:*:*:*
         words:
           - 'Comerica'
           - 'Your partner for personal finance, business banking, and wealth management with a legacy of excellence and industry recognition.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: comerica-2
+        cpe: cpe:2.3:a:comerica:comerica:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"comerica.com")'
-# digest: 4a0a00473045022100d2d8f617f39b90538403815c0126a91d185f662297201a11c10b6e759d95f86902203f9a8c7022c77a5e62e373e7cdc60eeb7d52fd194b4904ad23732c1d2f8133c4:922c64590222798bb761d5b6d8e72950

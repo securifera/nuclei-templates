@@ -6,11 +6,14 @@ info:
   severity: info
   description: Voice123 user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:voice123:voice123:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: voice123
+    product: voice123
   tags: osint,osint-hobby,voice123,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: voice123
+        cpe: cpe:2.3:a:voice123:voice123:*:*:*:*:*:*:*:*
         part: body
         words:
           - "user_id"
-# digest: 490a00463044022041856750273e73f6216db330ef487e558a930c8be9dc4eb3de1ccca1d4bb60a302207932bbd90ff5f6ca4cc6625620aa08b2ae1de0c7f1b988e842488d48c17af68d:922c64590222798bb761d5b6d8e72950

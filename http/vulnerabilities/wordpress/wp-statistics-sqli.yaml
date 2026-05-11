@@ -31,6 +31,8 @@ http:
 
     matchers:
       - type: word
+        name: wp_statistics
+        cpe: cpe:2.3:a:veronalabs:wp_statistics:*:*:*:*:wordpress:*:*:*
         words:
           - 'WP Statistics'
         internal: true
@@ -43,8 +45,9 @@ http:
 
     matchers:
       - type: dsl
+        name: wp_statistics-2
+        cpe: cpe:2.3:a:veronalabs:wp_statistics:*:*:*:*:wordpress:*:*:*
         dsl:
           - 'duration>=7'
           - 'status_code == 500'
         condition: and
-# digest: 4a0a00473045022100fea61ef0415b3551fa0d968e5978e019900a76565d18e243c602433b595ebbf50220571407d6877cc599061be40272b5a2cbf68aa522c27428ef023bcb2c96ef01f7:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     Apache HertzBeat enables default admin (and others) credentials. An attacker can execute unauthorized operations.
   reference:
     - https://github.com/apache/hertzbeat
+  classification:
+    cpe: cpe:2.3:a:apache:hertzbeat:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
     verified: true
     shodan-query: title:"HertzBeat"
+    vendor: apache
+    product: hertzbeat
   tags: apache,hertzbeat,default-login,vuln
 
 variables:
@@ -37,6 +41,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hertzbeat
+        cpe: cpe:2.3:a:apache:hertzbeat:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"token":'
@@ -45,6 +51,8 @@ http:
         condition: and
 
       - type: word
+        name: hertzbeat-2
+        cpe: cpe:2.3:a:apache:hertzbeat:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -52,4 +60,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f6c2ac46d9f094cc709a5c178d8919ea652026a9624cfcf326e6a175e32889b70220138a4cd4f234b5cc6ef47cb953ab485ce6828de0682ab55ced3762796298fb76:922c64590222798bb761d5b6d8e72950

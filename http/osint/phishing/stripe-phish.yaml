@@ -8,8 +8,12 @@ info:
     A Stripe phishing website was detected
   reference:
     - https://stripe.com
+  classification:
+    cpe: cpe:2.3:a:stripe:stripe:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: stripe
+    product: stripe
   tags: phishing,stripe,payment,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: stripe
+        cpe: cpe:2.3:a:stripe:stripe:*:*:*:*:*:*:*:*
         words:
           - "Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes. Accept payments and scale faster with AI."
           - 'Stripe Dashboard'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: stripe-2
+        cpe: cpe:2.3:a:stripe:stripe:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"stripe.com")'
-# digest: 4a0a00473045022100e4f557606b1904fc6625312464f7f007a11f71acf51b15132d1bb7a182d57fec0220726a58dba5ef962f13f16ca645f0ffdb15161c1703cbdd6a0cadb9e8e735079b:922c64590222798bb761d5b6d8e72950

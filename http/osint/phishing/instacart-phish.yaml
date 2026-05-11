@@ -8,8 +8,12 @@ info:
     An Instacart phishing website was detected
   reference:
     - https://instacart.com
+  classification:
+    cpe: cpe:2.3:a:instacart:instacart:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: instacart
+    product: instacart
   tags: phishing,instacart,food-delivery,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: instacart
+        cpe: cpe:2.3:a:instacart:instacart:*:*:*:*:*:*:*:*
         words:
           - "Instacart | Grocery Delivery or Pickup from Local Stores Near You"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: instacart-2
+        cpe: cpe:2.3:a:instacart:instacart:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"instacart.com")'
-# digest: 4a0a0047304502210098d86aec4d3f0c9dab797e99d90f8d1221d17eb5992fb317bdaec820a7dd91bf022001b41d23629ed5e48b65f57ca7ef84050f3e3f6ece1d77b7bc06d47e0fe2b423:922c64590222798bb761d5b6d8e72950

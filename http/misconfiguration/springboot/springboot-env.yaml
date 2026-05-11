@@ -5,8 +5,12 @@ info:
   author: that_juan_,dwisiswant0,wdahlenb,philippedelteil,stupidfish
   severity: low
   description: Sensitive environment variables may not be masked
+  classification:
+    cpe: cpe:2.3:a:springboot:env:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
+    vendor: springboot
+    product: env
   tags: misconfig,springboot,env,exposure,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: env
+        cpe: cpe:2.3:a:springboot:env:*:*:*:*:*:*:*:*
         part: body
         words:
           - "applicationConfig"
@@ -29,6 +35,8 @@ http:
         condition: or
 
       - type: word
+        name: env-2
+        cpe: cpe:2.3:a:springboot:env:*:*:*:*:*:*:*:*
         part: body
         words:
           - "server.port"
@@ -36,6 +44,8 @@ http:
         condition: or
 
       - type: word
+        name: env-3
+        cpe: cpe:2.3:a:springboot:env:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -48,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022056e57840cc56ae6782bc4fe95e62a3eb07b341bfc1d8a7b34d903a1bdef414f4022100d1f375e4dca5395b85369e3e4737ed19d4b80ddbbcea8be8b80e7b2373e85ba0:922c64590222798bb761d5b6d8e72950

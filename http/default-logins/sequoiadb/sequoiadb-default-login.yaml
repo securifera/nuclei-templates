@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.sequoiadb.com/en/
   classification:
+    cpe: cpe:2.3:a:sequoiadb:sequoiadb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: sequoiadb
+    product: sequoiadb
   tags: default-login,sequoiadb,vuln
 
 http:
@@ -42,11 +45,14 @@ http:
           - 200
 
       - type: dsl
+        name: sequoiadb
+        cpe: cpe:2.3:a:sequoiadb:sequoiadb:*:*:*:*:*:*:*:*
         dsl:
           - contains(tolower(header), 'sdbsessionid')
 
       - type: word
+        name: sequoiadb-2
+        cpe: cpe:2.3:a:sequoiadb:sequoiadb:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{ "errno": 0 }'
-# digest: 490a00463044022056f09061e6db34d33811906d301f18db834fd4f1bc5da5c0937a99dac5ac0061022037462b421f4f7141e4cda3fdfaeb959d8e025a9f5c2b53adabf18a6de9fb7878:922c64590222798bb761d5b6d8e72950

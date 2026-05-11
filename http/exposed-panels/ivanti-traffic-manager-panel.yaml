@@ -8,10 +8,14 @@ info:
     An Ivanti Traffic Manager Login Panel was detected.
   reference:
     - https://www.ivanti.com/resources/v/doc/ivi/2528/2ef03e8ed03d
+  classification:
+    cpe: cpe:2.3:a:ivanti-traffic:ivanti-traffic:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"Login (Virtual Traffic Manager"
+    vendor: ivanti-traffic
+    product: ivanti-traffic
   tags: detect,traffic-manager,panel,login,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ivanti-traffic
+        cpe: cpe:2.3:a:ivanti-traffic:ivanti-traffic:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Login (Virtual Traffic Manager"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022019e932731a94fe2796c319add2e0fedc4d93df1233a42185dfe56c85164c876b0220453ae5f327c7cdd9053d7357e397c1a589d6543ff729dd42caf3a8642321b336:922c64590222798bb761d5b6d8e72950

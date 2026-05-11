@@ -8,11 +8,15 @@ info:
     Digital Watchdog default login credentials were discovered.
   reference:
     - https://digitalwatchdog.happyfox.com/kb/article/686-recorder-and-raid-default-login-list/
+  classification:
+    cpe: cpe:2.3:a:digital-watchdog:digital-watchdog:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 8
     shodan-query: "http.favicon.hash:868509217"
     fofa-query: "icon_hash=\"868509217\""
+    vendor: digital-watchdog
+    product: digital-watchdog
   tags: digital-watchdog,default-login,dw-Spectrum,vuln
 
 http:
@@ -37,9 +41,10 @@ http:
 
     matchers:
       - type: dsl
+        name: digital-watchdog
+        cpe: cpe:2.3:a:digital-watchdog:digital-watchdog:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(set_cookie, "x-runtime-guid=")'
           - 'contains(body, "token\":")'
           - 'status_code == 200'
         condition: and
-# digest: 490a00463044022079bcc4d49e5725af3c4a56bb23af67d1cab930e7280ff23628542722908ecdbc02207ba0bc8ed9f8eb0cc3cb786b6078feeebd4491d83ea4144920c3daff06167864:922c64590222798bb761d5b6d8e72950

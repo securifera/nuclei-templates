@@ -6,11 +6,15 @@ info:
   severity: info
   description: |
     Detect flutter web apps looking for flutter_bootstrap.js,main.dart.js and flutter_service_worker.js files.
+  classification:
+    cpe: cpe:2.3:a:google:flutter:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"flutter_bootstrap.js"
     fofa-query: body="flutter_bootstrap.js"
+    vendor: google
+    product: flutter
   tags: tech,detect,flutter,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
+        name: flutter
+        cpe: cpe:2.3:a:google:flutter:*:*:*:*:*:*:*:*
         part: body
         words:
           - "_flutter.loader.didCreateEngineInitializer"
@@ -33,4 +39,3 @@ http:
           - "ext.flutter.disassemble"
           - "#flutterweb-theme"
         condition: or
-# digest: 4b0a00483046022100e095e1caca09f5e8bac20ac6359ef8dff7275773dacdf1ae7f4ef183f12614d8022100af598289becee94343ca4f3fcd08b41b6a1983d3a1dcdb9b7db80898ab42b536:922c64590222798bb761d5b6d8e72950

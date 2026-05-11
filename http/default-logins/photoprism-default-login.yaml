@@ -8,11 +8,15 @@ info:
     PhotoPrism is an AI-powered photos app for the decentralized web. This template detects instances using default credentials (admin:admin321).
   reference:
     - https://docs.photoprism.app/getting-started/
+  classification:
+    cpe: cpe:2.3:a:photoprism:photoprism:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"PhotoPrism"
     fofa-query: title="PhotoPrism"
+    vendor: photoprism
+    product: photoprism
   tags: photoprism,default-login,misconfig,vuln
 
 variables:
@@ -30,9 +34,10 @@ http:
 
     matchers:
       - type: dsl
+        name: photoprism
+        cpe: cpe:2.3:a:photoprism:photoprism:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "access_token\":", "config\":{")'
           - 'contains(content_type, "application/json")'
         condition: and
-# digest: 4a0a0047304502205318cfc8caf67b0a3b4ec350dd72715a12525bdd48852395a37eecc9dc93df1d022100960e54b259db79c397b2992a8fa007dff24873268fe69210ce3615a255394532:922c64590222798bb761d5b6d8e72950

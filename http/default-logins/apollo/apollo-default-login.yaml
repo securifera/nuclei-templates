@@ -43,6 +43,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: apollo
+        cpe: cpe:2.3:a:ctrip:apollo:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '"userId":'
@@ -50,8 +52,9 @@ http:
         condition: or
 
       - type: dsl
+        name: apollo-2
+        cpe: cpe:2.3:a:ctrip:apollo:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1 == 302 && status_code_2 == 200"
           - "contains(tolower(header_2), 'application/json')"
         condition: and
-# digest: 4a0a00473045022100ca1858d05e7c6d9bbb65b3386d7fa3cfdbff532776299d17064660b9468494cf0220509409898b733bb4c3db8b598cb2ef09fb48e657027bc64f1cf6fde8abead413:922c64590222798bb761d5b6d8e72950

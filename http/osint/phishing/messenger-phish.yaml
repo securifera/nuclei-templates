@@ -8,8 +8,12 @@ info:
     A messenger phishing website was detected
   reference:
     - https://messenger.com
+  classification:
+    cpe: cpe:2.3:a:messenger:messenger:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: messenger
+    product: messenger
   tags: phishing,messenger,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: messenger
+        cpe: cpe:2.3:a:messenger:messenger:*:*:*:*:*:*:*:*
         words:
           - 'Hang out anytime, anywhere&#x2014;Messenger makes it easy and fun to stay close to your favorite people'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: messenger-2
+        cpe: cpe:2.3:a:messenger:messenger:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"messenger.com")'
-# digest: 4a0a0047304502203f1e085e1c5b8d688fe973c2805d113b0be7fefe596076c840bb0aa94edf7ec8022100c9ba22d4a1620bc0ad850c4c95a4d5bd02ec14aa5a5e661548ef247fec34ec04:922c64590222798bb761d5b6d8e72950

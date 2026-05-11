@@ -8,8 +8,12 @@ info:
     A Varo phishing website was detected
   reference:
     - https://varo.com
+  classification:
+    cpe: cpe:2.3:a:varo:varo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: varo
+    product: varo
   tags: phishing,varo,fintech,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: varo
+        cpe: cpe:2.3:a:varo:varo:*:*:*:*:*:*:*:*
         words:
           - "Home - Varo"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: varo-2
+        cpe: cpe:2.3:a:varo:varo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"varo.com")'
-# digest: 4a0a00473045022025b4d76cc6ac3af770eca4ac4e946aaaa58082bdae7486cd819cbfa25c65a9eb022100c8686510304a835dde5e3cf91fb63ed7d47cf64d3d2795ab35bf4a2a1f17eb80:922c64590222798bb761d5b6d8e72950

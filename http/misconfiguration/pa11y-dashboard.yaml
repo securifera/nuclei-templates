@@ -5,10 +5,14 @@ info:
   author: tess
   severity: low
   description: Pa11y Dashboard is exposed.
+  classification:
+    cpe: cpe:2.3:a:pa11y:pa11y:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Pa11y Dashboard"
+    vendor: pa11y
+    product: pa11y
   tags: misconfig,exposure,pa11y,discovery
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pa11y
+        cpe: cpe:2.3:a:pa11y:pa11y:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Pa11y Dashboard"
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: pa11y-2
+        cpe: cpe:2.3:a:pa11y:pa11y:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bd3ca3492a3218ecc34074e0c157c5f70396635ab6ff06186b3e0db662581cb6022100edfdba5b1b9c2182e4bbecee46f0d816f7c9f5d8bdb4528620e42fa138d41356:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/chroma-core/chroma
     - https://docs.trychroma.com/docs/run-chroma/chroma-server/security
+  classification:
+    cpe: cpe:2.3:a:chroma-core:chromadb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -33,8 +35,9 @@ http:
 
     matchers:
       - type: dsl
+        name: chromadb
+        cpe: cpe:2.3:a:chroma-core:chromadb:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains_all(body, "configuration_json","hnsw_configuration","log_position")
         condition: and
-# digest: 490a00463044022028302e2cd1831fa746528fcca287cf7bcc567e170f6204201609d316188eab8d022031224a12fbc38f99b9ff7e71c36b5632a5b7dcc804799919918432c055982a61:922c64590222798bb761d5b6d8e72950

@@ -4,8 +4,12 @@ info:
   name: WordPress XMLRPC
   author: udit_thakkur
   severity: info
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,vuln
 
 http:
@@ -15,6 +19,7 @@ http:
 
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - 'XML-RPC server accepts POST requests only.'
-# digest: 4a0a00473045022100ed3f0a9963221e2b460d951f50e6d7a1ae31edd7d623d3a07016b778c35ef7c602201409142afc70079a03b17b6b99ce69a22cb43fd4b30368c6f6120692cad30ce0:922c64590222798bb761d5b6d8e72950

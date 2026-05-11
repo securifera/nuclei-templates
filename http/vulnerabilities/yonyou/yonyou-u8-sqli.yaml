@@ -10,11 +10,14 @@ info:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/yonyou-grp-u8-bx_historyDataChecks-sqli.yaml
     - https://github.com/MD-SEC/MDPOCS/blob/main/Yongyou_Grp_U8_bx_historyDataCheck_Sql_Poc.py
   classification:
+    cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 2
     fofa-query: icon_hash="-299520369"
+    vendor: yonyou
+    product: yonyou
   tags: time-based-sqli,yonyou,grp,sqli,vuln
 
 flow: http(1) && http(2)
@@ -28,6 +31,8 @@ http:
 
     matchers:
       - type: word
+        name: yonyou
+        cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
         words:
           - 'GRP-U8'
         internal: true
@@ -43,8 +48,9 @@ http:
 
     matchers:
       - type: dsl
+        name: yonyou-2
+        cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
         dsl:
           - 'duration_2>=6'
           - 'contains(content_type, "text/html")'
         condition: and
-# digest: 4a0a00473045022100b628182a3e76d242ec83340c2cdc2079e7d0c849dd38ebf8763225dcb180fae502205d325e6e1b40563229d436c77a5ea56f7b9ae4fc3467c4e08b5903edceec47d5:922c64590222798bb761d5b6d8e72950

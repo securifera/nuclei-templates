@@ -7,9 +7,13 @@ info:
   description: Msmtp configuration was discovered.
   reference:
     - https://wiki.archlinux.org/title/Msmtp
+  classification:
+    cpe: cpe:2.3:a:msmtp:msmtp:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: msmtp
+    product: msmtp
   tags: exposure,msmtp,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: msmtp
+        cpe: cpe:2.3:a:msmtp:msmtp:*:*:*:*:*:*:*:*
         words:
           - 'account'
           - 'host'
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: msmtp-2
+        cpe: cpe:2.3:a:msmtp:msmtp:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/plain'
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 480a00453043021f3d77bbd9df375e5aefe187e3ab15b28afedddc32f930bf420c5400a65f10a6022018ffdac74f35c2640ed28929f6ba08864e1b54a54a3ef1549515049dd0ab9345:922c64590222798bb761d5b6d8e72950

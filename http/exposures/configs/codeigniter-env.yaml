@@ -5,8 +5,12 @@ info:
   author: emenalf
   severity: high
   description: Codeigniter .env file was discovered.
+  classification:
+    cpe: cpe:2.3:a:codeigniter:codeigniter:*:*:*:*:*:*:*:*
   metadata:
     max-request: 12
+    vendor: codeigniter
+    product: codeigniter
   tags: config,exposure,codeigniter,vuln
 
 http:
@@ -31,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: codeigniter
+        cpe: cpe:2.3:a:codeigniter:codeigniter:*:*:*:*:*:*:*:*
         regex:
           - "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)"
           - "(?m)^DB_(HOST|PASSWORD|DATABASE)"
@@ -39,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f3281b7d674311800e95e741a9b28ef0312b2508fc911658cf5871b79101ba14022056fcd26ee7d32c2aff458904aa3d40a4212bd4fa95f2d8e833ce2b0e1ca829ee:922c64590222798bb761d5b6d8e72950

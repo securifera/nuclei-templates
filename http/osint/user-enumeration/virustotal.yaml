@@ -6,11 +6,14 @@ info:
   severity: info
   description: Virustotal user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:virustotal:virustotal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: virustotal
+    product: virustotal
   tags: osint,osint-misc,virustotal,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: virustotal
+        cpe: cpe:2.3:a:virustotal:virustotal:*:*:*:*:*:*:*:*
         part: body
         words:
           - "USER PROFILE"
-# digest: 4a0a00473045022100d5fcf906622430a2279b3d39720b705aab9adf982d82513b224629fe310df800022000a04b4950a8556610fdaa78cad4d3ae04dfbf599ca79a88c319d9f69dfa9200:922c64590222798bb761d5b6d8e72950

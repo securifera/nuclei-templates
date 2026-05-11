@@ -10,11 +10,14 @@ info:
     - http://www.hybertone.com/uploadfile/download/20140304125509964.pdf
     - http://en.dbltek.com/latestfirmwares.html
   classification:
+    cpe: cpe:2.3:a:goip:goip:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 2
+    vendor: goip
+    product: goip
   tags: gsm,goip,lfi,iot,vuln
 
 http:
@@ -25,6 +28,7 @@ http:
 
     matchers:
       - type: regex
+        name: goip
+        cpe: cpe:2.3:a:goip:goip:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
-# digest: 4a0a00473045022100bcb3775113faf5fbca03b7a2cd73779300c1d2030703fc5670ab6dae9e8613ed02205d804cae253ab774584ebebe9c2626323f4e4e31811b08086bd3556cf855b058:922c64590222798bb761d5b6d8e72950

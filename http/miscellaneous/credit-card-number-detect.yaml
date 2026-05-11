@@ -4,12 +4,17 @@ info:
   name: Credit and Debit Card Number - Detection
   author: spiderSilk,morsy,geeknik
   severity: medium
+  classification:
+    cpe: cpe:2.3:a:credit:credit:*:*:*:*:*:*:*:*
   description: |
     This template is designed to identify the presence of credit or debit card numbers exposed within web pages, APIs, or other application responses. It searches for patterns matching card numbers using regular expressions aligned with common card formats, including Visa, MasterCard, American Express, and Discover cards. Detecting exposed card information can help identify potential compliance issues with standards like PCI DSS and mitigate risks of data leaks.
   reference:
     - https://www.tenable.com/plugins/was/98129
     - https://en.wikipedia.org/wiki/Payment_card_number
     - https://stackoverflow.com/questions/9315647/regex-credit-card-number-tests
+  metadata:
+    vendor: credit
+    product: credit
   tags: credit,debit,card,payment,security,pci,vuln
 
 http:
@@ -20,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: credit
+        cpe: cpe:2.3:a:credit:credit:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "\\b4[0-9]{12}(?:[0-9]{3})?\\b"
@@ -37,6 +44,8 @@ http:
           - 200
 
       - type: regex
+        name: credit-2
+        cpe: cpe:2.3:a:credit:credit:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?i)(card.{1,15}number|credit.{1,15}card.{1,15}number|debit.{1,15}card.{1,15}number)"
@@ -46,6 +55,8 @@ http:
         condition: or
 
       - type: word
+        name: credit-3
+        cpe: cpe:2.3:a:credit:credit:*:*:*:*:*:*:*:*
         part: body
         words:
           - "expiry"
@@ -61,6 +72,8 @@ http:
         condition: or
 
       - type: regex
+        name: credit-4
+        cpe: cpe:2.3:a:credit:credit:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?i)(\"|\\'|\\s)(id|user_?id|session_?id|account_?id|customer_?id|order_?id|transaction_?id|request_?id|trace_?id|correlation_?id|meeting_?id|appointment_?id|booking_?id|event_?id|calendar_?id|schedule_?id|tracking_?id|reference_?id|invoice_?id|ticket_?id)(\"|\\')?\\s*[:=]\\s*(\"|\\')?[0-9]{13,19}"
@@ -91,6 +104,8 @@ http:
         negative: true
 
       - type: word
+        name: credit-5
+        cpe: cpe:2.3:a:credit:credit:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Access Denied"
@@ -115,4 +130,3 @@ http:
           - "\\b62[0-9]{14,17}\\b"
           - "\\b3(?:0[0-5]|[68][0-9])[0-9]{11}\\b"
           - "\\b(?:2131|1800|35\\d{3})\\d{11}\\b"
-# digest: 4a0a00473045022100f58497cb2b3bcce6a7ba52d96d4f047d25e0fd0f286910557d2a4225c2455cef02201cec73d83f4e56e512686fe600d5a038d595cfff3694858383bc1b298df5b3b3:922c64590222798bb761d5b6d8e72950

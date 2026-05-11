@@ -4,8 +4,12 @@ info:
   name: Exposed Docker API
   author: furkansenan,dwisiswant0
   severity: info
+  classification:
+    cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: docker
+    product: docker
   tags: docker,unauth,devops,misconfig,vuln
 
 http:
@@ -17,11 +21,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: docker
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         part: header
 
       - type: word
+        name: docker-2
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         words:
           - "KernelVersion"
           - "BuildTime"
@@ -31,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210096c19ec4d8d33a0f312caae96d6e9d5f75cf13d99b7762e88f7ab4ac58ae3c26022100d4a26cfb041bede2101453d823211af91e36753ff7fd6816eea52da6f27a6336:922c64590222798bb761d5b6d8e72950

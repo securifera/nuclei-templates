@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.jetbrains.com
   classification:
+    cpe: cpe:2.3:a:jetbrains:jetbrains:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: jetbrains
+    product: jetbrains
   tags: config,exposure,jetbrains,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jetbrains
+        cpe: cpe:2.3:a:jetbrains:jetbrains:*:*:*:*:*:*:*:*
         words:
           - "DataSourceManagerImpl"
         part: body
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202c87c63ad2e1de85eda42534c61b730bf11fa04f307a60874c9ca0298b65c0ee022100a14cfe0da686e9e2c5829084eae297a226314ffc9a522843d961e215f59decb9:922c64590222798bb761d5b6d8e72950

@@ -9,12 +9,15 @@ info:
   reference:
     - https://github.com/sibprogrammer/owp
   classification:
+    cpe: cpe:2.3:a:openvz:openvz:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1898583197
+    vendor: openvz
+    product: openvz
   tags: panel,openvz,discovery
 
 http:
@@ -24,8 +27,9 @@ http:
 
     matchers:
       - type: dsl
+        name: openvz
+        cpe: cpe:2.3:a:openvz:openvz:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "Login - OpenVZ Web Panel")'
         condition: and
-# digest: 4b0a00483046022100bd353ddb7abd6f683623b83eb8775cb05357fb8313bd2e5f7cefc02b565975bc02210092afddff311ccb4ee796700a8e03111d8850f5694ce2a9d6348608fac353d217:922c64590222798bb761d5b6d8e72950

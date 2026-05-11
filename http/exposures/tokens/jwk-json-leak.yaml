@@ -34,11 +34,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jwt
+        cpe: cpe:2.3:a:jwt_project:jwt:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"kty":'
 
       - type: word
+        name: jwt-2
+        cpe: cpe:2.3:a:jwt_project:jwt:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -46,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100910139f36f138cdf289bc798b8d9b24b8a8a300f21db218591ad3b75448d68ad0220638d5593ca2d3211a9a29d179b4ab5fc8d2506620533e03a8b12cd85a57d227a:922c64590222798bb761d5b6d8e72950

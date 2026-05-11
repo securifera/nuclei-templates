@@ -12,8 +12,12 @@ info:
     - https://sapbasissolutions.wordpress.com/2013/10/08/what-are-sap-default-start-instance-profiles/
     - https://help.sap.com/docs/SUPPORT_CONTENT/si/3362958690.html
     - https://community.sap.com/t5/technology-blog-posts-by-members/securing-the-sap-instance-agent-sap-start-service/ba-p/13486679
+  classification:
+    cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sap
+    product: sap
   tags: sap,sapcontrol,soap,config,disclosure
 
 flow: http(1) && http(2)
@@ -40,6 +44,8 @@ http:
 
     matchers:
       - type: word
+        name: sap
+        cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ListConfigFilesResponse"
@@ -79,6 +85,8 @@ http:
 
     matchers:
       - type: word
+        name: sap-2
+        cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ReadConfigFileResponse"
@@ -88,4 +96,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022014a2b5063751bc36a86999c76ffb4bce5039d9ddc124689d362d4117a3178d9102203bfd835363ece36e7f7f374be8eb075997257bc1a4d9fa7cdc47063f2ab34c7a:922c64590222798bb761d5b6d8e72950

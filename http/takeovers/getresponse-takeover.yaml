@@ -7,8 +7,12 @@ info:
   description: Getresponse takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/235
+  classification:
+    cpe: cpe:2.3:a:getresponse:getresponse:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: getresponse
+    product: getresponse
   tags: takeover,getresponse,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: getresponse
+        cpe: cpe:2.3:a:getresponse:getresponse:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: getresponse-2
+        cpe: cpe:2.3:a:getresponse:getresponse:*:*:*:*:*:*:*:*
         words:
           - 'With GetResponse Landing Pages, lead generation has never been easier'
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a004730450221008a447500547f30e2e4b05af591e2e39b06d3ba64321cb40ab2959fbdbe6c399d022056096d2e6720beb2fd120d9e59ec24a3914f2379ad1a310f530a0fe266af006b:922c64590222798bb761d5b6d8e72950

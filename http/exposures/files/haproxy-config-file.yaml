@@ -8,10 +8,14 @@ info:
     Haproxy Config file is exposed.
   reference:
     - https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/
+  classification:
+    cpe: cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"haproxy.cfg"
+    vendor: haproxy
+    product: haproxy
   tags: exposure,files,haproxy,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: haproxy
+        cpe: cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
         part: body
         words:
           - '/var/run/haproxy.pid'
@@ -30,7 +36,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: haproxy-2
+        cpe: cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'text/plain'
-# digest: 4a0a0047304502205420d7aaf34898069a47e08b605a5702f871882f1e07e8310bca56a367af383f022100a64e5bf3f0341459a18b531fd560055673a3cedc472e281908efda379503c9e3:922c64590222798bb761d5b6d8e72950

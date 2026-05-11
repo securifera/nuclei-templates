@@ -8,8 +8,12 @@ info:
     A Blizzard phishing website was detected
   reference:
     - https://blizzard.com
+  classification:
+    cpe: cpe:2.3:a:blizzard:blizzard:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: blizzard
+    product: blizzard
   tags: phishing,blizzard,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: blizzard
+        cpe: cpe:2.3:a:blizzard:blizzard:*:*:*:*:*:*:*:*
         words:
           - 'Creators of the Warcraft, Diablo, StarCraft, and Overwatch series, Blizzard Entertainment is an industry-leading developer responsible for the most epic entertainment experiences, ever.'
           - 'Blizzard'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: blizzard-2
+        cpe: cpe:2.3:a:blizzard:blizzard:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"blizzard.com")'
-# digest: 4a0a00473045022100e922272c2cf490de90e575fd965e631546679e5d1e4357dd34db1fb8321ebcbc0220553c559dd433ff4510ee41088082c6e077477b80d67e9c4af2339e8156dbab19:922c64590222798bb761d5b6d8e72950

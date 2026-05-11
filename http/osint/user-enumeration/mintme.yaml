@@ -6,11 +6,14 @@ info:
   severity: info
   description: Mintme user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:mintme:mintme:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: mintme
+    product: mintme
   tags: osint,osint-finance,mintme,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: mintme
+        cpe: cpe:2.3:a:mintme:mintme:*:*:*:*:*:*:*:*
         part: body
         words:
           - "token | mintMe"
-# digest: 4b0a004830460221008d9008739c57a0a14520360d242c25fb5aa5e9716ed6c94f89c10ea57318c125022100b4124dc1cb98abd628145d7fbf721f381e6267c85db0d7c5ad26cb7072acbeac:922c64590222798bb761d5b6d8e72950

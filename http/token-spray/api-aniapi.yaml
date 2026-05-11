@@ -8,8 +8,12 @@ info:
   reference:
     - https://aniapi.com/docs/authentication
     - https://github.com/daffainfo/all-about-apikey/tree/main/aniapi
+  classification:
+    cpe: cpe:2.3:a:aniapi:aniapi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: aniapi
+    product: aniapi
   tags: token-spray,aniapi
 
 self-contained: true
@@ -23,9 +27,10 @@ http:
       Authorization: Bearer {{token}}
     matchers:
       - type: word
+        name: aniapi
+        cpe: cpe:2.3:a:aniapi:aniapi:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"username":'
           - '"data":'
         condition: and
-# digest: 490a00463044022020ff36cf58b743e68e0236320bd3e38f76b0036b77ad3f2834b1e92cfee54225022044431a1180d939b1061fa07ca11318d06d7f149258664288a7c88e35ae166b1d:922c64590222798bb761d5b6d8e72950

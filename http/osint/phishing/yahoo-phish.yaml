@@ -8,8 +8,12 @@ info:
     A yahoo phishing website was detected
   reference:
     - https://yahoo.com
+  classification:
+    cpe: cpe:2.3:a:yahoo:yahoo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: yahoo
+    product: yahoo
   tags: phishing,yahoo,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yahoo
+        cpe: cpe:2.3:a:yahoo:yahoo:*:*:*:*:*:*:*:*
         words:
           - 'Best-in-class Yahoo Mail, breaking local, national and global news, finance, sport, music, films and more. You get more out of the web, you get more out of life.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: yahoo-2
+        cpe: cpe:2.3:a:yahoo:yahoo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"yahoo.com")'
-# digest: 4a0a004730450220252e6df851a99a9b5710cff25e58c1d3412f98d926e89a99656acec49c3d5a51022100be1b6e31d59ac098b0827d49d125b55e1b26bd78d9a8acf493e26961d34d2d21:922c64590222798bb761d5b6d8e72950

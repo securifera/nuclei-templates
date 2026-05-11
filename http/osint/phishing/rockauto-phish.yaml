@@ -8,8 +8,12 @@ info:
     A RockAuto phishing website was detected
   reference:
     - https://rockauto.com
+  classification:
+    cpe: cpe:2.3:a:rockauto:rockauto:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rockauto
+    product: rockauto
   tags: phishing,rockauto,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rockauto
+        cpe: cpe:2.3:a:rockauto:rockauto:*:*:*:*:*:*:*:*
         words:
           - "Auto Parts for Your Vehicle at Reliably Low Prices. Fast Online Catalog. DIY-Easy. Your Choice of Quality. Full Manufacturer Warranty."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: rockauto-2
+        cpe: cpe:2.3:a:rockauto:rockauto:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"rockauto.com")'
-# digest: 4a0a00473045022100ded5349b6d6acedf298188de9c0cb779ae40d06d2646d4e7ab098d1646cd851f022029e4d64b2a1e308d2862f0e110a180cc15b652f9ef7576d3f5102d377b92a32b:922c64590222798bb761d5b6d8e72950

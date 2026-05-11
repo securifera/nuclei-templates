@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Usermin panel was discovered.
+  classification:
+    cpe: cpe:2.3:a:usermin:usermin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: "Login to Usermin"
+    vendor: usermin
+    product: usermin
   tags: panel,login,usermin,detect,discovery
 
 http:
@@ -19,8 +23,9 @@ http:
 
     matchers:
       - type: dsl
+        name: usermin
+        cpe: cpe:2.3:a:usermin:usermin:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "<title>Login to Usermin</title>", "/manifest-usermin.json")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100a9c42e5efed005a708936af21619ea910397f5aeb5e2bbd36668eaf9c04c2e8102203e62ee7859e9a2a21bf8505b1739f396a8d8a2524aadd7315b0a590e54ef7a06:922c64590222798bb761d5b6d8e72950

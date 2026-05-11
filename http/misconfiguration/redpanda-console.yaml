@@ -10,10 +10,14 @@ info:
     Exposing the Redpanda Console to the public can result in unauthorized access, leading to data leaks, misconfigurations, or even denial of service attacks on the streaming infrastructure.
   reference:
     - https://github.com/redpanda-data/console
+  classification:
+    cpe: cpe:2.3:a:redpanda:redpanda:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Redpanda Console"
+    vendor: redpanda
+    product: redpanda
   tags: misconfig,redpanda,console,streaming,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: redpanda
+        cpe: cpe:2.3:a:redpanda:redpanda:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Redpanda Console"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206a094103816ffb8689da80c22021ebf8174b5134bee55d6c2bebc31e134b5cd702207d54708388e86bc6706455fa0d180f5548aa1c9aee1aead8a219d43e2c3e8a6a:922c64590222798bb761d5b6d8e72950

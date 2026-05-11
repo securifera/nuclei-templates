@@ -6,9 +6,13 @@ info:
   severity: info
   description: |
     An instance running NiceGUI is detected by looking for specific HTTP headers.
+  classification:
+    cpe: cpe:2.3:a:nicegui:nicegui:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: "x-nicegui-content"
+    vendor: nicegui
+    product: nicegui
   tags: nicegui,detect,tech
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nicegui
+        cpe: cpe:2.3:a:nicegui:nicegui:*:*:*:*:*:*:*:*
         part: header
         words:
           - "x-nicegui-content"
@@ -30,4 +36,3 @@ http:
         group: 1
         regex:
           - '/_nicegui/([0-9.]+)/'
-# digest: 4a0a00473045022100e44a38f438e9ef2f13318c6de627479565f204d25cad7f3d194deaf0ad0b78c602202bf7b30f5b5208e9f6863f84bc6ee96f3dd1a5863da9d685215550866005419a:922c64590222798bb761d5b6d8e72950

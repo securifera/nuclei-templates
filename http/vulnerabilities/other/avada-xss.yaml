@@ -9,11 +9,14 @@ info:
     - https://wpscan.com/vulnerability/eb172b07-56ab-41ce-92a1-be38bab567cb
     - https://theme-fusion.com/documentation/avada/installation-maintenance/avada-changelog/
   classification:
+    cpe: cpe:2.3:a:avada:avada:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: avada
+    product: avada
   tags: xss,wp,wordpress,wp-theme,avada,wpscan,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avada
+        cpe: cpe:2.3:a:avada:avada:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"></script><script>alert(document.domain)</script>'
@@ -31,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: avada-2
+        cpe: cpe:2.3:a:avada:avada:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201c433858949438bc813d185dc3e1a23863781206ebede1c6e6456199ff4af30602207b88d65fb81e0aef8f509d0981ef0e79aedcf00d0f8489f76a73afa20b961f95:922c64590222798bb761d5b6d8e72950

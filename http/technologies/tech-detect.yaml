@@ -4,8 +4,12 @@ info:
   name: Wappalyzer Technology Detection
   author: hakluke,righettod,matejsmycka
   severity: info
+  classification:
+    cpe: cpe:2.3:a:wappalyzer:wappalyzer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wappalyzer
+    product: wappalyzer
   tags: tech,discovery
 
 http:
@@ -20,6 +24,7 @@ http:
     matchers:
       - type: regex
         name: mollom
+        cpe: cpe:2.3:a:mollom:mollom:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+\.mollom\.com
         condition: or
@@ -27,6 +32,7 @@ http:
 
       - type: word
         name: atlassian-jira
+        cpe: cpe:2.3:a:atlassian-jira:atlassian-jira:*:*:*:*:*:*:*:*
         words:
           - "Project Management Software"
           - "atlassian.com/software/jira"
@@ -35,6 +41,7 @@ http:
 
       - type: regex
         name: genexus
+        cpe: cpe:2.3:a:genexus:genexus:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?id="gxtheme_css_reference"
         condition: or
@@ -42,6 +49,7 @@ http:
 
       - type: regex
         name: flat-ui
+        cpe: cpe:2.3:a:flat-ui:flat-ui:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+flat-ui(?:\.min)?\.css
         condition: or
@@ -49,6 +57,7 @@ http:
 
       - type: regex
         name: dovetailwrp
+        cpe: cpe:2.3:a:dovetailwrp:dovetailwrp:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href="\/DovetailWRP\/
         condition: or
@@ -56,6 +65,7 @@ http:
 
       - type: regex
         name: highcharts
+        cpe: cpe:2.3:a:highcharts:highcharts:*:*:*:*:*:*:*:*
         regex:
           - <svg[^>]*><desc>Created with Highcharts ([\d.]*)
         condition: or
@@ -63,6 +73,7 @@ http:
 
       - type: regex
         name: videojs
+        cpe: cpe:2.3:a:videojs:videojs:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+class="video-js+">
         condition: or
@@ -70,6 +81,7 @@ http:
 
       - type: regex
         name: tictail
+        cpe: cpe:2.3:a:tictail:tictail:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]*tictail\.com
         condition: or
@@ -77,6 +89,7 @@ http:
 
       - type: regex
         name: wikinggruppen
+        cpe: cpe:2.3:a:wikinggruppen:wikinggruppen:*:*:*:*:*:*:*:*
         regex:
           - <!-- WIKINGGRUPPEN
         condition: or
@@ -84,6 +97,7 @@ http:
 
       - type: regex
         name: slimbox
+        cpe: cpe:2.3:a:slimbox:slimbox:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="[^/]*slimbox(?:-rtl)?\.css
         condition: or
@@ -91,6 +105,7 @@ http:
 
       - type: regex
         name: cs-cart
+        cpe: cpe:2.3:a:cs-cart:cs-cart:*:*:*:*:*:*:*:*
         regex:
           - '&nbsp;Powered by (?:<a href=[^>]+cs-cart\.com|CS-Cart)'
           - \.cm-noscript[^>]+</style>
@@ -99,6 +114,7 @@ http:
 
       - type: regex
         name: directadmin
+        cpe: cpe:2.3:a:directadmin:directadmin:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]+>DirectAdmin</a> Web Control Panel
         condition: or
@@ -106,6 +122,7 @@ http:
 
       - type: regex
         name: xenforo
+        cpe: cpe:2.3:a:xenforo:xenforo:*:*:*:*:*:*:*:*
         regex:
           - (?:jQuery\.extend\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id="XenForo")
           - '<html id="XF" '
@@ -114,6 +131,7 @@ http:
 
       - type: regex
         name: imperia-cms
+        cpe: cpe:2.3:a:imperia-cms:imperia-cms:*:*:*:*:*:*:*:*
         regex:
           - '<imp:live-info sysid="[0-9a-f-]+"(?: node_id="[0-9/]*")? *\/>'
         condition: or
@@ -121,6 +139,7 @@ http:
 
       - type: regex
         name: vanilla
+        cpe: cpe:2.3:a:vanilla:vanilla:*:*:*:*:*:*:*:*
         regex:
           - <body id="(?:DiscussionsPage|vanilla)
         condition: or
@@ -128,6 +147,7 @@ http:
 
       - type: regex
         name: kibana
+        cpe: cpe:2.3:a:kibana:kibana:*:*:*:*:*:*:*:*
         regex:
           - <title>Kibana</title>
         condition: or
@@ -135,6 +155,7 @@ http:
 
       - type: regex
         name: bonfire
+        cpe: cpe:2.3:a:bonfire:bonfire:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a[^>]+href="https?://(?:www\.)?cibonfire\.com[^>]*>Bonfire v([^<]+)
         condition: or
@@ -142,6 +163,7 @@ http:
 
       - type: regex
         name: ipb
+        cpe: cpe:2.3:a:ipb:ipb:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+ipb_[^>]+\.css
         condition: or
@@ -149,6 +171,7 @@ http:
 
       - type: regex
         name: smf
+        cpe: cpe:2.3:a:smf:smf:*:*:*:*:*:*:*:*
         regex:
           - credits/?" title="Simple Machines Forum" target="_blank" class="new_win">SMF ([0-9.]+)</a>
         condition: or
@@ -156,6 +179,7 @@ http:
 
       - type: regex
         name: xcharts
+        cpe: cpe:2.3:a:xcharts:xcharts:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href="[^"]*xcharts(?:\.min)?\.css
         condition: or
@@ -163,6 +187,7 @@ http:
 
       - type: regex
         name: proximis-unified-commerce
+        cpe: cpe:2.3:a:proximis-unified-commerce:proximis-unified-commerce:*:*:*:*:*:*:*:*
         regex:
           - <html[^>]+data-ng-app="RbsChangeApp"
         condition: or
@@ -170,6 +195,7 @@ http:
 
       - type: regex
         name: arc-publishing
+        cpe: cpe:2.3:a:arc-publishing:arc-publishing:*:*:*:*:*:*:*:*
         regex:
           - <div [^>]*id="pb-root"
         condition: or
@@ -177,6 +203,7 @@ http:
 
       - type: regex
         name: nvd3
+        cpe: cpe:2.3:a:nvd3:nvd3:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+nv\.d3(?:\.min)?\.css
         condition: or
@@ -184,6 +211,7 @@ http:
 
       - type: regex
         name: arastta
+        cpe: cpe:2.3:a:arastta:arastta:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a [^>]*href="https?://(?:www\.)?arastta\.org[^>]+>Arastta
         condition: or
@@ -191,6 +219,7 @@ http:
 
       - type: regex
         name: cgit
+        cpe: cpe:2.3:a:cgit:cgit:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+id='cgit'
           - generated by <a href='http://git\.zx2c4\.com/cgit/about/'>cgit v([\d.a-z-]+)</a>
@@ -199,6 +228,7 @@ http:
 
       - type: regex
         name: strikingly
+        cpe: cpe:2.3:a:strikingly:strikingly:*:*:*:*:*:*:*:*
         regex:
           - <!-- Powered by Strikingly\.com
         condition: or
@@ -206,6 +236,7 @@ http:
 
       - type: regex
         name: contentful
+        cpe: cpe:2.3:a:contentful:contentful:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\.(?:ct?fassets\.net|contentful\.com)
         condition: or
@@ -213,6 +244,7 @@ http:
 
       - type: regex
         name: microsoft-asp.net
+        cpe: cpe:2.3:a:microsoft-asp.net:microsoft-asp.net:*:*:*:*:*:*:*:*
         regex:
           - <input[^>]+name="__VIEWSTATE
         condition: or
@@ -220,6 +252,7 @@ http:
 
       - type: regex
         name: inspectlet
+        cpe: cpe:2.3:a:inspectlet:inspectlet:*:*:*:*:*:*:*:*
         regex:
           - <!-- (?:Begin|End) Inspectlet Embed Code -->
         condition: or
@@ -227,6 +260,7 @@ http:
 
       - type: regex
         name: moodle
+        cpe: cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+moodlelogo
         condition: or
@@ -234,6 +268,7 @@ http:
 
       - type: regex
         name: minibb
+        cpe: cpe:2.3:a:minibb:minibb:*:*:*:*:*:*:*:*
         regex:
           - <a href="[^"]+minibb[^<]+</a>[^<]+\n<!--End of copyright link
         condition: or
@@ -241,6 +276,7 @@ http:
 
       - type: regex
         name: handlebars
+        cpe: cpe:2.3:a:handlebars:handlebars:*:*:*:*:*:*:*:*
         regex:
           - <[^>]*type=[^>]text\/x-handlebars-template
         condition: or
@@ -248,6 +284,7 @@ http:
 
       - type: regex
         name: materialize-css
+        cpe: cpe:2.3:a:materialize-css:materialize-css:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href="[^"]*materialize(?:\.min)?\.css
         condition: or
@@ -255,6 +292,7 @@ http:
 
       - type: regex
         name: orocommerce
+        cpe: cpe:2.3:a:orocommerce:orocommerce:*:*:*:*:*:*:*:*
         regex:
           - <script [^>]+data-requiremodule="oro/
           - <script [^>]+data-requiremodule="oroui/
@@ -263,6 +301,7 @@ http:
 
       - type: regex
         name: lightspeed-ecom
+        cpe: cpe:2.3:a:lightspeed-ecom:lightspeed-ecom:*:*:*:*:*:*:*:*
         regex:
           - <!-- \[START\] 'blocks/head\.rain' -->
         condition: or
@@ -270,6 +309,7 @@ http:
 
       - type: regex
         name: woocommerce
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         regex:
           - <!-- WooCommerce
           - <link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\.css?ver=([\d.]+)'
@@ -278,6 +318,7 @@ http:
 
       - type: regex
         name: cpanel
+        cpe: cpe:2.3:a:cpanel:cpanel:*:*:*:*:*:*:*:*
         regex:
           - <!-- cPanel
         condition: or
@@ -285,6 +326,7 @@ http:
 
       - type: regex
         name: phpmyadmin
+        cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
         regex:
           - '!\[CDATA\[[^<]*PMA_VERSION:\"([\d.]+)'
           - '(?: \| phpMyAdmin ([\d.]+)<\/title>|PMA_sendHeaderLocation\(|<link [^>]*href="[^"]*phpmyadmin\.css\.php)'
@@ -293,6 +335,7 @@ http:
 
       - type: regex
         name: hcaptcha
+        cpe: cpe:2.3:a:hcaptcha:hcaptcha:*:*:*:*:*:*:*:*
         regex:
           - <style[^>]+[^<]+#cf-hcaptcha-container[^<]+</style>
         condition: or
@@ -300,6 +343,7 @@ http:
 
       - type: regex
         name: styled-components
+        cpe: cpe:2.3:a:styled-components:styled-components:*:*:*:*:*:*:*:*
         regex:
           - <style[^>]*data-styled(?:-components)?[\s"]
           - <style[^>]+data-styled-version="([0-9]+)"
@@ -309,6 +353,7 @@ http:
 
       - type: regex
         name: youtrack
+        cpe: cpe:2.3:a:youtrack:youtrack:*:*:*:*:*:*:*:*
         regex:
           - no-title="YouTrack">
           - data-reactid="[^"]+">youTrack ([0-9.]+)<
@@ -318,6 +363,7 @@ http:
 
       - type: regex
         name: grandnode
+        cpe: cpe:2.3:a:grandnode:grandnode:*:*:*:*:*:*:*:*
         regex:
           - "(?:<!--GrandNode |<a[^>]+grandnode - Powered by |Powered by: <a[^>]+nopcommerce)"
         condition: or
@@ -325,6 +371,7 @@ http:
 
       - type: regex
         name: oxid-eshop
+        cpe: cpe:2.3:a:oxid-eshop:oxid-eshop:*:*:*:*:*:*:*:*
         regex:
           - <!--[^-]*OXID eShop
         condition: or
@@ -332,6 +379,7 @@ http:
 
       - type: regex
         name: doxygen
+        cpe: cpe:2.3:a:doxygen:doxygen:*:*:*:*:*:*:*:*
         regex:
           - (?:<!-- Generated by Doxygen ([\d.]+)|<link[^>]+doxygen\.css)
         condition: or
@@ -339,6 +387,7 @@ http:
 
       - type: regex
         name: afterbuy
+        cpe: cpe:2.3:a:afterbuy:afterbuy:*:*:*:*:*:*:*:*
         regex:
           - <dd>This OnlineStore is brought to you by ViA-Online GmbH Afterbuy\. Information and contribution at https://www\.afterbuy\.de</dd>
         condition: or
@@ -346,6 +395,7 @@ http:
 
       - type: regex
         name: chevereto
+        cpe: cpe:2.3:a:chevereto:chevereto:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="https?://chevereto\.com">
         condition: or
@@ -353,6 +403,7 @@ http:
 
       - type: regex
         name: gallery
+        cpe: cpe:2.3:a:gallery:gallery:*:*:*:*:*:*:*:*
         regex:
           - <div id="gsNavBar" class="gcBorder1">
           - <a href="http://gallery\.sourceforge\.net"><img[^>]+Powered by Gallery\s*(?:(?:v|Version)\s*([0-9.]+))?
@@ -361,6 +412,7 @@ http:
 
       - type: regex
         name: redoc
+        cpe: cpe:2.3:a:redoc:redoc:*:*:*:*:*:*:*:*
         regex:
           - "<redoc "
         condition: or
@@ -368,6 +420,7 @@ http:
 
       - type: regex
         name: open-web-analytics
+        cpe: cpe:2.3:a:open-web-analytics:open-web-analytics:*:*:*:*:*:*:*:*
         regex:
           - <!-- (?:Start|End) Open Web Analytics Tracker -->
         condition: or
@@ -375,6 +428,7 @@ http:
 
       - type: regex
         name: jsdelivr
+        cpe: cpe:2.3:a:jsdelivr:jsdelivr:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+?//cdn\.jsdelivr\.net/
         condition: or
@@ -382,6 +436,7 @@ http:
 
       - type: regex
         name: user.com
+        cpe: cpe:2.3:a:user.com:user.com:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+/id="ue_widget"
         condition: or
@@ -389,6 +444,7 @@ http:
 
       - type: regex
         name: smart-ad-server
+        cpe: cpe:2.3:a:smart-ad-server:smart-ad-server:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+smartadserver\.com\/call
         condition: or
@@ -396,6 +452,7 @@ http:
 
       - type: regex
         name: comandia
+        cpe: cpe:2.3:a:comandia:comandia:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+=['"]//cdn\.mycomandia\.com
         condition: or
@@ -403,6 +460,7 @@ http:
 
       - type: regex
         name: shellinabox
+        cpe: cpe:2.3:a:shellinabox:shellinabox:*:*:*:*:*:*:*:*
         regex:
           - <title>Shell In A Box</title>
           - must be enabled for ShellInABox</noscript>
@@ -411,6 +469,7 @@ http:
 
       - type: regex
         name: websocket
+        cpe: cpe:2.3:a:websocket:websocket:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+rel=["']web-socket["']
           - <(?:link|a)[^>]+href=["']wss?://
@@ -419,6 +478,7 @@ http:
 
       - type: regex
         name: gravatar
+        cpe: cpe:2.3:a:gravatar:gravatar:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+gravatar\.com/avatar/
         condition: or
@@ -426,6 +486,7 @@ http:
 
       - type: regex
         name: php-nuke
+        cpe: cpe:2.3:a:php-nuke:php-nuke:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+Powered by PHP-Nuke
         condition: or
@@ -433,6 +494,7 @@ http:
 
       - type: regex
         name: essential-js-2
+        cpe: cpe:2.3:a:essential-js-2:essential-js-2:*:*:*:*:*:*:*:*
         regex:
           - '<[^>]+ class ?= ?"(?:e-control|[^"]+ e-control)(?: )[^"]* e-lib\b'
         condition: or
@@ -440,6 +502,7 @@ http:
 
       - type: regex
         name: wolf-cms
+        cpe: cpe:2.3:a:wolf-cms:wolf-cms:*:*:*:*:*:*:*:*
         regex:
           - (?:<a href="[^>]+wolfcms\.org[^>]+>Wolf CMS(?:</a>)? inside|Thank you for using <a[^>]+>Wolf CMS)
         condition: or
@@ -447,6 +510,7 @@ http:
 
       - type: regex
         name: shapecss
+        cpe: cpe:2.3:a:shapecss:shapecss:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href="[^"]*shapecss(?:\.min)?\.css
         condition: or
@@ -454,6 +518,7 @@ http:
 
       - type: regex
         name: zabbix
+        cpe: cpe:2.3:a:zabbix:zabbix:*:*:*:*:*:*:*:*
         regex:
           - <body[^>]+zbxCallPostScripts
         condition: or
@@ -461,6 +526,7 @@ http:
 
       - type: regex
         name: phpbb
+        cpe: cpe:2.3:a:phpbb:phpbb:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a[^>]+phpBB
           - <div class=phpbb_copyright>
@@ -472,6 +538,7 @@ http:
 
       - type: regex
         name: sweetalert
+        cpe: cpe:2.3:a:sweetalert:sweetalert:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+sweet-alert(?:\.min)?\.css
         condition: or
@@ -479,6 +546,7 @@ http:
 
       - type: regex
         name: semantic-ui
+        cpe: cpe:2.3:a:semantic-ui:semantic-ui:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+semantic(?:\.min)\.css"
         condition: or
@@ -486,6 +554,7 @@ http:
 
       - type: regex
         name: teamcity
+        cpe: cpe:2.3:a:teamcity:teamcity:*:*:*:*:*:*:*:*
         regex:
           - <span class="versionTag"><span class="vWord">Version</span> ([\d\.]+)
         condition: or
@@ -493,6 +562,7 @@ http:
 
       - type: regex
         name: sapper
+        cpe: cpe:2.3:a:sapper:sapper:*:*:*:*:*:*:*:*
         regex:
           - <script[^>]*>__SAPPER__
         condition: or
@@ -500,6 +570,7 @@ http:
 
       - type: regex
         name: contao
+        cpe: cpe:2.3:a:contao:contao:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+powered by (?:TYPOlight|Contao)[^>]*-->
           - <link[^>]+(?:typolight|contao)\.css
@@ -508,6 +579,7 @@ http:
 
       - type: regex
         name: wpcache
+        cpe: cpe:2.3:a:wpcache:wpcache:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+wpCache
         condition: or
@@ -515,6 +587,7 @@ http:
 
       - type: regex
         name: yii
+        cpe: cpe:2.3:a:yii:yii:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="http://www\.yiiframework\.com/" rel="external">Yii Framework</a>
           - <input type="hidden" value="[a-zA-Z0-9]{40}" name="YII_CSRF_TOKEN" \/>
@@ -524,6 +597,7 @@ http:
 
       - type: regex
         name: bugzilla
+        cpe: cpe:2.3:a:bugzilla:bugzilla:*:*:*:*:*:*:*:*
         regex:
           - href="enter_bug\.cgi">
           - <main id="bugzilla-body"
@@ -534,6 +608,7 @@ http:
 
       - type: regex
         name: adriver
+        cpe: cpe:2.3:a:adriver:adriver:*:*:*:*:*:*:*:*
         regex:
           - (?:<embed[^>]+(?:src="https?://mh\d?\.adriver\.ru/|flashvars="[^"]*(?:http:%3A//(?:ad|mh\d?)\.adriver\.ru/|adriver_banner))|<(?:(?:iframe|img)[^>]+src|a[^>]+href)="https?://ad\.adriver\.ru/)
         condition: or
@@ -541,6 +616,7 @@ http:
 
       - type: regex
         name: papaya-cms
+        cpe: cpe:2.3:a:papaya-cms:papaya-cms:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]*/papaya-themes/
         condition: or
@@ -548,6 +624,7 @@ http:
 
       - type: regex
         name: posterous
+        cpe: cpe:2.3:a:posterous:posterous:*:*:*:*:*:*:*:*
         regex:
           - <div class="posterous
         condition: or
@@ -555,6 +632,7 @@ http:
 
       - type: regex
         name: umbraco
+        cpe: cpe:2.3:a:umbraco:umbraco:*:*:*:*:*:*:*:*
         regex:
           - powered by <a href=[^>]+umbraco
         condition: or
@@ -562,6 +640,7 @@ http:
 
       - type: regex
         name: strato
+        cpe: cpe:2.3:a:strato:strato:*:*:*:*:*:*:*:*
         regex:
           - <a href="http://www\.strato\.de/" target="_blank">
         condition: or
@@ -569,6 +648,7 @@ http:
 
       - type: regex
         name: microsoft-word
+        cpe: cpe:2.3:a:microsoft-word:microsoft-word:*:*:*:*:*:*:*:*
         regex:
           - (?:<html [^>]*xmlns:w="urn:schemas-microsoft-com:office:word"|<w:WordDocument>|<div [^>]*class="?WordSection1[" >]|<style[^>]*>[^>]*@page WordSection1)
         condition: or
@@ -576,6 +656,7 @@ http:
 
       - type: regex
         name: coinhive-captcha
+        cpe: cpe:2.3:a:coinhive-captcha:coinhive-captcha:*:*:*:*:*:*:*:*
         regex:
           - (?:<div[^>]+class="coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class="coinhive-captcha)
         condition: or
@@ -583,6 +664,7 @@ http:
 
       - type: regex
         name: adminer
+        cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
         regex:
           - Adminer</a> <span class="version">([\d.]+)</span>
           - onclick="bodyClick\(event\);" onload="verifyVersion\('([\d.]+)'\);">
@@ -591,6 +673,7 @@ http:
 
       - type: regex
         name: tilda
+        cpe: cpe:2.3:a:tilda:tilda:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+tilda(?:cdn|\.ws|-blocks)
         condition: or
@@ -598,6 +681,7 @@ http:
 
       - type: regex
         name: xtcommerce
+        cpe: cpe:2.3:a:xtcommerce:xtcommerce:*:*:*:*:*:*:*:*
         regex:
           - <div class="copyright">[^<]+<a[^>]+>xt:Commerce
         condition: or
@@ -605,6 +689,7 @@ http:
 
       - type: regex
         name: oracle-commerce
+        cpe: cpe:2.3:a:oracle-commerce:oracle-commerce:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+_dyncharset
         condition: or
@@ -612,6 +697,7 @@ http:
 
       - type: regex
         name: elementor
+        cpe: cpe:2.3:a:elementor:elementor:*:*:*:*:*:*:*:*
         regex:
           - <div class=(?:"|')[^"']*elementor
           - <section class=(?:"|')[^"']*elementor
@@ -622,6 +708,7 @@ http:
 
       - type: regex
         name: dart
+        cpe: cpe:2.3:a:dart:dart:*:*:*:*:*:*:*:*
         regex:
           - /(?:<script)[^>]+(?:type="application/dart")/
         condition: or
@@ -629,6 +716,7 @@ http:
 
       - type: regex
         name: glyphicons
+        cpe: cpe:2.3:a:glyphicons:glyphicons:*:*:*:*:*:*:*:*
         regex:
           - (?:<link[^>]* href=[^>]+glyphicons(?:\.min)?\.css|<img[^>]* src=[^>]+glyphicons)
         condition: or
@@ -636,6 +724,7 @@ http:
 
       - type: regex
         name: jetshop
+        cpe: cpe:2.3:a:jetshop:jetshop:*:*:*:*:*:*:*:*
         regex:
           - <(?:div|aside) id="jetshop-branding">
         condition: or
@@ -643,6 +732,7 @@ http:
 
       - type: regex
         name: business-catalyst
+        cpe: cpe:2.3:a:business-catalyst:business-catalyst:*:*:*:*:*:*:*:*
         regex:
           - <!-- BC_OBNW -->
         condition: or
@@ -650,6 +740,7 @@ http:
 
       - type: regex
         name: boldgrid
+        cpe: cpe:2.3:a:boldgrid:boldgrid:*:*:*:*:*:*:*:*
         regex:
           - <link rel=["']stylesheet["'] [^>]+boldgrid
           - <link rel=["']stylesheet["'] [^>]+post-and-page-builder
@@ -659,6 +750,7 @@ http:
 
       - type: regex
         name: zurb-foundation
+        cpe: cpe:2.3:a:zurb-foundation:zurb-foundation:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+foundation[^>"]+css
           - <div [^>]*class="[^"]*(?:small|medium|large)-\d{1,2} columns
@@ -667,6 +759,7 @@ http:
 
       - type: regex
         name: shoptet
+        cpe: cpe:2.3:a:shoptet:shoptet:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="https?://cdn\.myshoptet\.com/
         condition: or
@@ -674,6 +767,7 @@ http:
 
       - type: regex
         name: phpalbum
+        cpe: cpe:2.3:a:phpalbum:phpalbum:*:*:*:*:*:*:*:*
         regex:
           - <!--phpalbum ([.\d\s]+)-->
         condition: or
@@ -681,6 +775,7 @@ http:
 
       - type: regex
         name: rbs-change
+        cpe: cpe:2.3:a:rbs-change:rbs-change:*:*:*:*:*:*:*:*
         regex:
           - <html[^>]+xmlns:change=
         condition: or
@@ -688,6 +783,7 @@ http:
 
       - type: regex
         name: appnexus
+        cpe: cpe:2.3:a:appnexus:appnexus:*:*:*:*:*:*:*:*
         regex:
           - <(?:iframe|img)[^>]+adnxs\.(?:net|com)
         condition: or
@@ -695,6 +791,7 @@ http:
 
       - type: regex
         name: lightbox
+        cpe: cpe:2.3:a:lightbox:lightbox:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="[^"]+lightbox(?:\.min)?\.css
         condition: or
@@ -702,6 +799,7 @@ http:
 
       - type: regex
         name: shopware
+        cpe: cpe:2.3:a:shopware:shopware:*:*:*:*:*:*:*:*
         regex:
           - <title>Shopware ([\d\.]+) [^<]+
         condition: or
@@ -709,6 +807,7 @@ http:
 
       - type: regex
         name: webmine
+        cpe: cpe:2.3:a:webmine:webmine:*:*:*:*:*:*:*:*
         regex:
           - <iframe[^>]+src=[\'"]https://webmine\.cz/miner\?key=
         condition: or
@@ -716,6 +815,7 @@ http:
 
       - type: regex
         name: fluxbb
+        cpe: cpe:2.3:a:fluxbb:fluxbb:*:*:*:*:*:*:*:*
         regex:
           - <p id="poweredby">[^<]+<a href="https?://fluxbb\.org/">
         condition: or
@@ -723,6 +823,7 @@ http:
 
       - type: regex
         name: gemius
+        cpe: cpe:2.3:a:gemius:gemius:*:*:*:*:*:*:*:*
         regex:
           - <a [^>]*onclick="gemius_hit
         condition: or
@@ -730,6 +831,7 @@ http:
 
       - type: regex
         name: sql-buddy
+        cpe: cpe:2.3:a:sql-buddy:sql-buddy:*:*:*:*:*:*:*:*
         regex:
           - (?:<title>SQL Buddy</title>|<[^>]+onclick="sideMainClick\("home\.php)
         condition: or
@@ -737,6 +839,7 @@ http:
 
       - type: regex
         name: jenkins
+        cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
         regex:
           - <span class="jenkins_ver"><a href="https://jenkins\.io/">Jenkins ver\. ([\d.]+)
         condition: or
@@ -744,6 +847,7 @@ http:
 
       - type: regex
         name: t-soft
+        cpe: cpe:2.3:a:t-soft:t-soft:*:*:*:*:*:*:*:*
         regex:
           - <a href="http://www\.tsoft\.com\.tr" target="_blank" title="T-Soft E-ticaret Sistemleri">
         condition: or
@@ -751,6 +855,7 @@ http:
 
       - type: regex
         name: datocms
+        cpe: cpe:2.3:a:datocms:datocms:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+https://www\.datocms-assets\.com
         condition: or
@@ -758,6 +863,7 @@ http:
 
       - type: regex
         name: sonarqubes
+        cpe: cpe:2.3:a:sonarqubes:sonarqubes:*:*:*:*:*:*:*:*
         regex:
           - <link href="/css/sonar\.css\?v=([\d.]+)
           - <title>SonarQube</title>
@@ -766,6 +872,7 @@ http:
 
       - type: regex
         name: sizmek
+        cpe: cpe:2.3:a:sizmek:sizmek:*:*:*:*:*:*:*:*
         regex:
           - (?:<a [^>]*href="[^/]*//[^/]*serving-sys\.com/|<img [^>]*src="[^/]*//[^/]*serving-sys\.com/)
         condition: or
@@ -773,6 +880,7 @@ http:
 
       - type: regex
         name: koken
+        cpe: cpe:2.3:a:koken:koken:*:*:*:*:*:*:*:*
         regex:
           - <html lang="en" class="k-source-essays k-lens-essays">
           - <!--\s+KOKEN DEBUGGING
@@ -781,6 +889,7 @@ http:
 
       - type: regex
         name: freetextbox
+        cpe: cpe:2.3:a:freetextbox:freetextbox:*:*:*:*:*:*:*:*
         regex:
           - <!-- \* FreeTextBox v\d \((\d+\.\d+\.\d+)
         condition: or
@@ -788,6 +897,7 @@ http:
 
       - type: regex
         name: uknowva
+        cpe: cpe:2.3:a:uknowva:uknowva:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]+>Powered by uKnowva</a>
         condition: or
@@ -795,6 +905,7 @@ http:
 
       - type: regex
         name: comscore
+        cpe: cpe:2.3:a:comscore:comscore:*:*:*:*:*:*:*:*
         regex:
           - <iframe[^>]* (?:id="comscore"|scr=[^>]+comscore)|\.scorecardresearch\.com/beacon\.js|COMSCORE\.beacon
         condition: or
@@ -802,6 +913,7 @@ http:
 
       - type: regex
         name: fast-search-for-sharepoint
+        cpe: cpe:2.3:a:fast-search-for-sharepoint:fast-search-for-sharepoint:*:*:*:*:*:*:*:*
         regex:
           - <input[^>]+ name="ParametricSearch
         condition: or
@@ -809,6 +921,7 @@ http:
 
       - type: regex
         name: adverticum
+        cpe: cpe:2.3:a:adverticum:adverticum:*:*:*:*:*:*:*:*
         regex:
           - <div (?:id="[a-zA-Z0-9_]*" )?class="goAdverticum"
         condition: or
@@ -816,6 +929,7 @@ http:
 
       - type: regex
         name: clarity
+        cpe: cpe:2.3:a:clarity:clarity:*:*:*:*:*:*:*:*
         regex:
           - <clr-main-container
           - <link [^>]*href="[^"]*clr-ui(?:\.min)?\.css
@@ -824,6 +938,7 @@ http:
 
       - type: regex
         name: elm-ui
+        cpe: cpe:2.3:a:elm-ui:elm-ui:*:*:*:*:*:*:*:*
         regex:
           - <style>[\s\S]*\.explain > \.s[\s\S]*\.explain > \.ctr > \.s
         condition: or
@@ -831,6 +946,7 @@ http:
 
       - type: regex
         name: bigace
+        cpe: cpe:2.3:a:bigace:bigace:*:*:*:*:*:*:*:*
         regex:
           - (?:Powered by <a href="[^>]+BIGACE|<!--\s+Site is running BIGACE)
         condition: or
@@ -838,6 +954,7 @@ http:
 
       - type: regex
         name: microsoft-powerpoint
+        cpe: cpe:2.3:a:microsoft-powerpoint:microsoft-powerpoint:*:*:*:*:*:*:*:*
         regex:
           - (?:<html [^>]*xmlns:w="urn:schemas-microsoft-com:office:powerpoint"|<link rel="?Presentation-XML"? href="?[^"]+\.xml"?>|<o:PresentationFormat>[^<]+</o:PresentationFormat>[^!]+<o:Slides>\d+</o:Slides>(?:[^!]+<o:Version>([\d.]+)</o:Version>)?)
         condition: or
@@ -845,6 +962,7 @@ http:
 
       - type: regex
         name: angularjs
+        cpe: cpe:2.3:a:angularjs:angularjs:*:*:*:*:*:*:*:*
         regex:
           - <(?:div|html)[^>]+ng-app=
           - <ng-app
@@ -853,6 +971,7 @@ http:
 
       - type: regex
         name: froala-editor
+        cpe: cpe:2.3:a:froala-editor:froala-editor:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+class="[^"]*(?:fr-view|fr-box)
         condition: or
@@ -860,6 +979,7 @@ http:
 
       - type: regex
         name: odoo
+        cpe: cpe:2.3:a:odoo:odoo:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+/web/css/(?:web\.assets_common/|website\.assets_frontend/)
         condition: or
@@ -867,6 +987,7 @@ http:
 
       - type: regex
         name: shinystat
+        cpe: cpe:2.3:a:shinystat:shinystat:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]*\s+src=['"]?https?://www\.shinystat\.com/cgi-bin/shinystat\.cgi\?[^'"\s>]*['"\s/>]
         condition: or
@@ -874,6 +995,7 @@ http:
 
       - type: regex
         name: blip.tv
+        cpe: cpe:2.3:a:blip.tv:blip.tv:*:*:*:*:*:*:*:*
         regex:
           - <(?:param|embed|iframe)[^>]+blip\.tv/play
         condition: or
@@ -881,6 +1003,7 @@ http:
 
       - type: regex
         name: slick
+        cpe: cpe:2.3:a:slick:slick:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]+(?:/([\d.]+)/)?slick-theme\.css
         condition: or
@@ -888,6 +1011,7 @@ http:
 
       - type: regex
         name: flyspray
+        cpe: cpe:2.3:a:flyspray:flyspray:*:*:*:*:*:*:*:*
         regex:
           - (?:<a[^>]+>Powered by Flyspray|<map id="projectsearchform)
         condition: or
@@ -895,6 +1019,7 @@ http:
 
       - type: regex
         name: fact-finder
+        cpe: cpe:2.3:a:fact-finder:fact-finder:*:*:*:*:*:*:*:*
         regex:
           - <!-- Factfinder
         condition: or
@@ -902,6 +1027,7 @@ http:
 
       - type: regex
         name: vp-asp
+        cpe: cpe:2.3:a:vp-asp:vp-asp:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]+>Powered By VP-ASP Shopping Cart</a>
         condition: or
@@ -909,6 +1035,7 @@ http:
 
       - type: regex
         name: koobi
+        cpe: cpe:2.3:a:koobi:koobi:*:*:*:*:*:*:*:*
         regex:
           - <!--[^K>-]+Koobi ([a-z\d.]+)
         condition: or
@@ -916,6 +1043,7 @@ http:
 
       - type: regex
         name: clickfunnels
+        cpe: cpe:2.3:a:clickfunnels:clickfunnels:*:*:*:*:*:*:*:*
         regex:
           - <meta property="cf:app_domain" content="app\.clickfunnels\.com"
         condition: or
@@ -923,6 +1051,7 @@ http:
 
       - type: regex
         name: k2
+        cpe: cpe:2.3:a:k2:k2:*:*:*:*:*:*:*:*
         regex:
           - '<!--(?: JoomlaWorks "K2"| Start K2)'
         condition: or
@@ -930,6 +1059,7 @@ http:
 
       - type: regex
         name: ant-design
+        cpe: cpe:2.3:a:ant-design:ant-design:*:*:*:*:*:*:*:*
         regex:
           - <[^>]*class="ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider|drawer)
           - <i class="anticon anticon-
@@ -938,6 +1068,7 @@ http:
 
       - type: regex
         name: zk
+        cpe: cpe:2.3:a:zk:zk:*:*:*:*:*:*:*:*
         regex:
           - <!-- ZK [.\d\s]+-->
         condition: or
@@ -945,6 +1076,7 @@ http:
 
       - type: regex
         name: meebo
+        cpe: cpe:2.3:a:meebo:meebo:*:*:*:*:*:*:*:*
         regex:
           - (?:<iframe id="meebo-iframe"|Meebo\('domReady'\))
         condition: or
@@ -952,6 +1084,7 @@ http:
 
       - type: regex
         name: stripe
+        cpe: cpe:2.3:a:stripe:stripe:*:*:*:*:*:*:*:*
         regex:
           - <input[^>]+data-stripe
         condition: or
@@ -959,6 +1092,7 @@ http:
 
       - type: regex
         name: veoxa
+        cpe: cpe:2.3:a:veoxa:veoxa:*:*:*:*:*:*:*:*
         regex:
           - <img [^>]*src="[^"]+tracking\.veoxa\.com
         condition: or
@@ -966,6 +1100,7 @@ http:
 
       - type: regex
         name: sphinx
+        cpe: cpe:2.3:a:sphinx:sphinx:*:*:*:*:*:*:*:*
         regex:
           - Created using <a href="https?://(?:www\.)?sphinx-doc\.org/">Sphinx</a> ([0-9.]+)\.
         condition: or
@@ -973,6 +1108,7 @@ http:
 
       - type: regex
         name: nuxt.js
+        cpe: cpe:2.3:a:nuxt.js:nuxt.js:*:*:*:*:*:*:*:*
         regex:
           - <div [^>]*id="__nuxt"
           - <script [^>]*>window\.__NUXT__
@@ -982,6 +1118,7 @@ http:
       - type: word
         part: response
         name: next.js
+        cpe: cpe:2.3:a:next.js:next.js:*:*:*:*:*:*:*:*
         words:
           - '<script id="__NEXT_DATA__"'
           - 'X-Powered-By: Next.js'
@@ -989,6 +1126,7 @@ http:
 
       - type: regex
         name: angular
+        cpe: cpe:2.3:a:angular:angular:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+ ng-version="([\d.]+)"
         condition: or
@@ -996,6 +1134,7 @@ http:
 
       - type: regex
         name: gravity-forms
+        cpe: cpe:2.3:a:gravity-forms:gravity-forms:*:*:*:*:*:*:*:*
         regex:
           - <div class=(?:"|')[^>]*gform_wrapper
           - <div class=(?:"|')[^>]*gform_body
@@ -1006,6 +1145,7 @@ http:
 
       - type: regex
         name: ultracart
+        cpe: cpe:2.3:a:ultracart:ultracart:*:*:*:*:*:*:*:*
         regex:
           - <form [^>]*action="[^"]*\/cgi-bin\/UCEditor\?(?:[^"]*&)?merchantId=[^"]
         condition: or
@@ -1013,6 +1153,7 @@ http:
 
       - type: regex
         name: carbon-ads
+        cpe: cpe:2.3:a:carbon-ads:carbon-ads:*:*:*:*:*:*:*:*
         regex:
           - <[a-z]+ [^>]*id="carbonads-container"
         condition: or
@@ -1020,6 +1161,7 @@ http:
 
       - type: regex
         name: vue.js
+        cpe: cpe:2.3:a:vue.js:vue.js:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+\sdata-v(?:ue)?-
         condition: or
@@ -1027,6 +1169,7 @@ http:
 
       - type: regex
         name: koala-framework
+        cpe: cpe:2.3:a:koala-framework:koala-framework:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+This website is powered by Koala Web Framework CMS
         condition: or
@@ -1034,6 +1177,7 @@ http:
 
       - type: regex
         name: mobirise
+        cpe: cpe:2.3:a:mobirise:mobirise:*:*:*:*:*:*:*:*
         regex:
           - <!-- Site made with Mobirise Website Builder v([\d.]+)
         condition: or
@@ -1041,6 +1185,7 @@ http:
 
       - type: regex
         name: vimeo
+        cpe: cpe:2.3:a:vimeo:vimeo:*:*:*:*:*:*:*:*
         regex:
           - (?:<(?:param|embed)[^>]+vimeo\.com/moogaloop|<iframe[^>]player\.vimeo\.com)
         condition: or
@@ -1048,6 +1193,7 @@ http:
 
       - type: regex
         name: tiddlywiki
+        cpe: cpe:2.3:a:tiddlywiki:tiddlywiki:*:*:*:*:*:*:*:*
         regex:
           - <[^>]*type=[^>]text\/vnd\.tiddlywiki
         condition: or
@@ -1055,6 +1201,7 @@ http:
 
       - type: regex
         name: invenio
+        cpe: cpe:2.3:a:invenio:invenio:*:*:*:*:*:*:*:*
         regex:
           - (?:Powered by|System)\s+(?:CERN )?<a (?:class="footer" )?href="http://(?:cdsware\.cern\.ch(?:/invenio)?|invenio-software\.org|cern\.ch/invenio)(?:/)?">(?:CDS )?Invenio</a>\s*v?([\d\.]+)?
         condition: or
@@ -1062,6 +1209,7 @@ http:
 
       - type: regex
         name: chamilo
+        cpe: cpe:2.3:a:chamilo:chamilo:*:*:*:*:*:*:*:*
         regex:
           - '">Chamilo ([\d.]+)</a>'
         condition: or
@@ -1069,6 +1217,7 @@ http:
 
       - type: regex
         name: nuvemshop
+        cpe: cpe:2.3:a:nuvemshop:nuvemshop:*:*:*:*:*:*:*:*
         regex:
           - <a target="_blank" title="Nuvemshop"
         condition: or
@@ -1076,6 +1225,7 @@ http:
 
       - type: regex
         name: outlook-web-app
+        cpe: cpe:2.3:a:outlook-web-app:outlook-web-app:*:*:*:*:*:*:*:*
         regex:
           - <link\s[^>]*href="[^"]*?([\d.]+)/themes/resources/owafont\.css
         condition: or
@@ -1083,6 +1233,7 @@ http:
 
       - type: regex
         name: pygments
+        cpe: cpe:2.3:a:pygments:pygments:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+pygments\.css["']
         condition: or
@@ -1090,6 +1241,7 @@ http:
 
       - type: regex
         name: codeigniter
+        cpe: cpe:2.3:a:codeigniter:codeigniter:*:*:*:*:*:*:*:*
         regex:
           - <input[^>]+name="ci_csrf_token"
         condition: or
@@ -1097,6 +1249,7 @@ http:
 
       - type: regex
         name: smartsite
+        cpe: cpe:2.3:a:smartsite:smartsite:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+/smartsite\.(?:dws|shtml)\?id=
         condition: or
@@ -1104,6 +1257,7 @@ http:
 
       - type: regex
         name: epoch
+        cpe: cpe:2.3:a:epoch:epoch:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+epoch(?:\.min)?\.css
         condition: or
@@ -1111,6 +1265,7 @@ http:
 
       - type: regex
         name: elog
+        cpe: cpe:2.3:a:elog:elog:*:*:*:*:*:*:*:*
         regex:
           - <title>ELOG Logbook Selection</title>
         condition: or
@@ -1118,6 +1273,7 @@ http:
 
       - type: regex
         name: sympa
+        cpe: cpe:2.3:a:sympa:sympa:*:*:*:*:*:*:*:*
         regex:
           - <a href="https?://www\.sympa\.org">\s*Powered by Sympa\s*</a>
         condition: or
@@ -1125,6 +1281,7 @@ http:
 
       - type: regex
         name: xwiki
+        cpe: cpe:2.3:a:xwiki:xwiki:*:*:*:*:*:*:*:*
         regex:
           - <html[^>]data-xwiki-[^>]>
         condition: or
@@ -1132,6 +1289,7 @@ http:
 
       - type: regex
         name: fastspring
+        cpe: cpe:2.3:a:fastspring:fastspring:*:*:*:*:*:*:*:*
         regex:
           - <a [^>]*href="https?://sites\.fastspring\.com
           - <form [^>]*action="https?://sites\.fastspring\.com
@@ -1140,6 +1298,7 @@ http:
 
       - type: regex
         name: flarum
+        cpe: cpe:2.3:a:flarum:flarum:*:*:*:*:*:*:*:*
         regex:
           - <div id="flarum-loading"
         condition: or
@@ -1147,6 +1306,7 @@ http:
 
       - type: regex
         name: bigdump
+        cpe: cpe:2.3:a:bigdump:bigdump:*:*:*:*:*:*:*:*
         regex:
           - '<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\. ([\d.b]+)'
         condition: or
@@ -1154,6 +1314,7 @@ http:
 
       - type: regex
         name: project-wonderful
+        cpe: cpe:2.3:a:project-wonderful:project-wonderful:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+id="pw_adbox_
         condition: or
@@ -1161,6 +1322,7 @@ http:
 
       - type: regex
         name: gitlab
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         regex:
           - <meta content="https?://[^/]+/assets/gitlab_logo-
           - <header class="navbar navbar-fixed-top navbar-gitlab with-horizontal-nav">
@@ -1169,6 +1331,7 @@ http:
 
       - type: regex
         name: redmine
+        cpe: cpe:2.3:a:redmine:redmine:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+Redmine
         condition: or
@@ -1176,12 +1339,14 @@ http:
 
       - type: regex
         name: vbulletin
+        cpe: cpe:2.3:a:vbulletin:vbulletin:*:*:*:*:*:*:*:*
         regex:
           - <div id="copyright">Powered by vBulletin
         condition: or
 
       - type: word
         name: vbulletin
+        cpe: cpe:2.3:a:vbulletin:vbulletin:*:*:*:*:*:*:*:*
         words:
           - "vBulletin.version"
           - 'content="vBulletin'
@@ -1189,6 +1354,7 @@ http:
 
       - type: regex
         name: meteor
+        cpe: cpe:2.3:a:meteor:meteor:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+__meteor-css__
         condition: or
@@ -1196,6 +1362,7 @@ http:
 
       - type: regex
         name: asciinema
+        cpe: cpe:2.3:a:asciinema:asciinema:*:*:*:*:*:*:*:*
         regex:
           - <asciinema-player
         condition: or
@@ -1203,6 +1370,7 @@ http:
 
       - type: regex
         name: apostrophecms
+        cpe: cpe:2.3:a:apostrophecms:apostrophecms:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+data-apos-refreshable[^>]
         condition: or
@@ -1210,6 +1378,7 @@ http:
 
       - type: regex
         name: prettyphoto
+        cpe: cpe:2.3:a:prettyphoto:prettyphoto:*:*:*:*:*:*:*:*
         regex:
           - (?:<link [^>]*href="[^"]*prettyPhoto(?:\.min)?\.css|<a [^>]*rel="prettyPhoto)
         condition: or
@@ -1217,6 +1386,7 @@ http:
 
       - type: regex
         name: ikiwiki
+        cpe: cpe:2.3:a:ikiwiki:ikiwiki:*:*:*:*:*:*:*:*
         regex:
           - <link rel="alternate" type="application/x-wiki" title="Edit this page" href="[^"]*/ikiwiki\.cgi
           - <a href="/(?:cgi-bin/)?ikiwiki\.cgi\?do=
@@ -1225,6 +1395,7 @@ http:
 
       - type: regex
         name: spree
+        cpe: cpe:2.3:a:spree:spree:*:*:*:*:*:*:*:*
         regex:
           - (?:<link[^>]*/assets/store/all-[a-z\d]{32}\.css[^>]+>|<script>\s*Spree\.(?:routes|translations|api_key))
         condition: or
@@ -1232,6 +1403,7 @@ http:
 
       - type: regex
         name: swiftlet
+        cpe: cpe:2.3:a:swiftlet:swiftlet:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+Swiftlet
         condition: or
@@ -1239,6 +1411,7 @@ http:
 
       - type: regex
         name: locomotive
+        cpe: cpe:2.3:a:locomotive:locomotive:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]*/sites/[a-z\d]{24}/theme/stylesheets
         condition: or
@@ -1246,6 +1419,7 @@ http:
 
       - type: regex
         name: dtg
+        cpe: cpe:2.3:a:dtg:dtg:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]+Site Powered by DTG
         condition: or
@@ -1253,6 +1427,7 @@ http:
 
       - type: regex
         name: koha
+        cpe: cpe:2.3:a:koha:koha:*:*:*:*:*:*:*:*
         regex:
           - <input name="koha_login_context" value="intranet" type="hidden">
           - <a href="/cgi-bin/koha/
@@ -1261,6 +1436,7 @@ http:
 
       - type: regex
         name: foswiki
+        cpe: cpe:2.3:a:foswiki:foswiki:*:*:*:*:*:*:*:*
         regex:
           - <div class="foswiki(?:Copyright|Page|Main)">
         condition: or
@@ -1268,6 +1444,7 @@ http:
 
       - type: regex
         name: pligg
+        cpe: cpe:2.3:a:pligg:pligg:*:*:*:*:*:*:*:*
         regex:
           - <span[^>]+id="xvotes-0
         condition: or
@@ -1275,6 +1452,7 @@ http:
 
       - type: regex
         name: yui-doc
+        cpe: cpe:2.3:a:yui-doc:yui-doc:*:*:*:*:*:*:*:*
         regex:
           - (?:<html[^>]* yuilibrary\.com/rdf/[\d.]+/yui\.rdf|<body[^>]+class="yui3-skin-sam)
         condition: or
@@ -1282,6 +1460,7 @@ http:
 
       - type: regex
         name: mailchimp
+        cpe: cpe:2.3:a:mailchimp:mailchimp:*:*:*:*:*:*:*:*
         regex:
           - <form [^>]*data-mailchimp-url
           - <form [^>]*id="mc-embedded-subscribe-form"
@@ -1293,6 +1472,7 @@ http:
 
       - type: regex
         name: mattermost
+        cpe: cpe:2.3:a:mattermost:mattermost:*:*:*:*:*:*:*:*
         regex:
           - <noscript> To use Mattermost, please enable JavaScript\. </noscript>
         condition: or
@@ -1300,6 +1480,7 @@ http:
 
       - type: regex
         name: typo3-cms
+        cpe: cpe:2.3:a:typo3-cms:typo3-cms:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+ href="/?typo3(?:conf|temp)/
           - <img[^>]+ src="/?typo3(?:conf|temp)/
@@ -1309,6 +1490,7 @@ http:
 
       - type: regex
         name: percussion
+        cpe: cpe:2.3:a:percussion:percussion:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+class="perc-region"
         condition: or
@@ -1316,6 +1498,7 @@ http:
 
       - type: regex
         name: svelte
+        cpe: cpe:2.3:a:svelte:svelte:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+class=\"[^\"]+\ssvelte-[\w]*\"
         condition: or
@@ -1323,6 +1506,7 @@ http:
 
       - type: regex
         name: tumblr
+        cpe: cpe:2.3:a:tumblr:tumblr:*:*:*:*:*:*:*:*
         regex:
           - <iframe src="[^>]+tumblr\.com
         condition: or
@@ -1330,6 +1514,7 @@ http:
 
       - type: regex
         name: adobe-experience-manager
+        cpe: cpe:2.3:a:adobe-experience-manager:adobe-experience-manager:*:*:*:*:*:*:*:*
         regex:
           - <div class="[^"]*parbase
           - '<div[^>]+data-component-path="[^"+]jcr:'
@@ -1339,6 +1524,7 @@ http:
 
       - type: regex
         name: chorus
+        cpe: cpe:2.3:a:chorus:chorus:*:*:*:*:*:*:*:*
         regex:
           - <meta data-chorus-version=
         condition: or
@@ -1346,6 +1532,7 @@ http:
 
       - type: regex
         name: kubernetes-dashboard
+        cpe: cpe:2.3:a:kubernetes-dashboard:kubernetes-dashboard:*:*:*:*:*:*:*:*
         regex:
           - <html ng-app="kubernetesDashboard">
         condition: or
@@ -1353,6 +1540,7 @@ http:
 
       - type: regex
         name: yahoo!-tag-manager
+        cpe: cpe:2.3:a:yahoo!-tag-manager:yahoo!-tag-manager:*:*:*:*:*:*:*:*
         regex:
           - <!-- (?:End )?Yahoo! Tag Manager -->
         condition: or
@@ -1360,6 +1548,7 @@ http:
 
       - type: regex
         name: gitiles
+        cpe: cpe:2.3:a:gitiles:gitiles:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="https://gerrit\.googlesource\.com/gitiles/">Gitiles<
         condition: or
@@ -1367,6 +1556,7 @@ http:
 
       - type: regex
         name: slimbox-2
+        cpe: cpe:2.3:a:slimbox-2:slimbox-2:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="[^/]*slimbox2(?:-rtl)?\.css
         condition: or
@@ -1374,6 +1564,7 @@ http:
 
       - type: regex
         name: fortune3
+        cpe: cpe:2.3:a:fortune3:fortune3:*:*:*:*:*:*:*:*
         regex:
           - (?:<link [^>]*href="[^\/]*\/\/www\.fortune3\.com\/[^"]*siterate\/rate\.css|Powered by <a [^>]*href="[^"]+fortune3\.com)
         condition: or
@@ -1381,6 +1572,7 @@ http:
 
       - type: regex
         name: bloomreach
+        cpe: cpe:2.3:a:bloomreach:bloomreach:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+/binaries/(?:[^/]+/)*content/gallery/
         condition: or
@@ -1388,6 +1580,7 @@ http:
 
       - type: regex
         name: moguta.cms
+        cpe: cpe:2.3:a:moguta.cms:moguta.cms:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+href=["'][^"]+mg-(?:core|plugins|templates)/
         condition: or
@@ -1395,6 +1588,7 @@ http:
 
       - type: regex
         name: php-fusion
+        cpe: cpe:2.3:a:php-fusion:php-fusion:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+php-fusion
         condition: or
@@ -1402,6 +1596,7 @@ http:
 
       - type: regex
         name: jekyll
+        cpe: cpe:2.3:a:jekyll:jekyll:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="https?://jekyllrb\.com"[^>]*>Jekyll</
           - <!-- Created with Jekyll Now -
@@ -1411,6 +1606,7 @@ http:
 
       - type: regex
         name: vigbo
+        cpe: cpe:2.3:a:vigbo:vigbo:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+(?:\.vigbo\.com|\.gophotoweb\.com)
         condition: or
@@ -1418,6 +1614,7 @@ http:
 
       - type: regex
         name: apache-jspwiki
+        cpe: cpe:2.3:a:apache-jspwiki:apache-jspwiki:*:*:*:*:*:*:*:*
         regex:
           - <html[^>]* xmlns:jspwiki=
         condition: or
@@ -1425,6 +1622,7 @@ http:
 
       - type: regex
         name: wp-statistics
+        cpe: cpe:2.3:a:wp-statistics:wp-statistics:*:*:*:*:*:*:*:*
         regex:
           - <!-- Analytics by WP-Statistics v([\d.]+) -
         condition: or
@@ -1432,6 +1630,7 @@ http:
 
       - type: regex
         name: squiz-matrix
+        cpe: cpe:2.3:a:squiz-matrix:squiz-matrix:*:*:*:*:*:*:*:*
         regex:
           - <!--\s+Running (?:MySource|Squiz) Matrix
         condition: or
@@ -1439,6 +1638,7 @@ http:
 
       - type: regex
         name: squarespace
+        cpe: cpe:2.3:a:squarespace:squarespace:*:*:*:*:*:*:*:*
         regex:
           - <!-- This is Squarespace\. -->
         condition: or
@@ -1446,6 +1646,7 @@ http:
 
       - type: regex
         name: phenomic
+        cpe: cpe:2.3:a:phenomic:phenomic:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+id="phenomic(?:root)?"
         condition: or
@@ -1453,6 +1654,7 @@ http:
 
       - type: regex
         name: opencms
+        cpe: cpe:2.3:a:opencms:opencms:*:*:*:*:*:*:*:*
         regex:
           - <link href="/opencms/
         condition: or
@@ -1460,6 +1662,7 @@ http:
 
       - type: regex
         name: farapy
+        cpe: cpe:2.3:a:farapy:farapy:*:*:*:*:*:*:*:*
         regex:
           - <!-- Powered by FaraPy.
         condition: or
@@ -1467,6 +1670,7 @@ http:
 
       - type: regex
         name: octopress
+        cpe: cpe:2.3:a:octopress:octopress:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="http://octopress\.org">
         condition: or
@@ -1474,6 +1678,7 @@ http:
 
       - type: regex
         name: dm-polopoly
+        cpe: cpe:2.3:a:dm-polopoly:dm-polopoly:*:*:*:*:*:*:*:*
         regex:
           - <(?:link [^>]*href|img [^>]*src)="/polopoly_fs/
         condition: or
@@ -1481,6 +1686,7 @@ http:
 
       - type: regex
         name: saber
+        cpe: cpe:2.3:a:saber:saber:*:*:*:*:*:*:*:*
         regex:
           - <div [^>]*id="_saber"
         condition: or
@@ -1488,6 +1694,7 @@ http:
 
       - type: regex
         name: sap-commerce-cloud
+        cpe: cpe:2.3:a:sap-commerce-cloud:sap-commerce-cloud:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+/(?:sys_master|hybr|_ui/(?:responsive/)?(?:desktop|common(?:/images|/img)?))/
         condition: or
@@ -1495,6 +1702,7 @@ http:
 
       - type: regex
         name: atlassian-statuspage
+        cpe: cpe:2.3:a:atlassian-statuspage:atlassian-statuspage:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]*href="https?://(?:www\.)?statuspage\.io/powered-by[^>]+>
         condition: or
@@ -1502,6 +1710,7 @@ http:
 
       - type: regex
         name: recaptcha
+        cpe: cpe:2.3:a:recaptcha:recaptcha:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+id="recaptcha_image
           - <link[^>]+recaptcha
@@ -1511,6 +1720,7 @@ http:
 
       - type: regex
         name: wowza-media-server
+        cpe: cpe:2.3:a:wowza-media-server:wowza-media-server:*:*:*:*:*:*:*:*
         regex:
           - '<title>Wowza Media Server \d+ ((?:\w+ Edition )?\d+\.[\d\.]+(?: build\d+)?)?'
         condition: or
@@ -1518,6 +1728,7 @@ http:
 
       - type: regex
         name: artifactory
+        cpe: cpe:2.3:a:artifactory:artifactory:*:*:*:*:*:*:*:*
         regex:
           - '<span class="version">Artifactory(?: Pro)?(?: Power Pack)?(?: ([\d.]+))?'
         condition: or
@@ -1525,6 +1736,7 @@ http:
 
       - type: regex
         name: pelican
+        cpe: cpe:2.3:a:pelican:pelican:*:*:*:*:*:*:*:*
         regex:
           - powered by <a href="[^>]+getpelican\.com
           - powered by <a href="https?://pelican\.notmyidea\.org
@@ -1533,6 +1745,7 @@ http:
 
       - type: regex
         name: microsoft-excel
+        cpe: cpe:2.3:a:microsoft-excel:microsoft-excel:*:*:*:*:*:*:*:*
         regex:
           - (?:<html [^>]*xmlns:w="urn:schemas-microsoft-com:office:excel"|<!--\s*(?:START|END) OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD\s*-->|<div [^>]*x:publishsource="?Excel"?)
         condition: or
@@ -1540,6 +1753,7 @@ http:
 
       - type: regex
         name: oracle-commerce-cloud
+        cpe: cpe:2.3:a:oracle-commerce-cloud:oracle-commerce-cloud:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+id="oracle-cc"
         condition: or
@@ -1547,6 +1761,7 @@ http:
 
       - type: regex
         name: django
+        cpe: cpe:2.3:a:django:django:*:*:*:*:*:*:*:*
         regex:
           - (?:powered by <a[^>]+>Django ?([\d.]+)?<\/a>|<input[^>]*name=["']csrfmiddlewaretoken["'][^>]*>)
         condition: or
@@ -1554,6 +1769,7 @@ http:
 
       - type: regex
         name: wikkawiki
+        cpe: cpe:2.3:a:wikkawiki:wikkawiki:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+WikkaWiki
         condition: or
@@ -1561,6 +1777,7 @@ http:
 
       - type: regex
         name: xampp
+        cpe: cpe:2.3:a:xampp:xampp:*:*:*:*:*:*:*:*
         regex:
           - '<title>XAMPP(?: Version ([\d\.]+))?</title>'
         condition: or
@@ -1568,6 +1785,7 @@ http:
 
       - type: regex
         name: polymer
+        cpe: cpe:2.3:a:polymer:polymer:*:*:*:*:*:*:*:*
         regex:
           - (?:<polymer-[^>]+|<link[^>]+rel="import"[^>]+/polymer\.html")
         condition: or
@@ -1575,6 +1793,7 @@ http:
 
       - type: regex
         name: livewire
+        cpe: cpe:2.3:a:livewire:livewire:*:*:*:*:*:*:*:*
         regex:
           - '<[^>]{1,512}\bwire:'
         condition: or
@@ -1582,6 +1801,7 @@ http:
 
       - type: regex
         name: gitlist
+        cpe: cpe:2.3:a:gitlist:gitlist:*:*:*:*:*:*:*:*
         regex:
           - <p>Powered by <a[^>]+>GitList ([\d.]+)
         condition: or
@@ -1589,6 +1809,7 @@ http:
 
       - type: regex
         name: methode
+        cpe: cpe:2.3:a:methode:methode:*:*:*:*:*:*:*:*
         regex:
           - '<!-- Methode uuid: "[a-f\d]+" ?-->'
         condition: or
@@ -1596,6 +1817,7 @@ http:
 
       - type: regex
         name: pirobase-cms
+        cpe: cpe:2.3:a:pirobase-cms:pirobase-cms:*:*:*:*:*:*:*:*
         regex:
           - <(?:script|link)[^>]/site/[a-z0-9/._-]+/resourceCached/[a-z0-9/._-]+
           - <input[^>]+cbi:///cms/
@@ -1604,6 +1826,7 @@ http:
 
       - type: regex
         name: welcart
+        cpe: cpe:2.3:a:welcart:welcart:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+usces_default(?:\.min)?\.css
           - '<!-- Welcart version : v([\d.]+)'
@@ -1612,6 +1835,7 @@ http:
 
       - type: regex
         name: question2answer
+        cpe: cpe:2.3:a:question2answer:question2answer:*:*:*:*:*:*:*:*
         regex:
           - <!-- Powered by Question2Answer
         condition: or
@@ -1619,6 +1843,7 @@ http:
 
       - type: regex
         name: nopcommerce
+        cpe: cpe:2.3:a:nopcommerce:nopcommerce:*:*:*:*:*:*:*:*
         regex:
           - "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)"
         condition: or
@@ -1626,6 +1851,7 @@ http:
 
       - type: regex
         name: swiper-slider
+        cpe: cpe:2.3:a:swiper-slider:swiper-slider:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+=swiper-container
         condition: or
@@ -1633,6 +1859,7 @@ http:
 
       - type: regex
         name: punbb
+        cpe: cpe:2.3:a:punbb:punbb:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+punbb
         condition: or
@@ -1640,6 +1867,7 @@ http:
 
       - type: regex
         name: webdev
+        cpe: cpe:2.3:a:webdev:webdev:*:*:*:*:*:*:*:*
         regex:
           - <!-- [a-zA-Z0-9_]+ [\d/]+ [\d:]+ WebDev \d\d ([\d.]+) -->
         condition: or
@@ -1647,6 +1875,7 @@ http:
 
       - type: regex
         name: bulma
+        cpe: cpe:2.3:a:bulma:bulma:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+bulma(?:\.min)?\.css
         condition: or
@@ -1654,6 +1883,7 @@ http:
 
       - type: regex
         name: react
+        cpe: cpe:2.3:a:react:react:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+data-react
           - Web site created using create-react-app
@@ -1662,6 +1892,7 @@ http:
 
       - type: regex
         name: highstock
+        cpe: cpe:2.3:a:highstock:highstock:*:*:*:*:*:*:*:*
         regex:
           - <svg[^>]*><desc>Created with Highstock ([\d.]*)
         condition: or
@@ -1669,6 +1900,7 @@ http:
 
       - type: regex
         name: otrs
+        cpe: cpe:2.3:a:otrs:otrs:*:*:*:*:*:*:*:*
         regex:
           - '<!--\s+OTRS: Copyright'
         condition: or
@@ -1676,6 +1908,7 @@ http:
 
       - type: regex
         name: livefyre
+        cpe: cpe:2.3:a:livefyre:livefyre:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+(?:id|class)="livefyre
         condition: or
@@ -1683,6 +1916,7 @@ http:
 
       - type: regex
         name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         regex:
           - (?:<div[^>]+id="wrapper_r"|<(?:link|script)[^>]+(?:feed|components)/com_|<table[^>]+class="pill)
         condition: or
@@ -1690,6 +1924,7 @@ http:
 
       - type: regex
         name: tailwindcss
+        cpe: cpe:2.3:a:tailwindcss:tailwindcss:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+tailwindcss(?:\.min)?\.css
         condition: or
@@ -1697,6 +1932,7 @@ http:
 
       - type: regex
         name: xonic
+        cpe: cpe:2.3:a:xonic:xonic:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="http://www\.xonic-solutions\.de/index\.php" target="_blank">xonic-solutions Shopsoftware</a>
         condition: or
@@ -1704,6 +1940,7 @@ http:
 
       - type: regex
         name: volusion
+        cpe: cpe:2.3:a:volusion:volusion:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="[^"]*/vspfiles/
           - <body [^>]*data-vn-page-name
@@ -1712,6 +1949,7 @@ http:
 
       - type: regex
         name: x-cart
+        cpe: cpe:2.3:a:x-cart:x-cart:*:*:*:*:*:*:*:*
         regex:
           - 'Powered by X-Cart(?: (\d+))? <a[^>]+href="http://www\.x-cart\.com/"[^>]*>'
           - <a[^>]+href="[^"]*(?:\?|&)xcart_form_id=[a-z\d]{32}(?:&|$)
@@ -1720,6 +1958,7 @@ http:
 
       - type: regex
         name: ad-ebis
+        cpe: cpe:2.3:a:ad-ebis:ad-ebis:*:*:*:*:*:*:*:*
         regex:
           - <!-- EBiS contents tag
           - <!--EBiS tag
@@ -1730,6 +1969,7 @@ http:
 
       - type: regex
         name: solodev
+        cpe: cpe:2.3:a:solodev:solodev:*:*:*:*:*:*:*:*
         regex:
           - <div class=["']dynamicDiv["'] id=["']dd\.\d\.\d(?:\.\d)?["']>
         condition: or
@@ -1737,6 +1977,7 @@ http:
 
       - type: regex
         name: element-ui
+        cpe: cpe:2.3:a:element-ui:element-ui:*:*:*:*:*:*:*:*
         regex:
           - <(?:div|button) class="el-(?:table-column|table-filter|popper|pagination|pager|select-group|form|form-item|color-predefine|color-hue-slider|color-svpanel|color-alpha-slider|color-dropdown|color-picker|badge|tree|tree-node|select|message|dialog|checkbox|checkbox-button|checkbox-group|container|steps|carousel|menu|menu-item|submenu|menu-item-group|button|button-group|card|table|select-dropdown|row|tabs|notification|radio|progress|progress-bar|tag|popover|tooltip|cascader|cascader-menus|cascader-menu|time-spinner|spinner|spinner-inner|transfer|transfer-panel|rate|slider|dropdown|dropdown-menu|textarea|input|input-group|popup-parent|radio-group|main|breadcrumb|time-range-picker|date-range-picker|year-table|date-editor|range-editor|time-spinner|date-picker|time-panel|date-table|month-table|picker-panel|collapse|collapse-item|alert|select-dropdown|select-dropdown__empty|select-dropdown__wrap|select-dropdown__list|scrollbar|switch|carousel|upload|upload-dragger|upload-list|upload-cover|aside|input-number|header|message-box|footer|radio-button|step|autocomplete|autocomplete-suggestion|loading-parent|loading-mask|loading-spinner|)
         condition: or
@@ -1744,6 +1985,7 @@ http:
 
       - type: regex
         name: magento
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         regex:
           - <script [^>]+data-requiremodule="mage/
           - <script [^>]+data-requiremodule="Magento_
@@ -1753,6 +1995,7 @@ http:
 
       - type: regex
         name: yahoo-advertising
+        cpe: cpe:2.3:a:yahoo-advertising:yahoo-advertising:*:*:*:*:*:*:*:*
         regex:
           - <iframe[^>]+adserver\.yahoo\.com
           - <img[^>]+clicks\.beap\.bc\.yahoo\.com
@@ -1761,6 +2004,7 @@ http:
 
       - type: regex
         name: redis-object-cache
+        cpe: cpe:2.3:a:redis-object-cache:redis-object-cache:*:*:*:*:*:*:*:*
         regex:
           - <!--\s+Performance optimized by Redis Object Cache
         condition: or
@@ -1768,6 +2012,7 @@ http:
 
       - type: regex
         name: revslider
+        cpe: cpe:2.3:a:revslider:revslider:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[\'"][^']+revslider[/\w-]+\.css\?ver=([0-9.]+)[\'"]
         condition: or
@@ -1775,6 +2020,7 @@ http:
 
       - type: regex
         name: gx-webmanager
+        cpe: cpe:2.3:a:gx-webmanager:gx-webmanager:*:*:*:*:*:*:*:*
         regex:
           - <!--\s+Powered by GX
         condition: or
@@ -1782,6 +2028,7 @@ http:
 
       - type: regex
         name: oscommerce
+        cpe: cpe:2.3:a:oscommerce:oscommerce:*:*:*:*:*:*:*:*
         regex:
           - <br />Powered by <a href="https?://www\.oscommerce\.com
           - <(?:input|a)[^>]+name="osCsid"
@@ -1791,6 +2038,7 @@ http:
 
       - type: regex
         name: gerrit
+        cpe: cpe:2.3:a:gerrit:gerrit:*:*:*:*:*:*:*:*
         regex:
           - '>Gerrit Code Review</a>\s*"\s*\(([0-9.]+)\)'
           - <(?:div|style) id="gerrit_
@@ -1799,6 +2047,7 @@ http:
 
       - type: regex
         name: jtl-shop
+        cpe: cpe:2.3:a:jtl-shop:jtl-shop:*:*:*:*:*:*:*:*
         regex:
           - (?:<input[^>]+name="JTLSHOP|<a href="jtl\.php)
         condition: or
@@ -1806,6 +2055,7 @@ http:
 
       - type: regex
         name: shopatron
+        cpe: cpe:2.3:a:shopatron:shopatron:*:*:*:*:*:*:*:*
         regex:
           - <body class="shopatron
           - <img[^>]+mediacdn\.shopatron\.com
@@ -1814,6 +2064,7 @@ http:
 
       - type: regex
         name: dokeos
+        cpe: cpe:2.3:a:dokeos:dokeos:*:*:*:*:*:*:*:*
         regex:
           - (?:Portal <a[^>]+>Dokeos|@import "[^"]+dokeos_blue)
         condition: or
@@ -1821,6 +2072,7 @@ http:
 
       - type: regex
         name: mantisbt
+        cpe: cpe:2.3:a:mantisbt:mantisbt:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+ alt="Powered by Mantis Bugtracker
         condition: or
@@ -1828,6 +2080,7 @@ http:
 
       - type: regex
         name: atlassian-fisheye
+        cpe: cpe:2.3:a:atlassian-fisheye:atlassian-fisheye:*:*:*:*:*:*:*:*
         regex:
           - <title>(?:Log in to )?FishEye (?:and Crucible )?([\d.]+)?</title>
         condition: or
@@ -1835,6 +2088,7 @@ http:
 
       - type: regex
         name: paypal
+        cpe: cpe:2.3:a:paypal:paypal:*:*:*:*:*:*:*:*
         regex:
           - <input[^>]+_s-xclick
         condition: or
@@ -1842,6 +2096,7 @@ http:
 
       - type: regex
         name: nette-framework
+        cpe: cpe:2.3:a:nette-framework:nette-framework:*:*:*:*:*:*:*:*
         regex:
           - <input[^>]+data-nette-rules
           - <div[^>]+id="snippet-
@@ -1851,6 +2106,7 @@ http:
 
       - type: regex
         name: squirrelmail
+        cpe: cpe:2.3:a:squirrelmail:squirrelmail:*:*:*:*:*:*:*:*
         regex:
           - '<small>SquirrelMail version ([.\d]+)[^<]*<br '
         condition: or
@@ -1858,6 +2114,7 @@ http:
 
       - type: regex
         name: webtrends
+        cpe: cpe:2.3:a:webtrends:webtrends:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+id="DCSIMG"[^>]+webtrends
         condition: or
@@ -1865,6 +2122,7 @@ http:
 
       - type: regex
         name: gambio
+        cpe: cpe:2.3:a:gambio:gambio:*:*:*:*:*:*:*:*
         regex:
           - (?:<link[^>]* href="templates/gambio/|<a[^>]content\.php\?coID=\d|<!-- gambio eof -->|<!--[\s=]+Shopsoftware by Gambio GmbH \(c\))
         condition: or
@@ -1872,6 +2130,7 @@ http:
 
       - type: regex
         name: store-systems
+        cpe: cpe:2.3:a:store-systems:store-systems:*:*:*:*:*:*:*:*
         regex:
           - Shopsystem von <a href=[^>]+store-systems\.de"|\.mws_boxTop
         condition: or
@@ -1879,6 +2138,7 @@ http:
 
       - type: regex
         name: google-tag-manager
+        cpe: cpe:2.3:a:google-tag-manager:google-tag-manager:*:*:*:*:*:*:*:*
         regex:
           - googletagmanager\.com/ns\.html[^>]+></iframe>
           - <!-- (?:End )?Google Tag Manager -->
@@ -1887,6 +2147,7 @@ http:
 
       - type: regex
         name: a-frame
+        cpe: cpe:2.3:a:a-frame:a-frame:*:*:*:*:*:*:*:*
         regex:
           - <a-scene[^<>]*>
         condition: or
@@ -1894,6 +2155,7 @@ http:
 
       - type: regex
         name: dreamweaver
+        cpe: cpe:2.3:a:dreamweaver:dreamweaver:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)
         condition: or
@@ -1901,6 +2163,7 @@ http:
 
       - type: regex
         name: atlassian-confluence
+        cpe: cpe:2.3:a:atlassian-confluence:atlassian-confluence:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href=[^>]+atlassian\.com/software/confluence(?:[^>]+>Atlassian Confluence</a> ([\d.]+))?
         condition: or
@@ -1908,6 +2171,7 @@ http:
 
       - type: regex
         name: youtube
+        cpe: cpe:2.3:a:youtube:youtube:*:*:*:*:*:*:*:*
         regex:
           - <(?:param|embed|iframe)[^>]+youtube(?:-nocookie)?\.com/(?:v|embed)
         condition: or
@@ -1915,6 +2179,7 @@ http:
 
       - type: regex
         name: bigware
+        cpe: cpe:2.3:a:bigware:bigware:*:*:*:*:*:*:*:*
         regex:
           - (?:Diese <a href=[^>]+bigware\.de|<a href=[^>]+/main_bigware_\d+\.php)
         condition: or
@@ -1922,6 +2187,7 @@ http:
 
       - type: regex
         name: owl-carousel
+        cpe: cpe:2.3:a:owl-carousel:owl-carousel:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="[^"]+owl\.carousel(?:\.min)?\.css
         condition: or
@@ -1929,6 +2195,7 @@ http:
 
       - type: regex
         name: modx
+        cpe: cpe:2.3:a:modx:modx:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]+>Powered by MODX</a>
           - <(?:link|script)[^>]+assets/snippets/
@@ -1939,6 +2206,7 @@ http:
 
       - type: regex
         name: kendo-ui
+        cpe: cpe:2.3:a:kendo-ui:kendo-ui:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]*\s+href=[^>]*styles/kendo\.common(?:\.min)?\.css[^>]*/>
         condition: or
@@ -1946,6 +2214,7 @@ http:
 
       - type: regex
         name: opentext-web-solutions
+        cpe: cpe:2.3:a:opentext-web-solutions:opentext-web-solutions:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+published by Open Text Web Solutions
         condition: or
@@ -1953,6 +2222,7 @@ http:
 
       - type: regex
         name: hubspot
+        cpe: cpe:2.3:a:hubspot:hubspot:*:*:*:*:*:*:*:*
         regex:
           - <!-- Start of Async HubSpot
         condition: or
@@ -1960,6 +2230,7 @@ http:
 
       - type: regex
         name: jahia-dx
+        cpe: cpe:2.3:a:jahia-dx:jahia-dx:*:*:*:*:*:*:*:*
         regex:
           - <script id="staticAssetAggregatedJavascrip
         condition: or
@@ -1967,6 +2238,7 @@ http:
 
       - type: regex
         name: liveinternet
+        cpe: cpe:2.3:a:liveinternet:liveinternet:*:*:*:*:*:*:*:*
         regex:
           - <script[^<>]*>[^]{0,128}?src\s*=\s*['"]//counter\.yadro\.ru/hit(?:;\S+)?\?(?:t\d+\.\d+;)?r
           - <!--LiveInternet counter-->
@@ -1977,6 +2249,7 @@ http:
 
       - type: regex
         name: sdl-tridion
+        cpe: cpe:2.3:a:sdl-tridion:sdl-tridion:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+_tcm\d{2,3}-\d{6}\.
         condition: or
@@ -1984,6 +2257,7 @@ http:
 
       - type: regex
         name: microsoft-publisher
+        cpe: cpe:2.3:a:microsoft-publisher:microsoft-publisher:*:*:*:*:*:*:*:*
         regex:
           - (?:<html [^>]*xmlns:w="urn:schemas-microsoft-com:office:publisher"|<!--[if pub]><xml>)
         condition: or
@@ -1991,6 +2265,7 @@ http:
 
       - type: regex
         name: adobe-coldfusion
+        cpe: cpe:2.3:a:adobe-coldfusion:adobe-coldfusion:*:*:*:*:*:*:*:*
         regex:
           - <!-- START headerTags\.cfm
         condition: or
@@ -1998,6 +2273,7 @@ http:
 
       - type: regex
         name: xeora
+        cpe: cpe:2.3:a:xeora:xeora:*:*:*:*:*:*:*:*
         regex:
           - <input type="hidden" name="_sys_bind_\d+" id="_sys_bind_\d+" />
         condition: or
@@ -2005,6 +2281,7 @@ http:
 
       - type: regex
         name: gogs
+        cpe: cpe:2.3:a:gogs:gogs:*:*:*:*:*:*:*:*
         regex:
           - '<div class="ui left">\n\s+© \d{4} Gogs Version: ([\d.]+) Page:'
           - <button class="ui basic clone button" id="repo-clone-ssh" data-link="gogs@
@@ -2013,6 +2290,7 @@ http:
 
       - type: regex
         name: quick.cms
+        cpe: cpe:2.3:a:quick.cms:quick.cms:*:*:*:*:*:*:*:*
         regex:
           - <a href="[^>]+opensolution\.org/">CMS by
         condition: or
@@ -2020,6 +2298,7 @@ http:
 
       - type: regex
         name: phpwind
+        cpe: cpe:2.3:a:phpwind:phpwind:*:*:*:*:*:*:*:*
         regex:
           - (?:Powered|Code) by <a href="[^"]+phpwind\.net
         condition: or
@@ -2027,6 +2306,7 @@ http:
 
       - type: regex
         name: pure-css
+        cpe: cpe:2.3:a:pure-css:pure-css:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+(?:([\d.])+/)?pure(?:-min)?\.css
           - <div[^>]+class="[^"]*pure-u-(?:sm-|md-|lg-|xl-)?\d-\d
@@ -2035,6 +2315,7 @@ http:
 
       - type: regex
         name: zanox
+        cpe: cpe:2.3:a:zanox:zanox:*:*:*:*:*:*:*:*
         regex:
           - <img [^>]*src="[^"]+ad\.zanox\.com
         condition: or
@@ -2042,6 +2323,7 @@ http:
 
       - type: regex
         name: syntaxhighlighter
+        cpe: cpe:2.3:a:syntaxhighlighter:syntaxhighlighter:*:*:*:*:*:*:*:*
         regex:
           - <(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)
         condition: or
@@ -2049,6 +2331,7 @@ http:
 
       - type: regex
         name: flexcmp
+        cpe: cpe:2.3:a:flexcmp:flexcmp:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+FlexCMP[^>v]+v\. ([\d.]+)
         condition: or
@@ -2056,6 +2339,7 @@ http:
 
       - type: regex
         name: green-valley-cms
+        cpe: cpe:2.3:a:green-valley-cms:green-valley-cms:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+/dsresource\?objectid=
         condition: or
@@ -2063,6 +2347,7 @@ http:
 
       - type: regex
         name: hugo
+        cpe: cpe:2.3:a:hugo:hugo:*:*:*:*:*:*:*:*
         regex:
           - powered by <a [^>]*href="http://hugo\.spf13\.com
         condition: or
@@ -2070,6 +2355,7 @@ http:
 
       - type: regex
         name: rdoc
+        cpe: cpe:2.3:a:rdoc:rdoc:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+href="[^"]*rdoc-style\.css
           - Generated by <a[^>]+href="https?://rdoc\.rubyforge\.org[^>]+>RDoc</a> ([\d.]*\d)
@@ -2078,6 +2364,7 @@ http:
 
       - type: regex
         name: localfocus
+        cpe: cpe:2.3:a:localfocus:localfocus:*:*:*:*:*:*:*:*
         regex:
           - <iframe[^>]+\blocalfocus\b
         condition: or
@@ -2085,6 +2372,7 @@ http:
 
       - type: regex
         name: trac
+        cpe: cpe:2.3:a:trac:trac:*:*:*:*:*:*:*:*
         regex:
           - <a id="tracpowered
           - Powered by <a href="[^"]*"><strong>Trac(?:[ /]([\d.]+))?
@@ -2093,6 +2381,7 @@ http:
 
       - type: regex
         name: mybb
+        cpe: cpe:2.3:a:mybb:mybb:*:*:*:*:*:*:*:*
         regex:
           - (?:<script [^>]+\s+<!--\s+lang\.no_new_posts|<a[^>]* title="Powered By MyBB)
         condition: or
@@ -2100,6 +2389,7 @@ http:
 
       - type: regex
         name: thelia
+        cpe: cpe:2.3:a:thelia:thelia:*:*:*:*:*:*:*:*
         regex:
           - <(?:link|style|script)[^>]+/assets/frontOffice/
         condition: or
@@ -2107,6 +2397,7 @@ http:
 
       - type: regex
         name: webxpay
+        cpe: cpe:2.3:a:webxpay:webxpay:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="https://www\.webxpay\.com">WEBXPAY<
         condition: or
@@ -2114,6 +2405,7 @@ http:
 
       - type: regex
         name: sitecore
+        cpe: cpe:2.3:a:sitecore:sitecore:*:*:*:*:*:*:*:*
         regex:
           - <img[^>]+src="[^>]*/~/media/[^>]+\.ashx
         condition: or
@@ -2121,6 +2413,7 @@ http:
 
       - type: regex
         name: photoshelter
+        cpe: cpe:2.3:a:photoshelter:photoshelter:*:*:*:*:*:*:*:*
         regex:
           - <!--\s+#+ Powered by the PhotoShelter Beam platform
           - <link[^>]+c\.photoshelter\.com
@@ -2129,6 +2422,7 @@ http:
 
       - type: regex
         name: airform
+        cpe: cpe:2.3:a:airform:airform:*:*:*:*:*:*:*:*
         regex:
           - <form[^>]+?action="[^"]*airform\.io[^>]+?>
         condition: or
@@ -2136,6 +2430,7 @@ http:
 
       - type: regex
         name: clientexec
+        cpe: cpe:2.3:a:clientexec:clientexec:*:*:*:*:*:*:*:*
         regex:
           - clientexec\.[^>]*\s?=\s?[^>]*;
         condition: or
@@ -2143,6 +2438,7 @@ http:
 
       - type: regex
         name: font-awesome
+        cpe: cpe:2.3:a:font-awesome:font-awesome:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+(?:([\d.]+)/)?(?:css/)?font-awesome(?:\.min)?\.css
           - <link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\d]+(?:.[\d]+(?:.[\d]+)?)?)|)
@@ -2151,6 +2447,7 @@ http:
 
       - type: regex
         name: disqus
+        cpe: cpe:2.3:a:disqus:disqus:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+id="disqus_thread"
         condition: or
@@ -2158,6 +2455,7 @@ http:
 
       - type: regex
         name: 1c-bitrix
+        cpe: cpe:2.3:a:1c-bitrix:1c-bitrix:*:*:*:*:*:*:*:*
         regex:
           - (?:<link[^>]+components/bitrix|(?:src|href)="/bitrix/(?:js|templates))
         condition: or
@@ -2165,6 +2463,7 @@ http:
 
       - type: regex
         name: less
+        cpe: cpe:2.3:a:less:less:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+ rel="stylesheet/less"
         condition: or
@@ -2172,6 +2471,7 @@ http:
 
       - type: regex
         name: gitweb
+        cpe: cpe:2.3:a:gitweb:gitweb:*:*:*:*:*:*:*:*
         regex:
           - <!-- git web interface version ([\d.]+)?
         condition: or
@@ -2179,6 +2479,7 @@ http:
 
       - type: regex
         name: gatsby
+        cpe: cpe:2.3:a:gatsby:gatsby:*:*:*:*:*:*:*:*
         regex:
           - <div id="___gatsby">
           - <style id="gatsby-inlined-css">
@@ -2187,6 +2488,7 @@ http:
 
       - type: regex
         name: rainloop
+        cpe: cpe:2.3:a:rainloop:rainloop:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]href="rainloop/v/([0-9.]+)/static/apple-touch-icon\.png/>
         condition: or
@@ -2194,6 +2496,7 @@ http:
 
       - type: regex
         name: animate.css
+        cpe: cpe:2.3:a:animate.css:animate.css:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]+(?:/([\d.]+)/)?animate\.(?:min\.)?css
         condition: or
@@ -2201,6 +2504,7 @@ http:
 
       - type: regex
         name: mediawiki
+        cpe: cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*
         regex:
           - <body[^>]+class="mediawiki"
           - <(?:a|img)[^>]+>Powered by MediaWiki</a>
@@ -2210,6 +2514,7 @@ http:
 
       - type: regex
         name: gov.uk-frontend
+        cpe: cpe:2.3:a:gov.uk-frontend:gov.uk-frontend:*:*:*:*:*:*:*:*
         regex:
           - <body[^>]+govuk-template__body
           - <a[^>]+govuk-link
@@ -2218,6 +2523,7 @@ http:
 
       - type: regex
         name: milligram
+        cpe: cpe:2.3:a:milligram:milligram:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+milligram(?:\.min)?\.css
         condition: or
@@ -2225,6 +2531,7 @@ http:
 
       - type: regex
         name: virtuemart
+        cpe: cpe:2.3:a:virtuemart:virtuemart:*:*:*:*:*:*:*:*
         regex:
           - <div id="vmMainPage
         condition: or
@@ -2232,6 +2539,7 @@ http:
 
       - type: regex
         name: ibm-websphere-commerce
+        cpe: cpe:2.3:a:ibm-websphere-commerce:ibm-websphere-commerce:*:*:*:*:*:*:*:*
         regex:
           - href="(?:\/|[^>]+)webapp\/wcs\/
         condition: or
@@ -2239,6 +2547,7 @@ http:
 
       - type: word
         name: ibm-websphere-application-server
+        cpe: cpe:2.3:a:ibm-websphere-application-server:ibm-websphere-application-server:*:*:*:*:*:*:*:*
         words:
           - 'SRVE0255E:'
           - 'A WebGroup/Virtual Host to handle'
@@ -2247,6 +2556,7 @@ http:
 
       - type: word
         name: ibm-websphere-application-server
+        cpe: cpe:2.3:a:ibm-websphere-application-server:ibm-websphere-application-server:*:*:*:*:*:*:*:*
         words:
           - '$wsep:'
           - '$WSEP:'
@@ -2255,6 +2565,7 @@ http:
 
       - type: regex
         name: bootstrap
+        cpe: cpe:2.3:a:bootstrap:bootstrap:*:*:*:*:*:*:*:*
         regex:
           - <style>/\*!\* Bootstrap v(\d\.\d\.\d)
           - <link[^>]+?href=[^"]/css/([\d.]+)/bootstrap\.(?:min\.)?css
@@ -2265,6 +2576,7 @@ http:
 
       - type: regex
         name: combeenation
+        cpe: cpe:2.3:a:combeenation:combeenation:*:*:*:*:*:*:*:*
         regex:
           - <iframe[^>]+src="[^>]+portal\.combeenation\.com
         condition: or
@@ -2272,6 +2584,7 @@ http:
 
       - type: regex
         name: bem
+        cpe: cpe:2.3:a:bem:bem:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+data-bem
         condition: or
@@ -2279,6 +2592,7 @@ http:
 
       - type: regex
         name: adzerk
+        cpe: cpe:2.3:a:adzerk:adzerk:*:*:*:*:*:*:*:*
         regex:
           - <iframe [^>]*src="[^"]+adzerk\.net
         condition: or
@@ -2286,6 +2600,7 @@ http:
 
       - type: regex
         name: bootstrap-table
+        cpe: cpe:2.3:a:bootstrap-table:bootstrap-table:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+href="[^>]*bootstrap-table(?:\.min)?\.css
         condition: or
@@ -2293,6 +2608,7 @@ http:
 
       - type: regex
         name: amp
+        cpe: cpe:2.3:a:amp:amp:*:*:*:*:*:*:*:*
         regex:
           - <html[^>]* (?:amp|⚡)[^-]
         condition: or
@@ -2300,6 +2616,7 @@ http:
 
       - type: regex
         name: salesforce
+        cpe: cpe:2.3:a:salesforce:salesforce:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+="brandQuaternaryFgrs"
         condition: or
@@ -2307,6 +2624,7 @@ http:
 
       - type: regex
         name: splunk
+        cpe: cpe:2.3:a:splunk:splunk:*:*:*:*:*:*:*:*
         regex:
           - '<p class="footer">&copy; [-\d]+ Splunk Inc\.(?: Splunk ([\d\.]+(?: build [\d\.]*\d)?))?[^<]*</p>'
         condition: or
@@ -2314,6 +2632,7 @@ http:
 
       - type: regex
         name: google-analytics
+        cpe: cpe:2.3:a:google-analytics:google-analytics:*:*:*:*:*:*:*:*
         regex:
           - <amp-analytics [^>]*type=["']googleanalytics["']
         condition: or
@@ -2321,6 +2640,7 @@ http:
 
       - type: regex
         name: awesomplete
+        cpe: cpe:2.3:a:awesomplete:awesomplete:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+href="[^>]*awesomplete(?:\.min)?\.css
         condition: or
@@ -2328,6 +2648,7 @@ http:
 
       - type: regex
         name: scrollreveal
+        cpe: cpe:2.3:a:scrollreveal:scrollreveal:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+data-sr(?:-id)
         condition: or
@@ -2335,6 +2656,7 @@ http:
 
       - type: regex
         name: akaunting
+        cpe: cpe:2.3:a:akaunting:akaunting:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+akaunting-green\.css
           - 'Powered By Akaunting: <a [^>]*href="https?://(?:www\.)?akaunting\.com[^>]+>'
@@ -2343,6 +2665,7 @@ http:
 
       - type: regex
         name: salesforce-commerce-cloud
+        cpe: cpe:2.3:a:salesforce-commerce-cloud:salesforce-commerce-cloud:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+demandware\.edgesuite
         condition: or
@@ -2350,6 +2673,7 @@ http:
 
       - type: regex
         name: pdf.js
+        cpe: cpe:2.3:a:pdf.js:pdf.js:*:*:*:*:*:*:*:*
         regex:
           - <\/div>\s*<!-- outerContainer -->\s*<div\s*id="printContainer"><\/div>
         condition: or
@@ -2357,6 +2681,7 @@ http:
 
       - type: regex
         name: rebelmouse
+        cpe: cpe:2.3:a:rebelmouse:rebelmouse:*:*:*:*:*:*:*:*
         regex:
           - <!-- Powered by RebelMouse\.
         condition: or
@@ -2364,6 +2689,7 @@ http:
 
       - type: regex
         name: apigee
+        cpe: cpe:2.3:a:apigee:apigee:*:*:*:*:*:*:*:*
         regex:
           - <script>[^>]{0,50}script src=[^>]/profiles/apigee
         condition: or
@@ -2371,6 +2697,7 @@ http:
 
       - type: regex
         name: yabb
+        cpe: cpe:2.3:a:yabb:yabb:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+yabbforum
         condition: or
@@ -2378,6 +2705,7 @@ http:
 
       - type: regex
         name: phabricator
+        cpe: cpe:2.3:a:phabricator:phabricator:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+(?:class|id)="phabricator-
         condition: or
@@ -2385,6 +2713,7 @@ http:
 
       - type: regex
         name: melis-platform
+        cpe: cpe:2.3:a:melis-platform:melis-platform:*:*:*:*:*:*:*:*
         regex:
           - <!-- Rendered with Melis CMS V2
           - <!-- Rendered with Melis Platform
@@ -2393,6 +2722,7 @@ http:
 
       - type: regex
         name: material-design-lite
+        cpe: cpe:2.3:a:material-design-lite:material-design-lite:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href="[^"]*material(?:\.[\w]+-[\w]+)?(?:\.min)?\.css
         condition: or
@@ -2400,6 +2730,7 @@ http:
 
       - type: regex
         name: sobi-2
+        cpe: cpe:2.3:a:sobi-2:sobi-2:*:*:*:*:*:*:*:*
         regex:
           - (?:<!-- start of Sigsiu Online Business Index|<div[^>]* class="sobi2)
         condition: or
@@ -2407,6 +2738,7 @@ http:
 
       - type: regex
         name: sweetalert2
+        cpe: cpe:2.3:a:sweetalert2:sweetalert2:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+?href="[^"]+sweetalert2(?:\.min)?\.css
         condition: or
@@ -2414,6 +2746,7 @@ http:
 
       - type: regex
         name: quick.cart
+        cpe: cpe:2.3:a:quick.cart:quick.cart:*:*:*:*:*:*:*:*
         regex:
           - <a href="[^>]+opensolution\.org/">(?:Shopping cart by|Sklep internetowy)
         condition: or
@@ -2421,6 +2754,7 @@ http:
 
       - type: regex
         name: indico
+        cpe: cpe:2.3:a:indico:indico:*:*:*:*:*:*:*:*
         regex:
           - Powered by\s+(?:CERN )?<a href="http://(?:cdsware\.cern\.ch/indico/|indico-software\.org|cern\.ch/indico)">(?:CDS )?Indico( [\d\.]+)?
         condition: or
@@ -2428,6 +2762,7 @@ http:
 
       - type: regex
         name: bigcommerce
+        cpe: cpe:2.3:a:bigcommerce:bigcommerce:*:*:*:*:*:*:*:*
         regex:
           - <link href=[^>]+cdn\d+\.bigcommerce\.com/
         condition: or
@@ -2435,6 +2770,7 @@ http:
 
       - type: regex
         name: headjs
+        cpe: cpe:2.3:a:headjs:headjs:*:*:*:*:*:*:*:*
         regex:
           - <[^>]*data-headjs-load
         condition: or
@@ -2442,6 +2778,7 @@ http:
 
       - type: word
         name: gitea
+        cpe: cpe:2.3:a:gitea:gitea:*:*:*:*:*:*:*:*
         words:
           - 'Powered by Gitea'
         part: body
@@ -2449,6 +2786,7 @@ http:
 
       - type: regex
         name: all-in-one-seo-pack
+        cpe: cpe:2.3:a:all-in-one-seo-pack:all-in-one-seo-pack:*:*:*:*:*:*:*:*
         regex:
           - '<!-- All in One SEO Pack ([\d.]+) '
         condition: or
@@ -2456,6 +2794,7 @@ http:
 
       - type: regex
         name: fast-esp
+        cpe: cpe:2.3:a:fast-esp:fast-esp:*:*:*:*:*:*:*:*
         regex:
           - <form[^>]+id="fastsearch"
         condition: or
@@ -2463,6 +2802,7 @@ http:
 
       - type: regex
         name: banshee
+        cpe: cpe:2.3:a:banshee:banshee:*:*:*:*:*:*:*:*
         regex:
           - Built upon the <a href="[^>]+banshee-php\.org/">[a-z]+</a>(?:v([\d.]+))?
         condition: or
@@ -2470,6 +2810,7 @@ http:
 
       - type: regex
         name: docker
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         regex:
           - <!-- This comment is expected by the docker HEALTHCHECK  -->
         condition: or
@@ -2477,6 +2818,7 @@ http:
 
       - type: regex
         name: cargo
+        cpe: cpe:2.3:a:cargo:cargo:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]+Cargo feed
         condition: or
@@ -2484,6 +2826,7 @@ http:
 
       - type: regex
         name: sentry
+        cpe: cpe:2.3:a:sentry:sentry:*:*:*:*:*:*:*:*
         regex:
           - '<script[^>]*>\s*Raven\.config\(''[^'']*'', \{\s+release: ''([0-9\.]+)'''
         condition: or
@@ -2491,6 +2834,7 @@ http:
 
       - type: regex
         name: visual-website-optimizer
+        cpe: cpe:2.3:a:visual-website-optimizer:visual-website-optimizer:*:*:*:*:*:*:*:*
         regex:
           - <!-- (?:Start|End) Visual Website Optimizer A?Synchronous Code -->
         condition: or
@@ -2498,6 +2842,7 @@ http:
 
       - type: regex
         name: twiki
+        cpe: cpe:2.3:a:twiki:twiki:*:*:*:*:*:*:*:*
         regex:
           - <img [^>]*(?:title|alt)="This site is powered by the TWiki collaboration platform
         condition: or
@@ -2505,6 +2850,7 @@ http:
 
       - type: regex
         name: javadoc
+        cpe: cpe:2.3:a:javadoc:javadoc:*:*:*:*:*:*:*:*
         regex:
           - <!-- Generated by javadoc -->
         condition: or
@@ -2512,6 +2858,7 @@ http:
 
       - type: regex
         name: tamago
+        cpe: cpe:2.3:a:tamago:tamago:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="http://tamago\.temonalab\.com
         condition: or
@@ -2519,6 +2866,7 @@ http:
 
       - type: regex
         name: haddock
+        cpe: cpe:2.3:a:haddock:haddock:*:*:*:*:*:*:*:*
         regex:
           - <p>Produced by <a href="http://www\.haskell\.org/haddock/">Haddock</a> version ([0-9.]+)</p>
         condition: or
@@ -2526,6 +2874,7 @@ http:
 
       - type: regex
         name: lightmon-engine
+        cpe: cpe:2.3:a:lightmon-engine:lightmon-engine:*:*:*:*:*:*:*:*
         regex:
           - <!-- Lightmon Engine Copyright Lightmon
         condition: or
@@ -2533,6 +2882,7 @@ http:
 
       - type: regex
         name: swell
+        cpe: cpe:2.3:a:swell:swell:*:*:*:*:*:*:*:*
         regex:
           - <[^>]*swell\.is
           - <[^>]*swell\.store
@@ -2542,6 +2892,7 @@ http:
 
       - type: regex
         name: infusionsoft
+        cpe: cpe:2.3:a:infusionsoft:infusionsoft:*:*:*:*:*:*:*:*
         regex:
           - <input [^>]*name="infusionsoft_version" [^>]*value="([^>]*)" [^>]*\/>
           - <input [^>]*value="([^>]*)" [^>]*name="infusionsoft_version" [^>]*\/>
@@ -2550,6 +2901,7 @@ http:
 
       - type: regex
         name: avangate
+        cpe: cpe:2.3:a:avangate:avangate:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href="https?://edge\.avangate\.net/
         condition: or
@@ -2557,6 +2909,7 @@ http:
 
       - type: regex
         name: duda
+        cpe: cpe:2.3:a:duda:duda:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]*id="P6iryBW0Wu"
         condition: or
@@ -2564,6 +2917,7 @@ http:
 
       - type: regex
         name: yandex.direct
+        cpe: cpe:2.3:a:yandex.direct:yandex.direct:*:*:*:*:*:*:*:*
         regex:
           - <yatag class="ya-partner__ads">
         condition: or
@@ -2571,6 +2925,7 @@ http:
 
       - type: regex
         name: xmb
+        cpe: cpe:2.3:a:xmb:xmb:*:*:*:*:*:*:*:*
         regex:
           - <!-- Powered by XMB
         condition: or
@@ -2578,6 +2933,7 @@ http:
 
       - type: regex
         name: wp-rocket
+        cpe: cpe:2.3:a:wp-rocket:wp-rocket:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+WP Rocket
         condition: or
@@ -2585,6 +2941,7 @@ http:
 
       - type: regex
         name: silverstripe
+        cpe: cpe:2.3:a:silverstripe:silverstripe:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="[^>]+SilverStripe
         condition: or
@@ -2592,6 +2949,7 @@ http:
 
       - type: regex
         name: irroba
+        cpe: cpe:2.3:a:irroba:irroba:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]*href="https://www\.irroba\.com\.br
         condition: or
@@ -2599,6 +2957,7 @@ http:
 
       - type: regex
         name: uikit
+        cpe: cpe:2.3:a:uikit:uikit:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+class="[^"]*(?:uk-container|uk-section)
         condition: or
@@ -2606,6 +2965,7 @@ http:
 
       - type: regex
         name: vignette
+        cpe: cpe:2.3:a:vignette:vignette:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+="vgn-?ext
         condition: or
@@ -2613,6 +2973,7 @@ http:
 
       - type: regex
         name: intershop
+        cpe: cpe:2.3:a:intershop:intershop:*:*:*:*:*:*:*:*
         regex:
           - <ish-root
         condition: or
@@ -2620,6 +2981,7 @@ http:
 
       - type: regex
         name: alpine.js
+        cpe: cpe:2.3:a:alpine.js:alpine.js:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+[^\w-]x-data[^\w-][^<]+
         condition: or
@@ -2627,6 +2989,7 @@ http:
 
       - type: regex
         name: mermaid
+        cpe: cpe:2.3:a:mermaid:mermaid:*:*:*:*:*:*:*:*
         regex:
           - <div [^>]*class=["']mermaid["']>
         condition: or
@@ -2634,6 +2997,7 @@ http:
 
       - type: regex
         name: aurelia
+        cpe: cpe:2.3:a:aurelia:aurelia:*:*:*:*:*:*:*:*
         regex:
           - <[^>]+aurelia-app=[^>]
           - <[^>]+data-main=[^>]aurelia-bootstrapper
@@ -2643,6 +3007,7 @@ http:
 
       - type: regex
         name: coppermine
+        cpe: cpe:2.3:a:coppermine:coppermine:*:*:*:*:*:*:*:*
         regex:
           - <!--Coppermine Photo Gallery ([\d.]+)
         condition: or
@@ -2650,6 +3015,7 @@ http:
 
       - type: regex
         name: reddit
+        cpe: cpe:2.3:a:reddit:reddit:*:*:*:*:*:*:*:*
         regex:
           - (?:<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)
         condition: or
@@ -2657,6 +3023,7 @@ http:
 
       - type: regex
         name: motocms
+        cpe: cpe:2.3:a:motocms:motocms:*:*:*:*:*:*:*:*
         regex:
           - <link [^>]*href="[^>]*\/mt-content\/[^>]*\.css
         condition: or
@@ -2664,6 +3031,7 @@ http:
 
       - type: regex
         name: shopify
+        cpe: cpe:2.3:a:shopify:shopify:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+=['"]//cdn\.shopify\.com
         condition: or
@@ -2671,6 +3039,7 @@ http:
 
       - type: regex
         name: yahoo!-ecommerce
+        cpe: cpe:2.3:a:yahoo!-ecommerce:yahoo!-ecommerce:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]+store\.yahoo\.net
         condition: or
@@ -2678,6 +3047,7 @@ http:
 
       - type: regex
         name: google-font-api
+        cpe: cpe:2.3:a:google-font-api:google-font-api:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+fonts\.(?:googleapis|google)\.com
         condition: or
@@ -2685,6 +3055,7 @@ http:
 
       - type: regex
         name: indexhibit
+        cpe: cpe:2.3:a:indexhibit:indexhibit:*:*:*:*:*:*:*:*
         regex:
           - <(?:link|a href) [^>]+ndxz-studio
         condition: or
@@ -2692,6 +3063,7 @@ http:
 
       - type: regex
         name: particles.js
+        cpe: cpe:2.3:a:particles.js:particles.js:*:*:*:*:*:*:*:*
         regex:
           - <div id="particles-js">
         condition: or
@@ -2699,6 +3071,7 @@ http:
 
       - type: regex
         name: ionicons
+        cpe: cpe:2.3:a:ionicons:ionicons:*:*:*:*:*:*:*:*
         regex:
           - <link[^>]* href=[^>]+ionicons(?:\.min)?\.css
         condition: or
@@ -2706,6 +3079,7 @@ http:
 
       - type: regex
         name: nextgen-gallery
+        cpe: cpe:2.3:a:nextgen-gallery:nextgen-gallery:*:*:*:*:*:*:*:*
         regex:
           - <!-- <meta name="NextGEN" version="([\d.]+)" /> -->
         condition: or
@@ -2713,6 +3087,7 @@ http:
 
       - type: regex
         name: roundcube
+        cpe: cpe:2.3:a:roundcube:roundcube:*:*:*:*:*:*:*:*
         regex:
           - <title>RoundCube
         condition: or
@@ -2720,6 +3095,7 @@ http:
 
       - type: regex
         name: advanced-web-stats
+        cpe: cpe:2.3:a:advanced-web-stats:advanced-web-stats:*:*:*:*:*:*:*:*
         regex:
           - aws\.src = [^<]+caphyon-analytics
         condition: or
@@ -2727,6 +3103,7 @@ http:
 
       - type: regex
         name: riskified
+        cpe: cpe:2.3:a:riskified:riskified:*:*:*:*:*:*:*:*
         regex:
           - <[^>]*beacon\.riskified\.com
           - <[^>]*c\.riskified\.com
@@ -2735,6 +3112,7 @@ http:
 
       - type: regex
         name: dnn
+        cpe: cpe:2.3:a:dnn:dnn:*:*:*:*:*:*:*:*
         regex:
           - <!-- by DotNetNuke Corporation
           - <!-- DNN Platform
@@ -2744,6 +3122,7 @@ http:
 
       - type: regex
         name: w3-total-cache
+        cpe: cpe:2.3:a:w3-total-cache:w3-total-cache:*:*:*:*:*:*:*:*
         regex:
           - <!--[^>]+W3 Total Cache
         condition: or
@@ -2751,6 +3130,7 @@ http:
 
       - type: regex
         name: tessitura
+        cpe: cpe:2.3:a:tessitura:tessitura:*:*:*:*:*:*:*:*
         regex:
           - '<!--[^>]+Tessitura Version: (\d*\.\d*\.\d*)?'
         condition: or
@@ -2758,6 +3138,7 @@ http:
 
       - type: regex
         name: synology-diskstation
+        cpe: cpe:2.3:a:synology-diskstation:synology-diskstation:*:*:*:*:*:*:*:*
         regex:
           - <noscript><div class='syno-no-script'
         condition: or
@@ -2765,6 +3146,7 @@ http:
 
       - type: regex
         name: whooshkaa
+        cpe: cpe:2.3:a:whooshkaa:whooshkaa:*:*:*:*:*:*:*:*
         regex:
           - <iframe src="[^>]+whooshkaa\.com
         condition: or
@@ -2772,6 +3154,7 @@ http:
 
       - type: regex
         name: cubecart
+        cpe: cpe:2.3:a:cubecart:cubecart:*:*:*:*:*:*:*:*
         regex:
           - (?:Powered by <a href=[^>]+cubecart\.com|<p[^>]+>Powered by CubeCart)
         condition: or
@@ -2779,6 +3162,7 @@ http:
 
       - type: regex
         name: powergap
+        cpe: cpe:2.3:a:powergap:powergap:*:*:*:*:*:*:*:*
         regex:
           - <a[^>]+title="POWERGAP
           - <input type="hidden" name="shopid"
@@ -2787,6 +3171,7 @@ http:
 
       - type: regex
         name: amcharts
+        cpe: cpe:2.3:a:amcharts:amcharts:*:*:*:*:*:*:*:*
         regex:
           - <svg[^>]*><desc>JavaScript chart by amCharts ([\d.]*)
         condition: or
@@ -2794,6 +3179,7 @@ http:
 
       - type: regex
         name: webflow
+        cpe: cpe:2.3:a:webflow:webflow:*:*:*:*:*:*:*:*
         regex:
           - <html[^>]+data-wf-site
         condition: or
@@ -2801,6 +3187,7 @@ http:
 
       - type: regex
         name: dokuwiki
+        cpe: cpe:2.3:a:dokuwiki:dokuwiki:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+id="dokuwiki__>
           - <a[^>]+href="#dokuwiki__
@@ -2809,6 +3196,7 @@ http:
 
       - type: regex
         name: jquery-pjax
+        cpe: cpe:2.3:a:jquery-pjax:jquery-pjax:*:*:*:*:*:*:*:*
         regex:
           - <div[^>]+data-pjax-container
         condition: or
@@ -2816,6 +3204,7 @@ http:
 
       - type: regex
         name: phpdocumentor
+        cpe: cpe:2.3:a:phpdocumentor:phpdocumentor:*:*:*:*:*:*:*:*
         regex:
           - <!-- Generated by phpDocumentor
         condition: or
@@ -2823,6 +3212,7 @@ http:
 
       - type: regex
         name: owncloud
+        cpe: cpe:2.3:a:owncloud:owncloud:*:*:*:*:*:*:*:*
         regex:
           - <a href="https://owncloud\.com" target="_blank">ownCloud Inc\.</a><br/>Your Cloud, Your Data, Your Way!
         condition: or
@@ -2830,6 +3220,7 @@ http:
 
       - type: regex
         name: hexo
+        cpe: cpe:2.3:a:hexo:hexo:*:*:*:*:*:*:*:*
         regex:
           - Powered by <a href="https?://hexo\.io/?"[^>]*>Hexo</
         condition: or
@@ -2837,6 +3228,7 @@ http:
 
       - type: regex
         name: atlassian-bitbucket
+        cpe: cpe:2.3:a:atlassian-bitbucket:atlassian-bitbucket:*:*:*:*:*:*:*:*
         regex:
           - <li>Atlassian Bitbucket <span title="[a-z0-9]+" id="product-version" data-commitid="[a-z0-9]+" data-system-build-number="[a-z0-9]+"> v([\d.]+)<
         condition: or
@@ -2844,6 +3236,7 @@ http:
 
       - type: regex
         name: phppgadmin
+        cpe: cpe:2.3:a:phppgadmin:phppgadmin:*:*:*:*:*:*:*:*
         regex:
           - (?:<title>phpPgAdmin</title>|<span class="appname">phpPgAdmin)
         condition: or
@@ -2851,6 +3244,7 @@ http:
 
       - type: regex
         name: adnegah
+        cpe: cpe:2.3:a:adnegah:adnegah:*:*:*:*:*:*:*:*
         regex:
           - <iframe [^>]*src="[^"]+adnegah\.net
         condition: or
@@ -2858,6 +3252,7 @@ http:
 
       - type: regex
         name: lithium
+        cpe: cpe:2.3:a:lithium:lithium:*:*:*:*:*:*:*:*
         regex:
           - " <a [^>]+Powered by Lithium"
         condition: or
@@ -2865,553 +3260,663 @@ http:
 
       - type: word
         name: a-blog-cms
+        cpe: cpe:2.3:a:a-blog-cms:a-blog-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="a-blog cms'
 
       - type: word
         name: adobe-golive
+        cpe: cpe:2.3:a:adobe-golive:adobe-golive:*:*:*:*:*:*:*:*
         words:
           - 'content="Adobe GoLive'
 
       - type: word
         name: advantshop
+        cpe: cpe:2.3:a:advantshop:advantshop:*:*:*:*:*:*:*:*
         words:
           - 'content="AdVantShop.NET'
 
       - type: word
         name: ave-cms
+        cpe: cpe:2.3:a:ave-cms:ave-cms:*:*:*:*:*:*:*:*
         part: header
         words:
           - "AVE.cms"
 
       - type: word
         name: alterian
+        cpe: cpe:2.3:a:alterian:alterian:*:*:*:*:*:*:*:*
         words:
           - "alterian"
 
       - type: word
         name: amiro.cms
+        cpe: cpe:2.3:a:amiro.cms:amiro.cms:*:*:*:*:*:*:*:*
         words:
           - "= Amiro.CMS (c) ="
 
       - type: word
         name: apache-lenya
+        cpe: cpe:2.3:a:apache-lenya:apache-lenya:*:*:*:*:*:*:*:*
         words:
           - 'content="Apache Lenya"'
 
       - type: word
         name: backdrop-cms
+        cpe: cpe:2.3:a:backdrop-cms:backdrop-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Backdrop CMS'
 
       - type: word
         name: baseKit
+        cpe: cpe:2.3:a:basekit:basekit:*:*:*:*:*:*:*:*
         words:
           - 'content="BaseKit"'
 
       - type: word
         name: Big Cartel
+        cpe: cpe:2.3:a:big_cartel:big_cartel:*:*:*:*:*:*:*:*
         words:
           - 'content="Big Cartel"'
 
       - type: word
         name: blogger
+        cpe: cpe:2.3:a:blogger:blogger:*:*:*:*:*:*:*:*
         words:
           - "content='blogger'"
 
       - type: word
         name: bolt
+        cpe: cpe:2.3:a:bolt:bolt:*:*:*:*:*:*:*:*
         words:
           - 'content="Bolt"'
 
       - type: word
         name: bricolage-cms
+        cpe: cpe:2.3:a:bricolage-cms:bricolage-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Bricolage'
 
       - type: word
         name: c1-cms
+        cpe: cpe:2.3:a:c1-cms:c1-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Composite C1 CMS'
 
       - type: word
         name: cm4all
+        cpe: cpe:2.3:a:cm4all:cm4all:*:*:*:*:*:*:*:*
         words:
           - 'content="www.cm4all.com"'
 
       - type: word
         name: cms-tool.net
+        cpe: cpe:2.3:a:cms-tool.net:cms-tool.net:*:*:*:*:*:*:*:*
         words:
           - 'content="CMS Tool www.cms-tool.net"'
 
       - type: word
         name: cms-tool.net
+        cpe: cpe:2.3:a:cms-tool.net:cms-tool.net:*:*:*:*:*:*:*:*
         words:
           - 'content="CMS Tool www.cms-tool.net"'
 
       - type: word
         name: cms-made-simple
+        cpe: cpe:2.3:a:cms-made-simple:cms-made-simple:*:*:*:*:*:*:*:*
         words:
           - 'content="CMS Made Simple'
 
       - type: word
         name: cmsimple_XH
+        cpe: cpe:2.3:a:cmsimple_xh:cmsimple_xh:*:*:*:*:*:*:*:*
         words:
           - 'content="CMSimple_XH'
 
       - type: word
         name: canalblog
+        cpe: cpe:2.3:a:canalblog:canalblog:*:*:*:*:*:*:*:*
         words:
           - 'content="CanalBlog'
 
       - type: word
         name: coffeecup
+        cpe: cpe:2.3:a:coffeecup:coffeecup:*:*:*:*:*:*:*:*
         words:
           - 'content="CoffeeCup'
 
       - type: word
         name: commonspot
+        cpe: cpe:2.3:a:commonspot:commonspot:*:*:*:*:*:*:*:*
         words:
           - 'content="CommonSpot'
 
       - type: word
         name: contenido-cms
+        cpe: cpe:2.3:a:contenido-cms:contenido-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="CMS CONTENIDO'
 
       - type: word
         name: contensis-cms
+        cpe: cpe:2.3:a:contensis-cms:contensis-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Contensis CMS'
 
       - type: word
         name: contentxxl
+        cpe: cpe:2.3:a:contentxxl:contentxxl:*:*:*:*:*:*:*:*
         words:
           - 'content="contentXXL'
 
       - type: word
         name: convio
+        cpe: cpe:2.3:a:convio:convio:*:*:*:*:*:*:*:*
         words:
           - 'content="Convio CMS"'
 
       - type: word
         name: coremedia-cms
+        cpe: cpe:2.3:a:coremedia-cms:coremedia-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="CoreMedia'
 
       - type: word
         name: corepublish
+        cpe: cpe:2.3:a:corepublish:corepublish:*:*:*:*:*:*:*:*
         words:
           - 'content="CorePublish'
 
       - type: word
         name: diafan.cms
+        cpe: cpe:2.3:a:diafan.cms:diafan.cms:*:*:*:*:*:*:*:*
         words:
           - 'content="DIAFAN.CMS'
 
       - type: word
         name: danneo
+        cpe: cpe:2.3:a:danneo:danneo:*:*:*:*:*:*:*:*
         words:
           - 'content="CMS Danneo'
 
       - type: word
         name: dim-works
+        cpe: cpe:2.3:a:dim-works:dim-works:*:*:*:*:*:*:*:*
         words:
           - "Dim Works Kernel"
 
       - type: word
         name: discourse
+        cpe: cpe:2.3:a:discourse:discourse:*:*:*:*:*:*:*:*
         words:
           - 'content="Discourse '
 
       - type: word
         name: hycus
+        cpe: cpe:2.3:a:hycus:hycus:*:*:*:*:*:*:*:*
         words:
           - 'content="Hycus'
 
       - type: word
         name: doteasy
+        cpe: cpe:2.3:a:doteasy:doteasy:*:*:*:*:*:*:*:*
         words:
           - 'content="Doteasy Website Creator"'
 
       - type: word
         name: duda
+        cpe: cpe:2.3:a:duda:duda:*:*:*:*:*:*:*:*
         words:
           - "<!-- RT CSS Include d-css-runtime-desktop-one-package-new-->"
 
       - type: word
         name: dynamicweb
+        cpe: cpe:2.3:a:dynamicweb:dynamicweb:*:*:*:*:*:*:*:*
         words:
           - 'content="Dynamicweb '
 
       - type: word
         name: E+-cms
+        cpe: cpe:2.3:a:e+-cms:e+-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="e-plus '
 
       - type: word
         name: e-monsite
+        cpe: cpe:2.3:a:e-monsite:e-monsite:*:*:*:*:*:*:*:*
         words:
           - 'content="e-monsite (e-monsite.com)"'
 
       - type: word
         name: ecshop
+        cpe: cpe:2.3:a:ecshop:ecshop:*:*:*:*:*:*:*:*
         words:
           - 'content="ECSHOP '
 
       - type: word
         name: easysite
+        cpe: cpe:2.3:a:easysite:easysite:*:*:*:*:*:*:*:*
         words:
           - 'content="Ideagen - WCM '
 
       - type: word
         name: episerver
+        cpe: cpe:2.3:a:episerver:episerver:*:*:*:*:*:*:*:*
         words:
           - 'src="https://dl.episerver.net/'
 
       - type: word
         name: everweb
+        cpe: cpe:2.3:a:everweb:everweb:*:*:*:*:*:*:*:*
         words:
           - 'content="EverWeb '
 
       - type: word
         name: fork-cms
+        cpe: cpe:2.3:a:fork-cms:fork-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Fork CMS"'
 
       - type: word
         name: zeta-producer
+        cpe: cpe:2.3:a:zeta-producer:zeta-producer:*:*:*:*:*:*:*:*
         words:
           - 'content="Zeta Producer '
 
       - type: word
         name: gx-web-manager
+        cpe: cpe:2.3:a:gx-web-manager:gx-web-manager:*:*:*:*:*:*:*:*
         words:
           - 'content="GX WebManager'
 
       - type: word
         name: getsimple-cms
+        cpe: cpe:2.3:a:getsimple-cms:getsimple-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="GetSimple"'
 
       - type: word
         name: ghost
+        cpe: cpe:2.3:a:ghost:ghost:*:*:*:*:*:*:*:*
         words:
           - 'content="Ghost '
 
       - type: word
         name: go-daddy-website-builder
+        cpe: cpe:2.3:a:go-daddy-website-builder:go-daddy-website-builder:*:*:*:*:*:*:*:*
         words:
           - 'content="Starfield Technologies; Go Daddy Website Builder'
 
       - type: word
         name: government-site-builder
+        cpe: cpe:2.3:a:government-site-builder:government-site-builder:*:*:*:*:*:*:*:*
         words:
           - 'content="Government Site Builder"'
 
       - type: word
         name: graffiticms
+        cpe: cpe:2.3:a:graffiticms:graffiticms:*:*:*:*:*:*:*:*
         words:
           - 'content="Graffiti CMS'
 
       - type: word
         name: grav-cms
+        cpe: cpe:2.3:a:grav-cms:grav-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="GravCMS"'
 
       - type: word
         name: drupal
+        cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
         words:
           - 'content="Drupal'
 
       - type: word
         name: webnode
+        cpe: cpe:2.3:a:webnode:webnode:*:*:*:*:*:*:*:*
         words:
           - 'content="Webnode'
 
       - type: word
         name: shopsys
+        cpe: cpe:2.3:a:shopsys:shopsys:*:*:*:*:*:*:*:*
         words:
           - "'Shopsys\\"
 
       - type: word
         name: pluck-cms
+        cpe: cpe:2.3:a:pluck-cms:pluck-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="pluck '
 
       - type: word
         name: homestead
+        cpe: cpe:2.3:a:homestead:homestead:*:*:*:*:*:*:*:*
         words:
           - 'content="Homestead SiteBuilder"'
 
       - type: word
         name: hostedshop
+        cpe: cpe:2.3:a:hostedshop:hostedshop:*:*:*:*:*:*:*:*
         words:
           - 'content="HostedShop"'
 
       - type: word
         name: imagecms
+        cpe: cpe:2.3:a:imagecms:imagecms:*:*:*:*:*:*:*:*
         words:
           - 'content="ImageCMS"'
 
       - type: word
         name: immediacy
+        cpe: cpe:2.3:a:immediacy:immediacy:*:*:*:*:*:*:*:*
         words:
           - 'content="Immediacy .NET CMS'
 
       - type: word
         name: impresscms
+        cpe: cpe:2.3:a:impresscms:impresscms:*:*:*:*:*:*:*:*
         words:
           - 'content="ImpressCMS"'
 
       - type: word
         name: impresspages-cms
+        cpe: cpe:2.3:a:impresspages-cms:impresspages-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="ImpressPages"'
 
       - type: word
         name: infopark-cms-fiona
+        cpe: cpe:2.3:a:infopark-cms-fiona:infopark-cms-fiona:*:*:*:*:*:*:*:*
         words:
           - 'content="Rails Connector for Infopark CMS Fiona'
 
       - type: word
         name: instantcms
+        cpe: cpe:2.3:a:instantcms:instantcms:*:*:*:*:*:*:*:*
         words:
           - 'content="InstantCMS"'
 
       - type: word
         name: interactsh
+        cpe: cpe:2.3:a:interactsh:interactsh:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Interactsh-Version"
 
       - type: word
         name: interred
+        cpe: cpe:2.3:a:interred:interred:*:*:*:*:*:*:*:*
         words:
           - 'content="InterRed '
 
       - type: word
         name: jadu-cms
+        cpe: cpe:2.3:a:jadu-cms:jadu-cms:*:*:*:*:*:*:*:*
         words:
           - "//www.jadu.net"
 
       - type: word
         name: jieqi-cms
+        cpe: cpe:2.3:a:jieqi-cms:jieqi-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="jieqi.com"'
 
       - type: word
         name: justsystems-homepage-builder
+        cpe: cpe:2.3:a:justsystems-homepage-builder:justsystems-homepage-builder:*:*:*:*:*:*:*:*
         words:
           - 'content="JustSystems Homepage Builder'
 
       - type: word
         name: kvs-cms
+        cpe: cpe:2.3:a:kvs-cms:kvs-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Kernel Video Sharing '
 
       - type: word
         name: komodo-cms
+        cpe: cpe:2.3:a:komodo-cms:komodo-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Komodo CMS"'
 
       - type: word
         name: kryptronic
+        cpe: cpe:2.3:a:kryptronic:kryptronic:*:*:*:*:*:*:*:*
         words:
           - 'content="Kryptronic Software"'
 
       - type: word
         name: labrador-cms
+        cpe: cpe:2.3:a:labrador-cms:labrador-cms:*:*:*:*:*:*:*:*
         words:
           - "by Labrador CMS"
 
       - type: word
         name: lauyan-toweb
+        cpe: cpe:2.3:a:lauyan-toweb:lauyan-toweb:*:*:*:*:*:*:*:*
         words:
           - 'content="Lauyan TOWeb '
 
       - type: word
         name: liveedit
+        cpe: cpe:2.3:a:liveedit:liveedit:*:*:*:*:*:*:*:*
         words:
           - 'content="http://www.getLiveEdit.com"'
 
       - type: word
         name: logicommerce
+        cpe: cpe:2.3:a:logicommerce:logicommerce:*:*:*:*:*:*:*:*
         words:
           - 'content="LogiCommerce"'
 
       - type: word
         name: loja-integrada
+        cpe: cpe:2.3:a:loja-integrada:loja-integrada:*:*:*:*:*:*:*:*
         words:
           - 'content="Loja Integrada"'
 
       - type: word
         name: mabisy
+        cpe: cpe:2.3:a:mabisy:mabisy:*:*:*:*:*:*:*:*
         words:
           - 'content="Mabisy"'
 
       - type: word
         name: mambo
+        cpe: cpe:2.3:a:mambo:mambo:*:*:*:*:*:*:*:*
         words:
           - 'content="Mambo -'
 
       - type: word
         name: melody
+        cpe: cpe:2.3:a:melody:melody:*:*:*:*:*:*:*:*
         words:
           - 'content="Melody CMS"'
 
       - type: word
         name: metro-publisher
+        cpe: cpe:2.3:a:metro-publisher:metro-publisher:*:*:*:*:*:*:*:*
         words:
           - 'content="Metro Publisher '
 
       - type: word
         name: midgard-cms
+        cpe: cpe:2.3:a:midgard-cms:midgard-cms:*:*:*:*:*:*:*:*
         words:
           - 'powered">Midgard CMS'
 
       - type: word
         name: mijnwebwinkel
+        cpe: cpe:2.3:a:mijnwebwinkel:mijnwebwinkel:*:*:*:*:*:*:*:*
         words:
           - 'content="Mijnwebwinkel"'
 
       - type: word
         name: mintox
+        cpe: cpe:2.3:a:mintox:mintox:*:*:*:*:*:*:*:*
         words:
           - "MintoxPlaceHolder"
 
       - type: word
         name: movable-type
+        cpe: cpe:2.3:a:movable-type:movable-type:*:*:*:*:*:*:*:*
         words:
           - 'content="JetBrains PhpStorm/Intercat/Movable Type'
 
       - type: word
         name: netvolution
+        cpe: cpe:2.3:a:netvolution:netvolution:*:*:*:*:*:*:*:*
         words:
           - 'content="Netvolution WCM"'
 
       - type: word
         name: nucleus
+        cpe: cpe:2.3:a:nucleus:nucleus:*:*:*:*:*:*:*:*
         words:
           - 'content="Nucleus CMS '
 
       - type: word
         name: nukeviet
+        cpe: cpe:2.3:a:nukeviet:nukeviet:*:*:*:*:*:*:*:*
         words:
           - 'content="NukeViet '
 
       - type: word
         name: one.com
+        cpe: cpe:2.3:a:one.com:one.com:*:*:*:*:*:*:*:*
         words:
           - 'content="One.com Web Editor"'
 
       - type: word
         name: opennemas
+        cpe: cpe:2.3:a:opennemas:opennemas:*:*:*:*:*:*:*:*
         words:
           - 'content="OpenNemas '
 
       - type: word
         name: orchard
+        cpe: cpe:2.3:a:orchard:orchard:*:*:*:*:*:*:*:*
         words:
           - 'content="Orchard"'
 
       - type: word
         name: orthodox-web-solutions
+        cpe: cpe:2.3:a:orthodox-web-solutions:orthodox-web-solutions:*:*:*:*:*:*:*:*
         words:
           - 'content="Orthodox Web Solutions '
 
       - type: word
         name: osclass
+        cpe: cpe:2.3:a:osclass:osclass:*:*:*:*:*:*:*:*
         words:
           - "oc-includes/osclass/"
 
       - type: word
         name: oxatis
+        cpe: cpe:2.3:a:oxatis:oxatis:*:*:*:*:*:*:*:*
         words:
           - 'content="Oxatis '
 
       - type: word
         name: phpshop
+        cpe: cpe:2.3:a:phpshop:phpshop:*:*:*:*:*:*:*:*
         words:
           - 'content="PHPShop CMS '
 
       - type: word
         name: phpvide
+        cpe: cpe:2.3:a:phpvide:phpvide:*:*:*:*:*:*:*:*
         words:
           - 'content="PHPVibe"'
 
       - type: word
         name: pagecloud
+        cpe: cpe:2.3:a:pagecloud:pagecloud:*:*:*:*:*:*:*:*
         words:
           - 'content="Pagecloud"'
 
       - type: word
         name: pagekit
+        cpe: cpe:2.3:a:pagekit:pagekit:*:*:*:*:*:*:*:*
         words:
           - 'content="Pagekit"'
 
       - type: word
         name: parallels-presence-builder
+        cpe: cpe:2.3:a:parallels-presence-builder:parallels-presence-builder:*:*:*:*:*:*:*:*
         words:
           - 'content="Parallels Presence Builder '
 
       - type: word
         name: ritecms
+        cpe: cpe:2.3:a:ritecms:ritecms:*:*:*:*:*:*:*:*
         words:
           - 'content="RiteCMS'
 
       - type: word
         name: rcms
+        cpe: cpe:2.3:a:rcms:rcms:*:*:*:*:*:*:*:*
         words:
           - 'content="rCMS '
 
       - type: word
         name: rvsitebuilder
+        cpe: cpe:2.3:a:rvsitebuilder:rvsitebuilder:*:*:*:*:*:*:*:*
         words:
           - 'content="Rvglobalsoft"'
 
       - type: word
         name: subrion-cms
+        cpe: cpe:2.3:a:subrion-cms:subrion-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="Subrion CMS'
 
       - type: word
         name: rapidweaver
+        cpe: cpe:2.3:a:rapidweaver:rapidweaver:*:*:*:*:*:*:*:*
         words:
           - 'content="RapidWeaver"'
 
       - type: word
         name: sumoshop
+        cpe: cpe:2.3:a:sumoshop:sumoshop:*:*:*:*:*:*:*:*
         words:
           - 'content="SUMOshop"'
 
       - type: word
         name: sana-commerce
+        cpe: cpe:2.3:a:sana-commerce:sana-commerce:*:*:*:*:*:*:*:*
         words:
           - 'content="Sana Commerce"'
 
       - type: word
         name: sandvox
+        cpe: cpe:2.3:a:sandvox:sandvox:*:*:*:*:*:*:*:*
         words:
           - 'content="Sandvox '
 
       - type: word
         name: seamless-cms
+        cpe: cpe:2.3:a:seamless-cms:seamless-cms:*:*:*:*:*:*:*:*
         words:
           - 'content="OpenCities '
 
       - type: word
         name: serendipity
+        cpe: cpe:2.3:a:serendipity:serendipity:*:*:*:*:*:*:*:*
         words:
           - 'content="Serendipity '
 
       - type: word
         name: shopfactory
+        cpe: cpe:2.3:a:shopfactory:shopfactory:*:*:*:*:*:*:*:*
         words:
           - 'content="ShopFactory '
 
       - type: word
         name: clockwork
+        cpe: cpe:2.3:a:clockwork:clockwork:*:*:*:*:*:*:*:*
         words:
           - "X-Clockwork-Id:"
           - "X-Clockwork-Version:"
@@ -3419,18 +3924,21 @@ http:
 
       - type: word
         name: symfony
+        cpe: cpe:2.3:a:symfony:symfony:*:*:*:*:*:*:*:*
         words:
           - "Set-Cookie: symfony="
         part: header
 
       - type: word
         name: laravel
+        cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
         words:
           - "Set-Cookie: laravel_session="
         part: header
 
       - type: word
         name: new_laravel
+        cpe: cpe:2.3:a:new_laravel:new_laravel:*:*:*:*:*:*:*:*
         words:
           - "Set-Cookie: {{DN}}_session="
           - "Set-Cookie: XSRF-TOKEN="
@@ -3439,18 +3947,21 @@ http:
 
       - type: word
         name: express
+        cpe: cpe:2.3:a:express:express:*:*:*:*:*:*:*:*
         words:
           - "X-Powered-By: Express"
         part: header
 
       - type: word
         name: rails
+        cpe: cpe:2.3:a:rails:rails:*:*:*:*:*:*:*:*
         words:
           - 'meta content="authenticity_token" name="csrf-param'
         part: body
 
       - type: word
         name: angular
+        cpe: cpe:2.3:a:angular:angular:*:*:*:*:*:*:*:*
         words:
           - 'ng-app="'
           - "<ng-app"
@@ -3461,90 +3972,105 @@ http:
 
       - type: word
         name: lighttpd
+        cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
         words:
           - "lighttpd"
         part: header
 
       - type: word
         name: lighttpd
+        cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
         words:
           - "lighttpd"
         part: header
 
       - type: word
         name: wsgiserver
+        cpe: cpe:2.3:a:wsgiserver:wsgiserver:*:*:*:*:*:*:*:*
         words:
           - "WSGIServer"
         part: header
 
       - type: word
         name: simplehttp
+        cpe: cpe:2.3:a:simplehttp:simplehttp:*:*:*:*:*:*:*:*
         words:
           - "SimpleHTTP"
         part: header
 
       - type: word
         name: twistedweb
+        cpe: cpe:2.3:a:twistedweb:twistedweb:*:*:*:*:*:*:*:*
         words:
           - "TwistedWeb"
         part: header
 
       - type: word
         name: tsm
+        cpe: cpe:2.3:a:tsm:tsm:*:*:*:*:*:*:*:*
         words:
           - "TSM_HTTP"
         part: header
 
       - type: word
         name: ms-iis
+        cpe: cpe:2.3:a:ms-iis:ms-iis:*:*:*:*:*:*:*:*
         words:
           - "Microsoft-IIS"
         part: header
 
       - type: word
         name: ms-httpapi
+        cpe: cpe:2.3:a:ms-httpapi:ms-httpapi:*:*:*:*:*:*:*:*
         words:
           - "Microsoft-HTTPAPI"
         part: header
 
       - type: word
         name: darkhttpd
+        cpe: cpe:2.3:a:darkhttpd:darkhttpd:*:*:*:*:*:*:*:*
         words:
           - "darkhttpd"
         part: header
 
       - type: word
         name: cherrypy
+        cpe: cpe:2.3:a:cherrypy:cherrypy:*:*:*:*:*:*:*:*
         words:
           - "CherryPy"
         part: header
 
       - type: word
         name: cherokee
+        cpe: cpe:2.3:a:cherokee:cherokee:*:*:*:*:*:*:*:*
         words:
           - "Cherokee"
         part: header
 
       - type: word
         name: caddy
+        cpe: cpe:2.3:a:caddy:caddy:*:*:*:*:*:*:*:*
         words:
           - "Caddy"
         part: header
 
       - type: word
         name: jetty
+        cpe: cpe:2.3:a:jetty:jetty:*:*:*:*:*:*:*:*
         words:
           - "Jetty"
         part: header
 
       - type: word
         name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         words:
           - "Server: nginx"
         part: header
 
       - type: word
         name: php
+        cpe: cpe:2.3:a:php:php:*:*:*:*:*:*:*:*
         words:
           - "X-Powered-By: PHP"
           - "PHPSESSID"
@@ -3552,6 +4078,7 @@ http:
 
       - type: word
         name: node
+        cpe: cpe:2.3:a:node:node:*:*:*:*:*:*:*:*
         words:
           - "Server: NodeJS"
           - "X-Powered-By: nodejs"
@@ -3560,6 +4087,7 @@ http:
 
       - type: word
         name: python
+        cpe: cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
         words:
           - "Python/2."
           - "Python/3."
@@ -3569,6 +4097,7 @@ http:
 
       - type: word
         name: jenkins
+        cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
         words:
           - "X-Jenkins"
         part: header
@@ -3576,48 +4105,56 @@ http:
 
       - type: word
         name: cloudflare
+        cpe: cpe:2.3:a:cloudflare:cloudflare:*:*:*:*:*:*:*:*
         words:
           - "cloudflare"
         part: server
 
       - type: regex
         name: cloudflare
+        cpe: cpe:2.3:a:cloudflare:cloudflare:*:*:*:*:*:*:*:*
         regex:
           - ".*"
         part: cf_cache_status
 
       - type: regex
         name: cloudflare
+        cpe: cpe:2.3:a:cloudflare:cloudflare:*:*:*:*:*:*:*:*
         regex:
           - ".*"
         part: cf_ray
 
       - type: word
         name: akamai
+        cpe: cpe:2.3:a:akamai:akamai:*:*:*:*:*:*:*:*
         words:
           - "AkamaiGHost"
         part: header
 
       - type: word
         name: sucuri
+        cpe: cpe:2.3:a:sucuri:sucuri:*:*:*:*:*:*:*:*
         words:
           - "Sucuri/Cloudproxy"
         part: header
 
       - type: word
         name: Imperva
+        cpe: cpe:2.3:a:imperva:imperva:*:*:*:*:*:*:*:*
         words:
           - "X-Iinfo:"
         part: header
 
       - type: word
         name: ddos-guard
+        cpe: cpe:2.3:a:ddos-guard:ddos-guard:*:*:*:*:*:*:*:*
         words:
           - "ddos-guard"
         part: header
 
       - type: word
         name: dosarrest
+        cpe: cpe:2.3:a:dosarrest:dosarrest:*:*:*:*:*:*:*:*
         words:
           - "DOSarrest"
           - "X-DIS-Request-ID:"
@@ -3625,6 +4162,7 @@ http:
 
       - type: word
         name: arvancloud
+        cpe: cpe:2.3:a:arvancloud:arvancloud:*:*:*:*:*:*:*:*
         words:
           - "ArvanCloud"
           - "AR-Request-ID:"
@@ -3632,6 +4170,7 @@ http:
 
       - type: word
         name: aem_cms
+        cpe: cpe:2.3:a:aem_cms:aem_cms:*:*:*:*:*:*:*:*
         words:
           - "/etc/clientlibs/"
           - "/content/dam/"
@@ -3639,23 +4178,27 @@ http:
 
       - type: word
         name: lotus-domino
+        cpe: cpe:2.3:a:lotus-domino:lotus-domino:*:*:*:*:*:*:*:*
         words:
           - "Server: Lotus-Domino"
         part: header
 
       - type: word
         name: mongo-express-web-gui
+        cpe: cpe:2.3:a:mongo-express-web-gui:mongo-express-web-gui:*:*:*:*:*:*:*:*
         words:
           - "Set-Cookie: mongo-express="
         part: header
 
       - type: word
         name: pf-sense-ui
+        cpe: cpe:2.3:a:pf-sense-ui:pf-sense-ui:*:*:*:*:*:*:*:*
         words:
           - "Login to pfSense"
 
       - type: word
         name: weave-scope-dashboard
+        cpe: cpe:2.3:a:weave-scope-dashboard:weave-scope-dashboard:*:*:*:*:*:*:*:*
         words:
           - "<title>Weave Scope</title>"
           - "__WEAVEWORKS_CSRF_TOKEN"
@@ -3665,6 +4208,7 @@ http:
 
       - type: word
         name: mida-eframework
+        cpe: cpe:2.3:a:mida-eframework:mida-eframework:*:*:*:*:*:*:*:*
         words:
           - "<title>Mida eFramework</title>"
           - "Server: Mida eFramework"
@@ -3673,6 +4217,7 @@ http:
 
       - type: word
         name: SEEEMS-CMS
+        cpe: cpe:2.3:a:seeems-cms:seeems-cms:*:*:*:*:*:*:*:*
         words:
           - "SEEEMS.CMS"
           - "SEEEMS.FRAMEWORK"
@@ -3681,12 +4226,14 @@ http:
 
       - type: regex
         name: awselb
+        cpe: cpe:2.3:a:awselb:awselb:*:*:*:*:*:*:*:*
         regex:
           - "awselb"
         part: header
 
       - type: word
         name: pfsense
+        cpe: cpe:2.3:a:pfsense:pfsense:*:*:*:*:*:*:*:*
         words:
           - "Login to pfSense"
           - "<title>pfSense - Login</title>"
@@ -3696,24 +4243,28 @@ http:
 
       - type: word
         name: monit
+        cpe: cpe:2.3:a:monit:monit:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Server: monit"
 
       - type: word
         name: thinkphp
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: header
         words:
           - "ThinkPHP"
 
       - type: word
         name: apollo
+        cpe: cpe:2.3:a:apollo:apollo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "initApollo)(i.ApolloTargetServer.Self)"
 
       - type: word
         name: paloalto-network
+        cpe: cpe:2.3:a:paloalto-network:paloalto-network:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<!-- BEGIN PAN_FORM_CONTENT -->"
@@ -3722,36 +4273,42 @@ http:
 
       - type: word
         name: sailsjs
+        cpe: cpe:2.3:a:sailsjs:sailsjs:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Powered-By: Sails"
 
       - type: word
         name: tengine
+        cpe: cpe:2.3:a:tengine:tengine:*:*:*:*:*:*:*:*
         part: server
         words:
           - "Tengine"
 
       - type: word
         name: tornado
+        cpe: cpe:2.3:a:tornado:tornado:*:*:*:*:*:*:*:*
         part: header
         words:
           - "TornadoServer/"
 
       - type: word
         name: uvicorn
+        cpe: cpe:2.3:a:uvicorn:uvicorn:*:*:*:*:*:*:*:*
         part: server
         words:
           - "uvicorn"
 
       - type: word
         name: istio-envoy
+        cpe: cpe:2.3:a:istio-envoy:istio-envoy:*:*:*:*:*:*:*:*
         part: server
         words:
           - "istio-envoy"
 
       - type: word
         name: clickhouse
+        cpe: cpe:2.3:a:clickhouse:clickhouse:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-ClickHouse-Summary"
@@ -3759,42 +4316,49 @@ http:
 
       - type: word
         name: coolify
+        cpe: cpe:2.3:a:coolify:coolify:*:*:*:*:*:*:*:*
         words:
           - 'content="Coolify'
 
       - type: word
         part: body
         name: iqmessenger
+        cpe: cpe:2.3:a:iqmessenger:iqmessenger:*:*:*:*:*:*:*:*
         words:
           - "<title>IQ Messenger</title>"
 
       - type: word
         part: header
         name: sagemcom-tr069
+        cpe: cpe:2.3:a:sagemcom-tr069:sagemcom-tr069:*:*:*:*:*:*:*:*
         words:
           - 'realm="Sagemcom TR-069"'
 
       - type: word
         part: body
         name: fastpanel
+        cpe: cpe:2.3:a:fastpanel:fastpanel:*:*:*:*:*:*:*:*
         words:
           - "<title>FASTPANEL</title>"
 
       - type: word
         part: body
         name: axema-vaka
+        cpe: cpe:2.3:a:axema-vaka:axema-vaka:*:*:*:*:*:*:*:*
         words:
           - "<title>Vaka</title>"
 
       - type: word
         part: body
         name: ksenia-security
+        cpe: cpe:2.3:a:ksenia-security:ksenia-security:*:*:*:*:*:*:*:*
         words:
           - "<title>Ksenia Lares WebServer</title>"
 
       - type: word
         part: body
         name: topdesk
+        cpe: cpe:2.3:a:topdesk:topdesk:*:*:*:*:*:*:*:*
         words:
           - "/tas/css/auth.css"
           - "topdeskidploginforwardurl"
@@ -3803,48 +4367,56 @@ http:
       - type: word
         part: body
         name: usergate-utm
+        cpe: cpe:2.3:a:usergate-utm:usergate-utm:*:*:*:*:*:*:*:*
         words:
           - "<title>UserGate UTM</title>"
 
       - type: word
         part: body
         name: usergate-ngfw
+        cpe: cpe:2.3:a:usergate-ngfw:usergate-ngfw:*:*:*:*:*:*:*:*
         words:
           - "<title>UserGate NGFW</title>"
 
       - type: word
         part: body
         name: mikrotik-routeros
+        cpe: cpe:2.3:a:mikrotik-routeros:mikrotik-routeros:*:*:*:*:*:*:*:*
         words:
           - "<title>RouterOS router configuration page</title>"
 
       - type: word
         part: body
         name: satel-ethm1-plus
+        cpe: cpe:2.3:a:satel-ethm1-plus:satel-ethm1-plus:*:*:*:*:*:*:*:*
         words:
           - "<title>ETHM-1 Plus</title>"
 
       - type: word
         part: body
         name: qlik-sense
+        cpe: cpe:2.3:a:qlik-sense:qlik-sense:*:*:*:*:*:*:*:*
         words:
           - "<title>Qlik Sense login page</title>"
 
       - type: word
         part: header
         name: wit-redy
+        cpe: cpe:2.3:a:wit-redy:wit-redy:*:*:*:*:*:*:*:*
         words:
           - "Server: REDY-Process"
 
       - type: word
         part: body
         name: entels-entec
+        cpe: cpe:2.3:a:entels-entec:entels-entec:*:*:*:*:*:*:*:*
         words:
           - 'href="css/img/ENTEK.ico"'
 
       - type: word
         part: body
         name: macroscop
+        cpe: cpe:2.3:a:macroscop:macroscop:*:*:*:*:*:*:*:*
         words:
           - "<title>Macroscop Web Client</title>"
           - "<title>macroscop</title>"
@@ -3852,12 +4424,13 @@ http:
       - type: word
         part: body
         name: etic-telecom
+        cpe: cpe:2.3:a:etic-telecom:etic-telecom:*:*:*:*:*:*:*:*
         words:
           - "<title>Etic Telecom</title>"
 
       - type: word
         part: body
         name: checkpoint-quantum-spark
+        cpe: cpe:2.3:a:checkpoint-quantum-spark:checkpoint-quantum-spark:*:*:*:*:*:*:*:*
         words:
           - 'content="Quantum Spark Security Appliance - Login"'
-# digest: 4a0a00473045022039e314fc3cbe16d41e16831235314cab22cfbb10018ee9d3b539d01247bba268022100a7d146d3162e6fd3d85a65075e073e1de5986f69e322f6b937b0fb210c9fd029:922c64590222798bb761d5b6d8e72950

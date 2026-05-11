@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'buildCount'
@@ -41,6 +43,8 @@ http:
         condition: and
 
       - type: word
+        name: experience_manager-2
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -48,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b58981cb573aa1e89d54d7fbc0e605271711f4eff65cef465aee34a3231440be0221008aa78cc7a8f4ed58a94d1612527533733590f27df31b8f713c240d0f5992df3a:922c64590222798bb761d5b6d8e72950

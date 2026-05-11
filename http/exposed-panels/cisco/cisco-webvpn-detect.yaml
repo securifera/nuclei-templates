@@ -8,6 +8,7 @@ info:
   reference:
     - https://askanydifference.com/difference-between-cisco-clientless-ssl-vpn-and-anyconnect-with-table/
   classification:
+    cpe: cpe:2.3:a:cisco:cisco:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -15,6 +16,8 @@ info:
     max-request: 2
     fofa-query: fid="U1TP/SJklrT9VLIEpZkQNg=="
     google-query: intitle:"SSLVPN Service"
+    vendor: cisco
+    product: cisco
   tags: panel,cisco,vpn,discovery
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cisco
+        cpe: cpe:2.3:a:cisco:cisco:*:*:*:*:*:*:*:*
         part: body
         words:
           - "CISCO"
@@ -39,9 +44,10 @@ http:
         case-insensitive: true
 
       - type: regex
+        name: cisco-2
+        cpe: cpe:2.3:a:cisco:cisco:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "webvpncontext=00@.+"
           - "webvpn="
         condition: or
-# digest: 4a0a004730450221009fc7d1dfd4c1f6b362b2da1eb25439faa605c7c08168849f5b1fdd962afbf75f022066f9e3e3bb2e39249b51d657060e5c5ecc790c798e92a25067d98c3a0956d2ac:922c64590222798bb761d5b6d8e72950

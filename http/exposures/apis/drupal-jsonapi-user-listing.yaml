@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.drupal.org/project/drupal/issues/3240913
   classification:
+    cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -29,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: drupal
+        cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
         regex:
           - '\{"display_name":"([A-Sa-z0-9-_]+)"\}'
 
@@ -40,4 +43,3 @@ http:
       - type: json
         json:
           - '.data[].attributes.display_name'
-# digest: 4a0a0047304502203df1db1aa67ccb413d429580a82df5d87ac7544b211dbdda5271ffa7338b6f19022100abb1ac7cd35158187871bb6c454b18cb00ae26c6bf7952467e43e4557085779d:922c64590222798bb761d5b6d8e72950

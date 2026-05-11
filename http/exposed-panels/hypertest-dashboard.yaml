@@ -9,12 +9,15 @@ info:
     - https://www.facebook.com/photo?fbid=487809593389565&set=a.467014098802448
     - https://www.hypertest.co
   classification:
+    cpe: cpe:2.3:a:hypertest:hypertest:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"HyperTest"
+    vendor: hypertest
+    product: hypertest
   tags: panel,exposure,hypertest,discovery
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hypertest
+        cpe: cpe:2.3:a:hypertest:hypertest:*:*:*:*:*:*:*:*
         words:
           - "<title>HyperTest | Common Dashboard</title>"
           - "HyperTest | Dashboard"
@@ -32,7 +37,8 @@ http:
         condition: or
 
       - type: word
+        name: hypertest-2
+        cpe: cpe:2.3:a:hypertest:hypertest:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
-# digest: 490a0046304402202bcb5287760a85a54f2004268c0dd4657eead825ac3a86a2d1c559418abde6320220435445cd73839874e058d0031f11bbb8fbe3b05248d05c3a5e91ea390702585c:922c64590222798bb761d5b6d8e72950

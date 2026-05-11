@@ -6,11 +6,14 @@ info:
   severity: info
   description: Quora user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:quora:quora:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: quora
+    product: quora
   tags: osint,osint-social,quora,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: quora
+        cpe: cpe:2.3:a:quora:quora:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Credentials"
-# digest: 490a00463044022002bf13d11470139bd9a51e6282667227d9aa5bb6050f2292da585585a5161d3f02200706244618d4d3b8a45d1ed86f0e8aaf30179d1a944a425c40b75b940f9a384a:922c64590222798bb761d5b6d8e72950

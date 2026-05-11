@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.wildix.com/product/collaboration-ucc-platform/#
   classification:
+    cpe: cpe:2.3:a:wildix:wildix:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.favicon.hash:-1295577382
+    vendor: wildix
+    product: wildix
   tags: panel,login,wildix,detect,discovery
 
 http:
@@ -26,7 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: wildix
+        cpe: cpe:2.3:a:wildix:wildix:*:*:*:*:*:*:*:*
         part: server
         words:
           - "wildix"
-# digest: 490a00463044022010f7fda2b1c71c89675b666829fc32a359c2d3aeeedd56d5957fe1bcb5bc02f502201b92f643404e06b1ff552b288fddd68c2223feebf34274666994333ce0e036e5:922c64590222798bb761d5b6d8e72950

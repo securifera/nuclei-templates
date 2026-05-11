@@ -8,8 +8,12 @@ info:
     A eset phishing website was detected
   reference:
     - https://eset.com
+  classification:
+    cpe: cpe:2.3:a:eset:eset:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: eset
+    product: eset
   tags: phishing,eset,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: eset
+        cpe: cpe:2.3:a:eset:eset:*:*:*:*:*:*:*:*
         words:
           - 'Malware Protection & Internet Security &#124; ESET'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: eset-2
+        cpe: cpe:2.3:a:eset:eset:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"eset.com")'
-# digest: 4a0a00473045022017c08676410905577fdbfddd2491c21300a73361417ef712a25d1dbb43f18f8902210083e96f5c587d464ebca4a67f399f2c37bfb60c796812c7cbcb7519172877ebd4:922c64590222798bb761d5b6d8e72950

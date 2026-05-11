@@ -8,10 +8,14 @@ info:
     Detects Monsta FTP web-based file manager interface.
   reference:
     - https://www.monstaftp.com/
+  classification:
+    cpe: cpe:2.3:a:monsta:ftp:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Monsta FTP"
+    vendor: monsta
+    product: ftp
   tags: tech,monsta,ftp,detect
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ftp
+        cpe: cpe:2.3:a:monsta:ftp:*:*:*:*:*:*:*:*
         words:
           - 'ng-app="MonstaFTP"'
           - '<title>Monsta FTP'
@@ -40,4 +46,3 @@ http:
         group: 1
         regex:
           - 'monsta-min-([0-9.]+)\.js'
-# digest: 4b0a00483046022100ef92ad74f3890bd1340284e4001e6814246f08be5b65262a4568572d8182742f022100de35c0babdf1c8c3634e0ce8f34bc9b30448e169f786636f342b636ecf3d95a3:922c64590222798bb761d5b6d8e72950

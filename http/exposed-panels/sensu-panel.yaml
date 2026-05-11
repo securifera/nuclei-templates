@@ -7,12 +7,15 @@ info:
   description: |
     Sensu by Sumo Logic login panel was detected.
   classification:
+    cpe: cpe:2.3:a:sensu:sensu:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-749942143
+    vendor: sensu
+    product: sensu
   tags: panel,sensu,sumo,detect,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sensu
+        cpe: cpe:2.3:a:sensu:sensu:*:*:*:*:*:*:*:*
         part: body
         words:
           - <title>Sensu
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022057092e847ca531d20dd4406a85bc100d77c5f17d5e8ed1613422df1819c7a9e10221008fa26d7a098fa4458d9d0cae6709dbe3f362e3f2ea878534f979c533cfff2020:922c64590222798bb761d5b6d8e72950

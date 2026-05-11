@@ -11,8 +11,12 @@ info:
     - https://portswigger.net/kb/issues/01000400_mixed-content
     - https://resources.infosecinstitute.com/topics/vulnerabilities/https-mixed-content-vulnerability/
     - https://docs.gitlab.com/ee/user/application_security/dast/checks/319.1.html
+  classification:
+    cpe: cpe:2.3:a:mixed-active-content:mixed-active-content:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mixed-active-content
+    product: mixed-active-content
   tags: misconfig,vuln
 
 http:
@@ -24,18 +28,24 @@ http:
     max-redirects: 0
     matchers:
       - type: regex
+        name: mixed-active-content
+        cpe: cpe:2.3:a:mixed-active-content:mixed-active-content:*:*:*:*:*:*:*:*
         part: body
         negative: true
         regex:
           - "(?mi)<!--\\[if (lt|lte) IE [0-9]*\\]>\\s*<script[^>]*\\ssrc=\"http://"
 
       - type: regex
+        name: mixed-active-content-2
+        cpe: cpe:2.3:a:mixed-active-content:mixed-active-content:*:*:*:*:*:*:*:*
         part: body
         negative: true
         regex:
           - "<!--\\s*<script"
 
       - type: regex
+        name: mixed-active-content-3
+        cpe: cpe:2.3:a:mixed-active-content:mixed-active-content:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "<script[^>]*src=['\"]http://[^'\">]+['\"]"
@@ -43,6 +53,8 @@ http:
           - "<object[^>]*data=['\"]http://[^'\">]+['\"]"
 
       - type: dsl
+        name: mixed-active-content-4
+        cpe: cpe:2.3:a:mixed-active-content:mixed-active-content:*:*:*:*:*:*:*:*
         dsl:
           - 'startswith(tostring(BaseURL), "https://")'
 
@@ -54,4 +66,3 @@ http:
           - "<script[^>]*src=['\"](http[^s'\">][^'\">]*)['\"]"
           - "<iframe[^>]*src=['\"](http[^s'\">][^'\">]*)['\"]"
           - "<object[^>]*data=['\"](http[^s'\">][^'\">]*)['\"]"
-# digest: 4b0a004830460221009b0b9daf144014e4435db3baf5347c71288ca7eed79471973f195b73fbe53bfa022100e25e8f9bc909f8e24e3acf57ac485f1929d2758c3fbe78cd1fbdf40c1f8cb992:922c64590222798bb761d5b6d8e72950

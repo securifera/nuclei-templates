@@ -9,11 +9,14 @@ info:
   reference:
     - https://xbow.com/blog/xbow-titiler-lfi/
   classification:
+    cpe: cpe:2.3:a:titiler:titiler:*:*:*:*:*:*:*:*
     cwe-id: CWE-918
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"TiTiler"
+    vendor: titiler
+    product: titiler
   tags: titiler,oast,obb,ssrf,vuln
 
 http:
@@ -24,9 +27,10 @@ http:
 
     matchers:
       - type: dsl
+        name: titiler
+        cpe: cpe:2.3:a:titiler:titiler:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 500'
           - 'contains(interactsh_protocol, "dns")'
           - 'contains(body, "<imageAttributes> in document")'
         condition: and
-# digest: 490a00463044022012b96ad80a95b9d69b70ddf72019f44e54242e1a20eb398d95a2899bcff24bfd0220604f477f5da7b998e6b6281be0ea7afa145ce09b5fd79fab6ccf593b5cb862cb:922c64590222798bb761d5b6d8e72950

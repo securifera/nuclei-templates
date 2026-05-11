@@ -11,8 +11,12 @@ info:
     - https://sapbasisinfo.com/blog/2017/01/20/sapcontrol-command-funtions-for-sap-hana/
     - https://itsiti.com/csmon/
     - https://www.networkintelligence.ai/blogs/sap-security-assessment-methodology-part-2-credential-less-attack-vectors/
+  classification:
+    cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sap
+    product: sap
   tags: misconfig,sap,sapcontrol,soap,log,disclosure
 
 http:
@@ -38,11 +42,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sap
+        cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ListLogFilesResponse"
 
       - type: word
+        name: sap-2
+        cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<file>"
@@ -52,4 +60,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e9d29f003a870e4b8ee1e21d9c4a934bf57ac634c72d8d1408ae7dd41445839c022100b92314c8578976be4e9c772b36aecc63d0968ee1e00e32a801870fdca1549dfa:922c64590222798bb761d5b6d8e72950

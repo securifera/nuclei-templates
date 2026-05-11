@@ -9,6 +9,8 @@ info:
   reference:
     - https://blog.csdn.net/qq_41904294/article/details/141219553
     - https://blog.csdn.net/weixin_44337800/article/details/141328430
+  classification:
+    cpe: cpe:2.3:a:xiamen-motic:moticdsm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -27,6 +29,8 @@ http:
 
     matchers:
       - type: dsl
+        name: moticdsm
+        cpe: cpe:2.3:a:xiamen-motic:moticdsm:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body,"Motic")'
           - 'status_code == 200'
@@ -40,9 +44,10 @@ http:
 
     matchers:
       - type: dsl
+        name: moticdsm-2
+        cpe: cpe:2.3:a:xiamen-motic:moticdsm:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body,"bit app support","fonts","extensions")'
           - 'contains(content_type,"text/css")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100e0461ba0a3ebef7a3f72ad9e629ebf741c86f644e00250a02115f51fc088b3c0022045ed4649ee01f406bbe38022e1523a89597a74b38f320eb0f052b937aae4be7c:922c64590222798bb761d5b6d8e72950

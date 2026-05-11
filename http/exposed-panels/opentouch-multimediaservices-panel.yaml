@@ -8,9 +8,13 @@ info:
     OpenTouch Multimedia Services Login Panel was detected.
   reference:
     - https://www.al-enterprise.com/-/media/assets/internet/documents/opentouch-multimedia-services-datasheet-en.pdf
+  classification:
+    cpe: cpe:2.3:a:opentouch:opentouch:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: opentouch
+    product: opentouch
   tags: panel,opentouch,login,detect,discovery
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: opentouch
+        cpe: cpe:2.3:a:opentouch:opentouch:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'OpenTouch'
@@ -42,4 +48,3 @@ http:
         group: 1
         regex:
           - '(?i)Version\s+([0-9.-]+)'
-# digest: 4a0a00473045022071769ba02999b4c3ec48b9f8446133ecd79a0dc0003009220460ae91b5d127770221008d307f106612736eb72d68efe6e2d6ff6fedfc24eead58f3008e0e3a21786f78:922c64590222798bb761d5b6d8e72950

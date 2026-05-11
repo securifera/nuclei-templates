@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nodebb
+        cpe: cpe:2.3:a:nodebb:nodebb:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'NodeBB Web Installer'
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: nodebb-2
+        cpe: cpe:2.3:a:nodebb:nodebb:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022065bbdbf4e3e1df22292ea0485fbb1c3a2f52ef76127795de6671e0e5c2b96cde022100acd44b9f3e55bb831d85c7ce29d2754b80170aedd37aca84e4358a4528ca3a90:922c64590222798bb761d5b6d8e72950

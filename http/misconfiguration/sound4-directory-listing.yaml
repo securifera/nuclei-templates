@@ -9,10 +9,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/170259/SOUND4-IMPACT-FIRST-PULSE-Eco-2.x-Information-Disclosure.html
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2022-5732.php
+  classification:
+    cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"SOUND4"
+    vendor: listing
+    product: listing
   tags: misconfig,listing,sound4,disclosure,packetstorm,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: listing
+        cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
         words:
           - "<title>Index of /log</title>"
           - "Parent Directory"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022031725fc24cfa279dc2cdbb47d7167762ceb5108c10cfcc039e3422acec30558702207267559943c9bbc3f864b56061111081232e42d9cf3e4a1ef15017484da55483:922c64590222798bb761d5b6d8e72950

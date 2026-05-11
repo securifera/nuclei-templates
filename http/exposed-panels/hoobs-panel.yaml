@@ -8,10 +8,14 @@ info:
     HOOBS is a home automation platform that bridges HomeKit and non-HomeKit devices.
   reference:
     - https://hoobs.com
+  classification:
+    cpe: cpe:2.3:a:hoobs:hoobs:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"HOOBS"
+    vendor: hoobs
+    product: hoobs
   tags: panel,iot,homekit,hoobs,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hoobs
+        cpe: cpe:2.3:a:hoobs:hoobs:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>HOOBS'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220447685cfa246c97a703211e3e95dc40224857e06d7becf38ea244af8d5731a55022100b6df49231ad6419492269c92f217ce6b2c4303ff88445fbb32191971e7f0d150:922c64590222798bb761d5b6d8e72950

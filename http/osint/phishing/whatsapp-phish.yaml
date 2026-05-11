@@ -8,8 +8,12 @@ info:
     A Whatsapp phishing website was detected
   reference:
     - https://whatsapp.com
+  classification:
+    cpe: cpe:2.3:a:whatsapp:whatsapp:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: whatsapp
+    product: whatsapp
   tags: phishing,whatsapp,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: whatsapp
+        cpe: cpe:2.3:a:whatsapp:whatsapp:*:*:*:*:*:*:*:*
         words:
           - 'WhatsApp | Secure and Reliable Free Private Messaging and Callings'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: whatsapp-2
+        cpe: cpe:2.3:a:whatsapp:whatsapp:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"whatsapp.com")'
-# digest: 4b0a004830460221009ac8c68e58bc1c691e773c709153f981661443f875c7cfef2ee4eea9de09b247022100a5c53f5b3d74a85acd17a8f99018fd0f17b2128e803b7617e8c32aa3cad45336:922c64590222798bb761d5b6d8e72950

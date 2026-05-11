@@ -8,8 +8,12 @@ info:
     A Current phishing website was detected
   reference:
     - https://current.com
+  classification:
+    cpe: cpe:2.3:a:current:current:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: current
+    product: current
   tags: phishing,current,fintech,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: current
+        cpe: cpe:2.3:a:current:current:*:*:*:*:*:*:*:*
         words:
           - 'Current'
           - 'Mobile banking done better. Build credit while you bank. No overdraft fees/hidden fees. Current is a fintech not a bank. Banking services provided by Choice Financial Group, Member FDIC, and Cross River Bank, Member FDIC.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: current-2
+        cpe: cpe:2.3:a:current:current:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"current.com")'
-# digest: 490a004630440220427fcff384448c0c93ab720128bc638c4baa735cbffb42fae4acd4381a7ef58802200f6281e28c317ba2c523f1cf51257beccf884d3c1db22c80813fde66cffd5615:922c64590222798bb761d5b6d8e72950

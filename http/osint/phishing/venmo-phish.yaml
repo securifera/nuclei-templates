@@ -8,8 +8,12 @@ info:
     A Venmo phishing website was detected
   reference:
     - https://venmo.com
+  classification:
+    cpe: cpe:2.3:a:venmo:venmo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: venmo
+    product: venmo
   tags: phishing,venmo,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: venmo
+        cpe: cpe:2.3:a:venmo:venmo:*:*:*:*:*:*:*:*
         words:
           - "Pay Friends | Payments App | Venmo"
           - 'Pay. Get paid. Shop. Share.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: venmo-2
+        cpe: cpe:2.3:a:venmo:venmo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"venmo.com")'
-# digest: 4a0a00473045022100acaccca1ea3493e64b43340d12e4636137df16316593f62e36d71067d05a75a002204401336b81015724ac7e0a42f79fee95348aade556aafb7ef7f7a2eea9d129f2:922c64590222798bb761d5b6d8e72950

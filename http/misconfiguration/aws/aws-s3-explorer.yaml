@@ -28,10 +28,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aws_javascript_s3_explorer
+        cpe: cpe:2.3:a:amazon:aws_javascript_s3_explorer:*:*:*:*:*:*:*:*
         words:
           - '<title>AWS S3 Explorer</title>'
 
       - type: word
+        name: aws_javascript_s3_explorer-2
+        cpe: cpe:2.3:a:amazon:aws_javascript_s3_explorer:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204f1208bc35afe96fc48cc8d69e434549f40b593835fff0d47d88d14acca040a1022100fd1590dd13fd629194aacfc086fede12038889c9e6bb3fb87676a201291d4fa0:922c64590222798bb761d5b6d8e72950

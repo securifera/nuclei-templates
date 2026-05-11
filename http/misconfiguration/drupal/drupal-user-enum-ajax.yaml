@@ -4,6 +4,8 @@ info:
   name: Drupal User Enumration [Ajax]
   author: 0w4ys
   severity: info
+  classification:
+    cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
     shodan-query:
@@ -26,12 +28,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: drupal
+        cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
         words:
           - '":"a.'
           - '":"A.'
         part: body
 
       - type: word
+        name: drupal-2
+        cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         part: header
@@ -45,4 +51,3 @@ http:
         part: body
         regex:
           - '"[\w \-\_\@\.]+\"'
-# digest: 490a0046304402206d8ed777f96c02f13da44e197913827d5f9d0a44befe2001b5cbb1aaa0113f7c02204a957bf6db3549da1115846c1894b4af253de1089080417ea3bccfff23afcba6:922c64590222798bb761d5b6d8e72950

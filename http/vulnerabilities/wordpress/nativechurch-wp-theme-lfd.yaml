@@ -10,9 +10,12 @@ info:
     - https://packetstormsecurity.com/files/132297/WordPress-NativeChurch-Theme-1.0-1.5-Arbitrary-File-Download.html
     - https://wpscan.com/vulnerability/2e1062ed-0c48-473f-aab2-20ac9d4c72b1
   classification:
+    cpe: cpe:2.3:a:nativechurch-wp-theme-lfd:nativechurch-wp-theme-lfd:*:*:*:*:*:*:*:*
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: nativechurch-wp-theme-lfd
+    product: nativechurch-wp-theme-lfd
   tags: wp-theme,lfi,wp,packetstorm,wpscan,wordpress,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nativechurch-wp-theme-lfd
+        cpe: cpe:2.3:a:nativechurch-wp-theme-lfd:nativechurch-wp-theme-lfd:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_NAME"
@@ -30,4 +35,3 @@ http:
           - "DB_HOST"
           - "The base configurations of the WordPress"
         condition: and
-# digest: 490a0046304402206a70a4e524d612fa0f75a589d70695f548758a63bd09f73f6516e24db37df3f902201f50eed108b5fb535664ba07badb118d92b5118ebc947e816cb2ea02853ced5b:922c64590222798bb761d5b6d8e72950

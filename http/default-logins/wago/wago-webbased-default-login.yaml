@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
       Identified WAGO Web-Based Management interfaces that were accessible using default credentials (admin:wago).These interfaces are used to configure and monitor WAGO programmable logic controllers (PLCs) and automation systems. Use of factory-default credentials exposed critical OT infrastructure to unauthorized access.
+  classification:
+    cpe: cpe:2.3:a:wago:wago:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: html:"WAGO Ethernet Web-based Management"
     verified: true
     max-request: 1
+    vendor: wago
+    product: wago
   tags: wago,default-login,vuln
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wago
+        cpe: cpe:2.3:a:wago:wago:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"username":"admin"'
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008825c486a7206189c3e03062def4591d485c3304a176e76b2007bff8c947474c02206895edc221dafa76c0f4f924bfa1cca93d70149bdcf8147c772b53e61ddef096:922c64590222798bb761d5b6d8e72950

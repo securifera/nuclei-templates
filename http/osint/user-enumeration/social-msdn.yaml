@@ -6,11 +6,14 @@ info:
   severity: info
   description: Social msdn user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:social-msdn:social-msdn:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: social-msdn
+    product: social-msdn
   tags: osint,osint-social,social-msdn,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: social-msdn
+        cpe: cpe:2.3:a:social-msdn:social-msdn:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Member Since"
-# digest: 4b0a0048304602210089d2ecdd678f7a8fe51b00921c4011d3a9ca21250ec2648c76c53eb97a4b7267022100c939396c93e890fe2d1fb2ffbb2b60c8e587da98a1775f95390759f9cbe85836:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A filezilla phishing website was detected
   reference:
     - https://filezilla-project.org
+  classification:
+    cpe: cpe:2.3:a:filezilla:filezilla:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: filezilla
+    product: filezilla
   tags: phishing,filezilla,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: filezilla
+        cpe: cpe:2.3:a:filezilla:filezilla:*:*:*:*:*:*:*:*
         words:
           - 'FileZilla - The free FTP solution'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: filezilla-2
+        cpe: cpe:2.3:a:filezilla:filezilla:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"filezilla-project.org")'
-# digest: 4b0a004830460221008ff598eb915bfe60fb8911ac042b60589720b040572ea4b28f488aa284e9442e022100af1bda7a6f8ed1fa5fe563f48e8bfa8a7046e9227fae93aea21f520499e7ad77:922c64590222798bb761d5b6d8e72950

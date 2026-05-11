@@ -6,12 +6,15 @@ info:
   severity: info
   description: Scribd user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:scribd:scribd:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
+    vendor: scribd
+    product: scribd
   tags: osint,osint-social,scribd,discovery
 
 self-contained: true
@@ -30,8 +33,9 @@ http:
           - 200
 
       - type: word
+        name: scribd
+        cpe: cpe:2.3:a:scribd:scribd:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Scribd"
           - "user-profile"
-# digest: 4a0a0047304502204cf0b02424faca7c4d3128afe30b91471525f250fe27a432f0262cfe09a06409022100bf7c9bcffbf5224bc3dcbb16c987a234c5f392e5185b6fea4b1206814542df5e:922c64590222798bb761d5b6d8e72950

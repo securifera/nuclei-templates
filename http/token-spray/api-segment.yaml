@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://reference.segmentapis.com/
+  classification:
+    cpe: cpe:2.3:a:segment:segment:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: segment
+    product: segment
   tags: token-spray,segment
 
 self-contained: true
@@ -22,9 +26,10 @@ http:
 
     matchers:
       - type: word
+        name: segment
+        cpe: cpe:2.3:a:segment:segment:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"name":'
           - '"id"'
         condition: and
-# digest: 4b0a004830460221008ed607203b72b899a89c6cd39c80f79fd117170d93eed820abc7dd700e9716b3022100bb18d49da796c4fd56a72b95e5c5b888f283f1670bf5cacd0faea649d6dff6d7:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API was detected.
   reference:
     - https://www.phoenixcontact.com/en-us/products/ac-charging-controllers
+  classification:
+    cpe: cpe:2.3:a:phoenix-contact:phoenix-contact:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Phoenix Contact - CHARX"
+    vendor: phoenix-contact
+    product: phoenix-contact
   tags: phoenix-contact,charx,ics,api,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: phoenix-contact
+        cpe: cpe:2.3:a:phoenix-contact:phoenix-contact:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "charging_controllers", "system")'
@@ -42,4 +48,3 @@ http:
           - '"Hardware Name: "+ .system.info._v_.hardware_name'
           - '"Device Type: "+ .charging_controllers | .[].info._v_.device_type'
           - '"Device UID: "+ .charging_controllers | .[].info._v_.device_uid'
-# digest: 4a0a004730450221009e1c79962c99443a38e2639bf9a5932ef0bfe8a0c9ab5e74447d8e9cb96baf7802200b490c286ab3156b0ce2cbbf6cbbd1cefb9437f6f7c03ae4e6eb7e2018d175d6:922c64590222798bb761d5b6d8e72950

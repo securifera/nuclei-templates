@@ -4,10 +4,14 @@ info:
   name: Navidrome Admin User Creation
   author: DhiyaneshDK
   severity: critical
+  classification:
+    cpe: cpe:2.3:a:navidrome:navidrome:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"content="Navidrome""
+    vendor: navidrome
+    product: navidrome
   tags: navidrome,installer,misconfig,intrusive,vuln
 
 variables:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: navidrome
+        cpe: cpe:2.3:a:navidrome:navidrome:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"isAdmin":true'
@@ -42,4 +48,3 @@ http:
         dsl:
           - '"USER: "+ username'
           - '"PASS: "+ password'
-# digest: 4b0a00483046022100eb18133f407aca98652744622639f4a164cf25fcd0e5d39228483e34bbd1acf2022100ffdebecd0667016b43a2ec309d03055ffda6ad6c1d61b1cc8d8115a5d42708cd:922c64590222798bb761d5b6d8e72950

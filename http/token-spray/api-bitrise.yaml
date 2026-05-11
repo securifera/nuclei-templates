@@ -8,8 +8,12 @@ info:
   reference:
     - https://api-docs.bitrise.io/
     - https://github.com/daffainfo/all-about-apikey/tree/main/bitrise
+  classification:
+    cpe: cpe:2.3:a:bitrise:bitrise:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bitrise
+    product: bitrise
   tags: token-spray,bitrise
 
 self-contained: true
@@ -23,10 +27,11 @@ http:
 
     matchers:
       - type: word
+        name: bitrise
+        cpe: cpe:2.3:a:bitrise:bitrise:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"username":'
           - '"slug":'
           - '"email":'
         condition: and
-# digest: 4b0a00483046022100d7ea76b365af8c704efa9abf177c49d274f2b61eb8074f1a6f53dc0cfd61cc58022100d0873e4207711fa9065555b9335529e1c1575b46e81ac01095aac064293091ec:922c64590222798bb761d5b6d8e72950

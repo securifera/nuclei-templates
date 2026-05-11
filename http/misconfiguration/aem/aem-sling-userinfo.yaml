@@ -28,10 +28,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: experience_manager
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         words:
           - 'userID:'
 
       - type: word
+        name: experience_manager-2
+        cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ec43f53e6fa9fd06f116c705c68e88fd7214e6609aa732b0aa9e382777cf8855022007ff77f7a1400c79b2d07034d6b3a3cc8daf60a4216437e1e2172bc4a227353b:922c64590222798bb761d5b6d8e72950

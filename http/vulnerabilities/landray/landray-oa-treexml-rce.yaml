@@ -33,11 +33,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: landray_office_automation
+        cpe: cpe:2.3:a:landray:landray_office_automation:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
 
       - type: word
+        name: landray_office_automation-2
+        cpe: cpe:2.3:a:landray:landray_office_automation:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<RestResponse><success>"
@@ -47,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022067767ae512fbcdc91b9d30afd5ab389813d30bff5b490c4b8c0fe3d59c39010702207c8e6a28d4d5b9382ede0f9babc9cec08001005d529c9e081d41e912db82441a:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/8002
   classification:
+    cpe: cpe:2.3:a:camera:camera:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     google-query: intitle:"NoVus IP camera" -com
+    vendor: camera
+    product: camera
   tags: camera,novus,edb,iot,panel,discovery
 
 http:
@@ -25,10 +28,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: camera
+        cpe: cpe:2.3:a:camera:camera:*:*:*:*:*:*:*:*
         words:
           - "<title>NoVus IP camera</title>"
 
       - type: word
+        name: camera-2
+        cpe: cpe:2.3:a:camera:camera:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -36,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f234a0e54326e4b031a834c6f6db7448489f63ba39b9c84d6131330959ee86ab02201b788a01d6d5d3c9a1b777a41d0131f9f7032c523ae2fdf35a162ef22186390d:922c64590222798bb761d5b6d8e72950

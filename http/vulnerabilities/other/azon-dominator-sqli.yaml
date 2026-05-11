@@ -10,11 +10,14 @@ info:
     - https://www.exploit-db.com/exploits/52059
     - https://www.codester.com/items/12775/azon-dominator-affiliate-marketing-script
   classification:
+    cpe: cpe:2.3:a:azon:dominator:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: "Azon Dominator"
+    vendor: azon
+    product: dominator
   tags: time-based-sqli,azon,dominator,sqli,vuln
 
 http:
@@ -29,9 +32,10 @@ http:
 
     matchers:
       - type: dsl
+        name: dominator
+        cpe: cpe:2.3:a:azon:dominator:*:*:*:*:*:*:*:*
         dsl:
           - "duration>=6"
           - "status_code==500"
           - 'contains_all(body, "id", "name", "save_lists.php")'
         condition: and
-# digest: 4a0a0047304502201e08c6871edfa4b6717549560828271054d954bbebde18de785b840a312a911c022100959e7796b2456e1558c38ab0a523a80348e4d85901faae4be41ed83fcad67d79:922c64590222798bb761d5b6d8e72950

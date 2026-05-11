@@ -8,8 +8,12 @@ info:
     A Binance phishing website was detected
   reference:
     - https://binance.com
+  classification:
+    cpe: cpe:2.3:a:binance:binance:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: binance
+    product: binance
   tags: phishing,binance,crypto,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: binance
+        cpe: cpe:2.3:a:binance:binance:*:*:*:*:*:*:*:*
         words:
           - 'Binance'
           - 'Binance: The World’s Most Trusted Cryptocurrency Exchange to Buy, Trade &amp; Invest in Crypto'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: binance-2
+        cpe: cpe:2.3:a:binance:binance:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"binance.com")'
-# digest: 4b0a00483046022100cbd7488dd2b8bdf3489b53f6eda4e7d82f889533f753e25ca56d899aad4a3eb1022100ae33018164bf71d5d69c4f91b283497915ed888bf27ea8f0b44e902e6f22a177:922c64590222798bb761d5b6d8e72950

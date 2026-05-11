@@ -8,8 +8,12 @@ info:
     A StockX phishing website was detected
   reference:
     - https://stockx.com
+  classification:
+    cpe: cpe:2.3:a:stockx:stockx:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: stockx
+    product: stockx
   tags: phishing,stockx,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: stockx
+        cpe: cpe:2.3:a:stockx:stockx:*:*:*:*:*:*:*:*
         words:
           - 'StockX'
           - 'Buy and sell the hottest sneakers including Adidas Yeezy and Retro Jordans, Supreme streetwear, trading cards, collectibles, designer handbags and watches.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: stockx-2
+        cpe: cpe:2.3:a:stockx:stockx:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"stockx.com")'
-# digest: 490a00463044022042139a8a86ee356a6af242c06ca3282c9718ab9be56ddd2be48d6dffea3089f20220414d4c6366b5c31184d65f305f1220bbe21fcb4fd23b82dca464e541affab447:922c64590222798bb761d5b6d8e72950

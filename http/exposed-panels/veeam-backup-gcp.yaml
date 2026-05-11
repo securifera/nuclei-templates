@@ -25,10 +25,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: veeam_backup_for_google_cloud
+        cpe: cpe:2.3:a:veeam:veeam_backup_for_google_cloud:*:*:*:*:*:*:*:*
         words:
           - '<title>Veeam Backup for GCP</title>'
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200f0924030ab637b2fa585064adb331f8de13618f7891b919732b9b6b6beae99f022100c110b0c14dafea7c1b214d129a3c8d7f30dafe25184745d2d17bb7c3507b4ff5:922c64590222798bb761d5b6d8e72950

@@ -10,6 +10,7 @@ info:
     - https://opennebula.io/
     - https://github.com/OpenNebula
   classification:
+    cpe: cpe:2.3:a:opennebula:opennebula:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -24,6 +25,8 @@ info:
       - title="OpenNebula Sunstone Login"
       - icon_hash="-119786698"
       - icon_hash="656672194"
+    vendor: opennebula
+    product: opennebula
   tags: panel,opennebula,discovery
 
 http:
@@ -34,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: opennebula
+        cpe: cpe:2.3:a:opennebula:opennebula:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>OpenNebula"
@@ -50,4 +55,3 @@ http:
         group: 1
         regex:
           - "href=\"css/app\\.min\\.css\\?v=([\\d\\.]+)\""
-# digest: 490a0046304402202335efe0eb337111e2947671dd99d721ed12097d4a978b18f7333d1ceefe7229022003086de0d6f3a904d9cbc7e62d0a9c59bca8b1f9d5be4e3b8d26953b36fd8188:922c64590222798bb761d5b6d8e72950

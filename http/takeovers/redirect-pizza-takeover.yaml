@@ -7,10 +7,14 @@ info:
     Redirect.pizza subdomain takeover was detected.
   reference:
     - https://redirect.pizza/docs
+  classification:
+    cpe: cpe:2.3:a:redirect-pizza:redirect-pizza:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: html:"redirect.pizza"
     fofa-query: body="redirect.pizza"
+    vendor: redirect-pizza
+    product: redirect-pizza
   tags: takeover,redirect-pizza,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: redirect-pizza
+        cpe: cpe:2.3:a:redirect-pizza:redirect-pizza:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
           - contains_all(body, "Unable to redirect","redirect.pizza")
@@ -31,4 +37,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100eed61c9272ef0d6853d84b4599bf88e4d7d6cdf007944162f5d5201d6286330602205622b6b05220866b1c1fd02e0e357019541e9d52bc388fbd9a28ec814e90fb3c:922c64590222798bb761d5b6d8e72950

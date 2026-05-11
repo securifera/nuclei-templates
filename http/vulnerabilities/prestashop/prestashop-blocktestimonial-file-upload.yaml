@@ -9,6 +9,7 @@ info:
     - https://github.com/indoxploit-coders/blocktestimonial-file-upload
     - https://exploit.linuxsec.org/prestashop-module-blocktestimonial-file-upload-auto-exploit
   classification:
+    cpe: cpe:2.3:a:apollotheme:ap_pagebuilder:*:*:*:*:*:*:*:*
     cwe-id: CWE-434
   metadata:
     max-request: 2
@@ -65,12 +66,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ap_pagebuilder
+        cpe: cpe:2.3:a:apollotheme:ap_pagebuilder:*:*:*:*:*:*:*:*
         part: body_1
         words:
           - "Your testimonial was submitted successfully."
 
       - type: word
+        name: ap_pagebuilder-2
+        cpe: cpe:2.3:a:apollotheme:ap_pagebuilder:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - "{{data}}"
-# digest: 490a0046304402201723102f369056843fe0785ff7f967fdda759a217f3e8b0efac48ddd814446b702205024b865c3feaca9980b9116bc04a03175fb977f1e623599172ef07d3f64f8d3:922c64590222798bb761d5b6d8e72950

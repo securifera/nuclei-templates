@@ -14,6 +14,7 @@ info:
     - https://github.com/marimo-team/marimo/security/advisories/GHSA-xjv7-6w92-42r7
     - https://github.com/marimo-team/marimo
   classification:
+    cpe: cpe:2.3:a:marimo-team:marimo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
     cvss-score: 6.5
     cwe-id: CWE-400
@@ -34,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: marimo
+        cpe: cpe:2.3:a:marimo-team:marimo:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Connection refused"}'
@@ -41,6 +44,8 @@ http:
         condition: and
 
       - type: word
+        name: marimo-2
+        cpe: cpe:2.3:a:marimo-team:marimo:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -48,4 +53,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4a0a00473045022100932b9823f1892e37b4b8a4d63afb58be83e2be3e12980a9b99c35f79875c8f0402205d9fe23944340399cb2fdb563d0d207110613837128dba07b4b5eae551ca64ef:922c64590222798bb761d5b6d8e72950

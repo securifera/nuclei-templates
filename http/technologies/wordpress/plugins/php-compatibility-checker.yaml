@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: php-compatibility-checker
+        cpe: cpe:2.3:a:php-compatibility-checker:php-compatibility-checker:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

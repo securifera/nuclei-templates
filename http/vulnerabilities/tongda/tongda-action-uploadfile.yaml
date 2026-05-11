@@ -62,6 +62,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: office_anywhere_2017
+        cpe: cpe:2.3:a:tongda2000:office_anywhere_2017:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '{{md5(string)}}'
@@ -69,4 +71,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008a7c57291e30e6e167d8ddf59ef512af6f643c5d60b64ed6e6804775e5a38a70022100818802e6909f6111563707227517c585c5fb800e1103930d71012b10e5b61945:922c64590222798bb761d5b6d8e72950

@@ -27,6 +27,8 @@ http:
 
     matchers:
       - type: dsl
+        name: phpminiadmin
+        cpe: cpe:2.3:a:phpminiadmin_project:phpminiadmin:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains(body, '<title>phpMiniAdmin')"
@@ -38,4 +40,3 @@ http:
         group: 1
         regex:
           - 'phpMiniAdmin ([0-9._]+)'
-# digest: 490a004630440220358275002a5cb35b58a6886ab32e92a8efd3ced8f8bc557a528c8190c716bd0f022069ad86b1de8343cfcb521f34005a258357e344175fcdfae04d16a61d8cee70c1:922c64590222798bb761d5b6d8e72950

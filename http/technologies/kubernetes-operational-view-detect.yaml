@@ -7,10 +7,14 @@ info:
   reference:
     - https://github.com/hjacobs/kube-ops-view
     - https://codeberg.org/hjacobs/kube-ops-view
+  classification:
+    cpe: cpe:2.3:a:hjacobs:kube-ops-view:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Kubernetes Operational View"
+    vendor: hjacobs
+    product: kube-ops-view
   tags: tech,k8s,kubernetes,devops,kube,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kube-ops-view
+        cpe: cpe:2.3:a:hjacobs:kube-ops-view:*:*:*:*:*:*:*:*
         words:
           - "<title>Kubernetes Operational View"
 
@@ -33,4 +39,3 @@ http:
         group: 1
         regex:
           - '<title>Kubernetes Operational View (.+)<\/title>'
-# digest: 490a0046304402203f850e4e5aa7a1ca4521105a1a247a2396308a9f040307ecbc037f51287eb9ad022058f4ec28a5e9d79dae9b9d784706a187cc63e892c19f1c72641e6582737fadb1:922c64590222798bb761d5b6d8e72950

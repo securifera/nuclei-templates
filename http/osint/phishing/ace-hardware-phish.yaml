@@ -8,8 +8,12 @@ info:
     An Ace Hardware phishing website was detected
   reference:
     - https://acehardware.com
+  classification:
+    cpe: cpe:2.3:a:ace-hardware:ace-hardware:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ace-hardware
+    product: ace-hardware
   tags: phishing,ace-hardware,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ace-hardware
+        cpe: cpe:2.3:a:ace-hardware:ace-hardware:*:*:*:*:*:*:*:*
         words:
           - 'Ace Hardware'
           - 'Shop Ace Hardware for grills, hardware, home improvement, lawn and garden, and tools. Buy online &amp; pickup today!'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: ace-hardware-2
+        cpe: cpe:2.3:a:ace-hardware:ace-hardware:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"acehardware.com")'
-# digest: 4b0a00483046022100875f83d80881d480be8ab77284950b29e3d5f5cb4008ddc26b4cb566e291847b022100c222388e102b40705318542755202b8c81ef7e8354bc4a56d14103f775f779c5:922c64590222798bb761d5b6d8e72950

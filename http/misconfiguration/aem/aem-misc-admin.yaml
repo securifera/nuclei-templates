@@ -7,12 +7,16 @@ info:
   description: Adobe AEM Misc Admin Dashboard is exposed.
   reference:
     - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
+  classification:
+    cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 9
     shodan-query:
       - http.title:"AEM Sign In"
       - http.component:"Adobe Experience Manager"
+    vendor: aem
+    product: aem
   tags: misconfig,aem,adobe,exposure,vuln
 
 http:
@@ -36,6 +40,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aem
+        cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>AEM Tools</title>'
@@ -43,6 +49,8 @@ http:
         condition: or
 
       - type: word
+        name: aem-2
+        cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -50,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b52f9bf8edf11ca172696460f9acec567d30bd51c36c805a81985a041357df9c02204d77df08dd384ca744c1ed99ddb6556d350e8f28323b07838d33def443e2affd:922c64590222798bb761d5b6d8e72950

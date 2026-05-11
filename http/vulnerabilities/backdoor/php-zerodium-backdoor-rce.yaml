@@ -11,11 +11,14 @@ info:
     - https://flast101.github.io/php-8.1.0-dev-backdoor-rce/
     - https://github.com/flast101/php-8.1.0-dev-backdoor-rce/blob/main/revshell_php_8.1.0-dev.py
   classification:
+    cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-94
   metadata:
     max-request: 1
+    vendor: backdoor
+    product: backdoor
   tags: php,backdoor,rce,zerodium,vuln
 
 http:
@@ -29,7 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: backdoor
+        cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "int(77777355556)"
-# digest: 490a00463044022070c3bc2ea2d6b35d335175e05bf4b89a7e5e30f2cf6b1f445316fb1f66011ab4022028ba0f677770d528f5e4fb681bbf16fca60e44a5f554a8865669225722ee400c:922c64590222798bb761d5b6d8e72950

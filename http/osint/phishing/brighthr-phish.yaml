@@ -8,8 +8,12 @@ info:
     A brighthr phishing website was detected
   reference:
     - https://brighthr.com
+  classification:
+    cpe: cpe:2.3:a:brighthr:brighthr:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: brighthr
+    product: brighthr
   tags: phishing,brighthr,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: brighthr
+        cpe: cpe:2.3:a:brighthr:brighthr:*:*:*:*:*:*:*:*
         words:
           - 'HR Software For SMEs | Human Resources Software | BrightHR'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: brighthr-2
+        cpe: cpe:2.3:a:brighthr:brighthr:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"brighthr.com")'
-# digest: 490a0046304402207445bb53a423c80dbf15d3dc667f94b5f452ac6ca22cd8315f86f36a2e269c8e0220077f6eccb3c5756144818c0746a891fed2e1f2f3bf0ffb1c44d533c1d3e1779e:922c64590222798bb761d5b6d8e72950

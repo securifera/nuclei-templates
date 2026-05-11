@@ -6,11 +6,14 @@ info:
   severity: info
   description: Kongregate user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:kongregate:kongregate:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: kongregate
+    product: kongregate
   tags: osint,osint-gaming,kongregate,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: kongregate
+        cpe: cpe:2.3:a:kongregate:kongregate:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Member Since"
-# digest: 4b0a00483046022100b644cb418a510b33ce1d80e429e94af3e9fbfdcb562ce208539152710de184da0221009eab7512707b1423052fecef3f2167e31b9b34a19c573c830a7234e80975e953:922c64590222798bb761d5b6d8e72950

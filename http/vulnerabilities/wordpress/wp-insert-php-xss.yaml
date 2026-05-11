@@ -8,12 +8,15 @@ info:
   reference:
     - https://wpscan.com/vulnerability/6d6761b7-0c17-4428-8748-2179732030a3
   classification:
+    cpe: cpe:2.3:a:wp-insert-php:wp-insert-php:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     verified: true
     max-request: 2
+    vendor: wp-insert-php
+    product: wp-insert-php
   tags: xss,wp,wordpress,authenticated,woody,wpscan,wp-plugin,vuln
 
 http:
@@ -33,6 +36,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-insert-php
+        cpe: cpe:2.3:a:wp-insert-php:wp-insert-php:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'import-wbcr_insert_php&a\"><script>alert(1)</script>"'
@@ -40,6 +45,8 @@ http:
         condition: and
 
       - type: word
+        name: wp-insert-php-2
+        cpe: cpe:2.3:a:wp-insert-php:wp-insert-php:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -47,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204d6cb9adcc1619aaf46f83b64d7a47028282fb720a71436df4069d149bc81476022015081c39d5fcf44199d7ae887de87b93d23b4b86ff734962d40ed521dc09be82:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     This template is designed to detect the Shiro framework's default key vulnerabilities. It leverages 51 built-in Shiro keys to probe for potential vulnerabilities.
   reference:
     - https://github.com/sv3nbeast/ShiroScan
+  classification:
+    cpe: cpe:2.3:a:shiro:shiro:*:*:*:*:*:*:*:*
   metadata:
     max-request: 102
+    vendor: shiro
+    product: shiro
   tags: shiro,deserialization,rce,apache,vuln
 
 http:
@@ -30,14 +34,17 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl # WAF Block Page
+        name: shiro
+        cpe: cpe:2.3:a:shiro:shiro:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(header_1, "Set-Cookie") && (contains(header_1, "rememberMe=") || contains(header_1, "=deleteMe"))'
           - '!contains(header_2, "rememberMe=") && !contains(header_2, "=deleteMe")'
         condition: and
 
       - type: dsl
+        name: shiro-2
+        cpe: cpe:2.3:a:shiro:shiro:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(body_2, "<p>当前访问疑似黑客攻击，已被网站管理员设置拦截并记录</p>")'
           - '!contains(body_2, "很抱歉，由于您访问的URL有可能对网站造成安全威胁，您的访问被阻断")'
         condition: and
-# digest: 4a0a00473045022100fe14475fbc238de4daf0c1c96803efea895e9f378b0bbb1764c4427f68b29d440220685277d830bb5c07d792bf48819bcd6f77c8ed8862b893a30f304119557cb2b0:922c64590222798bb761d5b6d8e72950

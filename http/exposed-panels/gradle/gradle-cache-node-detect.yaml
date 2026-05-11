@@ -8,12 +8,15 @@ info:
   reference:
     - https://gradle.com/gradle-enterprise-solutions/build-cache/
   classification:
+    cpe: cpe:2.3:a:gradle:gradle:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"Gradle Enterprise Build Cache Node"
+    vendor: gradle
+    product: gradle
   tags: panel,gradle,detect,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: gradle
+        cpe: cpe:2.3:a:gradle:gradle:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200 || status_code == 401'
           - 'contains_any(to_lower(body), "gradle enterprise build cache node", "com.gradle.error.fallback")'
@@ -35,4 +40,3 @@ http:
         regex:
           - '(?i)"applicationVersion":"([0-9.]+)"'
           - '(?i)Gradle\s+Enterprise\s+Build\s+Cache\s+Node\s+([0-9.]+)'
-# digest: 4a0a00473045022067cdd02bb9992c899bc812bbed96fbafe2e265d4a66d295493b6f2874d81d070022100afba1d89f57cacc1773097711120867edfdc495060f39105ed3be79b463ffbc4:922c64590222798bb761d5b6d8e72950

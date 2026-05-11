@@ -6,11 +6,14 @@ info:
   severity: medium
   description: Git configuration was detected via the pattern /.git/config and log file on passed URLs.
   classification:
+    cpe: cpe:2.3:a:git:git:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: git
+    product: git
   tags: config,git,exposure,vuln
 
 http:
@@ -21,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: git
+        cpe: cpe:2.3:a:git:git:*:*:*:*:*:*:*:*
         part: body
         words:
           - "[credentials]"
@@ -28,6 +33,8 @@ http:
         condition: or
 
       - type: dsl
+        name: git-2
+        cpe: cpe:2.3:a:git:git:*:*:*:*:*:*:*:*
         dsl:
           - "!contains(tolower(body), '<html')"
           - "!contains(tolower(body), '<body')"
@@ -45,4 +52,3 @@ http:
           - "url ?= ?https?://(.*:.*)@"
           - "AUTHORIZATION: basic (.*)"
           - "pass = (.*)"
-# digest: 4b0a00483046022100f216ebf8c81edf0fccca9a99f59a60686b67c7ccb1a1cff8ac40197d65981e33022100c4c5baa63fabbad6abbc581e520958131692c7463e185200725a52ebe2ee153c:922c64590222798bb761d5b6d8e72950

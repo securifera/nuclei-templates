@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/wy876/POC/blob/main/EnjoyRMIS-GetOAById%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:
+    cpe: cpe:2.3:a:enjoyrmis:enjoyrmis:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     fofa-query: body="CheckSilverlightInstalled"
     verified: true
     max-request: 1
+    vendor: enjoyrmis
+    product: enjoyrmis
   tags: enjoyrmis,sqli,vuln
 
 http:
@@ -35,9 +38,10 @@ http:
 
     matchers:
       - type: dsl
+        name: enjoyrmis
+        cpe: cpe:2.3:a:enjoyrmis:enjoyrmis:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body,"qqqzq1qvkqq")'
           - 'contains(header,"text/xml")'
           - "status_code == 500"
         condition: and
-# digest: 4a0a0047304502210081322af8971a10a345f56c8342b65ae27ee9b225226b5af4ab12d7c76ab8da88022064dbc0bf8f7b2db407cd3a60e8abf5b3f7a1329e5003888249f3e8ce4c657bd1:922c64590222798bb761d5b6d8e72950

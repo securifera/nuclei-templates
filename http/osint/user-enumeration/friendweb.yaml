@@ -6,11 +6,14 @@ info:
   severity: info
   description: Friendweb user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:friendweb:friendweb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: friendweb
+    product: friendweb
   tags: osint,osint-social,friendweb,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: friendweb
+        cpe: cpe:2.3:a:friendweb:friendweb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "friendweb.nl"
-# digest: 4a0a00473045022048e1a764a39803bf27e0e81d52e62fc8951b4cfd74ce2ff4c7d60e33860609550221009cf1ce2d52ef263909aec46caf0c491632aaea45b9ba014af889f0e4af2ce760:922c64590222798bb761d5b6d8e72950

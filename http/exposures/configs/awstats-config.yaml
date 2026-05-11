@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.awstats.org/
   classification:
+    cpe: cpe:2.3:a:awstats:awstats:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: awstats
+    product: awstats
   tags: config,exposure,awstats,vuln
 
 http:
@@ -23,14 +26,17 @@ http:
 
     matchers:
       - type: word
+        name: awstats
+        cpe: cpe:2.3:a:awstats:awstats:*:*:*:*:*:*:*:*
         words:
           - "AWSTATS CONFIGURE"
           - "MAIN SETUP SECTION"
         condition: and
 
       - type: word
+        name: awstats-2
+        cpe: cpe:2.3:a:awstats:awstats:*:*:*:*:*:*:*:*
         words:
           - "Index of /awstats"
           - "Parent Directory"
         condition: and
-# digest: 4a0a00473045022044622fb43e8801b567758bf29570dd4e48b47edbcbc2964806c84658e7366e01022100ba7827efa79e5f69fcbf49622c41c81ea71abeec77d64d1e6740cf30c1f86625:922c64590222798bb761d5b6d8e72950

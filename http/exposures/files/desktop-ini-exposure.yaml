@@ -4,9 +4,13 @@ info:
   name: desktop.ini exposure
   author: dhiyaneshDk
   severity: info
+  classification:
+    cpe: cpe:2.3:a:desktop-ini:desktop-ini:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: 'html:"desktop.ini"'
+    vendor: desktop-ini
+    product: desktop-ini
   tags: exposure,config,files,vuln
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: desktop-ini
+        cpe: cpe:2.3:a:desktop-ini:desktop-ini:*:*:*:*:*:*:*:*
         part: header
         negative: true
         words:
@@ -25,6 +31,8 @@ http:
         condition: and
 
       - type: word
+        name: desktop-ini-2
+        cpe: cpe:2.3:a:desktop-ini:desktop-ini:*:*:*:*:*:*:*:*
         part: body
         words:
           - "[.ShellClassInfo]"
@@ -35,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cacb589a2291610793ae681c125d810923604f6123de0e67bc3101d7662efc96022100ce48f111ac850b24ec61b58094912c7db48399033b905ea59009a4273f91cfdb:922c64590222798bb761d5b6d8e72950

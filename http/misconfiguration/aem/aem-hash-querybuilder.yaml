@@ -32,8 +32,9 @@ http:
           - 200
 
       - type: word
+        name: acs_aem_commons
+        cpe: cpe:2.3:a:adobe:acs_aem_commons:*:*:*:*:*:*:*:*
         words:
           - '"success":true'
           - 'rep:password'
         condition: and
-# digest: 490a00463044022006ec8d7671dea9387155b2d1c1c058e7297c8350244a191bef5aee84b0637c8e0220419bd8b6f7c1da4dfb53b6b19af95d697475fef1b78fb377a311b64cd0e6dd21:922c64590222798bb761d5b6d8e72950

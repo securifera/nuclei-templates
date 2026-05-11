@@ -8,6 +8,8 @@ info:
     ChurchCRM panel was discovered.
   reference:
     - https://github.com/ChurchCRM/CRM
+  classification:
+    cpe: cpe:2.3:a:churchcrm:churchcrm:*:*:*:*:*:*:*:*
   metadata:
     vendor: churchcrm
     product: churchcrm
@@ -24,8 +26,9 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: churchcrm
+        cpe: cpe:2.3:a:churchcrm:churchcrm:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "<title>ChurchCRM", "Login")'
           - "status_code == 200"
         condition: and
-# digest: 4a0a0047304502210090d7baa7f66a21700af3887db05f3e886f059ef0267d1184138613b5480ce63402202cf02bdee4de91e93ac11d61e91372a667d728f72dd22bc6e18c317edbdd7c97:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
   reference:
     - https://web.archive.org/web/20211002185648/https://github.com/EdOverflow/can-i-take-over-xyz/issues/237
     - https://help.flexbe.com/domains/
+  classification:
+    cpe: cpe:2.3:a:flexbe:flexbe:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: flexbe
+    product: flexbe
   tags: takeover,flexbe,vuln
 
 http:
@@ -20,10 +24,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: flexbe
+        cpe: cpe:2.3:a:flexbe:flexbe:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: flexbe-2
+        cpe: cpe:2.3:a:flexbe:flexbe:*:*:*:*:*:*:*:*
         condition: and
         words:
           - "Domain not configured"
@@ -37,4 +45,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 490a004630440220089d348b730469be1852e3e0b8ce2c16098bfe9efd35f03b76b20d51c202903102207a205d00b303dc13ad17de16e0208046eb2f4a338a488b3cccfbd0481a55f943:922c64590222798bb761d5b6d8e72950

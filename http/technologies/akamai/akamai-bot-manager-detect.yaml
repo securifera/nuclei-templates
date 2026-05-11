@@ -9,8 +9,12 @@ info:
   reference:
     - https://www.akamai.com/legal/manage-cookie-preferences
     - https://techdocs.akamai.com/identity-cloud/docs/hosted-login-cookies-and-local-storage-1
+  classification:
+    cpe: cpe:2.3:a:akamai:bot_manager:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: akamai
+    product: bot_manager
   tags: akamai,bot,security,detect,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
 
     matchers:
       - type: regex
+        name: bot_manager
+        cpe: cpe:2.3:a:akamai:bot_manager:*:*:*:*:*:*:*:*
         part: header
         regex:
           - 'Set-Cookie:\s*_abck='
@@ -28,4 +34,3 @@ http:
           - 'Set-Cookie:\s*bm_sz='
           - 'Set-Cookie:\s*bm_mi='
         condition: or
-# digest: 4a0a00473045022100fa7cd167779ccb7f6994ea5b4ae35737abc89e3cdc254c4e5cf0659f20ea3be70220542f8e23b08e8266faa882b179b2aeec3f9ff70942a4cf103d666888cefff326:922c64590222798bb761d5b6d8e72950

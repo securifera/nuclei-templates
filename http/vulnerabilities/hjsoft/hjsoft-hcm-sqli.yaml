@@ -10,10 +10,14 @@ info:
     - https://github.com/wy876/POC/blob/main/%E5%AE%8F%E6%99%AFeHR%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3getSdutyTree%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
     - https://blog.csdn.net/qq_41904294/article/details/140172351
     - https://www.ddpoc.com/DVB-2024-7391.html
+  classification:
+    cpe: cpe:2.3:a:hjsoft:hjsoft:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="HJSOFT-HCM"
+    vendor: hjsoft
+    product: hjsoft
   tags: sqli,hjsoft,management-system,vuln
 
 http:
@@ -24,9 +28,10 @@ http:
 
     matchers:
       - type: dsl
+        name: hjsoft
+        cpe: cpe:2.3:a:hjsoft:hjsoft:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body,"qxjpqjwUIWcKtHqhkYslITEIKSbtxYTRxTtXpWImhWfaMqvjzq")'
           - 'contains(header,"text/xml")'
           - "status_code == 200"
         condition: and
-# digest: 4a0a00473045022100e61a0562f3cb59ace4a989c95f69ee3f8fc2ceb4aa9886890fd8ce1ba7a1859d022023619a21f57aba6068206c9eb25907a56f36f8ca77791a65af165a3f35507830:922c64590222798bb761d5b6d8e72950

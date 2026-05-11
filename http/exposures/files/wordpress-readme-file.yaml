@@ -4,6 +4,8 @@ info:
   name: WordPress Readme File
   author: tess
   severity: info
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -26,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'WordPress &#8250; ReadMe'
@@ -33,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210099fff15889af554ccffc292f18ea8af0320893e413a6956f831ae4cb3f59c65502200f55e1023a982f573589c8a9700bd357ecbcdf1719620cdf66260c7616d29c5e:922c64590222798bb761d5b6d8e72950

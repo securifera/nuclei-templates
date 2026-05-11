@@ -8,8 +8,12 @@ info:
     A Hotjar phishing website was detected
   reference:
     - https://hotjar.com
+  classification:
+    cpe: cpe:2.3:a:hotjar:hotjar:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hotjar
+    product: hotjar
   tags: phishing,hotjar,analytics,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hotjar
+        cpe: cpe:2.3:a:hotjar:hotjar:*:*:*:*:*:*:*:*
         words:
           - '<title>Hotjar: Website Heatmaps &amp; Behavior Analytics Tools'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: hotjar-2
+        cpe: cpe:2.3:a:hotjar:hotjar:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"hotjar.com")'
-# digest: 4a0a00473045022100b0eaa51977af31373169ae3cc5a1b4c9a5cc19adc39e7d72f4757e8c861ec44d022016fc9625c986336b29bd218a0596c19798a238f9f86d7f71e065884aa6f0c821:922c64590222798bb761d5b6d8e72950

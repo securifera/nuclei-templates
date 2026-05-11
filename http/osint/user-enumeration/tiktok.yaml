@@ -6,11 +6,14 @@ info:
   severity: info
   description: TikTok user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:tiktok:tiktok:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tiktok
+    product: tiktok
   tags: osint,osint-social,tiktok,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: tiktok
+        cpe: cpe:2.3:a:tiktok:tiktok:*:*:*:*:*:*:*:*
         part: body
         words:
           - "author_url"
-# digest: 4a0a0047304502206778619bbdc00e55a0ea0ccc3bd85c56d0efd9a5d6bb00787aff35929373150b022100ac292a05424b6ad55196fd7191f8721ce461079aa938ad20732537809a5d95d0:922c64590222798bb761d5b6d8e72950

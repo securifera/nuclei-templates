@@ -6,11 +6,14 @@ info:
   severity: info
   description: Massage Anywhere user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:massage-anywhere:massage-anywhere:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: massage-anywhere
+    product: massage-anywhere
   tags: osint,osint-health,massage-anywhere,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: massage-anywhere
+        cpe: cpe:2.3:a:massage-anywhere:massage-anywhere:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>MassageAnywhere.com Profile for "
-# digest: 4a0a0047304502204441297fc02f8778f3e39c8c84b96c0b695fb40d57742c569f064bb45678f95f0221009f63220f7ac28c47a84b9d5af58b066840d706b3c49289eb7fc4e0b5bf57529d:922c64590222798bb761d5b6d8e72950

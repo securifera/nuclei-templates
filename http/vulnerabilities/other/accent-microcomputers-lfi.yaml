@@ -9,11 +9,14 @@ info:
     - https://cxsecurity.com/issue/WLB-2018050036
     - http://www.accent.com.pl
   classification:
+    cpe: cpe:2.3:a:accent:microcomputers:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: accent
+    product: microcomputers
   tags: microcomputers,accent,lfi,vuln
 
 http:
@@ -24,10 +27,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: microcomputers
+        cpe: cpe:2.3:a:accent:microcomputers:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c9d5f1b20b7c28c6c100f9dad7a34b6f8c436d8cbb28a869faafee49c0ca1aa0022100b1478fde6e5f839d5bab43b5854dd0c8ce232d6bf61ce3c1908936292775c177:922c64590222798bb761d5b6d8e72950

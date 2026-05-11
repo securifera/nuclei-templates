@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Oracle Fusion Middleware was detected.
+  classification:
+    cpe: cpe:2.3:a:oracle:fusion_middleware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"Welcome to Oracle Fusion Middleware"
+    vendor: oracle
+    product: fusion_middleware
   tags: oracle,middleware,detect,tech,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fusion_middleware
+        cpe: cpe:2.3:a:oracle:fusion_middleware:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Welcome to Oracle Fusion Middleware"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e48cfbf0631a49b09400f9a433554629ad5498395ebf459ab8508648678f7ecf022100a871fd1da5ff7aa27673570c4bd4ebc9d2303295bdb6c3f1238267e400ce6d05:922c64590222798bb761d5b6d8e72950

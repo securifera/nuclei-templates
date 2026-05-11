@@ -9,11 +9,15 @@ info:
   reference:
     - https://docs.npmjs.com/cli/v9/using-npm/developers#keeping-files-out-of-your-package
     - https://docs.npmjs.com/cli/v9/configuring-npm/npmignore
+  classification:
+    cpe: cpe:2.3:a:npmignore:npmignore:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 5
     shodan-query: http.html:".npmignore"
     fofa-query: body=".npmignore"
+    vendor: npmignore
+    product: npmignore
   tags: exposure,npm,config,node
 
 http:
@@ -34,12 +38,16 @@ http:
           - 200
 
       - type: word
+        name: npmignore
+        cpe: cpe:2.3:a:npmignore:npmignore:*:*:*:*:*:*:*:*
         part: body
         words:
           - "node_modules"
         condition: and
 
       - type: word
+        name: npmignore-2
+        cpe: cpe:2.3:a:npmignore:npmignore:*:*:*:*:*:*:*:*
         part: body
         words:
           - ".*"
@@ -51,6 +59,8 @@ http:
         condition: or
 
       - type: word
+        name: npmignore-3
+        cpe: cpe:2.3:a:npmignore:npmignore:*:*:*:*:*:*:*:*
         part: body
         negative: true
         words:
@@ -61,6 +71,8 @@ http:
           - "<?php"
 
       - type: dsl
+        name: npmignore-4
+        cpe: cpe:2.3:a:npmignore:npmignore:*:*:*:*:*:*:*:*
         dsl:
           - 'len(body) > 20 && len(body) < 5000'
           - 'content_type != "text/html"'
@@ -68,4 +80,3 @@ http:
           - '!contains(tolower(body), "error")'
           - '!contains(tolower(body), "not found")'
         condition: and
-# digest: 4a0a00473045022100c180d85bfa86b9085985c758bd5b97b696d806730b47d4a6c09cafbdce95843b02200a439a7357d1281bd4b603a850adaf944bdb8815d46c58cdcc033f157a220fd4:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Ameblo user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:ameblo:ameblo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: ameblo
+    product: ameblo
   tags: osint,osint-blog,ameblo,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: ameblo
+        cpe: cpe:2.3:a:ameblo:ameblo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "画像一覧"
-# digest: 4a0a00473045022100e301ae4816c120d1bc5ab92d662997de14cef43021570a9b655f4815b7382bf502207256c271a1b156541cdd21a16a5737e0d14445c97d400c27df0763be0b4ee0b5:922c64590222798bb761d5b6d8e72950

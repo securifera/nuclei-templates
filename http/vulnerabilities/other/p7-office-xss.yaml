@@ -10,10 +10,14 @@ info:
     Upgrade to the latest version to mitigate this vulnerability.
   reference:
     - https://bdu.fstec.ru/vul/2024-04635
+  classification:
+    cpe: cpe:2.3:a:p7-office:p7-office:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Р7-Офис"
+    vendor: p7-office
+    product: p7-office
   tags: p7office,xss,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: p7-office
+        cpe: cpe:2.3:a:p7-office:p7-office:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Can not convert id:'
@@ -31,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: p7-office-2
+        cpe: cpe:2.3:a:p7-office:p7-office:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'text/html'
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 4a0a00473045022100de042a128de17dff1302c2bc41f99b87f939194d3548b0b39fbc6db66da6bf27022002e8a9b423936873a4cf9f5905325ad5360634681e255eb8b64f89682df9cc29:922c64590222798bb761d5b6d8e72950

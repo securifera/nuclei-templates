@@ -9,11 +9,14 @@ info:
   reference:
     - https://httpd.apache.org/docs/2.4/configuring.html
   classification:
+    cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: apache
+    product: apache
   tags: config,exposure,apache,vuln
 
 http:
@@ -23,8 +26,9 @@ http:
 
     matchers:
       - type: dsl
+        name: apache
+        cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body, '<Directory') && contains(body, '</Directory>') && status_code == 200"
           - "contains(body, '<VirtualHost') && contains(body, '</VirtualHost>') && status_code == 200"
         condition: or
-# digest: 4a0a0047304502204f30bbe0416c7bd0a3ade832a39a914ecec53a46f9a9d3ab52f5e0298ac4adcb022100c376674a69dfad9bed032b41ba3e0c6cd6468ceda922c31024fc6917921dccf0:922c64590222798bb761d5b6d8e72950

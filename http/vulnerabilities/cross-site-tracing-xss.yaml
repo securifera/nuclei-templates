@@ -10,9 +10,12 @@ info:
     - https://medium.com/@tushar_rs_/cross-site-tracing-attack-xst-5aa519658b7a
     - https://www.owasp.org/index.php/Cross_Site_Tracing
   classification:
+    cpe: cpe:2.3:a:cross-site-tracing:cross-site-tracing:*:*:*:*:*:*:*:*
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: cross-site-tracing
+    product: cross-site-tracing
   tags: xss,trace,generic
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cross-site-tracing
+        cpe: cpe:2.3:a:cross-site-tracing:cross-site-tracing:*:*:*:*:*:*:*:*
         part: response
         words:
           - "Header: <script>alert(document.domain)</script>"
@@ -35,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: cross-site-tracing-2
+        cpe: cpe:2.3:a:cross-site-tracing:cross-site-tracing:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -43,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205ac7b46bef2b66fdf34c869a413f5451a65d75a3b8f76b5f4ce6266f3cfc918b022100dcb6e2eac5e1ea210d31d1138de9627e90ddf9323831d039e35c781dedc5dde2:922c64590222798bb761d5b6d8e72950

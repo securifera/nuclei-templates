@@ -11,11 +11,14 @@ info:
     - https://wordpress.org/plugins/kadence-blocks/
     - https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/kadence-blocks/kadence-blocks-3110-unauthenticated-arbitrary-file-upload
   classification:
+    cpe: cpe:2.3:a:kadence-blocks:kadence-blocks:*:*:*:*:*:*:*:*
     cwe-id: CWE-94,CWE-434
   metadata:
     verified: true
     max-request: 2
     publicwww-query: "/wp-content/plugins/kadence-blocks/"
+    vendor: kadence-blocks
+    product: kadence-blocks
   tags: rce,wpscan,wordpress,wp-plugin,wp,kadence-blocks,fileupload,intrusive,vuln
 
 variables:
@@ -73,6 +76,8 @@ http:
 
     matchers:
       - type: dsl
+        name: kadence-blocks
+        cpe: cpe:2.3:a:kadence-blocks:kadence-blocks:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_2 == 200'
           - 'contains(header_2, "application/json")'
@@ -103,4 +108,3 @@ http:
         regex:
           - 'name="_kb_adv_form_post_id" value="([^"]*)"'
         internal: true
-# digest: 4a0a0047304502203aa5398f5bb2a6e6820ad56787280104ff37c3ddb97cfbe17a886d90904131cd022100dd37d13f746b67d4fe1a38ab7ea22396e9d94a3a718ea9dfca0baff707d31fef:922c64590222798bb761d5b6d8e72950

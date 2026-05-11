@@ -31,6 +31,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: activemq
+        cpe: cpe:2.3:a:apache:activemq:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "<title>apache activemq</title>", "<h2>welcome to the apache activemq!</h2>", "manage activemq broker", "activemq console")'
@@ -43,4 +45,3 @@ http:
         regex:
           - '(?i)Copyright\s+([0-9\-]+)'
           - '(?i)<td>Version<\/td>[\r\n\s]*<td>[\r\n\s]*<b>([0-9.]+)<\/b>'
-# digest: 4b0a00483046022100f7201bcde03b0574dbd7a7901172ac179bd86ccd717308535d6a6c0fd13ae55e022100da1a254de9d88f5d9e194b5acbe84538da2479e5e3a2b9463a1cbda9d60c0a49:922c64590222798bb761d5b6d8e72950

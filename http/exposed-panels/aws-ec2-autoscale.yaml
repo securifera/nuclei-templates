@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://www.facebook.com/photo/?fbid=620605120110011&set=a.467014098802448
+  classification:
+    cpe: cpe:2.3:a:ec2:ec2:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"AWS EC2 Auto Scaling Lab"
+    vendor: ec2
+    product: ec2
   tags: exposure,ec2,aws,amazon,panel,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ec2
+        cpe: cpe:2.3:a:ec2:ec2:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'AWS EC2 Auto Scaling Lab'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e67c7df7157fe9d17014dacbd010b9177cf632d6b4ce7f6b7d9090e181f02fc702200c8251ac9aa744543953406dc8d166cb995228b2078b9c00ce168a223573c4bb:922c64590222798bb761d5b6d8e72950

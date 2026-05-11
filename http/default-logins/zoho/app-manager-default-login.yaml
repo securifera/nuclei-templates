@@ -8,10 +8,14 @@ info:
     Default credentials grants administrative access to ManageEngine Applications Manager, which can be later escalated into a RCE via DB queries.
   reference:
     - https://www.manageengine.com/products/applications_manager/
+  classification:
+    cpe: cpe:2.3:a:app:app:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: title:"Applications Manager Login Screen"
     verified: true
     max-request: 1
+    vendor: app
+    product: app
   tags: default-login,manageengine,zoho,vuln
 
 variables:
@@ -43,9 +47,10 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: app
+        cpe: cpe:2.3:a:app:app:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Super Administrator"
           - "Add Application"
         condition: and
-# digest: 4b0a00483046022100c5ef3b42fb05c2bc2285ab3ba0a6d4657e3fff12400e5dd910d828c36cbd1654022100835f6b452949619e29a86742ebb8ff6684c531d1af5b50495f2774c946b3a1fb:922c64590222798bb761d5b6d8e72950

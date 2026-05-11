@@ -9,9 +9,13 @@ info:
   reference:
     - https://www.acunetix.com/vulnerabilities/web/test-cgi-script-leaking-environment-variables/
     - https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/cgi
+  classification:
+    cpe: cpe:2.3:a:cgi:cgi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 5
+    vendor: cgi
+    product: cgi
   tags: cgi,exposure,info,env,disclosure,generic
 
 http:
@@ -31,6 +35,8 @@ http:
           - 200
 
       - type: word
+        name: cgi
+        cpe: cpe:2.3:a:cgi:cgi:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SERVER_SOFTWARE"
@@ -44,6 +50,8 @@ http:
         condition: or
 
       - type: word
+        name: cgi-2
+        cpe: cpe:2.3:a:cgi:cgi:*:*:*:*:*:*:*:*
         part: body
         words:
           - "PATH="
@@ -55,4 +63,3 @@ http:
           - "DOCUMENT_ROOT"
           - "SCRIPT_FILENAME"
         condition: or
-# digest: 4b0a00483046022100d837dd9036e39cbddbb806bf549210324d1870824ce6e0f479c745bbcedee3c9022100d0bef558687fe393dcefd514e1fe6db1c8bcbe796dfdc226c7c4ca640217b10c:922c64590222798bb761d5b6d8e72950

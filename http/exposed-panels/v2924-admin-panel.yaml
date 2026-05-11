@@ -8,12 +8,15 @@ info:
   reference:
     - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5538760399521122
   classification:
+    cpe: cpe:2.3:a:v2924:v2924:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"V2924"
+    vendor: v2924
+    product: v2924
   tags: panel,v2924,discovery
 
 http:
@@ -24,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: v2924
+        cpe: cpe:2.3:a:v2924:v2924:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>V2924</title>'
 
       - type: word
+        name: v2924-2
+        cpe: cpe:2.3:a:v2924:v2924:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -36,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a58f7604c142bec54dd39a44ab5cc68a43e814bda759713acb1a60d9ce642ec0022100bd07fd64c8b639aafef6582d3ceef840383f27336cbb981fdc73c31e11326146:922c64590222798bb761d5b6d8e72950

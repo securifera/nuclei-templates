@@ -8,8 +8,12 @@ info:
     A steam phishing website was detected
   reference:
     - https://steampowered.com
+  classification:
+    cpe: cpe:2.3:a:steam:steam:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: steam
+    product: steam
   tags: phishing,steam,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: steam
+        cpe: cpe:2.3:a:steam:steam:*:*:*:*:*:*:*:*
         words:
           - 'Welcome to Steam'
           - 'Steam is the ultimate destination for playing, discussing, and creating games.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: steam-2
+        cpe: cpe:2.3:a:steam:steam:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"steampowered.com")'
-# digest: 4a0a0047304502200a52e18fff2832fc29d551b84e2ed96b3eb1e4c94bc7cda1a1e3be63e274c8df022100baceb76811faec8506e407e806c4d89c440a722981f380644592114b7de6ba21:922c64590222798bb761d5b6d8e72950

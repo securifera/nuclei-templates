@@ -11,12 +11,15 @@ info:
     - https://wpscan.com/vulnerability/83343eb3-bb4c-4b82-adf6-745882f872cc
     - https://wordpress.org/plugins/athlon-manage-calameo-publications/
   classification:
+    cpe: cpe:2.3:a:calameo-publications:calameo-publications:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 1
+    vendor: calameo-publications
+    product: calameo-publications
   tags: wordpress,wp-plugin,xss,wp,wpscan,vuln
 
 http:
@@ -27,11 +30,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: calameo-publications
+        cpe: cpe:2.3:a:calameo-publications:calameo-publications:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ath_upload_calameo_publication(id\"><script>alert(document.domain)</script>&)'
 
       - type: word
+        name: calameo-publications-2
+        cpe: cpe:2.3:a:calameo-publications:calameo-publications:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ffc4f062f6948e696a5bb65eb4d1f847c8c41563c71ac5c0c5519b7959fc6ec3022100d56c634f44fff4dc754e8571338a523a7fd728f1184d18aa7c720b21e369b2a5:922c64590222798bb761d5b6d8e72950

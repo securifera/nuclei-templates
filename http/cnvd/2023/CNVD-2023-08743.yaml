@@ -8,10 +8,14 @@ info:
   reference:
     - https://www.henry4e36.top/index.php/archives/162.html
     - https://blog.csdn.net/qq_41904294/article/details/130944159
+  classification:
+    cpe: cpe:2.3:a:hongjing:hcm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="人力资源信息管理系统"
+    vendor: hongjing
+    product: hcm
   tags: cnvd2023,cnvd,hongjing,hcm,sqli,vuln
 
 http:
@@ -22,9 +26,10 @@ http:
 
     matchers:
       - type: dsl
+        name: hcm
+        cpe: cpe:2.3:a:hongjing:hcm:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(header,"text/xml")'
           - 'contains_all(body,"TreeNode id=\"hongjing","SQL Server")'
         condition: and
-# digest: 4b0a00483046022100833fa4c2e42e2ca8d41372b39569f28c93c64a28998f638c923681d73ff95c2f022100c54339b8e790fcf2c72b283332363e822efe9a68a07b935d7e2d61d664b26b7c:922c64590222798bb761d5b6d8e72950

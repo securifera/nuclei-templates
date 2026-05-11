@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2020-5581.php
   classification:
+    cpe: cpe:2.3:a:qihang:qihang:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: qihang
+    product: qihang
   tags: qihang,lfi,disclosure,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: qihang
+        cpe: cpe:2.3:a:qihang:qihang:*:*:*:*:*:*:*:*
         part: header
         words:
           - "filename=QH.aspx"
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: qihang-2
+        cpe: cpe:2.3:a:qihang:qihang:*:*:*:*:*:*:*:*
         words:
           - "QH.aspx.cs"
           - "QiHang.Media.Web.QH"
@@ -40,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009da4aaf80bd3521ec3d2b5ddb11457fd668410a20ac5ea30ac143c8ab81cce4a022100a4cf8450229a0e46f7124ab4264a22989801115d187924c5eab57c3caa9d6da7:922c64590222798bb761d5b6d8e72950

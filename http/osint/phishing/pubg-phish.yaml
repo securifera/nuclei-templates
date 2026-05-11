@@ -8,8 +8,12 @@ info:
     A PUBG phishing website was detected
   reference:
     - https://pubg.com
+  classification:
+    cpe: cpe:2.3:a:pubg:pubg:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pubg
+    product: pubg
   tags: phishing,pubg,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pubg
+        cpe: cpe:2.3:a:pubg:pubg:*:*:*:*:*:*:*:*
         words:
           - 'PUBG'
           - '<title>PUBG: BATTLEGROUNDS'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: pubg-2
+        cpe: cpe:2.3:a:pubg:pubg:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"pubg.com")'
-# digest: 4b0a00483046022100935912e25f12e9304ee09e888de8c2e5724ea068d936574e5256307a48df6628022100cfbaa79ca00b43bf73c0a30e6d224de34eb73fd53556a82597655680000a9d83:922c64590222798bb761d5b6d8e72950

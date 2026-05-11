@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.hitachivantara.com/en-us/pdfd/training/pentaho-lesson-1-user-console-overview.pdf
   classification:
+    cpe: cpe:2.3:a:hitachi:vantara_pentaho:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
@@ -37,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vantara_pentaho
+        cpe: cpe:2.3:a:hitachi:vantara_pentaho:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'pentaho/Home'
@@ -46,4 +49,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 490a0046304402206144b813c00018ee966cb76c87045507479c3c167048e19a931a55cc1ab919aa0220396895f228aa6436832bc129cedf69ff3349104397104d875f8a1fb359894ca8:922c64590222798bb761d5b6d8e72950

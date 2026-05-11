@@ -7,8 +7,12 @@ info:
   description: Zm system log file exposed.
   reference:
     - https://www.exploit-db.com/ghdb/6926
+  classification:
+    cpe: cpe:2.3:a:zm-system-log:zm-system-log:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: zm-system-log
+    product: zm-system-log
   tags: logs,zm,exposure,discovery
 
 http:
@@ -22,10 +26,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zm-system-log
+        cpe: cpe:2.3:a:zm-system-log:zm-system-log:*:*:*:*:*:*:*:*
         words:
           - "<title>ZM - System Log</title>"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bd7756ed3a038359e6280a1d29cea9bd00bc17103649499ca1502699a0b390a602210090b8608d3e41aaf1c15c048ebb6ca078ec8f8680702f8c50b98f394862e33b8a:922c64590222798bb761d5b6d8e72950

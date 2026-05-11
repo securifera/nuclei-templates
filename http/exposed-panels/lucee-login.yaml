@@ -6,11 +6,14 @@ info:
   severity: info
   description: Lucee admin login panels were detected in both Web and Server tabs.
   classification:
+    cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 2
     shodan-query: http.title:"Lucee"
+    vendor: lucee
+    product: lucee
   tags: panel,lucee,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lucee
+        cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
         words:
           - '<title>Login - Lucee Web Administrator</title>'
           - '<title>Login - Lucee Server Administrator</title>'
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204af42ffdc3c66587490f132438730342d8230ea9d76ae7c2fc45cd06b019e9ab02204991fb48205b7470c353a6cb95c6f25322125de9ed3ad2dc82045b7c65f4d632:922c64590222798bb761d5b6d8e72950

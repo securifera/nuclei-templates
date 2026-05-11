@@ -8,11 +8,14 @@ info:
   reference:
     - https://wpscan.com/vulnerability/647448d6-32c0-4b38-a40a-3b54c55f4e2e
   classification:
+    cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 2
+    vendor: woocommerce
+    product: woocommerce
   tags: wp-plugin,xss,authenticated,woocommerce,wpscan,wordpress,vuln
 
 http:
@@ -32,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: woocommerce
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         part: body
         words:
           - "</script><script>alert(document.domain)</script>"
 
       - type: word
+        name: woocommerce-2
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -44,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100af9f7aa47d596f256448996604d1ac080bd213ee4deea37a5493cdf0e877faa6022100a2c728038d4eb865ca5c8a02a592b95a05f0c5ca93433c305796effa25ec4b56:922c64590222798bb761d5b6d8e72950

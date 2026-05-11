@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     PMM is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:quickcms:quickcms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"QuickCMS Installation"
+    vendor: quickcms
+    product: quickcms
   tags: misconfig,exposure,install,quickcms,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: quickcms
+        cpe: cpe:2.3:a:quickcms:quickcms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "QuickCMS Installation"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220157da463e3ce1ee96ce738f0ed8fe86726f9d4a065e3c6b1bdd075a7f2a1118e0220496a27972548b38d0671abd9eb53a96039675af745ee27f7a82cbaf118dda843:922c64590222798bb761d5b6d8e72950

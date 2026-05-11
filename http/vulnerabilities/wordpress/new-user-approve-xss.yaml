@@ -9,12 +9,15 @@ info:
     - https://wpscan.com/vulnerability/17f99601-f5c9-4300-9b4a-6d75fa7ab94a
     - https://wordpress.org/plugins/new-user-approve
   classification:
+    cpe: cpe:2.3:a:new-user-approve:new-user-approve:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 2
+    vendor: new-user-approve
+    product: new-user-approve
   tags: wordpress,xss,authenticated,wp-plugin,wpscan,wp,vuln
 
 http:
@@ -34,11 +37,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: new-user-approve
+        cpe: cpe:2.3:a:new-user-approve:new-user-approve:*:*:*:*:*:*:*:*
         part: body
         words:
           - '?a"><script>alert(1)</script>&new-user-approve-settings'
 
       - type: word
+        name: new-user-approve-2
+        cpe: cpe:2.3:a:new-user-approve:new-user-approve:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -46,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022024c864a7be18d4586411472334b173b0f874426b54a61cec210faff2b2e2cf51022100f1163ca22f42905abfeee652d0888eccab8eae7cf4f261def4e761c92aea3ecd:922c64590222798bb761d5b6d8e72950

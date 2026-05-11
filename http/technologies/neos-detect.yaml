@@ -8,9 +8,12 @@ info:
   reference:
     - https://github.com/neos/
   classification:
+    cpe: cpe:2.3:a:neos:neos:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: neos
+    product: neos
   tags: tech,neos,cms,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     max-redirects: 2
     matchers:
       - type: word
+        name: neos
+        cpe: cpe:2.3:a:neos:neos:*:*:*:*:*:*:*:*
         words:
           - "This website is powered by Neos"
 
@@ -29,4 +34,3 @@ http:
       - type: kval
         kval:
           - 'x_flow_powered'
-# digest: 4a0a0047304502204473afe688b092e9577b7f7d2ced3634978ecbd8914f38432740662be8faf742022100a2c66d6363a7e53055e6d58aa0ae84f14e9a5e59339057f31550a006d0557fd0:922c64590222798bb761d5b6d8e72950

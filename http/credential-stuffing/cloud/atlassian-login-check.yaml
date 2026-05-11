@@ -7,8 +7,12 @@ info:
   description: Checks for a valid atlassian account.
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
+  classification:
+    cpe: cpe:2.3:a:atlassian:atlassian:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: atlassian
+    product: atlassian
   tags: cloud,creds-stuffing,login-check,atlassian,vuln
 
 self-contained: true
@@ -34,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: atlassian
+        cpe: cpe:2.3:a:atlassian:atlassian:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"error_description":"Wrong email or password."'
@@ -41,4 +47,3 @@ http:
       - type: status
         status:
           - 403
-# digest: 4b0a00483046022100e7c3bec3e8c7d028b9b7d5fb84b048d3c73adab2b1759758e9c9d8ceab51e5a5022100a4277a8deb1ab1fabf5e60e61f176e2bf2c9ba52f47a042436db6c324716abab:922c64590222798bb761d5b6d8e72950

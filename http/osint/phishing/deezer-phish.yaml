@@ -8,8 +8,12 @@ info:
     A deezer phishing website was detected
   reference:
     - https://deezer.com
+  classification:
+    cpe: cpe:2.3:a:deezer:deezer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: deezer
+    product: deezer
   tags: phishing,deezer,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: deezer
+        cpe: cpe:2.3:a:deezer:deezer:*:*:*:*:*:*:*:*
         words:
           - 'Deezer | Listen to music | Online music streaming platform'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: deezer-2
+        cpe: cpe:2.3:a:deezer:deezer:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"deezer.com")'
-# digest: 4b0a00483046022100a6274a166b7a93fc7ed18b03f2ae3712856c4efb92ff7981cc9aa886caa4fa87022100bb24a53784d8de1d18f303b4d7fc0e17b6429ec9a232003e66a7265ae9021077:922c64590222798bb761d5b6d8e72950

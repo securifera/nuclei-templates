@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk
   severity: low
   description: System Properties is exposed.
+  classification:
+    cpe: cpe:2.3:a:system:system:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"System Properties"
+    vendor: system
+    product: system
   tags: misconfig,system,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: system
+        cpe: cpe:2.3:a:system:system:*:*:*:*:*:*:*:*
         part: body
         words:
           - "System Properties:"
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220715e7fc08a20693b0fcc3cbfd1f579418ff8c83ab0a548fb4c7d1a88297b1813022100f24a51fc5c2a11cfaf4594c771504f2410448b45c0d9331adf5bd3ad49501f83:922c64590222798bb761d5b6d8e72950

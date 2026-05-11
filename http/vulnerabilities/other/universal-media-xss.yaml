@@ -9,10 +9,14 @@ info:
   remediation: Fixed in version 13.2.2
   reference:
     - https://packetstormsecurity.com/files/171754/Universal-Media-Server-13.2.1-Cross-Site-Scripting.html
+  classification:
+    cpe: cpe:2.3:a:universal:media:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-902890504
+    vendor: universal
+    product: media
   tags: xss,universal,media,unauth,packetstorm,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: media
+        cpe: cpe:2.3:a:universal:media:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<script>alert(document.domain)</script>"
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: media-2
+        cpe: cpe:2.3:a:universal:media:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210086cc8711e7d7a5298b64ab4df61cd4a005d94e615d6f0d5f052fb681aa45430502210082a5cfb8780dec5df256dcca3e18c150a8970fa2c5565c149c1197bb523b978f:922c64590222798bb761d5b6d8e72950

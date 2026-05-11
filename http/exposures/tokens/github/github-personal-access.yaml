@@ -9,9 +9,13 @@ info:
     - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github
     - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
     - https://github.blog/2021-04-05-behind-githubs-new-authentication-token-formats/
+  classification:
+    cpe: cpe:2.3:a:github-personal-access:github-personal-access:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: github-personal-access
+    product: github-personal-access
   tags: github,token,exposure,vuln
 
 flow: http(1) && http(2)
@@ -39,6 +43,8 @@ http:
     disable-path-automerge: true
     matchers:
       - type: word
+        name: github-personal-access
+        cpe: cpe:2.3:a:github-personal-access:github-personal-access:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"login":'
@@ -49,4 +55,3 @@ http:
       - type: dsl
         dsl:
           - token
-# digest: 490a0046304402200611eb7cbace5c31561eb746c856249540500b8a9f4375b225c3114ddd4be190022030c6d2fbe1917becec3936029205f557244c40b48266b3fb2cfb19f1fb311a70:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://nginx.org/en/
   classification:
+    cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: nginx
+    product: nginx
   tags: config,exposure,nginx,vuln
 
 http:
@@ -23,11 +26,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         words:
           - "html>"
         negative: true
 
       - type: word
+        name: nginx-2
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         words:
           - "server"
           - "listen"
@@ -37,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008606d485210548d2eb1f48a03ace15bd4876111a2e698f989a925e8e5c6f0c3f02204d60f539def1d08560b12dc00e0845434cd6a9e4fdc0f7e3be77e97a89320315:922c64590222798bb761d5b6d8e72950

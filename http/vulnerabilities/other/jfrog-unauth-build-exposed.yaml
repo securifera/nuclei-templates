@@ -7,8 +7,12 @@ info:
   description: JFrog Builds are exposed to Unauthenticated users.
   reference:
     - https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jfrog-unauth-build-exposed.yaml
+  classification:
+    cpe: cpe:2.3:a:jfrog:jfrog:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: jfrog
+    product: jfrog
   tags: jfrog,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jfrog
+        cpe: cpe:2.3:a:jfrog:jfrog:*:*:*:*:*:*:*:*
         words:
           - "last_build_number"
           - "build_name"
@@ -30,6 +36,8 @@ http:
         part: body
 
       - type: word
+        name: jfrog-2
+        cpe: cpe:2.3:a:jfrog:jfrog:*:*:*:*:*:*:*:*
         words:
           - application/json
         part: header
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203cf7ecbe95acad9e74cc4d7919530881e65c49f990a98ec6cc8621104fb0a7ae022100fcf97f9e49cc7ecbd2de295b3112f332c7fe55f16f632b42fac6905a73abd241:922c64590222798bb761d5b6d8e72950

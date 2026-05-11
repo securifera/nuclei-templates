@@ -4,8 +4,12 @@ info:
   name: Oracle DBaaS Monitor Detect
   author: pussycat0x
   severity: info
+  classification:
+    cpe: cpe:2.3:a:oracle:dbaas_monitor:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: oracle
+    product: dbaas_monitor
   tags: oracle,tech,discovery
 
 http:
@@ -16,10 +20,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dbaas_monitor
+        cpe: cpe:2.3:a:oracle:dbaas_monitor:*:*:*:*:*:*:*:*
         words:
           - '<title>DBaaS Monitor</title>'
 
       - type: status
         status:
           - 200
-# digest: 490a00463044022052a835f710da32e3a0c3108d67e517166ece6e01bdc0197c02d3638fbcab053c02204a80b98f1d8ecbb11dd0d90496eaf3b28ac39573037c2ab27c24e903e8c7b317:922c64590222798bb761d5b6d8e72950

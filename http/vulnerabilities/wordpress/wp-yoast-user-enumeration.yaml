@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yoast_seo
+        cpe: cpe:2.3:a:yoast:yoast_seo:*:*:*:*:wordpress:*:*:*
         part: body
         words:
           - "<?xml"
@@ -34,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: yoast_seo-2
+        cpe: cpe:2.3:a:yoast:yoast_seo:*:*:*:*:wordpress:*:*:*
         part: header
         words:
           - "application/xml"
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220724502dedf948b9c38d8639be58d65b6561e890e536e58c1cc99c71aa1bce2b6022100e988ad90b3f1631310607bd0832a7fb9999d098c757f05a9e5ea5ce4fa326267:922c64590222798bb761d5b6d8e72950

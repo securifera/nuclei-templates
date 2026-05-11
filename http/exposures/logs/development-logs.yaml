@@ -5,8 +5,12 @@ info:
   author: geeknik
   severity: info
   description: Development log file was exposed.
+  classification:
+    cpe: cpe:2.3:a:logs:logs:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
+    vendor: logs
+    product: logs
   tags: logs,exposure,rails,vuln
 
 http:
@@ -19,18 +23,24 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: logs
+        cpe: cpe:2.3:a:logs:logs:*:*:*:*:*:*:*:*
         words:
           - "Connecting to database specified by database.yml"
           - "Started GET"
         condition: or
 
       - type: word
+        name: logs-2
+        cpe: cpe:2.3:a:logs:logs:*:*:*:*:*:*:*:*
         words:
           - "DEPRECATION WARNING"
           - "CREATE TABLE"
         condition: or
 
       - type: word
+        name: logs-3
+        cpe: cpe:2.3:a:logs:logs:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -46,4 +56,3 @@ http:
         part: header
         regex:
           - 'Last-Modified:.*'
-# digest: 4a0a00473045022100ffa7c358bd4adbe8e317ba0c8e6829b1fe40ff7899057996368cbdf005e16dbb022037fc6f2d1ab429dc7e60aa10ce875327768bf990b9b1d7ba29271af7b6d36d01:922c64590222798bb761d5b6d8e72950

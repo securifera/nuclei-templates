@@ -8,8 +8,12 @@ info:
     A UniCredit phishing website was detected
   reference:
     - https://unicredit.com
+  classification:
+    cpe: cpe:2.3:a:unicredit:unicredit:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: unicredit
+    product: unicredit
   tags: phishing,unicredit,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: unicredit
+        cpe: cpe:2.3:a:unicredit:unicredit:*:*:*:*:*:*:*:*
         words:
           - 'UniCredit'
           - 'Sign On'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: unicredit-2
+        cpe: cpe:2.3:a:unicredit:unicredit:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"unicredit.com")'
-# digest: 4b0a00483046022100a5a8c7eba191dedfbf5ed613b8291689d7a5bc4e6de57797d10519a7d1cccd3e022100e050d4b62d077bc7be9a84aef39906c05c0350c59a386a4e7445f757d59ba2cf:922c64590222798bb761d5b6d8e72950

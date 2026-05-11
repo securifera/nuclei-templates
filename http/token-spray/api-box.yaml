@@ -8,8 +8,12 @@ info:
   reference:
     - https://developer.box.com/
     - https://github.com/daffainfo/all-about-apikey/tree/main/box
+  classification:
+    cpe: cpe:2.3:a:box:box:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: box
+    product: box
   tags: token-spray,box
 
 self-contained: true
@@ -23,9 +27,10 @@ http:
 
     matchers:
       - type: word
+        name: box
+        cpe: cpe:2.3:a:box:box:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'total_count":'
           - 'limit":'
         condition: and
-# digest: 490a00463044022079e450734cc9bc937620a5df7894db8a872b0c7df3a4d3c23ff10a67a066932102204cf67d2945833d9903a50b22b800eaa8fc7b93ea80f3b6b31ba321590946cf2e:922c64590222798bb761d5b6d8e72950

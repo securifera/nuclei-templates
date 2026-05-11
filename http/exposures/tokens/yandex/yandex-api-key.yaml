@@ -7,9 +7,13 @@ info:
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/yandex-api-key.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/yandex-api-key.yaml
+  classification:
+    cpe: cpe:2.3:a:yandex:yandex:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: yandex
+    product: yandex
   tags: yandex,exposure,tokens,vuln
 
 http:
@@ -22,4 +26,3 @@ http:
         part: body
         regex:
           - (?i)(?:yandex)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:{1,3}=|\|\|:|<=|=>|:|\?=)(?:'|\"|\s|=|\x60){0,5}(AQVN[A-Za-z0-9_\-]{35,38})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 490a004630440220224720d9f3bb21d6a98480697bfe5d44590b8810447a607dc55725c3289fddec0220640bd905aa3c6ae631df140dbcfc2db4aba5ad5562e84d4608c4eb3586355feb:922c64590222798bb761d5b6d8e72950

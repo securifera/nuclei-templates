@@ -11,10 +11,14 @@ info:
     post-auth RCE campaigns exploiting CVE-2025-53770.
   reference:
     - https://research.eye.security/sharepoint-under-siege/
+  classification:
+    cpe: cpe:2.3:a:sharepoint:sharepoint:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.component:"Sharepoint"
+    vendor: sharepoint
+    product: sharepoint
   tags: sharepoint,webshell,implant,aspx,backdoor,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
 
     matchers:
       - type: dsl
+        name: sharepoint
+        cpe: cpe:2.3:a:sharepoint:sharepoint:*:*:*:*:*:*:*:*
         dsl:
           - 'len(body) <= 160'
           - 'status_code == 200'
@@ -36,4 +42,3 @@ http:
         name: machinekey
         regex:
           - '^[A-Z0-9]{64}\|HMACSHA256\|[A-Z0-9]{64}\|Auto\|Framework20SP1$'
-# digest: 4a0a0047304502204ce6e0753098b2e51b2d950d66037623c2fbed1085dbc210c8f1ca5459de877c022100ee4bd6266174a0ec2e462452d7d7d341bdb0e2c4860143a5d5365288fc63dc19:922c64590222798bb761d5b6d8e72950

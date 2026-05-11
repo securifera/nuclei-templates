@@ -9,10 +9,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/51595
     - http://www.artio.net/downloads/joomla/book-it/book-it-2-free/download
+  classification:
+    cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     google-query: inurl:"index.php?option=com_booking"
+    vendor: joomla
+    product: joomla
   tags: joomla,info-leak,unauth,vuln
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"name":'
@@ -34,11 +40,15 @@ http:
         condition: and
 
       - type: regex
+        name: joomla-2
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '^{.*}$'
 
       - type: word
+        name: joomla-3
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -53,4 +63,3 @@ http:
         part: body
         json:
           - 'keys'
-# digest: 4b0a00483046022100a6f211644a2c169f11ba2bbff5d821f1fcea290d4819970a7cb8305dfac3bbd7022100fa98eec3f53a87e9c89951ed489cad0c3d9d7ed9616c37fce08468b07ef53b41:922c64590222798bb761d5b6d8e72950

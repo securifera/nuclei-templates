@@ -5,10 +5,14 @@ info:
   author: ritikchaddha
   severity: high
   description: Webasyst is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:webasyst:webasyst:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"Webasyst Installer"
+    vendor: webasyst
+    product: webasyst
   tags: misconfig,webasyst,install,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webasyst
+        cpe: cpe:2.3:a:webasyst:webasyst:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Webasyst Installer'
@@ -26,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204104ceb19e998055bbd3153fe177530f040c637fae3e051080ee0d12a1f64261022100d93f62ad8de040af8e9e4e9cf491cca93e0317106cab0f57d13b9c78c4a9405b:922c64590222798bb761d5b6d8e72950

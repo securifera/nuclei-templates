@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     This website has been seized by law enforcement
+  classification:
+    cpe: cpe:2.3:a:seized:seized:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: title:"THIS WEBSITE HAS BEEN SEIZED"
+    vendor: seized
+    product: seized
   tags: seized,miscellaneous,misc,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: seized
+        cpe: cpe:2.3:a:seized:seized:*:*:*:*:*:*:*:*
         part: body
         words:
           - "THIS WEBSITE HAS BEEN SEIZED"
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100dfb01f6a9b2d58eb41cfa1f32102274c484431f86c8f8c34dce080e34c80f639022070c9cb9a3688776807f4bf6ace102bbf65f9ec23f426215deb73600c26a38fa1:922c64590222798bb761d5b6d8e72950

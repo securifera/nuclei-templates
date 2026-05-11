@@ -8,8 +8,12 @@ info:
   reference:
     - https://docs.thecatapi.com/
     - https://github.com/daffainfo/all-about-apikey/tree/main/thecatapi
+  classification:
+    cpe: cpe:2.3:a:thecatapi:thecatapi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: thecatapi
+    product: thecatapi
   tags: token-spray,thecatapi
 
 self-contained: true
@@ -23,9 +27,10 @@ http:
       x-api-key: "{{token}}"
     matchers:
       - type: word
+        name: thecatapi
+        cpe: cpe:2.3:a:thecatapi:thecatapi:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"country_code":'
           - '"created_at":'
         condition: and
-# digest: 4b0a00483046022100cfefbc7bc42c2aa03380f55d7057bff9730388e83a9d214f71f228003722dba7022100f1f136e6153bc6092353a9ddf537cbb32e24f842c1efcbdc1fd9a263f2229c43:922c64590222798bb761d5b6d8e72950

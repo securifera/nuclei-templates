@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     A Laravel login panel was detected.
+  classification:
+    cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: title:"Login Laravel"
+    vendor: laravel
+    product: laravel
   tags: laravel,login,panel
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: laravel
+        cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
         words:
           - 'content="Laravel"'
           - "Laravel Login"
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a43208e029486b312b549128aacf4ca04bc23a56747f9cdb61c3bf8a7597c22302206f6e768bb26fe64583a99790eb07664e2b3c3b3c0b6a5eb4ea80a73de7bc8e6a:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,7 @@ info:
   reference:
     - https://apisix.apache.org/
   classification:
+    cpe: cpe:2.3:a:apisix:apisix:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
@@ -16,6 +17,7 @@ info:
     product: https://apisix.apache.org
     shodan-query: title:"Apache APISIX Dashboard"
     fofa-query: title="Apache APISIX Dashboard"
+    vendor: apisix
   tags: apisix,apache,default-login,vuln
 
 http:
@@ -39,6 +41,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: https://apisix.apache.org
+        cpe: cpe:2.3:a:apisix:apisix:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"data":'
@@ -47,6 +51,8 @@ http:
         condition: and
 
       - type: word
+        name: https://apisix.apache.org-2
+        cpe: cpe:2.3:a:apisix:apisix:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -54,4 +60,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220340bd8278045fc1300997e09f4dae5f0cf2f77bd2ce365b817f87af42bfa025c022100bf555defe45aaac1050d3e39db0cfcfde6130427d8b9e55e3c175bd5319cf97a:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: low
   description: |
     Moleculer microservice was able to be accessed with no required authentication in place.
+  classification:
+    cpe: cpe:2.3:a:microservice:microservice:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Moleculer Microservices Project"
+    vendor: microservice
+    product: microservice
   tags: misconfig,microservice,moleculer,exposure,vuln
 
 http:
@@ -20,12 +24,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: microservice
+        cpe: cpe:2.3:a:microservice:microservice:*:*:*:*:*:*:*:*
         words:
           - "Moleculer Microservices Project"
           - "Service/Action name"
         condition: and
 
       - type: word
+        name: microservice-2
+        cpe: cpe:2.3:a:microservice:microservice:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220280df97ea4e874f5e89565abe56d48acb41bc4544b078b22bc54bf19334ec869022100de72a7a59531381610e930558c4630d938557e048cad20bd7a38a1da69f1732d:922c64590222798bb761d5b6d8e72950

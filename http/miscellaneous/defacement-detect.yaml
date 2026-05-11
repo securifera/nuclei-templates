@@ -13,9 +13,13 @@ info:
     - https://www.haxor.id
     - https://www.defacer.net
     - https://www.radware.com/security/threat-advisories-and-attack-reports/hacktivism-unveiled-april-2023
+  classification:
+    cpe: cpe:2.3:a:defacement:defacement:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 85
+    vendor: defacement
+    product: defacement
   tags: misc,defacement,spam,hacktivism,fuzz,miscellaneous,vuln
 
 http:
@@ -31,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: defacement
+        cpe: cpe:2.3:a:defacement:defacement:*:*:*:*:*:*:*:*
         part: body
         regex:
           # Commom defacement signatures
@@ -413,4 +419,3 @@ http:
         - /frost.txt
         - /-.txt
         - /!.txt
-# digest: 490a00463044022077fdcf0cdddd37ad67a57a6f15cef38788d64ed0743f018a83740d20b9c32b500220743015e3d12c8ac141c7c68197900ce2d378f3d43fe144677054cadf5c92165c:922c64590222798bb761d5b6d8e72950

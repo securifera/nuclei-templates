@@ -7,8 +7,12 @@ info:
   description: Object listing is enabled in AWS bucket.
   reference:
     - https://mikey96.medium.com/cloud-based-storage-misconfigurations-critical-bounties-361647f78a29
+  classification:
+    cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: aws
+    product: aws
   tags: aws,misconfig,bucket,vuln
 
 http:
@@ -21,16 +25,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aws
+        cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<ListBucketResult xmlns='
 
       - type: word
+        name: aws-2
+        cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - application/xml
 
       - type: word
+        name: aws-3
+        cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - "x-goog-metageneration"
@@ -44,4 +54,3 @@ http:
         group: 1
         regex:
           - '<Name>([a-z0-9-._]+)'
-# digest: 490a0046304402203054924f3f7581915c1a235416a1872de7a463e128e5be0784ca841c46618c10022044500befaaa794a6315e58a7c87fec7f66c300bc71e3e68b03e905fac688ad9f:922c64590222798bb761d5b6d8e72950

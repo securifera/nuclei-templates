@@ -6,11 +6,14 @@ info:
   severity: info
   description: SpiceWorks user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:spiceworks:spiceworks:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: spiceworks
+    product: spiceworks
   tags: osint,osint-tech,spiceworks,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: spiceworks
+        cpe: cpe:2.3:a:spiceworks:spiceworks:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Portfolio of IT Projects - Spiceworks"
-# digest: 4a0a0047304502203b87acd455b292399a479deef0008ff7289d3172df13327ca4b35d17069b3b52022100e239b084cd316f4ca72e8480cb60e8be3a07185dc3b97ba08f57286da4428b34:922c64590222798bb761d5b6d8e72950

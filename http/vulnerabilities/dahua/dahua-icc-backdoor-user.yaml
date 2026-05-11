@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     There is a vulnerability in the user login interface /evo-apigw/evo-oauth/oauth/token of Zhejiang Dahua Technology Co., Ltd. Intelligent IoT Integrated Management Platform. Users can successfully log in to the platform using justForTest/any password, causing information leakage.
+  classification:
+    cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-1935899595"body="*客户端会小于800*"
+    vendor: backdoor
+    product: backdoor
   tags: dahua,exposure,backdoor,bypass,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: backdoor
+        cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"success":'
@@ -33,7 +39,8 @@ http:
         condition: and
 
       - type: word
+        name: backdoor-2
+        cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
-# digest: 4b0a00483046022100d9fa8f4cc82aad6bc968fea2327a40c16b8f9c6f8cb7ab6a9baa8e5b79877e3d022100caf7e9388c45662cbf7e0e195b45a6a97168bb351706374fc27304f5f99c395e:922c64590222798bb761d5b6d8e72950

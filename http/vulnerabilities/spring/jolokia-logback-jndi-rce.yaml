@@ -9,8 +9,12 @@ info:
     - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
     - https://github.com/laluka/jolokia-exploitation-toolkit
     - https://github.com/LandGrey/SpringBootVulExploit#0x04jolokia-logback-jndi-rce
+  classification:
+    cpe: cpe:2.3:a:jolokia:jolokia:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: jolokia
+    product: jolokia
   tags: jolokia,springboot,tomcat,rce,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jolokia
+        cpe: cpe:2.3:a:jolokia:jolokia:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ch.qos.logback.classic.jmx.JMXConfigurator'
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e671049eba029e2e7d73f239c7e2015aa88131844ede02a9e4ceb866af780968022047219ce25addc1da0ab1fa6c4704004aca02751af8bbafb58a28da271a88c3f7:922c64590222798bb761d5b6d8e72950

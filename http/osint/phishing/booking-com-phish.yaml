@@ -8,8 +8,12 @@ info:
     A Booking.com phishing website was detected
   reference:
     - https://booking.com
+  classification:
+    cpe: cpe:2.3:a:booking:booking:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: booking
+    product: booking
   tags: phishing,booking,travel,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: booking
+        cpe: cpe:2.3:a:booking:booking:*:*:*:*:*:*:*:*
         words:
           - 'Booking.com'
           - 'Booking.com | Official site | The best hotels, flights, car rentals &amp; accommodations'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: booking-2
+        cpe: cpe:2.3:a:booking:booking:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"booking.com")'
-# digest: 4a0a0047304502206b56f0aa93db857ed725a6a8cd84d136a5844e491ce63b12acc74474accef899022100eb3c65de702b306ee0a5fcc6977d1f87ff32468f91807514922cac0fb3ed333b:922c64590222798bb761d5b6d8e72950

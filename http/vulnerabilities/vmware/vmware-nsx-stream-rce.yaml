@@ -18,12 +18,15 @@ info:
     - https://attackerkb.com/topics/ngprN6bu76/cve-2021-39144
     - https://github.com/rapid7/metasploit-framework/pull/17222
   classification:
+    cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
     cwe-id: CWE-78,CWE-502
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"VMware Appliance Management"
     fofa-query: title="VMware Appliance Management"
+    vendor: vmware
+    product: vmware
   tags: vmware,xstream,rce,msf,intrusive,vuln
 variables:
   lowerrstr: "{{to_lower(rand_text_alpha(6))}}"
@@ -61,11 +64,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vmware
+        cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
 
       - type: word
+        name: vmware-2
+        cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'deceptive request routing'
@@ -73,4 +80,3 @@ http:
       - type: status
         status:
           - 400
-# digest: 490a00463044022039ce484b8a14d10acf343ba146e02b8801868a45fe60f3337e3d3e1e603f5bef02207aaf00475a18bfbc28cca4829722e94ae9801a291660e43a00167b01bb030553:922c64590222798bb761d5b6d8e72950

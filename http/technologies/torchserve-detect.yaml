@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: torchserve
+        cpe: cpe:2.3:a:pytorch:torchserve:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'TorchServe APIs"'
@@ -32,6 +34,8 @@ http:
         condition: or
 
       - type: word
+        name: torchserve-2
+        cpe: cpe:2.3:a:pytorch:torchserve:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"

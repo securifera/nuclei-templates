@@ -4,9 +4,13 @@ info:
   name: Query JCR role via QueryBuilder Servlet
   author: DhiyaneshDk
   severity: info
+  classification:
+    cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.component:"Adobe Experience Manager"
+    vendor: aem
+    product: aem
   tags: aem,misconfig,vuln
 
 http:
@@ -25,8 +29,9 @@ http:
           - 200
 
       - type: word
+        name: aem
+        cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
         words:
           - '"success":true'
           - 'jcr:uuid'
         condition: and
-# digest: 4a0a0047304502206653befbf881b93d22164879de063eba741e310cfbb7e8c21322c78a083019b9022100adf1eb854070511e5910c62ad0bb45b86f739c6e41cf652fcb3ac3e0cfca83cd:922c64590222798bb761d5b6d8e72950

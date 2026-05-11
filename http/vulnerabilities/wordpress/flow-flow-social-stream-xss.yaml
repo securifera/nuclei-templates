@@ -8,11 +8,14 @@ info:
   reference:
     - https://wpscan.com/vulnerability/8354b34e-40f4-4b70-bb09-38e2cf572ce9
   classification:
+    cpe: cpe:2.3:a:flow-flow-social-stream:flow-flow-social-stream:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-79,CWE-83
   metadata:
     max-request: 1
+    vendor: flow-flow-social-stream
+    product: flow-flow-social-stream
   tags: xss,wordpress,wpscan,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: flow-flow-social-stream
+        cpe: cpe:2.3:a:flow-flow-social-stream:flow-flow-social-stream:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"hash":"<img src=x onerror=alert(document.domain)>"'
@@ -30,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: flow-flow-social-stream-2
+        cpe: cpe:2.3:a:flow-flow-social-stream:flow-flow-social-stream:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -37,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022025ddc4a3aafea79f44ed7447fff113f5af27da83fd6c8124666f56f0bc7cec22022051d29e4bce4f71bcf3f431a57b31d95fc900ed1f7db2d02e61d875c7282cdd09:922c64590222798bb761d5b6d8e72950

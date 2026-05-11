@@ -6,11 +6,14 @@ info:
   severity: info
   description: Note user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:note:note:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: note
+    product: note
   tags: osint,osint-social,note,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: note
+        cpe: cpe:2.3:a:note:note:*:*:*:*:*:*:*:*
         part: body
         words:
           - "フォロワー"
-# digest: 4b0a00483046022100a9a3a481857165aba0eeb8b3aba951ccff1b023ddf783b143ac6e0da0a79cf9f022100ced21de5c37e48b674b68cc0d71ea5dfdf1dcddbdfa53a318ef9778bd4f8c983:922c64590222798bb761d5b6d8e72950

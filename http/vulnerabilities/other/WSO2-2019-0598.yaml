@@ -11,11 +11,14 @@ info:
   reference:
     - https://docs.wso2.com/display/Security/Security+Advisory+WSO2-2019-0598
   classification:
+    cpe: cpe:2.3:a:wso2:wso2:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 6.8
     cwe-id: CWE-918
   metadata:
     max-request: 1
+    vendor: wso2
+    product: wso2
   tags: ssrf,wso2,shindig,vuln
 
 http:
@@ -26,10 +29,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wso2
+        cpe: cpe:2.3:a:wso2:wso2:*:*:*:*:*:*:*:*
         words:
           - "Interactsh Server"
 
       - type: status
         status:
           - 200
-# digest: 490a00463044022015641a9b7546f66c8b2e05a6e6aa362b7dfcb505d1642dd0537d3057db62f63002203caa43bb4112288ceffd7741ff09dcac184f98a3991627f0999d2d11fcc07a37:922c64590222798bb761d5b6d8e72950

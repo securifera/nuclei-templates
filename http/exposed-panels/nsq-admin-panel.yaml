@@ -8,6 +8,7 @@ info:
   reference:
     - https://nsq.io/components/nsqd.html
   classification:
+    cpe: cpe:2.3:a:nsq:nsq:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"nsqadmin"
+    vendor: nsq
+    product: nsq
   tags: nsq,admin,panel,exposure,discovery
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nsq
+        cpe: cpe:2.3:a:nsq:nsq:*:*:*:*:*:*:*:*
         words:
           - '<title>nsqadmin</title>'
 
@@ -38,4 +43,3 @@ http:
         group: 1
         regex:
           - "nsqadmin/v([0-9.]+)"
-# digest: 490a00463044022010fe0abada44296601eff856073ed634b9eebde08a41deb3b5f54f70eab1aebd02202576e5159f9c6eb5fa513ebff56a5fc475d6e091bc5fb3b6fddcac22839e6ca2:922c64590222798bb761d5b6d8e72950

@@ -10,10 +10,14 @@ info:
     Ensure that the application does not allow directory traversal or access to sensitive files through web requests. Implement proper input validation and restrict access to critical files.
   reference:
     - https://mp.weixin.qq.com/s?__biz=MzkyNDY3MTY3MA==&mid=2247486259&idx=1&sn=dd51ca8df3aa1533144b975b9bec3086
+  classification:
+    cpe: cpe:2.3:a:easycvr:easycvr:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: icon_hash="458134656"
+    vendor: easycvr
+    product: easycvr
   tags: easycvr,unauth,lfi,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +30,8 @@ http:
 
     matchers:
       - type: dsl
+        name: easycvr
+        cpe: cpe:2.3:a:easycvr:easycvr:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "<title>EasyCVR")'
           - "status_code == 200"
@@ -39,9 +45,10 @@ http:
 
     matchers:
       - type: dsl
+        name: easycvr-2
+        cpe: cpe:2.3:a:easycvr:easycvr:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "default_admin_user", "default_admin_password")'
           - 'contains(content_type, "text/plain")'
           - "status_code == 200"
         condition: and
-# digest: 4a0a00473045022100b7b0eb7209f001de1d23e0cce3f62a70fa2c64afe7786a8dd4559b94cc9e811402200de38b4e159afd97a8ecfa00a92d28e247df186d4457c76cbbea60df296ee6b6:922c64590222798bb761d5b6d8e72950

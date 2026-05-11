@@ -10,10 +10,14 @@ info:
     - https://wpscan.com/vulnerability/c6a8757e-41ef-4c20-8c7d-97b57d56fe0e
     - https://wordpress.org/plugins/portrait-archiv-shop/
     - https://packetstormsecurity.com/files/154343/
+  classification:
+    cpe: cpe:2.3:a:wp-portrait-archiv:wp-portrait-archiv:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     publicwww-query: "/wp-content/plugins/portrait-archiv-shop/"
+    vendor: wp-portrait-archiv
+    product: wp-portrait-archiv
   tags: wpscan,packetstorm,wordpress,wp-plugin,wp,portrait-archiv-shop,xss,vuln
 
 http:
@@ -24,9 +28,10 @@ http:
 
     matchers:
       - type: dsl
+        name: wp-portrait-archiv
+        cpe: cpe:2.3:a:wp-portrait-archiv:wp-portrait-archiv:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains(body, "</script><script>alert(document.location)</script>") && contains(body, "showImageDetail")'
         condition: and
-# digest: 490a00463044022060a68ade5d050488df40a9380e41402cd8fc63bfc0d848b326278ed7fda90dcf02207da530fec84a0b7a79b07944eacc239ec04b09565953139d836a171f3ed9ee63:922c64590222798bb761d5b6d8e72950

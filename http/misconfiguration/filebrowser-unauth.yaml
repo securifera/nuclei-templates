@@ -7,6 +7,8 @@ info:
   description: File Browser dashboard is exposed.
   reference:
     - https://filebrowser.org/
+  classification:
+    cpe: cpe:2.3:a:filebrowser:filebrowser:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: filebrowser
+        cpe: cpe:2.3:a:filebrowser:filebrowser:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'File Browser</title>'
@@ -36,9 +40,10 @@ http:
         condition: or
 
       - type: word
+        name: filebrowser-2
+        cpe: cpe:2.3:a:filebrowser:filebrowser:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'LoginPage":false'
           - '"NoAuth":true'
         condition: and
-# digest: 490a00463044022000bd94fe24d397b7676d384916bd36954137c26bdb95887068b49a014e926587022076cb33a28ac915b4d7a7825d770d19a2314113ed558ec68ffb2a883ff11f4915:922c64590222798bb761d5b6d8e72950

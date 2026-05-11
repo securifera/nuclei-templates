@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: beego
+        cpe: cpe:2.3:a:beego:beego:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Welcome to Beego Admin Dashboard'
@@ -39,6 +41,8 @@ http:
         condition: and
 
       - type: word
+        name: beego-2
+        cpe: cpe:2.3:a:beego:beego:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -46,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022053960ae54bd33a33453e9b9d4fbced83cee5ccc2caf20c85227f4fa0cad1e920022050ca2eb0ca2ea9b87a2c60ab80e56cd5c98a444485ba3cbdf626bec852919ba1:922c64590222798bb761d5b6d8e72950

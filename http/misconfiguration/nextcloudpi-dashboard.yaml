@@ -10,6 +10,8 @@ info:
     Restrict access to the NextcloudPi dashboard to trusted IP addresses only. Use a VPN or firewall rules to limit access.
   reference:
     - https://github.com/nextcloud/nextcloudpi
+  classification:
+    cpe: cpe:2.3:a:nextcloud:nextcloudpi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -26,8 +28,9 @@ http:
 
     matchers:
       - type: dsl
+        name: nextcloudpi
+        cpe: cpe:2.3:a:nextcloud:nextcloudpi:*:*:*:*:*:*:*:*
         dsl:
           - "contains_any(body, 'Power Off', 'Nextcloud configuration')"
           - "status_code==200"
         condition: and
-# digest: 4a0a0047304502206e5c9b309ac289c251b4c957fb1525737453a38ccf7ac03c1bc0eb3afaf45bc2022100af296b1433d233c22a389282e5308f9cef06ea486925bd7ccedc6fb18aa5039c:922c64590222798bb761d5b6d8e72950

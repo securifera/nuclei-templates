@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/46150
   classification:
+    cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-78
   metadata:
     max-request: 1
+    vendor: thinkphp
+    product: thinkphp
   tags: edb,thinkphp,rce,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: thinkphp
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: body
         words:
           - "phpkniht"
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ed834d6131847f752a40929db0ba2c315ff6345c7c991d88871baaecc1c39f6c02206989b9358c503b92b85bd731aeb844910ff6b9b49f2245e971f7b0c8e919b863:922c64590222798bb761d5b6d8e72950

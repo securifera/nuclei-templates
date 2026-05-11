@@ -22,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kyuubi
+        cpe: cpe:2.3:a:apache:kyuubi:*:*:*:*:*:*:*:*
         words:
           - 'Environment</title>'
           - 'kyuubi'
@@ -30,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204cabcb87d613bc0fa2b56de93f096ab8b5df10176d623ae5f1e60027718160f4022100eaca61b30204cfd63549052b5158cb0ad656b1acbf95a360d0aced694d683815:922c64590222798bb761d5b6d8e72950

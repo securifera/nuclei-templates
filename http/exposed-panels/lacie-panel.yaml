@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/7118
   classification:
+    cpe: cpe:2.3:a:lacie:lacie:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: lacie
+    product: lacie
   tags: panel,lacie,login,edb,discovery
 
 http:
@@ -23,11 +26,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lacie
+        cpe: cpe:2.3:a:lacie:lacie:*:*:*:*:*:*:*:*
         words:
           - 'id_LaCie'
         part: body
 
       - type: regex
+        name: lacie-2
+        cpe: cpe:2.3:a:lacie:lacie:*:*:*:*:*:*:*:*
         regex:
           - '(?m)<title>([a-zA-Z0-9&#; ]|)+Dashboard<\/title>$'
         part: body
@@ -35,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207c961d097511ea41ae9b09b7d44911e89f96f939ea8e05c4bbe8152e79a43eb3022100e8244f5399aa34e1d32c4254a443b464736570e603aaed00d84ec85374a16620:922c64590222798bb761d5b6d8e72950

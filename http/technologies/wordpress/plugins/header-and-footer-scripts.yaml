@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: header-and-footer-scripts
+        cpe: cpe:2.3:a:header-and-footer-scripts:header-and-footer-scripts:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

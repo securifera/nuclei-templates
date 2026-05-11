@@ -8,8 +8,12 @@ info:
     A roblox phishing website was detected
   reference:
     - https://roblox.com
+  classification:
+    cpe: cpe:2.3:a:roblox:roblox:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: roblox
+    product: roblox
   tags: phishing,roblox,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: roblox
+        cpe: cpe:2.3:a:roblox:roblox:*:*:*:*:*:*:*:*
         words:
           - 'Roblox is ushering in the next generation of entertainment. Imagine, create, and play together with millions of people across an infinite variety of immersive, user-generated 3D worlds.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: roblox-2
+        cpe: cpe:2.3:a:roblox:roblox:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"roblox.com")'
-# digest: 4b0a0048304602210089d08d4a614341616e77c1df3539183e9217af32304f25c545e097803049902e022100dd96714de9e85908e71b225f5a3530bc549ad7c015c3680556477dd27fc70ae0:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
   reference:
     - https://github.com/harvardartmuseums/api-docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/harvard-art-museums
+  classification:
+    cpe: cpe:2.3:a:harvardart:harvardart:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: harvardart
+    product: harvardart
   tags: token-spray,harvardart
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: harvardart
+        cpe: cpe:2.3:a:harvardart:harvardart:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"colorid"'
           - '"name"'
           - '"hex"'
         condition: and
-# digest: 4a0a00473045022100f0f509d78a735c9ff70c6fa2d6409a506c7cc3035fc95355552bed844b5ec8ab022070c174d8b457c0685130219da9d5bdd2317ec059b0e5c3c329c81940e49ae790:922c64590222798bb761d5b6d8e72950

@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: posthog
+        cpe: cpe:2.3:a:posthog:posthog:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>PostHog</title>'
@@ -37,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100aec216736113016c69dfed00427be1a8ab410ff9678f25a00524019528a545de022069c39cfdf953138f757ae34705ada95c6b926e2a5743337f8275c53670a8c929:922c64590222798bb761d5b6d8e72950

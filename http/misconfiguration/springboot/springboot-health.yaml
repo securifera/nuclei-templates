@@ -6,12 +6,15 @@ info:
   severity: info
   description: Spring Boot Health Actuator panel was detected.
   classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
     verified: true
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - 'contains_all(body, "\"status\"", "\"UP\"")'
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"components"'
@@ -44,4 +51,3 @@ http:
           - '"livenessState"'
           - '"readinessState"'
         condition: or
-# digest: 4b0a00483046022100ee0e3fccedc1a65dc2518adb04925b11bd7ed661ef93bf06a1243bf0a9fc7d85022100f950f95828559346d9d217bc370d88460aa1fb5fb06126bc604a18e81dd6fd04:922c64590222798bb761d5b6d8e72950

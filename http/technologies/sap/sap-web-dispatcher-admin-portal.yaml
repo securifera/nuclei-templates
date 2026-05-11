@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: content_server
+        cpe: cpe:2.3:a:sap:content_server:*:*:*:*:*:*:*:*
         part: header
         condition: or
         words:
@@ -38,6 +40,8 @@ http:
           - 200
 
       - type: word
+        name: content_server-2
+        cpe: cpe:2.3:a:sap:content_server:*:*:*:*:*:*:*:*
         part: body
         condition: or
         words:

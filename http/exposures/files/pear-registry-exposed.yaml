@@ -10,9 +10,13 @@ info:
     - https://pear.php.net/manual/en/core.pear.pear-registry.php
     - https://github.com/pear/pear-core/blob/master/PEAR/Registry.php
     - https://blog.sonarsource.com/php-supply-chain-attack-on-pear/
+  classification:
+    cpe: cpe:2.3:a:registry:registry:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
     verified: false
+    vendor: registry
+    product: registry
   tags: misconfig,pear,php,registry,exposure
 
 http:
@@ -27,8 +31,9 @@ http:
 
     matchers:
       - type: dsl
+        name: registry
+        cpe: cpe:2.3:a:registry:registry:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains_all(body, 'install-pear.php','PEAR_ErrorStack','install-pear-nozlib.phar')"
         condition: and
-# digest: 4a0a00473045022100d496747f672c5d2d13a12e78162e7cc69b273a000d6808e70154492fdaf19434022011707da6f3c1a47a1bde592adbcaafc0fcdea462060ff7aa06877921a1a558dd:922c64590222798bb761d5b6d8e72950

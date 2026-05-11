@@ -7,8 +7,12 @@ info:
   description: Github Workflow was exposed.
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/github-workflows-disclosure.json
+  classification:
+    cpe: cpe:2.3:a:github-workflows:github-workflows:*:*:*:*:*:*:*:*
   metadata:
     max-request: 27
+    vendor: github-workflows
+    product: github-workflows
   tags: exposure,config,vuln
 
 http:
@@ -48,6 +52,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: github-workflows
+        cpe: cpe:2.3:a:github-workflows:github-workflows:*:*:*:*:*:*:*:*
         regex:
           - "(?m)^\\s*\"?on\"?:"
           - "(?m)^\\s*\"?jobs\"?:"
@@ -59,4 +65,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100bca751edcecee0ce4b095959a8f7cf35ec6ee77d1de885cd1033b8fd823a85ef02205b30ef2fdda69ebc9d7874120275a1e6f30587efb2ad3d21877396aa813ba5cb:922c64590222798bb761d5b6d8e72950

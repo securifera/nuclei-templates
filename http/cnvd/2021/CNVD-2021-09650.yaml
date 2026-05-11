@@ -10,11 +10,14 @@ info:
     - https://github.com/yumusb/EgGateWayGetShell_py/blob/main/eg.py
     - https://www.ruijienetworks.com
   classification:
+    cpe: cpe:2.3:a:ruijie:eweb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 1
+    vendor: ruijie
+    product: eweb
   tags: cnvd,cnvd2021,ruijie,rce,vuln
 
 http:
@@ -30,6 +33,6 @@ http:
       - type: word
         part: interactsh_protocol
         name: http
+        cpe: cpe:2.3:a:ruijie:eweb:*:*:*:*:*:*:*:*
         words:
           - "http"
-# digest: 4a0a00473045022100be0178ddb464bf7327fe5161b31ccf7b689a67c1ca5b9ad9f1134a5e467bd67402206d9eed3e9ec28590a28e50ae2f85b338d08fd2f45fba9bdc1902137ce4ff2dcf:922c64590222798bb761d5b6d8e72950

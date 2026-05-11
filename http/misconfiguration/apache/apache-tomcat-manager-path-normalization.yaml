@@ -8,11 +8,14 @@ info:
   reference:
     - https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
   classification:
+    cpe: cpe:2.3:a:tomcat:tomcat:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 6
+    vendor: tomcat
+    product: tomcat
   tags: panel,tomcat,apache,misconfig,intrusive,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tomcat
+        cpe: cpe:2.3:a:tomcat:tomcat:*:*:*:*:*:*:*:*
         words:
           - 'username="tomcat" password="s3cret"'
           - 'manager-gui'
@@ -37,4 +42,3 @@ http:
         negative: true
         status:
           - 403
-# digest: 4b0a00483046022100cbd66616b3e31bd020f50456c2e4250c08f6810f6d282051daa33ba816ae8f40022100a69515a9b812e6d5ef770bafa38197a73f5a271f713ef912b13ebf930abf5ea4:922c64590222798bb761d5b6d8e72950

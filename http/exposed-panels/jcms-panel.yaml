@@ -35,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jcms
+        cpe: cpe:2.3:a:jalios:jcms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'content="Jalios JCMS'
@@ -42,4 +44,3 @@ http:
           - "JCMS_login"
           - "/jcms/"
         condition: or
-# digest: 490a00463044022036a01419adeeeb22f8a0ec1dc6e4b9318394288521e54169e289318bfafda8a60220749ef2fe3af40c972d52d174acb2f0eb7290a2b4f30ae1de2e4fda09fe23036e:922c64590222798bb761d5b6d8e72950

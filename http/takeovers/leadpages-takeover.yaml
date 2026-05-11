@@ -9,8 +9,12 @@ info:
     - https://www.youtube.com/watch?v=HRFplefT46U
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/166
     - https://github.com/PushpenderIndia/subdover/issues/2
+  classification:
+    cpe: cpe:2.3:a:leadpages:leadpages:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: leadpages
+    product: leadpages
   tags: takeover,leadpages,vuln
 
 http:
@@ -21,10 +25,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: leadpages
+        cpe: cpe:2.3:a:leadpages:leadpages:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: leadpages-2
+        cpe: cpe:2.3:a:leadpages:leadpages:*:*:*:*:*:*:*:*
         words:
           - <h2 class="lp-headline text-align-center subhead">This page couldn't be found, so let's get you turned around!</h2>
           - "The page you're looking for may have moved."
@@ -35,4 +43,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4b0a00483046022100bc0967df6b5a6e5ef39c64ad4449310e75f311f57a49da8fe19bb0971f54e02d022100c6dfc5f4fba341aab0e37b55863603bbefa2e875cd5200fa1cae2ab171fb56ca:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,15 @@ info:
     JustBoil.me Images Plugin for TinyMCE contains an exposed dialog interface that could lead to potential security vulnerabilities. The plugin's dialog-v4.htm file is accessible without proper access controls, which may allow unauthorized access to image upload functionality.
   reference:
     - https://cxsecurity.com/issue/WLB-2019050108
+  classification:
+    cpe: cpe:2.3:a:justboil:justboil:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="/plugins/generic/tinymce/plugins/justboil.me/"
     shodan-query: inurl:"/plugins/generic/tinymce/plugins/justboil.me/"
+    vendor: justboil
+    product: justboil
   tags: justboil,tinymce,plugin,exposure,misconfig,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: justboil
+        cpe: cpe:2.3:a:justboil:justboil:*:*:*:*:*:*:*:*
         part: body
         words:
           - "JustBoil.me Images Plugin"
@@ -31,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: justboil-2
+        cpe: cpe:2.3:a:justboil:justboil:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b5096049ecf0d84742385bb4a625c76dbd9c41b9dc4e5bbb0320d837720906b40221009b8c729f582e702062ca977534856ce98f55d9f2543dc656b3fe82feb985ee4c:922c64590222798bb761d5b6d8e72950

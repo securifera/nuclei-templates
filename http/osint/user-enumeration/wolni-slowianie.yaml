@@ -6,11 +6,14 @@ info:
   severity: info
   description: Wolni Słowianie user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:wolni-slowianie:wolni-slowianie:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: wolni-slowianie
+    product: wolni-slowianie
   tags: osint,osint-social,wolni-slowianie,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: wolni-slowianie
+        cpe: cpe:2.3:a:wolni-slowianie:wolni-slowianie:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Oś czasu"
-# digest: 4a0a00473045022100bba449824527fa5e729477f4bd39dff68250e2412e1a285787f7a5a12fcf924602203fbded5d62abe4d7b71a9f8df68420f6171ddabd8f5bfc8dfcbb804c640da314:922c64590222798bb761d5b6d8e72950

@@ -38,9 +38,10 @@ http:
 
     matchers:
       - type: dsl
+        name: streampark
+        cpe: cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "userId\":", "username\":", "token\":", "expire\":")'
         condition: and
-# digest: 4a0a0047304502203b2d729dea1a8aec5590d8d7f590426877441d8dcb010807b6eb9aafaf875452022100f47ec9cb1355235658c04ac2a6694edfa8abd3c3c6c1d2cdf472998ab247a776:922c64590222798bb761d5b6d8e72950

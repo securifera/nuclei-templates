@@ -8,9 +8,12 @@ info:
   reference:
     - https://github.com/6mile/cloud-headers
   classification:
+    cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: amazon
+    product: aws
   tags: tech,aws,amazon,alb,cloudfront,codebuild,gateway,xray,captcha,dynamodb,kms,discovery
 
 http:
@@ -25,6 +28,7 @@ http:
     matchers:
       - type: word
         name: aws-service
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amz-Content-Sha256:'
@@ -37,6 +41,7 @@ http:
 
       - type: word
         name: aws-alb
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'Server: awselb/2.0'
@@ -47,6 +52,7 @@ http:
 
       - type: word
         name: aws-cloudfront
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amz-Cf-Id:'
@@ -56,6 +62,7 @@ http:
 
       - type: dsl
         name: aws-cloudfront
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         dsl:
           - "contains(tolower(header), 'x-cache: hit from cloudfront')"
           - "contains(tolower(header), 'x-cache: refreshhit from cloudfront')"
@@ -65,6 +72,7 @@ http:
 
       - type: word
         name: aws-codebuild
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - "arn: arn:aws:codebuild"
@@ -76,6 +84,7 @@ http:
 
       - type: word
         name: aws-api-gateway
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amz-Apigw-Id:'
@@ -89,6 +98,7 @@ http:
 
       - type: word
         name: aws-kms
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amz-Server-Side-Encryption:'
@@ -97,6 +107,7 @@ http:
 
       - type: word
         name: aws-xray
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amzn-Trace-Id:'
@@ -105,6 +116,7 @@ http:
 
       - type: word
         name: aws-waf-captcha
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amzn-Waf-Action:'
@@ -113,10 +125,10 @@ http:
 
       - type: word
         name: aws-dynamodb
+        cpe: cpe:2.3:a:amazon:aws:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Amz-Crc32:'
           - 'X-Amz-Target:'
         condition: or
         case-insensitive: true
-# digest: 4b0a00483046022100aba65b71de0d37c6fce25a3047c04c5fc39c305193cfa1adf7901f154944acae022100dbd257ab75cb90a02c3027d399f9bc75c874baa3e547cfa5f374bc4ab68cf59d:922c64590222798bb761d5b6d8e72950

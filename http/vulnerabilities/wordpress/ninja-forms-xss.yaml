@@ -37,6 +37,8 @@ http:
 
     matchers:
       - type: word
+        name: ninja_forms
+        cpe: cpe:2.3:a:ninjaforms:ninja_forms:*:*:*:*:*:wordpress:*:*
         part: body_1
         words:
           - "/wp-content/plugins/ninja-forms"
@@ -71,11 +73,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ninja_forms-2
+        cpe: cpe:2.3:a:ninjaforms:ninja_forms:*:*:*:*:*:wordpress:*:*
         part: body
         words:
           - '"><script>alert(/document_domain/)</script>'
 
       - type: word
+        name: ninja_forms-3
+        cpe: cpe:2.3:a:ninjaforms:ninja_forms:*:*:*:*:*:wordpress:*:*
         part: content_type
         words:
           - text/html
@@ -83,4 +89,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220351752fafef8adba87432eceea58964d2ae0ee6245d0e5fd3705fa2c386928a8022100863c7207058e460b9f41193377c05422b3ef12f8321dce26b5af7f340ea5a20c:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Puma phishing website was detected
   reference:
     - https://puma.com
+  classification:
+    cpe: cpe:2.3:a:puma:puma:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: puma
+    product: puma
   tags: phishing,puma,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: puma
+        cpe: cpe:2.3:a:puma:puma:*:*:*:*:*:*:*:*
         words:
           - "Run The Streets. Do You. Research and shop all the latest gear from the world of Fashion, Sport, and everywhere in between."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: puma-2
+        cpe: cpe:2.3:a:puma:puma:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"puma.com")'
-# digest: 4b0a00483046022100cee8a4d59243a0fee7016fbe131beec435171581dd450f9d4960ac5707442466022100e94ed610af46a990b50f9365a42df0f6b1dc24105135c81b34e7a723423c0fea:922c64590222798bb761d5b6d8e72950

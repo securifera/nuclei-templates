@@ -4,9 +4,13 @@ info:
   name: Database Error
   author: dhiyaneshDK
   severity: info
+  classification:
+    cpe: cpe:2.3:a:database:database:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"Database Error"
+    vendor: database
+    product: database
   tags: misconfig,database,vuln
 
 http:
@@ -17,10 +21,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: database
+        cpe: cpe:2.3:a:database:database:*:*:*:*:*:*:*:*
         words:
           - '<title>Database Error</title>'
 
       - type: status
         status:
           - 500
-# digest: 4a0a004730450220550daaa2849752f5c584d8db683507d09cdbde8198ddb75561170c2bc45d3cc4022100c513caffeb7b482fab9bd7c299b36a22ccca4fd40f0aa329cc81b89423b06eb8:922c64590222798bb761d5b6d8e72950

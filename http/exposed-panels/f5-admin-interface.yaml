@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects F5 Admin Interfaces.
+  classification:
+    cpe: cpe:2.3:a:admin:admin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"BIG-IP Configuration Utility"
+    vendor: admin
+    product: admin
   tags: f5,admin,detect,panel,login,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: admin
+        cpe: cpe:2.3:a:admin:admin:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Configuration Utility'
@@ -39,4 +45,3 @@ http:
         group: 1
         regex:
           - 'Copyright\s+([0-9\-]+),'
-# digest: 490a0046304402203545d9e890a0659cbea3cd8388770b229272129fa620c46129d5bd19c8287c2502203731ff5d6cb921eb32c965747e497ef11e1805883cfdf3f6ff8614d795d3d28e:922c64590222798bb761d5b6d8e72950

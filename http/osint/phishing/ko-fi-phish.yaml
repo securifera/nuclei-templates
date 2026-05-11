@@ -8,8 +8,12 @@ info:
     A Ko-fi phishing website was detected
   reference:
     - https://ko-fi.com
+  classification:
+    cpe: cpe:2.3:a:ko-fi:ko-fi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ko-fi
+    product: ko-fi
   tags: phishing,ko-fi,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ko-fi
+        cpe: cpe:2.3:a:ko-fi:ko-fi:*:*:*:*:*:*:*:*
         words:
           - 'Ko-fi'
           - '<title>Ko-fi | Make money doing what you love'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: ko-fi-2
+        cpe: cpe:2.3:a:ko-fi:ko-fi:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"ko-fi.com")'
-# digest: 490a0046304402205441be5691832ba61852e4267a55458fbcaa9d7dfb78b4aafc4c5139ca9f425f02205ef6ef2de0ab5bc658b5b55c33d4d2f9624b91b3b3bf397690805110947e5d11:922c64590222798bb761d5b6d8e72950

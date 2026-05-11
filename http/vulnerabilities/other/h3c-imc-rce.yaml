@@ -8,12 +8,15 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/BP9_H3lpluqIwL5OMIJlIw
   classification:
+    cpe: cpe:2.3:a:h3c-imc:h3c-imc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-78
   metadata:
     max-request: 2
     fofa-query: body="/imc/javax.faces.resource/images/login_help.png.jsf?ln=primefaces-imc-new-webui"
+    vendor: h3c-imc
+    product: h3c-imc
   tags: rce,h3c-imc,vuln
 
 http:
@@ -34,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: h3c-imc
+        cpe: cpe:2.3:a:h3c-imc:h3c-imc:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
@@ -43,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f8ce26e3fe3e5fb6165c05af76346afa56888f49ed0ee97c88f0d0cab500c5fb022100c1881f72d2bb58a2c82acb10b3644a611e9d0a5838de630d8458eff1592fa238:922c64590222798bb761d5b6d8e72950

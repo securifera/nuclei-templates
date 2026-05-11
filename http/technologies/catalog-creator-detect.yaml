@@ -6,6 +6,7 @@ info:
   severity: info
   description: CATALOGcreator Page login panel detected.
   classification:
+    cpe: cpe:2.3:a:catalogcreator:catalogcreator:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.html:"powered by CATALOGcreator"
+    vendor: catalogcreator
+    product: catalogcreator
   tags: tech,catalogcreater,panel,discovery
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: catalogcreator
+        cpe: cpe:2.3:a:catalogcreator:catalogcreator:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Powered by CATALOGcreator'
@@ -38,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022038dd76b0d391a12f1ae7eab818b82d052cda71341c21d4e9fa0dd7a65716ab3f0220155c8f8b0799bafcf1febe9b0633f667ef465567940e1eb4994076c101e02de3:922c64590222798bb761d5b6d8e72950

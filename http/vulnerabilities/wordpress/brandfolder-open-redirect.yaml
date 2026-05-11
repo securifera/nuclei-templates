@@ -9,8 +9,12 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/39591
     - https://wpscan.com/vulnerability/f850e182-f9c6-4264-b2b1-e587447fe4b1
+  classification:
+    cpe: cpe:2.3:a:brandfolder:brandfolder:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: brandfolder
+    product: brandfolder
   tags: wp,brandfolder,edb,wpscan,wp-plugin,redirect,rfi,wordpress,lfi,vuln
 
 http:
@@ -20,7 +24,8 @@ http:
 
     matchers:
       - type: regex
+        name: brandfolder
+        cpe: cpe:2.3:a:brandfolder:brandfolder:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
-# digest: 4a0a00473045022100f44384c9440349774fe89beef7d707faf213c5290f8f4207847ca3b0129de9a502202216d31a23cd236daf92f1861a5e060c657184daccfbcce8bf4e9f6c64d47ead:922c64590222798bb761d5b6d8e72950

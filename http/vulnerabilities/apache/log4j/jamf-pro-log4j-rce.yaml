@@ -13,6 +13,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -21,6 +22,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Jamf Pro"
+    vendor: log4j
+    product: log4j
   tags: cve,cve2021,rce,jndi,log4j,jamf,oast,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -40,16 +43,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: log4j
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Jamf Pro Login</title>"
 
       - type: word
+        name: log4j-2
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: log4j-3
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -70,4 +79,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 490a00463044022070c6c2400a4da8b15295aaceb3bfb6f7bfdf86208cd581d1af1c7b3ce44afdf9022041ef70e34d1152df44afc80b8a0971f67fb72fafe14f58543b65efbde935dc64:922c64590222798bb761d5b6d8e72950

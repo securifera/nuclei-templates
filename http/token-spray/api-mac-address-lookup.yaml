@@ -8,8 +8,12 @@ info:
   reference:
     - https://macaddress.io/api
     - https://github.com/daffainfo/all-about-apikey/tree/main/mac-address-lookup
+  classification:
+    cpe: cpe:2.3:a:mac-address-lookup:mac-address-lookup:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mac-address-lookup
+    product: mac-address-lookup
   tags: token-spray,macaddresslookup
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: mac-address-lookup
+        cpe: cpe:2.3:a:mac-address-lookup:mac-address-lookup:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"vendorDetails"'
           - '"companyName"'
           - '"companyAddress"'
         condition: and
-# digest: 490a00463044022062e763a639d4e2e8c039e504259792a6de8589c3541ffd7ce48e2b6284e806b2022041ff0c9104f993797eac57a49db068316cd57c47446f6316429a49de6a177281:922c64590222798bb761d5b6d8e72950

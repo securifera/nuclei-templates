@@ -8,8 +8,12 @@ info:
     A Humble Bundle phishing website was detected
   reference:
     - https://humblebundle.com
+  classification:
+    cpe: cpe:2.3:a:humble-bundle:humble-bundle:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: humble-bundle
+    product: humble-bundle
   tags: phishing,humble-bundle,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: humble-bundle
+        cpe: cpe:2.3:a:humble-bundle:humble-bundle:*:*:*:*:*:*:*:*
         words:
           - "Humble Bundle sells games, books, software, and more. Our mission is to support charity while providing awesome content to customers at great prices. Since 2010, Humble Bundle customers have given over $275,000,000 to charity."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: humble-bundle-2
+        cpe: cpe:2.3:a:humble-bundle:humble-bundle:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"humblebundle.com")'
-# digest: 490a00463044022055a71cf1887d38601f9f6db366324e2e24a16ab67a551d44b14b33f3bccce62d0220102239501cb4e32dfbb9f14e665d0e0e47d24389b6d1e0a0714484812b12f37e:922c64590222798bb761d5b6d8e72950

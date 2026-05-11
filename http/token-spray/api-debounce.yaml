@@ -7,8 +7,12 @@ info:
   reference:
     - https://developers.debounce.io/reference/api-key-authentication
     - https://debounce.io
+  classification:
+    cpe: cpe:2.3:a:debounce:debounce:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: debounce
+    product: debounce
   tags: debounce,token-spray
 
 self-contained: true
@@ -20,10 +24,11 @@ http:
 
     matchers:
       - type: word
+        name: debounce
+        cpe: cpe:2.3:a:debounce:debounce:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"balance":'
           - '"success":'
           - '"debounce":'
         condition: and
-# digest: 4a0a004730450220636f1259f9949ba946e35b12a3d4893bf7608862bbb7f09984378909c0cd452b022100f5db697fe2fa60aa1801f2a02d2dc6d36b31e06aaae2ccf4fa0615b8aa67b744:922c64590222798bb761d5b6d8e72950

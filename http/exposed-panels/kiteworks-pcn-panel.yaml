@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kiteworks
+        cpe: cpe:2.3:a:accellion:kiteworks:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Secured by Kiteworks'
@@ -35,6 +37,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: kiteworks-2
+        cpe: cpe:2.3:a:accellion:kiteworks:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/octet-stream'
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c603b72a63ec75339558b04053c657578465929774cfa475f305e34f974c8ad6022071c898fce1d0d7aa7f783e133b3d7cbb4ef2dec4be490782d78f55f0caf1fd2e:922c64590222798bb761d5b6d8e72950

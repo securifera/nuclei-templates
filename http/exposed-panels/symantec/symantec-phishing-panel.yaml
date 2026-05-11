@@ -7,9 +7,13 @@ info:
   description: Management Console for Symantec Phishing Readiness Platform
   reference:
     - https://www.broadcom.com/products/cybersecurity/email/phishing-readiness
+  classification:
+    cpe: cpe:2.3:a:symantec:symantec:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: symantec
+    product: symantec
   tags: symantec,panel,login,discovery
 
 self-contained: true
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: symantec
+        cpe: cpe:2.3:a:symantec:symantec:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Symantec Phishing Readiness Platform</title>"
@@ -39,4 +45,3 @@ http:
       - type: dsl
         dsl:
           - company
-# digest: 4a0a00473045022100d21f69ce89052edf353f4e5a2db5fca22eef06b669b10c5a79c73c225954434502202a4ae1091e88995826a2cfd858abee480a6d2183efecc90ebba6d6f9058333f2:922c64590222798bb761d5b6d8e72950

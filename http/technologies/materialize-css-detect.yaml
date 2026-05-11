@@ -8,10 +8,14 @@ info:
     Detected the presence of Materialize, a modern responsive front-end framework based on Material Design.
   reference:
     - https://materializecss.com/
+  classification:
+    cpe: cpe:2.3:a:materializecss:materialize:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"materialize.min.css"
+    vendor: materializecss
+    product: materialize
   tags: tech,materialize,discovery
 
 http:
@@ -24,6 +28,8 @@ http:
 
     matchers:
       - type: regex
+        name: materialize
+        cpe: cpe:2.3:a:materializecss:materialize:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)href=["''][^"'']*materialize(?:[\.-]min)?\.css'
@@ -31,4 +37,3 @@ http:
           - '(?i)class=["''][^"'']*waves-effect'
           - '(?i)class=["''][^"'']*materialize-textarea'
         condition: or
-# digest: 4a0a004730450220283119fd54f1e1d6522815c22dd092a1034653fd87b35a188a318594c66cde3e022100ba6c6bd292d1c2bd8718a91266ff7cf75e58bcbe3f61a3534e69601e778cbce4:922c64590222798bb761d5b6d8e72950

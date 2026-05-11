@@ -30,6 +30,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: 3cx
+        cpe: cpe:2.3:a:3cx:3cx:*:*:*:*:*:*:*:*
         part: body
         words:
           - "CfgServerPassword"
@@ -37,9 +39,10 @@ http:
         condition: and
 
       - type: word
+        name: 3cx-2
+        cpe: cpe:2.3:a:3cx:3cx:*:*:*:*:*:*:*:*
         words:
           - "bit app support"
           - "fonts"
           - "extensions"
         condition: and
-# digest: 480a00453043021f57d4878d9634fd144b5157eea19eb480662cff120b35d146a0999239aca05f02204649c46a02526346989810e12a984547a081d1197fc410d38192389096dd9208:922c64590222798bb761d5b6d8e72950

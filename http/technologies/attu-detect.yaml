@@ -7,10 +7,14 @@ info:
   description: Attu was detected.
   reference:
     - https://github.com/zilliztech/attu
+  classification:
+    cpe: cpe:2.3:a:zilliz:attu:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="Attu"
+    vendor: zilliz
+    product: attu
   tags: tech,vector-database,attu,detect,discovery
 
 http:
@@ -20,9 +24,10 @@ http:
 
     matchers:
       - type: word
+        name: attu
+        cpe: cpe:2.3:a:zilliz:attu:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Attu</title>'
           - 'content="Attu'
         condition: or
-# digest: 4a0a0047304502205324b965a1e7ab6e6d5aff2e7ce28ea1721bc500eeb9bd5ca5b68eb6ca82e8f5022100ca463c6f70000ca639109d7cd4024a95479f6a592655592ed0287ebe0a4f6161:922c64590222798bb761d5b6d8e72950

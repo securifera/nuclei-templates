@@ -8,8 +8,12 @@ info:
     A Segment phishing website was detected
   reference:
     - https://segment.com
+  classification:
+    cpe: cpe:2.3:a:segment:segment:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: segment
+    product: segment
   tags: phishing,segment,analytics,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: segment
+        cpe: cpe:2.3:a:segment:segment:*:*:*:*:*:*:*:*
         words:
           - '<title>Twilio Segment - Customer Data Platform | Twilio Segment'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: segment-2
+        cpe: cpe:2.3:a:segment:segment:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"segment.com")'
-# digest: 490a00463044022074a32f9e2968a5187a96b17f0c89905af1c835d07bbece9218abdf5db48f2c9e0220355ea38077df656969c556be0a3bc7eaebe8b2ee007ee4c6dc0e957b3fbbe7a3:922c64590222798bb761d5b6d8e72950

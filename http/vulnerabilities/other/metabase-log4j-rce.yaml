@@ -10,6 +10,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:metabase:log4j:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -18,6 +19,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Metabase"
+    vendor: metabase
+    product: log4j
   tags: cve,cve2021,rce,jndi,log4j,metabase,kev,oast,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -31,16 +34,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: log4j
+        cpe: cpe:2.3:a:metabase:log4j:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Invalid GeoJSON file location:'
 
       - type: word
+        name: log4j-2
+        cpe: cpe:2.3:a:metabase:log4j:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: log4j-3
+        cpe: cpe:2.3:a:metabase:log4j:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -61,4 +70,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a0047304502205313ccd11082976f7dc4a819ac3c4c2d4553ae2422c6aee3e1ed21d1cd8012c1022100984ddeae680c4dfffea69abe296ca89431974845ba4f20b5dd6ddda1f1de1864:922c64590222798bb761d5b6d8e72950

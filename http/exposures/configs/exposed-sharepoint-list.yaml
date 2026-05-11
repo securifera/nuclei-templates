@@ -9,11 +9,14 @@ info:
     - https://hackerone.com/reports/761158
     - https://hackerone.com/reports/300539
   classification:
+    cpe: cpe:2.3:a:sharepoint:sharepoint:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: sharepoint
+    product: sharepoint
   tags: hackerone,config,exposure,sharepoint,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sharepoint
+        cpe: cpe:2.3:a:sharepoint:sharepoint:*:*:*:*:*:*:*:*
         words:
           - "GetListResponse"
           - "GetList"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ae7108e1376a75c88cf16d6aecd7a1fb581e5920be65cd05742b5999272bd2740221009e9692e3082ba381fae9636405cbddbf795541f44316fef88f55fc0743a2cf11:922c64590222798bb761d5b6d8e72950

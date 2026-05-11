@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.adminer.org
   classification:
+    cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 5
     shodan-query: http.title:adminer
+    vendor: adminer
+    product: adminer
   tags: default-login,adminer,vuln
 
 http:
@@ -44,6 +47,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: adminer
+        cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Create database'
@@ -54,6 +59,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: adminer-2
+        cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -61,4 +68,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402205b848aad03ca0a0d2e657a49ff3d985391a7983e22787c346f10617182d84fdd022068cec93e1cab782d87414f428dd955ac135ea3a4b023b3e35e8c96fdec294643:922c64590222798bb761d5b6d8e72950

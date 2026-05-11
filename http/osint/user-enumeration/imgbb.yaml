@@ -6,11 +6,14 @@ info:
   severity: info
   description: ImgBB user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:imgbb:imgbb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: imgbb
+    product: imgbb
   tags: osint,osint-image,imgbb,discovery
 
 self-contained: true
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: imgbb
+        cpe: cpe:2.3:a:imgbb:imgbb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Most recent"
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205de55ebbc69344ecfe7adf29fa7bd9ff1423083891db9f521e0fda71b3bfd63102210090924f918750054a7c0e472ae0c3c98e01053c380903fa3b14042e9dda925dc9:922c64590222798bb761d5b6d8e72950

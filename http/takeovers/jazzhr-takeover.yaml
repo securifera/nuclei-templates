@@ -7,8 +7,12 @@ info:
   description: jazzhr takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:jazzhr:jazzhr:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: jazzhr
+    product: jazzhr
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: jazzhr
+        cpe: cpe:2.3:a:jazzhr:jazzhr:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: jazzhr-2
+        cpe: cpe:2.3:a:jazzhr:jazzhr:*:*:*:*:*:*:*:*
         words:
           - This account no longer active
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 490a0046304402205775292b6efe0da82b72dd931887adac28402a3dfe81dc03541b6674cccbbb5d0220427e3cd37b2c6ea060d79c2b878aa13f7d68b312bb2d8b7e36bbc226f0a3efa3:922c64590222798bb761d5b6d8e72950

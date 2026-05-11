@@ -6,10 +6,13 @@ info:
   severity: info
   description: Pulse Secure VPN login panel was detected.
   classification:
+    cpe: cpe:2.3:a:pulse:pulse:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 3
+    vendor: pulse
+    product: pulse
   tags: panel,pulse,vpn,discovery
 
 http:
@@ -24,12 +27,15 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: pulse
+        cpe: cpe:2.3:a:pulse:pulse:*:*:*:*:*:*:*:*
         part: header
         words:
           - "/dana-na/auth/welcome.cgi"
 
       - type: regex
+        name: pulse-2
+        cpe: cpe:2.3:a:pulse:pulse:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?i)/dana-na/css/ds(_[a-f0-9]{64})?.css"
-# digest: 4b0a00483046022100ee2576478a1b915bac336ac8c0b399da911b9a40778018af47e8dd4b430130130221009ffd72c234378761149d1e1b582f508723b3680ff7275f238829073bfc965ac4:922c64590222798bb761d5b6d8e72950

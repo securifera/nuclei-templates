@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yeswiki
+        cpe: cpe:2.3:a:yeswiki:yeswiki:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<script>alert(document.domain)</script>"
@@ -36,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: yeswiki-2
+        cpe: cpe:2.3:a:yeswiki:yeswiki:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100cfd2fea4bc140724e38daaf0cfd85bccf62debbcaa2b9d30477ecde14cb9e54902206d5a4258597e65a32daa79347ddfac65ca347fd4ac32569322b79740b05235fd:922c64590222798bb761d5b6d8e72950

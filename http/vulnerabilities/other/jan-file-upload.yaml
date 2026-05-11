@@ -9,9 +9,13 @@ info:
   reference:
     - https://github.com/wy876/POC/blob/main/Jan%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
     - https://github.com/HackAllSec/CVEs/blob/81e63ae5caae40be47905adae601e0c2f480190b/Jan%20Arbitrary%20File%20Upload%20vulnerability/README.md
+  classification:
+    cpe: cpe:2.3:a:jan:jan:*:*:*:*:*:*:*:*
   metadata:
     fofa-query: icon_hash="-165268926"
     max-request: 2
+    vendor: jan
+    product: jan
   tags: jan,intrusive,file-upload,vuln
 
 variables:
@@ -40,12 +44,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jan
+        cpe: cpe:2.3:a:jan:jan:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '{{randstr}}'
 
       - type: word
+        name: jan-2
+        cpe: cpe:2.3:a:jan:jan:*:*:*:*:*:*:*:*
         part: content_type_2
         words:
           - 'text/plain'
-# digest: 490a0046304402200388d414e7f3a5a280a9ca8026836c64c26e6f873f148fb00cf4af5b6793a35102202559ac1856d70649d06b4caa23c6c427a0e8404c7f9c86b25ff6067c46e44c8a:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
   reference:
     - https://exploit.linuxsec.org/uptimerobot-com-custom-domain-subdomain-takeover/
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/45
+  classification:
+    cpe: cpe:2.3:a:uptimerobot:uptimerobot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: uptimerobot
+    product: uptimerobot
   tags: takeover,vuln
 
 http:
@@ -20,14 +24,20 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: uptimerobot
+        cpe: cpe:2.3:a:uptimerobot:uptimerobot:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: regex
+        name: uptimerobot-2
+        cpe: cpe:2.3:a:uptimerobot:uptimerobot:*:*:*:*:*:*:*:*
         regex:
           - "^page not found$"
 
       - type: word
+        name: uptimerobot-3
+        cpe: cpe:2.3:a:uptimerobot:uptimerobot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Server: Caddy"
@@ -41,4 +51,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022023674162e706140a47757b7a9b344b03111807d27015cdf8fbeeaaf6bbe7b5d3022100e45e4a3ab3c4f7d16a8cb26a1380d0d07afa001c162d53d040435e503691709f:922c64590222798bb761d5b6d8e72950

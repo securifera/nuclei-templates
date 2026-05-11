@@ -8,9 +8,13 @@ info:
     Detected publicly accessible KCFinder instances that may have allowed arbitrary file uploads and remote code execution (RCE).Exposure of KCFinder could have allowed an attacker to gain unauthorized access to the file manager and upload malicious files.
   reference:
     - https://github.com/sunhater/kcfinder
+  classification:
+    cpe: cpe:2.3:a:kcfinder:kcfinder:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 6
+    vendor: kcfinder
+    product: kcfinder
   tags: exposure,kcfinder,file-upload
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kcfinder
+        cpe: cpe:2.3:a:kcfinder:kcfinder:*:*:*:*:*:*:*:*
         words:
           - "<title>KCFinder:"
           - "id=\"files\""
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b061dd62f00aa08133b4d220bdadb31cb2df9da446e57b746b52c092f88bab9d02205e6878aaf5f270be40885d200cc91ab70bfb3297654bba5c7d41146248df2073:922c64590222798bb761d5b6d8e72950

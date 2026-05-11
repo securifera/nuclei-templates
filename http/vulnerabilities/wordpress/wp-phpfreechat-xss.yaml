@@ -9,11 +9,14 @@ info:
     - https://www.exploit-db.com/exploits/37485
     - http://web.archive.org/web/20210120061848/https://www.securityfocus.com/bid/54332/info
   classification:
+    cpe: cpe:2.3:a:wp-phpfreechat:wp-phpfreechat:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 2
+    vendor: wp-phpfreechat
+    product: wp-phpfreechat
   tags: xss,wp-plugin,edb,wordpress,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: wp-phpfreechat
+        cpe: cpe:2.3:a:wp-phpfreechat:wp-phpfreechat:*:*:*:*:*:*:*:*
         internal: true
         words:
           - '/wp-content/plugins/phpfreechat/'
@@ -37,11 +42,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-phpfreechat-2
+        cpe: cpe:2.3:a:wp-phpfreechat:wp-phpfreechat:*:*:*:*:*:*:*:*
         words:
           - "</script><script>alert(document.domain)</script>"
         part: body
 
       - type: word
+        name: wp-phpfreechat-3
+        cpe: cpe:2.3:a:wp-phpfreechat:wp-phpfreechat:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -49,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ecf1c447bfd5d6215a0f82930415fbe05c46094c121aa31b240561960393941a022013dd2ad2b551f5fd26e9d080f694a7a5469968393fc5680459686838d416097f:922c64590222798bb761d5b6d8e72950

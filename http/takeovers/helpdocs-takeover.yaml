@@ -6,8 +6,12 @@ info:
   severity: high
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/402
+  classification:
+    cpe: cpe:2.3:a:helpdocs:helpdocs:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: helpdocs
+    product: helpdocs
   tags: takeover,helpdocs,vuln
 
 http:
@@ -21,10 +25,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: helpdocs
+        cpe: cpe:2.3:a:helpdocs:helpdocs:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: helpdocs-2
+        cpe: cpe:2.3:a:helpdocs:helpdocs:*:*:*:*:*:*:*:*
         part: body
         words:
           - "You've tried to access an account/page that does not exist"
@@ -33,4 +41,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 490a0046304402205a458b6fa0f843805497bf44190cd9066f3e29475971f561014c03f26f70005302202ea4608bf8ef7655a948cc6c9963bd517190cb8e54137129a62096c0f8a93d6c:922c64590222798bb761d5b6d8e72950

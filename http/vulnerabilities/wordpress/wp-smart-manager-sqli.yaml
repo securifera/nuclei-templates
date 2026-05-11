@@ -12,11 +12,14 @@ info:
     - http://cinu.pl/research/wp-plugins/mail_0666ceeca20683907bf82514e8f93e0f.html
     - https://wordpress.org/plugins/smart-manager-for-wp-e-commerce/
   classification:
+    cpe: cpe:2.3:a:wp-smart:wp-smart:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 2
     publicwww-query: "/wp-content/plugins/smart-manager-for-wp-e-commerce/"
+    vendor: wp-smart
+    product: wp-smart
   tags: time-based-sqli,wpscan,wp,wp-plugin,wordpress,smart-manager-for-wp-e-commerce,sqli,vuln
 
 http:
@@ -34,10 +37,11 @@ http:
 
     matchers:
       - type: dsl
+        name: wp-smart
+        cpe: cpe:2.3:a:wp-smart:wp-smart:*:*:*:*:*:*:*:*
         dsl:
           - 'duration_2>=7'
           - 'status_code_2 == 500'
           - 'contains(body_1, "Smart Manager for e-Commerce")'
           - 'contains(body_2, "rel=\"preconnect") || contains(body, "Error</title>")'
         condition: and
-# digest: 4b0a00483046022100903458b91755219b9e533778ef196225969b15ff4221276cff01448010ff9b63022100ea948fb0ac39002906cfa6a4f41afb14a178b715cf64ae3bdc344b8d0ed5f060:922c64590222798bb761d5b6d8e72950

@@ -7,8 +7,12 @@ info:
   description: Clockwork Dashboard is exposed.
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/clockwork-dashboard-exposure.json
+  classification:
+    cpe: cpe:2.3:a:clockwork:clockwork:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: clockwork
+    product: clockwork
   tags: exposure,unauth,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: clockwork
+        cpe: cpe:2.3:a:clockwork:clockwork:*:*:*:*:*:*:*:*
         words:
           - '"id":'
           - '"version":'
@@ -29,7 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: clockwork-2
+        cpe: cpe:2.3:a:clockwork:clockwork:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         part: header
-# digest: 4a0a0047304502201871111b0175a8480d075037cae3b746927fbb76a2759fc880680ae268e34fcb022100b755714d96249052f293ee37521a80c85efda6d270d36fc6ee088dc7eccd2dae:922c64590222798bb761d5b6d8e72950

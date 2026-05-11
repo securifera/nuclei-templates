@@ -6,11 +6,14 @@ info:
   severity: info
   description: Poshmark user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:poshmark:poshmark:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: poshmark
+    product: poshmark
   tags: osint,osint-shopping,poshmark,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: poshmark
+        cpe: cpe:2.3:a:poshmark:poshmark:*:*:*:*:*:*:*:*
         part: body
         words:
           - " is using Poshmark to sell items from their closet."
-# digest: 490a0046304402206b5b128bed9ae0669d1e805006a8cecb3fd1ce25f29b644c44976fe313be25720220773044aef07c886b115e838d698cf99eda78bfadce6bf65e59b8300cffb84055:922c64590222798bb761d5b6d8e72950

@@ -7,10 +7,14 @@ info:
   description: down.php file in EasyImage is vulnerable to arbitrary file read.
   reference:
     - https://github.com/qingchenhh/qc_poc/blob/main/Goby/EasyImage_down.php_file_read.go
+  classification:
+    cpe: cpe:2.3:a:easyimage:easyimage:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="EasyImage-简单图床"
+    vendor: easyimage
+    product: easyimage
   tags: easyimage,lfi,exposure,config,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: easyimage
+        cpe: cpe:2.3:a:easyimage:easyimage:*:*:*:*:*:*:*:*
         part: body
         words:
           - "'user'=>"
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: easyimage-2
+        cpe: cpe:2.3:a:easyimage:easyimage:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201a577495110cf318319453881479a2ba574f16bd77f90561c1f419065df3e8e102210088235f54def9959450fe06db133ffa541d33a7a3cb24f34f69781feb496cfb82:922c64590222798bb761d5b6d8e72950

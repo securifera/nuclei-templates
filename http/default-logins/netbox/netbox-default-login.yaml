@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/netbox-community/netbox-docker
     - https://docs.netbox.dev/en/stable/integrations/rest-api/#authenticating-to-the-api
+  classification:
+    cpe: cpe:2.3:a:netbox-community:netbox:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -33,6 +35,8 @@ http:
 
     matchers:
       - type: dsl
+        name: netbox
+        cpe: cpe:2.3:a:netbox-community:netbox:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -50,6 +54,8 @@ http:
 
     matchers:
       - type: dsl
+        name: netbox-2
+        cpe: cpe:2.3:a:netbox-community:netbox:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 201'
           - 'contains(content_type, "application/json")'
@@ -62,4 +68,3 @@ http:
         part: body
         regex:
           - '"key"\s*:\s*"([a-f0-9]{40})"'
-# digest: 4a0a0047304502205f727d9d56418421260097f5213ffb63af5b14514b46e7a673347055158e1443022100e49ae23b3cc7ff68916638f18e5a91bfd248e0cb96642c333cbee027c44cdda5:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: medium
   description: A MySQL dump file was found
   classification:
+    cpe: cpe:2.3:a:mysql:mysql:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 21
+    vendor: mysql
+    product: mysql
   tags: exposure,backup,mysql,vuln
 
 http:
@@ -48,6 +51,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: mysql
+        cpe: cpe:2.3:a:mysql:mysql:*:*:*:*:*:*:*:*
         regex:
           - "(?m)(?:DROP|CREATE|(?:UN)?LOCK) TABLE|INSERT INTO"
         part: body
@@ -57,4 +62,3 @@ http:
           - 200
           - 206
         condition: or
-# digest: 4a0a004730450220742fe4186e8a760f081b2fcee81c384a4f00fcae293c410b879afdd9fbfc2219022100f54c54c0cd1787b0b9b7a240350a02fa3783292c59bcc7ce68bbc9d28cf798fc:922c64590222798bb761d5b6d8e72950

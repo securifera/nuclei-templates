@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kio_firmware
+        cpe: cpe:2.3:o:tekon:kio_firmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - "-- Logs begin at"
@@ -33,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: kio_firmware-2
+        cpe: cpe:2.3:o:tekon:kio_firmware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -40,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205023c707116da748dcf5571770d3bf436b689e3b11cba9320b57b34c5c78c5e5022100ab7de2a6881af48f60b55812c8bdab8a596fb368c9425186b0608128178db931:922c64590222798bb761d5b6d8e72950

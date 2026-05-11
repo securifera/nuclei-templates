@@ -6,11 +6,14 @@ info:
   severity: info
   description: Pastebin user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:pastebin:pastebin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: pastebin
+    product: pastebin
   tags: osint,osint-tech,pastebin,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: pastebin
+        cpe: cpe:2.3:a:pastebin:pastebin:*:*:*:*:*:*:*:*
         part: body
         words:
           - "'s Pastebin"
-# digest: 490a0046304402202d4e78f5deeee3aed14232cafe1c4ccfef64a219d9b84469592b47260feafd38022028a249faad886405e74d989a22bc7d78278ec253a81107cc1fd26c6ca20a1117:922c64590222798bb761d5b6d8e72950

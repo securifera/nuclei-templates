@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/alibaba/canal/wiki/ClientAdapter
   classification:
+    cpe: cpe:2.3:a:canal:canal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: canal
+    product: canal
   tags: canal,alibaba,default-login,vuln
 
 http:
@@ -38,8 +41,9 @@ http:
           - 200
 
       - type: word
+        name: canal
+        cpe: cpe:2.3:a:canal:canal:*:*:*:*:*:*:*:*
         condition: and
         words:
           - 'data":{"token"'
           - '"code":20000'
-# digest: 4b0a00483046022100fac00e2ece2fa4599c4c8b787230f8b6588c673566a2b01f925fa9e33cdd30ce0221009318ab62fb1557d9f771a534ce6fb3a27558077322fb03aa9f60b07e69dbd1df:922c64590222798bb761d5b6d8e72950

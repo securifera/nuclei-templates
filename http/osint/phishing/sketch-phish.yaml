@@ -8,8 +8,12 @@ info:
     A Sketch phishing website was detected
   reference:
     - https://sketch.com
+  classification:
+    cpe: cpe:2.3:a:sketch:sketch:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sketch
+    product: sketch
   tags: phishing,sketch,design,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sketch
+        cpe: cpe:2.3:a:sketch:sketch:*:*:*:*:*:*:*:*
         words:
           - '<title>Sketch · Design, prototype, collaborate and handoff'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: sketch-2
+        cpe: cpe:2.3:a:sketch:sketch:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"sketch.com")'
-# digest: 4a0a0047304502206736a9b0727f75bf2532ddf7cf85f44a356f932ec90c084ab0d80fec8c22d5bf022100d04b86aaa4c7f237e76dbf7bf739373392192c658143b770e56ddfa7a76e64f9:922c64590222798bb761d5b6d8e72950

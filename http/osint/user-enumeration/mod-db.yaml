@@ -6,11 +6,14 @@ info:
   severity: info
   description: Mod DB user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:mod-db:mod-db:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: mod-db
+    product: mod-db
   tags: osint,osint-gaming,mod-db,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: mod-db
+        cpe: cpe:2.3:a:mod-db:mod-db:*:*:*:*:*:*:*:*
         part: body
         words:
           - "joined <time"
-# digest: 490a0046304402207bce5ff74de962121965878da43f967057fa5bb4b83f5b919b7cd5040c660ac102201058a872db4f52a0690f91d3cb07ede2d11219b1f7f4019f1565b6f7a61b378a:922c64590222798bb761d5b6d8e72950

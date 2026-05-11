@@ -8,10 +8,14 @@ info:
     Next JS Config file is exposed.
   reference:
     - https://nextjs.org/docs/app/api-reference/config/next-config-js
+  classification:
+    cpe: cpe:2.3:a:next-js-config-file:next-js-config-file:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"next.config.js"
+    vendor: next-js-config-file
+    product: next-js-config-file
   tags: exposure,files,nextjs,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: next-js-config-file
+        cpe: cpe:2.3:a:next-js-config-file:next-js-config-file:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'nextConfig'
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205c4508bd68905d224dd1a9f1af0dbc6bb2501d38b6ebc23fe93c2e344b4fc9550221008ddb77dfba216bfea4ab6dd019d5bb1c01fe300cb1e70552cfaf71c407fa3f6f:922c64590222798bb761d5b6d8e72950

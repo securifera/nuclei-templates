@@ -30,17 +30,23 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: raygun4js
+        cpe: cpe:2.3:a:raygun:raygun4js:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
 
       - type: dsl
+        name: raygun4js-2
+        cpe: cpe:2.3:a:raygun:raygun4js:*:*:*:*:*:*:*:*
         dsl:
           - "!contains(body, 'markdown-body')"
           - "!contains(body, 'blob-code')"
         condition: and
 
       - type: regex
+        name: raygun4js-3
+        cpe: cpe:2.3:a:raygun:raygun4js:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?m)^[^/\\n]*rg4js\\s*\\(\\s*['\"]apiKey['\"]"

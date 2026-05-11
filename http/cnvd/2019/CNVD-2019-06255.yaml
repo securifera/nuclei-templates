@@ -11,11 +11,14 @@ info:
     - https://its401.com/article/yun2diao/91344725
     - https://github.com/xwlrbh/Catfish/issues/4
   classification:
+    cpe: cpe:2.3:a:catfishcms:catfishcms:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 2
+    vendor: catfishcms
+    product: catfishcms
   tags: cnvd,cnvd2019,rce,catfishcms,vuln
 flow: http(1) && http(2)
 
@@ -26,6 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: catfishcms
+        cpe: cpe:2.3:a:catfishcms:catfishcms:*:*:*:*:*:*:*:*
         internal: true
         words:
           - 'content="Catfish CMS'
@@ -37,6 +42,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: catfishcms-2
+        cpe: cpe:2.3:a:catfishcms:catfishcms:*:*:*:*:*:*:*:*
         words:
           - 'OS'
           - 'PATH'
@@ -47,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200bb88a78ef06722f43bbe1a1157a1ae7d17bac371f2a1abc12d2902ab5e977ec022070adc044cb4038e6d63456af8c7a9b62766ac6709ebe29db1ac6e34e90813636:922c64590222798bb761d5b6d8e72950

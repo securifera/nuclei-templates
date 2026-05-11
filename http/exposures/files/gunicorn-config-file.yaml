@@ -6,10 +6,14 @@ info:
   severity: low
   description: |
     Gunicorn Config file is exposed.
+  classification:
+    cpe: cpe:2.3:a:gunicorn:gunicorn:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"gunicorn.conf.py"
+    vendor: gunicorn
+    product: gunicorn
   tags: exposure,files,gunicorn,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gunicorn
+        cpe: cpe:2.3:a:gunicorn:gunicorn:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'bind ='
@@ -28,7 +34,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: gunicorn-2
+        cpe: cpe:2.3:a:gunicorn:gunicorn:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'text/x-python'
-# digest: 490a0046304402204fc342f2e8a2626dc76575605a673eb23423b85b13eacfe143e9bfc701deb46202207136abd6fa2460c293ab08aec32730fa3b5f39f172baf956d9ef6a47edde531f:922c64590222798bb761d5b6d8e72950

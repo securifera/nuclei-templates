@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.securify.nl/en/advisory/cross-site-scripting-in-code-snippets-wordpress-plugin/
   classification:
+    cpe: cpe:2.3:a:wp-code-snippets:wp-code-snippets:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     max-request: 2
+    vendor: wp-code-snippets
+    product: wp-code-snippets
   tags: wordpress,xss,wp-plugin,authenticated,vuln
 
 http:
@@ -32,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-code-snippets
+        cpe: cpe:2.3:a:wp-code-snippets:wp-code-snippets:*:*:*:*:*:*:*:*
         part: body
         words:
           - '</script><script>alert(document.domain)</script>'
@@ -40,6 +45,8 @@ http:
         condition: and
 
       - type: word
+        name: wp-code-snippets-2
+        cpe: cpe:2.3:a:wp-code-snippets:wp-code-snippets:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -47,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202768b557c69dc2c9d33c33810c541f682bdecac4f0c9ad7ee5bb5ccd986fa6db0220345abeea1afea168f39efab7313bede3c3793929510b6d01327f32bd104bc972:922c64590222798bb761d5b6d8e72950

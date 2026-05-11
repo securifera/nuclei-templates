@@ -8,12 +8,15 @@ info:
   reference:
     - https://wpscan.com/vulnerability/de330a59-d64d-40be-86df-98997949e5e4
   classification:
+    cpe: cpe:2.3:a:wp-all-export:wp-all-export:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 2
+    vendor: wp-all-export
+    product: wp-all-export
   tags: wp-plugin,xss,wp,wordpress,authenticated,wpscan,vuln
 
 http:
@@ -33,6 +36,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-all-export
+        cpe: cpe:2.3:a:wp-all-export:wp-all-export:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'manage&a\"><script>alert(1)</script>">'
@@ -40,6 +45,8 @@ http:
         condition: and
 
       - type: word
+        name: wp-all-export-2
+        cpe: cpe:2.3:a:wp-all-export:wp-all-export:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -47,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008c7dc7607378b872ff6c9c740f4e3565c0d0d6efd35648b797baf70f0deff7ae02202dbc82fa0265ddbc6d36e03c5195a55a01ad0209f052edb5f7cdf0e7fa170cf3:922c64590222798bb761d5b6d8e72950

@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: routeros
+        cpe: cpe:2.3:o:mikrotik:routeros:*:*:*:*:*:*:*:*
         words:
           - 'If this device is not in your possession, please contact your local network
             administrator'
@@ -36,6 +38,7 @@ http:
 
       - type: word
         name: router-old
+        cpe: cpe:2.3:o:mikrotik:routeros:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>mikrotik routeros > administration</title>'
@@ -46,6 +49,7 @@ http:
 
       - type: word
         name: hotspot
+        cpe: cpe:2.3:o:mikrotik:routeros:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Please log on to use the mikrotik hotspot service'
@@ -54,6 +58,7 @@ http:
 
       - type: word
         name: mikrotik-httpproxy
+        cpe: cpe:2.3:o:mikrotik:routeros:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Server: mikrotik httpproxy"
@@ -66,4 +71,3 @@ http:
           - '<div class="top">mikrotik routeros (.[0-9.]+) configuration page</div>'
           - 'routeros (.[0-9.]+) '
           - '<b>MikroTik RouterOS (.[0-9.]+)</b>'
-# digest: 4b0a00483046022100a8d392790a8651121d64fcd9674ff58fcb0b60a86b26b3ff4c3b03113a757112022100bd796a686e4f2e1662d13768caa29a828c3ac3b7586c6449f798a777c22c3e13:922c64590222798bb761d5b6d8e72950

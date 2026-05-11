@@ -8,8 +8,12 @@ info:
     A github phishing website was detected
   reference:
     - https://github.com
+  classification:
+    cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: github
+    product: github
   tags: phishing,github,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: github
+        cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
         words:
           - 'Sign in to GitHub · GitHub'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: github-2
+        cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"github.com")'
-# digest: 4a0a0047304502200ceaa063a5040968d5681bd626b8f4b980778a18a2e46cf24ffe8029f691a51b022100b7370f134cb2a880bcd4ad56594ac29f71eda54d87dc9dc0946c7a924e23b4fe:922c64590222798bb761d5b6d8e72950

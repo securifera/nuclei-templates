@@ -10,12 +10,15 @@ info:
   reference:
     - https://about.rdap.org/
   classification:
+    cpe: cpe:2.3:a:rdap:whois:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
+    vendor: rdap
+    product: whois
   tags: miscellaneous,whois,rdap,osint,misc,vuln
 
 http:
@@ -138,4 +141,3 @@ http:
         name: secureDNS
         json:
           - '.secureDNS.delegationSigned // false'
-# digest: 4a0a004730450220787061b7c200cca80f91bab07e4a357af4868c42434bf0db5d6c8d8309f65dfb022100ef38f107e5c933ef1d727558f691764eb6a1b8bdacca866523a02a249c9e2622:922c64590222798bb761d5b6d8e72950

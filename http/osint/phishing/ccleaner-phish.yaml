@@ -8,8 +8,12 @@ info:
     A ccleaner phishing website was detected
   reference:
     - https://ccleaner.com
+  classification:
+    cpe: cpe:2.3:a:ccleaner:ccleaner:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ccleaner
+    product: ccleaner
   tags: phishing,ccleaner,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ccleaner
+        cpe: cpe:2.3:a:ccleaner:ccleaner:*:*:*:*:*:*:*:*
         words:
           - 'CCleaner Makes Your Computer Faster & More Secure | Official Website'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: ccleaner-2
+        cpe: cpe:2.3:a:ccleaner:ccleaner:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"ccleaner.com")'
-# digest: 4b0a004830460221009e251432b90995a8fce29d0dbe4c230837c039e78605f3657bdf215857378a2f022100c91eaed6967f61be8cd35aa1e54f31a2252ba41ef3e606992c3868a4ca66dc47:922c64590222798bb761d5b6d8e72950

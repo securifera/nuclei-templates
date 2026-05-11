@@ -8,8 +8,12 @@ info:
   reference:
     - https://beaglesecurity.com/blog/vulnerability/hatenablog-takeover-detection.html
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:hatenablog:hatenablog:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hatenablog
+    product: hatenablog
   tags: takeover,hatenablog,vuln
 
 http:
@@ -20,10 +24,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: hatenablog
+        cpe: cpe:2.3:a:hatenablog:hatenablog:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: hatenablog-2
+        cpe: cpe:2.3:a:hatenablog:hatenablog:*:*:*:*:*:*:*:*
         words:
           - "404 Blog is not found"
 
@@ -31,4 +39,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100eae099d542ac2a467850d1a59029ffaf171ef76920b113cf848bbc211192fec002203f9582840d040639971cbd97681bca8f51674d79c9a14bd940a9274dda1de894:922c64590222798bb761d5b6d8e72950

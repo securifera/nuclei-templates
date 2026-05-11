@@ -8,11 +8,14 @@ info:
   reference:
     - https://blog.star7th.com/2016/05/2007.html
   classification:
+    cpe: cpe:2.3:a:showdoc:showdoc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
     cvss-score: 5.8
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: showdoc
+    product: showdoc
   tags: showdoc,default-login,vuln
 
 http:
@@ -34,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: showdoc
+        cpe: cpe:2.3:a:showdoc:showdoc:*:*:*:*:*:*:*:*
         words:
           - '"username":"showdoc"'
           - '"user_token":'
@@ -42,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100fe18d60b411c1c7b6be72204ac241768d197834d51765f3a4193412e2a140e1b022100cab7b9ab9bf74e5aaed69dd93183d9b879f76e77ec207770e642979088478784:922c64590222798bb761d5b6d8e72950

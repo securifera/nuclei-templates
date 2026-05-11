@@ -4,8 +4,12 @@ info:
   name: Axis Happyaxis Exposure
   author: dogasantos
   severity: info
+  classification:
+    cpe: cpe:2.3:a:axis:axis:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
+    vendor: axis
+    product: axis
   tags: axis,axis2,middleware,exposure,apache,files,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: axis
+        cpe: cpe:2.3:a:axis:axis:*:*:*:*:*:*:*:*
         words:
           - "Axis Happiness Page"
           - "Axis2 Happiness Page"
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220799ef85d2e769c072b2ad894e5cd347e2321a434c4860ec8c55028e6fd993d0b022100decf8ad82ebf13b61bd761562a7fd30dd71168ba59aa30d60a4c4025e83dbeaa:922c64590222798bb761d5b6d8e72950

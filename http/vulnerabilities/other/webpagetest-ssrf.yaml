@@ -27,11 +27,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webpagetest
+        cpe: cpe:2.3:a:webpagetest:webpagetest:*:*:*:*:*:*:*:*
         words:
           - "File is not a JPEG Image"
 
       - type: word
+        name: webpagetest-2
+        cpe: cpe:2.3:a:webpagetest:webpagetest:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "http"
-# digest: 490a004630440220484eb1954c120ed3fa00d22042fd9a718a8d3053898c5c2bc221a881eba95eb0022007997df62b25aca2ee1aee2bcdb59a36ea32b84d1cfe16f58f3013e6374fd139:922c64590222798bb761d5b6d8e72950

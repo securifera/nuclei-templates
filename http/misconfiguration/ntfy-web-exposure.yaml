@@ -6,10 +6,14 @@ info:
   severity: medium
   description: |
     Publicly exposed NTFY web interface allowing unauthorized publish or subscribe access.
+  classification:
+    cpe: cpe:2.3:a:ntfy:web:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"ntfy.sh"
+    vendor: ntfy
+    product: web
   tags: exposure,ntfy,web,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: web
+        cpe: cpe:2.3:a:ntfy:web:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>ntfy web</title>"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206add1b9db535c00508a479b383545a581e43465a952275f0d4b0d71ae43278d0022100f168b1ee5c982d7f7e80023b8c06cbd251a4fcc54d21844346a54880c76cd8e9:922c64590222798bb761d5b6d8e72950

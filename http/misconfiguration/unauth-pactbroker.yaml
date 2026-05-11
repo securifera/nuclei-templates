@@ -10,6 +10,7 @@ info:
     - https://docs.pact.io/pact_broker
     - https://github.com/pact-foundation/pact_broker
   classification:
+    cpe: cpe:2.3:a:pactbroker:pactbroker:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     verified: true
@@ -17,6 +18,8 @@ info:
     shodan-query: 'title:"Pacts"'
     fofa-query: 'title="Pacts"'
     zoomeye-query: 'title:"Pacts"'
+    vendor: pactbroker
+    product: pactbroker
   tags: pactbroker,misconfig,unauth,pacts,vuln
 
 http:
@@ -32,6 +35,7 @@ http:
     matchers:
       - type: dsl
         name: pact-broker-title
+        cpe: cpe:2.3:a:pactbroker:pactbroker:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "<title>Pacts</title>") || contains(body, "<title>Pact Broker</title>")'
           - 'status_code == 200'
@@ -39,9 +43,9 @@ http:
 
       - type: dsl
         name: pact-broker-api
+        cpe: cpe:2.3:a:pactbroker:pactbroker:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "_links")'
           - 'contains(body, "pb:pacticipants") || contains(body, "pb:publish-pact") || contains(body, "pb:webhooks")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a004730450220086588acdd027ee7be92e009e797db8d247b1553c2b5fe15f40ba846bf63b199022100ce96959ecbd31f0bb39d3153d64cf4e2f51173a2ae3099904cd84da8371e1c60:922c64590222798bb761d5b6d8e72950

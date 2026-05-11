@@ -10,11 +10,14 @@ info:
     - https://payatu.com/blog/anubhav.singh/postmessage-vulnerabilities
     - https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
   classification:
+    cpe: cpe:2.3:a:postmessage:postmessage:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-346
   metadata:
     max-request: 1
+    vendor: postmessage
+    product: postmessage
   tags: xss,postmessage,misconfig,vuln
 
 http:
@@ -24,6 +27,7 @@ http:
 
     matchers:
       - type: regex
+        name: postmessage
+        cpe: cpe:2.3:a:postmessage:postmessage:*:*:*:*:*:*:*:*
         regex:
           - postMessage\([a-zA-Z]+,["']\*["']\)
-# digest: 490a00463044022033f0057ace389213678cfdb790c3eecbdd29268e5063ddffec3a1e622d7b9ee002200152dad8b2d53a1e785a0bf39409f70cfb3e6326ca746e027801b7c089c5909c:922c64590222798bb761d5b6d8e72950

@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vtiger_crm
+        cpe: cpe:2.3:a:vtiger:vtiger_crm:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Installation Wizard'
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: vtiger_crm-2
+        cpe: cpe:2.3:a:vtiger:vtiger_crm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100b05d8fddc7003743f2562ff18b17460c736291d73fef656481354bc076ed10670220343c6943a0886512378671d9c168e8bbe784806d9f38a587b4c3471c14cbf4e2:922c64590222798bb761d5b6d8e72950

@@ -13,6 +13,8 @@ info:
     - https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-ios-xe-zero-day-actively-exploited-in-attacks/
     - https://socradar.io/cisco-warns-of-exploitation-of-a-maximum-severity-zero-day-vulnerability-in-ios-xe-cve-2023-20198
     - https://github.com/vulncheck-oss/cisco-ios-xe-implant-scanner/blob/main/implant-scanner.go
+  classification:
+    cpe: cpe:2.3:a:cisco:ios_xe:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -37,16 +39,21 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: ios_xe
+        cpe: cpe:2.3:a:cisco:ios_xe:*:*:*:*:*:*:*:*
         part: body_1
         regex:
           - 'webui-centerpanel-title'
 
       - type: regex
+        name: ios_xe-2
+        cpe: cpe:2.3:a:cisco:ios_xe:*:*:*:*:*:*:*:*
         part: body_2
         regex:
           - '^([a-f0-9]{18})\s*$'
 
       - type: dsl
+        name: ios_xe-3
+        cpe: cpe:2.3:a:cisco:ios_xe:*:*:*:*:*:*:*:*
         dsl:
           - status_code_2 == 200
-# digest: 490a00463044022030e8dfb63625c4d993490159d4f5bd96f288558a17fdf6c527f2fefbcaee8f25022001a3d132a0222084a8d3b555742a32c6edd914e4f537dc749471606c1e99f984:922c64590222798bb761d5b6d8e72950

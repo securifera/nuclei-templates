@@ -8,8 +8,12 @@ info:
     A Seamless phishing website was detected
   reference:
     - https://seamless.com
+  classification:
+    cpe: cpe:2.3:a:seamless:seamless:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: seamless
+    product: seamless
   tags: phishing,seamless,food-delivery,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: seamless
+        cpe: cpe:2.3:a:seamless:seamless:*:*:*:*:*:*:*:*
         words:
           - "Prepare your taste buds..."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: seamless-2
+        cpe: cpe:2.3:a:seamless:seamless:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"seamless.com")'
-# digest: 4a0a0047304502206a0c327d0d7c8fc9c82805d995e45a8e5eea4d85f8dbc9771fc58a5bc5fd8d79022100912f99c8bcb6f96a9a47812113f2ef782c36920b1f17d8d979f8ffb7b00e3283:922c64590222798bb761d5b6d8e72950

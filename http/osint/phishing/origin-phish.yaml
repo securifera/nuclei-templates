@@ -8,8 +8,12 @@ info:
     An Origin phishing website was detected
   reference:
     - https://origin.com
+  classification:
+    cpe: cpe:2.3:a:origin:origin:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: origin
+    product: origin
   tags: phishing,origin,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: origin
+        cpe: cpe:2.3:a:origin:origin:*:*:*:*:*:*:*:*
         words:
           - "Explore PC video games available for download right now. Electronic Arts is a leading publisher of games for the PC, consoles, and mobile."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: origin-2
+        cpe: cpe:2.3:a:origin:origin:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"origin.com")'
-# digest: 490a0046304402203b86b45f5945bfe8aca2d9ba71ca35ae2edbbee186c6ff51123fd19f4b61c0540220634f617c742d825329bc69c3294c6fff82c8dd7af0189b3daf98b3973563808a:922c64590222798bb761d5b6d8e72950

@@ -6,9 +6,13 @@ info:
   severity: info
   description: |
     An instance running Bitrix is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+  classification:
+    cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 8
+    vendor: bitrix
+    product: bitrix
   tags: bitrix,detect,tech
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bitrix
+        cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
         part: response
         words:
           - "Powered by Bitrix"
@@ -54,4 +60,3 @@ http:
         regex:
           - 'bitrix-site-id=([a-z0-9]+)'
           - 'bitrix\.com/([^/]+)'
-# digest: 4a0a00473045022050a82a0740e574cec6cd05b97d11f98f9408ce021465c76ba7867d9a07526a4a0221009f1bc0e357d03cb7f0ae9b8802af3e6a075638461044a44a5bf4f827f96576bf:922c64590222798bb761d5b6d8e72950

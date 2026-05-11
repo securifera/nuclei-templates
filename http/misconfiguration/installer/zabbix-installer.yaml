@@ -5,6 +5,8 @@ info:
   author: DhiyaneshDK
   severity: high
   description: Zabbix is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:zabbix:zabbix:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zabbix
+        cpe: cpe:2.3:a:zabbix:zabbix:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Installation</title>'
@@ -36,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: zabbix-2
+        cpe: cpe:2.3:a:zabbix:zabbix:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -43,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fb9e7c25330c1352576a933c8fd01856765f4a2d73292977821b20ff9d349be502202f4a415b7fc7664a09495100cee6aebf5cb50bce3bb9fa6a373268bccdae3f63:922c64590222798bb761d5b6d8e72950

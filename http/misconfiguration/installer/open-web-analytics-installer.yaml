@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Open Web Analytics is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:open-web-analytics:open-web-analytics:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"OWA CONFIG SETTINGS"
+    vendor: open-web-analytics
+    product: open-web-analytics
   tags: misconfig,open-web-analytics,install,exposure,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: open-web-analytics
+        cpe: cpe:2.3:a:open-web-analytics:open-web-analytics:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Installation - Open Web Analytics'
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022061213f8ffe0a9c34c546e7ceb28fa9f3e61d9332aa99924a8af504baa9ad5b95022100aba5b7b0e70262b478ebf1fc727e2fb91cc3b23cac0d7a4d5237683f3a0d9143:922c64590222798bb761d5b6d8e72950

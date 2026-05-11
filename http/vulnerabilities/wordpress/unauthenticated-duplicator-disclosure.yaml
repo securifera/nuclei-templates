@@ -6,9 +6,13 @@ info:
   severity: medium
   description: |
     Unauthenticated Information disclosure of Duplicator WordPress plugin sensitive files.
+  classification:
+    cpe: cpe:2.3:a:unauthenticated-duplicator:unauthenticated-duplicator:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: unauthenticated-duplicator
+    product: unauthenticated-duplicator
   tags: wordpress,wp,wp-plugin,misconfig,disclosure,unauth,exposure,vuln
 
 http:
@@ -22,11 +26,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: unauthenticated-duplicator
+        cpe: cpe:2.3:a:unauthenticated-duplicator:unauthenticated-duplicator:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Index of /wp-content/backups-dup-lite/'
 
       - type: word
+        name: unauthenticated-duplicator-2
+        cpe: cpe:2.3:a:unauthenticated-duplicator:unauthenticated-duplicator:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -34,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a86e3ea149abc0e2d519b72c1d59dea4410f58b714f3cc312c393eb893f66b6f022100d47823637278ad0240067946bfc5b38d10f4b2b24619cffb0b522ec9958be419:922c64590222798bb761d5b6d8e72950

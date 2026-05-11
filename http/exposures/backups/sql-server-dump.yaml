@@ -7,11 +7,14 @@ info:
   description: |
     A SQL Server dump file was found
   classification:
+    cpe: cpe:2.3:a:sql-server:sql-server:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 21
+    vendor: sql-server
+    product: sql-server
   tags: exposure,backup,sql-server,vuln
 
 http:
@@ -51,6 +54,8 @@ http:
     matchers-condition: and
     matchers:
       - type: binary
+        name: sql-server
+        cpe: cpe:2.3:a:sql-server:sql-server:*:*:*:*:*:*:*:*
         part: body
         binary:
           - "54415045" # Microsoft Tape Format
@@ -58,4 +63,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204c0eacdb4512e9f3f8dfe3e2c810e9ee7e333949d454ea265668b428da147d64022100a7700e77f6374ffcb80fd9b62b3f0f99b2f754b7a8fe5fae7eea24de218cb5ac:922c64590222798bb761d5b6d8e72950

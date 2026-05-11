@@ -6,6 +6,7 @@ info:
   severity: medium
   description: AppVeyor configuration page was detected.
   classification:
+    cpe: cpe:2.3:a:appveyor-configuration-file:appveyor-configuration-file:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: html:"appveyor.yml"
+    vendor: appveyor-configuration-file
+    product: appveyor-configuration-file
   tags: config,exposure,devops,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: appveyor-configuration-file
+        cpe: cpe:2.3:a:appveyor-configuration-file:appveyor-configuration-file:*:*:*:*:*:*:*:*
         words:
           - "install:"
           - "test_script:"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204c2e3b5613dd63074e76140681c559af0a8539b24bd9fc1365fdc490892e0da2022100a0d04068e7414417a24f6da070bd8d6d0c0225b5848588c6ab7ba0fa02e86b37:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A CJ Pony Parts phishing website was detected
   reference:
     - https://cjponyparts.com
+  classification:
+    cpe: cpe:2.3:a:cj-pony-parts:cj-pony-parts:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: cj-pony-parts
+    product: cj-pony-parts
   tags: phishing,cj-pony-parts,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cj-pony-parts
+        cpe: cpe:2.3:a:cj-pony-parts:cj-pony-parts:*:*:*:*:*:*:*:*
         words:
           - 'Empowering enthusiasts to build their dream vehicles with top aftermarket parts for Ford Mustangs, Broncos, Focus STs, F-100s, and Chevy C10s. Shop now!'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: cj-pony-parts-2
+        cpe: cpe:2.3:a:cj-pony-parts:cj-pony-parts:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"cjponyparts.com")'
-# digest: 4b0a00483046022100becc9f4d727068a16aba206aeca6152a121207d2a337570f6989c745e64925f7022100e29c4edbfaac4bfdd9748758466cde9ee9fd0ceb0fae63c6e2d4da004131f338:922c64590222798bb761d5b6d8e72950

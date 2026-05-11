@@ -11,11 +11,14 @@ info:
     - https://twitter.com/sec715/status/1415484190561161216
     - https://github.com/YMFE/yapi
   classification:
+    cpe: cpe:2.3:a:yapi:yapi:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 7
+    vendor: yapi
+    product: yapi
   tags: yapi,rce,intrusive,vuln
 
 http:
@@ -83,6 +86,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: yapi
+        cpe: cpe:2.3:a:yapi:yapi:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
         part: body
@@ -90,4 +95,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022059d2862edc76722e354d3a77b190a976203b0a72dd21b9a73cf821c242afdb3c02204d9bfac1231ba411b873d063d76f2df53f81904dc0eba6e59424545cb8a5e86b:922c64590222798bb761d5b6d8e72950

@@ -5,8 +5,12 @@ info:
   author: _generic_human_
   severity: info
   description: Detection of SAP Internet Graphics Server (IGS)
+  classification:
+    cpe: cpe:2.3:a:sap:internet_graphics_server:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sap
+    product: internet_graphics_server
   tags: sap,tech,igs,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: internet_graphics_server
+        cpe: cpe:2.3:a:sap:internet_graphics_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SAP IGS"
@@ -31,6 +37,8 @@ http:
           - 200
 
       - type: word
+        name: internet_graphics_server-2
+        cpe: cpe:2.3:a:sap:internet_graphics_server:*:*:*:*:*:*:*:*
         part: header
         words:
           - "SAP Internet Graphics Server"
@@ -40,4 +48,3 @@ http:
         part: header
         kval:
           - "Server"
-# digest: 4a0a004730450221008b47366d3acfbaffacd6a76a71730ad14b457eac572641f8b218bbf524bcaf840220590ceb9554428f0f0adcfdc342d449aa6ed4c872c4a3de6240bc03becd652b35:922c64590222798bb761d5b6d8e72950

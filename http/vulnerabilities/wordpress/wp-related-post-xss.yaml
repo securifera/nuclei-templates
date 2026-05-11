@@ -9,9 +9,13 @@ info:
   reference:
     - https://huntr.dev/bounties/7c9bd2d2-2a6f-420c-a45e-716600cf810e/
     - https://wordpress.org/plugins/wordpress-23-related-posts-plugin/advanced/
+  classification:
+    cpe: cpe:2.3:a:wp-related-post:wp-related-post:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: wp-related-post
+    product: wp-related-post
   tags: wp-plugin,xss,relatedposts,authenticated,huntr,wordpress,wp,vuln
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-related-post
+        cpe: cpe:2.3:a:wp-related-post:wp-related-post:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<img src=x onerror=alert(document.domain)>&action=edit'
@@ -36,6 +42,8 @@ http:
         condition: and
 
       - type: word
+        name: wp-related-post-2
+        cpe: cpe:2.3:a:wp-related-post:wp-related-post:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -43,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022063f6ae655108d5992e796ddaad90f57388cc29fd42b5eb6e6bebbb074f9a8e7e02200e544a3cb8cde401ec71773f58e1a281c301df2eadf4b968afcc90b3815ce1cd:922c64590222798bb761d5b6d8e72950

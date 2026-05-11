@@ -9,11 +9,14 @@ info:
     - https://github.com/Strider-CD/strider
     - https://strider-cd.github.io
   classification:
+    cpe: cpe:2.3:a:stridercd:stridercd:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:115295460
+    vendor: stridercd
+    product: stridercd
   tags: panel,cicd,oss,stridercd,strider,discovery
 
 http:
@@ -25,6 +28,7 @@ http:
     max-redirects: 2
     matchers:
       - type: word
+        name: stridercd
+        cpe: cpe:2.3:a:stridercd:stridercd:*:*:*:*:*:*:*:*
         words:
           - "Strider: Brilliant Continuous Deployment"
-# digest: 4a0a00473045022003b91d2c562b98b31c04342c82d2968e86be741e3e4f109c5760d0ede80a0a74022100a17c088881a615172df071ac093feccc9bff648101c640b864c6d6e8f23cb034:922c64590222798bb761d5b6d8e72950

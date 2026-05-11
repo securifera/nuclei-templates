@@ -5,8 +5,12 @@ info:
   author: geeknik
   severity: high
   description: Docker registry authentication data
+  classification:
+    cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: docker
+    product: docker
   tags: docker,exposure,config,vuln
 
 http:
@@ -18,12 +22,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: docker
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         words:
           - '"email":'
           - '"auth":'
         condition: and
 
       - type: word
+        name: docker-2
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -31,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202d88d2fba39b1502b5ce7dfd3eff7ecc0f4d4276932fed23e188b9db063e936f022100a89f3f600c321f39f6dc381f4ba92baafbdc60faa9e00024595de3766b51c28b:922c64590222798bb761d5b6d8e72950

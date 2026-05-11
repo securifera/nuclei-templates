@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Moxa OnCell VPN panel was discovered.
+  classification:
+    cpe: cpe:2.3:a:vpn:vpn:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: http.favicon.hash:-234487373
     verified: true
     max-request: 1
+    vendor: vpn
+    product: vpn
   tags: moxo,oncel,vpn,login,panel,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vpn
+        cpe: cpe:2.3:a:vpn:vpn:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Moxa OnCell'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200fa26488b0bc4de955e55f195b80600d882c890a69352a8ce6565c6bb94bd165022100f97a5e1e3ca8ee5c567489b2401833c99ca7fe5f27bde7970f600a69f659ec57:922c64590222798bb761d5b6d8e72950

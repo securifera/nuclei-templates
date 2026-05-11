@@ -5,8 +5,12 @@ info:
   author: sharath
   severity: info
   description: Scans for kube deployments
+  classification:
+    cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kubernetes
+    product: kubernetes
   tags: tech,k8s,kubernetes,devops,kube,discovery
 
 http:
@@ -21,9 +25,10 @@ http:
           - 200
 
       - type: word
+        name: kubernetes
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"DeploymentList":'
           - '"items":'
         condition: and
-# digest: 490a00463044022020f1d0c0c0cac1cdb874a5abaa2ff64f6ea9c7781ec88acd987a518cd2d9ff1502206f5ed1f1887702cf6ee99cf562b0e28f8a703e753fad528351c8225dc010191f:922c64590222798bb761d5b6d8e72950

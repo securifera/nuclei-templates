@@ -22,6 +22,8 @@ http:
 
     matchers:
       - type: dsl
+        name: active-management-technology
+        cpe: cpe:2.3:a:intel:active-management-technology:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(tolower(header), "intel", "active management technology")'

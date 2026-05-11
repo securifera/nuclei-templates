@@ -14,6 +14,7 @@ info:
     - https://rhinosecuritylabs.com/research/infoblox-multiple-cves/
     - https://nvd.nist.gov/vuln/detail/CVE-2013-0156
   classification:
+    cpe: cpe:2.3:a:infoblox:netmri:*:*:*:*:*:*:*:*
     cwe-id: CWE-502
   metadata:
     verified: true
@@ -45,8 +46,9 @@ http:
 
     matchers:
       - type: dsl
+        name: netmri
+        cpe: cpe:2.3:a:infoblox:netmri:*:*:*:*:*:*:*:*
         dsl:
           - "contains(interactsh_protocol, 'dns')"
           - "status_code == 500"
         condition: and
-# digest: 4b0a00483046022100f001015ca924682846f9f489d40b6cd83778c143e6d1f992cbe9c27d11bc7265022100a0f40024496d5492d9bb477a2e8854edcfad95f3f19595e8ea7acff4e88a81ea:922c64590222798bb761d5b6d8e72950

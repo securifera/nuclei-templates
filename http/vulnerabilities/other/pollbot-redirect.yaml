@@ -9,11 +9,14 @@ info:
     - https://bugzilla.mozilla.org/show_bug.cgi?id=1753838
     - https://github.com/mozilla/PollBot
   classification:
+    cpe: cpe:2.3:a:pollbot:pollbot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     max-request: 1
+    vendor: pollbot
+    product: pollbot
   tags: redirect,mozilla,pollbot,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: pollbot
+        cpe: cpe:2.3:a:pollbot:pollbot:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)interact\.sh\/?(\/|[^.].*)?$' # https://regex101.com/r/L403F0/1
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 301
-# digest: 4b0a004830460221008829e4393787cd68e62dda5d75ff738fd3ba8e59d49cbb160602cab3863523bc022100c6260e6785fa38ad59a2a014f25eff31b62f9f73cded38ab707a4d78017c8191:922c64590222798bb761d5b6d8e72950

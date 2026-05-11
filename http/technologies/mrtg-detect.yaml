@@ -7,8 +7,12 @@ info:
   description: The Multi Router Traffic Grapher
   reference:
     - https://oss.oetiker.ch/mrtg/
+  classification:
+    cpe: cpe:2.3:a:mrtg:mrtg:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
+    vendor: mrtg
+    product: mrtg
   tags: tech,mrtg,discovery
 
 http:
@@ -27,9 +31,10 @@ http:
           - 200
 
       - type: word
+        name: mrtg
+        cpe: cpe:2.3:a:mrtg:mrtg:*:*:*:*:*:*:*:*
         part: body
         words:
           - "MRTG Index Page"
           - "Multi Router Traffic Grapher"
         condition: and
-# digest: 490a004630440220025db903fc18600f456e2a5dd2dde64e3efeeca0aebc7ab592a413aa85fdbcba022041e348804e4d16ffee14145590137117808c73978590afc38f122e651e2519f6:922c64590222798bb761d5b6d8e72950

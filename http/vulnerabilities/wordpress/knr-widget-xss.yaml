@@ -9,12 +9,15 @@ info:
   reference:
     - https://wordpress.org/plugins/knr-author-list-widget/
   classification:
+    cpe: cpe:2.3:a:knr-widget:knr-widget:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 1
+    vendor: knr-widget
+    product: knr-widget
   tags: xss,knr-author-list-widget,wordpress,wp,wp-plugin,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: knr-widget
+        cpe: cpe:2.3:a:knr-widget:knr-widget:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'item: <script>alert(document.domain)</script>'
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: knr-widget-2
+        cpe: cpe:2.3:a:knr-widget:knr-widget:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f44368dc9c0cc1b0799e6ca23ab4961c42d1dcf3f72e453829d4a68347d7844402201cd321c695419da569a1646f5e3f20acab707cd8829cab1c291e390f4cd6ab60:922c64590222798bb761d5b6d8e72950

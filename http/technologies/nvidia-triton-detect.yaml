@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: triton
+        cpe: cpe:2.3:a:nvidia:triton:*:*:*:*:*:*:*:*
         words:
           - "{\"name\":\"triton\","
           - "\"extensions\""

@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.panabit.com/cn/product/iXCache/
   classification:
+    cpe: cpe:2.3:a:ixcache:ixcache:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     fofa-query: app="iXCache"
+    vendor: ixcache
+    product: ixcache
   tags: ixcache,panel,discovery
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ixcache
+        cpe: cpe:2.3:a:ixcache:ixcache:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>iXCache</title>'
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 490a004630440220533d97c77dff9cec5dd1ec551acf39d6ff9963e3cbb333799c1e5710478bfa1f022060c96af9c112e293d70c96583121471711a02ef69db4a084d2b9faf8f6bceadb:922c64590222798bb761d5b6d8e72950

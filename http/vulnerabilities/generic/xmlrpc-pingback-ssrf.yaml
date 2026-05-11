@@ -8,9 +8,12 @@ info:
   reference:
     - https://hackerone.com/reports/406387
   classification:
+    cpe: cpe:2.3:a:xmlrpc:xmlrpc:*:*:*:*:*:*:*:*
     cwe-id: CWE-918
   metadata:
     max-request: 1
+    vendor: xmlrpc
+    product: xmlrpc
   tags: xmlrpc,hackerone,ssrf,generic,vuln
 
 http:
@@ -32,7 +35,8 @@ http:
 
     matchers:
       - type: word
+        name: xmlrpc
+        cpe: cpe:2.3:a:xmlrpc:xmlrpc:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "http"
-# digest: 490a004630440220078c158831ae48f7483e90f2652096a665d9e57aef745a0643289032a0015d6a0220127422cad9d2cf0cf0aa443db46e13710bfdeea1f0ce8f0cd0798ab9502525e6:922c64590222798bb761d5b6d8e72950

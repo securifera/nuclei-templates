@@ -8,8 +8,12 @@ info:
     A Loom phishing website was detected
   reference:
     - https://loom.com
+  classification:
+    cpe: cpe:2.3:a:loom:loom:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: loom
+    product: loom
   tags: phishing,loom,video,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: loom
+        cpe: cpe:2.3:a:loom:loom:*:*:*:*:*:*:*:*
         words:
           - 'Best free online screen recording tool with advanced video editing and video storage trusted by over 22 million people and easy sharing from Loom.com." property="og:description"/><meta content="Best free online screen recording tool with advanced video editing and video storage trusted by over 22 million people and easy sharing from Loom.com.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: loom-2
+        cpe: cpe:2.3:a:loom:loom:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"loom.com")'
-# digest: 4b0a0048304602210087c3c9207e0d8900301cc07ca808e8633bfd597bf0180c6685e3293bb854bf94022100e053132079af5303a58722cde82ea646dba4fad14d31b66791dfed35dc9c8376:922c64590222798bb761d5b6d8e72950

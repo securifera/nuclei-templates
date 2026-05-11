@@ -9,10 +9,14 @@ info:
   impact: This could lead to unauthorized access to sensitive files, including system configurations, credentials, or other critical information.
   reference:
     - https://www.exploit-db.com/exploits/45065
+  classification:
+    cpe: cpe:2.3:a:geovision:geovision:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "Server:Cross Web Server"
+    vendor: geovision
+    product: geovision
   tags: geovision,lfi,cross-web,webclient,iot,vuln
 
 http:
@@ -23,9 +27,10 @@ http:
 
     matchers:
       - type: dsl
+        name: geovision
+        cpe: cpe:2.3:a:geovision:geovision:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "root:$")'
           - 'contains(content_type, "application/octet-stream")'
         condition: and
-# digest: 4a0a00473045022100fe4d53dfc652e7f43e3ae18033b163958edf7c7850d6e73c0322ac6d7e6f6fa002201209c5ee03b0d9c385abc4fd63dec13cf3c2e56ef3d439c7d0419baa3efbc304:922c64590222798bb761d5b6d8e72950

@@ -10,11 +10,14 @@ info:
     - https://docs.coveralls.io/ci-services
     - https://coveralls-python.readthedocs.io/en/latest/usage/configuration.html
   classification:
+    cpe: cpe:2.3:a:coveralls:coveralls:*:*:*:*:*:*:*:*
     cwe-id: CWE-538
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:".coveralls.yml"
+    vendor: coveralls
+    product: coveralls
   tags: exposure,config,coveralls,token,misconfig
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: coveralls
+        cpe: cpe:2.3:a:coveralls:coveralls:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "len(body) > 30"
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: coveralls-2
+        cpe: cpe:2.3:a:coveralls:coveralls:*:*:*:*:*:*:*:*
         part: body
         words:
           - "repo_token"
@@ -39,6 +46,8 @@ http:
         condition: or
 
       - type: word
+        name: coveralls-3
+        cpe: cpe:2.3:a:coveralls:coveralls:*:*:*:*:*:*:*:*
         part: response
         words:
           - "MongoDB over HTTP on the native"
@@ -54,4 +63,3 @@ http:
           - "image/"
           - "Response xmlns"
         negative: true
-# digest: 490a0046304402201311ebe9d74b819eb829078585ada0a0c51360d45a73b240c2215a4baba0142d02205bda2a8ff291c59f602d1b044e732eda9bc6a471b5bfa3ef43a2b11436bf257f:922c64590222798bb761d5b6d8e72950

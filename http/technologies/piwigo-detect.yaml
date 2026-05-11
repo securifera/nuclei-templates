@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: piwigo
+        cpe: cpe:2.3:a:piwigo:piwigo:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'piwigo.org">Piwigo</a>'

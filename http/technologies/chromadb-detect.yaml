@@ -31,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: chromadb
+        cpe: cpe:2.3:a:chroma-core:chromadb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "nanosecond heartbeat"
 
       - type: dsl
+        name: chromadb-2
+        cpe: cpe:2.3:a:chroma-core:chromadb:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains(content_type, "application/json")

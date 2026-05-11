@@ -8,8 +8,12 @@ info:
     A Revolut phishing website was detected
   reference:
     - https://revolut.com
+  classification:
+    cpe: cpe:2.3:a:revolut:revolut:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: revolut
+    product: revolut
   tags: phishing,revolut,fintech,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: revolut
+        cpe: cpe:2.3:a:revolut:revolut:*:*:*:*:*:*:*:*
         words:
           - 'Revolut'
           - 'Log in'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: revolut-2
+        cpe: cpe:2.3:a:revolut:revolut:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"revolut.com")'
-# digest: 490a00463044022078997af27dd80215f9e1bc1c9f9d3c844877659bb76b026379ed272ffc602e2e022009a00cb33afcce55de5f44fe3931c060ab7fbb35bdd1ea8e2a19ed639a10ccf9:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Starz phishing website was detected
   reference:
     - https://starz.com
+  classification:
+    cpe: cpe:2.3:a:starz:starz:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: starz
+    product: starz
   tags: phishing,starz,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: starz
+        cpe: cpe:2.3:a:starz:starz:*:*:*:*:*:*:*:*
         words:
           - 'Starz'
           - 'STARZ brings diverse perspectives to life through bold storytelling. Sign-up to stream original series, movies, extras, and more—on-demand and ad-free.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: starz-2
+        cpe: cpe:2.3:a:starz:starz:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"starz.com")'
-# digest: 4a0a00473045022100a1062ff3ce88b88bef809c1ed892c0fe13da216d5b71db7eb0b013dac4287acb0220070615d52dda23d4660f8996bfc1516ef24822cd57bc2b148ab065cb87b273d3:922c64590222798bb761d5b6d8e72950

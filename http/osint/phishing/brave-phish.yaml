@@ -8,8 +8,12 @@ info:
     A brave phishing website was detected
   reference:
     - https://brave.com
+  classification:
+    cpe: cpe:2.3:a:brave:brave:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: brave
+    product: brave
   tags: phishing,brave,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: brave
+        cpe: cpe:2.3:a:brave:brave:*:*:*:*:*:*:*:*
         words:
           - 'Brave Browser Download | Brave'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: brave-2
+        cpe: cpe:2.3:a:brave:brave:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"brave.com")'
-# digest: 4a0a00473045022100f779d44971388a44a5238cb7ac5ce1e42372e1a77f79e8db2b7975ebb8e5975902205db21517f3195ad4f8be7df5c529d68db4219620e2ebd847d661c84cc8da3854:922c64590222798bb761d5b6d8e72950

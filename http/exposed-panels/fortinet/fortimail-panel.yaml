@@ -31,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fortimail
+        cpe: cpe:2.3:a:fortinet:fortimail:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>FortiMail</title>'
@@ -38,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d4d383bd4646b4538621fd5dc2b6d2da9f62b16597572959cf61329dc12046bb022100971b79e343d0f63de4c51c8f2173a1bb82889bb51805994b7c16173093e4655c:922c64590222798bb761d5b6d8e72950

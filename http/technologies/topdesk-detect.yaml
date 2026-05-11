@@ -6,11 +6,15 @@ info:
   severity: info
   description: |
     Detects the use of TOPdesk, a web-based IT service management (ITSM) and helpdesk platform. Identification is based on unique page titles, HTML patterns.
+  classification:
+    cpe: cpe:2.3:a:topdesk:topdesk:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-requests: 1
     shodan-query: html:"TOPdesk"
     fofa-query: app="TOPdesk"
+    vendor: topdesk
+    product: topdesk
   tags: topdesk,tech,detect,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: topdesk
+        cpe: cpe:2.3:a:topdesk:topdesk:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'href="/tas/'
@@ -43,4 +49,3 @@ http:
       - type: dsl
         dsl:
           - '"Release date: " + date_time("%Y-%M-%D", extracted_unix_timestamp)'
-# digest: 4a0a00473045022100e9539d96985a5fb4f167627dd714e4bc109a79cfd90a18e98b7d8638c3bc2ae7022025609dcec3cc79dc7f7d7d26504b50e092e4b0db253d9fa69a23ba6a93dc07d2:922c64590222798bb761d5b6d8e72950

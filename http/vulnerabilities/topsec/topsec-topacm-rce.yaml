@@ -10,11 +10,14 @@ info:
     - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/TRXController.java
     - https://github.com/Phuong39/2022-HW-POC/blob/main/天融信-上网行为管理系统RCE.md
   classification:
+    cpe: cpe:2.3:a:topsec:topacm:*:*:*:*:*:*:*:*
     cwe-id: CWE-78
   metadata:
     verified: true
     max-request: 2
     fofa-query: body="ActiveXObject" && body="dkey_login" && body="repeat-x"
+    vendor: topsec
+    product: topacm
   tags: rce,topsec,topacm,intrusive,vuln
 
 http:
@@ -29,11 +32,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: topacm
+        cpe: cpe:2.3:a:topsec:topacm:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - "{{randstr}}"
 
       - type: word
+        name: topacm-2
+        cpe: cpe:2.3:a:topsec:topacm:*:*:*:*:*:*:*:*
         part: header_2
         words:
           - text/plain
@@ -42,4 +49,3 @@ http:
         part: header_2
         status:
           - 200
-# digest: 4a0a00473045022041f43bb4dd4db98acffa1e9a93bae85b5c15dfbac2478830592937164e45ce66022100dadd992ec7541c9cafd841caf8192267dce72ccf07bebd66d149dc571f8b62a1:922c64590222798bb761d5b6d8e72950

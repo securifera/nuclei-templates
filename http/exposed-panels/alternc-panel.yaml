@@ -7,10 +7,13 @@ info:
   description: |
     AlternC Desktop panel was detected.
   classification:
+    cpe: cpe:2.3:a:alternc:alternc:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"AlternC Desktop"
+    vendor: alternc
+    product: alternc
   tags: panel,alternc,login,detect,discovery
 
 http:
@@ -20,8 +23,9 @@ http:
 
     matchers:
       - type: dsl
+        name: alternc
+        cpe: cpe:2.3:a:alternc:alternc:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "<title>AlternC Desktop")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100e45f19e5d74cf053ff5e1bf56a11d0ba16bbcf2ac9f9ef102e575b269cd6ebb10220166f8949a351ce1baf5925464a5455f087168bfb71c20a9b321b3e293437e622:922c64590222798bb761d5b6d8e72950

@@ -6,9 +6,13 @@ info:
   severity: high
   description: |
     Detects exposed Google API keys and verifies access to the Gemini Files API endpoint. Exploitation can result in unauthorized data exposure, quota exhaustion, and potential financial loss.
+  classification:
+    cpe: cpe:2.3:a:google:google:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
+    vendor: google
+    product: google
   tags: exposure,google,apikey,gemini
 
 http:
@@ -30,9 +34,10 @@ http:
 
     matchers:
       - type: dsl
+        name: google
+        cpe: cpe:2.3:a:google:google:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - '!contains(body, "error")'
           - '!status_code == 403'
         condition: and
-# digest: 490a00463044022013e16f4f16e6b1ea7e1a61d64179ebdaa3eddfe6421eb9b46436e1c1014ee49902206d7a9a4846fc634386e0df9efa64b931d0e77828500de067d67560fc73601514:922c64590222798bb761d5b6d8e72950

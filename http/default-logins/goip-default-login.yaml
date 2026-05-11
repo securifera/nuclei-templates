@@ -11,12 +11,15 @@ info:
     - https://medium.com/@hackatnow/how-to-create-a-python-script-to-find-goip-gsm-gateway-on-shodan-and-send-sms-ussd-via-goip-e2e203f5d339
     - https://www.voip-systems.ru/assets/files/voip/voip-gsm/User_Manual_1_4_8_16.pdf
   classification:
+    cpe: cpe:2.3:a:goip:goip:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 12
     shodan-query: 'HTTP/1.0 401 Please Authenticate\r\nWWW-Authenticate: Basic realm="Please Login"'
+    vendor: goip
+    product: goip
   tags: default-login,goip,gsm,vuln
 
 http:
@@ -43,6 +46,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: goip
+        cpe: cpe:2.3:a:goip:goip:*:*:*:*:*:*:*:*
         words:
           - "Status"
           - "GoIP"
@@ -53,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022074037455479f69b573c31b8d5a5ebec7cf47583f21d4c85c0776ee49a94c74a8022100a634ba39b743499c36382902ef1c3f60fe18298be23e5b7bc37ce77cc0b43cb6:922c64590222798bb761d5b6d8e72950

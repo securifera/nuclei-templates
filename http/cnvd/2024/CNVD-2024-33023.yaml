@@ -9,10 +9,14 @@ info:
   reference:
     - https://cap.oyg.cn/detail/431168
     - https://github.com/wy876/POC/blob/main/%E7%94%A8%E5%8F%8BOA/%E7%94%A8%E5%8F%8BU8-Cloud%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3ReleaseRepMngAction%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0(CNVD-2024-33023).md
+  classification:
+    cpe: cpe:2.3:a:yonyou:u8_cloud:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: title=="U8C"
+    vendor: yonyou
+    product: u8_cloud
   tags: cnvd,cnvd2024,yonyou,u8-cloud,sqli,time-based-sqli,vuln
 
 http:
@@ -24,10 +28,11 @@ http:
 
     matchers:
       - type: dsl
+        name: u8_cloud
+        cpe: cpe:2.3:a:yonyou:u8_cloud:*:*:*:*:*:*:*:*
         dsl:
           - 'duration>=6'
           - 'status_code == 200'
           - 'contains(body,"iUFO")'
           - 'contains(content_type,"text/html")'
         condition: and
-# digest: 4a0a00473045022100e3025db692a4764e3f24414ac5be89ef918cf4bc669c672c287a1a8cabee99fe02201c2bcc2c5d9454cf012f124d5a4425882fba446b9bddc85a4e5a72de4e26ef16:922c64590222798bb761d5b6d8e72950

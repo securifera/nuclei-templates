@@ -8,10 +8,14 @@ info:
     Exposed MeteoBridge devices by identifying their unique HTTP response patterns.
   reference:
     - https://www.meteobridge.com
+  classification:
+    cpe: cpe:2.3:a:smartbedded:meteobridge:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "meteobridge"
+    vendor: smartbedded
+    product: meteobridge
   tags: meteobridge,tech,detect,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: meteobridge
+        cpe: cpe:2.3:a:smartbedded:meteobridge:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'Basic realm="MeteoBridge"'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 401
-# digest: 4a0a00473045022034c046e099867e18f51e0a05bc596f49878c9bcecc31e7302950b5e0bf1942cd022100cfe76e43b87e41b1675867de65e9ccd7d69436e6e545a6bb769599788320b5b7:922c64590222798bb761d5b6d8e72950

@@ -11,12 +11,15 @@ info:
   reference:
     - https://github.com/NoiseByNorthwest/php-spx
   classification:
+    cpe: cpe:2.3:a:spx:spx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     verified: true
     max-request: 11
+    vendor: spx
+    product: spx
   tags: spx-php,debug,misconfig,spx,vuln
 
 http:
@@ -43,6 +46,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: spx
+        cpe: cpe:2.3:a:spx:spx:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>SPX Control Panel</title>'
@@ -51,6 +56,8 @@ http:
         condition: and
 
       - type: word
+        name: spx-2
+        cpe: cpe:2.3:a:spx:spx:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -58,4 +65,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203d46d1ced3e1dac8ca9b8eb2520ab0eabaa4f2f9c9a237219093d1586e8835900221008a3e4f8cbb19af20ac468f0153fa45e10aaa18e4b66d1ef84e8a0c240f0b37cd:922c64590222798bb761d5b6d8e72950

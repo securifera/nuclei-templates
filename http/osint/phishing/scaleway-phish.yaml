@@ -8,8 +8,12 @@ info:
     A Scaleway phishing website was detected
   reference:
     - https://scaleway.com
+  classification:
+    cpe: cpe:2.3:a:scaleway:scaleway:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: scaleway
+    product: scaleway
   tags: phishing,scaleway,cloud,hosting,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: scaleway
+        cpe: cpe:2.3:a:scaleway:scaleway:*:*:*:*:*:*:*:*
         words:
           - '<title>European. Cloud. AI. | Scaleway'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: scaleway-2
+        cpe: cpe:2.3:a:scaleway:scaleway:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"scaleway.com")'
-# digest: 4a0a00473045022100f03b1143d058d7ac5c638530544169e05722f23cebc9ca683571ed60543ba374022065bc70cd4fcc478303f207e6a5104f8b4d6a533b580280cc10d6c7b48be165e8:922c64590222798bb761d5b6d8e72950

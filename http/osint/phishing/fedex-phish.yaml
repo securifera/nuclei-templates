@@ -8,8 +8,12 @@ info:
     A FedEx phishing website was detected
   reference:
     - https://fedex.com
+  classification:
+    cpe: cpe:2.3:a:fedex:fedex:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: fedex
+    product: fedex
   tags: phishing,fedex,shipping,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fedex
+        cpe: cpe:2.3:a:fedex:fedex:*:*:*:*:*:*:*:*
         words:
           - 'FedEx'
           - '<title>Track &amp; Ship Online or Find Nearby Locations | FedEx'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: fedex-2
+        cpe: cpe:2.3:a:fedex:fedex:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"fedex.com")'
-# digest: 4a0a004730450221008fec953cbbd2718fa4b5bb08d2c56abbe45de613a8f19b43238f200432b2b7e2022012769f217d6d69fe78924d8082bb3e41e9de0ee901ec603029d12010bcae85a8:922c64590222798bb761d5b6d8e72950

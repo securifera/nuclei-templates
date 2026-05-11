@@ -5,8 +5,12 @@ info:
   author: Shine
   severity: medium
   description: Kibana is exposed.
+  classification:
+    cpe: cpe:2.3:a:kibana:kibana:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
+    vendor: kibana
+    product: kibana
   tags: kibana,unauth,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kibana
+        cpe: cpe:2.3:a:kibana:kibana:*:*:*:*:*:*:*:*
         words:
           - 'kibanaWelcomeView'
           - 'kibanaWelcomeLogo'
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ca1bfeb861031d5668b3230180b95b94850970b41f04664245b538a7e0aebdcc02207b4e2bbd772c2e2396a107d3bb93185ee9f482da6428e59972da34857189bb25:922c64590222798bb761d5b6d8e72950

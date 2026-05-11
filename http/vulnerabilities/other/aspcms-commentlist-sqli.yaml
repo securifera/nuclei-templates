@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/cms/AspCMS/AspCMS%20commentList.asp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:
+    cpe: cpe:2.3:a:aspcms:aspcms:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="ASPCMS"
+    vendor: aspcms
+    product: aspcms
   tags: aspcms,sqli,unauth,vuln
 
 http:
@@ -29,8 +32,9 @@ http:
           - "<div class=\"line2\">(.*?)</div>"
     matchers:
       - type: dsl
+        name: aspcms
+        cpe: cpe:2.3:a:aspcms:aspcms:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1 == 200"
           - "contains(body,'clistbox') && contains(body,'UserID,GroupID,LoginName,Password')"
         condition: and
-# digest: 4a0a00473045022100b6cb6beed88a2dd901c401f23ce544a582694318eb7b31f54a864cfdb07f1d7902205947f55b1b84b853fdef7f68a05d61ed599b3f9e81de0949686a595b09ad4967:922c64590222798bb761d5b6d8e72950

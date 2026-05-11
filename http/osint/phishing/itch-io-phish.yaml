@@ -8,8 +8,12 @@ info:
     An itch.io phishing website was detected
   reference:
     - https://itch.io
+  classification:
+    cpe: cpe:2.3:a:itch-io:itch-io:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: itch-io
+    product: itch-io
   tags: phishing,itch-io,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: itch-io
+        cpe: cpe:2.3:a:itch-io:itch-io:*:*:*:*:*:*:*:*
         words:
           - "itch.io is a simple way to find, download and distribute indie games online. Whether you're a developer looking to upload your game or just someone looking for something new to play itch.io has you covered."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: itch-io-2
+        cpe: cpe:2.3:a:itch-io:itch-io:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"itch.io")'
-# digest: 4a0a0047304502210088cd94a56688a2d0af28a96f95ffcffbb5f2e1d0bf611c36584374b394a669760220133ce50df8f63bf1944f1076098212a03736893d5102847ead093fbf581fb9c8:922c64590222798bb761d5b6d8e72950

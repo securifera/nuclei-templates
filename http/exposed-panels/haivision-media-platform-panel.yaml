@@ -7,10 +7,14 @@ info:
   description: Haivision Media Platform login panel was detected.
   reference:
     - https://www.haivision.com/
+  classification:
+    cpe: cpe:2.3:a:haivision:haivision:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Haivision Media Platform"
+    vendor: haivision
+    product: haivision
   tags: panel,haivision,login,detect,discovery
 
 http:
@@ -20,8 +24,9 @@ http:
 
     matchers:
       - type: dsl
+        name: haivision
+        cpe: cpe:2.3:a:haivision:haivision:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(body, "<title>Haivision Media Platform", "content=\"Haivision Network Video")'
         condition: and
-# digest: 490a0046304402201e645381d4a177169d79e5a6e72d1213227831675b948e7f08cf7e6f12558c820220287bcdabf5d1911a9332f841d182a72071885f5fd4610c96ac4302a1f7caddfe:922c64590222798bb761d5b6d8e72950

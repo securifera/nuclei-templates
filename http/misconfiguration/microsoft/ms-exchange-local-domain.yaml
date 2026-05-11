@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: exchange_server
+        cpe: cpe:2.3:a:microsoft:exchange_server:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)(X-Calculatedbetarget:)"
@@ -45,4 +47,3 @@ http:
       - type: kval
         kval:
           - x_calculatedbetarget
-# digest: 4a0a00473045022038de11ebbbd5580a096c3963f57604df2ea0a22e95c2022d9c21bb5e9ad86bce0221009f8212ee248f79124dcf4489e0d10f4fa218b5815e8fc26b693260c501da3f13:922c64590222798bb761d5b6d8e72950

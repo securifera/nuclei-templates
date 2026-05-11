@@ -6,10 +6,14 @@ info:
   severity: low
   description: |
     Detected an exposed Weaviate instance by accessing its API endpoints. Verified exposure by identifying meta information, schema details, and specific endpoint references in the response, confirming that the instance was publicly accessible.
+  classification:
+    cpe: cpe:2.3:a:weaviate:weaviate:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Weaviate"
+    vendor: weaviate
+    product: weaviate
   tags: weaviate,exposure,api,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: weaviate
+        cpe: cpe:2.3:a:weaviate:weaviate:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Meta information about this instance/cluster"
@@ -27,6 +33,8 @@ http:
         condition: and
 
       - type: regex
+        name: weaviate-2
+        cpe: cpe:2.3:a:weaviate:weaviate:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "\"href\":\"/v1/schema\""
@@ -34,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100db470cee0b1eb4b64fa065f99a5f35f076b7cc1ee1b6c3c82ae2710895e73b190220342808cfe1e9a37a06998882326dfc8b2a7b90bb5330845cc4db9d7b5548f414:922c64590222798bb761d5b6d8e72950

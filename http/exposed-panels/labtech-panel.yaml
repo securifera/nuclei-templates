@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: labtech
+        cpe: cpe:2.3:a:labtech_software:labtech:*:*:*:*:*:*:*:*
         words:
           - "<li>LabTech</li>"
           - '<form action="/WCC2/Search/search" id="searchForm method="post">'
@@ -39,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204b5f8059433f1e2d759a3dd7b288c037c011ac92b36f678cce6df01919c25106022100957934c513601c16510ac3d499107b57c31486783e060d0014f01f1504ce1ad5:922c64590222798bb761d5b6d8e72950

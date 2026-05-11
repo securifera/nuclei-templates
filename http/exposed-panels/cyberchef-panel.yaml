@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cyberchef
+        cpe: cpe:2.3:a:gchq:cyberchef:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>CyberChef</title>'
@@ -38,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203b3b14437210077afb951640a5e3f5466ee953210f051e17f66a0cc990b0756f02207d1af9ccd145da7d497a40898c2556f073df9915d28c18be12a0388bcbede5da:922c64590222798bb761d5b6d8e72950

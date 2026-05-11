@@ -8,8 +8,12 @@ info:
     A trading212 phishing website was detected
   reference:
     - https://trading212.com
+  classification:
+    cpe: cpe:2.3:a:trading212:trading212:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: trading212
+    product: trading212
   tags: phishing,trading212,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: trading212
+        cpe: cpe:2.3:a:trading212:trading212:*:*:*:*:*:*:*:*
         words:
           - 'Commission-free investing for everyone | Trading 212'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: trading212-2
+        cpe: cpe:2.3:a:trading212:trading212:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"trading212.com")'
-# digest: 4a0a00473045022100a72da3bcaabe38c1fd2fa7273bd43239171a03ecc1b4e9946b97b0397a484b290220329b4d81e9d5ed7c5ffceb1a98f28a500692f1f3c99c57c6ce8cba71df347216:922c64590222798bb761d5b6d8e72950

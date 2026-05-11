@@ -8,8 +8,12 @@ info:
     A roboform phishing website was detected
   reference:
     - https://roboform.com
+  classification:
+    cpe: cpe:2.3:a:roboform:roboform:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: roboform
+    product: roboform
   tags: phishing,roboform,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: roboform
+        cpe: cpe:2.3:a:roboform:roboform:*:*:*:*:*:*:*:*
         words:
           - 'Best Password Manager: No more writing down passwords'
           - 'Multi-platform secure solution to simplify your online experience. One click login on Chrome, Firefox, Safari, IE, Opera, Edge, Windows, Mac, iOS, Android.'
@@ -33,6 +39,7 @@ http:
           - 200
 
       - type: dsl
+        name: roboform-2
+        cpe: cpe:2.3:a:roboform:roboform:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"roboform.com")'
-# digest: 490a00463044022071fe745b74bfdd2565b452a567b7ae6ffa41e7c3c261ef9be098dafee6c828ec02200981d0d23d5911eed56e134783724e711a57af55599fc069ffb7c17934ad9d0e:922c64590222798bb761d5b6d8e72950

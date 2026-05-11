@@ -8,8 +8,12 @@ info:
     A Rocket.Chat phishing website was detected
   reference:
     - https://rocket.chat
+  classification:
+    cpe: cpe:2.3:a:rocketchat:rocketchat:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rocketchat
+    product: rocketchat
   tags: phishing,rocketchat,communication,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rocketchat
+        cpe: cpe:2.3:a:rocketchat:rocketchat:*:*:*:*:*:*:*:*
         words:
           - '<title>Rocket.Chat | Secure CommsOS™ for Mission-Critical Operations'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: rocketchat-2
+        cpe: cpe:2.3:a:rocketchat:rocketchat:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"rocket.chat")'
-# digest: 4b0a00483046022100a335de68b1efc88fcf221f2860402e09ad5f1d6ddf3827128c72f9ed5056f8fb022100f663b8f0cd9271cc482122ea026ea5ce2b9a8d3fb84617419dae43c41ac643c6:922c64590222798bb761d5b6d8e72950

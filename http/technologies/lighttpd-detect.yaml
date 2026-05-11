@@ -8,10 +8,14 @@ info:
     Detected servers running the Lighttpd web server by identifying the Server header in HTTP responses.
   reference:
     - https://www.lighttpd.net/
+  classification:
+    cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.component:"lighttpd"
+    vendor: lighttpd
+    product: lighttpd
   tags: tech,lighttpd,server,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: lighttpd
+        cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(header, "lighttpd")'
 
@@ -31,4 +37,3 @@ http:
         group: 1
         regex:
           - 'lighttpd/([0-9.]+)'
-# digest: 4b0a00483046022100ed0fcf1f1d50d88df97e6da592b6ecac73f1f6ab3755dc32c930256db512810e022100b987cec0563d0bad67702c5b70ee18e4c2247d5f5413544863842319240c3581:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/49744
   classification:
+    cpe: cpe:2.3:a:minimouse:minimouse:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: minimouse
+    product: minimouse
   tags: lfi,edb,minimouse,vuln
 
 http:
@@ -27,10 +30,11 @@ http:
           - 200
 
       - type: word
+        name: minimouse
+        cpe: cpe:2.3:a:minimouse:minimouse:*:*:*:*:*:*:*:*
         words:
           - "bit app support"
           - "fonts"
           - "extensions"
         condition: and
         part: body
-# digest: 4a0a00473045022100ac2b4997f752660214d4738d5139a6821ad4a53912afbe73035d6f0b38cd1974022029d6e4823e78c75ae48567b91442957661cd715f99d5878ecbf27605e9ff880c:922c64590222798bb761d5b6d8e72950

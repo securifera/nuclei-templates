@@ -8,8 +8,12 @@ info:
     A Anthropic phishing website was detected
   reference:
     - https://anthropic.com
+  classification:
+    cpe: cpe:2.3:a:anthropic:anthropic:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: anthropic
+    product: anthropic
   tags: phishing,anthropic,claude,ai,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: anthropic
+        cpe: cpe:2.3:a:anthropic:anthropic:*:*:*:*:*:*:*:*
         words:
           - 'Anthropic'
           - '<title>Home \ Anthropic'
@@ -32,7 +38,8 @@ http:
           - 200
 
       - type: dsl
+        name: anthropic-2
+        cpe: cpe:2.3:a:anthropic:anthropic:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"anthropic.com")'
           - '!contains(host,"claude.ai")'
-# digest: 490a00463044022046125de527e25af7ea531ad769119393592a0a4fca2a5c2986103c8b92b2dfd802205607e0425454592fcc39700e76574be7d49b6d0261a886f80dbb66d4c2a26842:922c64590222798bb761d5b6d8e72950

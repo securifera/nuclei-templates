@@ -8,8 +8,12 @@ info:
     A US Bank phishing website was detected
   reference:
     - https://usbank.com
+  classification:
+    cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank
+    product: bank
   tags: phishing,us-bank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         words:
           - "Experience personalized banking services for your unique needs with U.S. Bank - Checking, credit cards, home loans & convenient online banking. Member FDIC."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-2
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"usbank.com")'
-# digest: 490a00463044022061f6b5263e5535cb72ef707377c29714459ad7b713e49415d14dfeb70fdfda37022011f19a172415c10ee902924843140d5b4f3621eef3a77c69d56c857645ce01ba:922c64590222798bb761d5b6d8e72950

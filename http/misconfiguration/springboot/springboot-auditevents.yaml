@@ -31,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: spring_boot
+        cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"events":'
 
       - type: word
+        name: spring_boot-2
+        cpe: cpe:2.3:a:vmware:spring_boot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -46,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bbf7532438aad846596dc7528ff958ba72b1d93dd1486db03945fb18933c8afb022100969cc5b7536661c2aaf3d65a02908841977598e38ea01d1daa1d4a1ee1a09a00:922c64590222798bb761d5b6d8e72950

@@ -7,8 +7,12 @@ info:
   description: Nginx Vhost Traffic status is exposed.
   reference:
     - https://github.com/vozlt/nginx-module-vts
+  classification:
+    cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: nginx
+    product: nginx
   tags: status,nginx,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         words:
           - "Nginx Vhost Traffic Status"
           - "Host"
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022050940c10a9b3efd0d121aeb8fda3e7087eaada9b12cd75b6042f2fd89009ceab022052ac2d75c4b4fb4b968daa58dda1908c3fe5d43237a4c256afc060e7cee8c20f:922c64590222798bb761d5b6d8e72950

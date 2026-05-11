@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/50295
   classification:
+    cpe: cpe:2.3:a:seowon:seowon:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 1
+    vendor: seowon
+    product: seowon
   tags: unauth,iot,edb,rce,seowon,router,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: seowon
+        cpe: cpe:2.3:a:seowon:seowon:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022041af25ba01a088f312700085b28b9acbb6eff1a3f8a9392031ab351613a7230c022043b37b4fc291ac0aca07e8ede58b19367f8a4b5ed942ffd6da9c0ac21848a7ae:922c64590222798bb761d5b6d8e72950

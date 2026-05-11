@@ -8,8 +8,12 @@ info:
   reference:
     - https://developer.squareup.com/explorer/square/locations-api/list-locations
     - https://github.com/daffainfo/all-about-apikey/tree/main/square
+  classification:
+    cpe: cpe:2.3:a:square:square:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: square
+    product: square
   tags: token-spray,square
 
 self-contained: true
@@ -25,8 +29,9 @@ http:
       Authorization: Bearer {{token}}
     matchers:
       - type: word
+        name: square
+        cpe: cpe:2.3:a:square:square:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'errors'
         negative: true
-# digest: 4a0a00473045022100de154d1678cc309435a62d999a1fc585371d2a8d76e5421c5975ab096bbea3ad0220664754e6ee1c7db29527060cdfbec79345ce2aaabae28a9fb9de8ba0abe851d6:922c64590222798bb761d5b6d8e72950

@@ -10,11 +10,14 @@ info:
     - https://chowdera.com/2021/12/202112200602130067.html
     - http://v10.e-office.cn
   classification:
+    cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:L
     cvss-score: 9.9
     cwe-id: CWE-434
   metadata:
     max-request: 2
+    vendor: weaver
+    product: e-office
   tags: cnvd2021,cnvd,pan,micro,fileupload,intrusive,vuln
 
 variables:
@@ -41,10 +44,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: e-office
+        cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{{md5(string)}}'
       - type: word
+        name: e-office-2
+        cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
         part: body
         words:
           - "94d01a2324ce38a2e29a629c54190f67"
@@ -52,4 +59,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203465153101703fca8c5db4323925029c5d78cc5d2d70d8b71530b910c67cbcf802204100f7a85902eae8f1564a72fba281d583381e8cf27a8bed82714de87c84cd90:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
     Unauthorized access to the NetAlert X Admin Dashboard.
   reference:
     - https://github.com/jokob-sk/NetAlertX
+  classification:
+    cpe: cpe:2.3:a:jokob-sk:netalertx:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -25,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: netalertx
+        cpe: cpe:2.3:a:jokob-sk:netalertx:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>NetAlertX"
@@ -35,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009fbd909238e90e62994a912a021935a16475b7bdabde0fa538182ce9721eedfe02204f74b5b647975a70c296c9ccc489489af78c9cbd2e013fa027d627c3008d5018:922c64590222798bb761d5b6d8e72950

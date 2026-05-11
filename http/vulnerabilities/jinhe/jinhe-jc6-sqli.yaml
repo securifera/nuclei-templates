@@ -10,11 +10,14 @@ info:
     - https://github.com/wy876/POC/blob/main/%E9%87%91%E5%92%8COA%20jc6%20clobfield%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
     - https://blog.csdn.net/qq_41904294/article/details/135074649
   classification:
+    cpe: cpe:2.3:a:jc6:jc6:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="金和协同管理平台"
+    vendor: jc6
+    product: jc6
   tags: jinher,jc6,sqli,vuln
 variables:
   num: "{{rand_int(9000000, 9999999)}}"
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jc6
+        cpe: cpe:2.3:a:jc6:jc6:*:*:*:*:*:*:*:*
         part: body
         words:
           - "{{md5(num)}}"
@@ -40,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210095fd6c0a371d53c7b60eb95496f862b7fe5ee0fc82c5b36a669674c55385815202201c8e4831e03e3eabcfb866592307d40bf1e6e054c4d4f6d11b4a4a7971d6be9b:922c64590222798bb761d5b6d8e72950

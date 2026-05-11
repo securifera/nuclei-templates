@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://help.matrix42.com/010_SUEM/020_UEM/30Enterprise_Mobility_Management/010Installation_and_Update/10_Silverback
+  classification:
+    cpe: cpe:2.3:a:matrix42:silverback:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:635899646
+    vendor: matrix42
+    product: silverback
   tags: favicon,tech,silverback,mdm,discovery
 
 http:
@@ -19,6 +23,7 @@ http:
 
     matchers:
       - type: dsl
+        name: silverback
+        cpe: cpe:2.3:a:matrix42:silverback:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200 && (\"635899646\" == mmh3(base64_py(body)))"
-# digest: 4a0a00473045022100e3e73b15c5815efd5b5305d18dc10dd8cdcfe1e488f44f2be0fe7e9d076b0bc902201d8adb7978c61323b984dfaca67159f8dcd48e62bc092300876b3beeaada9461:922c64590222798bb761d5b6d8e72950

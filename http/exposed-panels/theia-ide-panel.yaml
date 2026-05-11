@@ -9,11 +9,15 @@ info:
   reference:
     - https://github.com/eclipse-theia/theia
     - https://theia-ide.org/
+  classification:
+    cpe: cpe:2.3:a:theia:ide:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Theia IDE"
     fofa-query: title="Theia IDE"
+    vendor: theia
+    product: ide
   tags: theia,ide,panel,detect,tech,discovery
 
 http:
@@ -23,9 +27,10 @@ http:
 
     matchers:
       - type: dsl
+        name: ide
+        cpe: cpe:2.3:a:theia:ide:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(body, "<title>Theia IDE</title>", "<title>Eclipse Theia</title>")'
           - 'contains(body, "theia-preload")'
         condition: and
-# digest: 4b0a00483046022100c1002650da85fdc7089a8bc9c5906c421d18ad6e902d5ed508992b0023ab7d37022100c6e8cd4ba5208d40ce05dc120967a4d2a381bccb910819de90ecc1d64dcc8c21:922c64590222798bb761d5b6d8e72950

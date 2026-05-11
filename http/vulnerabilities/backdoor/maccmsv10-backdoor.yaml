@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/chaitin/xray/blob/master/pocs/maccmsv10-backdoor.yml
   classification:
+    cpe: cpe:2.3:a:maccmsv10:backdoor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 1
+    vendor: maccmsv10
+    product: backdoor
   tags: maccmsv10,rce,backdoor,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: backdoor
+        cpe: cpe:2.3:a:maccmsv10:backdoor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "扫描后门"
@@ -38,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009179aa5e15bdc6a58832576cd2af5956039295933ec59a1ea76ee0e5e08203f702202062d354d456f7aea43171f097c947e22190ff46ab720d919babca80ea45e288:922c64590222798bb761d5b6d8e72950

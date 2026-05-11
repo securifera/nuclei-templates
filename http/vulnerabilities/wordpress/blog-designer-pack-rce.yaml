@@ -9,10 +9,14 @@ info:
   reference:
     - https://twitter.com/frycos/status/1717571552470819285
     - https://wordpress.org/plugins/blog-designer-pack/
+  classification:
+    cpe: cpe:2.3:a:blog-designer-pack:blog-designer-pack:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     google-query: inurl:"/wp-content/plugins/blog-designer-pack/"
+    vendor: blog-designer-pack
+    product: blog-designer-pack
   tags: wordpress,wp-plugin,lfi,wp,blogdesignerpack,rce,intrusive,vuln
 variables:
   randomstr: "{{randstr_1}}"
@@ -41,10 +45,11 @@ http:
 
     matchers:
       - type: dsl
+        name: blog-designer-pack
+        cpe: cpe:2.3:a:blog-designer-pack:blog-designer-pack:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_1, "\"success\":0")'
           - 'contains(body_2,"channel pear.php.net")'
           - 'contains_all(body_3, "{{randomstr}}", "success\":1")'
           - 'contains(header_3, "application/json")'
         condition: and
-# digest: 4b0a004830460221008984afdaa36135f731a56013f856d353df0e8555a8000fb6246eeb72c4d5d2b9022100b4d1fd31ae2256e14514cf9c1990844b2fd3c2fc65691eeffa7f7c8f01940b4e:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     ASUS WL-520GU contains a default login vulnerability. The default admin login password 'admin' was found.
+  classification:
+    cpe: cpe:2.3:a:asus:asus:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "WL-520GU"
+    vendor: asus
+    product: asus
   tags: default-login,asus,wl-520gu,vuln
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: asus
+        cpe: cpe:2.3:a:asus:asus:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ASUS'
@@ -39,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f40f054f19bc19fa980291af156d175dcc6958f8ab230d6965d35ab3d45ec73b0221009ef158320c7626920bb003778361892be5729a7e04c345780d14e67928641d72:922c64590222798bb761d5b6d8e72950

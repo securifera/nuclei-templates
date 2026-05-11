@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.seebug.org/vuldb/ssvid-89258
   classification:
+    cpe: cpe:2.3:a:magicflow:magicflow:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-22
   metadata:
     max-request: 2
+    vendor: magicflow
+    product: magicflow
   tags: magicflow,lfi,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: magicflow
+        cpe: cpe:2.3:a:magicflow:magicflow:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e97e0439117dda1469afa2cd880f39f1960465d5c2b945d26b3d26868f61cdd2022072956684a8b06e9598896195d1d8d2c10f75d7675dba1301a2dac8334dc91d9b:922c64590222798bb761d5b6d8e72950

@@ -9,10 +9,14 @@ info:
   reference:
     - https://cksource.com/ckfinder
     - https://owasp.org/Top10/A01_2021-Broken_Access_Control/
+  classification:
+    cpe: cpe:2.3:a:ckfinder:ckfinder:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     google-query: inurl:ckfinder/ckfinder.html ext:html
+    vendor: ckfinder
+    product: ckfinder
   tags: ckfinder,misconfig,unauth,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ckfinder
+        cpe: cpe:2.3:a:ckfinder:ckfinder:*:*:*:*:*:*:*:*
         words:
           - "<title>CKFinder</title>"
           - "CKFinderFrameWindow"
@@ -39,4 +45,3 @@ http:
         group: 1
         regex:
           - "<title>([^<]+)</title>"
-# digest: 4a0a0047304502210098077d56223a3072675aeed8efd54309db7395ec70c2ddfee8e8ef63eaa5f87d02207d2bd31eb6c6a7092a8a2471cabb14aa6c419f38edef6f564b29aa24f96378ac:922c64590222798bb761d5b6d8e72950

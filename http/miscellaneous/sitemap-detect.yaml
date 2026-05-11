@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them.
+  classification:
+    cpe: cpe:2.3:a:sitemap:sitemap:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     google-query: intext:"sitemap" filetype:txt,filetype:xml inurl:sitemap,inurl:"/sitemap.xsd" ext:xsd
+    vendor: sitemap
+    product: sitemap
   tags: miscellaneous,misc,generic,sitemap,vuln
 
 http:
@@ -24,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sitemap
+        cpe: cpe:2.3:a:sitemap:sitemap:*:*:*:*:*:*:*:*
         words:
           - "sitemap>"
         case-insensitive: true
 
       - type: word
+        name: sitemap-2
+        cpe: cpe:2.3:a:sitemap:sitemap:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/xml'
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f3ccd78ee57840be1e17ffa8de25fe4b6483ad5f80c80b2f5ee20b809c91d938022100ed27e37858891b9371660790745b93deb260771c0201e248d6fac1f41c389900:922c64590222798bb761d5b6d8e72950

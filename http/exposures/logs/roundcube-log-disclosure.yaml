@@ -7,8 +7,12 @@ info:
   description: Roundcube Log file was disclosed.
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/roundcube-log-disclosure.json
+  classification:
+    cpe: cpe:2.3:a:roundcube:roundcube:*:*:*:*:*:*:*:*
   metadata:
     max-request: 16
+    vendor: roundcube
+    product: roundcube
   tags: exposure,logs,vuln
 
 http:
@@ -39,6 +43,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: roundcube
+        cpe: cpe:2.3:a:roundcube:roundcube:*:*:*:*:*:*:*:*
         part: body
         words:
           - "IMAP Error:"
@@ -56,4 +62,3 @@ http:
       - type: dsl
         dsl:
           - content_length
-# digest: 4a0a00473045022037525d105aaadfd43620a0da12bd29546262e9c975978f21f988be7c4958a601022100a037e8a64ee8e09058b8fdcd3b8ca7ca581ed61fb57143fc1dca021834782959:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Stripchat user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:stripchat:stripchat:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: stripchat
+    product: stripchat
   tags: osint,osint-porn,stripchat,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: stripchat
+        cpe: cpe:2.3:a:stripchat:stripchat:*:*:*:*:*:*:*:*
         part: body
         words:
           - "I Do in My Shows:"
-# digest: 4a0a0047304502201982d7638154c558e369f3438757cdc1a27cfbc8857c888e57d24639b80cea240221009e782047f4e99abd7ad9f4ee8f72530e47bd516584726ab37ab0c9ce6c0d12eb:922c64590222798bb761d5b6d8e72950

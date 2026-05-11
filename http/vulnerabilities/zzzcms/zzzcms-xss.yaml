@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zzzcms
+        cpe: cpe:2.3:a:zzzcms:zzzcms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'onmouseover=alert(/d0cument.domain/) y=&act'
@@ -35,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: zzzcms-2
+        cpe: cpe:2.3:a:zzzcms:zzzcms:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a636f5485e6bc6e15368fed96b2b3aebfd4e19ddc500840aeb0fc4c3b139576102202e31ec8c5a7c694ffdb8c697da75d52da6b80f2a7ee307b7471b4ff626d46d6e:922c64590222798bb761d5b6d8e72950

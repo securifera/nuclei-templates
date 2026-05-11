@@ -8,8 +8,12 @@ info:
     A Brevo phishing website was detected
   reference:
     - https://brevo.com
+  classification:
+    cpe: cpe:2.3:a:brevo:brevo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: brevo
+    product: brevo
   tags: phishing,brevo,sendinblue,email,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: brevo
+        cpe: cpe:2.3:a:brevo:brevo:*:*:*:*:*:*:*:*
         words:
           - '<title>Brevo | All-in-one Marketing &amp; Sales Platform'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: brevo-2
+        cpe: cpe:2.3:a:brevo:brevo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"brevo.com")'
           - '!contains(host,"sendinblue.com")'
-# digest: 4a0a00473045022100e91894d0cf6579c4c90de358c0be4fe7350b8e0693e37cd6348ae01710dda96302202167551b8aa16bb87d91a81a35428c80b2c382cf905ef664c275a9ececb0d7f9:922c64590222798bb761d5b6d8e72950

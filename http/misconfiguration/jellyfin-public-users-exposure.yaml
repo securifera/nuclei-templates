@@ -10,6 +10,7 @@ info:
     - https://github.com/jellyfin/jellyfin/issues/880
     - https://jellyfin.org/docs/
   classification:
+    cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200,CWE-306
@@ -18,6 +19,8 @@ info:
     verified: true
     shodan-query: http.title:"Jellyfin"
     fofa-query: title="Jellyfin"
+    vendor: jellyfin
+    product: jellyfin
   tags: misconfig,jellyfin,exposure,api,disclosure
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jellyfin
+        cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"Name"'
@@ -41,6 +46,8 @@ http:
         condition: and
 
       - type: word
+        name: jellyfin-2
+        cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"
@@ -48,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022035a9176addf581fb56711bac812df0c1fc6b45b502bb0d6682a5a4c4dc98d2a7022100eb1ef99fd1a2d7f06d60b8e3daa11ec8beb833eff571911470a556e90e1c6b1f:922c64590222798bb761d5b6d8e72950

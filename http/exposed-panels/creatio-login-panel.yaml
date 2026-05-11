@@ -6,12 +6,15 @@ info:
   severity: info
   description: Creatio login panel was detected.
   classification:
+    cpe: cpe:2.3:a:creatio:creatio:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Creatio"
+    vendor: creatio
+    product: creatio
   tags: panel,creatio,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: creatio
+        cpe: cpe:2.3:a:creatio:creatio:*:*:*:*:*:*:*:*
         part: body
         words:
           - '/creatio/widget'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203ed24f1b95f670910fe21011cd8664983147a2d67c6c21576ae1498849b96e15022026615d63d74acbb0db0d91dee421c5fc42f685b41cf545f45a291ebba760cfbf:922c64590222798bb761d5b6d8e72950

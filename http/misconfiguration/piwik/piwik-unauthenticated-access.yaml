@@ -9,6 +9,8 @@ info:
   reference:
     - https://developer.matomo.org/api-reference/reporting-api
     - https://matomo.org/faq/general/faq_152/
+  classification:
+    cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 5
@@ -35,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: matomo
+        cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "nb_visits"
@@ -45,6 +49,8 @@ http:
         condition: or
 
       - type: word
+        name: matomo-2
+        cpe: cpe:2.3:a:matomo:matomo:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"
@@ -52,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220547f37a63db550d3d7dae32f9f8986b6125f275f2d4e0e0d701db25d1bad4c75022077f93b4c8ad0923afb3cfaabbffc97ad80847f5d6caf067170e7f3fb4517cf0b:922c64590222798bb761d5b6d8e72950

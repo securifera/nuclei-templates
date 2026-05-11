@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://developer.pagerduty.com/api-reference
+  classification:
+    cpe: cpe:2.3:a:pagerduty:pagerduty:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pagerduty
+    product: pagerduty
   tags: token-spray,pagerduty
 
 self-contained: true
@@ -22,9 +26,10 @@ http:
       Authorization: Token token={{token}}
     matchers:
       - type: word
+        name: pagerduty
+        cpe: cpe:2.3:a:pagerduty:pagerduty:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"schedules":'
           - '"id":'
         condition: and
-# digest: 4a0a00473045022100ed03222d0314af04055d3282451075a9964e488b12f6986e9736e35c975e87d10220623d00c643d6e754f167d9796f1b82fb64853ae683ac5442b30d956f6b3342a0:922c64590222798bb761d5b6d8e72950

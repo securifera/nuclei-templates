@@ -9,6 +9,8 @@ info:
   reference:
     - https://blog.csdn.net/qq_41904294/article/details/135007351
     - https://github.com/gobysec/GobyVuls/blob/master/CNVD-2023-03903.md
+  classification:
+    cpe: cpe:2.3:a:hagzhou-kuozhi-network-technology:edusoho:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -26,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: edusoho
+        cpe: cpe:2.3:a:hagzhou-kuozhi-network-technology:edusoho:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
 
       - type: word
+        name: edusoho-2
+        cpe: cpe:2.3:a:hagzhou-kuozhi-network-technology:edusoho:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/csv"
@@ -38,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b6a4a2a2c1c72aa3e6827efc7097fc85678127ad2002ed6d54791c4c31071959022100c4e8524c2e7c7f22c9fc05997e81eb99e90b7e545146c1f03d45ed95402f39be:922c64590222798bb761d5b6d8e72950

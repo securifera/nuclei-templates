@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Dragonfly was using the default username, and the password was discovered.
+  classification:
+    cpe: cpe:2.3:a:dragonfly:dragonfly:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="logo-dragonfly.png"
+    vendor: dragonfly
+    product: dragonfly
   tags: dragonfly,default-login,vuln
 
 variables:
@@ -28,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dragonfly
+        cpe: cpe:2.3:a:dragonfly:dragonfly:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"token":'
@@ -35,6 +41,8 @@ http:
         condition: and
 
       - type: word
+        name: dragonfly-2
+        cpe: cpe:2.3:a:dragonfly:dragonfly:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"
@@ -42,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a66ff9b8904f998d97f181610a2954a5091630b2ce9ee3fee0f6fe296c33d07e022100d9e24d21f7e467523521339254c9a4e8da9671e550c4692fa53233fffa5a8d66:922c64590222798bb761d5b6d8e72950

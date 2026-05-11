@@ -4,10 +4,14 @@ info:
   name: Watcher Panel - Detect
   author: DhiyaneshDK
   severity: info
+  classification:
+    cpe: cpe:2.3:a:watcher:watcher:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"/vsaas/v2/static/"
+    vendor: watcher
+    product: watcher
   tags: panel,watcher,login,discovery
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: watcher
+        cpe: cpe:2.3:a:watcher:watcher:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Watcher</title>'
@@ -25,4 +31,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c9e031140dbc36c2a129ba3205441c4b348397e45ff3b8bffafd43939ba38059022100ecbf33e7c05924d3c987c91a57d3d4a611e58037d8885b86af770768518e58ea:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Twitter archived tweets user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:twitter-archived-tweets:twitter-archived-tweets:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: twitter-archived-tweets
+    product: twitter-archived-tweets
   tags: osint,osint-archived,twitter-archived-tweets,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: twitter-archived-tweets
+        cpe: cpe:2.3:a:twitter-archived-tweets:twitter-archived-tweets:*:*:*:*:*:*:*:*
         part: body
         words:
           - "\"archived_snapshots\": {\"closest\""
-# digest: 4a0a0047304502210088b65e780c6f29cecbdcd406e709c406fe5de37a98c97bd42a51745ef511c5aa0220054d6758f72633204da51740e0dfebfe166a7529f15b95d5dcd4f7f2969fb458:922c64590222798bb761d5b6d8e72950

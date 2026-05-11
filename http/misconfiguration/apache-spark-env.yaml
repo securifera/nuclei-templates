@@ -9,6 +9,7 @@ info:
   reference:
     - https://spark.apache.org/docs/latest/monitoring.html
   classification:
+    cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"Spark" http.html:"Environment"
+    vendor: apache
+    product: apache
   tags: apache,spark,missconfig,environment,bigdata
 
 http:
@@ -28,9 +31,10 @@ http:
 
     matchers:
       - type: dsl
+        name: apache
+        cpe: cpe:2.3:a:apache:apache:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Spark", "Java")'
           - 'contains_any(body, "sparkProperties", "appSparkVersion", "Runtime Information", "Spark Properties", "spark.app.name", "sparkUser")'
         condition: and
-# digest: 490a00463044022078924ea1f80ad9044d298b2fc19bde312887fdf1adee260d521984c67ea45e5a02207dc1f787ff35c335bb3aec138f058b9d30eb62dfc31ec239d331f67e24c53fbf:922c64590222798bb761d5b6d8e72950

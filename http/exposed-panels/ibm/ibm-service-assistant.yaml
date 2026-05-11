@@ -8,11 +8,14 @@ info:
   reference:
     - https://mediacenter.ibm.com/media/Using+the+IBM+Support+Assistant/0_ffe9o5w1
   classification:
+    cpe: cpe:2.3:a:service:service:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"Welcome to Service Assistant"
+    vendor: service
+    product: service
   tags: panel,ibm,service,login,detect,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: service
+        cpe: cpe:2.3:a:service:service:*:*:*:*:*:*:*:*
         words:
           - '<title>Welcome to Service Assistant</title>'
 
@@ -37,4 +42,3 @@ http:
         regex:
           - '(?i)([a-z0-9\s]+)\s+Service\s+Assistant\s+Tool'
           - '(?i)svcProductMtm\s+=\s+.?([0-9a-z\-]+).?'
-# digest: 4a0a0047304502204bcd9f3b6b88bd7833fc0799c1c130b3c9170543c4fc977e55038717ad136cfd022100d9974a56fa375c6ac9aae8739756b6dd927acd51ec313990fa9dbac7dadf7cdd:922c64590222798bb761d5b6d8e72950

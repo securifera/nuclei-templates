@@ -6,6 +6,8 @@ info:
   severity: high
   description: |
     CDGServer3 Unauthorized File Download vulnerability is detected.
+  classification:
+    cpe: cpe:2.3:a:esafenet:electronic_document_security_management_system:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -23,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: electronic_document_security_management_system
+        cpe: cpe:2.3:a:esafenet:electronic_document_security_management_system:*:*:*:*:*:*:*:*
         part: body
         words:
           - "varchar"
@@ -30,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: electronic_document_security_management_system-2
+        cpe: cpe:2.3:a:esafenet:electronic_document_security_management_system:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/x-sql"
@@ -37,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b43baae09a4edd4d96a02b49ed689319c48e90e90fab79a8db27699af6c3e3ca0221008d21052a0ad7f16ef9bd291fef40c77c6e2deb4dc2099e3c7365fc3290ec9ab0:922c64590222798bb761d5b6d8e72950

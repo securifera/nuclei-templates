@@ -6,11 +6,14 @@ info:
   severity: info
   description: Avid Community user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:avid:avid:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: avid
+    product: avid
   tags: osint,osint-music,avid-community,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: avid
+        cpe: cpe:2.3:a:avid:avid:*:*:*:*:*:*:*:*
         part: body
         words:
           - "My Activity"
-# digest: 4a0a004730450221008365b012880385beaf75dbed7d9f0be7a2a0561b7c11fa13025847abfcada1560220410564f5db08f85efe588d4faf335d0abdd3c6a3ca3fc6ef9bb70b93c69b5340:922c64590222798bb761d5b6d8e72950

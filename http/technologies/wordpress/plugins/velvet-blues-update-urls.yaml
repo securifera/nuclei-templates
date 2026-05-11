@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: velvet-blues-update-urls
+        cpe: cpe:2.3:a:velvet-blues-update-urls:velvet-blues-update-urls:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

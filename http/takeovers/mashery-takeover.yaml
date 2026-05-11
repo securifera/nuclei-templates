@@ -7,8 +7,12 @@ info:
   description: mashery takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/14
+  classification:
+    cpe: cpe:2.3:a:mashery:mashery:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mashery
+    product: mashery
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: mashery
+        cpe: cpe:2.3:a:mashery:mashery:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: mashery-2
+        cpe: cpe:2.3:a:mashery:mashery:*:*:*:*:*:*:*:*
         words:
           - Unrecognized domain <strong>
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 490a00463044022035328935465ac3d98bd71c8198094de77b850ea4d85294e2c43df9fe73af23c102201ebfdcfabc467d9ab6c48992a21cd414c9062755416b3d2faafe132013a7c252:922c64590222798bb761d5b6d8e72950

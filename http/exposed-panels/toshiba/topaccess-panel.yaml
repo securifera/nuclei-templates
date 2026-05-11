@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://business.toshiba.com/downloads/KB/f1Ulds/11646/KH-1020_TAG_EN_0002.pdf
+  classification:
+    cpe: cpe:2.3:a:topaccess:topaccess:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"topaccess"
+    vendor: topaccess
+    product: topaccess
   tags: topaccess,panel,login,detect,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: topaccess
+        cpe: cpe:2.3:a:topaccess:topaccess:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'content="TopAccess'
@@ -33,4 +39,3 @@ http:
         part: header
         status:
           - 200
-# digest: 4b0a00483046022100cda8b1abe5c1fe562f4f779dfeec00dbd148745bfee47b390938b95c27ccecd5022100af3b2b435a104737739aa21f5be9d9eb37dd72c464003ad86ad50fc4d8196d3f:922c64590222798bb761d5b6d8e72950

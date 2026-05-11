@@ -7,8 +7,12 @@ info:
   description: viewLinc 5.1.2.367 (and sometimes 5.1.1.50) allows remote attackers to inject a carriage return line feed (CRLF) character into the responses returned by the product, which allows attackers to inject arbitrary HTTP headers into the response returned.
   reference:
     - https://www.vaisala.com/en/products/systems/indoor-monitoring-systems/viewlinc-continuous-monitoring-system
+  classification:
+    cpe: cpe:2.3:a:viewlinc:crlf:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: viewlinc
+    product: crlf
   tags: crlf,viewlinc,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: crlf
+        cpe: cpe:2.3:a:viewlinc:crlf:*:*:*:*:*:*:*:*
         words:
           - "Server: viewLinc/5.1.2.367"
           - "Set-Cookie: crlfinjection=crlfinjection"
@@ -26,9 +32,10 @@ http:
         condition: and
 
       - type: word
+        name: crlf-2
+        cpe: cpe:2.3:a:viewlinc:crlf:*:*:*:*:*:*:*:*
         words:
           - "Server: viewLinc/5.1.1.50"
           - "Set-Cookie: crlfinjection=crlfinjection"
         part: header
         condition: and
-# digest: 4b0a00483046022100c9977049d212eef64a8272e362ea974ba1b6df0417e71250f9cfff0e2d2a3451022100dff51ae0400f85b224312e696a156fff1817832289767a1912da0dcf0e529ed9:922c64590222798bb761d5b6d8e72950

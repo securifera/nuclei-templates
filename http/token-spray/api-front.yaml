@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://dev.frontapp.com/reference/introduction
+  classification:
+    cpe: cpe:2.3:a:front:front:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: front
+    product: front
   tags: token-spray,front
 
 self-contained: true
@@ -23,9 +27,10 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: front
+        cpe: cpe:2.3:a:front:front:*:*:*:*:*:*:*:*
         part: body
         words:
           - "logo_url"
           - "name"
         condition: and
-# digest: 4b0a0048304602210085e9f85f7736c6a11324e84551f09c17d31184439f2a2736a0974bed42b5b2750221008f479906207abf2fe520292582015b19be999b36e940383dd49425141b1fbede:922c64590222798bb761d5b6d8e72950

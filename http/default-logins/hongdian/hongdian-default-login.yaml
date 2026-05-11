@@ -8,11 +8,14 @@ info:
   reference:
     - https://ssd-disclosure.com/ssd-advisory-hongdian-h8922-multiple-vulnerabilities/
   classification:
+    cpe: cpe:2.3:a:hongdian:hongdian:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 4
+    vendor: hongdian
+    product: hongdian
   tags: hongdian,default-login,vuln
 
 http:
@@ -42,11 +45,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hongdian
+        cpe: cpe:2.3:a:hongdian:hongdian:*:*:*:*:*:*:*:*
         words:
           - "text/html"
         part: header
 
       - type: word
+        name: hongdian-2
+        cpe: cpe:2.3:a:hongdian:hongdian:*:*:*:*:*:*:*:*
         words:
           - "status_main.cgi"
         part: body
@@ -54,4 +61,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207b89c3fed4d369a84ccdea16d59c4a01edbd19403e72b391c3d062a4889c4246022100ad3a23231b495ca61e44d8725a6916a180bf730e5304fd6984be37676043d7f5:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: TamTam user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:tamtam:tamtam:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tamtam
+    product: tamtam
   tags: osint,osint-social,tamtam,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: tamtam
+        cpe: cpe:2.3:a:tamtam:tamtam:*:*:*:*:*:*:*:*
         part: body
         words:
           - "deeplink=tamtam://chat/"
-# digest: 4b0a004830460221008054b185db6e891834378060b4c7170e5e4778f7c61aa8dd5980d3f5d6f78284022100ba799916b077199b55965163390da2f90bb529fed7442f64b78489d8c0632b97:922c64590222798bb761d5b6d8e72950

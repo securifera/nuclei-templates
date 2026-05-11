@@ -12,6 +12,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:horizon:horizon:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -20,6 +21,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"VMware Horizon"
+    vendor: horizon
+    product: horizon
   tags: cve,cve2021,rce,jndi,log4j,horizon,vmware,oast,kev,vuln
 
 http:
@@ -32,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: horizon
+        cpe: cpe:2.3:a:horizon:horizon:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: horizon-2
+        cpe: cpe:2.3:a:horizon:horizon:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Match for extracted ${hostName} variable
@@ -47,4 +54,3 @@ http:
         regex:
           - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${hostName} in output
         part: interactsh_request
-# digest: 490a0046304402200aa0a4623f3bb9ee41e4adafb0bdfabf2c78a40c119bc8a9240c67baf181b1cd02201bb4c27143137b30ed4cfac7666584c564396d1742c27e6afd86d2826be09175:922c64590222798bb761d5b6d8e72950

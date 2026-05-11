@@ -7,8 +7,12 @@ info:
   description: Github takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: github
+    product: github
   tags: takeover,github,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: github
+        cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: github-2
+        cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
         words:
           - "There isn't a GitHub Pages site here."
           - "For root URLs (like http://example.com/) you must provide an index.html file"
@@ -31,6 +39,8 @@ http:
         condition: or
 
       - type: dsl
+        name: github-3
+        cpe: cpe:2.3:a:github:github:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"githubapp.com")'
           - '!contains(host,"github.com")'
@@ -41,4 +51,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 490a0046304402205c3279945a443431a576c93c47eb72337fd305d4626108139f47d1b234ba4cc402202cafff4a169252400436017b9dfcf9d1e5e24cbca031ae0cb9e32bf80672b389:922c64590222798bb761d5b6d8e72950

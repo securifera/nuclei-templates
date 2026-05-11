@@ -8,8 +8,12 @@ info:
     A opera phishing website was detected
   reference:
     - https://opera.com
+  classification:
+    cpe: cpe:2.3:a:opera:opera:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: opera
+    product: opera
   tags: phishing,opera,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: opera
+        cpe: cpe:2.3:a:opera:opera:*:*:*:*:*:*:*:*
         words:
           - 'Opera Web Browser | Faster, Safer, Smarter | Oper'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: opera-2
+        cpe: cpe:2.3:a:opera:opera:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"opera.com")'
-# digest: 4a0a0047304502210080170fe6addc0e34bd8485e72e7fb9d6aed2be83f6332bea011583244bfaeddc0220284e91d2af75e72b3509653c0a9dd8fb8d8d97ffe119b9ba38b43dda3e203c00:922c64590222798bb761d5b6d8e72950

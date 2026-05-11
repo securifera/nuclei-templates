@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/39963
   classification:
+    cpe: cpe:2.3:a:fileupload:fileupload:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 8.8
     cwe-id: CWE-434
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 4
     google-query: intitle:"Roxy file manager"
+    vendor: fileupload
+    product: fileupload
   tags: misconfig,edb,roxy,fileman,rce,fileupload,intrusive,vuln
 
 http:
@@ -70,11 +73,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: fileupload
+        cpe: cpe:2.3:a:fileupload:fileupload:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "99acb46eabd01958e22fae1792e83ca9"
 
       - type: word
+        name: fileupload-2
+        cpe: cpe:2.3:a:fileupload:fileupload:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -82,4 +89,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207b640ead7f5514570ebc9ab0131b4ca73f02127e615096c6865249e038d3d732022100ce20baed86c184f30d6a144bbc9563fa109cdc673a7b241e70c7baf6e6cdd260:922c64590222798bb761d5b6d8e72950

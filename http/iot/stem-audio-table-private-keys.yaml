@@ -7,8 +7,12 @@ info:
   description: Private Key on STEM audio table was detected.
   reference:
     - https://blog.grimm-co.com/2021/06/the-walls-have-ears.html
+  classification:
+    cpe: cpe:2.3:a:stem:stem:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: stem
+    product: stem
   tags: stem,config,exposure,iot,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: stem
+        cpe: cpe:2.3:a:stem:stem:*:*:*:*:*:*:*:*
         words:
           - "BEGIN RSA PRIVATE KEY"
 
@@ -27,6 +33,7 @@ http:
           - 200
 
       - type: dsl
+        name: stem-2
+        cpe: cpe:2.3:a:stem:stem:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(tolower(body), "<html")'
-# digest: 4b0a00483046022100d56bf376dc894edaac0f530e33ff578a491b9585f04c1a3ba377c6c1e0ea51a8022100f1085f247c120cee9b248d6af8dff0c8494d604c34f0721bf66690f597145a17:922c64590222798bb761d5b6d8e72950

@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: neodash
+        cpe: cpe:2.3:a:neo4j:*:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'standaloneHost'
@@ -32,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: neodash-2
+        cpe: cpe:2.3:a:neo4j:*:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -46,4 +50,3 @@ http:
         part: body
         json:
           - '.standaloneDatabase,.standaloneUsername,.standalonePassword'
-# digest: 4a0a0047304502200dcb8881074012a06548cb484f6c6e0a2261349191d1117eefe83c5876c4178c0221009ba92f37e5e341b80bf7e3a9a4033993b1948983eee85c44ed57f04dbf8f94d2:922c64590222798bb761d5b6d8e72950

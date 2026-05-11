@@ -5,10 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: Axyom Network Manager exposed.
+  classification:
+    cpe: cpe:2.3:a:axyom:axyom:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Axyom Network Manager"
+    vendor: axyom
+    product: axyom
   tags: misconfig,axyom,exposure,unauth,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: axyom
+        cpe: cpe:2.3:a:axyom:axyom:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Axyom Network Manager'
@@ -26,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220492d7f8ba2042180ec8e2f93a33b3089cb927f8f5ccd828f732c50c474dccc0b022100cca987be8d648aa64317554da0babc55c1ca59147e8e8b603ebd77bc17372f99:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
     WordPress InfiniteWP Client plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/iwp-client/
+  classification:
+    cpe: cpe:2.3:a:developer:iwp-client:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: iwp-client
+        cpe: cpe:2.3:a:developer:iwp-client:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fatal error"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022002f74a8b11bac74e1538df15798dc4b0f0250c53037287f63074a02de30eea1402207fcc0f8ed6f50fbc65612e635c9cbc3185181c440e6ef6d9d3c26126f41464d9:922c64590222798bb761d5b6d8e72950

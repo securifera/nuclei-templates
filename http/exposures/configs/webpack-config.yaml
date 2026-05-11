@@ -27,12 +27,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webpack
+        cpe: cpe:2.3:a:webpack.js:webpack:*:*:*:*:node.js:*:*:*
         words:
           - "module.exports"
           - "const"
         condition: or
 
       - type: word
+        name: webpack-2
+        cpe: cpe:2.3:a:webpack.js:webpack:*:*:*:*:node.js:*:*:*
         part: header
         words:
           - "application/javascript"
@@ -40,6 +44,8 @@ http:
         condition: or
 
       - type: word
+        name: webpack-3
+        cpe: cpe:2.3:a:webpack.js:webpack:*:*:*:*:node.js:*:*:*
         part: body
         words:
           - "<html"
@@ -50,4 +56,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008b5445a5ed04b665618d43279dd99c9549ec1a94edafcf849f9068ff4ce3a4d4022100c1b256c64a4710d0f1c497fb81b8f646ecf326a4e4ab350e4e141d5617663b93:922c64590222798bb761d5b6d8e72950

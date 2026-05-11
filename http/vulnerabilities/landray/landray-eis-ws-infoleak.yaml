@@ -9,11 +9,15 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/CTLyriSSF-nQ8SUFv4RX0A
     - https://github.com/akyosk/pocman/blob/main/cve/Lanling/Lanling_Info.py
+  classification:
+    cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="Landray-EIS智慧协同平台"
     zoomeye-query: app="蓝凌EIS智慧协同平台"
+    vendor: landray
+    product: landray
   tags: landray,eis,info-leak,vuln
 
 http:
@@ -33,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: landray
+        cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<?xml"
@@ -42,6 +48,8 @@ http:
         condition: and
 
       - type: word
+        name: landray-2
+        cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Content-Type: text/xml"
@@ -49,4 +57,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203692006d5d3e286c87d7033463c1a4f44dc26d841e27d2191ef78efd85c551f8022040db2b220b6712b5692d4fa58909f326a5a382b9ddccaedd1c9ea1bb61d5bd64:922c64590222798bb761d5b6d8e72950

@@ -18,11 +18,14 @@ info:
     - https://blog.projectdiscovery.io/abusing-reverse-proxies-metadata/
     - https://www.mcafee.com/blogs/enterprise/cloud-security/how-an-attacker-could-use-instance-metadata-to-breach-your-app-in-aws/
   classification:
+    cpe: cpe:2.3:a:metadata:alibaba:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N
     cvss-score: 9.3
     cwe-id: CWE-441
   metadata:
     max-request: 4
+    vendor: metadata
+    product: alibaba
   tags: exposure,config,alibaba,proxy,misconfig,metadata,vuln
 
 http:
@@ -43,9 +46,10 @@ http:
     unsafe: true
     matchers:
       - type: word
+        name: alibaba
+        cpe: cpe:2.3:a:metadata:alibaba:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"serial-number"'
           - '"zone-id":"'
         condition: and
-# digest: 4b0a00483046022100f6184adaee9902df1db62cc17e9dab23188d8343aca3417a81f0b97f7d0d734f022100cd0831decfe511d8c6eb357929cbadd2356df54bc6b6afbea155ea1e5c39d903:922c64590222798bb761d5b6d8e72950

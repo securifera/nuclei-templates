@@ -10,6 +10,7 @@ info:
     - https://www.ibm.com/docs/en/mfp/8.0?topic=console-mobilefirst-operations
     - https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/installation-configuration/production/server-configuration/
   classification:
+    cpe: cpe:2.3:a:ibm:mobilefirst-foundation:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-798
@@ -51,6 +52,8 @@ http:
           - 200
 
       - type: word
+        name: mobilefirst-foundation
+        cpe: cpe:2.3:a:ibm:mobilefirst-foundation:*:*:*:*:*:*:*:*
         part: body
         words:
           - "productVersion"
@@ -59,6 +62,8 @@ http:
         condition: and
 
       - type: word
+        name: mobilefirst-foundation-2
+        cpe: cpe:2.3:a:ibm:mobilefirst-foundation:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -69,4 +74,3 @@ http:
         group: 1
         regex:
           - '"productVersion"\s*:\s*"([^"]+)"'
-# digest: 4b0a00483046022100c8ba1431c31eaf60de81866348c430a8e9369f187220d1dd7be7afd29fb426e8022100cc9017dfd7e4bb32a9fae2c82af53c6529d02da0fefe8840a52cd1aebbbf67a4:922c64590222798bb761d5b6d8e72950

@@ -5,8 +5,12 @@ info:
   author: ajaysenr
   severity: low
   description: Displays a complete list of all the Spring beans in the application
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"type"'
@@ -33,10 +39,11 @@ http:
           - 200
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         words:
           - "application/json"
           - "application/vnd.spring-boot.actuator"
           - "application/vnd.spring-boot.actuator.v1+json"
         condition: or
         part: header
-# digest: 4b0a00483046022100d5b8dee89c5f939296b8a34774cda4596fd131c805c7a44d3d723bf3eb5d9143022100a37d12e64e174320b5d3f3d23360d987d9949743ff063ea8bc7186a677d8be18:922c64590222798bb761d5b6d8e72950

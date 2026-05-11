@@ -8,8 +8,12 @@ info:
     A template to detect HTML Forms in page response.
   reference:
     - https://github.com/dirtycoder0124/formcrawler
+  classification:
+    cpe: cpe:2.3:a:form:form:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: form
+    product: form
   tags: form,misc,miscellaneous,vuln
 
 http:
@@ -22,10 +26,11 @@ http:
 
     matchers:
       - type: word
+        name: form
+        cpe: cpe:2.3:a:form:form:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<form"
           - "</form>"
           - "<button"
         condition: and
-# digest: 4a0a0047304502202a3baf3ad5016cae074f5fb1b0b502e63e29a28f9f3d9b764aa95fd546ca795e022100f4de710f15515d480ae3a2bbcac5994156c7647a04f87f4823920d2806bfa6a4:922c64590222798bb761d5b6d8e72950

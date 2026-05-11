@@ -8,11 +8,14 @@ info:
   reference:
     - https://guides.rubyonrails.org/configuring.html#configuring-a-database
   classification:
+    cpe: cpe:2.3:a:rails:rails:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: rails
+    product: rails
   tags: config,exposure,rails,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rails
+        cpe: cpe:2.3:a:rails:rails:*:*:*:*:*:*:*:*
         words:
           - "adapter:"
           - "database:"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fbaa561ab277ef35aa798fb0cdd54744bf1045205ab5a559b8563565065e8a50022070f550eb733603a90fc24b3a0a0659ae2fcfa032c94edea0eb27469ea9a2731a:922c64590222798bb761d5b6d8e72950

@@ -26,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: vaadin
+        cpe: cpe:2.3:a:vaadin:vaadin:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(tolower(body), "/vaadin/", "v-generated-body", "v-app-loading", "vaadinbootstrap", "vaadin.", "vaadindirect")'
 

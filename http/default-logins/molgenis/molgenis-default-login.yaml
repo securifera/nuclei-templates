@@ -9,10 +9,14 @@ info:
   reference:
     - https://molgenis.org/
     - https://github.com/molgenis/molgenis-emx2
+  classification:
+    cpe: cpe:2.3:a:molgenis:molgenis:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"MOLGENIS"
+    vendor: molgenis
+    product: molgenis
   tags: molgenis,default-login,exposure,vuln
 
 variables:
@@ -35,14 +39,17 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: molgenis
+        cpe: cpe:2.3:a:molgenis:molgenis:*:*:*:*:*:*:*:*
         part: header_1
         words:
           - "Set-Cookie: JSESSIONID="
 
       - type: word
+        name: molgenis-2
+        cpe: cpe:2.3:a:molgenis:molgenis:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - "Sign out</button>"
           - "Log manager</a>"
         condition: and
-# digest: 4a0a004730450220027c1733dd7de1ea7aaeac187608079fecb6d97d9757b0b57fd55469dd9633bf022100a2d69ee3ed391f8cacedfa799df9d39c64616e9a95d64bce11277035e2461668:922c64590222798bb761d5b6d8e72950

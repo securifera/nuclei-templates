@@ -9,11 +9,14 @@ info:
     - https://www.exploit-db.com/exploits/46320
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5511.php
   classification:
+    cpe: cpe:2.3:a:camera:camera:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-22,CWE-73
   metadata:
     max-request: 1
+    vendor: camera
+    product: camera
   tags: iot,camera,disclosure,edb,vuln
 
 http:
@@ -27,10 +30,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: camera
+        cpe: cpe:2.3:a:camera:camera:*:*:*:*:*:*:*:*
         regex:
           - 'root:[x*]:0:0:'
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a551d5bd4c53f22f804fda72e67417377477507b5a2a7e3fedb7c170a203704202200a4ae7706c061c2963175f26598657441e6a7e8fce25be8b6f473f80039b3233:922c64590222798bb761d5b6d8e72950

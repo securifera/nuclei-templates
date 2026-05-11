@@ -8,8 +8,12 @@ info:
     A linkedin phishing website was detected
   reference:
     - https://linkedin.com
+  classification:
+    cpe: cpe:2.3:a:linkedin:linkedin:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: linkedin
+    product: linkedin
   tags: phishing,linkedin,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: linkedin
+        cpe: cpe:2.3:a:linkedin:linkedin:*:*:*:*:*:*:*:*
         words:
           - 'LinkedIn: Log In or Sign Up'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: linkedin-2
+        cpe: cpe:2.3:a:linkedin:linkedin:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"linkedin.com")'
-# digest: 4a0a00473045022100a51703937e4f1044b345e1deafaccaebebca06609be191bdb6168c2f1c7cb73202205cd0e38ceb7183e289ec14b94bd9280fa2835ee62b4c1a1da5c1cd00aa1468a4:922c64590222798bb761d5b6d8e72950

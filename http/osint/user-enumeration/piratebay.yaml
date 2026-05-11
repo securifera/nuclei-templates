@@ -5,12 +5,15 @@ info:
   author: philippedelteil
   severity: info
   classification:
+    cpe: cpe:2.3:a:piratebay:piratebay:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
+    vendor: piratebay
+    product: piratebay
   tags: osint,osint-p2p,piratebay,headless,discovery
 
 self-contained: true
@@ -25,8 +28,9 @@ headless:
 
     matchers:
       - type: dsl
+        name: piratebay
+        cpe: cpe:2.3:a:piratebay:piratebay:*:*:*:*:*:*:*:*
         dsl:
           - "!contains(data, 'No results returned')"
           - "contains(data, 'User: {{user}}</label>')"
         condition: and
-# digest: 4a0a0047304502202ba98db0532b353d18a9976b973df0a737a6d0d739f0a38d162f1f25dec47d12022100e1e2daa45ddf1808300d7d137addc112482fdc5fb49fcab0dc3153edcde0217a:922c64590222798bb761d5b6d8e72950

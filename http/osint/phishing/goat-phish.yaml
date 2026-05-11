@@ -8,8 +8,12 @@ info:
     A GOAT phishing website was detected
   reference:
     - https://goat.com
+  classification:
+    cpe: cpe:2.3:a:goat:goat:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: goat
+    product: goat
   tags: phishing,goat,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: goat
+        cpe: cpe:2.3:a:goat:goat:*:*:*:*:*:*:*:*
         words:
           - 'GOAT'
           - '<title>GOAT: Sneakers, Apparel, Accessories'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: goat-2
+        cpe: cpe:2.3:a:goat:goat:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"goat.com")'
-# digest: 4a0a00473045022100829af954c59056634591bc0b488d3241d5234f793e566116ae8202dac3af92c602201165c2e5cd0af7c70859fef63e6fc562858c1e59e29fd7808d18c90b57f4c2f1:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,8 @@ info:
     CoreBos was discovered to have .htaccess file exposed to public which includes sensitive information.
   reference:
     - https://huntr.dev/bounties/5b0fe6e3-4ca1-44ae-8875-d7e6c065432e/
+  classification:
+    cpe: cpe:2.3:a:corebos:corebos:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -25,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: corebos
+        cpe: cpe:2.3:a:corebos:corebos:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Options -Indexes'
@@ -34,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022032b30fdf0d9b5a271382fe3b36c4d78b53f943aa09351ca0f9a2a74a7c56fff602202695e52a88d50833b0be54915d53ac10e8ea8701db43d3f644c6d70955a5a397:922c64590222798bb761d5b6d8e72950

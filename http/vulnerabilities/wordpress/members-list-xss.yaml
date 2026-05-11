@@ -8,11 +8,14 @@ info:
   reference:
     - https://wpscan.com/vulnerability/d13f26f0-5d91-49d7-b514-1577d4247648
   classification:
+    cpe: cpe:2.3:a:members-list:members-list:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-79,CWE-83
   metadata:
     max-request: 1
+    vendor: members-list
+    product: members-list
   tags: wp,wordpress,wp-plugin,xss,wpscan,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: members-list
+        cpe: cpe:2.3:a:members-list:members-list:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"><img src onerror=alert(document.domain) x'
@@ -30,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: members-list-2
+        cpe: cpe:2.3:a:members-list:members-list:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -37,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e1ff7473197e6768903e19b9bb0ebc0150fad33ebf7277801166c512e6ae0477022100d9d1b9edff6d42c6ea5c4ccaac48f5f91e6505524f40749a92b05c2af96a9458:922c64590222798bb761d5b6d8e72950

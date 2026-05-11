@@ -12,6 +12,8 @@ info:
     Set the 'ASPNETCORE_ENVIRONMENT' environment variable to 'Production' and ensure that detailed error messages are not exposed to end-users.
   reference:
     - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments
+  classification:
+    cpe: cpe:2.3:a:microsoft:asp.net-core:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     vendor: microsoft
@@ -28,14 +30,17 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: asp.net-core
+        cpe: cpe:2.3:a:microsoft:asp.net-core:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>"
 
       - type: word
+        name: asp.net-core-2
+        cpe: cpe:2.3:a:microsoft:asp.net-core:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ASPNETCORE_ENVIRONMENT"
           - "<environment include=\"Development\">"
         condition: and
-# digest: 490a004630440220354f9b4827a84e2272a50796b1c958983d817f00480c5bb40d1bc2aa9462b4c902203137f8ba7e23cc6b7b02f1bdbed1dca826f497f8318d7405adf5f4a7b85d2e38:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A TripAdvisor phishing website was detected
   reference:
     - https://tripadvisor.com
+  classification:
+    cpe: cpe:2.3:a:tripadvisor:tripadvisor:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: tripadvisor
+    product: tripadvisor
   tags: phishing,tripadvisor,travel,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tripadvisor
+        cpe: cpe:2.3:a:tripadvisor:tripadvisor:*:*:*:*:*:*:*:*
         words:
           - "tripadvisor.com"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: tripadvisor-2
+        cpe: cpe:2.3:a:tripadvisor:tripadvisor:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"tripadvisor.com")'
-# digest: 4b0a00483046022100ee9d2778248bb1c3073d5b4ad571bbcf7c3350fbfee19751e6986f139351e37602210098c73c5da576fc34065d9557f091cb226a094d59517ac6d7c2c44fcca9f9a094:922c64590222798bb761d5b6d8e72950

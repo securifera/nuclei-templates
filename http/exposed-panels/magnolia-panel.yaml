@@ -31,12 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: magnolia_cms
+        cpe: cpe:2.3:a:magnolia-cms:magnolia_cms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Magnolia is a registered trademark'
 
       - type: word
+        name: magnolia_cms-2
+        cpe: cpe:2.3:a:magnolia-cms:magnolia_cms:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
-# digest: 4a0a00473045022100ef9af5b8abb43703ccdf270ef7df6ba60b3bcdb359c8b861d4207e96ad63679902202e9a49eedfa00ef69355ad45eb193786f732d1a8329ad221168dbf9fc3ac0155:922c64590222798bb761d5b6d8e72950

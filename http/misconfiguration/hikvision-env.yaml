@@ -9,10 +9,14 @@ info:
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/HIKVISION/HiKVISION%20%E7%BB%BC%E5%90%88%E5%AE%89%E9%98%B2%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20env%20%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F%E6%BC%8F%E6%B4%9E.md
     - https://peiqi.wgpsec.org/wiki/iot/HIKVISION/HiKVISION%20综合安防管理平台%20env%20信息泄漏漏洞.html
+  classification:
+    cpe: cpe:2.3:a:hikvision:env:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 5
     shodan-query: app="HIKVISION-综合安防管理平台"
+    vendor: hikvision
+    product: env
   tags: misconfig,hikvision,springboot,env,vuln
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: env
+        cpe: cpe:2.3:a:hikvision:env:*:*:*:*:*:*:*:*
         part: body
         words:
           - "applicationConfig"
@@ -36,6 +42,8 @@ http:
         condition: or
 
       - type: word
+        name: env-2
+        cpe: cpe:2.3:a:hikvision:env:*:*:*:*:*:*:*:*
         part: body
         words:
           - "server.port"
@@ -43,6 +51,8 @@ http:
         condition: or
 
       - type: word
+        name: env-3
+        cpe: cpe:2.3:a:hikvision:env:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -55,4 +65,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fd4a4dabd348b7ab26cf8eda6c163f15d4cf9de8f65e2d7d0b70fba26584513b02207c8d6d47d12ff33c81f6bb57b6cc88cf79b21447045609071df505e1d7b737f7:922c64590222798bb761d5b6d8e72950

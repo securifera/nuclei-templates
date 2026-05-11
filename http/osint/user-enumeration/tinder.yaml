@@ -6,11 +6,14 @@ info:
   severity: info
   description: Tinder user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:tinder:tinder:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tinder
+    product: tinder
   tags: osint,osint-dating,tinder,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: tinder
+        cpe: cpe:2.3:a:tinder:tinder:*:*:*:*:*:*:*:*
         part: body
         words:
           - ") | Tinder</title><meta"
-# digest: 4b0a00483046022100a1f716f345281bd7f9f9b56cb09d552c3bc38d38669f550688c9a5c667a8e297022100a9681e56441768d02cc93b40f4a01fe91cc272ca4ffc96225a09380ff1e5db9f:922c64590222798bb761d5b6d8e72950

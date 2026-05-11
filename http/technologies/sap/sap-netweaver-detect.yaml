@@ -29,6 +29,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: content_server
+        cpe: cpe:2.3:a:sap:content_server:*:*:*:*:*:*:*:*
         part: header
         words:
           - "sap-server:"
@@ -37,6 +39,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: content_server-2
+        cpe: cpe:2.3:a:sap:content_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SAP NetWeaver Application Server"

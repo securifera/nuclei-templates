@@ -8,10 +8,14 @@ info:
     Detects the presence of a-blog cms, a Content Management System.
   reference:
     - https://www.a-blogcms.jp/
+  classification:
+    cpe: cpe:2.3:a:a-blog:a-blog_cms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"a-blog cms"
+    vendor: a-blog
+    product: a-blog_cms
   tags: tech,discovery,cms,a-blog-cms
 
 http:
@@ -23,6 +27,8 @@ http:
 
     matchers:
       - type: word
+        name: a-blog_cms
+        cpe: cpe:2.3:a:a-blog:a-blog_cms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "a-blog cms"
@@ -35,4 +41,3 @@ http:
         group: 1
         regex:
           - '(?i)content="a-blog cms (?:Ver\.|v)?([0-9.]+)'
-# digest: 490a0046304402204280b4bf4f864b22d0a4f8c3bf117e9e58c5ec4efeb9639becfc3fe16321aa0c02203fcd110b655f877904286b1082cdafb1128ae057478e4ba93c01575ea779d0e2:922c64590222798bb761d5b6d8e72950

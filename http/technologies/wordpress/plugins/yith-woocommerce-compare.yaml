@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: yith-woocommerce-compare
+        cpe: cpe:2.3:a:yith-woocommerce-compare:yith-woocommerce-compare:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

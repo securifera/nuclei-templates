@@ -6,11 +6,14 @@ info:
   severity: info
   description: CaseManager login panel was detected.
   classification:
+    cpe: cpe:2.3:a:casemanager:casemanager:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     fofa-query: title="CaseManager"
+    vendor: casemanager
+    product: casemanager
   tags: casemanager,panel,discovery
 
 http:
@@ -21,10 +24,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: casemanager
+        cpe: cpe:2.3:a:casemanager:casemanager:*:*:*:*:*:*:*:*
         words:
           - "<title>CaseManager</title>"
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402204538998e9c310d5d8bd2d3e953b5cb49ff033edc95f9d5e7bf95f5c38eeb4e78022044a727aa958e600018ea10d4724e74790041fa97767bf915fb66208316287907:922c64590222798bb761d5b6d8e72950

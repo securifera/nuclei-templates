@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: servicestack
+        cpe: cpe:2.3:a:servicestack:servicestack:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"Results":['
@@ -40,6 +42,8 @@ http:
         condition: and
 
       - type: word
+        name: servicestack-2
+        cpe: cpe:2.3:a:servicestack:servicestack:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"
@@ -47,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220777cb3163915c8a31e7dfe616b262bfaf91d86379b2ac765741b4dd3af60f426022064f361fb0aaa86141558cb824b4c85866ab63e493e935462ac3b93cc04f4a310:922c64590222798bb761d5b6d8e72950

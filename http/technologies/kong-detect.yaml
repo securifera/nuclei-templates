@@ -7,8 +7,12 @@ info:
   description: The Cloud-Native API Gateway
   reference:
     - https://github.com/Kong/kong
+  classification:
+    cpe: cpe:2.3:a:konghq:kong:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: konghq
+    product: kong
   tags: tech,kong,discovery
 
 http:
@@ -18,6 +22,8 @@ http:
 
     matchers:
       - type: word
+        name: kong
+        cpe: cpe:2.3:a:konghq:kong:*:*:*:*:*:*:*:*
         part: header
         words:
           - "server: kong"
@@ -32,4 +38,3 @@ http:
       - type: kval
         kval:
           - server
-# digest: 4a0a00473045022071407d9b5f6a251adbd136b4c749b649d221fd4c60d967b770d9fb3b52524d4b022100de8abc91eb9d3d82cdaf03ad4c28235b4ed01c787bd8f7245cc41afe7c1303aa:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://omriinbar.medium.com/samsung-wlan-ap-wea453e-vulnerabilities-7aa4a57d4dba
   classification:
+    cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-78
   metadata:
     max-request: 1
+    vendor: samsung
+    product: samsung
   tags: xss,samsung,rce,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: samsung
+        cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
           - "bin:.*:1:1"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fe4ef1996f291488d46ff7fbc4d7962b52f0ae84f1cd756185a2d413f3ef067102201f1c6e17d0ababe8d3494534c0edbad6c77fbf87c743afdac6c6c642b444cacd:922c64590222798bb761d5b6d8e72950

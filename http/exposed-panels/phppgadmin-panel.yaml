@@ -34,14 +34,17 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: phppgadmin
+        cpe: cpe:2.3:a:phppgadmin_project:phppgadmin:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains(body, 'intro.php') && contains(body, 'browser.php')"
         condition: and
 
       - type: dsl
+        name: phppgadmin-2
+        cpe: cpe:2.3:a:phppgadmin_project:phppgadmin:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains(body, '<title>phpPgAdmin')"
         condition: and
-# digest: 4a0a00473045022100caadf197a859fa72a971ed7fac517ab48e3b69291812d22f375d3919486fc9fd02207965d885c637008ff9dca8ed6f9a764100687cea6ca2cbd97f87dc7b9f2a1061:922c64590222798bb761d5b6d8e72950

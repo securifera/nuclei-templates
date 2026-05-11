@@ -8,8 +8,12 @@ info:
     A blender phishing website was detected
   reference:
     - https://blender.org
+  classification:
+    cpe: cpe:2.3:a:blender:blender:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: blender
+    product: blender
   tags: phishing,blender,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: blender
+        cpe: cpe:2.3:a:blender:blender:*:*:*:*:*:*:*:*
         words:
           - 'blender.org - Home of the Blender project - Free and Open 3D Creation Software'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: blender-2
+        cpe: cpe:2.3:a:blender:blender:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"blender.org")'
-# digest: 4a0a00473045022100fd4e50bb0948661c7b5cf3d1f8c6a65eb11baa492f24c07a75fc0a11997ec8a702206e01fa927ef0489808dcd3dd256255fd5491555f57b7ab86db642fb8a3ab6112:922c64590222798bb761d5b6d8e72950

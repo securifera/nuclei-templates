@@ -23,10 +23,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: scalar_i500
+        cpe: cpe:2.3:h:quantum:scalar_i500:*:*:*:*:*:*:*:*
         regex:
           - "<title>QUANTUM - Scalar (.*) Login Screen"
 
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220417956bbe3040693533f766bc26963131b9637a5cd5abb2fa827728ba18f6265022100a8b99e9f859e226553ed91a2d63d02e4712c4cbaee7807ee7eef64a2ce4c3bc3:922c64590222798bb761d5b6d8e72950

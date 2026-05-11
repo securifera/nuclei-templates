@@ -5,7 +5,11 @@ info:
   author: 0xpugal
   severity: info
   classification:
+    cpe: cpe:2.3:a:pinata:pinata:*:*:*:*:*:*:*:*
     cwe-id: CWE-540
+  metadata:
+    vendor: pinata
+    product: pinata
   tags: pinata,exposure,api-keys,tokens,vuln
 
 http:
@@ -16,6 +20,8 @@ http:
     redirects: false
     matchers:
       - type: word
+        name: pinata
+        cpe: cpe:2.3:a:pinata:pinata:*:*:*:*:*:*:*:*
         words:
           - "pinata_api_key"
           - "pinata_api_secret"
@@ -41,4 +47,3 @@ http:
           - (?i)(?:const|let|var)?\s*pinata[_\-.]?(?:api[_\-.]?)?key\s*=\s*['"]([A-Za-z0-9_\-]+)['"]
           - (?i)(?:const|let|var)?\s*pinata[_\-.]?(?:api[_\-.]?)?secret\s*=\s*['"]([A-Za-z0-9_\-]+)['"]
           - (?i)pinata[^A-Za-z0-9]{0,8}([A-Za-z0-9_\-]{16,128})
-# digest: 4b0a00483046022100fafea1eda647e4c305da02005131101e9c220b321c4c056cbd5b3bd4c075c066022100af961f4fefe69a101f2f537b0df36027048d84508fa4e3f20d12bda697d44d2a:922c64590222798bb761d5b6d8e72950

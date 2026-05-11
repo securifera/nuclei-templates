@@ -6,11 +6,14 @@ info:
   severity: info
   description: Bugcrowd user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:bugcrowd:bugcrowd:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: bugcrowd
+    product: bugcrowd
   tags: osint,osint-tech,bugcrowd,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: bugcrowd
+        cpe: cpe:2.3:a:bugcrowd:bugcrowd:*:*:*:*:*:*:*:*
         part: body
         words:
           - "s researcher profile on Bugcrowd"
-# digest: 4b0a0048304602210087fbbb7c9af6e3134c9ca18d439231b58b1b181e354cbcd2db635c61d7dc18fb022100b30eab96b5f89556afbe7678520cffa043b570a9ee169e7e39544485346cf021:922c64590222798bb761d5b6d8e72950

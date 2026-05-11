@@ -8,9 +8,13 @@ info:
     The integrationgraph endpoint exposes a graph containing all Spring Integration components.
   reference:
     - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "provider"
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -42,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 480a00453043021f089f63db6c063ceec452ba54d488328781d71260c87133a8d3f92fce33ed6a022031fb3e86c3046b6cba53144c98967e104c12cadeb9192c43d7f6002fbbdb1af3:922c64590222798bb761d5b6d8e72950

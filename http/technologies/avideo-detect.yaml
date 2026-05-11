@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: avideo
+        cpe: cpe:2.3:a:wwbn:avideo:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '<title>(.*)AVideo(.*)</title>'
@@ -33,6 +35,8 @@ http:
         condition: or
 
       - type: word
+        name: avideo-2
+        cpe: cpe:2.3:a:wwbn:avideo:*:*:*:*:*:*:*:*
         part: header
         words:
           - "/install/index.php"
@@ -41,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200f11b526be8994a213f2d908d8573e5a294ed50977fc293ec68c812a9da905ff022043a1351c2166d308891a1f8e6b39616113103d3d56ee0f8cc3f308b0225054b5:922c64590222798bb761d5b6d8e72950

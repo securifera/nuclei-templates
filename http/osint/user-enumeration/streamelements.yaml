@@ -6,11 +6,14 @@ info:
   severity: info
   description: StreamElements user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:streamelements:streamelements:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: streamelements
+    product: streamelements
   tags: osint,osint-finance,streamelements,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: streamelements
+        cpe: cpe:2.3:a:streamelements:streamelements:*:*:*:*:*:*:*:*
         part: body
         words:
           - "\"providerId\""
-# digest: 4b0a00483046022100ff8c4cf6264a0ed089d1eb5f1acba5ea3e6b18ea8d2db88bc17806f789ac3bc7022100d6a5402ff343fbec0a458b5525cdf42d87512e944ba719b2359b04566924d9c4:922c64590222798bb761d5b6d8e72950

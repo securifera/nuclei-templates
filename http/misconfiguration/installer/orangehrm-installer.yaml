@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: orangehrm
+        cpe: cpe:2.3:a:orangehrm:orangehrm:*:*:*:*:*:*:*:*
         part: body
         words:
           - "OrangeHRM Web Installation Wizard"
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: orangehrm-2
+        cpe: cpe:2.3:a:orangehrm:orangehrm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009d9157e71205712f8e0050be82b230b2d57edf16d4e4a09a98858f145f4a3ca4022100e3884cd704cdffdd3dd9de087a1c09f66ed16dc5cd3a7b5f20af349a661c96b1:922c64590222798bb761d5b6d8e72950

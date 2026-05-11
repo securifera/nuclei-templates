@@ -38,11 +38,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ofbiz
+        cpe: cpe:2.3:a:apache:ofbiz:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: ofbiz-2
+        cpe: cpe:2.3:a:apache:ofbiz:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -63,4 +67,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022100870d7fbbd76720673f5ec4a8a501e4f0dbfdd4ecea25ac7ccb32eff99c5079cf02206b762570e8707e7456e8faa2a7460fa7afa928407e09e9ebaf919a36ffde41dd:922c64590222798bb761d5b6d8e72950

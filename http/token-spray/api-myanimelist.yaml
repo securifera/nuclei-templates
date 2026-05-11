@@ -8,8 +8,12 @@ info:
   reference:
     - https://myanimelist.net/apiconfig/references/api/v2
     - https://github.com/daffainfo/all-about-apikey/tree/main/myanimelist
+  classification:
+    cpe: cpe:2.3:a:myanimelist:myanimelist:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: myanimelist
+    product: myanimelist
   tags: token-spray,myanimelist
 
 self-contained: true
@@ -23,10 +27,11 @@ http:
       Authorization: Bearer {{token}}
     matchers:
       - type: word
+        name: myanimelist
+        cpe: cpe:2.3:a:myanimelist:myanimelist:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"data":'
           - '"paging":'
           - '"next":'
         condition: and
-# digest: 4a0a004730450221009deee78ec70a23b467e0bd4ff6081ff26c6da1b45e26ad53023a8647c4c3c2fa02205445c57e11ae7aa8e049f7a230919df9a178f4aa7338366032c9a5d71065426b:922c64590222798bb761d5b6d8e72950

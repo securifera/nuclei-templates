@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: marqo
+        cpe: cpe:2.3:a:marqo-ai:marqo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Welcome to Marqo"

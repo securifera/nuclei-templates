@@ -9,6 +9,7 @@ info:
   reference:
     - https://docs.umbraco.com/umbraco-cms/reference/security/security-hardening
   classification:
+    cpe: cpe:2.3:a:umbraco:umbraco:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-548
@@ -16,6 +17,8 @@ info:
     max-request: 2
     verified: true
     shodan-query: http.html:"umbraco"
+    vendor: umbraco
+    product: umbraco
   tags: umbraco,misconfig,exposure,cms,vuln
 
 http:
@@ -28,8 +31,9 @@ http:
 
     matchers:
       - type: dsl
+        name: umbraco
+        cpe: cpe:2.3:a:umbraco:umbraco:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "/App_Plugins/", "[To Parent Directory]")'
         condition: and
-# digest: 4a0a0047304502205d789351294aee1cff416c17d09d17c7dabff2566126e1d494f5f94eedf71d24022100c7468a9a15dc89f7313989881e8c5fa40c94c7ad65c0de0adbbfe8f66059aa9d:922c64590222798bb761d5b6d8e72950

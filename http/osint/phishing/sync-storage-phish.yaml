@@ -8,8 +8,12 @@ info:
     A sync storage phishing website was detected
   reference:
     - https://sync.com
+  classification:
+    cpe: cpe:2.3:a:sync:sync:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sync
+    product: sync
   tags: phishing,sync,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sync
+        cpe: cpe:2.3:a:sync:sync:*:*:*:*:*:*:*:*
         words:
           - 'Sync | Secure Cloud Storage, File Sharing and Document Collaboration'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: sync-2
+        cpe: cpe:2.3:a:sync:sync:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"sync.com")'
-# digest: 4b0a00483046022100e7a59d1280f936a154614e7450639f7096957aabab9d0d9fcb4254f85313ee3b022100e29ea9c29717d1e946f25cd74cf0d26679a9900f86b08ce5c26fd8f8a4d61da0:922c64590222798bb761d5b6d8e72950

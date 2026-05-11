@@ -8,6 +8,7 @@ info:
   reference:
     - https://github.com/postmanlabs/httpbin
   classification:
+    cpe: cpe:2.3:a:httpbin:httpbin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
@@ -16,6 +17,8 @@ info:
     shodan-query:
       - html:"https://github.com/requests/httpbin"
       - title:"httpbin.org"
+    vendor: httpbin
+    product: httpbin
   tags: xss,httpbin,oss,vuln
 
 http:
@@ -26,11 +29,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: httpbin
+        cpe: cpe:2.3:a:httpbin:httpbin:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '^<script>alert\(document.domain\)</script>$'
 
       - type: word
+        name: httpbin-2
+        cpe: cpe:2.3:a:httpbin:httpbin:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022043393b3255ad2849eb5aed18282d77ebee00e25e03cd7d4aa94e8ca58b085fd502201fa422fc1fefea115b8ebb996f2eb678e81517b0daee06c006097669fb3775ee:922c64590222798bb761d5b6d8e72950

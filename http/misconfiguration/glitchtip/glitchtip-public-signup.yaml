@@ -8,10 +8,14 @@ info:
     A misconfiguration in GlitchTip allows arbitrary users to sign up.
   reference:
     - https://glitchtip.com/documentation/install
+  classification:
+    cpe: cpe:2.3:a:glitchtip:glitchtip:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"GlitchTip"
+    vendor: glitchtip
+    product: glitchtip
   tags: misconfig,glitchtip,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: glitchtip
+        cpe: cpe:2.3:a:glitchtip:glitchtip:*:*:*:*:*:*:*:*
         words:
           - '"enableUserRegistration": true'
           - 'enableSocialAppsUserRegistration'
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206f3b8ffd6733a3f7cee70cb7837fef4331245e033598f46e67aaca2f51c41f910221009e59f82ce8a73956b5b69130245420fd76965cc0e9ad90e07a58ba1dfd5a452a:922c64590222798bb761d5b6d8e72950

@@ -31,14 +31,17 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: bastion_access_manager
+        cpe: cpe:2.3:a:wallix:bastion_access_manager:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200"
           - "contains(tolower(body), '<title>wallix access manager</title>')"
         condition: and
 
       - type: dsl
+        name: bastion_access_manager-2
+        cpe: cpe:2.3:a:wallix:bastion_access_manager:*:*:*:*:*:*:*:*
         dsl:
           - "status_code==200"
           - "('1745235488' == mmh3(base64_py(body)))"
         condition: and
-# digest: 4b0a00483046022100fd76f56998a51fadb2a927fb42da51ad517325c187b0447fb2bed430b9eaa62f022100b99771b1e94de48c317c30948eb0ae129a28fc69e2ebe2da222072c2ffd2f3e3:922c64590222798bb761d5b6d8e72950

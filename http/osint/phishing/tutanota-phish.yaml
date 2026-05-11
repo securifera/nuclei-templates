@@ -8,8 +8,12 @@ info:
     A Tutanota phishing website was detected
   reference:
     - https://tutanota.com
+  classification:
+    cpe: cpe:2.3:a:tutanota:tutanota:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: tutanota
+    product: tutanota
   tags: phishing,tutanota,email,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tutanota
+        cpe: cpe:2.3:a:tutanota:tutanota:*:*:*:*:*:*:*:*
         words:
           - '<title>Tuta: Turn ON privacy for free with secure emails, calendars &amp; contacts | Tuta'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: tutanota-2
+        cpe: cpe:2.3:a:tutanota:tutanota:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"tutanota.com")'
-# digest: 4a0a00473045022100bc5374c459b07a324437872472816a2372db031417e2f703e936074e4b49eaab02205d5308f9a1532939f0687643eddba4967bf33c627c3e28257e004922cc9882d1:922c64590222798bb761d5b6d8e72950

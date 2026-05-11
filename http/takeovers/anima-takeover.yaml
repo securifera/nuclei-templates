@@ -7,8 +7,12 @@ info:
   description: Anima takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/126
+  classification:
+    cpe: cpe:2.3:a:anima:anima:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: anima
+    product: anima
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: anima
+        cpe: cpe:2.3:a:anima:anima:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: anima-2
+        cpe: cpe:2.3:a:anima:anima:*:*:*:*:*:*:*:*
         words:
           - "If this is your website and you've just created it, try refreshing in a minute"
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4b0a00483046022100dd6698429de07aa6a17cd292f2733e2cbaefb38b5337e8a66f0d748349233095022100c842f1977b463fab0de4d522c36ebd9f8ebcfc0f1af77544a9d46e143ccb8d47:922c64590222798bb761d5b6d8e72950

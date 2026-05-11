@@ -8,6 +8,8 @@ info:
     Exposed Cacti log files (cacti.log) were detected. These files contain system statistics, error messages, and potentially sensitive information. They can also be used in log poisoning attacks.
   reference:
     - https://docs.cacti.net/Cacti-Log.md
+  classification:
+    cpe: cpe:2.3:a:cacti:cacti:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
     vendor: cacti
@@ -37,6 +39,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: cacti
+        cpe: cpe:2.3:a:cacti:cacti:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)SYSTEM STATS: Time:'
@@ -45,6 +49,8 @@ http:
           - '(?i)CMDPHP:'
 
       - type: word
+        name: cacti-2
+        cpe: cpe:2.3:a:cacti:cacti:*:*:*:*:*:*:*:*
         part: body
         words:
           - "SYSTEM STATS"
@@ -57,4 +63,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f9ff7584e0a8875eaff75a2d62b4fb240fb03604902b44fd183fddf36aaa8b7c02210085ce2b9f821d96494e3726213793853f34bdaa9c488c3e8b9b7019f4de23b792:922c64590222798bb761d5b6d8e72950

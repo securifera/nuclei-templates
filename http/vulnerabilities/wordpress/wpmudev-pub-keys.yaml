@@ -7,8 +7,12 @@ info:
   description: Wpmudev Wordpress Plugin public key leaked.
   reference:
     - https://www.exploit-db.com/ghdb/6443
+  classification:
+    cpe: cpe:2.3:a:wpmudev-pub-keys:wpmudev-pub-keys:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wpmudev-pub-keys
+    product: wpmudev-pub-keys
   tags: wordpress,edb,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wpmudev-pub-keys
+        cpe: cpe:2.3:a:wpmudev-pub-keys:wpmudev-pub-keys:*:*:*:*:*:*:*:*
         words:
           - "Index of /"
           - ".pub"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e543a9da77bb37dc37aa75bd2c5e38122575dc16f6a10f87533fc4aeecca30f102203a97a97c0ffa3383647452af5f6c2ef8eda229dec3fb4bfb51ca9292f0819271:922c64590222798bb761d5b6d8e72950

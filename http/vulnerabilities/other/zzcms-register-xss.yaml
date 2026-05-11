@@ -8,10 +8,14 @@ info:
     Identified a reflected Cross-Site Scripting (XSS) vulnerability in register_nodb.php of ZZCMS, which allowed injection of malicious scripts via user-supplied input.
   reference:
     - https://github.com/Sinon2003/cve/blob/main/zzcms/xss-register_nodb.php.md
+  classification:
+    cpe: cpe:2.3:a:zzcms:zzcms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"zzcms"
+    vendor: zzcms
+    product: zzcms
   tags: xss,zzcms,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: zzcms
+        cpe: cpe:2.3:a:zzcms:zzcms:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"><script>alert(document.domain)</script>'
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: zzcms-2
+        cpe: cpe:2.3:a:zzcms:zzcms:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/html"
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022036b2e2422c647cd1c629c6d38418d4a9a451299467da4d484d8729aa854b2282022100dd05e77f86a82d78bb36505e08ac1f751932a8072da2c0734bfb4055c1bc6c9b:922c64590222798bb761d5b6d8e72950

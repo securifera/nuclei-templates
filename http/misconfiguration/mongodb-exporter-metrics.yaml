@@ -8,6 +8,7 @@ info:
   reference:
     - https://github.com/percona/mongodb_exporter
   classification:
+    cpe: cpe:2.3:a:mongodb:mongodb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"MongoDB exporter"
+    vendor: mongodb
+    product: mongodb
   tags: mongodb,exposure,debug,misconfig,vuln
 
 http:
@@ -25,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mongodb
+        cpe: cpe:2.3:a:mongodb:mongodb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "# HELP"
 
       - type: word
+        name: mongodb-2
+        cpe: cpe:2.3:a:mongodb:mongodb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "mongodb"
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022051492e5b7bfd91203922acd3deded4db33788713b99761c9df1e6f0159afcea6022100ff8ec3c324278f90b4815222e4d0aee3405d43ea746498c1ef0a21911a4a2e6a:922c64590222798bb761d5b6d8e72950

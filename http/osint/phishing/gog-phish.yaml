@@ -8,8 +8,12 @@ info:
     A GOG phishing website was detected
   reference:
     - https://gog.com
+  classification:
+    cpe: cpe:2.3:a:gog:gog:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: gog
+    product: gog
   tags: phishing,gog,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gog
+        cpe: cpe:2.3:a:gog:gog:*:*:*:*:*:*:*:*
         words:
           - '<title>Welcome to GOG.com | best PC games DRM-free'
           - 'GOG'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: gog-2
+        cpe: cpe:2.3:a:gog:gog:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"gog.com")'
-# digest: 4a0a00473045022100d487e34d8c8e558e6c9ac83674ebdceb2fb2730405c6c264bad7ad66cc1741b1022025b18e0b0d983946ddaf91f994b5f91b3985ebb3353547a239d8a5f0366f589e:922c64590222798bb761d5b6d8e72950

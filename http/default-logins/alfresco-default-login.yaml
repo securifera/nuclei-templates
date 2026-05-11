@@ -9,6 +9,8 @@ info:
   reference:
     - https://docs.alfresco.com/content-services/community/admin/admin-console/
     - https://docs.alfresco.com/community5.0/references/RESTful-RepositoryLoginPost.html
+  classification:
+    cpe: cpe:2.3:a:alfresco:alfresco-content-services:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -33,6 +35,8 @@ http:
 
     matchers:
       - type: dsl
+        name: alfresco-content-services
+        cpe: cpe:2.3:a:alfresco:alfresco-content-services:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200 || status_code == 302'
@@ -50,9 +54,10 @@ http:
 
     matchers:
       - type: dsl
+        name: alfresco-content-services-2
+        cpe: cpe:2.3:a:alfresco:alfresco-content-services:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "ticket", "TICKET_")'
         condition: and
-# digest: 4b0a004830460221009c4adf804541d95dffc55d6101f59bd97ac324537638ec8924c95de305e92b8802210095896d6fd69e62e97de8ee66ba022b6e6f72357fe5d50460eb66cc77abb1db3e:922c64590222798bb761d5b6d8e72950

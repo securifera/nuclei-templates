@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: impresspages_cms
+        cpe: cpe:2.3:a:impresspages:impresspages_cms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "ImpressPages installation wizard"
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: impresspages_cms-2
+        cpe: cpe:2.3:a:impresspages:impresspages_cms:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220251d0d9119b558e83fe101790040fa6f7b04316c1c8064f9b2a9b107295d6272022100d46352e27c7edee8f82d40b178017a0470166377b1115b6e74bc892e060f5834:922c64590222798bb761d5b6d8e72950

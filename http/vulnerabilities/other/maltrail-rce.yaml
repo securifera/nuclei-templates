@@ -11,10 +11,14 @@ info:
   reference:
     - https://huntr.dev/bounties/be3c5204-fbd9-448d-b97c-96a8d2941e87/
     - https://github.com/stamparm/maltrail/commit/a299967318cc226c18a6a07d1be708e3f21edd39
+  classification:
+    cpe: cpe:2.3:a:maltrail:maltrail:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: "Server: Maltrail"
+    vendor: maltrail
+    product: maltrail
   tags: huntr,maltrail,rce,oast,oos,vuln
 
 http:
@@ -32,9 +36,10 @@ http:
 
     matchers:
       - type: dsl
+        name: maltrail
+        cpe: cpe:2.3:a:maltrail:maltrail:*:*:*:*:*:*:*:*
         dsl:
           - contains(body,'Login failed')
           - contains(interactsh_protocol,'dns')
           - contains(content_type, "text/plain")
         condition: and
-# digest: 4b0a00483046022100e0c4bb606a59eabf1b8f3baa24202feb10887bb349517a4b20f3266234a7f8dd022100a44f340f52859af4b954b94a5d683828de48d442c3d06be9706591e711370f54:922c64590222798bb761d5b6d8e72950

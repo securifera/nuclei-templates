@@ -10,11 +10,14 @@ info:
     - https://wpscan.com/vulnerability/2d465fc4-d4fa-43bb-9c0d-71dcc3ee4eab
     - https://themeforest.net/item/javo-spot-multi-purpose-directory-wordpress-theme/13198068
   classification:
+    cpe: cpe:2.3:a:wp-javospot:wp-javospot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: wp-javospot
+    product: wp-javospot
   tags: wordpress,wp-theme,lfi,wp,wpscan,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-javospot
+        cpe: cpe:2.3:a:wp-javospot:wp-javospot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DB_NAME"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009018aa4a8533318f97b9c211db003abf8ab5ecc6e1129a86480b852752ebfae4022100c30ddb0412ed93fe1293c3f0d355f3b2326fe13007bdf29cd0c8f7ac1a3fbdb3:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Discord phishing website was detected
   reference:
     - https://discord.com
+  classification:
+    cpe: cpe:2.3:a:discord:discord:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: discord
+    product: discord
   tags: phishing,discord,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: discord
+        cpe: cpe:2.3:a:discord:discord:*:*:*:*:*:*:*:*
         words:
           - 'Discord | Your Place to Talk and Hang Out'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: discord-2
+        cpe: cpe:2.3:a:discord:discord:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"discord.com")'
-# digest: 4a0a00473045022063b8fe8c36d8230585e03eca6ab5d4c0888a90c26d3132c072efd253b4c318c9022100e70bebf4f46da4009573a707fcef8a7d9af59456186f0f234fd92160d760487b:922c64590222798bb761d5b6d8e72950

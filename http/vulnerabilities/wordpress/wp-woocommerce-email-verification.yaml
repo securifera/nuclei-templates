@@ -10,11 +10,14 @@ info:
     - https://wpvulndb.com/vulnerabilities/10318
     - https://wpscan.com/vulnerability/0c93832c-83db-4053-8a11-70de966bb3a8
   classification:
+    cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-288
   metadata:
     max-request: 2
+    vendor: woocommerce
+    product: woocommerce
   tags: woocommerce,wp,wpscan,wordpress,wp-plugin,vuln
 
 http:
@@ -28,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: woocommerce
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "wordpress_logged_in_[a-z0-9]{32}"
 
       - type: word
+        name: woocommerce-2
+        cpe: cpe:2.3:a:woocommerce:woocommerce:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Your account has been activated!"
@@ -42,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100eea72f07a9c4aa6c7ef8ee9b1a5e39b2b8efcf723c1a0d6e4945d4a115575d2b022060bcb62cc94dd0b2a09764025b9a4df29725b953d2ee7f33b3ca96b5cc53bd73:922c64590222798bb761d5b6d8e72950

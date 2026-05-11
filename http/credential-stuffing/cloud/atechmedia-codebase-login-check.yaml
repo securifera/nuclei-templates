@@ -7,8 +7,12 @@ info:
   description: Checks for a valid Atechmedia/Codebase account.
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
+  classification:
+    cpe: cpe:2.3:a:atechmedia:codebase:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: atechmedia
+    product: codebase
   tags: cloud,creds-stuffing,login-check,atechmedia,codebase,vuln
 
 self-contained: true
@@ -45,6 +49,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: codebase
+        cpe: cpe:2.3:a:atechmedia:codebase:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'Set-Cookie: user_session'
@@ -52,4 +58,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a0047304502201d0976538553d5e9019320a5b30170f310554a6e16c5c0890456365906e903590221008f02abaf1f16492712cc6cbc07b16a2867d19d682b5d83da367a73d058c52262:922c64590222798bb761d5b6d8e72950

@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: discourse
+        cpe: cpe:2.3:a:discourse:discourse:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Discourse Setup'
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: discourse-2
+        cpe: cpe:2.3:a:discourse:discourse:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220258dd141bd30687870bf553780d453d71be264213d235e9cb270f5998ededf8f02206ba104ab8b5d3983f90b68f7279f85c2260826c9e795bc92c1488e27456a3b46:922c64590222798bb761d5b6d8e72950

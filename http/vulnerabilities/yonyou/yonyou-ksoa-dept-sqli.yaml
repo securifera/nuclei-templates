@@ -9,6 +9,7 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/I6aG2vFIi5nbVZfuVNpyDw
   classification:
+    cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-89
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="用友-时空KSOA"
+    vendor: yonyou
+    product: yonyou
   tags: yonyou,oa,sqli,ksoa,vuln
 
 variables:
@@ -29,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yonyou
+        cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
         part: body
         words:
           - '0x{{md5({{num}})}}'
@@ -36,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220408d2169f41702e068d8824769340acb018fdfad105643d98a8e4901c5cf39c5022076d0d2c6fb69d559986c1c68ee2ffe765c9b75ca2562efc9a85efbbf9f054d06:922c64590222798bb761d5b6d8e72950

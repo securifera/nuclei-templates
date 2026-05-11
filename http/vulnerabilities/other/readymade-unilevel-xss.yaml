@@ -8,6 +8,8 @@ info:
     Readymade Unilevel Ecommerce software has xss vulnerability in product-details.php?id
   reference:
     - https://packetstormsecurity.com/files/179886/ReadyMade-Unilevel-Ecommerce-MLM-Blind-SQL-Injection-Cross-Site-Scripting.html
+  classification:
+    cpe: cpe:2.3:a:i-netsolution:readymade-unilevel-ecommerce:*:*:*:*:*:*:*:*
   metadata:
     vendor: i-netsolution
     product: readymade-unilevel-ecommerce
@@ -24,9 +26,10 @@ http:
 
     matchers:
       - type: dsl
+        name: readymade-unilevel-ecommerce
+        cpe: cpe:2.3:a:i-netsolution:readymade-unilevel-ecommerce:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "><img/src/onerror=.1|alert`{{num1}}` class={{num1}}>", "user_login_id")'
           - 'contains(content_type, "text/html")'
           - "status_code == 200"
         condition: and
-# digest: 4b0a004830460221009997a208b1c9b49ecd9ad2ba8258473c25ada36d4e85528ba5502f378cc4953a022100a569cc67101987897a61bd8e405e415f9ecdacf7991ab79dc0d2848854a6efeb:922c64590222798bb761d5b6d8e72950

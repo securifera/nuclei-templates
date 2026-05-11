@@ -4,8 +4,12 @@ info:
   name: GilaCMS Detect
   author: pikpikcu
   severity: info
+  classification:
+    cpe: cpe:2.3:a:gilacms:gilacms:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: gilacms
+    product: gilacms
   tags: tech,gilacms,discovery
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gilacms
+        cpe: cpe:2.3:a:gilacms:gilacms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Homepage | Gila CMS'
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207edf67417d557b75f960ec1823b984a4fb81bd5d1370b0e087d342a37cc92702022006e6beb89317c00fbe35ad87e9332289cea9d4ee87d887999f386feb30531706:922c64590222798bb761d5b6d8e72950

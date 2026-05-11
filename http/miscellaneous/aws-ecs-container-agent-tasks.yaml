@@ -7,8 +7,12 @@ info:
   description: Aws container metadata content
   reference:
     - https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/create_deploy_docker_ecstutorial.html#create_deploy_docker_ecstutorial_connect_inspect
+  classification:
+    cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: aws
+    product: aws
   tags: miscellaneous,aws,docker,ec2,misc,vuln
 
 http:
@@ -20,10 +24,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aws
+        cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
         words:
           - "arn:aws:ecs"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201a1264f737b2b7fe3a47892f39dfd9cdd44208a5eae9c0a14b6270e8e69d7cbd02210083591e43bfd910eff33ac6713579f063f64161f35ab2d3c7b71143dc0c8d80ba:922c64590222798bb761d5b6d8e72950

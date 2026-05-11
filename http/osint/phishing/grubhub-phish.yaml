@@ -8,8 +8,12 @@ info:
     A Grubhub phishing website was detected
   reference:
     - https://grubhub.com
+  classification:
+    cpe: cpe:2.3:a:grubhub:grubhub:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: grubhub
+    product: grubhub
   tags: phishing,grubhub,food-delivery,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: grubhub
+        cpe: cpe:2.3:a:grubhub:grubhub:*:*:*:*:*:*:*:*
         words:
           - "Prepare your taste buds..."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: grubhub-2
+        cpe: cpe:2.3:a:grubhub:grubhub:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"grubhub.com")'
-# digest: 490a0046304402207c2d45707213f6fced576d4a91b97c735678439abec1b4c07890c3a375b22e4802203148f410a12437be28bc535202e344f8365bcfeefa773c73501b92a6234b3f88:922c64590222798bb761d5b6d8e72950

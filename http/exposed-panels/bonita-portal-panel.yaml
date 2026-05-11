@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects the presence of Bonita Portal login page.
+  classification:
+    cpe: cpe:2.3:a:bonita:bonita:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1197926023
+    vendor: bonita
+    product: bonita
   tags: bonita,login,panel,discovery
 
 http:
@@ -20,10 +24,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bonita
+        cpe: cpe:2.3:a:bonita:bonita:*:*:*:*:*:*:*:*
         words:
           - "Bonita Portal"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203141d67436b4966005490e8ffa2211a3c4f0d41ad4314426c4e33381b1cb6fd7022100d3deb6d84c222b5e26a8d82ed605bd285ad8f54975a86526685250f319938b6b:922c64590222798bb761d5b6d8e72950

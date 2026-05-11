@@ -7,9 +7,13 @@ info:
   description: The startup endpoint provides information about the application’s startup sequence.
   reference:
     - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "springBootVersion"
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -41,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205822f610902c7442f0346b163e54893089cdb3f212f593e26271181e9d1b261c022100e60c7494bd55d7d47b081a1027be734a79a940d6cc6a651966d4ad7206859cfb:922c64590222798bb761d5b6d8e72950

@@ -9,11 +9,14 @@ info:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/nginx-merge-slashes-path-traversal.json
     - https://medium.com/appsflyer/nginx-may-be-protecting-your-applications-from-traversal-attacks-without-you-even-knowing-b08f882fd43d
   classification:
+    cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 3
+    vendor: nginx
+    product: nginx
   tags: exposure,config,lfi,nginx,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
           - "app.listen"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100dde369eefb3ff4de26e19d231f0fa65594419b2a1c21cad3ba1589d01db30928022003c2e3f2ba63b68f3731edc12ad190155fc6fd75c91e5097125dc7e8f998c77a:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,7 @@ info:
   reference:
     - https://atom.io/packages/sftp-deployment
   classification:
+    cpe: cpe:2.3:a:sftp:sftp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 1
     github-query: filename:deployment-config.json sftp
+    vendor: sftp
+    product: sftp
   tags: sftp,atom,config,exposure,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sftp
+        cpe: cpe:2.3:a:sftp:sftp:*:*:*:*:*:*:*:*
         words:
           - '"host":'
           - '"username":'
@@ -36,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022035051e86c5fb186a1b9179e14917ac7f4b8990956094aa1f7562d8e52275349e02203adbac0f232aa96e851064e63d0ef00f96dec82e29d802bee96b4fd24fb8549a:922c64590222798bb761d5b6d8e72950

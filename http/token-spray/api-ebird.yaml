@@ -8,8 +8,12 @@ info:
   reference:
     - https://documenter.getpostman.com/view/664302/S1ENwy59
     - https://github.com/daffainfo/all-about-apikey/tree/main/ebird
+  classification:
+    cpe: cpe:2.3:a:ebird:ebird:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ebird
+    product: ebird
   tags: token-spray,ebird
 
 self-contained: true
@@ -23,6 +27,8 @@ http:
       X-eBirdApiToken: "{{token}}"
     matchers:
       - type: word
+        name: ebird
+        cpe: cpe:2.3:a:ebird:ebird:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"speciesCode":'
@@ -30,4 +36,3 @@ http:
           - '"sciName":'
           - '"locId":'
         condition: and
-# digest: 4a0a00473045022100febb1d9cb4e73d45e78e3835b8158e38ddddb35961f84fb8d7cd1545a7e0fac1022041ef7d4773c2d13a1c783f6058a1dfff6d1f6f802c842a364f732ea8996c0aac:922c64590222798bb761d5b6d8e72950

@@ -9,12 +9,15 @@ info:
     - https://web.archive.org/web/20230101082612/https://spyclub.tech/2022/12/14/unusual-cache-poisoning-akamai-s3/
     - https://owasp.org/www-community/attacks/Cache_Poisoning
   classification:
+    cpe: cpe:2.3:a:poisoning:poisoning:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
     cvss-score: 7.1
     cwe-id: CWE-44
   metadata:
     verified: true
     max-request: 204
+    vendor: poisoning
+    product: poisoning
   tags: cache,poisoning,xss,akamai,s3,misconfig,vuln
 variables:
   rand: "{{rand_base(5)}}"
@@ -61,8 +64,9 @@ http:
     unsafe: true
     matchers:
       - type: dsl
+        name: poisoning
+        cpe: cpe:2.3:a:poisoning:poisoning:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_2, "alert(document.domain)")'
           - 'status_code_2 == 200'
         condition: and
-# digest: 4a0a00473045022100aac77893e88ddd18fa4d35f6705e1c26d8bae5b910fd71e4573605d9a89128b202202c7a38d6c4a33b43f839a137c74af1f3d51616f8f18187ef6acec46b564fd3dc:922c64590222798bb761d5b6d8e72950

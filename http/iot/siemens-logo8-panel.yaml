@@ -6,10 +6,14 @@ info:
   severity: info
   description:
     Siemens Logo! 8 Web Login Panel was discovered.
+  classification:
+    cpe: cpe:2.3:a:siemens:siemens:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"/logo_login.shtm"
+    vendor: siemens
+    product: siemens
   tags: ics,siemens,panel,login,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: siemens
+        cpe: cpe:2.3:a:siemens:siemens:*:*:*:*:*:*:*:*
         part: body
         words:
           - "LOGO! Login"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009ba08cd06b8fe2efc9baa448576047b2fd226202bd498daf9fd246a8d976145d0221009e8de604d3afeb9cc6825c603a1302608256557a6bfd911512c23b33f36b619f:922c64590222798bb761d5b6d8e72950

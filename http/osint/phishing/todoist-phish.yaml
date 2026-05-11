@@ -8,8 +8,12 @@ info:
     A Todoist phishing website was detected
   reference:
     - https://todoist.com
+  classification:
+    cpe: cpe:2.3:a:todoist:todoist:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: todoist
+    product: todoist
   tags: phishing,todoist,productivity,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: todoist
+        cpe: cpe:2.3:a:todoist:todoist:*:*:*:*:*:*:*:*
         words:
           - '<title>Todoist | A To-Do List to Organize Your Work &amp; Life'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: todoist-2
+        cpe: cpe:2.3:a:todoist:todoist:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"todoist.com")'
-# digest: 490a004630440220330ad3bdd198aa77f30a2070e777a22754e141a30a09416e42ab227317ac57620220364817124bc918df0838f3051a05d20b8511836255368af47799f1e20123c350:922c64590222798bb761d5b6d8e72950

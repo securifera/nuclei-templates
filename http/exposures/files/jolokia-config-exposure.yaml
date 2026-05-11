@@ -9,9 +9,13 @@ info:
   reference:
     - https://jolokia.org/reference/html/agents.html
     - https://docs.microfocus.com/doc/388/24.3/confjolokia
+  classification:
+    cpe: cpe:2.3:a:jolokia:jolokia:*:*:*:*:*:*:*:*
   metadata:
     verified: false
     max-request: 4
+    vendor: jolokia
+    product: jolokia
   tags: config,exposure,jolokia,jmx,devops
 
 http:
@@ -25,8 +29,9 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: jolokia
+        cpe: cpe:2.3:a:jolokia:jolokia:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "host=", "port=", "protocol=", "password=") || contains_all(body, "<restrict>", "<remote>", "<host>", "<mbean>")'
         condition: and
-# digest: 4a0a0047304502205ea35f78b31cdceed7876936dd6effcfda553f27a7b4bacfcfdfe6afe7b69398022100c1757ed2b620afb97763f215a2e20b4ee2dae7363c284ffa6683d71374fa3108:922c64590222798bb761d5b6d8e72950

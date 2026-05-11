@@ -9,9 +9,13 @@ info:
   reference:
     - https://www.wangan.com/p/11v754aceadb994f
     - https://cn-sec.com/archives/1828326.html
+  classification:
+    cpe: cpe:2.3:a:hikvision:ivms:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     fofa-query: icon_hash="-911494769"
+    vendor: hikvision
+    product: ivms
   tags: hikvision,ivms,fileupload,rce,intrusive,vuln
 variables:
   str1: '{{rand_base(6)}}'
@@ -44,6 +48,7 @@ http:
         internal: true
     matchers:
       - type: dsl
+        name: ivms
+        cpe: cpe:2.3:a:hikvision:ivms:*:*:*:*:*:*:*:*
         dsl:
           - body_2 == str2
-# digest: 4a0a0047304502207d0d0963a7b1ab4ee44a99282d84d9338054c011acba28ec0276c6a76fa900c2022100dafd2ab8593aa6bbc70cb2ee2b1306056096035c1de149ba9289d92bef4e590c:922c64590222798bb761d5b6d8e72950

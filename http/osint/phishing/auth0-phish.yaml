@@ -8,8 +8,12 @@ info:
     An Auth0 phishing website was detected
   reference:
     - https://auth0.com
+  classification:
+    cpe: cpe:2.3:a:auth0:auth0:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: auth0
+    product: auth0
   tags: phishing,auth0,authentication,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: auth0
+        cpe: cpe:2.3:a:auth0:auth0:*:*:*:*:*:*:*:*
         words:
           - 'ecure users, AI agents, and more with Auth0, an easy-to-implement, scalable, and adaptable authentication and authorization platform.'
         condition: and
@@ -31,6 +37,7 @@ http:
           - 200
 
       - type: dsl
+        name: auth0-2
+        cpe: cpe:2.3:a:auth0:auth0:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"auth0.com")'
-# digest: 490a0046304402201960b4fa38b661934ad7ace49f33d1c48e77df99fe4dac67b04845658635b2240220521969cf23cb27cd549b09e3170117863d03585605cd6b6be98c61e144974f84:922c64590222798bb761d5b6d8e72950

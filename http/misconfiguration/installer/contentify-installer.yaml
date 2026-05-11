@@ -5,9 +5,13 @@ info:
   author: ritikchaddha
   severity: high
   description: Contentify is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:contentify:contentify:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: contentify
+    product: contentify
   tags: misconfig,contentify,install,exposure,vuln
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: contentify
+        cpe: cpe:2.3:a:contentify:contentify:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Contentify - Step 1'
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210087c013e2f6599afe9a44ae2906fbb883c05bad5eca247f80461cb0061fd52005022065c231bc2f4d0de7e6e7319153a767244af61f03d004fd2cd584608c84049f56:922c64590222798bb761d5b6d8e72950

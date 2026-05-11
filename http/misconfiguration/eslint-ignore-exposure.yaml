@@ -8,9 +8,13 @@ info:
     Eslint Ignore File was exposed.
   reference:
     - https://eslint.org/docs/latest/use/configure/ignore
+  classification:
+    cpe: cpe:2.3:a:eslint-ignore:eslint-ignore:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: html:"eslintignore"
+    vendor: eslint-ignore
+    product: eslint-ignore
   tags: eslintignore,misconfig,vuln
 
 http:
@@ -21,11 +25,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: eslint-ignore
+        cpe: cpe:2.3:a:eslint-ignore:eslint-ignore:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'xtscancodes.js'
 
       - type: word
+        name: eslint-ignore-2
+        cpe: cpe:2.3:a:eslint-ignore:eslint-ignore:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/octet-stream"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100fb6264d9a29d876aa4b6d05a750ea9632e2c9aa1993317f983a965a01d3b1805022100fc8ab7111eda8f549230a9e21624a16061ae2d3535cb8065f29372bfcd4346db:922c64590222798bb761d5b6d8e72950

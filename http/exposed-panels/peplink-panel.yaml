@@ -5,6 +5,8 @@ info:
   author: pussycat0x
   severity: info
   description: peplink login panel was detected.
+  classification:
+    cpe: cpe:2.3:a:peplink:balance_two_firmware:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     shodan-query: html:"PEPLINK"
@@ -20,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: balance_two_firmware
+        cpe: cpe:2.3:a:peplink:balance_two_firmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'init_company_name = "Peplink"'
@@ -29,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022077f4795207e6ce3b7e99c6b0a5193585de1f63076da574ffca65b587b67770bc02202a7d8bad2c8f319ed8779c96f3c0848f350eaab76ece683b825110ae447fc9ae:922c64590222798bb761d5b6d8e72950

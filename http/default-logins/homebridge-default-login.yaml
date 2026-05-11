@@ -10,6 +10,7 @@ info:
     - https://github.com/homebridge/homebridge
     - https://github.com/homebridge/homebridge-config-ui-x
   classification:
+    cpe: cpe:2.3:a:homebridge:homebridge-config-ui-x:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-798
@@ -36,6 +37,8 @@ http:
 
     matchers:
       - type: dsl
+        name: homebridge-config-ui-x
+        cpe: cpe:2.3:a:homebridge:homebridge-config-ui-x:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -52,9 +55,10 @@ http:
 
     matchers:
       - type: dsl
+        name: homebridge-config-ui-x-2
+        cpe: cpe:2.3:a:homebridge:homebridge-config-ui-x:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200 || status_code == 201'
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "access_token", "token_type")'
         condition: and
-# digest: 4a0a00473045022100d5bc53f74a3ac63b10e3385057d693bff5cf556890166e0d6cda99771f8d12a502203423cf0c8bec1988404fd350d82d702b2d27e994f027ef084ed412ca236b2e04:922c64590222798bb761d5b6d8e72950

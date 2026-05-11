@@ -9,10 +9,14 @@ info:
   reference:
     - https://developers.weglot.com/api/authentication
     - https://medium.com/@zx10a/my-first-accepted-hackerone-report-finding-exposed-weglot-api-keys-across-5-targets-fb14ecda869b
+  classification:
+    cpe: cpe:2.3:a:weglot:weglot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="/scripts/weglot.js" || body="/js/weglot.js" || body="Weglot.initialize" && body="api_key"
+    vendor: weglot
+    product: weglot
   tags: exposure,weglot,api-key,secret,js,misconfig
 
 http:
@@ -22,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: weglot
+        cpe: cpe:2.3:a:weglot:weglot:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "javascript")'
@@ -34,4 +40,3 @@ http:
         part: body
         regex:
           - 'wg_[a-f0-9]{32,40}'
-# digest: 490a004630440220427d36f556eec2129a56bd5ad24c987dbbfa291e5b73d01c33521875838ebb0e022036050f88b4aa0b84fe611d86945d2025e04059e76845d9ec33b9b585fd56c641:922c64590222798bb761d5b6d8e72950

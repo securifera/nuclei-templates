@@ -5,8 +5,12 @@ info:
   author: pdp,geeknik,hetyh,s4e-io
   severity: low
   description: Multiple common JavaScript environment configuration files were detected.
+  classification:
+    cpe: cpe:2.3:a:javascript:javascript:*:*:*:*:*:*:*:*
   metadata:
     max-request: 8
+    vendor: javascript
+    product: javascript
   tags: javascript,config,exposure,vuln
 
 http:
@@ -29,10 +33,14 @@ http:
           - 200
 
       - type: dsl
+        name: javascript
+        cpe: cpe:2.3:a:javascript:javascript:*:*:*:*:*:*:*:*
         dsl:
           - "contains(tolower(content_type), 'application/javascript')"
 
       - type: word
+        name: javascript-2
+        cpe: cpe:2.3:a:javascript:javascript:*:*:*:*:*:*:*:*
         part: body
         words:
           - "module.exports"
@@ -48,6 +56,8 @@ http:
         condition: or
 
       - type: word
+        name: javascript-3
+        cpe: cpe:2.3:a:javascript:javascript:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Bootstrap"
@@ -56,4 +66,3 @@ http:
           - "is_ad_blocked"
         condition: or
         negative: true
-# digest: 4b0a00483046022100a40edadbd8c815a585aba9c8fc84b4f1f23d4ae9f89924af8fbdfcb090b49032022100e670cc4c4f817c067cb5f9138363402318da960cabfb0b962dcd6fcb6f8408ff:922c64590222798bb761d5b6d8e72950

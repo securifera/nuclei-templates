@@ -7,9 +7,13 @@ info:
   description: AEM WCM Suggestions Servlet is exposed.
   reference:
     - https://speakerdeck.com/0ang3el/hunting-for-security-bugs-in-aem-webapps?slide=96
+  classification:
+    cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.component:"Adobe Experience Manager"
+    vendor: aem
+    product: aem
   tags: aem,misconfig,intrusive,vuln
 
 http:
@@ -24,9 +28,10 @@ http:
           - 200
 
       - type: word
+        name: aem
+        cpe: cpe:2.3:a:aem:aem:*:*:*:*:*:*:*:*
         words:
           - '{{randstr}}'
           - '"results":'
           - '"suggestions":'
         condition: and
-# digest: 4b0a0048304602210083f3ac894b37fd62c9afe8761324b257938be6a2e03fb18117813653c0b1c5a2022100d0ba9203295e051c9609f26b425a76835a6ae8679ff5f04f2d19141f3b07b1fc:922c64590222798bb761d5b6d8e72950

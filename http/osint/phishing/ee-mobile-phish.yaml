@@ -8,8 +8,12 @@ info:
     A ee phishing website was detected
   reference:
     - https://ee.co.uk
+  classification:
+    cpe: cpe:2.3:a:ee-mobile:ee-mobile:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ee-mobile
+    product: ee-mobile
   tags: phishing,ee,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ee-mobile
+        cpe: cpe:2.3:a:ee-mobile:ee-mobile:*:*:*:*:*:*:*:*
         words:
           - 'Superfast 5G &amp; 4G Phones, Tablets and Fibre Broadband | EE'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: ee-mobile-2
+        cpe: cpe:2.3:a:ee-mobile:ee-mobile:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"ee.co.uk")'
-# digest: 4a0a00473045022100896078804318e7e133ecf47d6c03e5f8b4bbc6f8dba1f0c9338de993c58a5b0202202ca6bc84b47eaf7711df01529f651c9fd21ef93f3015d98acea4ebb7049e5799:922c64590222798bb761d5b6d8e72950

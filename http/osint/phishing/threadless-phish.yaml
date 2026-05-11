@@ -8,8 +8,12 @@ info:
     A Threadless phishing website was detected
   reference:
     - https://threadless.com
+  classification:
+    cpe: cpe:2.3:a:threadless:threadless:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: threadless
+    product: threadless
   tags: phishing,threadless,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: threadless
+        cpe: cpe:2.3:a:threadless:threadless:*:*:*:*:*:*:*:*
         words:
           - 'Threadless'
           - 'Shop our collection of awesome t-shirts, art prints, iphone cases, and more featuring unique designs by the global Threadless artist community.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: threadless-2
+        cpe: cpe:2.3:a:threadless:threadless:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"threadless.com")'
-# digest: 4b0a00483046022100b70bc544c44987f9477d9e8e6e42cfe80783dc0d1d5b1932d5a2606617164c52022100b3baf5322539d162856222a452a37350578bdf06ea211941615e5ddad8f2dae3:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,15 @@ info:
     Detects exposed UniGUI Server Monitor Panels which could reveal sensitive server statistics, users sessions, licensing information and others data.
   reference:
     - https://www.unigui.com/doc/online_help/using-server-monitor-(server-c.htm
+  classification:
+    cpe: cpe:2.3:a:unigui:unigui:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"uniGUI"
     fofa-query: title="uniGUI"
+    vendor: unigui
+    product: unigui
   tags: exposure,unigui,misconfig,vuln
 
 http:
@@ -23,14 +27,17 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: unigui
+        cpe: cpe:2.3:a:unigui:unigui:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(body, "uniGUI Standalone Server", "uniGUI License Information", "Server Statistics")'
           - 'status_code == 200'
         condition: and
 
       - type: dsl
+        name: unigui-2
+        cpe: cpe:2.3:a:unigui:unigui:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "layout:\"fit\",title:\"uniGUI Standalone Server\"")'
           - 'contains(body, "layout:\"absolute\",title:\"Server Statistics\"")'
         condition: or
-# digest: 4a0a00473045022021f4ace1f839cc1b5367a7bad81d4dbfb3138a10b026b0de142d43ca92c4e5af022100a6c946574c1786c82167f9556928093de7fafb4b4e6dc72601c4c3583bdfe770:922c64590222798bb761d5b6d8e72950

@@ -7,12 +7,15 @@ info:
   description: |
     Detects exposed JSON configuration files containing sensitive information including API keys, access tokens, AWS credentials, database configurations, base URLs, file paths, and application settings. These files often contain production configurations and credentials that should not be publicly accessible.
   classification:
+    cpe: cpe:2.3:a:config-json-exposure-fuzz:config-json-exposure-fuzz:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-200
   metadata:
     max-request: 50
     github-query: filename:config.json
+    vendor: config-json-exposure-fuzz
+    product: config-json-exposure-fuzz
   tags: config,exposure,files,vuln
 
 http:
@@ -87,6 +90,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: config-json-exposure-fuzz
+        cpe: cpe:2.3:a:config-json-exposure-fuzz:config-json-exposure-fuzz:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -95,6 +100,8 @@ http:
         condition: or
 
       - type: word
+        name: config-json-exposure-fuzz-2
+        cpe: cpe:2.3:a:config-json-exposure-fuzz:config-json-exposure-fuzz:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -107,6 +114,8 @@ http:
           - 200
 
       - type: regex
+        name: config-json-exposure-fuzz-3
+        cpe: cpe:2.3:a:config-json-exposure-fuzz:config-json-exposure-fuzz:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)(\"(api_key|apikey|token|secret|password|passwd|pwd|auth|access_key|secret_key)\":\s*\"[^\"]{8,}\")'
@@ -179,4 +188,3 @@ http:
         name: sensitive_endpoints
         regex:
           - 'https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/(?:login|api|admin|dashboard|auth)'
-# digest: 4b0a00483046022100e8a0f653dc0a3924b986e2306fe8272a074147f75bcde45123d7c8af9269349e022100f9bb50454c6adac1b02b177d1231cbc896ca89f8a3d2ace919ee56f543f5e8c5:922c64590222798bb761d5b6d8e72950

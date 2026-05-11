@@ -10,10 +10,14 @@ info:
     - https://github.com/qingchenhh/qc_poc/blob/main/Goby/nginxWebUI_runCmd_rce.go
     - https://www.ctfiot.com/124166.html
     - https://www.sangfor.com/farsight-labs-threat-intelligence/cybersecurity/nginxwebui-runcmd-remote-command-execution-vulnerability
+  classification:
+    cpe: cpe:2.3:a:nginxwebui:nginxwebui:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"nginxWebUI"
+    vendor: nginxwebui
+    product: nginxwebui
   tags: nginx,nginxwebui,rce,vuln
 
 http:
@@ -24,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: nginxwebui
+        cpe: cpe:2.3:a:nginxwebui:nginxwebui:*:*:*:*:*:*:*:*
         part: body
         regex:
           - 'uid=\d+\(([^)]+)\) gid=\d+\(([^)]+)\)'
 
       - type: word
+        name: nginxwebui-2
+        cpe: cpe:2.3:a:nginxwebui:nginxwebui:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220141576222a02701ada02fc9c3255755aa228d30131d1f307a8bde5f26afc714f022100e4c64f39ecf7ae2276773c640d209632dd2b25ce5cc0b9e8a648cca77d9d8fd4:922c64590222798bb761d5b6d8e72950

@@ -6,8 +6,12 @@ info:
   severity: high
   reference:
     - https://github.com/trufflesecurity/trufflehog/blob/main/pkg/detectors/zenserp/zenserp.go
+  classification:
+    cpe: cpe:2.3:a:zenserp:zenserp:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: zenserp
+    product: zenserp
   tags: exposure,token,zenserp,apikey,vuln
 
 flow: http(1) && http(2)
@@ -21,6 +25,7 @@ http:
       - type: regex
         part: body
         name: token
+        cpe: cpe:2.3:a:zenserp:zenserp:*:*:*:*:*:*:*:*
         regex:
           - '([0-9a-z-]{36})'
         internal: true
@@ -35,6 +40,8 @@ http:
     disable-path-automerge: true
     matchers:
       - type: dsl
+        name: zenserp
+        cpe: cpe:2.3:a:zenserp:zenserp:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains(content_type, 'application/json')
@@ -45,4 +52,3 @@ http:
       - type: dsl
         dsl:
           - token
-# digest: 4a0a0047304502202263e771a1aa3ca7d791c26440a46a4a8173a1b461c992f656a8e7a92a43b4c0022100a7a7d5e4f41d7d167e08435c17b0565a0ea9375e715bbf76c8063606100055ed:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Salesforce phishing website was detected
   reference:
     - https://salesforce.com
+  classification:
+    cpe: cpe:2.3:a:salesforce:salesforce:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: salesforce
+    product: salesforce
   tags: phishing,salesforce,crm,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: salesforce
+        cpe: cpe:2.3:a:salesforce:salesforce:*:*:*:*:*:*:*:*
         words:
           - "Salesforce is the #1 AI CRM, helping companies become Agentic Enterprises where humans and agents drive success together through a unified AI, data, and Customer 360 platform."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: salesforce-2
+        cpe: cpe:2.3:a:salesforce:salesforce:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"salesforce.com")'
-# digest: 490a004630440220733e9817166e5f280cdf906e32e7bb4d4a013985631ab8c510908188e50826ad02203ed858e45cac21f6f165f816d98c95e6a8a41d2250ba734e7bccab189fffecfa:922c64590222798bb761d5b6d8e72950

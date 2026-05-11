@@ -8,8 +8,12 @@ info:
   reference:
     - https://urlscan.io/docs/api/
     - https://github.com/daffainfo/all-about-apikey/tree/main/urlscan
+  classification:
+    cpe: cpe:2.3:a:urlscan:urlscan:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: urlscan
+    product: urlscan
   tags: token-spray,urlscan
 
 self-contained: true
@@ -24,10 +28,11 @@ http:
 
     matchers:
       - type: word
+        name: urlscan
+        cpe: cpe:2.3:a:urlscan:urlscan:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'X-Rate-Limit-Scope:'
           - 'X-Rate-Limit-Limit:'
           - 'X-Rate-Limit-Remaining:'
         condition: and
-# digest: 4a0a00473045022057289f66fefb218583fa4649bdb663ae06518685b9167f4caed2051bbf8ffc19022100e5c2553c86d3deac38a8e8f9c74f2f571fa9f087fcf98f8172e7c420c2178ba1:922c64590222798bb761d5b6d8e72950

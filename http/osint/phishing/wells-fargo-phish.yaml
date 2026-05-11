@@ -8,8 +8,12 @@ info:
     A Wells Fargo phishing website was detected
   reference:
     - https://wellsfargo.com
+  classification:
+    cpe: cpe:2.3:a:wells-fargo:wells-fargo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wells-fargo
+    product: wells-fargo
   tags: phishing,wells-fargo,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wells-fargo
+        cpe: cpe:2.3:a:wells-fargo:wells-fargo:*:*:*:*:*:*:*:*
         words:
           - "Committed to the financial health of our customers and communities. Explore bank accounts, loans, mortgages, investing, credit cards & banking services»"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: wells-fargo-2
+        cpe: cpe:2.3:a:wells-fargo:wells-fargo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"wellsfargo.com")'
-# digest: 4b0a0048304602210093163ff8a918fe247879678008845e8f65ab2c69e1dd47d969f31badd8b2a1cd022100956b55ec0deb5e1402552b2b968d5ee74fccc0f426afbb8ecd0cb1a3c2dbceb3:922c64590222798bb761d5b6d8e72950

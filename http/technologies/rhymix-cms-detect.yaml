@@ -7,8 +7,12 @@ info:
   description: Detects Rhymix CMS
   reference:
     - https://github.com/rhymix/rhymix
+  classification:
+    cpe: cpe:2.3:a:rhymix:rhymix:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rhymix
+    product: rhymix
   tags: tech,rhymix,discovery
 
 http:
@@ -19,12 +23,15 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: rhymix
+        cpe: cpe:2.3:a:rhymix:rhymix:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'rx_sesskey1'
 
       - type: word
+        name: rhymix-2
+        cpe: cpe:2.3:a:rhymix:rhymix:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<meta name="generator" content="Rhymix" />'
-# digest: 4a0a00473045022100fd7219fe0d3976c91223a64eafba2d4c1227ecf4c1cd90ec4f4468fa0e989c420220703b5d70276e5afb8e383ab482e4ef0dfadcf320541e9921af2ea13b66c6e1a1:922c64590222798bb761d5b6d8e72950

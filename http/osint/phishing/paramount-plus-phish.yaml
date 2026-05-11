@@ -8,8 +8,12 @@ info:
     A Paramount+ phishing website was detected
   reference:
     - https://paramountplus.com
+  classification:
+    cpe: cpe:2.3:a:paramount-plus:paramount-plus:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: paramount-plus
+    product: paramount-plus
   tags: phishing,paramount-plus,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: paramount-plus
+        cpe: cpe:2.3:a:paramount-plus:paramount-plus:*:*:*:*:*:*:*:*
         words:
           - 'Paramount+'
           - 'Sign in'
@@ -33,6 +39,7 @@ http:
           - 200
 
       - type: dsl
+        name: paramount-plus-2
+        cpe: cpe:2.3:a:paramount-plus:paramount-plus:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"paramountplus.com")'
-# digest: 490a0046304402206e93c316afb989b9738902157708b7cce448393a016833e4b11ea13a30781332022060e41b15c9359c3a7c2de5af7987478b5c2fe3e626ff8becf9bbc99c378e77a5:922c64590222798bb761d5b6d8e72950

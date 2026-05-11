@@ -6,11 +6,14 @@ info:
   severity: info
   description: NPMjs user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:npmjs:npmjs:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: npmjs
+    product: npmjs
   tags: osint,osint-social,npmjs,discovery
 
 self-contained: true
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: npmjs
+        cpe: cpe:2.3:a:npmjs:npmjs:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Your profile picture'
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210094725d7dfee028a0e9500edac754375d33e3bfaf3395bbd304a93bff5dc51c3102200f0e35881295f18af282961cfa729c4a5b658bd9362573a29580afec6b5aa59e:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Apex Legends user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:apex-legends:apex-legends:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: apex-legends
+    product: apex-legends
   tags: osint,osint-gaming,apex-legends,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: apex-legends
+        cpe: cpe:2.3:a:apex-legends:apex-legends:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Overview"
-# digest: 4a0a004730450221009f9a1c31d26d0f9e22ba19807ffc2204493d0b4e390d365da5e2b439ac67159f022034c4773ad281a5c340ea1293657b9582e710f30cce1abf7d296177d4043c75a8:922c64590222798bb761d5b6d8e72950

@@ -4,8 +4,13 @@ info:
   name: .buildpath - File Disclosure
   author: ritikchaddha
   severity: low
+  classification:
+    cpe: cpe:2.3:a:buildpath:buildpath:*:*:*:*:*:*:*:*
   description: |
     Publicly accessible /.buildpath configuration file was detected, which may expose project structure or sensitive information.
+  metadata:
+    vendor: buildpath
+    product: buildpath
   tags: exposure,files,buildpath,config
 
 http:
@@ -16,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: buildpath
+        cpe: cpe:2.3:a:buildpath:buildpath:*:*:*:*:*:*:*:*
         part: body
         words:
           - "</buildpath>"
@@ -25,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fe15682bc968d793d71cc309126437a8f7c02e32e07b6ad61749b9c889b139c302202629fd47fef4c39774b344694a566aa217cfc190204336b77cf868f07e17c655:922c64590222798bb761d5b6d8e72950

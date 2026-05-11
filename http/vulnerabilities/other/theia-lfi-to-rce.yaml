@@ -8,9 +8,13 @@ info:
     Detected Eclipse Theia IDE was exposed without authentication, allowing unauthenticated attackers to access the web-based IDE with terminal capabilities, file system access, and arbitrary command execution.
   reference:
     - https://theia-ide.org/
+  classification:
+    cpe: cpe:2.3:a:theia:theia:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: theia
+    product: theia
   tags: theia,ide,lfi,file-read,unauth,rce
 
 flow: http(1) && http(2)
@@ -36,10 +40,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: theia
+        cpe: cpe:2.3:a:theia:theia:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402202425e2dd0ea16bf384297a9fb2910477a2ce49ae3ac6845cfdfa452f7bd299a2022017703b737fca83273e4f7b0222b243b64bfba54bb78c5ffe0cf3218e21681836:922c64590222798bb761d5b6d8e72950

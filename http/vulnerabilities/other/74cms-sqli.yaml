@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/possib1e/vuln/issues/3
   classification:
+    cpe: cpe:2.3:a:74cms:74cms:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-89
   metadata:
     max-request: 1
+    vendor: 74cms
+    product: 74cms
   tags: 74cms,sqli,vuln
 variables:
   num: "999999999"
@@ -24,7 +27,8 @@ http:
 
     matchers:
       - type: word
+        name: 74cms
+        cpe: cpe:2.3:a:74cms:74cms:*:*:*:*:*:*:*:*
         words:
           - '{{md5({{num}})}}'
         part: body
-# digest: 4a0a0047304502203d6477cb517851f199829e0a4b6cb291fdc460146149da3a4ba0d72fd0ee514e022100a75cd2a8a64118960e07e3a96a9932aa8bcdd4b3f9b1fdc1ab37ab1383b021ab:922c64590222798bb761d5b6d8e72950

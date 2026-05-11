@@ -4,10 +4,14 @@ info:
   name: Oracle HTTPServer12c
   author: tess,dhiyaneshDK
   severity: info
+  classification:
+    cpe: cpe:2.3:a:oracle:http_server:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"Oracle HTTP Server"
+    vendor: oracle
+    product: http_server
   tags: tech,oracle,httpserver,discovery
 
 http:
@@ -18,11 +22,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: http_server
+        cpe: cpe:2.3:a:oracle:http_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Oracle HTTP Server 12c</title>'
 
       - type: word
+        name: http_server-2
+        cpe: cpe:2.3:a:oracle:http_server:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -30,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200f6dc604456bf278dca09956d0b907d3ea7f514b475016dd9a2dde77e80d0fcf02200b9e513a792b174db438466f8a8569259df06335be9e69dbdb7a23df9dbc31b6:922c64590222798bb761d5b6d8e72950

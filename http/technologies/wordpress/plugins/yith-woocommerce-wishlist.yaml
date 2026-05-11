@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: yith-woocommerce-wishlist
+        cpe: cpe:2.3:a:yith-woocommerce-wishlist:yith-woocommerce-wishlist:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

@@ -8,8 +8,12 @@ info:
     A Foot Locker phishing website was detected
   reference:
     - https://footlocker.com
+  classification:
+    cpe: cpe:2.3:a:footlocker:footlocker:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: footlocker
+    product: footlocker
   tags: phishing,footlocker,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: footlocker
+        cpe: cpe:2.3:a:footlocker:footlocker:*:*:*:*:*:*:*:*
         words:
           - 'Foot Locker'
           - 'Sneakers, Apparel &amp; More | Foot Locker'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: footlocker-2
+        cpe: cpe:2.3:a:footlocker:footlocker:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"footlocker.com")'
-# digest: 490a00463044022024b7725157714077b35d5a68f171361a8cd6559aa1fd6859883539c33a845d060220407abc09be349ab380cf41895f0e5ab69fe60984f374a3ee7255b3c5ff64dab0:922c64590222798bb761d5b6d8e72950

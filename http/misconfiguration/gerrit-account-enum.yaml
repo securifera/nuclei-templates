@@ -9,11 +9,15 @@ info:
   reference:
     - https://gerrit-review.googlesource.com/Documentation/rest-api-accounts.html
     - https://gerrit-documentation.storage.googleapis.com/Documentation/2.11/rest-api-accounts.html
+  classification:
+    cpe: cpe:2.3:a:gerrit:gerrit:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
     shodan-query: title:"Gerrit Code Review"
     fofa-query: title="Gerrit Code Review"
+    vendor: gerrit
+    product: gerrit
   tags: gerrit,enum,exposure,misconfig
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gerrit
+        cpe: cpe:2.3:a:gerrit:gerrit:*:*:*:*:*:*:*:*
         part: body
         words:
           - "_account_id"
@@ -44,4 +50,3 @@ http:
         group: 1
         regex:
           - '"username":\s*"([^"]+)"'
-# digest: 490a0046304402200a73ce4ae2f3fedd7a62c931f0ad59c91e24ab7e10c68d9810fd6e297924634602201dbdd6af385809d62b9d150781c83ed8032c40bdb43d9a4e3bef5d0f114f8da3:922c64590222798bb761d5b6d8e72950

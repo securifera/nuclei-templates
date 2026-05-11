@@ -8,8 +8,12 @@ info:
     A Bitbucket phishing website was detected
   reference:
     - https://bitbucket.org
+  classification:
+    cpe: cpe:2.3:a:bitbucket:bitbucket:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bitbucket
+    product: bitbucket
   tags: phishing,bitbucket,atlassian,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bitbucket
+        cpe: cpe:2.3:a:bitbucket:bitbucket:*:*:*:*:*:*:*:*
         words:
           - 'Bitbucket'
           - '<title> Bitbucket | Git solution for teams using Jira'
@@ -32,7 +38,8 @@ http:
           - 200
 
       - type: dsl
+        name: bitbucket-2
+        cpe: cpe:2.3:a:bitbucket:bitbucket:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bitbucket.org")'
           - '!contains(host,"atlassian.com")'
-# digest: 490a0046304402207e88d386bcb0b8d64e538d8f022203aef8a8d946a16c82ac999b3c6275ae85cc02206791e05988f11309507162ba12d5ffaa657cbae3e01e6e7a57d492ee37fffeac:922c64590222798bb761d5b6d8e72950

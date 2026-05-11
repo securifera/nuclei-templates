@@ -6,11 +6,14 @@ info:
   severity: info
   description: Olx user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:olx:olx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: olx
+    product: olx
   tags: osint,osint-shopping,olx,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: olx
+        cpe: cpe:2.3:a:olx:olx:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Obserwuj wyszukiwanie"
-# digest: 490a0046304402200813d20fb294e047e6fc3370631f48d590e33b1d1c947bff9dbe0a26ae16c7dd0220617adf41178f3b34dc0b99feae6de63d96903f833eeb71764b4a9d72dcda5cc1:922c64590222798bb761d5b6d8e72950

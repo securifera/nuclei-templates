@@ -7,10 +7,14 @@ info:
   description: Apdisk internal file is exposed.
   reference:
     - https://discussions.apple.com/thread/250354761
+  classification:
+    cpe: cpe:2.3:a:apdisk:apdisk:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Apdisk"
+    vendor: apdisk
+    product: apdisk
   tags: exposure,files,apdisk,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: apdisk
+        cpe: cpe:2.3:a:apdisk:apdisk:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<plist version="
@@ -29,7 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: apdisk-2
+        cpe: cpe:2.3:a:apdisk:apdisk:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/xml"
-# digest: 4a0a0047304502204e6ee29e6fe6d09a5077b1deab456d7595a7d705a19384230b8918f079c280f3022100c1412c1ad588a87e1f31f7b77959a60fca9b192781f47613074f355810eede3e:922c64590222798bb761d5b6d8e72950

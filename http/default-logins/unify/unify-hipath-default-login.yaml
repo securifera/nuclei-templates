@@ -31,6 +31,8 @@ http:
 
     matchers:
       - type: word
+        name: hipath
+        cpe: cpe:2.3:a:unify:hipath:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/html/wbm_login.html"
@@ -54,9 +56,10 @@ http:
           - 200
 
       - type: word
+        name: hipath-2
+        cpe: cpe:2.3:a:unify:hipath:*:*:*:*:*:*:*:*
         part: body
         words:
           - "{\"success\":true"
           - "There is another user logged in"
         condition: or
-# digest: 4a0a00473045022100cce3af363a958c1242e56cff19ac8af640db03f82564857d6f1a909a927c025e02201fab44f7d374e6d23baebce5703ce17f3bc2ee8a5fbcc297a19e6b517905b3b9:922c64590222798bb761d5b6d8e72950

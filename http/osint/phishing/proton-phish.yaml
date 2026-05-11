@@ -8,8 +8,12 @@ info:
     A proton phishing website was detected
   reference:
     - https://proton.me
+  classification:
+    cpe: cpe:2.3:a:proton:proton:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: proton
+    product: proton
   tags: phishing,proton,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: proton
+        cpe: cpe:2.3:a:proton:proton:*:*:*:*:*:*:*:*
         words:
           - 'Proton Account: Sign-in'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: proton-2
+        cpe: cpe:2.3:a:proton:proton:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"proton.me")'
-# digest: 4b0a00483046022100dfb726162c3da94b18553cc17d51eef66054b75b719df7e38285de464b40d1b0022100fc20da363cac19ff68c56d4a8c620ad739ba84498c46dbafe78bae705c5e97d7:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A royal-mail phishing website was detected
   reference:
     - https://royalmail.com
+  classification:
+    cpe: cpe:2.3:a:royal-mail:royal-mail:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: royal-mail
+    product: royal-mail
   tags: phishing,royal-mail,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: royal-mail
+        cpe: cpe:2.3:a:royal-mail:royal-mail:*:*:*:*:*:*:*:*
         words:
           - 'Log in | Royal Mail Group Ltd'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: royal-mail-2
+        cpe: cpe:2.3:a:royal-mail:royal-mail:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"royalmail.com")'
-# digest: 4a0a0047304502203103c8a52ab7ab14d1c2533f92cbabbe542172d580c2a5a99bca89a66f8c0cbf02210082654136f1fc5ce4d59f3bbdebea2016744f2f09263f78eb20173e2b1d21b6a5:922c64590222798bb761d5b6d8e72950

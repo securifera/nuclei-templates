@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Yacht is a web management platform for managing Docker containers.
+  classification:
+    cpe: cpe:2.3:a:yacht:yacht:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     zoomeye-query: app="Yacht"
+    vendor: yacht
+    product: yacht
   tags: panel,yacht,login,detect,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yacht
+        cpe: cpe:2.3:a:yacht:yacht:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Yacht</title>"
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022011833f4ca2df0be3cea8e8371c6ad997f95afba624837cdb6c2262df0116c9bd0220737bb567c9b2411a8f5cec49b69330c860d0e1340809d752f2bd62c47bc2416c:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Identified an exposed MagnusBilling login panel.
+  classification:
+    cpe: cpe:2.3:a:mbilling:mbilling:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: html:"MagnusBilling"
     verified: true
     max-request: 1
+    vendor: mbilling
+    product: mbilling
   tags: mbilling,login,panel,magnusbilling,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mbilling
+        cpe: cpe:2.3:a:mbilling:mbilling:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'MagnusBilling'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200763a4b53ca73608f8bb673e0d5aee0963258d99bdf31aa7b19fdd1d5a6cd9fc0221008d51dbb288d2f7a7f8186ff964f355e0dd25727ceddc00b059bf2beb87cb9899:922c64590222798bb761d5b6d8e72950

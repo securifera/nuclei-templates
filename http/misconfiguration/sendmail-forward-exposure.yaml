@@ -10,12 +10,15 @@ info:
     - https://www.sendmail.org/~ca/email/doc8.12/op-sh-4.html
     - https://linux.die.net/man/5/forward
   classification:
+    cpe: cpe:2.3:a:sendmail:sendmail:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 4
     verified: true
+    vendor: sendmail
+    product: sendmail
   tags: exposure,sendmail,config,mail,mta
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: sendmail
+        cpe: cpe:2.3:a:sendmail:sendmail:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"'
@@ -37,6 +42,8 @@ http:
         condition: or
 
       - type: word
+        name: sendmail-2
+        cpe: cpe:2.3:a:sendmail:sendmail:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/plain"
@@ -46,10 +53,11 @@ http:
           - 200
 
       - type: word
+        name: sendmail-3
+        cpe: cpe:2.3:a:sendmail:sendmail:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<html"
           - "<!DOCTYPE"
           - "<HTML"
         negative: true
-# digest: 490a00463044022076081f3978e4a5fb68c4f3001105000fb712ea60323bca897e6a3e8db297290b02202eae9753b3cb507498fde13a8a6a1e1667f26ccb659c7c00a329652d202ecf97:922c64590222798bb761d5b6d8e72950

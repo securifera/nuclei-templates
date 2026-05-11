@@ -26,6 +26,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: security_access_manager
+        cpe: cpe:2.3:a:ibm:security_access_manager:*:*:*:*:*:*:*:*
         words:
           - "<title>IBM Security Access Manager</title>"
           - "IBM Security <em>Access Manager</em>"
@@ -33,14 +35,17 @@ http:
         condition: or
 
       - type: word
+        name: security_access_manager-2
+        cpe: cpe:2.3:a:ibm:security_access_manager:*:*:*:*:*:*:*:*
         words:
           - "IBM Security Access Manager for Web"
         part: header
 
       - type: word
+        name: security_access_manager-3
+        cpe: cpe:2.3:a:ibm:security_access_manager:*:*:*:*:*:*:*:*
         words:
           - "/mga/sps/authsvc/policy/forgot_username"
           - "/mga/sps/authsvc/policy/forgot_password"
         part: body
         condition: and
-# digest: 490a0046304402206e23bbf391ef78f0dbc0c2ad07003a5c3461e6c0fb2d5fb429381a36a9dbba7a022062f8df8f4191343f04e857a471b31a7df0ea07dc0f4cc82ca91cba79ba5a3596:922c64590222798bb761d5b6d8e72950

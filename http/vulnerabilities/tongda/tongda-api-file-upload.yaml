@@ -8,10 +8,14 @@ info:
     Tongda OA v11.8 api.ali.php has an arbitrary file upload vulnerability. An attacker can upload malicious files to control the server through the vulnerability.
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/tongda-oa-api-ali-upload.yaml
+  classification:
+    cpe: cpe:2.3:a:tongda:tongda:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     fofa-query: app="TDXK-通达OA"
+    vendor: tongda
+    product: tongda
   tags: tongda,oa,fileupload,intrusive,vuln
 
 http:
@@ -39,8 +43,9 @@ http:
 
     matchers:
       - type: dsl
+        name: tongda
+        cpe: cpe:2.3:a:tongda:tongda:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_1 == 200 && status_code_2 == 200 && status_code_3 == 200'
           - 'contains(body_2,"+OK") && contains(body_3,"phpinfo")'
         condition: and
-# digest: 4b0a004830460221009f4e8afc7f640b04ac1989631be588cf5237b2c6e80c0f8a232055732fda64a90221009796de210406558f26adde9f61f0242da36249846606fca68b8240721184e14f:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Maroc nl user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:maroc-nl:maroc-nl:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: maroc-nl
+    product: maroc-nl
   tags: osint,osint-social,maroc-nl,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: maroc-nl
+        cpe: cpe:2.3:a:maroc-nl:maroc-nl:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Bekijk Profiel:"
-# digest: 490a00463044022079752ce841f55d2186cc82220a7fed2944d4f9efce799aeec8619ff147b42b7302204670f9fd3a7eaf65b7f5c5aabc9f40031513d8996bddb94bb92701634ed027b6:922c64590222798bb761d5b6d8e72950

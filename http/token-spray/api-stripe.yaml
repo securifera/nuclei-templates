@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://stripe.com/docs/api/authentication
+  classification:
+    cpe: cpe:2.3:a:stripe:stripe:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: stripe
+    product: stripe
   tags: token-spray,stripe
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
       Authorization: Basic {{base64(token + ':')}}
     matchers:
       - type: word
+        name: stripe
+        cpe: cpe:2.3:a:stripe:stripe:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"object":'
           - '"url":'
           - '"data":'
         condition: and
-# digest: 490a0046304402202757c66d5ccb2ddb64c5cf4cbaec588b5928b479f75705307d61f6ed28f4913b02205ae69593cab78d32b38c6c2453e757acbc55f272938434d3478d7e9b93a09a4d:922c64590222798bb761d5b6d8e72950

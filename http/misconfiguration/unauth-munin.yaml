@@ -8,11 +8,15 @@ info:
     Detected Munin monitoring dashboard, exposing system metrics and server statistics.
   reference:
     - https://munin-monitoring.org/
+  classification:
+    cpe: cpe:2.3:a:munin:munin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.title:"Munin"
     fofa-query: title="Munin"
+    vendor: munin
+    product: munin
   tags: exposure,munin,monitoring,misconfig,vuln
 
 http:
@@ -25,9 +29,10 @@ http:
 
     matchers:
       - type: dsl
+        name: munin
+        cpe: cpe:2.3:a:munin:munin:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(tolower(body), "<title>Munin")'
           - 'contains_all(body, "Munin", "Overview", "munin-monitoring")'
         condition: and
-# digest: 490a004630440220399f230471d8bd17c737d2a0c79762ddab5b8dabb45db8bd5066f4408d24499402206299ab0fa07bcbe45dc99d17a0b75f083fef08870655c2e1bba76d78a37afe59:922c64590222798bb761d5b6d8e72950

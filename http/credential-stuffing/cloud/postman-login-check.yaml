@@ -7,8 +7,12 @@ info:
   description: Checks for a valid postman account.
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
+  classification:
+    cpe: cpe:2.3:a:postman:postman:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: postman
+    product: postman
   tags: cloud,creds-stuffing,login-check,postman,vuln
 
 self-contained: true
@@ -46,9 +50,10 @@ http:
           - password
     matchers:
       - type: dsl
+        name: postman
+        cpe: cpe:2.3:a:postman:postman:*:*:*:*:*:*:*:*
         dsl:
           - "contains(to_lower(header), 'set-cookie: getpostmanlogin=yes')"
           - "contains(to_lower(body), 'identity.postman.co/continue')"
           - "status_code==200"
         condition: and
-# digest: 490a004630440220691ace07791fce89c3448fcd1aba6fe68bbbbfa5611951514e71b8a08f96daa802200b5c9e06cc1a3653d566a8733a167e60e7f134ec44714b08f03c9fa51fc16ac6:922c64590222798bb761d5b6d8e72950

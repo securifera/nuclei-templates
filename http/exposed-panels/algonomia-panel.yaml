@@ -8,9 +8,13 @@ info:
     Algonomia Leaf Platform login panel was detected.
   reference:
     - https://algonomia.com/
+  classification:
+    cpe: cpe:2.3:a:algonomia:algonomia:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: algonomia
+    product: algonomia
   tags: tech,algonomia,detect,panel,discovery
 
 http:
@@ -20,10 +24,11 @@ http:
 
     matchers:
       - type: dsl
+        name: algonomia
+        cpe: cpe:2.3:a:algonomia:algonomia:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(to_lower(body), "logincomponent\":")'
           - 'contains_any(to_lower(body), "leafplatform", "leaf platform")'
           - 'contains(header, "application/json")'
         condition: and
-# digest: 4b0a00483046022100fb851ed624436ac4600cc8ea7aa56c9e6e0be15bfb0b72e8d4a31cbc0f519b60022100ec63f8160f6ce70a7c59fb97fad66fdb434757666249214e16f2fc59ace24845:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects the presence of FileCatalyst file transfer solution login panel
+  classification:
+    cpe: cpe:2.3:a:filecatalyst:filecatalyst:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"FileCatalyst file transfer solution"
+    vendor: filecatalyst
+    product: filecatalyst
   tags: panel,login,filecatalyst,detect,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: filecatalyst
+        cpe: cpe:2.3:a:filecatalyst:filecatalyst:*:*:*:*:*:*:*:*
         part: body
         words:
           - "FileCatalyst file transfer solution"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e8b2dc686a0a86edfa3c2e67ceeb88c016908b43a3063e0a87173f565d38c43d02210083af75ba60f009037e5cfe6ffc8553777a1e25bdc889b6825bc9c04721ad69ba:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Miro phishing website was detected
   reference:
     - https://miro.com
+  classification:
+    cpe: cpe:2.3:a:miro:miro:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: miro
+    product: miro
   tags: phishing,miro,collaboration,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: miro
+        cpe: cpe:2.3:a:miro:miro:*:*:*:*:*:*:*:*
         words:
           - '<title>AI Innovation Workspace | Miro'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: miro-2
+        cpe: cpe:2.3:a:miro:miro:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"miro.com")'
-# digest: 4a0a004730450221008141b2a3748a96dcd84e3fefc2f418f128865dc806525248311539b64154edb10220071fa2aedd8bdcd83c9fb784d75b6421d487f3f589d7ffa2d20f0a95cbb1b366:922c64590222798bb761d5b6d8e72950

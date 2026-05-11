@@ -8,8 +8,12 @@ info:
     An O'Reilly Auto Parts phishing website was detected
   reference:
     - https://oreillyauto.com
+  classification:
+    cpe: cpe:2.3:a:oreilly:oreilly:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: oreilly
+    product: oreilly
   tags: phishing,oreilly,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: oreilly
+        cpe: cpe:2.3:a:oreilly:oreilly:*:*:*:*:*:*:*:*
         words:
           - "Find auto parts, tools, and more at O&#39;Reilly Auto Parts. Shop online for FREE Next Day shipping or pick up your order at one of more than 6,000 stores."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: oreilly-2
+        cpe: cpe:2.3:a:oreilly:oreilly:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"oreillyauto.com")'
-# digest: 4a0a00473045022071c63aa38d7e6132fb1b52fca9858eba2db3864ecc27f556ce426ceea7efae3e022100fbc0092305a30a97fb383985bc361b06899f1cb8c2a2375adb014adb1c32f31b:922c64590222798bb761d5b6d8e72950

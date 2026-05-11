@@ -9,10 +9,13 @@ info:
     - https://guides.rubygems.org/rubygems-org-api/
     - https://guides.rubygems.org/api-key-scopes/
   classification:
+    cpe: cpe:2.3:a:rubygems:rubygems:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: rubygems
+    product: rubygems
   tags: rubygems,token,exposure,ruby,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +29,7 @@ http:
       - type: regex
         part: body
         name: token
+        cpe: cpe:2.3:a:rubygems:rubygems:*:*:*:*:*:*:*:*
         regex:
           - "(rubygems_[a-f0-9]{48})"
         internal: true
@@ -40,6 +44,8 @@ http:
     disable-path-automerge: true
     matchers:
       - type: dsl
+        name: rubygems
+        cpe: cpe:2.3:a:rubygems:rubygems:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - '!contains(body, "Access Denied")'
@@ -50,4 +56,3 @@ http:
       - type: dsl
         dsl:
           - token
-# digest: 4a0a00473045022100f28f9a90d42cbdf9670572123eec30cd51cad7c1ef12e59cf24f4a80deeb088d0220092625f46c6bdfcd6f27100ce9ab814e7eb568e0a417b2500fe572a6588ffca1:922c64590222798bb761d5b6d8e72950

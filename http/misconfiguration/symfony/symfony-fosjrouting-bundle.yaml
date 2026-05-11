@@ -7,10 +7,14 @@ info:
   reference:
     - https://packagist.org/packages/friendsofsymfony/jsrouting-bundle
     - https://github.com/FriendsOfSymfony/FOSJsRoutingBundle
+  classification:
+    cpe: cpe:2.3:a:symfony:symfony:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"symfony Profiler"
+    vendor: symfony
+    product: symfony
   tags: misconfig,symfony,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: symfony
+        cpe: cpe:2.3:a:symfony:symfony:*:*:*:*:*:*:*:*
         part: body
         words:
           - '/**/fos.Router.setDatafoobarfoo({'
@@ -28,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: symfony-2
+        cpe: cpe:2.3:a:symfony:symfony:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/javascript"
@@ -35,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100dc5ee514f3ec35bb3093111d4098e8a4dd21d5cac772a07d2e4092433c4b9265022100daeca99524032ec85e5edcf355c6970e76d2d94da2a103aab687961517c96f1f:922c64590222798bb761d5b6d8e72950

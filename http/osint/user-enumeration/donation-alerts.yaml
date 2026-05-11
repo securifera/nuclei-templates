@@ -6,11 +6,14 @@ info:
   severity: info
   description: Donation Alerts user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:donation-alerts:donation-alerts:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: donation-alerts
+    product: donation-alerts
   tags: osint,osint-business,donation-alerts,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: donation-alerts
+        cpe: cpe:2.3:a:donation-alerts:donation-alerts:*:*:*:*:*:*:*:*
         part: body
         words:
           - "background_image_url"
-# digest: 4a0a0047304502201056ff38fbfc20967968d51241d1bf00d18e20a07970197cef89c6bd6cee484d022100abeb1d741ba8c703ca44b1a38caccaa7c765bb1c84d5147c61e2492a5032398a:922c64590222798bb761d5b6d8e72950

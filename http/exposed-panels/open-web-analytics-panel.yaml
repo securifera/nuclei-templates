@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects the presence of Open Web Analytics login page.
+  classification:
+    cpe: cpe:2.3:a:open-web-analytics:open-web-analytics:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"OWA CONFIG SETTINGS"
+    vendor: open-web-analytics
+    product: open-web-analytics
   tags: open-web-analytics,login,panel,discovery
 
 http:
@@ -23,10 +27,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: open-web-analytics
+        cpe: cpe:2.3:a:open-web-analytics:open-web-analytics:*:*:*:*:*:*:*:*
         words:
           - "OWA.config.main_url"
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402201f1dae779922f9ea214ef91a3bcbcef63bf2da84190d6c12ccf432e0aa7bd8dc022019e13db75ac66be82d3eba7257158383761fa3a24444285e5823b2515045636e:922c64590222798bb761d5b6d8e72950

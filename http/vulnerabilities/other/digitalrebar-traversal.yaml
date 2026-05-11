@@ -9,11 +9,14 @@ info:
     - https://docs.rackn.io/en/latest/doc/security/cve_20200924A.html
     - https://docs.rackn.io/en/latest/doc/release.html
   classification:
+    cpe: cpe:2.3:a:digitalrebar:digitalrebar:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: digitalrebar
+    product: digitalrebar
   tags: lfi,rackn,digitalrebar,vuln
 
 http:
@@ -24,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: digitalrebar
+        cpe: cpe:2.3:a:digitalrebar:digitalrebar:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0"
 
       - type: word
+        name: digitalrebar-2
+        cpe: cpe:2.3:a:digitalrebar:digitalrebar:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Drp-Sha256sum:'
@@ -36,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203314d1d95685fb07cabd11497fcef13030391d190229050095a3be24594797c7022100cd63e2fad3f3d49a1b08b7df2d9ad284b745a603b93f8e104bb2eb4aff70e440:922c64590222798bb761d5b6d8e72950

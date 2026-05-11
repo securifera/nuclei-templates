@@ -9,6 +9,7 @@ info:
   reference:
     - https://sec.okta.com/articles/2021/12/log4shell
   classification:
+    cpe: cpe:2.3:a:okta:log4j:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -16,6 +17,8 @@ info:
   metadata:
     max-request: 1
     shodan-query: title:"Okta"
+    vendor: okta
+    product: log4j
   tags: cve,cve2021,rce,jndi,log4j,okta,oast,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -31,11 +34,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: log4j
+        cpe: cpe:2.3:a:okta:log4j:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: log4j-2
+        cpe: cpe:2.3:a:okta:log4j:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
@@ -56,4 +63,3 @@ http:
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
         part: interactsh_request
-# digest: 4a0a0047304502201c69c54d424751d30001057592d716bec1b10052fc5a7a95265fa7013c87987e022100a43dff5f62a26bc675978978fd58082f55c6bd890cedf7767d8c14dcdd692a12:922c64590222798bb761d5b6d8e72950

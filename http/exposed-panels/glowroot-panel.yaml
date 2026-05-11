@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://www.facebook.com/photo?fbid=618105097026680&set=a.467014098802448
+  classification:
+    cpe: cpe:2.3:a:glowroot:glowroot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Glowroot"
+    vendor: glowroot
+    product: glowroot
   tags: panel,login,glowroot,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: glowroot
+        cpe: cpe:2.3:a:glowroot:glowroot:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Glowroot'
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022037319e9f10952f6ec2a594de75d32570803388bb3bbdd86d44e56194e8b9f637022100901dab6b23ead5735ce357675b83c376c7b362329bd98127401ba54cbc876367:922c64590222798bb761d5b6d8e72950

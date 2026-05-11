@@ -4,10 +4,14 @@ info:
   name: LANDESK(R) Cloud Services Appliance Detect
   author: 0xNirvana
   severity: info
+  classification:
+    cpe: cpe:2.3:a:landesk:cloud_services_appliance:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"LANDESK(R)"
+    vendor: landesk
+    product: cloud_services_appliance
   tags: tech,landesk,discovery
 
 http:
@@ -17,9 +21,10 @@ http:
 
     matchers:
       - type: word
+        name: cloud_services_appliance
+        cpe: cpe:2.3:a:landesk:cloud_services_appliance:*:*:*:*:*:*:*:*
         part: body
         words:
           - "LANDESK(R)"
           - "Cloud Services Appliance"
         condition: and
-# digest: 4b0a0048304602210083f6945e03f78ede420fd152219bf05a43a020f5884c436be559e311d6e97b22022100e021e6e36e79de2431e8dc510cf50c78889535ef71b9b0954e007921d8b667a3:922c64590222798bb761d5b6d8e72950

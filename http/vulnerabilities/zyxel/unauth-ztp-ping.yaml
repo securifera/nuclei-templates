@@ -32,11 +32,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: usg1000_firmware
+        cpe: cpe:2.3:o:zyxel:usg1000_firmware:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
 
       - type: word
+        name: usg1000_firmware-2
+        cpe: cpe:2.3:o:zyxel:usg1000_firmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - "message"
@@ -46,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100856b1d46542bb42789dc622501a62e63c7fb80ab7ea92a8e7988e0fc97caea200220753f3a6e310e8501cb34368a4f76680f46fdf1881527979cf06970b8c604fec6:922c64590222798bb761d5b6d8e72950

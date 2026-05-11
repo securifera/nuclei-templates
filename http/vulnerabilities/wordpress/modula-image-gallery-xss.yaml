@@ -9,12 +9,15 @@ info:
     - https://wpscan.com/vulnerability/ee248078-89ee-4cc0-b0fe-e932cd00db3e
     - https://wordpress.org/plugins/modula-best-grid-gallery
   classification:
+    cpe: cpe:2.3:a:modula-image-gallery:modula-image-gallery:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 2
+    vendor: modula-image-gallery
+    product: modula-image-gallery
   tags: authenticated,wpscan,wp-plugin,xss,wp,wordpress,vuln
 
 http:
@@ -34,11 +37,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: modula-image-gallery
+        cpe: cpe:2.3:a:modula-image-gallery:modula-image-gallery:*:*:*:*:*:*:*:*
         part: body
         words:
           - '&a\"><script>alert(1)</script>&extensions='
 
       - type: word
+        name: modula-image-gallery-2
+        cpe: cpe:2.3:a:modula-image-gallery:modula-image-gallery:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -46,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100eec863759981ea76a4ae986b2285664ad69e8149c80a1a861dd92b7f99d2726a022051fc77fd42257536ee7dda0f77435f1591eab70ce9e775f37671c94a2d6a61a8:922c64590222798bb761d5b6d8e72950

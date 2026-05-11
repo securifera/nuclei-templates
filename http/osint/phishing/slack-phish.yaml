@@ -8,8 +8,12 @@ info:
     A slack phishing website was detected
   reference:
     - https://slack.com
+  classification:
+    cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: slack
+    product: slack
   tags: phishing,slack,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: slack
+        cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
         words:
           - 'Slack is a new way to communicate with your team. It’s faster, better organised and more secure than email.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: slack-2
+        cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"slack.com")'
-# digest: 490a0046304402201f7fdae41f1fb47c5761a203e865c0fd41c211ee2b02b491f2f835585e877eff02204e4329672e50a9f4481d9e965fd1b103b40ea6687be01ed82ff9c41f15b7f714:922c64590222798bb761d5b6d8e72950

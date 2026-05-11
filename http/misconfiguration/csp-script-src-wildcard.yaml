@@ -8,9 +8,13 @@ info:
     Detected a wildcard (*) within the script-src directive of the Content-Security-Policy. This allowed scripts to load from any origin, weakening the CSP and increasing XSS risk.
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src
+  classification:
+    cpe: cpe:2.3:a:csp:csp:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
+    vendor: csp
+    product: csp
   tags: csp,misconfig,headers
 
 http:
@@ -22,13 +26,16 @@ http:
     matchers:
 
       - type: word
+        name: csp
+        cpe: cpe:2.3:a:csp:csp:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Content-Security-Policy"
         case-insensitive: true
 
       - type: regex
+        name: csp-2
+        cpe: cpe:2.3:a:csp:csp:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)script-src[^;]*\\*[^;]*(?:;|$)"
-# digest: 4a0a004730450220682800352a5e08e9a1d3032dd6a39c373a99ce184d8366bd9c2f0634e41f1475022100d98932997f60b678498e3aed52ce9db6692d2360f6c2c69dd620858c327b882d:922c64590222798bb761d5b6d8e72950

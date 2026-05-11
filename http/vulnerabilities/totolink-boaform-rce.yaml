@@ -9,11 +9,13 @@ info:
   reference:
     - https://github.com/fizz-is-on-the-way/Iot_vuls/blob/main/N150RT/RCE_formWsc/README.md
   classification:
+    cpe: cpe:2.3:a:totolink:boaform:*:*:*:*:*:*:*:*
     cwe-id: CWE-78
   metadata:
     max-request: 2
-    product: TOTOLINK
+    product: boaform
     fofa-query: title="TOTOLINK"
+    vendor: totolink
   tags: totolink,rce,router,boaform,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +28,8 @@ http:
 
     matchers:
       - type: dsl
+        name: boaform
+        cpe: cpe:2.3:a:totolink:boaform:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code==200'
           - 'contains(tolower(body), "totolink")'
@@ -43,10 +47,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: boaform-2
+        cpe: cpe:2.3:a:totolink:boaform:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022015273a94d319b86a2a5a2c236da7f179670910ac0359250a2e1f9a558ab7301602210083338915aab313861f06ccfa6b1a98627100bbd08e6ef64d3d362fcd90dcdeb5:922c64590222798bb761d5b6d8e72950

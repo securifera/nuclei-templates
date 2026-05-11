@@ -8,8 +8,12 @@ info:
     A Webflow phishing website was detected
   reference:
     - https://webflow.com
+  classification:
+    cpe: cpe:2.3:a:webflow:webflow:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: webflow
+    product: webflow
   tags: phishing,webflow,website-builder,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webflow
+        cpe: cpe:2.3:a:webflow:webflow:*:*:*:*:*:*:*:*
         words:
           - '<title>Webflow: Create a custom website | Visual website builder'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: webflow-2
+        cpe: cpe:2.3:a:webflow:webflow:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"webflow.com")'
-# digest: 4a0a00473045022077cbd9b9884405d890f0ac10dfe9db2e991933eed0a0522a9166f5d6839a857f022100e6fbd00e6c295215bbbd2bf1519967fbf6e49e66d55001b2bd13df3106fb4e7f:922c64590222798bb761d5b6d8e72950

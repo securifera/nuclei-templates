@@ -8,6 +8,8 @@ info:
     A default login was discovered on a Circutor Line-TCPRS1 device. An attacker can obtain access to user accounts, access sensitive information, modify data, and execute unauthorized operations.
   reference:
     - https://circutor.com/en/products/line-tcprs1/
+  classification:
+    cpe: cpe:2.3:a:circutor:line-tcprs1:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -36,11 +38,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: line-tcprs1
+        cpe: cpe:2.3:a:circutor:line-tcprs1:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '"Token"\s*:\s*"eyJ[a-zA-Z0-9]{10,}\.eyJ[a-zA-Z0-9]{10,}\.[a-zA-Z0-9_\-]{10,}"'
 
       - type: word
+        name: line-tcprs1-2
+        cpe: cpe:2.3:a:circutor:line-tcprs1:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -56,4 +62,3 @@ http:
         group: 1
         regex:
           - '"Token"\s*:\s*"(eyJ[a-zA-Z0-9]{10,}\.eyJ[a-zA-Z0-9]{10,}\.[a-zA-Z0-9_\-]{10,})"'
-# digest: 4a0a004730450220240a50a5d167e7e3b6b4982953fabc4dbfad252536e92c742a71696a54305be6022100d317683600ba6e8100434c181379992b44037208e3b098d85e7d5b7c6abbc810:922c64590222798bb761d5b6d8e72950

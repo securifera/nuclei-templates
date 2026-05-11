@@ -33,6 +33,8 @@ http:
           - 200
 
       - type: word
+        name: unified_communications_manager
+        cpe: cpe:2.3:a:cisco:unified_communications_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<versionInformation'

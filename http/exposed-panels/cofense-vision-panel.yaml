@@ -8,11 +8,14 @@ info:
   reference:
     - https://cofense.com
   classification:
+    cpe: cpe:2.3:a:cofense:vision:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:739801466
+    vendor: cofense
+    product: vision
   tags: panel,cofense,vision,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vision
+        cpe: cpe:2.3:a:cofense:vision:*:*:*:*:*:*:*:*
         words:
           - "<title>Vision</title>"
           - "Cofense Inc."
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ebcb456f65968963343392968702772ef601c4d545345805256a9577c56ecff30220438457d167302e0c2a0e228bf025ce97c8b808ef3a838f1bc3cc61c0f95cb462:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Internet Archive User Search user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:internet-archive-user-search:internet-archive-user-search:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: internet-archive-user-search
+    product: internet-archive-user-search
   tags: osint,osint-misc,internet-archive-user-search,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: internet-archive-user-search
+        cpe: cpe:2.3:a:internet-archive-user-search:internet-archive-user-search:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<!--/.item-ia-->"
-# digest: 4b0a00483046022100c79d8da2b93993f10b54ee4b14ca9a2f43a1ed2a0e863332be0ec5848b72ab41022100cddd403298e7b4fb6893434329f0b671a089c685d383ef3325fbb66b1679642f:922c64590222798bb761d5b6d8e72950

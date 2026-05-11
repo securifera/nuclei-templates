@@ -5,8 +5,12 @@ info:
   author: r12w4n
   severity: high
   description: AWS S3 keys are exposed.
+  classification:
+    cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: aws
+    product: aws
   tags: aws,s3,wordpress,disclosure,exposure,vuln
 
 http:
@@ -17,6 +21,8 @@ http:
 
     matchers:
       - type: word
+        name: aws
+        cpe: cpe:2.3:a:aws:aws:*:*:*:*:*:*:*:*
         words:
           - 'access-key-id'
           - 'secret-access-key'
@@ -24,4 +30,3 @@ http:
           - 'DB_PASSWORD'
         condition: and
         part: body
-# digest: 4b0a00483046022100d6f5cd69127f77da5d4f14355aea61fb8d15b8468991c5c797257ab4ea20d8910221008a7a537b042f322ae87b3a4533b380b4a486285ec9bba49ffa8dd1d074b299ea:922c64590222798bb761d5b6d8e72950

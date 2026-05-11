@@ -8,9 +8,13 @@ info:
     WordPress plugin WP Fastest Cache internal file system path was disclosed through direct access to unprotected PHP files.
   reference:
     - https://wordpress.org/plugins/wp-fastest-cache/
+  classification:
+    cpe: cpe:2.3:a:wp-fastest-cache:wp-fastest-cache:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
+    vendor: wp-fastest-cache
+    product: wp-fastest-cache
   tags: debug,wordpress,fpd,wp-fastest-cache,wp-plugin
 
 http:
@@ -23,8 +27,9 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: wp-fastest-cache
+        cpe: cpe:2.3:a:wp-fastest-cache:wp-fastest-cache:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Fatal error", "Uncaught Error", "/plugins/wp-fastest-cache/")'
         condition: and
-# digest: 490a00463044022050ad67654d1f2e8a79de53342058fb836846a6445c41d23b10c4058b26e9a280022042455913fb5c1129073ce779912d7e7e54f001fa660fb20b7f16f058b99d7a86:922c64590222798bb761d5b6d8e72950

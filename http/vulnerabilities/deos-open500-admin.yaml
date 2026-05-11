@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.deos-ag.com/
   classification:
+    cpe: cpe:2.3:a:deos-open500:deos-open500:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
     cvss-score: 8.6
     cwe-id: CWE-284
   metadata:
     max-request: 2
+    vendor: deos-open500
+    product: deos-open500
   tags: openv500,disclosure,panel,vuln
 
 http:
@@ -29,10 +32,11 @@ http:
           - 200
 
       - type: word
+        name: deos-open500
+        cpe: cpe:2.3:a:deos-open500:deos-open500:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<b>OPENview</b>'
           - '/cgi-bin/cosmobdf.cgi?function=12'
           - '/cgi-bin/cosmobdf.cgi?function=2'
         condition: or
-# digest: 490a004630440220590a85a137bd5910ff072099eebafdf6a5741496d7a8478a37ecec49579f0537022060af5900f28b79a9b13797b619b2723cb3d12b566aae4a1e3475934d9f1c663c:922c64590222798bb761d5b6d8e72950

@@ -6,8 +6,12 @@ info:
   severity: info
   description: Detects HashiCorp Vault
   reference: https://developer.hashicorp.com/vault
+  classification:
+    cpe: cpe:2.3:a:hashicorp:vault:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: hashicorp
+    product: vault
   tags: tech,hashicorp,discovery
 
 http:
@@ -20,11 +24,15 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: vault
+        cpe: cpe:2.3:a:hashicorp:vault:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<meta name="vault/config/environment"'
 
       - type: dsl
+        name: vault-2
+        cpe: cpe:2.3:a:hashicorp:vault:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -35,4 +43,3 @@ http:
       - type: json
         json:
           - '"Version: "+ .version , "Cluster Name: "+ .cluster_name'
-# digest: 4a0a00473045022100bc652fffbc7ae79fd299ed27ff504ed2b7c40887e89d40ed6d9f5c30a6306d2002206072ba2b6832d4e4e348e56c5fd128121bef2bd8a06d24bb54de3d96171b77f8:922c64590222798bb761d5b6d8e72950

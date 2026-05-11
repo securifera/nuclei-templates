@@ -43,6 +43,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nagios_xi
+        cpe: cpe:2.3:a:nagios:nagios_xi:*:*:*:*:*:*:*:*
         part: body_3
         words:
           - '"</script><script>alert(document.domain)</script>'
@@ -50,6 +52,8 @@ http:
         condition: and
 
       - type: word
+        name: nagios_xi-2
+        cpe: cpe:2.3:a:nagios:nagios_xi:*:*:*:*:*:*:*:*
         part: header_3
         words:
           - text/html
@@ -66,4 +70,3 @@ http:
         regex:
           - "name=['\"]csrf_ls['\"] value=['\"](.*)['\"](.*)>"
         internal: true
-# digest: 4b0a00483046022100e3a0a451fd1c67c99b48f031df991264024f1b716743ff4ac85b04d8775dfdb6022100a5053639848ae610b9252e05cd829d18fa025d1fa7e5517e0d1eda247e30486f:922c64590222798bb761d5b6d8e72950

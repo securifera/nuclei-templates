@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     The Dell Laser Printer web interface was accessible without authentication.
+  classification:
+    cpe: cpe:2.3:a:printer:printer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: title="Laser Printer"
     verified: true
+    vendor: printer
+    product: printer
   tags: dell,iot,unauth,misconfig,printer,vuln,discovery
 
 flow: http(1) && http(2)
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: printer
+        cpe: cpe:2.3:a:printer:printer:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains_all(body, '<TITLE>Dell','Laser Printer</TITLE>')"
@@ -39,9 +45,10 @@ http:
 
     matchers:
       - type: dsl
+        name: printer-2
+        cpe: cpe:2.3:a:printer:printer:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains_all(body, 'Security','Security')"
         condition: and
         internal: true
-# digest: 4a0a00473045022100f6c2b4bfa860e799128ff2f9d4b69ceb43f03177a12cf3bd6003457608b9146a0220670312ae3710ced85e024a9a5d0d1532d8ffccf2476b436e0dd8e1fa89fa60fc:922c64590222798bb761d5b6d8e72950

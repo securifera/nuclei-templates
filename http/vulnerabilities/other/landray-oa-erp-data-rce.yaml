@@ -9,10 +9,14 @@ info:
   reference:
     - https://cn-sec.com/archives/1249492.html
     - https://github.com/ax1sX/SecurityList/blob/main/Java_OA/LandrayEkpAudit.md
+  classification:
+    cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="Landray-OA系统"
+    vendor: landray
+    product: landray
   tags: landray,rce,vuln
 
 http:
@@ -27,16 +31,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: landray
+        cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
 
       - type: word
+        name: landray-2
+        cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"message":"'
 
       - type: word
+        name: landray-3
+        cpe: cpe:2.3:a:landray:landray:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -44,4 +54,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206d54faaf44dddcd9ee0917ffa29497eac5f0ed50e989c8cacc62c78996ac7d7202207d90077b8efac7004c2f35277b9aad30a6b4739d63b2ef6d54604940ed206118:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/OWASP/www-project-csrfguard
   classification:
+    cpe: cpe:2.3:a:owasp:csrfguard:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 3
+    vendor: owasp
+    product: csrfguard
   tags: tech,csrfguard,owasp,discovery
 
 http:
@@ -33,16 +36,19 @@ http:
     matchers:
       - type: word
         name: "CSRFGuard-v3.x"
+        cpe: cpe:2.3:a:owasp:csrfguard:*:*:*:*:*:*:*:*
         words:
           - "FETCH-CSRF-TOKEN"
 
       - type: word
         name: "CSRFGuard-v4.x"
+        cpe: cpe:2.3:a:owasp:csrfguard:*:*:*:*:*:*:*:*
         words:
           - "masterTokenValue"
 
       - type: dsl
         name: "Disabled-token-per-page"
+        cpe: cpe:2.3:a:owasp:csrfguard:*:*:*:*:*:*:*:*
         condition: and
         dsl:
           - 'status_code_3==400'
@@ -50,6 +56,7 @@ http:
 
       - type: dsl
         name: "Enabled-token-per-page"
+        cpe: cpe:2.3:a:owasp:csrfguard:*:*:*:*:*:*:*:*
         condition: and
         dsl:
           - 'status_code_3==200'
@@ -73,4 +80,3 @@ http:
         name: "page-token"
         json:
           - '.pageTokens'
-# digest: 490a0046304402207a7da90879d72ccdb38233351b907c97789e143bd11749616daeb1e5b1ebcc5e02205b3630f4d937837d25f927fbdafc771555d5148eeb534258f06bf6f6285f722c:922c64590222798bb761d5b6d8e72950

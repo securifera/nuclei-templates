@@ -12,11 +12,14 @@ info:
     - https://github.com/vulhub/vulhub/tree/master/hadoop/unauthorized-yarn
     - https://github.com/Al1ex/Hadoop-Yarn-ResourceManager-RCE
   classification:
+    cpe: cpe:2.3:a:hadoop:hadoop:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-306
   metadata:
     max-request: 1
+    vendor: hadoop
+    product: hadoop
   tags: vulhub,apache,hadoop,unauth,rce,msf,misconfig,vuln
 
 http:
@@ -27,10 +30,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hadoop
+        cpe: cpe:2.3:a:hadoop:hadoop:*:*:*:*:*:*:*:*
         words:
           - '"application-id"'
 
       - type: status
         status:
           - 200
-# digest: 490a00463044022069069341408d15589a860bc8087f275db76637b090a02717f3ad0c9ef4479025022066f53828a314263eb23dc1dbbe9b592e242d184693e135f3dd53ff9fbcf764e1:922c64590222798bb761d5b6d8e72950

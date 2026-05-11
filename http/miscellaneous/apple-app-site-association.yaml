@@ -4,8 +4,12 @@ info:
   name: Apple app site association for harvesting end points
   author: panch0r3d
   severity: info
+  classification:
+    cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
+    vendor: apple
+    product: apple
   tags: miscellaneous,misc,apple,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: apple
+        cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'applinks'
@@ -28,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: apple-2
+        cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -40,4 +48,3 @@ http:
       - type: json
         json:
           - .applinks.details[].appID
-# digest: 490a0046304402203ee296f8b36729235b240c2dd8173a44fe20bceebc084750f1301af903413f5b022040e3796af1f85aae4ee5a1f01c0522c017e132cdba313041846b33087bbd07e2:922c64590222798bb761d5b6d8e72950

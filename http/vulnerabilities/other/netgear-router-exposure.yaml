@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/47117
   classification:
+    cpe: cpe:2.3:a:netgear:netgear:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: netgear
+    product: netgear
   tags: edb,netgear,exposure,iot,router,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
         condition: or
 
       - type: word
+        name: netgear
+        cpe: cpe:2.3:a:netgear:netgear:*:*:*:*:*:*:*:*
         words:
           - "<serialNumber>"
           - "<deviceType>"
@@ -37,6 +42,8 @@ http:
         condition: and
 
       - type: word
+        name: netgear-2
+        cpe: cpe:2.3:a:netgear:netgear:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/xml
@@ -46,4 +53,3 @@ http:
         group: 1
         regex:
           - "<serialNumber>([A-Z0-9]+)<\\/serialNumber>"
-# digest: 4a0a0047304502201de4dfaed249dc3d32d9d806da2491b186a48fb7a5cc65082945f1349aa5fc36022100810c67e4717f80f5c95dc0fe331d487cbb9735d4241203b52096a597cb85882c:922c64590222798bb761d5b6d8e72950

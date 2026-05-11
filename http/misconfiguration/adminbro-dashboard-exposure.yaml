@@ -10,12 +10,15 @@ info:
     - https://docs.adminjs.co/basics/authentication
     - https://github.com/SoftwareBrothers/adminjs
   classification:
+    cpe: cpe:2.3:a:adminbro:adminbro:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
     cvss-score: 8.2
     cwe-id: CWE-306
   metadata:
     verified: true
     max-request: 2
+    vendor: adminbro
+    product: adminbro
   tags: adminbro,adminjs,misconfig,exposure,unauth,panel
 
 http:
@@ -28,9 +31,10 @@ http:
 
     matchers:
       - type: dsl
+        name: adminbro
+        cpe: cpe:2.3:a:adminbro:adminbro:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains_all(body, "window.REDUX_STATE", "window.AdminBro", "\"session\":null", "\"resources\":[")'
         condition: and
-# digest: 4a0a0047304502207987c58f3615fae17cb9ee480430257046615c9b0120b0e98d104b68ddc63cd7022100e703129d032f4784ec756fe83d6b0e8a4823b04780f67a343290244db33141c5:922c64590222798bb761d5b6d8e72950

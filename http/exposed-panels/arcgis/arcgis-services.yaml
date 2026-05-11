@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: arcgis_server
+        cpe: cpe:2.3:a:esri:arcgis_server:*:*:*:*:*:*:*:*
         words:
           - 'REST Services Directory'
           - 'ArcGIS'
@@ -44,4 +46,3 @@ http:
         group: 1
         regex:
           - 'Current Version:\s*<\/b>\s*([0-9.]+)'
-# digest: 4b0a00483046022100a1b7ca12379bd11ac5198cb45f73acfdbda8c1270bc20b748eb86dddb6d75652022100dc6a432ecd6d01a1c3331697e94601265e90d831b25a13fb865cbb061efc2cbe:922c64590222798bb761d5b6d8e72950

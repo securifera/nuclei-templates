@@ -8,8 +8,12 @@ info:
     A Chime phishing website was detected
   reference:
     - https://chime.com
+  classification:
+    cpe: cpe:2.3:a:chime:chime:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: chime
+    product: chime
   tags: phishing,chime,fintech,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: chime
+        cpe: cpe:2.3:a:chime:chime:*:*:*:*:*:*:*:*
         words:
           - 'Chime'
           - 'No monthly fees. 60k+ ATMs. Build credit. Get fee-free overdraft up to $200.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: chime-2
+        cpe: cpe:2.3:a:chime:chime:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"chime.com")'
-# digest: 490a0046304402201db1c424996c7ab616354ad599efe44349e555bde420ef661a89987e141fa913022011c15c172ec1c754aa5bc64b23742587f7ebfa13de9290f59784f2c1a2138f6e:922c64590222798bb761d5b6d8e72950

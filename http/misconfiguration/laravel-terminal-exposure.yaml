@@ -9,9 +9,13 @@ info:
   reference:
     - https://github.com/recca0120/laravel-terminal
     - https://www.acunetix.com/vulnerabilities/web/laravel-terminal-open/
+  classification:
+    cpe: cpe:2.3:a:laravel:terminal:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: false
+    vendor: laravel
+    product: terminal
   tags: laravel,terminal,exposure,misconfig,rce
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: terminal
+        cpe: cpe:2.3:a:laravel:terminal:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Laravel Terminal"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d662b5dc63e59a4baf3dfbb8169ac9711e180b884941489be12dfd45340cc6c5022100a3f83e45d10791af826a3b0733b97bf4387a8e131dc2fa30a1c91a74b49ab7f4:922c64590222798bb761d5b6d8e72950

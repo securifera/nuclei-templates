@@ -30,6 +30,8 @@ http:
 
     matchers:
       - type: dsl
+        name: hedgedoc
+        cpe: cpe:2.3:a:hedgedoc:hedgedoc:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(tolower(header), "hedgedoc-version:")'
           - 'contains_any(body, "HedgeDoc - Ideas", "Powered by <a href=\"https://hedgedoc.org\">HedgeDoc")'

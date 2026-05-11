@@ -6,11 +6,14 @@ info:
   severity: info
   description: Rant.li user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:rantli:rantli:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: rantli
+    product: rantli
   tags: osint,osint-blog,rantli,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: rantli
+        cpe: cpe:2.3:a:rantli:rantli:*:*:*:*:*:*:*:*
         part: body
         words:
           - "blog-title"
-# digest: 4b0a00483046022100d037ab312a19d874439babc4e758e786dacfb721da062578b9e114874e41c400022100f38076d099ed751806d4bbe687003158cdb6e63e387aaf85b57a4696a89f2e51:922c64590222798bb761d5b6d8e72950

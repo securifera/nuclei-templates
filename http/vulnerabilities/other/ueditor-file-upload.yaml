@@ -9,11 +9,14 @@ info:
     - https://zhuanlan.zhihu.com/p/85265552
     - https://www.freebuf.com/vuls/181814.html
   classification:
+    cpe: cpe:2.3:a:ueditor:ueditor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 8.8
     cwe-id: CWE-434
   metadata:
     max-request: 1
+    vendor: ueditor
+    product: ueditor
   tags: ueditor,fileupload,intrusive,vuln
 
 http:
@@ -28,7 +31,8 @@ http:
           - 200
 
       - type: word
+        name: ueditor
+        cpe: cpe:2.3:a:ueditor:ueditor:*:*:*:*:*:*:*:*
         words:
           - "没有指定抓取源"
         part: body
-# digest: 4a0a004730450220396f97b2adc2cd19e5f9128fda595fc9dc849131c22626f6a66de58265e441cc022100b318fe2495b418e732c6f4fec0f96e438ff7952eb5d2361740edfd4570ed8224:922c64590222798bb761d5b6d8e72950

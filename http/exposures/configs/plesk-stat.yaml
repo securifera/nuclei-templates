@@ -8,11 +8,14 @@ info:
   reference:
     - https://webalizer.net/
   classification:
+    cpe: cpe:2.3:a:plesk:plesk:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: plesk
+    product: plesk
   tags: config,exposure,plesk,vuln
 
 http:
@@ -27,16 +30,19 @@ http:
           - 200
 
       - type: word
+        name: plesk
+        cpe: cpe:2.3:a:plesk:plesk:*:*:*:*:*:*:*:*
         words:
           - 'Index of /plesk-stat'
           - 'Parent Directory'
         condition: and
 
       - type: word
+        name: plesk-2
+        cpe: cpe:2.3:a:plesk:plesk:*:*:*:*:*:*:*:*
         words:
           - 'anon_ftpstat'
           - 'ftpstat'
           - 'webstat-ssl'
           - 'webstat'
         condition: or
-# digest: 4a0a00473045022100855981d51744e1cd2d28e8fc45205d89391d5aae9ac1da728a96c66bfacf2ad5022047f5e530bd624492387c5b5d48b1d80ff3d83f615ab1a163344d939a616a204e:922c64590222798bb761d5b6d8e72950

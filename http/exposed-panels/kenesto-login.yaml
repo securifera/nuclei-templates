@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.kenesto.com/
   classification:
+    cpe: cpe:2.3:a:kenesto:kenesto:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     fofa-query: app="kenesto"
+    vendor: kenesto
+    product: kenesto
   tags: login,tech,kenesto,panel,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kenesto
+        cpe: cpe:2.3:a:kenesto:kenesto:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Welcome To Kenesto&reg;</title>'
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200c4ba831019439537bc606548d0b30a5ca09cd19909baeebe7bfac1d85b24396022046e6cae4671690d4291a6746b2141abddcef32ee9f1c69efee9bedbe17383a47:922c64590222798bb761d5b6d8e72950

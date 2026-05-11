@@ -8,8 +8,12 @@ info:
     A Fifth Third Bank phishing website was detected
   reference:
     - https://53.com
+  classification:
+    cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank
+    product: bank
   tags: phishing,fifth-third-bank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         words:
           - '<title>Personal Banking | Fifth Third Bank'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-2
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"53.com")'
-# digest: 4b0a0048304602210096440a32549cd9b4675a9cb7a22e434c6a45859b0d3532e95ffcc8aebb60c874022100eb0c7ebbf0bf2321d3f8b604373a75dfa96a9f3fa3f48b805ab46a1a00562c0a:922c64590222798bb761d5b6d8e72950

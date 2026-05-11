@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: human_resource_management_portal
+        cpe: cpe:2.3:a:persis:human_resource_management_portal:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Persis</title>"
@@ -47,4 +49,3 @@ http:
           - 301
           - 302
         condition: or
-# digest: 490a0046304402201e6f97f6e5ed4e813b749d18c6d3fb4469a20eea9e8a9a36f5ed680cc343693002202198a2b0c028c1a3d2cb8af18f4cfe5742d320d9256e21c9a22102a0d3491b42:922c64590222798bb761d5b6d8e72950

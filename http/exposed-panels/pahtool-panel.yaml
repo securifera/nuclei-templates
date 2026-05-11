@@ -8,10 +8,14 @@ info:
     PAHTool login panel was detected.
   reference:
     - http://www.inovultus.com/index.html
+  classification:
+    cpe: cpe:2.3:a:pahtool:pahtool:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"PAHTool"
+    vendor: pahtool
+    product: pahtool
   tags: panel,pahtool,login,detect,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: pahtool
+        cpe: cpe:2.3:a:pahtool:pahtool:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, ">PAHTool")'
@@ -32,4 +38,3 @@ http:
         group: 1
         regex:
           - 'id="appVersion"\s+value="([0-9\.]+)"'
-# digest: 490a0046304402205daef817ee06762accb9ce821c946b8aa931a2308c6a69c6fa093c06f4dba6c002207c68c951d72ce1273707f1ae50731ae722bcfd1620f3c06433d73f22b5db226d:922c64590222798bb761d5b6d8e72950

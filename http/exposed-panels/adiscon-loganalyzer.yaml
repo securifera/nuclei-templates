@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: loganalyzer
+        cpe: cpe:2.3:a:adiscon:loganalyzer:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Adiscon LogAnalyzer'
@@ -39,7 +41,8 @@ http:
           - 200
 
       - type: word
+        name: loganalyzer-2
+        cpe: cpe:2.3:a:adiscon:loganalyzer:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
-# digest: 490a0046304402206f0a6283f05e7ec31506219c8c97b6b44a95ea238393ac8f0effb3c30428df990220549d9101a507cf0d89e58f6e3b48a83b9a3c545c2bbffdafb641788727c09dd4:922c64590222798bb761d5b6d8e72950

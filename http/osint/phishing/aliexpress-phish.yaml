@@ -8,8 +8,12 @@ info:
     An aliexpress phishing website was detected
   reference:
     - https://aliexpress.com
+  classification:
+    cpe: cpe:2.3:a:aliexpress:aliexpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: aliexpress
+    product: aliexpress
   tags: phishing,aliexpress,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aliexpress
+        cpe: cpe:2.3:a:aliexpress:aliexpress:*:*:*:*:*:*:*:*
         words:
           - 'AliExpress - Affordable Prices on Top Brands with Free Shipping'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: aliexpress-2
+        cpe: cpe:2.3:a:aliexpress:aliexpress:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"aliexpress.com")'
-# digest: 4a0a00473045022100a0129ec6e9587fc4d8d5076c700f6ab7c46bbc8a007f4df6fad1010ff23a678202207d9817ffb7287a8b96368efc488604c30cef5d5a1cb6b25633b213b1788b7cc6:922c64590222798bb761d5b6d8e72950

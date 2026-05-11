@@ -6,11 +6,14 @@ info:
   severity: info
   description: Giphy user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:giphy:giphy:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: giphy
+    product: giphy
   tags: osint,osint-social,giphy,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: giphy
+        cpe: cpe:2.3:a:giphy:giphy:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Share on GIPHY</title>"
-# digest: 4b0a00483046022100ab55313e42319bf2b7e5e5aa730f2f781417d250819b96db09f714d1a05c7880022100bad637d9fa03c69300ff1ed489669f148e6c1e816e504778cd529429e1a41a99:922c64590222798bb761d5b6d8e72950

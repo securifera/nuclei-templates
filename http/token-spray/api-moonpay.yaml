@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://dashboard.moonpay.com/getting_started
+  classification:
+    cpe: cpe:2.3:a:moonpay:moonpay:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: moonpay
+    product: moonpay
   tags: token-spray,moonpay,cryptocurrencies
 
 self-contained: true
@@ -19,8 +23,9 @@ http:
 
     matchers:
       - type: word
+        name: moonpay
+        cpe: cpe:2.3:a:moonpay:moonpay:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"accountId":'
         condition: and
-# digest: 490a00463044022036d4f6b65707a60bf863e914a154302c2ebb26b6662d226a2f09425dfa871f0102207634a7552940262a28d779d68694b6136fcb639e61a6a68d8de4d7fe5cae5611:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Checks for the presence of UniGUI framework and extracts its version along with the Sencha Ext JS version.
+  classification:
+    cpe: cpe:2.3:a:fmsoft:unigui:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"UniGUI"
+    vendor: fmsoft
+    product: unigui
   tags: tech,unigui,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: unigui
+        cpe: cpe:2.3:a:fmsoft:unigui:*:*:*:*:*:*:*:*
         part: body
         words:
           - "uni-xtheme-"
@@ -31,6 +37,8 @@ http:
         condition: or
 
       - type: regex
+        name: unigui-2
+        cpe: cpe:2.3:a:fmsoft:unigui:*:*:*:*:*:*:*:*
         part: body
         regex:
           - 'uni-(\d+\.\d+\.\d+\.\d+)/'
@@ -48,4 +56,3 @@ http:
         name: ext_js_version
         regex:
           - 'uniVars._extVer="(\d+\.\d+\.\d+)"'
-# digest: 4a0a00473045022100e6dae4539f582807f1ad6051d93c4a365062173d857ea54298934b9c180270fc022054a21d80e6c2c58037c4547cc233a81d350c9c5d790dfcbd7e805ec7f154827d:922c64590222798bb761d5b6d8e72950

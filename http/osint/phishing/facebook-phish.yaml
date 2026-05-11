@@ -8,8 +8,12 @@ info:
     A Facebook phishing website was detected
   reference:
     - https://facebook.com
+  classification:
+    cpe: cpe:2.3:a:facebook:facebook:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: facebook
+    product: facebook
   tags: phishing,facebook,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: facebook
+        cpe: cpe:2.3:a:facebook:facebook:*:*:*:*:*:*:*:*
         words:
           - 'Facebook – log in or sign up'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: facebook-2
+        cpe: cpe:2.3:a:facebook:facebook:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"facebook.com")'
-# digest: 490a0046304402201fb01cd2beddb639693faefc39949fd9c47081d88152c31d9a6dc466e6f6f37d02206a628f4533c221f2adf732e7073dba49691a67ff034d89efbb6831c61599539d:922c64590222798bb761d5b6d8e72950

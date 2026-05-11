@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: stops-core-theme-and-plugin-updates
+        cpe: cpe:2.3:a:stops-core-theme-and-plugin-updates:stops-core-theme-and-plugin-updates:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.redmine.org/projects/redmine/wiki/rest_api
   classification:
+    cpe: cpe:2.3:a:redmine:redmine:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     max-request: 2
     shodan-query: http.title:"Redmine"
     fofa-query: app="Redmine"
+    vendor: redmine
+    product: redmine
   tags: misconfig,redmine,exposure,disclosure
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: redmine
+        cpe: cpe:2.3:a:redmine:redmine:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"issues":'
@@ -36,6 +41,8 @@ http:
         condition: and
 
       - type: word
+        name: redmine-2
+        cpe: cpe:2.3:a:redmine:redmine:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -43,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009aea21333a5baf5dcf464b20be8a2d48e66cff3d41ea511c6d03954e967415e2022100bd55367111d56fbda4afbd09c06f56757dce77e0f4207103f00da15ceb95be11:922c64590222798bb761d5b6d8e72950

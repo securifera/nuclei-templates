@@ -5,8 +5,12 @@ info:
   author: geeknik
   severity: info
   description: Monitor all the systems, devices, traffic, and applications in your IT infrastructure -- https://www.paessler.com/prtg
+  classification:
+    cpe: cpe:2.3:a:paessler:prtg_network_monitor:*:*:*:*:*:*:*:*
   metadata:
     max-request: 3
+    vendor: paessler
+    product: prtg_network_monitor
   tags: tech,prtg,discovery
 
 http:
@@ -25,11 +29,15 @@ http:
           - 200
 
       - type: word
+        name: prtg_network_monitor
+        cpe: cpe:2.3:a:paessler:prtg_network_monitor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "PRTG Network Monitor"
 
       - type: regex
+        name: prtg_network_monitor-2
+        cpe: cpe:2.3:a:paessler:prtg_network_monitor:*:*:*:*:*:*:*:*
         part: header
         regex:
           - PRTG
@@ -39,4 +47,3 @@ http:
         part: header
         kval:
           - Server
-# digest: 4a0a00473045022100f84f64ea27243576aaa2950f8ec7162a6948407c29e6c023d4d8822232d36c0102206548c3aa8555cb6e872995345573fa8044569f54c7bf2944cdd00fa9d4eb30f5:922c64590222798bb761d5b6d8e72950

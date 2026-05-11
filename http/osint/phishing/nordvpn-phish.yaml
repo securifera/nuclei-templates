@@ -8,8 +8,12 @@ info:
     A NordVPN phishing website was detected
   reference:
     - https://nordvpn.com
+  classification:
+    cpe: cpe:2.3:a:nordvpn:nordvpn:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: nordvpn
+    product: nordvpn
   tags: phishing,nordvpn,vpn,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nordvpn
+        cpe: cpe:2.3:a:nordvpn:nordvpn:*:*:*:*:*:*:*:*
         words:
           - '<title>The best VPN service online for free, open internet | NordVPN'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: nordvpn-2
+        cpe: cpe:2.3:a:nordvpn:nordvpn:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"nordvpn.com")'
-# digest: 4a0a00473045022011558232e0ebb642b67d2c427f89dc3bdabf64acf3c5bff8d7208034462c6fcc022100fe62f2bfe03c0e5215828e31cf59befe4dfc00298948977808c5aea3e82dbc1b:922c64590222798bb761d5b6d8e72950

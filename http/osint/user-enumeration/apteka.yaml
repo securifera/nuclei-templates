@@ -6,11 +6,14 @@ info:
   severity: info
   description: Apteka user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:apteka:apteka:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: apteka
+    product: apteka
   tags: osint,osint-social,apteka,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: apteka
+        cpe: cpe:2.3:a:apteka:apteka:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/gifts/user_id/"
-# digest: 4a0a004730450221009fb544d99848ef9d11c7e9f319f8dd47bc91773a8b96f9f4669e2ba4229a036a02202c16ca3ccc8f7f8ca9feeb64aa7809aa7358bb30f5aecd363731eed1fbd5f334:922c64590222798bb761d5b6d8e72950

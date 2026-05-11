@@ -31,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: xwiki
+        cpe: cpe:2.3:a:xwiki:xwiki:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200 || status_code == 401'
           - 'contains(body, "xwikiplatformversion")'

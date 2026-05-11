@@ -28,13 +28,16 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: ez_publish
+        cpe: cpe:2.3:a:ez:ez_publish:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'content="eZ Publish'
         case-insensitive: true
 
       - type: word
+        name: ez_publish-2
+        cpe: cpe:2.3:a:ez:ez_publish:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'eZ Publish'
-# digest: 4a0a00473045022054ecd651936a57ebf07d813c7abd72a226330cf83fb8316c8a4f6d7940a332190221008fe1a06733e57f0c689d074d44bb680bb601dbf1862b653d62a8578c10297212:922c64590222798bb761d5b6d8e72950

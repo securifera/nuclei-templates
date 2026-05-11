@@ -8,8 +8,12 @@ info:
     A VRBO phishing website was detected
   reference:
     - https://vrbo.com
+  classification:
+    cpe: cpe:2.3:a:vrbo:vrbo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: vrbo
+    product: vrbo
   tags: phishing,vrbo,travel,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vrbo
+        cpe: cpe:2.3:a:vrbo:vrbo:*:*:*:*:*:*:*:*
         words:
           - 'VRBO'
           - '<title>Vrbo | Book Your Vacation Home Rentals: Beach Houses, Cabins, Condos &amp; More'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: vrbo-2
+        cpe: cpe:2.3:a:vrbo:vrbo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"vrbo.com")'
-# digest: 4a0a0047304502200087786f0c0f40dfcb03a60a130d20acfa96ba6b3b732139aa78e6495980f82c022100b7c0d5f513c18122244d0947f274bb31b864b48d4aa744ca8119f3f484b1b7cf:922c64590222798bb761d5b6d8e72950

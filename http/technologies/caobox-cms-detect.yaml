@@ -6,12 +6,16 @@ info:
   severity: info
   description: |
     Detects instances of Caobox CMS based on unique fingerprints and identifiers.
+  classification:
+    cpe: cpe:2.3:a:caobox:caobox:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     shodan-query:
       - http.component:"Caobox"
       - http.component:"caobox"
       - cpe:"cpe:2.3:a:caobox:caobox"
+    vendor: caobox
+    product: caobox
   tags: detect,caobox,cms,tech,discovery
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: caobox
+        cpe: cpe:2.3:a:caobox:caobox:*:*:*:*:*:*:*:*
         words:
           - "Caobox CMS"
           - "powered by Caobox"
@@ -37,8 +43,9 @@ http:
         condition: or
 
       - type: regex
+        name: caobox-2
+        cpe: cpe:2.3:a:caobox:caobox:*:*:*:*:*:*:*:*
         regex:
           - "(?i)caobox"
           - "(?i)caobox\\s+(v[0-9.]+)"
           - "(?i)<title>Caobox CMS"
-# digest: 490a0046304402206f968747e18ca33b8286bf4fe24443cb2d4bccab6fb7b25624602a7ae9c09ee80220572bee00644c8d7f3b605d9381f5f8734ec28d276373c12338dda1c10b1b1c97:922c64590222798bb761d5b6d8e72950

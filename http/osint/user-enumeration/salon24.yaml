@@ -6,11 +6,14 @@ info:
   severity: info
   description: Salon24 user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:salon24:salon24:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: salon24
+    product: salon24
   tags: osint,osint-blog,salon24,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: salon24
+        cpe: cpe:2.3:a:salon24:salon24:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Strona główna"
-# digest: 490a004630440220730073d4df8077832c4c3464cba8354049c1fe965d548ff0894080c995cdb8460220742bc0af07d8c7da2ee69696d5e08488b1cde9037207339204ab5e4b16e3f6e9:922c64590222798bb761d5b6d8e72950

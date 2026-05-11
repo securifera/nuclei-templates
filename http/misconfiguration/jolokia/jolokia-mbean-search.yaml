@@ -8,8 +8,12 @@ info:
   reference:
     - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
     - https://github.com/laluka/jolokia-exploitation-toolkit
+  classification:
+    cpe: cpe:2.3:a:jolokia:jolokia:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: jolokia
+    product: jolokia
   tags: jolokia,springboot,mbean,tomcat,misconfig,vuln
 
 http:
@@ -27,9 +31,10 @@ http:
           - 200
 
       - type: word
+        name: jolokia
+        cpe: cpe:2.3:a:jolokia:jolokia:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"type":"search"'
           - '"value":'
         condition: and
-# digest: 490a0046304402204d1f788d05d10175ffad1599819da4db8c3f3dc22bd319c92b2b1417f6a86e6b022017b29e7c682b9be6430d2562dc0e686d19d741db44fceedfaf8f9032acda82ff:922c64590222798bb761d5b6d8e72950

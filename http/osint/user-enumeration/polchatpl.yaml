@@ -6,11 +6,14 @@ info:
   severity: info
   description: Polchat.pl user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:polchatpl:polchatpl:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: polchatpl
+    product: polchatpl
   tags: osint,osint-social,polchatpl,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: polchatpl
+        cpe: cpe:2.3:a:polchatpl:polchatpl:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Historia wpisów"
-# digest: 4b0a00483046022100b0052db1027d446910374080aa3c219e692db0e90e81038e3a28471635fe11ad022100a9d3a5134006199dbf2aac3da16cc526c0c0a3598f93cc9228bfe4bf37bb0646:922c64590222798bb761d5b6d8e72950

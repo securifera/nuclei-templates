@@ -25,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sling
+        cpe: cpe:2.3:a:apache:sling:*:*:*:*:*:*:*:*
         words:
           - 'Apache Sling'
           - 'sling.apache'

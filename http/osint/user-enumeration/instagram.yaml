@@ -6,11 +6,14 @@ info:
   severity: info
   description: Instagram user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:instagram:instagram:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: instagram
+    product: instagram
   tags: osint,osint-social,instagram,discovery
 
 self-contained: true
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: instagram
+        cpe: cpe:2.3:a:instagram:instagram:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"username":"{{user}}"}'
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210097b656b960c0f3cb4ddc9977ed27a50bf109fe06dabe4e4f4d97cbf0e67da1d70221008f4368268ab4e5d8e77e0d1d16ab5e88a664877cb3dd82174a789caa0d4cf53d:922c64590222798bb761d5b6d8e72950

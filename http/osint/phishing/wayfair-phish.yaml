@@ -8,8 +8,12 @@ info:
     A Wayfair phishing website was detected
   reference:
     - https://wayfair.com
+  classification:
+    cpe: cpe:2.3:a:wayfair:wayfair:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wayfair
+    product: wayfair
   tags: phishing,wayfair,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wayfair
+        cpe: cpe:2.3:a:wayfair:wayfair:*:*:*:*:*:*:*:*
         words:
           - "px-captcha"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: wayfair-2
+        cpe: cpe:2.3:a:wayfair:wayfair:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"wayfair.com")'
-# digest: 4a0a00473045022100d6608c041ee35722c1f861b16ffd95d1e91bab56e6c48e992c72e575573975cb022016da8fd6dfa5699a5df4ead094b2ea4c596afe6eff6b8a66573f1b2ed7222f1c:922c64590222798bb761d5b6d8e72950

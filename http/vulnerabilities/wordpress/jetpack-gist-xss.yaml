@@ -9,9 +9,13 @@ info:
   reference:
     - https://wpscan.com/vulnerability/5e63453f-4d95-4bc3-9338-2d77f95f9ee7/
     - https://wordpress.org/plugins/jetpack/
+  classification:
+    cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
+    vendor: jetpack
+    product: jetpack
   tags: wordpress,wp-plugin,wpscan,jetpack,xss,authenticated,intrusive
 
 flow: http(1) && http(2) && http(3) && http(4)
@@ -27,6 +31,8 @@ http:
 
     matchers:
       - type: dsl
+        name: jetpack
+        cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 302
           - contains(header, 'wordpress_logged_in')
@@ -40,6 +46,8 @@ http:
 
     matchers:
       - type: dsl
+        name: jetpack-2
+        cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains(body, 'Add New Post')
@@ -89,6 +97,8 @@ http:
 
     matchers:
       - type: dsl
+        name: jetpack-3
+        cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 302
         internal: true
@@ -100,8 +110,9 @@ http:
 
     matchers:
       - type: dsl
+        name: jetpack-4
+        cpe: cpe:2.3:a:jetpack:jetpack:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains(body, 'alert(document.domain)')
         condition: and
-# digest: 490a0046304402204b9ec1566057d55e4b505d6a06d0063fbe176410198e53ea87fc57a6a6ba780b02204023d3e231c9c3268a19c071438977f28eed0beebe97b838aa8abad06193ad2c:922c64590222798bb761d5b6d8e72950

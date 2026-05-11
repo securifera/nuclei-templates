@@ -7,11 +7,14 @@ info:
   description: |
     A .env file was discovered containing sensitive information like database credentials and tokens. It should not be publicly accessible.
   classification:
+    cpe: cpe:2.3:a:env:env:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 22
+    vendor: env
+    product: env
   tags: config,exposure,env,vuln
 
 http:
@@ -45,13 +48,16 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: env
+        cpe: cpe:2.3:a:env:env:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?mi)^[a-z_]*(KEY|TOKEN|PASS|SECRET|DB_URL|DATABASE_URL|MAILER_URL)[a-z_]*="
 
       - type: word
+        name: env-2
+        cpe: cpe:2.3:a:env:env:*:*:*:*:*:*:*:*
         part: body
         negative: true
         words:
           - "<html"
-# digest: 4a0a00473045022013879e4c23b99e394bd6edf1a11242bdf01ad612299d3d5666628a446dc8290302210084913aadcc73584f0b177e8205edffb2c58fc27363095c272111d8477e6063fe:922c64590222798bb761d5b6d8e72950

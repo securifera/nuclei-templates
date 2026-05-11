@@ -10,8 +10,12 @@ info:
     - https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/sap/sap_mgmt_con_version.rb
     - https://gist.github.com/c6da760f57e062397e52400936ca5797
     - https://www.neteye-blog.com/2017/03/sap-monitoring-experiences-with-sapcontrol-and-check_sap_health/
+  classification:
+    cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sap
+    product: sap
   tags: misconfig,sap,sapcontrol,soap,version
 
 http:
@@ -37,11 +41,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sap
+        cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "GetVersionInfoResponse"
 
       - type: word
+        name: sap-2
+        cpe: cpe:2.3:a:sap:sap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<VersionInfo>"
@@ -51,4 +59,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200234ef6bdf8d9dfaa0329b8c7f67b7a444364537eed6e8bc3dd68c57ddadb1dd022100bcf76fe6388b4bbebb7295286d42148695bdfb2f7a5de9082421f8ad75afe2d6:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Aaha chat user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:aaha:aaha:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: aaha
+    product: aaha
   tags: osint,osint-social,aaha-chat,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: aaha
+        cpe: cpe:2.3:a:aaha:aaha:*:*:*:*:*:*:*:*
         part: body
         words:
           - "og:title"
-# digest: 490a004630440220786423ab6a750e6354f50ad00b91a75f974ae17840c75509da0ec40b10087f11022040df9300242eb6b9be02b524bd3648ca7f2f96dd69d905ea6c5d5e418b49de96:922c64590222798bb761d5b6d8e72950

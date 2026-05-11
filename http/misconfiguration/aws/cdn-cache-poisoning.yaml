@@ -8,10 +8,14 @@ info:
     When the X-Amz-Server-Side-Encryption header is sent with user controlled value, it can lead to a misconfigured CDN cache response with a 400 status code, making the page inaccessible.
   reference:
     - https://portswigger.net/web-security/web-cache-poisoning
+  classification:
+    cpe: cpe:2.3:a:poisoning:poisoning:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: X-Amz-Server-Side-Encryption
+    vendor: poisoning
+    product: poisoning
   tags: cache,aws,poisoning,cdn,misconfig,vuln
 variables:
   string: "{{to_lower(rand_base(8))}}={{to_lower(rand_base(8))}}"
@@ -29,8 +33,9 @@ http:
 
     matchers:
       - type: dsl
+        name: poisoning
+        cpe: cpe:2.3:a:poisoning:poisoning:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_2, "{{randstr}}")'
           - 'status_code_2==400'
         condition: and
-# digest: 4a0a00473045022100fc49a8fb5259a974b20df29de49a5425b4caf07c46c4480c7aacb5a3aae612dd02207755172c01828fbd1bdf2d0f30ad8654348991970177f06e80c78dbb5664ec42:922c64590222798bb761d5b6d8e72950

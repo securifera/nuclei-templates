@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Checks for the presence of a Forgejo Installer Page.
+  classification:
+    cpe: cpe:2.3:a:forgejo:forgejo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="Installation - Forgejo:"
+    vendor: forgejo
+    product: forgejo
   tags: install,Forgejo,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: forgejo
+        cpe: cpe:2.3:a:forgejo:forgejo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Installation - Forgejo: Beyond coding. We Forge.</title>"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220385250d6f28effbc1da69214f072925598c3522756aa7e9e1524883be254ee21022100d06d9e4b8f6948337b3cb52eac5ce9d4084d1a0854ac5b8af8fb9a9c4f64d195:922c64590222798bb761d5b6d8e72950

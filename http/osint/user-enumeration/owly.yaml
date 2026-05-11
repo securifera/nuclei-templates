@@ -6,11 +6,14 @@ info:
   severity: info
   description: Ow.ly user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:owly:owly:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: owly
+    product: owly
   tags: osint,osint-social,owly,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: owly
+        cpe: cpe:2.3:a:owly:owly:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Images"
-# digest: 4b0a00483046022100927a5e7b545e5474488bfe89c9eb1396f61cd96d2086d35dce8d283a3e843082022100f24fff0950137dd14c7d1975d4c642f9830f3dd792d66c7b20175bfd2aaad049:922c64590222798bb761d5b6d8e72950

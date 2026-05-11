@@ -10,10 +10,14 @@ info:
     - https://www.exploitalert.com/view-details.html?id=39732
     - https://www.exploit-db.com/exploits/51645
     - https://extensions.joomla.org/extension/jlex-review/
+  classification:
+    cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1950415971
+    vendor: joomla
+    product: joomla
   tags: joomla,xss,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<a href="/?itwed"onmouseover="confirm(document.domain)"style='
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100cfc1ea138f24a93c0e71c831ecbd4cdb4da0bb82987356d46520809187b2f98302210090730cf9af48ae5195c83b10f8cd924a366b9c7a206731a2c0dd49d5e22cefee:922c64590222798bb761d5b6d8e72950

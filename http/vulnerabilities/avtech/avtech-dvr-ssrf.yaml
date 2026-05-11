@@ -7,12 +7,15 @@ info:
   description: |
     AVTECH DVR device, Search.cgi can be accessed directly. Search.cgi is responsible for searching and accessing cameras in the local network. Search.cgi provides the cgi_query function.
   classification:
+    cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
     cwe-id: CWE-918
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"login" product:"Avtech"
     fofa-query: app="AVTECH-视频监控"
+    vendor: avtech
+    product: avtech
   tags: ssrf,avtech,unauth,iot,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avtech
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Search.Device'
@@ -31,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: avtech-2
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/plain
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203952a49f2cfc9d438d183af557461af429664f589f02bc21260edbc822387e26022100cb6645f6a7001bf0ac62cb84a9971a46ba66c094f657bb97dea0caf7ac39f9ed:922c64590222798bb761d5b6d8e72950

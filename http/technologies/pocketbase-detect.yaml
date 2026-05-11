@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pocketbase
+        cpe: cpe:2.3:a:pocketbase:pocketbase:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>PocketBase'

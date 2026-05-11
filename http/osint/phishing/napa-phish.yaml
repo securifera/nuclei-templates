@@ -8,8 +8,12 @@ info:
     A NAPA Auto Parts phishing website was detected
   reference:
     - https://napaonline.com
+  classification:
+    cpe: cpe:2.3:a:napa:napa:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: napa
+    product: napa
   tags: phishing,napa,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: napa
+        cpe: cpe:2.3:a:napa:napa:*:*:*:*:*:*:*:*
         words:
           - 'NAPA Auto Parts - Buy Car &amp; Truck Parts Online | Auto Supply Stores Near Me'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: napa-2
+        cpe: cpe:2.3:a:napa:napa:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"napaonline.com")'
-# digest: 4b0a004830460221009cbe599f9786468eabf9505e35f38282016b6f225b38a643fd5c9f00b1e9bc49022100afe47def550294af706d8326b1dc774fb7a0f122d4b9ef35126265a592dddde9:922c64590222798bb761d5b6d8e72950

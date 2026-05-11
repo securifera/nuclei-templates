@@ -9,11 +9,14 @@ info:
     - https://packetstormsecurity.com/files/131161
     - https://wordpress.org/plugins/aspose-pdf-exporter
   classification:
+    cpe: cpe:2.3:a:aspose:aspose:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: aspose
+    product: aspose
   tags: aspose,packetstorm,wordpress,wp-plugin,lfi,vuln
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aspose
+        cpe: cpe:2.3:a:aspose:aspose:*:*:*:*:*:*:*:*
         words:
           - "DB_NAME"
           - "DB_PASSWORD"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b617406f244092a7a0a0a68094ecd0701eb4b4d4ce39be1f0d5a29010d79d0fd02210088f0dbe2ef46b72ad4e294a2a1d48df6613bab9e042efe2747ffae385c82ab10:922c64590222798bb761d5b6d8e72950

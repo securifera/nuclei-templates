@@ -6,11 +6,14 @@ info:
   severity: info
   description: PinkBike user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:pinkbike:pinkbike:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: pinkbike
+    product: pinkbike
   tags: osint,osint-hobby,pinkbike,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: pinkbike
+        cpe: cpe:2.3:a:pinkbike:pinkbike:*:*:*:*:*:*:*:*
         part: body
         words:
           - "on Pinkbike</title>"
-# digest: 4b0a004830460221009d2750773d09cca046947dc49bd3a6a48fdb3cdfd1bc0795a9a8f73ce77f7bb5022100fd98b88f09d42d615c703c938e7a6f157d39f31c8e4e655ad841c7e85d6d8e0a:922c64590222798bb761d5b6d8e72950

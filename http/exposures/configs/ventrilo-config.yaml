@@ -9,12 +9,15 @@ info:
   reference:
     - https://www.ventrilo.com/setup.php
   classification:
+    cpe: cpe:2.3:a:ventrilo:ventrilo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
+    vendor: ventrilo
+    product: ventrilo
   tags: ventrilo,config,exposure,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ventrilo
+        cpe: cpe:2.3:a:ventrilo:ventrilo:*:*:*:*:*:*:*:*
         words:
           - "[Server]"
           - "Name"
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: ventrilo-2
+        cpe: cpe:2.3:a:ventrilo:ventrilo:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220439ddd92c023b5f729250c6053f631041901ae98cb3dade5bb0c0f22d2222d6b022063a33efeb16147a2c0f6cf5afe0a4e620a239379d939587e1ade9c720ef2e933:922c64590222798bb761d5b6d8e72950

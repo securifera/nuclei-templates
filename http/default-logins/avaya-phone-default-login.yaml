@@ -9,11 +9,14 @@ info:
   reference:
     - https://documentation.avaya.com/bundle/InstallandadminJ100seriesIPPhone_r4.1.x/page/Logging_into_web_UI.html
   classification:
+    cpe: cpe:2.3:a:avaya:avaya:*:*:*:*:*:*:*:*
     cwe-id: CWE-1392
   metadata:
     verified: true
     max-requests: 1
     shodan-query: html:"Avaya J179 Phone"
+    vendor: avaya
+    product: avaya
   tags: default-login,avaya,misconfig
 
 variables:
@@ -45,6 +48,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avaya
+        cpe: cpe:2.3:a:avaya:avaya:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/cgi-bin/J100WebServer.cgi?Operation=211"
@@ -52,6 +57,8 @@ http:
         condition: or
 
       - type: word
+        name: avaya-2
+        cpe: cpe:2.3:a:avaya:avaya:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Invalid username or password"
@@ -60,4 +67,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022052160b9f254223ce23f031b54483895e9a189cfb7e31d4b0c16a4edb2cea65df022029b40f4ce1e8b27fec261405dfe5545846016b9bb0dc6a4be36e02c1ef3e6535:922c64590222798bb761d5b6d8e72950

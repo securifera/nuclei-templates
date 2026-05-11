@@ -8,8 +8,12 @@ info:
     A Gemini phishing website was detected
   reference:
     - https://gemini.com
+  classification:
+    cpe: cpe:2.3:a:gemini:gemini:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: gemini
+    product: gemini
   tags: phishing,gemini,crypto,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gemini
+        cpe: cpe:2.3:a:gemini:gemini:*:*:*:*:*:*:*:*
         words:
           - 'Gemini'
           - '<title>Buy, Sell &amp; Trade Bitcoin, Solana, &amp; Other Cryptos with Gemini&#x27;s Best-in-class Platform | Gemini'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: gemini-2
+        cpe: cpe:2.3:a:gemini:gemini:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"gemini.com")'
-# digest: 4a0a00473045022026c83d806c62f9d791aa2cea7e3f8bf9a0de1626bc0d235414b17bdaf951dffa022100876ad33b33454318eebe1639079d2f58795ab1b753c925bbbbb468fca999509b:922c64590222798bb761d5b6d8e72950

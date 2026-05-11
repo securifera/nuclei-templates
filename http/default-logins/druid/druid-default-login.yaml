@@ -6,10 +6,13 @@ info:
   severity: high
   description: Alibaba Druid Monitor default login information (admin/admin) was discovered.
   classification:
+    cpe: cpe:2.3:a:druid:druid:*:*:*:*:*:*:*:*
     cwe-id: CWE-798
   metadata:
     max-request: 2
     fofa-query: title="druid monitor"
+    vendor: druid
+    product: druid
   tags: druid,alibaba,default-login,vuln
 flow: http(1) && http(2)
 
@@ -21,6 +24,8 @@ http:
 
     matchers:
       - type: word
+        name: druid
+        cpe: cpe:2.3:a:druid:druid:*:*:*:*:*:*:*:*
         internal: true
         words:
           - 'error'
@@ -46,6 +51,7 @@ http:
           - 200
 
       - type: regex
+        name: druid-2
+        cpe: cpe:2.3:a:druid:druid:*:*:*:*:*:*:*:*
         regex:
           - "^success$"
-# digest: 490a00463044022023bc3c45abb246c4a466a0bc0bf6d833b580caf05ff8225e317b39c6be23a49502206fe31116ede1c9dc9e6ab3499dd9690c31e78fa3d5b1d6b4c46975512044d51b:922c64590222798bb761d5b6d8e72950

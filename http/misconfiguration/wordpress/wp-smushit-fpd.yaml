@@ -10,10 +10,14 @@ info:
     Attackers can obtain sever file paths, aiding in further exploitation of the website.
   reference:
     - https://wordpress.org/plugins/wp-smushit/
+  classification:
+    cpe: cpe:2.3:a:wp-smushit:wp-smushit:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-requests: 1
     publicwww-query: "/wp-content/plugins/wp-smushit/"
+    vendor: wp-smushit
+    product: wp-smushit
   tags: debug,wordpress,wp,wp-plugin,wp-smushit,fpd
 
 http:
@@ -26,9 +30,10 @@ http:
 
     matchers:
       - type: dsl
+        name: wp-smushit
+        cpe: cpe:2.3:a:wp-smushit:wp-smushit:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:", "failed to open stream")'
           - 'status_code == 200 || status_code == 500'
           - 'contains(body, "wp-smushit")'
         condition: and
-# digest: 490a0046304402203a5699b66bf5f2cb8aa2017012dda17067dfd5dd72277f6ed2b115c9772e26050220255c45b2261e5aa3abd768a599c342da1e017241fca4add4b82240012ddd4fba:922c64590222798bb761d5b6d8e72950

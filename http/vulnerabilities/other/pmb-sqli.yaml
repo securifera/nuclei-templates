@@ -10,11 +10,14 @@ info:
     - https://www.exploit-db.com/exploits/51197
     - https://vulners.com/exploitdb/EDB-ID:51197
   classification:
+    cpe: cpe:2.3:a:pmb:pmb:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     google-query: inurl:"opac_css"
+    vendor: pmb
+    product: pmb
   tags: time-based-sqli,sqli,unauth,pmb,vuln
 
 http:
@@ -26,10 +29,11 @@ http:
 
     matchers:
       - type: dsl
+        name: pmb
+        cpe: cpe:2.3:a:pmb:pmb:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(content_type, "text/html")'
           - 'contains(header, "PmbOpac")'
           - 'duration>=7'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100b6444fad96856c11a5d34843346caa910e151bc51421bba1b91d755c48992865022100dc90a05f15da0fe3b07c2555995478c0c2ec2d95899b0027f15afedf579746e3:922c64590222798bb761d5b6d8e72950

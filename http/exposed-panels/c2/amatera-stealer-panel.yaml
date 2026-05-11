@@ -8,10 +8,14 @@ info:
     Amatera Stealer C2 Login Panel was discovered.
   reference:
     - https://x.com/solostalking/status/1930844795330761206
+  classification:
+    cpe: cpe:2.3:a:amatera:amatera:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Amatera App"
+    vendor: amatera
+    product: amatera
   tags: c2,amatera,stealer,panel,login,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: amatera
+        cpe: cpe:2.3:a:amatera:amatera:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Amatera App"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100dd2992fde190d3f0d571de3dd159766ae3a259cb32f0109c512f2c4ce132f57902203143054de18da817e2cce2fcc3d62d150fa636a3902b8c404c608ae2f1a0fcd9:922c64590222798bb761d5b6d8e72950

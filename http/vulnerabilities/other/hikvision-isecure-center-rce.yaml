@@ -9,10 +9,14 @@ info:
   reference:
     - https://zhuanlan.zhihu.com/p/647590787
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/HIKVISION/HIKVISION%20%E7%BB%BC%E5%90%88%E5%AE%89%E9%98%B2%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20applyCT%20Fastjson%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
+  classification:
+    cpe: cpe:2.3:a:hikvision:hikvision:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="HIKVISION-综合安防管理平台"
+    vendor: hikvision
+    product: hikvision
   tags: hikvision,isecure,rce,vuln
 
 http:
@@ -28,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hikvision
+        cpe: cpe:2.3:a:hikvision:hikvision:*:*:*:*:*:*:*:*
         words:
           - "nt authority\\system"
           - '{"code"'
@@ -36,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022007c1b15304e85d353f4b23b75c75ec9f65dede8cb2d977850cbe60326c9420ac022100cff92d9e17e9ccdcfd5673632fbcc5123485af71bc198403d59e4695900bbd1b:922c64590222798bb761d5b6d8e72950

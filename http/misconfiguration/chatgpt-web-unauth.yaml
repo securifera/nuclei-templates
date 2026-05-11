@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: chatgpt_web
+        cpe: cpe:2.3:a:chanzhaoyu:chatgpt_web:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"status":"Success"'
@@ -35,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: chatgpt_web-2
+        cpe: cpe:2.3:a:chanzhaoyu:chatgpt_web:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f8fc36516b3360bb65492c544d73759757d923e0a7470afb090c6a21e2b703e1022100ce8f69f90e70cc66efa1075ae1a3e99950e449b25558a2bd7834d19d571fcca7:922c64590222798bb761d5b6d8e72950

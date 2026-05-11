@@ -27,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: druid
+        cpe: cpe:2.3:a:apache:druid:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: word
+        name: druid-2
+        cpe: cpe:2.3:a:apache:druid:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 404
-# digest: 4a0a00473045022100c6ecaccaa4624b6de64baeafdbe248701f62cfbbd2afa6209dc6db646dbb5ef20220411489f2589e7d626b1a0e07d9bff2327b8861f590bf9410c1f5c4c3fb6fbed6:922c64590222798bb761d5b6d8e72950

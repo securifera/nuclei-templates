@@ -8,8 +8,12 @@ info:
     A three phishing website was detected
   reference:
     - https://three.co.uk
+  classification:
+    cpe: cpe:2.3:a:three:three:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: three
+    product: three
   tags: phishing,three,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: three
+        cpe: cpe:2.3:a:three:three:*:*:*:*:*:*:*:*
         words:
           - 'Three | Phones, Broadband &amp; SIM Only deals'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: three-2
+        cpe: cpe:2.3:a:three:three:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"three.co.uk")'
-# digest: 4a0a00473045022100bccb01a8f0fe79d923ed6e92f3fc86028655f41408ae385b73a368734a775603022058faaca00be647a0de2a7ab48e8d09f89b94ae1c29aeb0e1fd19b8078ff1e95c:922c64590222798bb761d5b6d8e72950

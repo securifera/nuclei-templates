@@ -8,10 +8,14 @@ info:
     Deluge Default login credentials were discovered.
   reference:
     - https://docs.linuxserver.io/images/docker-deluge/#:~:text=The%20admin%20interface%20is%20available,%2D%3EInterface%2D%3EPassword.
+  classification:
+    cpe: cpe:2.3:a:deluge:deluge:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: title:"Deluge"
+    vendor: deluge
+    product: deluge
   tags: deluge,default-login,vuln
 
 http:
@@ -30,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: deluge
+        cpe: cpe:2.3:a:deluge:deluge:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'result": true'
@@ -38,6 +44,8 @@ http:
         condition: and
 
       - type: word
+        name: deluge-2
+        cpe: cpe:2.3:a:deluge:deluge:*:*:*:*:*:*:*:*
         part: header
         words:
           - "_session_id="
@@ -47,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201a11570d08f28e1bd4ffe627d44507008450e53c2612248bb23d60ed3fcf254102206101409f6fe65896dfe87b3a015b6a4253ffabac8a60d4e16fd9a5bacefc2640:922c64590222798bb761d5b6d8e72950

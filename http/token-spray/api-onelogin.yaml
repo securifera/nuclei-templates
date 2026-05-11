@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  classification:
+    cpe: cpe:2.3:a:onelogin:onelogin:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: onelogin
+    product: onelogin
   tags: token-spray,onelogin
 
 self-contained: true
@@ -23,10 +27,11 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
+        name: onelogin
+        cpe: cpe:2.3:a:onelogin:onelogin:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"id":'
           - '"connector_id":'
           - '"auth_method":'
         condition: and
-# digest: 490a0046304402202f9c8e5d93a93e4d38ace9389cf04dd90472deac762bd58bef00f886b481394502202c4c8e7c02fa34fb9d60d76a2704fa241e187cd0a961850ccd5689863f56af94:922c64590222798bb761d5b6d8e72950

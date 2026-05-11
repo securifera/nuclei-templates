@@ -21,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wcf
+        cpe: cpe:2.3:a:windows:wcf:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Endpoint not found.'
@@ -30,6 +32,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: wcf-2
+        cpe: cpe:2.3:a:windows:wcf:*:*:*:*:*:*:*:*
         part: body
         case-insensitive: true
         words:

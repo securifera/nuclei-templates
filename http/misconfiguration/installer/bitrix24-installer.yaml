@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bitrix24
+        cpe: cpe:2.3:a:bitrix24:bitrix24:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Start installation'
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: bitrix24-2
+        cpe: cpe:2.3:a:bitrix24:bitrix24:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203750717c5b0812ca37aceae673cd94c7634eee13a7e66e48e1c6660740ac90380220643bd5fe756456eb390457e3bd734fd51058d0b46e5121a9c659f11d0e7efd28:922c64590222798bb761d5b6d8e72950

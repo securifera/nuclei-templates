@@ -7,8 +7,12 @@ info:
   description: Smugmug takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/60
+  classification:
+    cpe: cpe:2.3:a:smugmug:smugmug:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: smugmug
+    product: smugmug
   tags: takeover,smugmug,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: smugmug
+        cpe: cpe:2.3:a:smugmug:smugmug:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: smugmug-2
+        cpe: cpe:2.3:a:smugmug:smugmug:*:*:*:*:*:*:*:*
         words:
           - '{"text":"Page Not Found"'
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a0047304502203838d6dd4092849a9cad75ec2d43d9b39bc63c200b5872ef0e7349d3cf688392022100f58fe1335eb47794097c64a45e0b3b0b259ca0e4f1a7f12f9c4eef9bdee0289e:922c64590222798bb761d5b6d8e72950

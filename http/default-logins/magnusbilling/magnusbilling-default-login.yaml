@@ -8,10 +8,14 @@ info:
     MagnusBilling installs with a default administrative account using the credentials root / magnus. If unchanged, these credentials grant full access to the system, allowing attackers to manage billing data, modify configurations, and potentially execute arbitrary code or commands via exposed interfaces.
   impact: |
     An unauthenticated attacker can gain full administrative control over the MagnusBilling platform, leading to compromise of billing systems, data leakage, and potential pivoting into internal infrastructure.
+  classification:
+    cpe: cpe:2.3:a:magnusbilling:magnusbilling:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"MagnusBilling"
+    vendor: magnusbilling
+    product: magnusbilling
   tags: mbilling,default-login,vuln
 
 variables:
@@ -30,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: magnusbilling
+        cpe: cpe:2.3:a:magnusbilling:magnusbilling:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"success":"root"'
@@ -37,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022033fd0b1fed1ce2bf606d6dcd49da469baa4c7a6f13bf9d615504c8de2c9b464202210090d2dfcb3a93c558823426efa277835f9bc76413f9a43117b53270c0e647e7b3:922c64590222798bb761d5b6d8e72950

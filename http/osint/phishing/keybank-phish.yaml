@@ -8,8 +8,12 @@ info:
     A KeyBank phishing website was detected
   reference:
     - https://key.com
+  classification:
+    cpe: cpe:2.3:a:keybank:keybank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: keybank
+    product: keybank
   tags: phishing,keybank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: keybank
+        cpe: cpe:2.3:a:keybank:keybank:*:*:*:*:*:*:*:*
         words:
           - 'KeyBank'
           - '<title>KeyBank | Banking, Credit Cards, Mortgages, and Loans'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: keybank-2
+        cpe: cpe:2.3:a:keybank:keybank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"key.com")'
-# digest: 4a0a00473045022015eb7726bcdd4adb5e50a1f8dde8e9ca851c7bb9d58d55296385976421608292022100c41526332aa5f4fbebc17051ba9dba19a3296fe78ca5fc85e3516dffedb1b623:922c64590222798bb761d5b6d8e72950

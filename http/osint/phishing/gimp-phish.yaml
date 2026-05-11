@@ -8,8 +8,12 @@ info:
     A gimp phishing website was detected
   reference:
     - https://gimp.org
+  classification:
+    cpe: cpe:2.3:a:gimp:gimp:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: gimp
+    product: gimp
   tags: phishing,gimp,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gimp
+        cpe: cpe:2.3:a:gimp:gimp:*:*:*:*:*:*:*:*
         words:
           - 'GIMP - GNU Image Manipulation Program'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: gimp-2
+        cpe: cpe:2.3:a:gimp:gimp:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"gimp.org")'
-# digest: 4b0a00483046022100812feeb1b5ed9c7571fe9729fcaac082cabe83f4eb52c0c990be4659e65bfa06022100da6d5084a6cf9e45a55f5eef9776db2b7d7879e7b9d45995d470de86f73f15b4:922c64590222798bb761d5b6d8e72950

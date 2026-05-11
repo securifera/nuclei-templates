@@ -8,8 +8,12 @@ info:
     A mcafee phishing website was detected
   reference:
     - https://mcafee.com
+  classification:
+    cpe: cpe:2.3:a:mcafee:mcafee:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mcafee
+    product: mcafee
   tags: phishing,mcafee,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mcafee
+        cpe: cpe:2.3:a:mcafee:mcafee:*:*:*:*:*:*:*:*
         words:
           - 'Antivirus, VPN, Identity &amp; Privacy Protection | McAfee'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: mcafee-2
+        cpe: cpe:2.3:a:mcafee:mcafee:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"mcafee.com")'
-# digest: 4b0a00483046022100953c90813230b48668d521ae7b0e4f8a8647ae0e92a743634d35bc950024de77022100ab06eff510958f1458195e28a0ce5288e4b836334759942c9d2974eb49a8e745:922c64590222798bb761d5b6d8e72950

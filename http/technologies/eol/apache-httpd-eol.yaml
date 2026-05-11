@@ -26,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: http_server
+        cpe: cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
         dsl:
           - compare_versions(version, '<=2.2.34')
           - contains(server, 'Apache')

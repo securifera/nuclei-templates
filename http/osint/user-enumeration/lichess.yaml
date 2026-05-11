@@ -6,11 +6,14 @@ info:
   severity: info
   description: Lichess user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:lichess:lichess:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: lichess
+    product: lichess
   tags: osint,osint-gaming,lichess,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: lichess
+        cpe: cpe:2.3:a:lichess:lichess:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Activity"
-# digest: 4b0a00483046022100b9ea152222252f7dfdb338d90e0778e065637ef17863087d14cb6b38c3468aa7022100810f6214bbfd04b25869faca6406ca26e3f7fff7a737552614a216b04e5661d4:922c64590222798bb761d5b6d8e72950

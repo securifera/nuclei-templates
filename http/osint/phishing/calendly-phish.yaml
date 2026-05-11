@@ -8,8 +8,12 @@ info:
     A Calendly phishing website was detected
   reference:
     - https://calendly.com
+  classification:
+    cpe: cpe:2.3:a:calendly:calendly:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: calendly
+    product: calendly
   tags: phishing,calendly,scheduling,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: calendly
+        cpe: cpe:2.3:a:calendly:calendly:*:*:*:*:*:*:*:*
         words:
           - 'Calendly is the modern scheduling platform that makes “finding time” a breeze. When connecting is easy, your teams can get more done.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: calendly-2
+        cpe: cpe:2.3:a:calendly:calendly:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"calendly.com")'
-# digest: 4b0a004830460221009ce4bb5a97fd2f07ae4c12dd46530a28f7973aced68bac1622558fc6cf3f68fd02210098a29c7e18cb0b4265ce77fa02b39340455de1f60f227ad23a97a97549c02cba:922c64590222798bb761d5b6d8e72950

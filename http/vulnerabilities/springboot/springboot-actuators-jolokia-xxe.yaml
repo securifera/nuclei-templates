@@ -9,9 +9,12 @@ info:
     - https://www.veracode.com/blog/research/exploiting-spring-boot-actuators
     - https://github.com/mpgn/Spring-Boot-Actuator-Exploit
   classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
     cwe-id: CWE-611
   metadata:
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: springboot,jolokia,xxe,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "http:\\/\\/nonexistent:31337\\/logback.xml"
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008524eb32fe87f060e4c281e6573307a964603af3bfda8f532c97b0aad3fca0590220378bb8c91547e91fe5162428bd98bddea7b43e0bd3455402fa29f2c4bda405f5:922c64590222798bb761d5b6d8e72950

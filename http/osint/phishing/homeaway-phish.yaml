@@ -8,8 +8,12 @@ info:
     A HomeAway phishing website was detected
   reference:
     - https://homeaway.com
+  classification:
+    cpe: cpe:2.3:a:homeaway:homeaway:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: homeaway
+    product: homeaway
   tags: phishing,homeaway,travel,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: homeaway
+        cpe: cpe:2.3:a:homeaway:homeaway:*:*:*:*:*:*:*:*
         words:
           - 'HomeAway'
           - '<title>Vrbo | Book Your Vacation Home Rentals: Beach Houses, Cabins, Condos &amp; More'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: homeaway-2
+        cpe: cpe:2.3:a:homeaway:homeaway:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"homeaway.com")'
-# digest: 4b0a00483046022100a59f99b33518c71d4391c635b1f13045d238ba31f9defc713d7913a9f3941041022100e8e736626b7bf8338cce2577679e32281b8fcf0f641d48c3cac5cb513435a4ea:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Discover phishing website was detected
   reference:
     - https://discover.com
+  classification:
+    cpe: cpe:2.3:a:discover:discover:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: discover
+    product: discover
   tags: phishing,discover,credit-card,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: discover
+        cpe: cpe:2.3:a:discover:discover:*:*:*:*:*:*:*:*
         words:
           - 'Discover'
           - '<title>Discover - Personal Banking, Credit Cards &amp; Loans'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: discover-2
+        cpe: cpe:2.3:a:discover:discover:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"discover.com")'
-# digest: 4a0a0047304502210097901955d6e3c5109c2482642d69f3278ecd18fd60b0ad4858a4957dc2f30ad002203d9810aba55e18f5bf9040e23c4a932b58ca7e5d81c3c86f396bd589d3421458:922c64590222798bb761d5b6d8e72950

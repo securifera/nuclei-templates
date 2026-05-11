@@ -22,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: symfony
+        cpe: cpe:2.3:a:sensiolabs:symfony:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Welcome to Symfony!'
@@ -38,4 +40,3 @@ http:
         group: 1
         regex:
           - "([0-9.]+)</span>"
-# digest: 490a004630440220645053bf59c491913db84add80410d3e58282a4cb4beada300c4535f567f9d850220739f2c89853ead70dfafc7d13006a2e95ae063303cedcc8e5f252c8a2b3e2574:922c64590222798bb761d5b6d8e72950

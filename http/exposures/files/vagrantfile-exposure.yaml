@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk
   severity: low
   description: Vagrantfile is exposed to external users.
+  classification:
+    cpe: cpe:2.3:a:vagrantfile:vagrantfile:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Vagrantfile"
+    vendor: vagrantfile
+    product: vagrantfile
   tags: config,exposure,vagrant,oss,files,vuln
 
 http:
@@ -19,11 +23,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vagrantfile
+        cpe: cpe:2.3:a:vagrantfile:vagrantfile:*:*:*:*:*:*:*:*
         words:
           - "./vagrant/config/vagrant-local.yml"
           - "./vagrant/config/vagrant-local.example.yml"
 
       - type: word
+        name: vagrantfile-2
+        cpe: cpe:2.3:a:vagrantfile:vagrantfile:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -34,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220354c2f4fde8f4619fe9aaa86c798ff699108287dd5ceb70cfdb5e31571779e4f02203702e787c274163081428510debdf5fd4444ef74c4277d03cca430b9794547c6:922c64590222798bb761d5b6d8e72950

@@ -10,12 +10,15 @@ info:
     - https://wpscan.com/plugin/nextgen-gallery/
     - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-nextgen-gallery-wordpress-gallery-information-disclosure-1-9-11/
   classification:
+    cpe: cpe:2.3:a:nextgen-gallery-pro:nextgen-gallery-pro:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-532
   metadata:
     verified: true
     fofa-query: body="/plugins/nextgen-gallery-pro"
+    vendor: nextgen-gallery-pro
+    product: nextgen-gallery-pro
   tags: wordpress,wp,wp-plugin,nextgen-gallery-pro,log,exposure
 
 flow: http(1) && http(2)
@@ -28,6 +31,8 @@ http:
     redirects: true
     matchers:
       - type: word
+        name: nextgen-gallery-pro
+        cpe: cpe:2.3:a:nextgen-gallery-pro:nextgen-gallery-pro:*:*:*:*:*:*:*:*
         part: body
         words:
           - "nextgen"
@@ -39,9 +44,10 @@ http:
 
     matchers:
       - type: dsl
+        name: nextgen-gallery-pro-2
+        cpe: cpe:2.3:a:nextgen-gallery-pro:nextgen-gallery-pro:*:*:*:*:*:*:*:*
         dsl:
           - 'regex("[[0-9]{2}-[a-zA-Z]{3}-[0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} [A-Z]{3}] PHP", body)'
           - 'contains_any(body, "PHP Warning:", "PHP Notice:", "Undefined array", "Undefined variable")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100a7313133e65a3fa6d843ba22f76663d160e50ec7cbe071f7f1b779b004e364ca022100d07cfc10a4ba662e75fc44d155dc139c77d0b68e4a09b0811bc821ebb3650967:922c64590222798bb761d5b6d8e72950

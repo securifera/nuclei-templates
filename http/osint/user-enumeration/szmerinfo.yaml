@@ -6,11 +6,14 @@ info:
   severity: info
   description: Szmer.info user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:szmerinfo:szmerinfo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: szmerinfo
+    product: szmerinfo
   tags: osint,osint-social,szmerinfo,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: szmerinfo
+        cpe: cpe:2.3:a:szmerinfo:szmerinfo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Joined"
-# digest: 4a0a004730450220266d5ca7fd1b579884764c0bb49ef536cb54bd8e8a738bdff5a796df10394d37022100d61f97a31f740430f63286e8e760302b84d0051731aa53afd3362570dd0a58b8:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A uber phishing website was detected
   reference:
     - https://uber.com
+  classification:
+    cpe: cpe:2.3:a:uber:uber:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: uber
+    product: uber
   tags: phishing,uber,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: uber
+        cpe: cpe:2.3:a:uber:uber:*:*:*:*:*:*:*:*
         words:
           - 'Explore the Uber Platform | Uber'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: uber-2
+        cpe: cpe:2.3:a:uber:uber:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"uber.com")'
-# digest: 4a0a00473045022100aa6cf727c0570083c30040a11a70ee6138a7d8a3066468d72b526bccb82297a202207242da190bbefee5ca5c0792dc9dbc569af8d7b76599c1e72a5c7ab33abf887c:922c64590222798bb761d5b6d8e72950

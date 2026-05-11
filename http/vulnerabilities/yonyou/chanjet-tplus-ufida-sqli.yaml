@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/MrWQ/vulnerability-paper/blob/master/bugs/%E7%95%85%E6%8D%B7%E9%80%9A%20T%2B%20Plus%20%E5%AE%A1%E8%AE%A1%20%EF%BC%88%E8%B6%85%E8%AF%A6%E7%BB%86%EF%BC%89.md
   classification:
+    cpe: cpe:2.3:a:chanjet:chanjet:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="畅捷通-TPlus"
+    vendor: chanjet
+    product: chanjet
   tags: yonyou,chanjet,sqli,vuln
 
 http:
@@ -28,10 +31,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: chanjet
+        cpe: cpe:2.3:a:chanjet:chanjet:*:*:*:*:*:*:*:*
         part: body
         words:
           - "0x06d49632c9dc9bcb62aeaef99612ba6b"
           - "Message\":\"245"
           - "DatabaseException"
         condition: and
-# digest: 4b0a00483046022100b86e1e9179d0f05c16af62bd742b7240225b83775aa3599fbce814e5dd83158e022100d40c5537ffc32d2af09d8d42aaa1eb15fc7d80699e8c5713a6b795fe448058ff:922c64590222798bb761d5b6d8e72950

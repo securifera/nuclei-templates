@@ -10,12 +10,15 @@ info:
     - https://nvd.nist.gov/vuln/detail/CVE-2020-7796
     - https://wiki.zimbra.com/wiki/Zimbra_Releases/8.8.15/P7
   classification:
+    cpe: cpe:2.3:a:zimbra:zimbra:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cve-id: CVE-2020-7796
     cwe-id: CWE-99,CWE-918
   metadata:
     max-request: 1
+    vendor: zimbra
+    product: zimbra
   tags: zimbra,ssrf,oast,vuln
 
 http:
@@ -27,7 +30,8 @@ http:
 
     matchers:
       - type: word
+        name: zimbra
+        cpe: cpe:2.3:a:zimbra:zimbra:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the HTTP Interaction
         words:
           - "http"
-# digest: 4a0a00473045022036c5421ac4503bb98a8aae1e8e1f1d8542ab193a7bb4412592ae93aebf307f6e022100d5176941e662fd875137de161808b4502bfc36f5856bf3111099b1f2025eb0ba:922c64590222798bb761d5b6d8e72950

@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: Blesta is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:blesta:blesta:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Blesta installer"
+    vendor: blesta
+    product: blesta
   tags: misconfig,blesta,install,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: blesta
+        cpe: cpe:2.3:a:blesta:blesta:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Blesta Installer'
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: blesta-2
+        cpe: cpe:2.3:a:blesta:blesta:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e36af097b7522c8a7a2f2fcd4d36585b88f91801245a2a0b9f7d95f3a42d69a602207b3219a979077923dad4668deba7115b542c939ddb74c59577fc87704a79d62f:922c64590222798bb761d5b6d8e72950

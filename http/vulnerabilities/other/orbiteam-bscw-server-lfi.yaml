@@ -9,11 +9,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/165156/OrbiTeam-BSCW-Server-XSS-LFI-User-Enumeration.html
   classification:
+    cpe: cpe:2.3:a:orbiteam:bscw:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: orbiteam
+    product: bscw
   tags: bscw,orbiteam,lfi,unauth,packetstorm,xss,vuln
 
 http:
@@ -24,10 +27,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: bscw
+        cpe: cpe:2.3:a:orbiteam:bscw:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100bf458f4423b5378cb9f3d9f5b3f0d41205d4cd352c9c18a83a3b4b3024ac069f02203052194675acc63418ea1a1bda0df990f84425955a056cfd74a05dc264104f0d:922c64590222798bb761d5b6d8e72950

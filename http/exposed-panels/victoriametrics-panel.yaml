@@ -9,10 +9,14 @@ info:
   reference:
     - https://victoriametrics.com/
     - https://docs.victoriametrics.com/
+  classification:
+    cpe: cpe:2.3:a:victoriametrics:victoriametrics:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"VictoriaMetrics"
+    vendor: victoriametrics
+    product: victoriametrics
   tags: victoriametrics,login,panel,discovery
 
 http:
@@ -22,8 +26,9 @@ http:
 
     matchers:
       - type: dsl
+        name: victoriametrics
+        cpe: cpe:2.3:a:victoriametrics:victoriametrics:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(body, "VM UI", "VictoriaMetrics")'
         condition: and
-# digest: 4a0a0047304502201731e85c29c102cdd714467fdc32f758a994a6fc5b789dbf4f253107ed2c8d78022100f6b0f23c182b84c9fe4258a30aecfae891ef6cb58021a737fa7594f4d1beba90:922c64590222798bb761d5b6d8e72950

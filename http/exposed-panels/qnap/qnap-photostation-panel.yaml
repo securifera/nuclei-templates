@@ -38,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: photo_station
+        cpe: cpe:2.3:a:qnap:photo_station:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?m)<title>(.*)Photo Station(.*)<\/title>'
@@ -45,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f717109e1303ffa3fcd8fa71c425ce3df4980c761a7a0b85b19c248c4d76f340022100b04f2121dae1125ec8d4fc46f27b6dac15fbb9d0d376521a0609b9055024512b:922c64590222798bb761d5b6d8e72950

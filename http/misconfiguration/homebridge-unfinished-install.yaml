@@ -10,6 +10,7 @@ info:
     - https://homebridge.io/
     - https://github.com/homebridge/homebridge-config-ui-x
   classification:
+    cpe: cpe:2.3:a:homebridge:homebridge:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-284
@@ -18,6 +19,8 @@ info:
     max-request: 2
     shodan-query: title:"Homebridge"
     fofa-query: title="Homebridge"
+    vendor: homebridge
+    product: homebridge
   tags: homebridge,misconfig,exposure,iot,smart-home,unauth
 
 flow: http(1) && http(2)
@@ -29,6 +32,8 @@ http:
 
     matchers:
       - type: dsl
+        name: homebridge
+        cpe: cpe:2.3:a:homebridge:homebridge:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "<title>Homebridge")'
@@ -42,11 +47,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: homebridge-2
+        cpe: cpe:2.3:a:homebridge:homebridge:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"setupWizardComplete":false'
 
       - type: word
+        name: homebridge-3
+        cpe: cpe:2.3:a:homebridge:homebridge:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -54,4 +63,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ec457e2253c6aae1597fcf466941656201145ab17038646500cc984359f34ea102200354115bbf9f0543c61934e8a6c1c5a54495bb9c61dcb0b964b614c25acd07a4:922c64590222798bb761d5b6d8e72950

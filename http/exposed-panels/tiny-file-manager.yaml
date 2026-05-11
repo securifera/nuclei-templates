@@ -6,6 +6,7 @@ info:
   severity: info
   description: Tiny File Manager panel was detected.
   classification:
+    cpe: cpe:2.3:a:tiny-file:tiny-file:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -13,6 +14,8 @@ info:
     max-request: 1
     shodan-query: title:"Tiny File Manager"
     zoomeye-query: app="Tiny File Manager"
+    vendor: tiny-file
+    product: tiny-file
   tags: panel,filemanager,login,detect,discovery
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tiny-file
+        cpe: cpe:2.3:a:tiny-file:tiny-file:*:*:*:*:*:*:*:*
         words:
           - "<title>Tiny File Manager"
         condition: and
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a0e658a44a68d80a8748325762b96447c19cbd9596413d4528f2c430bc004e7202204735baf132d7a9f38694fd630b2c36e8867811a421cc421d19205beaa0fc2eb5:922c64590222798bb761d5b6d8e72950

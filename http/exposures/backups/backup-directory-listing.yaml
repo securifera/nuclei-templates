@@ -9,9 +9,13 @@ info:
   reference:
     - https://www.invicti.com/learn/directory-listing/
     - https://hackerone.com/reports/684838
+  classification:
+    cpe: cpe:2.3:a:backup-directory-listing:backup-directory-listing:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: backup-directory-listing
+    product: backup-directory-listing
   tags: hackerone,backups,exposure,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: backup-directory-listing
+        cpe: cpe:2.3:a:backup-directory-listing:backup-directory-listing:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "Index of .*/backup"
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c7cbbcf3023996cbee8c986b744ae7d38b0db40505d46865d4aa38d8c95cd02c02207028ddfffaba5b0918999cdef2e6dcff49e40ffed38b903d75a8820071f795d3:922c64590222798bb761d5b6d8e72950

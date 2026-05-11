@@ -8,8 +8,12 @@ info:
     An ING phishing website was detected
   reference:
     - https://ing.com
+  classification:
+    cpe: cpe:2.3:a:ing:ing:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ing
+    product: ing
   tags: phishing,ing,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ing
+        cpe: cpe:2.3:a:ing:ing:*:*:*:*:*:*:*:*
         words:
           - "Corporate site of ING, a global financial institution of Dutch origin, providing news, investor relations and general information"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: ing-2
+        cpe: cpe:2.3:a:ing:ing:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"ing.com")'
-# digest: 490a00463044022100f2ce243785c81d6e2e3ebbeeb6372f18b051112e66f3293bc8253358a545c4d4021f3698ac766d726b2e6fb3e2e78c3d3764f90012f2a2dfb40ff4985a8e5a2d71:922c64590222798bb761d5b6d8e72950

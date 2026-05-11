@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://devcenter.heroku.com/articles/platform-api-quickstart#calling-the-api
+  classification:
+    cpe: cpe:2.3:a:heroku:heroku:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: heroku
+    product: heroku
   tags: token-spray,heroku
 
 self-contained: true
@@ -22,9 +26,10 @@ http:
       Authorization: Bearer {{token}}
     matchers:
       - type: word
+        name: heroku
+        cpe: cpe:2.3:a:heroku:heroku:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"created_at":'
           - '"git_url":'
         condition: and
-# digest: 4a0a004730450221008176de1bfb74ad46411f367c3197bc0aa6ed4967cb279b6eb7a5e5266c7ea00902205914e4715cb17a23a7fd7094beede6fa1987e78075bba9ca5e5ba237c8995311:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/apache/skywalking
     - https://github.com/apache/skywalking-ui
+  classification:
+    cpe: cpe:2.3:a:apache:skywalking:*:*:*:*:*:*:*:*
   metadata:
     max-request: 9
     vendor: apache
@@ -25,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: skywalking
+        cpe: cpe:2.3:a:apache:skywalking:*:*:*:*:*:*:*:*
         words:
           - 'title>Apache SkyWalking'
           - '/css/monaco-editor'
@@ -33,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203c55f2b5abf5d4f94affcc99c6e821867a58a2d01a521611aed3efa00782d8cc0221008ae05ea0ee3ccd20a891155f7da981e4bcfb82c34a6d11d257323da01bac2e89:922c64590222798bb761d5b6d8e72950

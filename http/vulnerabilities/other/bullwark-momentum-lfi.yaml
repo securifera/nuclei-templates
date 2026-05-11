@@ -9,6 +9,7 @@ info:
     - https://www.exploit-db.com/exploits/47773
     - http://www.bullwark.net/Kategoriler.aspx?KategoriID=24 # software link
   classification:
+    cpe: cpe:2.3:a:bullwark:bullwark:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23
@@ -17,6 +18,8 @@ info:
     shodan-query: Bullwark
     fofa-query: "Bullwark"
     version: Bullwark Momentum Series Web Server JAWS/1.0
+    vendor: bullwark
+    product: bullwark
   tags: lfi,edb,bullwark,vuln
 
 http:
@@ -34,6 +37,7 @@ http:
           - 200
 
       - type: regex
+        name: bullwark
+        cpe: cpe:2.3:a:bullwark:bullwark:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
-# digest: 490a0046304402201a31d3412b9f3ffbd1773aa50d89c5a737c0393d6366d579a985d58d9df9232c02200c6b1d0fb6a4a7048b800ada1920fc0c93aafae1a5f8c5be87f1cef920be8ef9:922c64590222798bb761d5b6d8e72950

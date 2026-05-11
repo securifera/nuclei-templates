@@ -8,8 +8,12 @@ info:
     A Huntington Bank phishing website was detected
   reference:
     - https://huntington.com
+  classification:
+    cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank
+    product: bank
   tags: phishing,huntington-bank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         words:
           - 'Huntington Bank'
           - 'Online Banking, Insurance, Investing, Loans &amp; Credit Cards'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-2
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"huntington.com")'
-# digest: 4b0a00483046022100d9aa34433bacf6c427de5e3cefa27d65afcd222aa9e933bbf04249a92595cae9022100c6e6a80d47c6510b39729576d5bcc2f65ba1481daa8cd53ebca91d67a737bd00:922c64590222798bb761d5b6d8e72950

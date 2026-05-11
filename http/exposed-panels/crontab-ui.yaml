@@ -6,10 +6,14 @@ info:
   severity: high
   reference:
     - https://www.facebook.com/photo/?fbid=629288492575007&set=a.467014098802448
+  classification:
+    cpe: cpe:2.3:a:crontab:crontab:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Crontab UI"
+    vendor: crontab
+    product: crontab
   tags: exposure,crontab,ui,panel,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: crontab
+        cpe: cpe:2.3:a:crontab:crontab:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Crontab UI</title>'
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100854a69e746852518b166c2a21d1014b03dbb025b5b3fe9c823c0c2e586cd0c3102210099619cfded89e0515736b20359489a5c82a6e3dbd6e7472f78c22307a0f7d474:922c64590222798bb761d5b6d8e72950

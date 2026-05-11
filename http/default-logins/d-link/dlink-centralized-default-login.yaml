@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     D-Link AC Centralized Management System default login credentials were discovered.
+  classification:
+    cpe: cpe:2.3:a:dlink:dlink:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="AC集中管理平台" && body="D-Link路由器管理页"
+    vendor: dlink
+    product: dlink
   tags: default-login,dlink,vuln
 
 http:
@@ -31,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: dlink
+        cpe: cpe:2.3:a:dlink:dlink:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_1 == 200 && !contains(body_1,"flag=0")'
         condition: and
 
       - type: word
+        name: dlink-2
+        cpe: cpe:2.3:a:dlink:dlink:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Set-Cookie"
@@ -43,8 +51,9 @@ http:
         condition: and
 
       - type: word
+        name: dlink-3
+        cpe: cpe:2.3:a:dlink:dlink:*:*:*:*:*:*:*:*
         part: body
         words:
           - "window.open"
         condition: and
-# digest: 490a0046304402207e4d0ab1678a91ef842f3187e4be481820a1d8aea15f9370aa42170e76d0669b02204a662f5f3256932f62b4b69c02e62d58621f9ea0e16494c7be3daa9e9b842d04:922c64590222798bb761d5b6d8e72950

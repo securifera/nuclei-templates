@@ -8,6 +8,7 @@ info:
   reference:
     - https://mcloudcorp.com/
   classification:
+    cpe: cpe:2.3:a:mcloud:mcloud:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
     cvss-score: 9.4
     cwe-id: CWE-284
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"mcloud-installer-web"
+    vendor: mcloud
+    product: mcloud
   tags: panel,mcloud,exposure,misconfig,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mcloud
+        cpe: cpe:2.3:a:mcloud:mcloud:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>mcloud-installer-web'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008aecf54c4958fbd65dd714ebb93ac554e78e629a06c50928325c997eb807e914022100b20df1ebaaefe62ba2c719e86834939aba46b6aec47d0255795c83bd499ec12d:922c64590222798bb761d5b6d8e72950

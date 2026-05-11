@@ -3,8 +3,13 @@ info:
   name: Graphql Tartiflette Detect
   author: princechaddha
   severity: info
+  classification:
+    cpe: cpe:2.3:a:tartiflette:tartiflette:*:*:*:*:*:*:*:*
   reference:
     - https://github.com/dolevf/graphw00f/blob/main/graphw00f/lib.py
+  metadata:
+    vendor: tartiflette
+    product: tartiflette
   tags: tech,graphql,tartiflette
 
 http:
@@ -27,7 +32,8 @@ http:
           - 400
 
       - type: word
+        name: tartiflette
+        cpe: cpe:2.3:a:tartiflette:tartiflette:*:*:*:*:*:*:*:*
         words:
           - "Unknow Directive < @a >."
         part: body
-# digest: 4a0a004730450221009449558828ae2768b5cb7804c3fb6f67451abad8acf52692f53676413f25718d022035ba6cd1cc02630579758e37f21490d747607f8674117cd710a1e048413d2a36:922c64590222798bb761d5b6d8e72950

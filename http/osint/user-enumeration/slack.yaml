@@ -6,12 +6,15 @@ info:
   severity: info
   description: Slack user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
+    vendor: slack
+    product: slack
   tags: osint,osint-social,slack,discovery
 
 self-contained: true
@@ -28,7 +31,8 @@ http:
           - 200
 
       - type: word
+        name: slack
+        cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Slack"
-# digest: 490a00463044022032ee109fec17db468653177a3bc13932a1452911e366274fceb8ea7af77d391e0220415f531472a8800c4b4535980612e10208969731881eff887501d98e740bfb97:922c64590222798bb761d5b6d8e72950

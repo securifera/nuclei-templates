@@ -4,8 +4,12 @@ info:
   name: WordPress Plugins Detection
   author: 0xcrypto
   severity: info
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 100563
+    vendor: wordpress
+    product: wordpress
   tags: fuzz,wordpress,fuzzing,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
           - 200
 
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - "== Description =="
 
@@ -34,4 +40,3 @@ http:
         regex:
           - "===\\s(.*)\\s===" # extract the plugin name
           - "(?m)Stable tag: ([0-9.]+)" # extract the plugin version
-# digest: 4a0a00473045022100c0e21976f02334a689b33f658f4f1379b266a93cac4b91548d7d413e88c8305302201ab69db4dd9b64f4088373b72b61523b7370bc946d4cc52dd753cba3bac9a558:922c64590222798bb761d5b6d8e72950

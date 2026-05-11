@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDK
   severity: low
   description: Springboot Features Actuator is exposed.
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"Eureka"
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"enabled":['
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d88051a9e35b7a6c17adbb001d60f28c56140c58e8360bb711116a78afcd7b19022100ab55335d35a73e5b68ce13ac406abb5f027795c6033a95583f483e23a7e23f5f:922c64590222798bb761d5b6d8e72950

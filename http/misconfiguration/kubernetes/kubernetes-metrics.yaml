@@ -7,8 +7,12 @@ info:
   description: Information Disclosure of Garbage Collection
   reference:
     - https://kubernetes.io/docs/concepts/cluster-administration/system-metrics/#metrics-in-kubernetes
+  classification:
+    cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kubernetes
+    product: kubernetes
   tags: kubernetes,exposure,devops,misconfig,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kubernetes
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         part: body
         condition: and
         words:
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022013ddeff06dd80631992e502e6588e4d6115874ee12e2a47b86cac013ea0a79cc022075299ace0d209cd3dd8b870ce5a0ae108c8f948540b2137ef1fe661c1ffed3d1:922c64590222798bb761d5b6d8e72950

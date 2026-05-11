@@ -6,6 +6,8 @@ info:
   severity: high
   description: |
     Camaleon CMS default login credentials was discovered.
+  classification:
+    cpe: cpe:2.3:a:tuzitio:camaleon_cms:*:*:*:*:*:*:*:*
   metadata:
     vendor: tuzitio
     product: camaleon_cms
@@ -44,6 +46,7 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: camaleon_cms
+        cpe: cpe:2.3:a:tuzitio:camaleon_cms:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(location,"/admin/dashboard")'
-# digest: 4a0a00473045022100bca713f43912530cea59f78cf58129e162c298aa8d165abb128fb56c554b6943022054733d218f03d03ce86645af0e4fa089015cf47e9916d95338733cfb493b98bb:922c64590222798bb761d5b6d8e72950

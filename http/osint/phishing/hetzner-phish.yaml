@@ -8,8 +8,12 @@ info:
     A Hetzner phishing website was detected
   reference:
     - https://hetzner.com
+  classification:
+    cpe: cpe:2.3:a:hetzner:hetzner:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hetzner
+    product: hetzner
   tags: phishing,hetzner,cloud,hosting,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hetzner
+        cpe: cpe:2.3:a:hetzner:hetzner:*:*:*:*:*:*:*:*
         words:
           - '<title>Affordable dedicated servers, cloud &amp; hosting from Germany'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: hetzner-2
+        cpe: cpe:2.3:a:hetzner:hetzner:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"hetzner.com")'
-# digest: 4a0a00473045022100f772a239a79e146aa2b1ad936c97466b183e750bdff95c671c0eadbd4cd6dbb9022021df872db7bfcd5849b86e4ff3bcbc58febcdb3b195f79381eb8f8d2b512912c:922c64590222798bb761d5b6d8e72950

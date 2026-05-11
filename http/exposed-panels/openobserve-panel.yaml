@@ -8,10 +8,14 @@ info:
     OpenObserve products was detected.
   reference:
     - https://github.com/openobserve/openobserve
+  classification:
+    cpe: cpe:2.3:a:openobserve:openobserve:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.title:"OpenObserve"
+    vendor: openobserve
+    product: openobserve
   tags: panel,openobserve,login,discovery
 
 http:
@@ -21,8 +25,9 @@ http:
 
     matchers:
       - type: dsl
+        name: openobserve
+        cpe: cpe:2.3:a:openobserve:openobserve:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(to_lower(body), "openobserve</title>")'
         condition: and
-# digest: 490a00463044022029b0e5099591fd2807adaada2cf5cffaeb69d38592d27643f10c17e631ecf8e502206edd419bdd098afe2cb754f8a77100cdc9aa7b01e0afc901f9be65f5606de2f6:922c64590222798bb761d5b6d8e72950

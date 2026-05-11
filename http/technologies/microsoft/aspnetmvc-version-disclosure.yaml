@@ -7,6 +7,7 @@ info:
   description: |
     Detects version disclosed via 'X-AspNetMvc-Version' header.
   classification:
+    cpe: cpe:2.3:a:microsoft:asp.net_mvc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -14,6 +15,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: "X-AspNetMvc-Version"
+    vendor: microsoft
+    product: asp.net_mvc
   tags: aspnetmvc,tech,detect,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
     max-redirects: 4
     matchers:
       - type: dsl
+        name: asp.net_mvc
+        cpe: cpe:2.3:a:microsoft:asp.net_mvc:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(tolower(header), "x-aspnetmvc-version")'
 
@@ -34,4 +39,3 @@ http:
       - type: kval
         kval:
           - X_AspNetMvc_Version
-# digest: 4b0a004830460221008522e2072fc426a243ef59517003bfbddcb123bfadcc7536d2d85a31634673e8022100d175dfe28c48394ef44311b948ae026844b903d5c4e6d82d4a6ccbf650e84a05:922c64590222798bb761d5b6d8e72950

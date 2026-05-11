@@ -7,8 +7,12 @@ info:
   description: Exposed sensitive file in WordPress Total Upkeep wordpress plugin feature used.
   reference:
     - https://www.exploit-db.com/exploits/49252
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,wp-plugin,edb,vuln
 
 http:
@@ -19,11 +23,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         part: header
 
       - type: word
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - '"filepath"'
           - '/wp-content/boldgrid_backup_'
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f15ea999e89b16ba17edde86ecf9a4bb9c1f1245d783364603dce5f014451a37022100d2cfd9c370dedeee943c0644f40cbf1b873b41fb8825cac2106d3b5de8b2980e:922c64590222798bb761d5b6d8e72950

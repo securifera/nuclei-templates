@@ -43,16 +43,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: graylog
+        cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'X-Graylog-Node-Id:'
 
       - type: word
+        name: graylog-2
+        cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: graylog-3
+        cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -73,4 +79,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022100cc1152a9212c603fe44c1b8da5a290f8e12166368b0ebefdad9eb03f17b3a310022020d3c623c9ef204f4cfd8cbafaaa5c6e6632a9bccdb4a4a9eb207c5dd1737ddd:922c64590222798bb761d5b6d8e72950

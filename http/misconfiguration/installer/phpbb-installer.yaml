@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpbb
+        cpe: cpe:2.3:a:phpbb:phpbb:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Installation Panel"
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: phpbb-2
+        cpe: cpe:2.3:a:phpbb:phpbb:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fadfbcf851e59068aeaa4ce9acc328ed30612f94bac3b8f7a80fe1711e6a2f280220393af3b3a0b321a28b55dcd045c4e967d87dfaf0ea751b8426bea0b0af45ce83:922c64590222798bb761d5b6d8e72950

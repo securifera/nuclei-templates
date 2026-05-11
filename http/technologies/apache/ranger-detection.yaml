@@ -26,6 +26,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: ranger
+        cpe: cpe:2.3:a:apache:ranger:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title> Ranger - Sign In</title>"

@@ -8,8 +8,12 @@ info:
     An HBO Max phishing website was detected
   reference:
     - https://hbomax.com
+  classification:
+    cpe: cpe:2.3:a:hbo-max:hbo-max:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hbo-max
+    product: hbo-max
   tags: phishing,hbo-max,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hbo-max
+        cpe: cpe:2.3:a:hbo-max:hbo-max:*:*:*:*:*:*:*:*
         words:
           - "Stream must-see series, hit movies, exclusive originals, family favorites, and live sports."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: hbo-max-2
+        cpe: cpe:2.3:a:hbo-max:hbo-max:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"hbomax.com")'
-# digest: 490a00463044022065f6abda4493a948be90bc7107f261b0eaa25ba7e92d9057d6a8042e308dfb2f02202861ad8726f38544d72a6746a22cd05a124e3c14b0a3a227a6996f8b2a8cc869:922c64590222798bb761d5b6d8e72950

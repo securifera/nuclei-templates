@@ -7,10 +7,13 @@ info:
   description: |
     Amazon ECS Sample App Default Page was detected.
   classification:
+    cpe: cpe:2.3:a:amazon:elastic_container_service:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"Amazon ECS Sample App"
+    vendor: amazon
+    product: elastic_container_service
   tags: amazon,tech,default,detect,discovery
 
 http:
@@ -20,8 +23,9 @@ http:
 
     matchers:
       - type: dsl
+        name: elastic_container_service
+        cpe: cpe:2.3:a:amazon:elastic_container_service:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "<title>Amazon ECS Sample App")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100827c3cb8e0a09c3570facaffe641563871dde51d62922897819a45ea648f59fb02205f3f90d5e99d22a2cb3907719e28a94d1016f52fe625559a07170d23bd717ddc:922c64590222798bb761d5b6d8e72950

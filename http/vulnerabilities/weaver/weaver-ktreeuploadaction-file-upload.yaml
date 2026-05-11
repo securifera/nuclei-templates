@@ -47,6 +47,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: e-cology
+        cpe: cpe:2.3:a:weaver:e-cology:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1 == 200 && contains_all(body_1,'original', 'SUCCESS')"
           - "contains(body_2, '{{result}}') && status_code_2 == 200"
@@ -59,4 +61,3 @@ http:
         regex:
           - "','url':'(.*?)','title"
         internal: true
-# digest: 4b0a00483046022100cb8d35a8ff6d3f23e596da053183cfa5b29c2e997d42d629f8527fd56ed5e1e2022100eb32993c34f8f95bb6e590348ccf25127d6b6483a92eefa18cccc5f9d7d13f84:922c64590222798bb761d5b6d8e72950

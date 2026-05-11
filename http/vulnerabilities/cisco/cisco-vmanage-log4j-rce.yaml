@@ -10,6 +10,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -18,6 +19,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"vManage"
+    vendor: log4j
+    product: log4j
   tags: log4j,cisco,tenable,cve,cve2021,rce,jndi,kev,oast,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -38,16 +41,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: log4j
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Cisco vManage</title>'
 
       - type: word
+        name: log4j-2
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: log4j-3
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -68,4 +77,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4b0a00483046022100dc95be69d2c104858d473dbfa3ee179eb0b2824c16a384db013ff7238c20e169022100a35cea640e662452769dceb0061ac58c08d338138788bf9629023ee7341ab976:922c64590222798bb761d5b6d8e72950

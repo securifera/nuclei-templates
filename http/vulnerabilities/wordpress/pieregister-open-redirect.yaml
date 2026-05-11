@@ -9,9 +9,12 @@ info:
     - https://wpscan.com/vulnerability/f6efa32f-51df-44b4-bbba-e67ed5785dd4
     - https://wordpress.org/plugins/pie-register/
   classification:
+    cpe: cpe:2.3:a:pieregister:pieregister:*:*:*:*:*:*:*:*
     cwe-id: CWE-601
   metadata:
     max-request: 1
+    vendor: pieregister
+    product: pieregister
   tags: redirect,wp-plugin,pieregister,wpscan,wordpress,vuln
 
 http:
@@ -21,7 +24,8 @@ http:
 
     matchers:
       - type: regex
+        name: pieregister
+        cpe: cpe:2.3:a:pieregister:pieregister:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)interact\.sh.*$'
-# digest: 490a004630440220425a16b761d7fad06d43debe03b75d7ab5bc726c88bcf58c5b6411d45ccdf9d8022056b25ac6f81bfdc78c5fe4b3fdadc3ef0544b3bc5f8c1ae38049cb39789bd553:922c64590222798bb761d5b6d8e72950

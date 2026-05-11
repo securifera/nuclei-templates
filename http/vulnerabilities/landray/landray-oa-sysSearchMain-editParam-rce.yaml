@@ -34,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: landray_office_automation
+        cpe: cpe:2.3:a:landray:landray_office_automation:*:*:*:*:*:*:*:*
         words:
           - "Execute:"
           - "{{randstr}}"
@@ -42,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008ef830ba5d11498253a07bf529279af5418804b476db1d5a1121937d90523db5022100fa0b1c1e8011784859d92b19bcfcd94e936c29f7f73becc1565c81023a303c34:922c64590222798bb761d5b6d8e72950

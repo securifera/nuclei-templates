@@ -9,11 +9,14 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/apache-tomcat-examples-directory-vulnerabilities/
     - https://www.rapid7.com/db/vulnerabilities/apache-tomcat-example-leaks/
   classification:
+    cpe: cpe:2.3:a:tomcat:tomcat:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 8
+    vendor: tomcat
+    product: tomcat
   tags: apache,tomcat,misconfig,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
 
     matchers:
       - type: word
+        name: tomcat
+        cpe: cpe:2.3:a:tomcat:tomcat:*:*:*:*:*:*:*:*
         words:
           - "JSP Examples"
           - "JSP Samples"
@@ -37,4 +42,3 @@ http:
           - "WebSocket Examples"
           - "GET based form"
         condition: or
-# digest: 490a004630440220416ab8c5d236fc5abb21e7e7f1ee88d7ed0875a0ab32327e65907eec6b2c7bf802206f5a91e5b79ceb6057f54e280b54c1b3ded4e11addb5774c2546289e3d8d123d:922c64590222798bb761d5b6d8e72950

@@ -7,8 +7,12 @@ info:
   description: Canny takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/114
+  classification:
+    cpe: cpe:2.3:a:canny:canny:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: canny
+    product: canny
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: canny
+        cpe: cpe:2.3:a:canny:canny:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: canny-2
+        cpe: cpe:2.3:a:canny:canny:*:*:*:*:*:*:*:*
         words:
           - 'Company Not Found'
           - 'There is no such company. Did you enter the right URL?'
@@ -32,4 +40,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022061c1efac5cb5996750490b3608756592535d0517d96d5ed5b94fbc983974ecf6022100c0bd799c000902b2cf440a3f0bb9e209d1738ad4cd747a4e1c3aa7b7c34acd52:922c64590222798bb761d5b6d8e72950

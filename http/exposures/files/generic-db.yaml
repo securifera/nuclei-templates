@@ -39,10 +39,13 @@ info:
     - https://www.sqlite.org/fileformat.html # SQLite file always starts with "SQLite format {sqlite_version}"
     - https://en.wikipedia.org/wiki/List_of_file_signatures # SQLite binary signature: 53 51 4C 69 74 65 20 66 6F 72 6D 61 74 20
   classification:
+    cpe: cpe:2.3:a:generic-db:generic-db:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
   metadata:
     max-request: 89
+    vendor: generic-db
+    product: generic-db
   tags: files,database,exposure,sqlite,sqlite3,fuzz,sqli,vuln
 
 http:
@@ -146,10 +149,11 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: generic-db
+        cpe: cpe:2.3:a:generic-db:generic-db:*:*:*:*:*:*:*:*
         dsl:
           - 'startswith(body, "SQLite")' # SQLite file always starts with "SQLite format {sqlite_version}"
           - 'contains(body, "CREATE TABLE")' # SQLite file usually contains "CREATE TABLE", meaning there is at least one table
           - '!contains(body, "<html")'
           - 'status_code == 200'
         condition: and
-# digest: 490a00463044022007c1d7dab7bd6a99d33fe666d1c87a12250f0a77e6aa36020b39d521be4028d602206a58aa2e41848e9c9c10197018d1a5fff92d7fd642dba77beacfef0a75f1fe46:922c64590222798bb761d5b6d8e72950

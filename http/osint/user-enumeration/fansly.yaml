@@ -6,11 +6,14 @@ info:
   severity: info
   description: Fansly user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:fansly:fansly:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: fansly
+    product: fansly
   tags: osint,osint-porn,fansly,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: fansly
+        cpe: cpe:2.3:a:fansly:fansly:*:*:*:*:*:*:*:*
         part: body
         words:
           - "username"
-# digest: 4b0a00483046022100e3d5a24bc9aa0b94ba807c56c25eaf88819763ee9b4bdb41c75e3d173c3cd926022100ee52afb1fe2f7a396830ad1ea2bb3405a0d6f1a6c7722f4f53e477bc6259c6fc:922c64590222798bb761d5b6d8e72950

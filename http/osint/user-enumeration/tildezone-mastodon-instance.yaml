@@ -6,11 +6,14 @@ info:
   severity: info
   description: Tilde.zone (Mastodon Instance) user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:tildezone-mastodon:tildezone-mastodon:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tildezone-mastodon
+    product: tildezone-mastodon
   tags: osint,osint-social,tildezone-mastodon-instance,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: tildezone-mastodon
+        cpe: cpe:2.3:a:tildezone-mastodon:tildezone-mastodon:*:*:*:*:*:*:*:*
         part: body
         words:
           - "display_name"
-# digest: 4a0a00473045022100e58f99c1458bd9e90ba9c04c5f018b53cb47cacdb8efc24833223e5c53cf3ffe02200cd44e9e6cc49874ff4615d7b6a271ef1c475bce30c557386e9ba1ab8f6f0ffd:922c64590222798bb761d5b6d8e72950

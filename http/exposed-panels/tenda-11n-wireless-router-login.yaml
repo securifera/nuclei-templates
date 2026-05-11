@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: 11n
+        cpe: cpe:2.3:h:tenda:11n:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Tenda 11N Wireless Router Login Screen</title>"
@@ -35,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201b69c0d088387b1c169e9a427a620ec2f31231561b3bb2f915ad4ea0d58a0c75022100f22c3b4037e1902a19d0bdab9841f50da692fc7e88b0f5cdb0db8cf8abf9082e:922c64590222798bb761d5b6d8e72950

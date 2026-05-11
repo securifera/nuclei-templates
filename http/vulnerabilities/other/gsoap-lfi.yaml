@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/47653
   classification:
+    cpe: cpe:2.3:a:gsoap:gsoap:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: gsoap
+    product: gsoap
   tags: edb,gsoap,lfi,vuln
 
 http:
@@ -27,10 +30,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: gsoap
+        cpe: cpe:2.3:a:gsoap:gsoap:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009881b53c5873dea0997434fffa996b02191cc560cf13bd331571cd5393928d27022100cb08de45e1e6de5dcf1c83c988a412d56a899c4d4578073e848a234b6f7e74d3:922c64590222798bb761d5b6d8e72950

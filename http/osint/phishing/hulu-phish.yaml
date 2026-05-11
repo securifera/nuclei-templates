@@ -8,8 +8,12 @@ info:
     A Hulu phishing website was detected
   reference:
     - https://hulu.com
+  classification:
+    cpe: cpe:2.3:a:hulu:hulu:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hulu
+    product: hulu
   tags: phishing,hulu,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hulu
+        cpe: cpe:2.3:a:hulu:hulu:*:*:*:*:*:*:*:*
         words:
           - 'Hulu'
           - 'Stream TV and Movies Live and Online | Hulu"'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: hulu-2
+        cpe: cpe:2.3:a:hulu:hulu:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"hulu.com")'
-# digest: 4a0a0047304502206eb55b9d4e186f522e07649eaa4c35ba1c932b215c4c397e0a2fe83ef67053c4022100f7486f2cc3c494c98cd65b277b513edfefbacbdb3849e1fd0440e400fe3a6975:922c64590222798bb761d5b6d8e72950

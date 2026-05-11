@@ -4,8 +4,12 @@ info:
   name: Cisco ASA - Detect
   author: sdcampbell
   severity: info
+  classification:
+    cpe: cpe:2.3:a:cisco:adaptive_security_appliance:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: cisco
+    product: adaptive_security_appliance
   tags: tech,cisco,detect,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: adaptive_security_appliance
+        cpe: cpe:2.3:a:cisco:adaptive_security_appliance:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'config-auth client="vpn"'
@@ -34,4 +40,3 @@ http:
         group: 1
         regex:
           - "<version who=\"sg\">(.*?)</version>"
-# digest: 490a0046304402207406948de29852e17a92dd7df9f8e27ffa89ae88ddaf5c0b0fb57fe5cb2b7eca0220577c21b99568a9d5942b1cd320c8b9b5bbd92459e6b45ea92a782dd178a65e4b:922c64590222798bb761d5b6d8e72950

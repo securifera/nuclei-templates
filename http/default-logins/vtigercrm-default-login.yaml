@@ -9,10 +9,14 @@ info:
   reference:
     - https://github.com/vtiger-crm/vtigercrm
     - https://code.vtiger.com/vtiger/vtigercrm
+  classification:
+    cpe: cpe:2.3:a:vtigercrm:vtigercrm:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: html:"Powered by vtiger CRM"
+    vendor: vtigercrm
+    product: vtigercrm
   tags: default-login,vtiger,vtiger_crm,vuln
 
 variables:
@@ -36,9 +40,10 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: vtigercrm
+        cpe: cpe:2.3:a:vtigercrm:vtigercrm:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_2 == 200'
           - 'contains(header_1, "PHPSESSID=")'
           - 'contains_all(body_2, "home", "index.php?module=Emails&action=index")'
         condition: and
-# digest: 490a00463044022003eed628cd4e8d821e4482edc4b3ebcfbdb21b13d57388ea7aca2bff48c0b37002206800fb0c90b4bd8dcf2a0dfe69ceb60846e63c2472539c6f3076c659a80dadbd:922c64590222798bb761d5b6d8e72950

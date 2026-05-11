@@ -10,11 +10,14 @@ info:
     - https://twitter.com/Random_Robbie/status/1262676628167110656
     - https://github.com/PortSwigger/nginx-alias-traversal/blob/master/off-by-slash.py
   classification:
+    cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-23
   metadata:
     max-request: 10
+    vendor: nginx
+    product: nginx
   tags: config,exposure,nginx,vuln
 
 http:
@@ -37,6 +40,7 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
+        name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         words:
           - '[core]'
-# digest: 4b0a00483046022100f535984f49cc6781cc2a7c828b5a99069999ca26e14d1f0696960c1296d64768022100da32adb739fa52cdabf58664f36f8b5ebe498656e67742d999ff9c1f1eed07aa:922c64590222798bb761d5b6d8e72950

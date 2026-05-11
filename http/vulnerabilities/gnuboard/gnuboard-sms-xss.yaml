@@ -29,11 +29,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gnuboard5
+        cpe: cpe:2.3:a:gnuboard:gnuboard5:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"0nuboard<svg onload=alert(document.domain)>"'
 
       - type: word
+        name: gnuboard5-2
+        cpe: cpe:2.3:a:gnuboard:gnuboard5:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -41,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100bd258a0c4df21a9f950f2b5fd8b57e34fe6ebb11c6a227b26b7bf47c9bd81612022100b38fbab3265c35ff47fc17da0acd51b596b51b21a76b7332011a65134f5b04c8:922c64590222798bb761d5b6d8e72950

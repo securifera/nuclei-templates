@@ -6,10 +6,14 @@ info:
   severity: high
   description: |
     Emlog Pro Installation page has been exposed.
+  classification:
+    cpe: cpe:2.3:a:emlog:emlog:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     fofa-query: title="emlog"
+    vendor: emlog
+    product: emlog
   tags: emlog,install,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: emlog
+        cpe: cpe:2.3:a:emlog:emlog:*:*:*:*:*:*:*:*
         part: body
         words:
           - '>MySQL'
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221008d9158725ff8b39eaac45ecc7f39d174b61ec455b0d92dda88f189eef01294b302206b49d32364cfbb66706318f79a6ae0fb7d7bd7da678caa6f16166eb3b7f1bb19:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Mitel MiCollab UCS version disclosure via the /ucs/micollab/version.json endpoint.
+  classification:
+    cpe: cpe:2.3:a:mitel:mitel:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"MiCollab End User Portal"
+    vendor: mitel
+    product: mitel
   tags: mitel,micollab,ucs,version,detect,discovery
 
 http:
@@ -19,6 +23,8 @@ http:
 
     matchers:
       - type: dsl
+        name: mitel
+        cpe: cpe:2.3:a:mitel:mitel:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "{\"version\":")'
@@ -31,4 +37,3 @@ http:
         group: 1
         json:
           - ".version"
-# digest: 4a0a00473045022100cc539e30f163ff54234956b840226c582d71189d603c1ec42ab43d2e78acaff60220553ec54f442609b65942967267865848a5af77f1c11d7b9f1278345a4d838c4e:922c64590222798bb761d5b6d8e72950

@@ -38,16 +38,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: elasticsearch
+        cpe: cpe:2.3:a:elastic:elasticsearch:*:*:*:*:*:*:*:*
         part: body
         words:
           - "org.elasticsearch.transport"
 
       - type: word
+        name: elasticsearch-2
+        cpe: cpe:2.3:a:elastic:elasticsearch:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: elasticsearch-3
+        cpe: cpe:2.3:a:elastic:elasticsearch:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -68,4 +74,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022001dcf67039140bb0dfa1b432c959754ee55b50d12fbd603c659d8a5cfb0c8ae60221008f79d0d40ac7066990152222d4532605e3ad7c4d289c1d95bb9381613313a802:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     Dnsmasq Config file is exposed.
   reference:
     - https://github.com/imp/dnsmasq/blob/master/dnsmasq.conf.example
+  classification:
+    cpe: cpe:2.3:a:dnsmasq:dnsmasq:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="dnsmasq.conf" && title="index"
+    vendor: dnsmasq
+    product: dnsmasq
   tags: exposure,dnsmasq,files,config,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: dnsmasq
+        cpe: cpe:2.3:a:dnsmasq:dnsmasq:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(content_type, "application/octet-stream","application/x-zip-compressed","text/plain")'
@@ -28,9 +34,10 @@ http:
         condition: and
 
       - type: dsl
+        name: dnsmasq-2
+        cpe: cpe:2.3:a:dnsmasq:dnsmasq:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(content_type, "application/octet-stream","application/x-zip-compressed","text/plain")'
           - 'contains_all(body, "dhcp-range=","dhcp-authoritative")'
         condition: and
-# digest: 490a004630440220787b956bbcfeaef7a52a8ae57326809920b5fb96ebd8b53b678638f193a7d6d4022007dcf5af01982b36e9598f3a641679ad2009f43e557f111ee850c74cb9e555e0:922c64590222798bb761d5b6d8e72950

@@ -24,11 +24,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: alfresco
+        cpe: cpe:2.3:a:alfresco:alfresco:*:*:*:*:android:*:*:*
         part: body
         words:
           - 'org\/alfresco\/api\/opencmis\/OpenCMIS.get'
 
       - type: word
+        name: alfresco-2
+        cpe: cpe:2.3:a:alfresco:alfresco:*:*:*:*:android:*:*:*
         part: header
         words:
           - "application/json"
@@ -41,4 +45,3 @@ http:
           - 'Enterprise v.*([0-9]\.[0-9]+\.[0-9]+)'
           - 'Community v.*([0-9]\.[0-9]+\.[0-9]+)'
           - 'Community Early Access v.*([0-9]\.[0-9]+\.[0-9]+)'
-# digest: 4b0a00483046022100ebfa5e0b3d0cb800e5d9e3b86c2b7e747a79905b8861d3e6d298761a2b2929710221009d1d0880d6869d78e71dcf0ac23b32be6d8b088bcb5595cf6eea62c372113a6d:922c64590222798bb761d5b6d8e72950

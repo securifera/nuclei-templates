@@ -8,8 +8,12 @@ info:
     A Wish phishing website was detected
   reference:
     - https://wish.com
+  classification:
+    cpe: cpe:2.3:a:wish:wish:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wish
+    product: wish
   tags: phishing,wish,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wish
+        cpe: cpe:2.3:a:wish:wish:*:*:*:*:*:*:*:*
         words:
           - 'Wish'
           - '<title>Wish | Shop and Save'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: wish-2
+        cpe: cpe:2.3:a:wish:wish:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"wish.com")'
-# digest: 4a0a0047304502206cc5a93fa650d70e5435f5e562155ef460e29f62406b3ca0928df73587f3baf9022100dc55781c6d48742719d94cff503e7a0fab8da714470d2197e336d739712a7d66:922c64590222798bb761d5b6d8e72950

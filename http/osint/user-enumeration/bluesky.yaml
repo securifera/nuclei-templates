@@ -6,12 +6,15 @@ info:
   severity: info
   description: Bluesky user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:bluesky:bluesky:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
+    vendor: bluesky
+    product: bluesky
   tags: osint,osint-social,bluesky,discovery
 
 self-contained: true
@@ -28,7 +31,8 @@ http:
           - 200
 
       - type: word
+        name: bluesky
+        cpe: cpe:2.3:a:bluesky:bluesky:*:*:*:*:*:*:*:*
         part: body
         words:
           - "bsky.social on Bluesky"
-# digest: 4b0a00483046022100a00c38fc645587eb464ee61c6bf109423d6f382ffa997a12bb71e3c76de55b400221008e6eb413337e80aa84f134852b5706d96a2197b74477eacc1effe32c8e7c36ab:922c64590222798bb761d5b6d8e72950

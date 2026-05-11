@@ -8,6 +8,7 @@ info:
   reference:
     - https://github.com/postmanlabs/httpbin
   classification:
+    cpe: cpe:2.3:a:httpbin:httpbin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
@@ -16,6 +17,8 @@ info:
     shodan-query:
       - html:"https://github.com/requests/httpbin"
       - title:"httpbin.org"
+    vendor: httpbin
+    product: httpbin
   tags: redirect,httpbin,oss,vuln
 
 http:
@@ -26,10 +29,11 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: httpbin
+        cpe: cpe:2.3:a:httpbin:httpbin:*:*:*:*:*:*:*:*
         dsl:
           - 'location == "https://interact.sh"'
 
       - type: status
         status:
           - 302
-# digest: 4b0a004830460221009f12b862e6e615be303736e33591f556e8e5634a6a0d80a669ed1b135bfa9dca022100a5f34442445f51685ecdcdcb4f164318de04c8716b3d62e032622ab8f6c11e65:922c64590222798bb761d5b6d8e72950

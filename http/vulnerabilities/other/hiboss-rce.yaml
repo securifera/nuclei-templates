@@ -8,11 +8,14 @@ info:
   reference:
     - http://wiki.xypbk.com/Web%E5%AE%89%E5%85%A8/%E5%AE%89%E7%BE%8E%E6%95%B0%E5%AD%97/%E5%AE%89%E7%BE%8E%E6%95%B0%E5%AD%97%20%E9%85%92%E5%BA%97%E5%AE%BD%E5%B8%A6%E8%BF%90%E8%90%A5%E7%B3%BB%E7%BB%9F%20server_ping.php%20%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md?btwaf=40088994
   classification:
+    cpe: cpe:2.3:a:hiboss:hiboss:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 2
+    vendor: hiboss
+    product: hiboss
   tags: hiboss,rce,intrusive,vuln
 
 http:
@@ -28,10 +31,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: hiboss
+        cpe: cpe:2.3:a:hiboss:hiboss:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c839e744ff1c23ec4fc76573e5a1408712625dc2739173d538a06a170055bac9022029ac2ebb88f935f0131195b988e2d5216e492f2d5c5664a9a47e544a2dcc2c26:922c64590222798bb761d5b6d8e72950

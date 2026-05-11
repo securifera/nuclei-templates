@@ -10,9 +10,13 @@ info:
     - https://vulners.com/packetstorm/PACKETSTORM:173002
     - https://www.exploitalert.com/view-details.html?id=39611
     - https://codecanyon.net/user/kreativdev/portfolio
+  classification:
+    cpe: cpe:2.3:a:rentequip:rentequip:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: rentequip
+    product: rentequip
   tags: xss,unauth,vuln
 
 http:
@@ -22,9 +26,10 @@ http:
 
     matchers:
       - type: dsl
+        name: rentequip
+        cpe: cpe:2.3:a:rentequip:rentequip:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "rentequip") && contains(body, "1026553;alert(document.domain)//772")'
           - 'contains(content_type, "text/html")'
         condition: and
-# digest: 4a0a00473045022012efe26549622bc12039d5d40a3338c514a1654cf8a88f897ffc91ff583bad5c022100cb45c52f01b19030ebd3ae3e8ec15f64b44e70fa06120c44851614c3ba5d9da7:922c64590222798bb761d5b6d8e72950

@@ -8,9 +8,13 @@ info:
     Detected whether the WPS Hide Login plugin’s /classes/ directory was exposed with directory listing enabled due to server misconfiguration, potentially disclosing PHP error logs or source code.
   reference:
     - https://wordpress.org/plugins/wps-hide-login/
+  classification:
+    cpe: cpe:2.3:a:wps-hide-login:wps-hide-login:*:*:*:*:*:*:*:*
   metadata:
     verified: false
     max-request: 1
+    vendor: wps-hide-login
+    product: wps-hide-login
   tags: wordpress,wp,wp-plugin,wps-hide-login,log,exposure
 
 http:
@@ -20,9 +24,10 @@ http:
 
     matchers:
       - type: dsl
+        name: wps-hide-login
+        cpe: cpe:2.3:a:wps-hide-login:wps-hide-login:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200 || status_code == 500'
           - 'contains_any(body, "PHP Fatal error:", "PHP Warning:", "PHP Parse error:")'
           - 'contains(body, "wp-content/plugins/wps-hide-login")'
         condition: and
-# digest: 4b0a00483046022100b2948ec9f5910fc71909082cb34042312f74f4db679b95c26b68a0ea9e628be4022100ea9c35e7943b1ea2513f07ff889e26dc4cb389ea5eb2ac28e7af862e094e2560:922c64590222798bb761d5b6d8e72950

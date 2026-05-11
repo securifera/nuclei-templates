@@ -8,8 +8,12 @@ info:
     A PlayStation phishing website was detected
   reference:
     - https://playstation.com
+  classification:
+    cpe: cpe:2.3:a:playstation:playstation:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: playstation
+    product: playstation
   tags: phishing,playstation,sony,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: playstation
+        cpe: cpe:2.3:a:playstation:playstation:*:*:*:*:*:*:*:*
         words:
           - "Explore the new generation PlayStation 4 and PS5 consoles - experience immersive gaming with thousands of hit games in every genre to rewrite the rules for what a PlayStation console can do."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: playstation-2
+        cpe: cpe:2.3:a:playstation:playstation:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"playstation.com")'
-# digest: 490a00463044022007ce753c8a2fb80abb14d8b542c5803b752a412eb9199a68eb11afe7e7e7df51022075e410754488e59c31e0a72deedc215c068103a0e5ce969e216abba74b106d06:922c64590222798bb761d5b6d8e72950

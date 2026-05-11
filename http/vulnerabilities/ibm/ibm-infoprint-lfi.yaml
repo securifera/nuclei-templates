@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/47835
   classification:
+    cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23
   metadata:
     max-request: 1
+    vendor: ibm
+    product: ibm
   tags: matrix,printer,edb,ibm,lfi,vuln
 
 http:
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: regex
+        name: ibm
+        cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
         part: body
-# digest: 4b0a00483046022100d5df67ee9419c44a43290d0dbf4d1a3a45a4d9023fd03bc749369e52a1479197022100dc545002920d886ba62b62ab23b96642f33c328a9d16aca9b4bcac0d16c4954a:922c64590222798bb761d5b6d8e72950

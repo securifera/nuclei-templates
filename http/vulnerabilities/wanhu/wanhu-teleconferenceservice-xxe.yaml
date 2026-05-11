@@ -10,11 +10,14 @@ info:
     - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20TeleConferenceService%20XXE注入漏洞.html
     - https://github.com/Threekiii/Awesome-POC/blob/master/OA%E4%BA%A7%E5%93%81%E6%BC%8F%E6%B4%9E/%E4%B8%87%E6%88%B7OA%20TeleConferenceService%20XXE%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:
+    cpe: cpe:2.3:a:wanhu:wanhu:*:*:*:*:*:*:*:*
     cwe-id: CWE-611
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="万户网络-ezOFFICE"
+    vendor: wanhu
+    product: wanhu
   tags: wanhu,oa,xxe,vuln
 
 http:
@@ -31,11 +34,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wanhu
+        cpe: cpe:2.3:a:wanhu:wanhu:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
 
       - type: word
+        name: wanhu-2
+        cpe: cpe:2.3:a:wanhu:wanhu:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<response>"
@@ -43,7 +50,8 @@ http:
         condition: and
 
       - type: word
+        name: wanhu-3
+        cpe: cpe:2.3:a:wanhu:wanhu:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/xml"
-# digest: 490a0046304402201d69563366f9f4e2fd787a1a4b5b3015407e07b35817f0471c2cacc19ec8617f0220212c176c8855c82ef08f13127a70d98d1a6a3fd1d939bd1f91f8138335b00383:922c64590222798bb761d5b6d8e72950

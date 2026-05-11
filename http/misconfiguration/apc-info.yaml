@@ -5,8 +5,12 @@ info:
   author: koti2
   severity: low
   description: APCu service is vulnerable to information leakage.
+  classification:
+    cpe: cpe:2.3:a:apc:apc:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: apc
+    product: apc
   tags: config,service,apcu,misconfig,vuln
 
 http:
@@ -18,9 +22,10 @@ http:
     stop-at-first-match: true
     matchers:
       - type: word
+        name: apc
+        cpe: cpe:2.3:a:apc:apc:*:*:*:*:*:*:*:*
         words:
           - "APCu Version Information"
           - "General Cache Information"
           - "Detailed Memory Usage and Fragmentation"
         condition: or
-# digest: 4b0a00483046022100e594c7fd3457b2a0a1b304c29fbd0b55305184e9957491552966670af65a641c022100ae7ce5607acd712ed5f3344d0765a732d37087fb2ed20b71998631794a626816:922c64590222798bb761d5b6d8e72950

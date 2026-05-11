@@ -9,8 +9,12 @@ info:
   reference:
     - https://twitter.com
     - https://x.com
+  classification:
+    cpe: cpe:2.3:a:twitter:twitter:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: twitter
+    product: twitter
   tags: phishing,twitter,x,osint,discovery
 http:
   - method: GET
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: twitter
+        cpe: cpe:2.3:a:twitter:twitter:*:*:*:*:*:*:*:*
         words:
           - 'Sign in to X'
           - 'Happening now'
@@ -34,7 +40,8 @@ http:
           - 200
 
       - type: dsl
+        name: twitter-2
+        cpe: cpe:2.3:a:twitter:twitter:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"twitter.com")'
           - '!contains(host,"x.com")'
-# digest: 4a0a0047304502204f8dc8e3507d352b671701910e128c8170ad4e2532ac6330f03d3f07dbacbad7022100ce8d7cff9eeadc54989ea74175028d4d626940deddef34b230642e4f4561ca94:922c64590222798bb761d5b6d8e72950

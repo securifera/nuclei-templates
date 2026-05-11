@@ -8,6 +8,8 @@ info:
     The .prettierignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
   reference:
     - https://prettier.io/docs/en/ignore.html
+  classification:
+    cpe: cpe:2.3:a:prettier:prettier:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -26,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: prettier
+        cpe: cpe:2.3:a:prettier:prettier:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "len(body) > 50"
@@ -33,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: prettier-2
+        cpe: cpe:2.3:a:prettier:prettier:*:*:*:*:*:*:*:*
         part: response
         words:
           - "MongoDB over HTTP on the native"
@@ -48,4 +54,3 @@ http:
           - "image/"
           - "Response xmlns"
         negative: true
-# digest: 4a0a00473045022100f27aa82c722f53c0e0a310d4c8092345441200d84f244eb4414c16b74c38b6da02207d2f7e71643bad61095e92449a3f2271dd96768361918e3db734752e2060cee5:922c64590222798bb761d5b6d8e72950

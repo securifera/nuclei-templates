@@ -13,6 +13,7 @@ info:
   reference:
     - https://github.com/emadshanab/goby-poc/blob/main/fumengyun%20%20AjaxMethod.ashx%20SQL%20injection.json
   classification:
+    cpe: cpe:2.3:a:fumengyun:fumengyun:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-89
@@ -22,6 +23,8 @@ info:
     max-request: 1
     shodan-query: title:"孚盟云 "
     fofa-query: title="孚盟云 "
+    vendor: fumengyun
+    product: fumengyun
   tags: time-based-sqli,fumasoft,sqli,vuln
 
 flow: http(1) && http(2)
@@ -34,6 +37,8 @@ http:
 
     matchers:
       - type: dsl
+        name: fumengyun
+        cpe: cpe:2.3:a:fumengyun:fumengyun:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(response, "孚盟")'
         internal: true
@@ -54,6 +59,7 @@ http:
     matchers:
       - type: dsl
         name: error-based
+        cpe: cpe:2.3:a:fumengyun:fumengyun:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(response_1, "SELECT count", "System.Exception:", "WHERE upper")'
           - 'status_code_1 == 500'
@@ -61,10 +67,10 @@ http:
 
       - type: dsl
         name: time-based
+        cpe: cpe:2.3:a:fumengyun:fumengyun:*:*:*:*:*:*:*:*
         dsl:
           - 'duration_2>=6'
           - 'len(body_2) == 1'
           - 'regex("^0$", body_2)'
           - 'contains(content_type_2, "text/plain")'
         condition: and
-# digest: 4a0a0047304502204c92b90978c07baa42324899e7b19308ef002fe6286a506a5f630b168b20c790022100a4adc912b10b273414b5eb33554d8c1e8fa90367d7d48291d0508914211c1985:922c64590222798bb761d5b6d8e72950

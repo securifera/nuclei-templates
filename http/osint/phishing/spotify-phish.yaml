@@ -8,8 +8,12 @@ info:
     A spotify phishing website was detected
   reference:
     - https://spotify.com
+  classification:
+    cpe: cpe:2.3:a:spotify:spotify:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: spotify
+    product: spotify
   tags: phishing,spotify,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: spotify
+        cpe: cpe:2.3:a:spotify:spotify:*:*:*:*:*:*:*:*
         words:
           - 'Spotify - Web Player: Music for everyone'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: spotify-2
+        cpe: cpe:2.3:a:spotify:spotify:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"spotify.com")'
-# digest: 4a0a00473045022100c39697257e5ba0590ae42118ddc057809cd8c7a5cadf981960118d189522fd5c02207368bb95a4a9811f51f36e790cfe50d3b1db1db1f313d41baf27c2508196c7b6:922c64590222798bb761d5b6d8e72950

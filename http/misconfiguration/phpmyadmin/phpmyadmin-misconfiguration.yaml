@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6997
   classification:
+    cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -37,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: phpmyadmin
+        cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - regex("var\\s+db\\s*=\\s*\'information_schema\'",body)
@@ -44,6 +47,8 @@ http:
         condition: and
 
       - type: dsl
+        name: phpmyadmin-2
+        cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "name=\\\"login_form\\\"")'
           - 'contains(body, "id=\\\"input_username\\\"")'
@@ -57,6 +62,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: phpmyadmin-3
+        cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - regex("var\\s+db\\s*=\\s*\'information_schema\'",body)
@@ -64,9 +71,10 @@ http:
         condition: and
 
       - type: dsl
+        name: phpmyadmin-4
+        cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "name=\\\"login_form\\\"")'
           - 'contains(body, "id=\\\"input_username\\\"")'
         condition: and
         negative: true
-# digest: 4b0a00483046022100f1b53a63b45f6e0473ce88215881b49f1f273298342c6024cc23126a476790020221009cec4671a15d248a4d9ec7028761b38a8c23336b9d7e23a170d27b62fbef56bd:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,13 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/confluent-access-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/confluent-access-token.go
   classification:
+    cpe: cpe:2.3:a:confluent:confluent:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: confluent
+    product: confluent
   tags: confluent,exposure,tokens,vuln
 
 http:
@@ -24,4 +27,3 @@ http:
         part: body
         regex:
           - (?i)(?:confluent)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{16})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 490a0046304402203f158f8ce8cfd35e88cbbca797ef678b4ff07824b40beb6061d14a13d5465b1902203d7473d5722baf26f5720ccf384bf1d06046e16bb43538b511c56efb7e2d3e7b:922c64590222798bb761d5b6d8e72950

@@ -6,9 +6,13 @@ info:
   severity: high
   description: Detects exposed auth.json files containing Bitbucket OAuth credentials
   classification:
+    cpe: cpe:2.3:a:bitbucket:oauth:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
+  metadata:
+    vendor: bitbucket
+    product: oauth
   tags: exposure,bitbucket,oauth,credentials,misconfig,vuln
 
 http:
@@ -75,6 +79,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: oauth
+        cpe: cpe:2.3:a:bitbucket:oauth:*:*:*:*:*:*:*:*
         words:
           - "bitbucket-oauth"
           - "bitbucket"
@@ -82,6 +88,8 @@ http:
         case-insensitive: true
 
       - type: regex
+        name: oauth-2
+        cpe: cpe:2.3:a:bitbucket:oauth:*:*:*:*:*:*:*:*
         regex:
           - "(?i)consumer[-_]*secret"
           - "(?i)consumer[-_]*key"
@@ -105,4 +113,3 @@ http:
         regex:
           - '"bitbucket-oauth":\s*\{[^}]+\}'
           - '"bitbucket":\s*\{[^}]+\}'
-# digest: 4b0a00483046022100daf5c379d7425d219ed3884b4eb3d15d0f5f3dc75c9ed56bb5ea417f20f18ec5022100d76e4051a013522ab33c1ccd4a481fe649ec1c9919cc3735286b158810ef6387:922c64590222798bb761d5b6d8e72950

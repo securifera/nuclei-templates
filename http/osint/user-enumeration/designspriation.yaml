@@ -6,11 +6,14 @@ info:
   severity: info
   description: Designspriation user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:designspriation:designspriation:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: designspriation
+    product: designspriation
   tags: osint,osint-art,designspriation,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: designspriation
+        cpe: cpe:2.3:a:designspriation:designspriation:*:*:*:*:*:*:*:*
         part: body
         words:
           - "has discovered on Designspiration"
-# digest: 4b0a00483046022100bbc7f84f72dc3e069f85d503d463ff35f0fd507e128b3b78ef3c779b21b2ca01022100c194d926910054a5453c48135444c730196d724f319fe33975d077e5e69a6a48:922c64590222798bb761d5b6d8e72950

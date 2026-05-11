@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/
+  classification:
+    cpe: cpe:2.3:a:nerdgraph:nerdgraph:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: nerdgraph
+    product: nerdgraph
   tags: token-spray,newrelic,nerdgraph
 
 self-contained: true
@@ -24,8 +28,9 @@ http:
     body: "{ \"query\":  \"{ requestContext { userId apiKey }}\" }"
     matchers:
       - type: word
+        name: nerdgraph
+        cpe: cpe:2.3:a:nerdgraph:nerdgraph:*:*:*:*:*:*:*:*
         part: body
         negative: true
         words:
           - 'errors'
-# digest: 4a0a00473045022100e1a672546d931ae465f456a82e386e6931a281e3aa840fa387d1364b6807cc2702207dff5be88940ea66de9f7990bf8f803360466f54e233994742069ebe57993af6:922c64590222798bb761d5b6d8e72950

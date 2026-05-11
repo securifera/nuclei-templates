@@ -31,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dedecms
+        cpe: cpe:2.3:a:dedecms:dedecms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "location='../../</script><script>alert(document.domain)</script>"
 
       - type: word
+        name: dedecms-2
+        cpe: cpe:2.3:a:dedecms:dedecms:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210084d0f4d45048894ee05dfb84e52cf3b04d5f49aff7d31c73599fd27bd324bffe0221008abd2b42a4a820721478595feb6ae2ca19fe834e12cac94407b3fee233869fe1:922c64590222798bb761d5b6d8e72950

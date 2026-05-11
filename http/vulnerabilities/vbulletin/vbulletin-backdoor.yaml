@@ -8,9 +8,12 @@ info:
     - https://github.com/OWASP/vbscan
     - https://blog.sucuri.net/2017/01/vbulletin-malware-hackers-compete-backdoor-control.html
   classification:
+    cpe: cpe:2.3:a:vbulletin:backdoor:*:*:*:*:*:*:*:*
     cwe-id: CWE-78
   metadata:
     max-request: 21
+    vendor: vbulletin
+    product: backdoor
   tags: backdoor,php,vbulletin,rce,vuln
 
 flow: http(1) && http(2)
@@ -25,6 +28,8 @@ http:
 
     matchers:
       - type: word
+        name: backdoor
+        cpe: cpe:2.3:a:vbulletin:backdoor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "content=\"vBulletin"
@@ -54,8 +59,9 @@ http:
     max-redirects: 3
     matchers:
       - type: dsl
+        name: backdoor-2
+        cpe: cpe:2.3:a:vbulletin:backdoor:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body, '{{md5(num)}}')"
           - "status_code == 200"
         condition: and
-# digest: 4a0a0047304502210081d30ca62ebadd13ddcc3211df58100e30151ecf11316b3b55ec08d0f990e4140220307df182652d100e6f09c9c10b4266fe7c4099c21a65e615ccc54e8e89e6ee1b:922c64590222798bb761d5b6d8e72950

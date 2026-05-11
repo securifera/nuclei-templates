@@ -4,6 +4,8 @@ info:
   name: Cloudflare Access - Login Panel Detection
   author: rxerium
   severity: info
+  classification:
+    cpe: cpe:2.3:a:cloudflare:cloudflare:*:*:*:*:*:*:*:*
   description: |
     Detected exposed Cloudflare Access login pages.
   remediation: |
@@ -14,6 +16,9 @@ info:
     - https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/
     - https://developers.cloudflare.com/cloudflare-one/
     - https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/
+  metadata:
+    vendor: cloudflare
+    product: cloudflare
   tags: cloudflare,panel,discovery
 
 http:
@@ -27,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cloudflare
+        cpe: cpe:2.3:a:cloudflare:cloudflare:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Sign in ・ Cloudflare Access"
@@ -34,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022023da02b4ee6cd470b820ca13f187455ee30cd220ee6bd1cc8eac6b5e46d136ca0221009eaaf0ab86f1f35317787d7eba48704c84e826e23737b8a84f4562616958c6b9:922c64590222798bb761d5b6d8e72950

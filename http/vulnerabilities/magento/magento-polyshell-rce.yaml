@@ -13,6 +13,7 @@ info:
     - https://slcyber.io/research-center/magento-polyshell-unauthenticated-file-upload-to-rce-in-magento-apsb25-94/#about-assetnote
     - https://helpx.adobe.com/security/products/magento/apsb25-94.html
   classification:
+    cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0
     cwe-id: CWE-434,CWE-650
@@ -20,6 +21,8 @@ info:
     verified: true
     max-request: 5
     shodan-query: html:"Magento_PageCache"
+    vendor: magento
+    product: magento
   tags: magento,file-upload,rce,intrusive
 
 flow: http(1) && http(2) && http(3) && http(4)
@@ -39,6 +42,8 @@ http:
 
     matchers:
       - type: dsl
+        name: magento
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "products","data")'
@@ -60,6 +65,8 @@ http:
 
     matchers:
       - type: dsl
+        name: magento-2
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
         internal: true
@@ -83,6 +90,8 @@ http:
 
     matchers:
       - type: dsl
+        name: magento-3
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "option_value","option_id")'
@@ -127,6 +136,8 @@ http:
 
     matchers:
       - type: dsl
+        name: magento-4
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "RESULT:2674")'
@@ -138,4 +149,3 @@ http:
         group: 1
         regex:
           - 'RESULT:([0-9]+)'
-# digest: 490a0046304402203b712fd0c6164edcfa108634243144bccf28d9c2b25dd77d37480930eae8ad7d022029ecf4f28fe6514a904358d86f0670fb62e3db8836480d899bc30ebee6e42b6f:922c64590222798bb761d5b6d8e72950

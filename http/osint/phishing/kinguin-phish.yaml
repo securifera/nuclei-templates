@@ -8,8 +8,12 @@ info:
     A Kinguin phishing website was detected
   reference:
     - https://kinguin.net
+  classification:
+    cpe: cpe:2.3:a:kinguin:kinguin:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kinguin
+    product: kinguin
   tags: phishing,kinguin,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kinguin
+        cpe: cpe:2.3:a:kinguin:kinguin:*:*:*:*:*:*:*:*
         words:
           - 'Kinguin'
           - 'Steam CD Keys and PC Game Keys - Compare &amp; Buy | Kinguin.net'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: kinguin-2
+        cpe: cpe:2.3:a:kinguin:kinguin:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"kinguin.net")'
-# digest: 4a0a004730450220480294b84f5d6525754132683dd0f49b17e88beb4b9f05c244b839e56947eede022100cd9cf333e94fde1e700e30e9162477c623201568e1d73c8ce9ff79e8dc3ea343:922c64590222798bb761d5b6d8e72950

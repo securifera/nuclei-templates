@@ -10,11 +10,14 @@ info:
     - https://wpscan.com/vulnerability/5eecc4a7-0b44-495d-9352-78dccebfc72a
     - https://www.synacktiv.com/ressources/advisories/WordPress_Health_Check_1.2.3_Vulnerabilities.pdf
   classification:
+    cpe: cpe:2.3:a:health:health:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23
   metadata:
     max-request: 2
+    vendor: health
+    product: health
   tags: lfi,wp,wordpress,wp-plugin,authenticated,lfr,wpscan,vuln
 
 http:
@@ -36,11 +39,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: health
+        cpe: cpe:2.3:a:health:health:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
 
       - type: word
+        name: health-2
+        cpe: cpe:2.3:a:health:health:*:*:*:*:*:*:*:*
         part: header
         words:
           - application/json
@@ -48,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210081d05dddb7a9e80d70be70b915422f8f14f6a8e2aa0e4be51aaaa641fcddc1dd02202cb09168e2d0e67d12c3f6373d9704827ada152cfff31a34728d2cd9f6e83798:922c64590222798bb761d5b6d8e72950

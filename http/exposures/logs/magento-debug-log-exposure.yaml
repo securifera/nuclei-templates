@@ -9,12 +9,15 @@ info:
   reference:
     - https://devdocs.magento.com/guides/v2.4/config-guide/log/log-intro.html
   classification:
+    cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-538
   metadata:
     max-request: 1
     verified: true
+    vendor: magento
+    product: magento
   tags: magento,exposure,logs,misconfig
 
 http:
@@ -26,10 +29,11 @@ http:
 
     matchers:
       - type: dsl
+        name: magento
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(body, "main.DEBUG", "main.CRITICAL", "main.ERROR", "main.INFO")'
           - 'contains_any(body, "Magento\\", "/vendor/magento/", "cache_invalidate", "Cron Job")'
           - 'contains_any(content_type, "text/x-log")'
           - 'status_code == 200'
         condition: and
-# digest: 490a0046304402207073fb2b455e24d90e19b10dc4ebd1d60f11ab0ccf749083c11af051f44452f602207d49a7c812a31f52771cb45ea39ef97d3a978aa6e63b68015d00398a7b87c39a:922c64590222798bb761d5b6d8e72950

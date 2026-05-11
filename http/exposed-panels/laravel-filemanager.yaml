@@ -8,10 +8,13 @@ info:
   reference:
     - https://github.com/UniSharp/laravel-filemanager
   classification:
+    cpe: cpe:2.3:a:laravel:filemanager:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: laravel
+    product: filemanager
   tags: panel,laravel,filemanager,fileupload,intrusive,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: filemanager
+        cpe: cpe:2.3:a:laravel:filemanager:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Laravel FileManager"
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fb9e876271083cb60a3cd8d132d33313e45260e84faa164f240f1001a0d214fa02203ef18a88894066344ffa5d012e1413fabf51be7cfe8aa196172da8d5c7a5b613:922c64590222798bb761d5b6d8e72950

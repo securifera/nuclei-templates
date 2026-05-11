@@ -7,10 +7,14 @@ info:
   description: Hikvision iVMS integrated security system has a vulnerability that allows arbitrary file uploads. Attackers can exploit this vulnerability by obtaining the encryption key to create a forged token. By using the forged token, they can make requests to the "/resourceOperations/upload" interface to upload files of their choice. This can lead to gaining unauthorized webshell access on the server, enabling remote execution of malicious code.
   reference:
     - https://blog.csdn.net/qq_41904294/article/details/130807691
+  classification:
+    cpe: cpe:2.3:a:hikvision:ivms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-911494769"
+    vendor: hikvision
+    product: ivms
   tags: hikvision,ivms,intrusive,fileupload,auth-bypass,vuln
 
 http:
@@ -29,9 +33,10 @@ http:
 
     matchers:
       - type: word
+        name: ivms
+        cpe: cpe:2.3:a:hikvision:ivms:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"success":true'
           - '"resourceName":'
         condition: and
-# digest: 4b0a00483046022100b5d391a30801fde156caac83d0ff506f272fe5d39089d713a70dce26233da0ea022100935a8c66ddd19db824da12d361ee75871d6ac30dcbb7ff2e9d6181dbbd5ac577:922c64590222798bb761d5b6d8e72950

@@ -5,8 +5,12 @@ info:
   author: Adam Crosser,Mys7ic
   severity: info
   description: Detects ADFS with forms-based authentication enabled.
+  classification:
+    cpe: cpe:2.3:a:microsoft:active_directory_federation_services:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: microsoft
+    product: active_directory_federation_services
   tags: tech,adfs,discovery
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: active_directory_federation_services
+        cpe: cpe:2.3:a:microsoft:active_directory_federation_services:*:*:*:*:*:*:*:*
         part: body
         words:
           - '/adfs/portal/css/style.css'
@@ -28,4 +34,3 @@ http:
         group: 1
         regex:
           - 'var\s+userNameValue\s*=\s*''([^\\]*)\\'
-# digest: 490a00463044022029762993a08e5ee33cf75a212e072848839f843670d132ab85e1831f8d8197bf02201637469407acfce351f54066bd76b3a5e922703260a7db1d13728950ea262af0:922c64590222798bb761d5b6d8e72950

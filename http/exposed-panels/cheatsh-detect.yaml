@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/chubin/cheat.sh
     - https://cheat.sh/
+  classification:
+    cpe: cpe:2.3:a:chubin:cheat.sh:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -26,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cheat.sh
+        cpe: cpe:2.3:a:chubin:cheat.sh:*:*:*:*:*:*:*:*
         part: body
         words:
           - "cheat.sh"
@@ -33,6 +37,8 @@ http:
         condition: or
 
       - type: word
+        name: cheat.sh-2
+        cpe: cpe:2.3:a:chubin:cheat.sh:*:*:*:*:*:*:*:*
         part: body
         words:
           - ":firstpage"
@@ -43,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100918461b43f570be2bf9583ab1bfe20fc7c0c2a32165ef360f9e4c1cfe5da5cb302210089553125e71d65d210f9a769fa5918c7fbcfd02df2dc4f519c5c9f9597b15a66:922c64590222798bb761d5b6d8e72950

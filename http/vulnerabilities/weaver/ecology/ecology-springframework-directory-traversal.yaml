@@ -6,11 +6,14 @@ info:
   severity: high
   description: Ecology Springframework is vulnerable to local file inclusion.
   classification:
+    cpe: cpe:2.3:a:ecology:springframework:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23
   metadata:
     max-request: 1
+    vendor: ecology
+    product: springframework
   tags: ecology,springframework,lfi,vuln
 
 http:
@@ -25,7 +28,8 @@ http:
           - 200
 
       - type: word
+        name: springframework
+        cpe: cpe:2.3:a:ecology:springframework:*:*:*:*:*:*:*:*
         words:
           - "<url-pattern>/weaver/"
         part: body
-# digest: 4a0a0047304502205f6c7efd01bc3cecc1e8c97c2791f32504dc5b09e24e67aff5d7d3af26e1bcb9022100a01dbf76b574c6627241262acd4c4a2094b50422b3bc955c72c6442c9fe47df7:922c64590222798bb761d5b6d8e72950

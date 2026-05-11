@@ -44,16 +44,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vrealize_operations_manager
+        cpe: cpe:2.3:a:vmware:vrealize_operations_manager:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: word
+        name: vrealize_operations_manager-2
+        cpe: cpe:2.3:a:vmware:vrealize_operations_manager:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'Path=/ui'
 
       - type: regex
+        name: vrealize_operations_manager-3
+        cpe: cpe:2.3:a:vmware:vrealize_operations_manager:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -74,4 +80,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 490a0046304402204177fef5c0777118cae42ad0c18deb4584cd0e038aebd80dd49c65e326e6c732022005962b5bd28d24f73090d842fc9bc48901c1946b139711f70adcf7307213b482:922c64590222798bb761d5b6d8e72950

@@ -6,6 +6,7 @@ info:
   severity: medium
   description: Fastvue Dashboard panel was detected without authentication.
   classification:
+    cpe: cpe:2.3:a:fastvue:fastvue:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -13,6 +14,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1117549627
+    vendor: fastvue
+    product: fastvue
   tags: panel,fastvue,unauth,misconfig,discovery
 
 http:
@@ -23,12 +26,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fastvue
+        cpe: cpe:2.3:a:fastvue:fastvue:*:*:*:*:*:*:*:*
         words:
           - "<title>Fastvue Sophos Reporter</title>"
           - "<title>Fastvue Reporter for SonicWall</title>"
         condition: or
 
       - type: word
+        name: fastvue-2
+        cpe: cpe:2.3:a:fastvue:fastvue:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Dashboard"
@@ -36,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022069398a52fe86d4c2dd8bbc413afc4b8203f015400460c0f954c47a170098460e022078d37a8457620caeb4b1a81dc864a0d1d71084832c3b7fb6a6e4c5380cb92c2c:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://blog.csdn.net/qq_41901122/article/details/116786883
   classification:
+    cpe: cpe:2.3:a:blue-ocean:blue-ocean:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23
   metadata:
     max-request: 1
+    vendor: blue-ocean
+    product: blue-ocean
   tags: blue-ocean,lfi,vuln
 
 http:
@@ -23,10 +26,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: blue-ocean
+        cpe: cpe:2.3:a:blue-ocean:blue-ocean:*:*:*:*:*:*:*:*
         regex:
           - "toor:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d127610df56ec4dc4f2d20d81424ed0c661d85ff7df5a68cd726f98e518f885e022100d8413417a016226eda3e13175525f7627250fb9667fa7749495c75fdd9e65d77:922c64590222798bb761d5b6d8e72950

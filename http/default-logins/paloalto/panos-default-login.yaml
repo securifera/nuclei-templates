@@ -8,11 +8,14 @@ info:
   reference:
     - https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/getting-started/integrate-the-firewall-into-your-management-network/perform-initial-configuration.html#:~:text=By%20default%2C%20the%20firewall%20has,with%20other%20firewall%20configuration%20tasks.
   classification:
+    cpe: cpe:2.3:a:panos:panos:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: panos
+    product: panos
   tags: panos,default-login,vuln
 
 http:
@@ -34,15 +37,18 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: panos
+        cpe: cpe:2.3:a:panos:panos:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Set-Cookie: PHPSESSID"
 
       - type: word
+        name: panos-2
+        cpe: cpe:2.3:a:panos:panos:*:*:*:*:*:*:*:*
         words:
           - "Warning: Your device is still configured with the default admin"
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100a9a96d6c71952fdc073cdc5910aa6c48e66d5736168f3d736dcb293dee7719ba022100c6a18b3a98092df15a556c3793e35bc5164e4205f3c76ccacff090aabfcc2d6d:922c64590222798bb761d5b6d8e72950

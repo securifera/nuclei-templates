@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: all-in-one-seo-pack
+        cpe: cpe:2.3:a:all-in-one-seo-pack:all-in-one-seo-pack:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

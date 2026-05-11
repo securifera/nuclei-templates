@@ -8,8 +8,12 @@ info:
     A costa phishing website was detected
   reference:
     - https://costa.co.uk
+  classification:
+    cpe: cpe:2.3:a:costa:costa:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: costa
+    product: costa
   tags: phishing,costa,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: costa
+        cpe: cpe:2.3:a:costa:costa:*:*:*:*:*:*:*:*
         words:
           - 'The Nation&#x27;s Favourite Coffee Shop | Costa Coffee'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: costa-2
+        cpe: cpe:2.3:a:costa:costa:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"costa.co.uk")'
-# digest: 490a0046304402201fbd953d807eacf5b4d4eb04a3107b1213da631e533afacefac1db274367a297022066dd1bd1f4b350cc07911c84c6ba893bba6cafaea4f5b965feba86e55f0a7a81:922c64590222798bb761d5b6d8e72950

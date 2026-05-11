@@ -8,8 +8,12 @@ info:
   reference:
     - https://ipfind.io/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/ipfind
+  classification:
+    cpe: cpe:2.3:a:ipfind:ipfind:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ipfind
+    product: ipfind
   tags: token-spray,ipfind
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: ipfind
+        cpe: cpe:2.3:a:ipfind:ipfind:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"continent"'
           - '"country"'
           - '"zipCode"'
         condition: and
-# digest: 4a0a00473045022059e59657a637c4f6fda3d0df57fc93aee431cc58b4644f727394ec6f48b77413022100f4c317588bf6fd3344bb28fe28177fe23fe470e8ca472fb19d2aa7e962396356:922c64590222798bb761d5b6d8e72950

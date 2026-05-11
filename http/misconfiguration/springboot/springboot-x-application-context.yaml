@@ -8,10 +8,14 @@ info:
     Detected the presence of the X-Application-Context header in HTTP responses, which can expose sensitive application context information.
   reference:
     - https://github.com/spring-projects/spring-boot/issues/1308
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "X-Application-Context"
+    vendor: springboot
+    product: springboot
   tags: springboot,misconfig,exposure
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - '^X-Application-Context:\s*\S.+$'
@@ -39,4 +45,3 @@ http:
         group: 1
         regex:
           - '^X-Application-Context:\s*\S.+$'
-# digest: 4a0a00473045022100b62d9602ee957dece5c397ab34c6843f6bcee538fb14b1f8c22d07a5d12fbdc9022050341014b3a7a70b3b0945fb4c00d73c7da56ebc35e8d8e4353d95ce21c404b9:922c64590222798bb761d5b6d8e72950

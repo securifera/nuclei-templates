@@ -6,11 +6,14 @@ info:
   severity: info
   description: Likeevideo user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:likeevideo:likeevideo:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: likeevideo
+    product: likeevideo
   tags: osint,osint-social,likeevideo,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: likeevideo
+        cpe: cpe:2.3:a:likeevideo:likeevideo:*:*:*:*:*:*:*:*
         part: body
         words:
           - "https://img.like.video/"
-# digest: 4a0a00473045022100c36b5df84121fa609650c7fc0e0c2ddf4b57d10505278b5192c557aac82239660220174d4806b4bad30e79c6a17e138a5598cba043bd020ca63f911f3cbacfcc399c:922c64590222798bb761d5b6d8e72950

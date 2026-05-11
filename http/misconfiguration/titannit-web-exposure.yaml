@@ -4,10 +4,14 @@ info:
   name: TitanNit Web Control - Exposure
   author: DhiyaneshDk
   severity: medium
+  classification:
+    cpe: cpe:2.3:a:titannit:titannit:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"TitanNit Web Control"
+    vendor: titannit
+    product: titannit
   tags: misconfig,titannit,webcontrol,exposure,vuln
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: titannit
+        cpe: cpe:2.3:a:titannit:titannit:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>TitanNit Web Control"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022011e6e20f5ce39ba3540e16bb8e18ec89d2263fc447ba7a28361633e0c5a98f3d022100ab7f7e6305d5cde03798a876f615d460af024422023bf9b35a06baf52724bee7:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
   reference:
     - https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/wordpress.html
     - https://medium.com/@thecpanelguy/the-nightmare-that-is-wpcron-php-ae31c1d3ae30
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,cron,wp,dos,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         dsl:
           - (regex("<link[^>]+s\d+\.wp\.com",body_1))
           - (regex("<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\d.]+) -",body_1))
@@ -32,9 +38,10 @@ http:
         condition: or
 
       - type: dsl
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         dsl:
           - "len(body_2) == 0"
           - "status_code_2 == 200"
           - "contains(content_type_2, 'text/html')"
         condition: and
-# digest: 490a00463044022059555ff73acaa0da74ad64802d63abb19fbf51d300b4229df2a36c5a4a4da71c02203238f2f89bfe5620acc40ec2f02b044b0315a83a83db45305239953e73667b41:922c64590222798bb761d5b6d8e72950

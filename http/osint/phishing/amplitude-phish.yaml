@@ -8,8 +8,12 @@ info:
     A Amplitude phishing website was detected
   reference:
     - https://amplitude.com
+  classification:
+    cpe: cpe:2.3:a:amplitude:amplitude:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: amplitude
+    product: amplitude
   tags: phishing,amplitude,analytics,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: amplitude
+        cpe: cpe:2.3:a:amplitude:amplitude:*:*:*:*:*:*:*:*
         words:
           - '<title>AI Analytics Platform for Modern Digital Analytics | Amplitude'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: amplitude-2
+        cpe: cpe:2.3:a:amplitude:amplitude:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"amplitude.com")'
-# digest: 4a0a00473045022100f087061579aa24fb848af1f4454a126eeefa2e6460a91bc1edd699d2d349df91022025f6f13f15ae61491089a2110aeeb8dbffc62a74c3c169eacb34f5d469dcd1b0:922c64590222798bb761d5b6d8e72950

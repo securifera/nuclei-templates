@@ -9,9 +9,13 @@ info:
   reference:
     - https://github.com/renovatebot/renovate
     - https://docs.renovatebot.com/configuration-options/
+  classification:
+    cpe: cpe:2.3:a:renovate:renovate:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 5
+    vendor: renovate
+    product: renovate
   tags: exposure,config,renovate
 
 http:
@@ -31,6 +35,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: renovate
+        cpe: cpe:2.3:a:renovate:renovate:*:*:*:*:*:*:*:*
         words:
           - 'extends":'
           - 'packageRules":'
@@ -39,6 +45,8 @@ http:
         condition: or
 
       - type: word
+        name: renovate-2
+        cpe: cpe:2.3:a:renovate:renovate:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -47,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022068c12b930a1535c0479bc356ab1fe7e4b6c112d822da218fad8774904c088fb202207dd7846e63b89da91758ee925c47f3a0bf7a3751fb82f3d1bb99ff3a865fbc84:922c64590222798bb761d5b6d8e72950

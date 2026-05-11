@@ -8,8 +8,12 @@ info:
     A trip phishing website was detected
   reference:
     - https://trip.com
+  classification:
+    cpe: cpe:2.3:a:trip:trip:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: trip
+    product: trip
   tags: phishing,trip,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: trip
+        cpe: cpe:2.3:a:trip:trip:*:*:*:*:*:*:*:*
         words:
           - 'Trip.com: Book cheap flights, hotels, car rentals, trains and more'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: trip-2
+        cpe: cpe:2.3:a:trip:trip:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"trip.com")'
-# digest: 4a0a00473045022100cd67487fe7b2b94e31cd13aa96d9f0d18cabe26e407879dbc1e799effd68a24002200a1fbc7acf4001cb9eb776b9640d90e8b70054f615d2f3d7a84ef89f0d11f1c6:922c64590222798bb761d5b6d8e72950

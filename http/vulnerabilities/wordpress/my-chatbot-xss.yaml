@@ -8,11 +8,14 @@ info:
   reference:
     - https://wpscan.com/vulnerability/c0b6f63b-95d1-4782-9554-975d6d7bbd3d
   classification:
+    cpe: cpe:2.3:a:my-chatbot:my-chatbot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 2
+    vendor: my-chatbot
+    product: my-chatbot
   tags: wordpress,wp-plugin,xss,authenticated,wpscan,vuln
 
 http:
@@ -32,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: my-chatbot
+        cpe: cpe:2.3:a:my-chatbot:my-chatbot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "</script><script>alert(document.domain)</script>"
 
       - type: word
+        name: my-chatbot-2
+        cpe: cpe:2.3:a:my-chatbot:my-chatbot:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -44,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b56218b25cac999f3130f9af47737f15caa7556bece64a826fe6474979a382f8022100bd02cc9775413af42e9123afe1b916830d563a5f4af8c8cc015b7135afd58c7b:922c64590222798bb761d5b6d8e72950

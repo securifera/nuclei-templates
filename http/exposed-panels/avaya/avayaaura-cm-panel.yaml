@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aura_communication_manager
+        cpe: cpe:2.3:a:avaya:aura_communication_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Avaya Aura"
@@ -32,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d2aef82c32c864190566d885f1efe832a985236ad754665afe2f924dafbedbd8022100f141909b61e1e562eadd0991a1477e67f8e46b99c06dd42da94dd45318d60213:922c64590222798bb761d5b6d8e72950

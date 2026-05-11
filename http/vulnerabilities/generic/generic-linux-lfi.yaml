@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/imhunterand/ApachSAL/blob/main/assets/exploits.json
   classification:
+    cpe: cpe:2.3:a:generic:linux:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 32
+    vendor: generic
+    product: linux
   tags: linux,lfi,generic,vuln
 
 http:
@@ -57,7 +60,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: regex
+        name: linux
+        cpe: cpe:2.3:a:generic:linux:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
         part: body
-# digest: 4a0a00473045022100c2af6cfd0dfdcfc22ee09583036a118d68c5bd13c3db850b53bc2715b0af47ac02204d1f8f2f7973ef7427ec053aa5ed40e2b1e0bf149464785320db17821e7212f0:922c64590222798bb761d5b6d8e72950

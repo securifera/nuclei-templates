@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xinference
+        cpe: cpe:2.3:a:xorbitsai:xinference:*:*:*:*:*:*:*:*
         words:
           - '"object":"list"'
           - '"data":'
@@ -35,6 +37,8 @@ http:
         condition: and
 
       - type: dsl
+        name: xinference-2
+        cpe: cpe:2.3:a:xorbitsai:xinference:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains(content_type, "application/json")

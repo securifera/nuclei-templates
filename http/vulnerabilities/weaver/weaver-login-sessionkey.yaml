@@ -5,9 +5,13 @@ info:
   author: SleepingBag945
   severity: high
   description: login_quick.php in OA E-Mobile leaks session key.
+  classification:
+    cpe: cpe:2.3:a:weaver:weaver:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     shodan-query: http.html:"E-Mobile"
+    vendor: weaver
+    product: weaver
   tags: weaver,e-mobile,oa,vuln
 
 http:
@@ -33,8 +37,9 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: weaver
+        cpe: cpe:2.3:a:weaver:weaver:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1 == 200 && contains(body_1,'{{timestamp}}')"
           - "status_code_2 == 200 && contains(body_2,'<title>新建')"
         condition: and
-# digest: 490a00463044022071231ee9505bee1352b7f7562214f50ac0a20228cf9fcfcb771f35d5c033885a02200a2732f9c662bc3d7e36588e63d5ce42b8de82d1532468352b79517ed6d218ba:922c64590222798bb761d5b6d8e72950

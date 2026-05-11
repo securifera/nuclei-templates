@@ -10,6 +10,7 @@ info:
     - https://ollama.ai/
     - https://github.com/ollama/ollama
   classification:
+    cpe: cpe:2.3:a:ollama:ollama:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-862
@@ -18,6 +19,8 @@ info:
     max-request: 1
     shodan-query: http.html:"Ollama" port:11434
     fofa-query: body="Ollama" && port="11434"
+    vendor: ollama
+    product: ollama
   tags: ollama,exposure,misconfig,ai,unauth
 
 http:
@@ -27,6 +30,8 @@ http:
 
     matchers:
       - type: dsl
+        name: ollama
+        cpe: cpe:2.3:a:ollama:ollama:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -39,4 +44,3 @@ http:
         part: body
         json:
           - '.models[].name'
-# digest: 4a0a0047304502207e22ac3d97fb6e852af69dab805b97f12b81e253cd62b2dfad5919431f343903022100ac4e1754b74fa70155511c50db0118813b30a4f3cf1b318b6231d3d09bba7b7e:922c64590222798bb761d5b6d8e72950

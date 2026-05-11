@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.drone.io
   classification:
+    cpe: cpe:2.3:a:drone-ci:drone-ci:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:1354079303
+    vendor: drone-ci
+    product: drone-ci
   tags: panel,droneci,cicd,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: drone-ci
+        cpe: cpe:2.3:a:drone-ci:drone-ci:*:*:*:*:*:*:*:*
         words:
           - '<title>Drone CI</title>'
           - '<title>Drone | Continuous Integration</title>'
@@ -31,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207944911bac973a8b806ff363650250b8ba841364f6aa8b2a106481d5e9c7979002203e4bd6325471fc155c6887ff94b231aff027baac809bf776edbff8097c21c710:922c64590222798bb761d5b6d8e72950

@@ -8,9 +8,13 @@ info:
     The default password for logging in to the 3DM2 web interface of a 3ware controller is "3ware" for both the Administrator and User accounts.
   reference:
     - https://www.thomas-krenn.com/en/wiki/3ware_Controller_3DM2_Password
+  classification:
+    cpe: cpe:2.3:a:3ware:3ware:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: title:"3ware"
+    vendor: 3ware
+    product: 3ware
   tags: default-login,3ware,3dm2,vuln
 
 http:
@@ -32,11 +36,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: 3ware
+        cpe: cpe:2.3:a:3ware:3ware:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'now logged in'
 
       - type: word
+        name: 3ware-2
+        cpe: cpe:2.3:a:3ware:3ware:*:*:*:*:*:*:*:*
         part: set_cookie
         words:
           - 'TDMUSER='
@@ -44,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a24d108b1be97d5c0c19766c06623fa7327baf8f02a6616f2fe508940bf4d8cb02206dfdbc3db4338ee26388aa38491b98904873941a5754eac522b1c438736a9eed:922c64590222798bb761d5b6d8e72950

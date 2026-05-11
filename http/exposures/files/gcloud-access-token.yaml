@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDK
   severity: medium
   description: Internal Google Cloud access tokens are exposed.
+  classification:
+    cpe: cpe:2.3:a:cloud:cloud:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: html:"access_tokens.db"
+    vendor: cloud
+    product: cloud
   tags: google,cloud,devops,exposure,files,vuln
 
 http:
@@ -22,12 +26,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cloud
+        cpe: cpe:2.3:a:cloud:cloud:*:*:*:*:*:*:*:*
         words:
           - 'SQLite'
           - 'access_token'
         condition: and
 
       - type: word
+        name: cloud-2
+        cpe: cpe:2.3:a:cloud:cloud:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/octet-stream'
@@ -35,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100890028d65bc2f588d739eee24abe49b0e3fea0a30bf8d9451fb92f754e8b7d8f02206ff0735feb19ae8f555bd3980e629f2e49a5144557498f74eba21c8229526a20:922c64590222798bb761d5b6d8e72950

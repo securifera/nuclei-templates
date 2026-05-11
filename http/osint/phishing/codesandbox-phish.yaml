@@ -8,8 +8,12 @@ info:
     A CodeSandbox phishing website was detected
   reference:
     - https://codesandbox.io
+  classification:
+    cpe: cpe:2.3:a:codesandbox:codesandbox:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: codesandbox
+    product: codesandbox
   tags: phishing,codesandbox,developer,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: codesandbox
+        cpe: cpe:2.3:a:codesandbox:codesandbox:*:*:*:*:*:*:*:*
         words:
           - '<title>CodeSandbox: Instant Cloud Development Environments'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: codesandbox-2
+        cpe: cpe:2.3:a:codesandbox:codesandbox:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"codesandbox.io")'
-# digest: 4a0a004730450220286c534766ef1a708c5288cd5d4a7198811c5a07b3ead198fa31f8528acaa4f7022100c97614699b049ef3bba8710bf4a128119e38d4e515656824fc16ee88efdafdc6:922c64590222798bb761d5b6d8e72950

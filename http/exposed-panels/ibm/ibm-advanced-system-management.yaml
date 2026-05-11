@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.ibm.com/docs/en/power8/9080-MME?topic=operations-advanced-system-management
   classification:
+    cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -15,6 +16,8 @@ info:
     verified: true
     shodan-query: title:"Advanced System Management"
     fofa-query: title="Advanced System Management"
+    vendor: ibm
+    product: ibm
   tags: panel,ibm,login,detect,discovery
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ibm
+        cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Advanced System Management'
@@ -41,4 +46,3 @@ http:
         group: 1
         regex:
           - '(?i)Update\s+Access\s+Key\s+Exp\s+Date\s+\(YYYY-MM-DD\):\s+([0-9\-]+)'
-# digest: 4b0a00483046022100ff7676714b1c0b1980b99ed68c5e1da91a9854df3f370e2533bb48151337be05022100995fa3e91d6bb3c37d9ed56e34943b05e2c552e89acfdab671310e5f1b9cf197:922c64590222798bb761d5b6d8e72950

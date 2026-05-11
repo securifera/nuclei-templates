@@ -6,12 +6,15 @@ info:
   severity: info
   description: Cvent login panel was detected.
   classification:
+    cpe: cpe:2.3:a:cvent:cvent:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 5
     shodan-query: http.html:"Cvent Inc"
+    vendor: cvent
+    product: cvent
   tags: panel,cvent,discovery
 
 http:
@@ -28,9 +31,10 @@ http:
     max-redirects: 2
     matchers:
       - type: word
+        name: cvent
+        cpe: cpe:2.3:a:cvent:cvent:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Cvent Inc"
           - "Cvent, Inc."
         condition: or
-# digest: 490a0046304402203aa528993266a61d37a93de16297956e03c48e72d69609aa8db4e38cd3c2e7440220057927e5d256bc5419cd3d98abbb3ec3cf3f425be7a4bbf9bfe56a173bbf080a:922c64590222798bb761d5b6d8e72950

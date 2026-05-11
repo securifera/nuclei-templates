@@ -8,8 +8,12 @@ info:
     A Bank Central Asia (BCA) phishing website was detected
   reference:
     - https://bca.co.id
+  classification:
+    cpe: cpe:2.3:a:bank-central-asia:bank-central-asia:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank-central-asia
+    product: bank-central-asia
   tags: phishing,bca,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank-central-asia
+        cpe: cpe:2.3:a:bank-central-asia:bank-central-asia:*:*:*:*:*:*:*:*
         words:
           - "BCA - Senantiasa di sisi Anda"
           - "BCA - Always by your side"
@@ -33,6 +39,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-central-asia-2
+        cpe: cpe:2.3:a:bank-central-asia:bank-central-asia:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bca.co.id")'
-# digest: 4b0a00483046022100b72943cb89abf09d664ac7844ed6ddfc97efd13ed62b1e6b130225fb71b6ad5a022100aeabcf87bb94ef3233e8890917e681c6b7b7e2c49405bd4988af214af933341e:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,7 @@ info:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
     - https://stestr.readthedocs.io/en/latest/MANUAL.html
   classification:
+    cpe: cpe:2.3:a:stestr:stestr:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     verified: true
     max-request: 1
     github-query: filename:stestr.conf
+    vendor: stestr
+    product: stestr
   tags: exposure,stestr,config,files,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: stestr
+        cpe: cpe:2.3:a:stestr:stestr:*:*:*:*:*:*:*:*
         part: body
         words:
           - '[DEFAULT]'
@@ -35,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100acf07d393d0cda53eb9e02ed227b867c504462b4fe07c59885232992606066e4022027a0b8d5272b0da79808e8985ebf0b531fcfebf4021c640f28c9b0c9a2f21979:922c64590222798bb761d5b6d8e72950

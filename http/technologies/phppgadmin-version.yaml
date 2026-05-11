@@ -6,11 +6,14 @@ info:
   severity: info
   description: PhpPgAdmin version information was detected via the intro.php file.
   classification:
+    cpe: cpe:2.3:a:phppgadmin:phppgadmin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: phppgadmin
+    product: phppgadmin
   tags: tech,phppgadmin,discovery
 
 http:
@@ -21,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: phppgadmin
+        cpe: cpe:2.3:a:phppgadmin:phppgadmin:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '<span class="appname">phpPgAdmin</span> <span class="version">.*</span>'
@@ -34,4 +39,3 @@ http:
         part: body
         regex:
           - 'phpPgAdmin.*\(.*\)'
-# digest: 490a004630440220544877da1ea966643bd75edd8fcb755ca52cd2b770c77f54b14cd03f05e39396022038a5f5137b3805ac56e4be08fb38b9c8d1c7b38205eb43695da3a7baa9e8b96d:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/48768
   classification:
+    cpe: cpe:2.3:a:mida:mida:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: mida
+    product: mida
   tags: mida,xss,edb,vuln
 
 http:
@@ -32,6 +35,7 @@ http:
           - 200
 
       - type: word
+        name: mida
+        cpe: cpe:2.3:a:mida:mida:*:*:*:*:*:*:*:*
         words:
           - '"><script>javascript:alert(document.cookie)</script>'
-# digest: 4a0a00473045022036c6434ac9ff49b7c76afee9ec005c2c98a42a2fe94fc6ddff4e501d418d7ccf022100e4a58059930ec8e688466164d7f92da306a75a56eed30dda886bd229b14e07a9:922c64590222798bb761d5b6d8e72950

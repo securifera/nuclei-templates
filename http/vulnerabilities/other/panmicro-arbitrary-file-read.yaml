@@ -9,6 +9,8 @@ info:
   reference:
     - http://cn-sec.com/archives/3182931.html
     - https://cn-sec.com/archives/3188605.html
+  classification:
+    cpe: cpe:2.3:a:panmicro:e-mobile-system:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -26,10 +28,11 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: e-mobile-system
+        cpe: cpe:2.3:a:panmicro:e-mobile-system:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body,"bit app support","fonts","extensions") || regex("root:.*:0:0:", body)'
           - 'contains_any(header,"application/octet-stream", "text/plain")'
           - 'contains(header," attachment; filename=")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a0047304502205f341075adc19dc549dcae50179197ddda37232e1fbbad2116fd0b9476a7f25f022100cc87b03630e3320b8141c32c02453efd0a23ebdf28c1c1ef6c32bf218dc52c20:922c64590222798bb761d5b6d8e72950

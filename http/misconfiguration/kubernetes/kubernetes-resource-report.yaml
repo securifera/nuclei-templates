@@ -5,8 +5,12 @@ info:
   author: pussycat0x
   severity: medium
   description: Information Disclosure of Kubernetes Resource Report
+  classification:
+    cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: kubernetes
+    product: kubernetes
   tags: kubernetes,exposure,misconfig,vuln
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kubernetes
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Overview - Kubernetes Resource Report"
@@ -24,4 +30,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d5d5df80eb856a35de24b821f95fd5e01e85b2707e8908115bb9965feb5a789f02200543bd9dba4659511139adecc3c9ac4b92a42bd64eba08ef2e31c2e74744ba46:922c64590222798bb761d5b6d8e72950

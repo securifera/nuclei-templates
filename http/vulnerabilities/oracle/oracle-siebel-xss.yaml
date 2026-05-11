@@ -11,11 +11,14 @@ info:
     - https://exploit-db.com/exploits/47762
     - https://docs.oracle.com/cd/E95904_01/books/Secur/siebel-security-hardening.html
   classification:
+    cpe: cpe:2.3:a:oracle:siebel:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: oracle
+    product: siebel
   tags: xss,oracle,siebel,packetstorm,edb,vuln
 
 http:
@@ -26,10 +29,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: siebel
+        cpe: cpe:2.3:a:oracle:siebel:*:*:*:*:*:*:*:*
         words:
           - '</script><script>alert(document.domain)</script>'
 
       - type: word
+        name: siebel-2
+        cpe: cpe:2.3:a:oracle:siebel:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -37,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e0dc1e62dbf69a52c0ac6f54b799fabfdbffe8e3c05fce0fc39f5890177c0a6902206fc5dc9bf6963180a92c8d10a85107e0756096f95c66f53f6c6092a69ceb9a24:922c64590222798bb761d5b6d8e72950

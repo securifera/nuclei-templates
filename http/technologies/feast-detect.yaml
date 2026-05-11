@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: feast
+        cpe: cpe:2.3:a:feast:feast:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Feast Feature Store'

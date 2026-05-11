@@ -8,6 +8,8 @@ info:
     WordPress CMB2 plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/cmb2/
+  classification:
+    cpe: cpe:2.3:a:developer:cmb2:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cmb2
+        cpe: cpe:2.3:a:developer:cmb2:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fatal error"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100824ec0b8b7d9239fd70aadd15fcdca8a66d21fdd1d4c2e85030e00504ec90d8002207f528bc45fc864789d586326139a70f9b79829b3068e45a490d4eb0487db771e:922c64590222798bb761d5b6d8e72950

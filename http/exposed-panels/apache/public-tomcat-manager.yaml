@@ -33,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tomcat
+        cpe: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
         part: response
         words:
           - "Apache Tomcat"
@@ -44,4 +46,3 @@ http:
           - 401
           - 200
         condition: or
-# digest: 4b0a00483046022100b2c773376750c5b02fb74f01635719fe9ccbfff38bcf919c9344770cc00454f4022100ee4579fdafb6faf5df8cc853e8fab54a6efa6ae531d3c117199b7f473ba23533:922c64590222798bb761d5b6d8e72950

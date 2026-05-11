@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/wy876/POC/blob/main/%E7%94%A8%E5%8F%8BOA/%E7%94%A8%E5%8F%8BU8-CRM%E7%B3%BB%E7%BB%9Ffillbacksetting.php%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:
+    cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     fofa-query: title="用友U8CRM"
+    vendor: yonyou
+    product: yonyou
   tags: yonyou,u8-crm,sqli,vuln
 
 http:
@@ -26,11 +29,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: yonyou
+        cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "src_obj_type\":\"businesInfo\",\"src_fld"
 
       - type: regex
+        name: yonyou-2
+        cpe: cpe:2.3:a:yonyou:yonyou:*:*:*:*:*:*:*:*
         part: body
         negative: true
         regex:
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c61b0f4b7a90e592143eb9f6c3167b097e06f6cba1296257768ae7ac7dbe8c89022100afa77ed5c0f17de8002d0cd6da39492bc834c8b2d3596448c56740fabe69ac54:922c64590222798bb761d5b6d8e72950

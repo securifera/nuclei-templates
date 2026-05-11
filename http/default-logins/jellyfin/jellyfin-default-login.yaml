@@ -43,6 +43,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jellyfin
+        cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'User":{"Name'
@@ -51,6 +53,8 @@ http:
         condition: and
 
       - type: word
+        name: jellyfin-2
+        cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
         part: header
         words:
           - application/json
@@ -58,4 +62,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220421a731cfd471bdf0171efb49601a5d722502aa417bb9da48a503bc528f38e9602207f334eb81eaf5c0b7d70aa5638aed3c08516c77b6f8eddda904d646e0a66c9d5:922c64590222798bb761d5b6d8e72950

@@ -9,10 +9,14 @@ info:
   reference:
     - https://github.com/chainlit/chainlit
     - https://docs.chainlit.io/authentication/overview
+  classification:
+    cpe: cpe:2.3:a:chainlit:chainlit:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: title:"Chainlit"
+    vendor: chainlit
+    product: chainlit
   tags: chainlit,unauth,misconfig,ai,llm,exposure
 
 flow: http(1) && http(2)
@@ -26,6 +30,8 @@ http:
 
     matchers:
       - type: dsl
+        name: chainlit
+        cpe: cpe:2.3:a:chainlit:chainlit:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains(body, 'Chainlit/chainlit')"
@@ -40,8 +46,9 @@ http:
 
     matchers:
       - type: dsl
+        name: chainlit-2
+        cpe: cpe:2.3:a:chainlit:chainlit:*:*:*:*:*:*:*:*
         dsl:
           - "status_code == 200"
           - "contains_all(body, 'userEnv','ui','mcp')"
         condition: and
-# digest: 4a0a0047304502202a787796e0a7ff4d0386cd8f930d98062d4d940c69ed9623e9e8f96a719de057022100cd650f86e7291af4fd2690b424180c910202878a49c2faf87cffcd1b2badaeaf:922c64590222798bb761d5b6d8e72950

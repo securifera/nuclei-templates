@@ -10,9 +10,12 @@ info:
     - https://nginx.org/en/docs/http/ngx_http_api_module.html
     - https://x.com/akshaysharma71/status/1825815869953552844
   classification:
+    cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
     cwe-id: CWE-23,CWE-73
   metadata:
     verified: true
+    vendor: nginx
+    product: nginx
   tags: nginx,fuzz,misconfig,lfi,vuln
 
 http:
@@ -93,6 +96,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nginx
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         part: body
         words:
           - "version"
@@ -102,6 +107,8 @@ http:
         condition: and
 
       - type: word
+        name: nginx-2
+        cpe: cpe:2.3:a:nginx:nginx:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - application/json
@@ -109,4 +116,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205defdb29ac69f680b1acf26f02d7463b6c80de13653a48274a5b23a50c750e710221009a0dba7c96fd9a0e533c7497f4c0034bd751761c6132c7f3236ec0ff74553ba6:922c64590222798bb761d5b6d8e72950

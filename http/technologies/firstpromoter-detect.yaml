@@ -28,6 +28,8 @@ http:
 
     matchers:
       - type: dsl
+        name: firstpromoter
+        cpe: cpe:2.3:a:firstpromoter:firstpromoter:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(body, "cdn.firstpromoter.com/fpr.js", "cdn.firstpromoter.com/fprom.js", "//cdn.firstpromoter.com")'
           - 'status_code == 200'

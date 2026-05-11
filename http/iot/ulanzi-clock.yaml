@@ -5,8 +5,12 @@ info:
   author: fabaff
   severity: info
   description: Ulanzi Clock panel was detected.
+  classification:
+    cpe: cpe:2.3:a:ulanzi:ulanzi:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ulanzi
+    product: ulanzi
   tags: panel,ulanzi,iot,discovery
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ulanzi
+        cpe: cpe:2.3:a:ulanzi:ulanzi:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Ulanzi Clock</title>'
@@ -24,4 +30,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100cae5aac6a130e410f1857fbf48d3ab48a2b0eb5b5fbb246c2aa321e7d91d142702206ddc03bc264500b14debfdd005ca53ea3db5bd66aea697e3510d78bf8aa21570:922c64590222798bb761d5b6d8e72950

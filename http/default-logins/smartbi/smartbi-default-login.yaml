@@ -10,10 +10,14 @@ info:
     - https://mp.weixin.qq.com/s?__biz=MzIwMDk1MjMyMg==&mid=2247491565&idx=1&sn=eb2af62a72167c6f82ae8ec3db878511
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/smartbi-default-user-weakpass.yaml
     - https://github.com/Threekiii/Awesome-POC/blob/master/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/Smartbi%20%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E.md
+  classification:
+    cpe: cpe:2.3:a:smartbi:smartbi:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: app="SMARTBI"
+    vendor: smartbi
+    product: smartbi
   tags: smartbi,default-login,vuln
 
 http:
@@ -40,6 +44,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: smartbi
+        cpe: cpe:2.3:a:smartbi:smartbi:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"result":true'
@@ -47,6 +53,8 @@ http:
         condition: and
 
       - type: word
+        name: smartbi-2
+        cpe: cpe:2.3:a:smartbi:smartbi:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/plain'
@@ -54,4 +62,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100bee034602d7650406a9299155282f51ab9f70ee9ce5d173bd5bc69fca1214ad9022010c66e9485432d52a8b47cf25e125b44d24dc215b413ecad5971059459a17e09:922c64590222798bb761d5b6d8e72950

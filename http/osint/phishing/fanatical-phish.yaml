@@ -8,8 +8,12 @@ info:
     A Fanatical phishing website was detected
   reference:
     - https://fanatical.com
+  classification:
+    cpe: cpe:2.3:a:fanatical:fanatical:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: fanatical
+    product: fanatical
   tags: phishing,fanatical,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: fanatical
+        cpe: cpe:2.3:a:fanatical:fanatical:*:*:*:*:*:*:*:*
         words:
           - 'Fanatical'
           - '<title>Fanatical'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: fanatical-2
+        cpe: cpe:2.3:a:fanatical:fanatical:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"fanatical.com")'
-# digest: 4b0a004830460221008dc42f7781a64dfdfa8605648305009bdf3ddbabfad8985df27f90ac51c97081022100bbc4d66dd424af65a2402ae6dd1491b2f4b774431270ee5a72e0115c75725f49:922c64590222798bb761d5b6d8e72950

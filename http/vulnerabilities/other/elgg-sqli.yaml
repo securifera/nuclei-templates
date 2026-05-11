@@ -10,6 +10,7 @@ info:
     - https://github.com/4rdr/proofs/blob/main/info/Elgg_unauth_SQLi_5.1.4.md
     - https://github.com/Elgg/Elgg
   classification:
+    cpe: cpe:2.3:a:elgg:elgg:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
@@ -29,6 +30,8 @@ http:
 
     matchers:
       - type: dsl
+        name: elgg
+        cpe: cpe:2.3:a:elgg:elgg:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body,"elgg.js")'
           - 'status_code == 200'
@@ -43,9 +46,10 @@ http:
 
     matchers:
       - type: dsl
+        name: elgg-2
+        cpe: cpe:2.3:a:elgg:elgg:*:*:*:*:*:*:*:*
         dsl:
           - 'duration >= 6'
           - 'contains(body,"All members")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100a1427ee890b2013312ca3ccd0ae189fa139aa2c75f91d9707c942d4ffe208554022100d11dbbd6659d89cd17a9bac27fb2e8d822d84f02f0385c5b6c2baa0daf7421a0:922c64590222798bb761d5b6d8e72950

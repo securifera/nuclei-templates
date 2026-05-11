@@ -6,11 +6,14 @@ info:
   severity: info
   description: |
     Detects Mirth Connect Administrator panel.
+  classification:
+    cpe: cpe:2.3:a:nextgen:mirth_connect:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     product: mirth_connect
     shodan-query: title:"mirth connect administrator"
+    vendor: nextgen
   tags: mirth-connect,tech,detect,discovery
 
 http:
@@ -21,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mirth_connect
+        cpe: cpe:2.3:a:nextgen:mirth_connect:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Mirth Connect Administrator</title>"
@@ -28,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022006c1efa4b599bd640fe25ca390efabac0ee430c7e031e77a700d8871c3a73615022001cb927b783d6f5883ec1c81a480bce0989f2d91a7cd6825030aa71e9df0599a:922c64590222798bb761d5b6d8e72950

@@ -6,9 +6,13 @@ info:
   severity: unknown
   description: |
     The HTTP server is configured to list files in the root directory when no Host header is provided.
+  classification:
+    cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: listing
+    product: listing
   tags: misconfig,listing,vuln
 
 flow: http(1) && http(2)
@@ -21,6 +25,8 @@ http:
 
     matchers:
       - type: dsl
+        name: listing
+        cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
         dsl:
           - '!contains_any(body,"<title>Index of","<title>Directory listing of")'
         internal: true
@@ -37,8 +43,9 @@ http:
 
     matchers:
       - type: dsl
+        name: listing-2
+        cpe: cpe:2.3:a:listing:listing:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_any(body,"<title>Index of","<title>Directory listing of")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a00473045022100b125863c5fdd8b60833cdebe6b2c666128e6118dd626870844708acca006ea1a02200444a9b60d7fb343bf0948d7f4781b0fd5c4ce2d3a8743d3d1734e8fb894de68:922c64590222798bb761d5b6d8e72950

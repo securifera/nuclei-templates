@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: thinkphp
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: body
         words:
           - "_DATABASE</td>"
@@ -31,6 +33,8 @@ http:
         condition: and
 
       - type: word
+        name: thinkphp-2
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>系统发生错误</title>"
@@ -38,6 +42,8 @@ http:
         condition: or
 
       - type: word
+        name: thinkphp-3
+        cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Exception"
@@ -50,4 +56,3 @@ http:
           - 500
           - 404
         condition: or
-# digest: 4b0a00483046022100de233de8af095f0d91f09fe976404ad85de6100038aba425a52cbcbe96d8613b02210099d0e8b0c2c5994b69a79005a85c2385376a4acebcbc758751d7fcb77abfbf43:922c64590222798bb761d5b6d8e72950

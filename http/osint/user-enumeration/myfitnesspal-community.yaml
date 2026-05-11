@@ -6,11 +6,14 @@ info:
   severity: info
   description: MyFitnessPal Community user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:myfitnesspal:myfitnesspal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: myfitnesspal
+    product: myfitnesspal
   tags: osint,osint-health,myfitnesspal-community,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: myfitnesspal
+        cpe: cpe:2.3:a:myfitnesspal:myfitnesspal:*:*:*:*:*:*:*:*
         part: body
         words:
           - ">Last Active<"
-# digest: 4a0a0047304502207ed84f29bfbe4dc629180aad3ac0188410cab4cecf94593b42eb363c3ddaf8be022100e62c33570b3c7631c10a1803af666ee5018713444a3f7eaf51ec06606b399379:922c64590222798bb761d5b6d8e72950

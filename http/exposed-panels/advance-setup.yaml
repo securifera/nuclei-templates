@@ -9,9 +9,12 @@ info:
     - https://www.exploit-db.com/ghdb/6819
     - https://www.actiontec.com/dsl/
   classification:
+    cpe: cpe:2.3:a:advance:advance:*:*:*:*:*:*:*:*
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: advance
+    product: advance
   tags: panel,setup,edb,discovery
 
 http:
@@ -22,10 +25,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: advance
+        cpe: cpe:2.3:a:advance:advance:*:*:*:*:*:*:*:*
         words:
           - '<title>Advanced Setup - Security - Admin User Name &amp; Password</title>'
 
       - type: status
         status:
           - 200
-# digest: 490a004630440220767bab5c3e56ce5be6ee59f734faa16b08631541bca3093e9a4a14426523bf1b0220548cffcfe1f00d0b1511946e2eea4f35940b48c82ae863fa61c182d5d7582f31:922c64590222798bb761d5b6d8e72950

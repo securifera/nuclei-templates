@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: clipbucket
+        cpe: cpe:2.3:a:clip-bucket:clipbucket:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '<title>ClipBucket ([a-z0-9.]+) STABLE Installer</title>'
@@ -31,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c3bfaa06567c21f037f3059650677291fcf1d2b55025f2dd264338d942d578a8022011b192e87b24e6e4724a15691059f6292719a23ab62f90397e9afb34448b28a1:922c64590222798bb761d5b6d8e72950

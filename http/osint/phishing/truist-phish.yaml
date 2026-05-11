@@ -8,8 +8,12 @@ info:
     A truist phishing website was detected
   reference:
     - https://www.truist.com/
+  classification:
+    cpe: cpe:2.3:a:truist:truist:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: truist
+    product: truist
   tags: phishing,bbt,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: truist
+        cpe: cpe:2.3:a:truist:truist:*:*:*:*:*:*:*:*
         words:
           - "Your journey to better banking starts with Truist. Checking and savings accounts, credit cards, mortgages, small business, commercial banking, and more."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: truist-2
+        cpe: cpe:2.3:a:truist:truist:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"truist.com")'
-# digest: 4a0a0047304502205a87f8a8268f6b9bf66a648d78857fbc16c42bbda28c84950097e07c3fb3561802210082c814e59bf28afd70f40033e75d6e48be1be5c692f2d56d6b82e3a7f7505ca5:922c64590222798bb761d5b6d8e72950

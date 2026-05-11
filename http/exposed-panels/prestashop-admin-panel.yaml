@@ -82,6 +82,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: prestashop
+        cpe: cpe:2.3:a:prestashop:prestashop:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'PrestaShop' # For normal presta admin panel
@@ -89,9 +91,10 @@ http:
         condition: and
 
       - type: word
+        name: prestashop-2
+        cpe: cpe:2.3:a:prestashop:prestashop:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'themes/default/css/admin-theme.css' # For modified admin panels
           - 'class="show-forgot-password'
         condition: and
-# digest: 4b0a00483046022100eeb54fb27d3b655ee415ec9084201486fc9cb6ad63c7591fcaeb6220985045aa022100ea545814d5aa3194e1dbf30d23ce6adf88fd99b65869e280284e2831bba08ffd:922c64590222798bb761d5b6d8e72950

@@ -8,12 +8,15 @@ info:
   reference:
     - https://docs.iotawatt.com/en/master/passConfig.html
   classification:
+    cpe: cpe:2.3:a:iotawatt-app:iotawatt-app:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
     fofa-query: app="IoTaWatt-Configuration-app"
+    vendor: iotawatt-app
+    product: iotawatt-app
   tags: iot,exposure,vuln,discovery
 
 http:
@@ -24,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: iotawatt-app
+        cpe: cpe:2.3:a:iotawatt-app:iotawatt-app:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<h3>Configure IoTaWatt Device</h3>'
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022002c8bd62b33f665041d4b29ef36f977bc1ccbed7ee0e01208e904050310a13d7022100bee844ec58d8b2819608c3e3741ffdcbacce61e7711629634ead102b5a455c07:922c64590222798bb761d5b6d8e72950

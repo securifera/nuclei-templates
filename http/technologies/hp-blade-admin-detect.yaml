@@ -6,12 +6,15 @@ info:
   severity: info
   description: HPBladeSystem Onboard Administrator panel was detected.
   classification:
+    cpe: cpe:2.3:a:hp:bladesystem_onboard_administrator:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"HP BladeSystem"
+    vendor: hp
+    product: bladesystem_onboard_administrator
   tags: panel,hp,tech,discovery
 
 http:
@@ -22,10 +25,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bladesystem_onboard_administrator
+        cpe: cpe:2.3:a:hp:bladesystem_onboard_administrator:*:*:*:*:*:*:*:*
         words:
           - "<title>HP BladeSystem Onboard Administrator</title>"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206f66242ab2ab23b18d8f8f9923e45640e3e75205e2069153a18702b5627af8d5022100e912c4e79bb625f937c4ba69f4a3226ad1bf9edc6b9004486cb8a422fa1203d7:922c64590222798bb761d5b6d8e72950

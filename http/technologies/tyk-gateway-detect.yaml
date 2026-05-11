@@ -8,9 +8,13 @@ info:
     Detects if the application uses Tyk API Gateway
   reference:
     - https://github.com/TykTechnologies/tyk
+  classification:
+    cpe: cpe:2.3:a:tyk:tyk_gateway:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: tyk
+    product: tyk_gateway
   tags: tyk,gateway,tech,detect,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tyk_gateway
+        cpe: cpe:2.3:a:tyk:tyk_gateway:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Tyk GW"
@@ -28,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: tyk_gateway-2
+        cpe: cpe:2.3:a:tyk:tyk_gateway:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - application/json
@@ -38,4 +46,3 @@ http:
         part: body
         regex:
           - "\"version\":\"([^\"]*)\""
-# digest: 4a0a004730450220507c421ba38e391b181ac3ba0491f48abd5d249c0018b6fd987afb7705de60bb0221008e10a4e4a65a252f482d35d16e407a4fddb3d958e1f9bbad9afbbe31f8605bd9:922c64590222798bb761d5b6d8e72950

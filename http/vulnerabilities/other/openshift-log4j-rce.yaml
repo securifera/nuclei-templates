@@ -39,11 +39,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: openshift_origin
+        cpe: cpe:2.3:a:redhat:openshift_origin:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: openshift_origin-2
+        cpe: cpe:2.3:a:redhat:openshift_origin:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output#
@@ -64,4 +68,3 @@ http:
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+' # Print extracted ${:-{{rand1}}}${:-{{rand2}}}.${hostName} in output
         part: interactsh_request
-# digest: 4a0a00473045022100b62a586fb0a7474874e1a02ce38ea5742731380302dae421f4cf7d617c7443b202203cc428bf580703ea8cf8da45546dc381c08302735677dfd1602e917885763b3a:922c64590222798bb761d5b6d8e72950

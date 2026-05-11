@@ -8,8 +8,12 @@ info:
     A target phishing website was detected
   reference:
     - https://target.com
+  classification:
+    cpe: cpe:2.3:a:target:target:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: target
+    product: target
   tags: phishing,target,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: target
+        cpe: cpe:2.3:a:target:target:*:*:*:*:*:*:*:*
         words:
           - 'Target : Expect More. Pay Less.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: target-2
+        cpe: cpe:2.3:a:target:target:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"target.com")'
-# digest: 4a0a00473045022100e83bb3c6320735b593d15457d4561eb273fb82aeaf6812068a9401b7dce171eb022058662f05cafe0914ebf6aab19fd49cf3135579f30ad4523bf103aea165afc7d7:922c64590222798bb761d5b6d8e72950

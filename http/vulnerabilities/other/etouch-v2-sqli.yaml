@@ -9,11 +9,14 @@ info:
     - https://github.com/mstxq17/CodeCheck/
     - https://www.anquanke.com/post/id/168991
   classification:
+    cpe: cpe:2.3:a:etouch:etouch:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-89
   metadata:
     max-request: 1
+    vendor: etouch
+    product: etouch
   tags: etouch,sqli,vuln
 variables:
   num: "999999999"
@@ -30,7 +33,8 @@ http:
           - 200
 
       - type: word
+        name: etouch
+        cpe: cpe:2.3:a:etouch:etouch:*:*:*:*:*:*:*:*
         words:
           - '{{md5({{num}})}}'
         part: body
-# digest: 4b0a004830460221009b3e7c0596e2dcd0afbaeb205392bc778fb9987aca31f5a51df6ef93fc83277c022100b4f03efd1d5b7c895eefdf6d868805b4b87b7b2f7e7e490388157580888046ee:922c64590222798bb761d5b6d8e72950

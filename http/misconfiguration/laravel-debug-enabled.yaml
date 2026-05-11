@@ -8,8 +8,12 @@ info:
     Laravel with APP_DEBUG set to true is prone to show verbose errors.
   remediation: |
     Disable Laravel's debug mode by setting APP_DEBUG to false.
+  classification:
+    cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: laravel
+    product: laravel
   tags: debug,laravel,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: laravel
+        cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
         part: body
         words:
           - can_execute_commands
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f7ad81d93311f60c637be3322a011f6787545c6873ff79b167a74b77aa711fa6022100cb2855da07b55a357f77facccdd7d7dcc143728080dbd3019e9079b0c67c90b5:922c64590222798bb761d5b6d8e72950

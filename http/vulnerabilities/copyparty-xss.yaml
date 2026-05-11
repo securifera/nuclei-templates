@@ -10,11 +10,14 @@ info:
   reference:
     - https://github.com/9001/copyparty/security/advisories/GHSA-cw7j-v52w-fp5r
   classification:
+    cpe: cpe:2.3:a:copyparty:copyparty:*:*:*:*:*:*:*:*
     cwe-id: CWE-80
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"copyparty"
+    vendor: copyparty
+    product: copyparty
   tags: copyparty,xss,vuln
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: copyparty
+        cpe: cpe:2.3:a:copyparty:copyparty:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<a href="/"><script>alert(document.domain)</script>'
@@ -32,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: copyparty-2
+        cpe: cpe:2.3:a:copyparty:copyparty:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -39,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206d364b892f6efdf14378c29ec6f1f563f3dd359c71cb2879752b4ad1e6fbf9890221008b060dd185d7cb6dd85203acb2bc45402f876f2f1ba8b24d5696c541e3863676:922c64590222798bb761d5b6d8e72950

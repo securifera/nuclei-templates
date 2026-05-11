@@ -7,8 +7,12 @@ info:
   description: helpscout takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:helpscout:helpscout:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: helpscout
+    product: helpscout
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: helpscout
+        cpe: cpe:2.3:a:helpscout:helpscout:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: helpscout-2
+        cpe: cpe:2.3:a:helpscout:helpscout:*:*:*:*:*:*:*:*
         words:
           - "No settings were found for this company:"
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100db70a33c3c643520d9c804e8a7a6e4218527d9a2614604776a663dfffd8b660d02204f60b57c0fb1eadae7fb77c423cf142ab6986ad4f9ed52ffb857b757eb815783:922c64590222798bb761d5b6d8e72950

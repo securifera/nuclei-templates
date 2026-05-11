@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: directum
+        cpe: cpe:2.3:a:directum:directum:*:*:*:*:*:*:*:*
         part: body
         words:
           - "DIRECTUM Login"
@@ -33,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009cde7cd0fb41913495d855b3500ddc92eae1575f10d2d50a0d1863319cd28139022100ca18828fa9d1f436f12695bae54688a624093d63d760e694c0111b8d88d66031:922c64590222798bb761d5b6d8e72950

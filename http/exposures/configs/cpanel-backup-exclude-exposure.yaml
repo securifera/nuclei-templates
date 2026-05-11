@@ -9,12 +9,15 @@ info:
   reference:
     - https://docs.cpanel.net/knowledge-base/backup/how-to-exclude-files-from-backups/
   classification:
+    cpe: cpe:2.3:a:cpanel:cpanel:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
+    vendor: cpanel
+    product: cpanel
   tags: cpanel,exposure,config,misconfig
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: cpanel
+        cpe: cpe:2.3:a:cpanel:cpanel:*:*:*:*:*:*:*:*
         dsl:
           - "contains_any(content_type, 'application/octet-stream', 'text/plain', 'text/x-config')"
           - "status_code == 200"
@@ -35,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: cpanel-2
+        cpe: cpe:2.3:a:cpanel:cpanel:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<html"
@@ -48,4 +55,3 @@ http:
           - "text/xml"
           - "image/"
         negative: true
-# digest: 4b0a00483046022100d209da5d0ac708effadd5e204246b9282ebdef93002f77161df09d5cda0894ca0221009456baf0ea3c4fe8e825c59f7a39a86f1d8688928167ab27e30e78a34beda4c7:922c64590222798bb761d5b6d8e72950

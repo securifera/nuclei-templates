@@ -6,11 +6,14 @@ info:
   severity: info
   description: Codecademy user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:codecademy:codecademy:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: codecademy
+    product: codecademy
   tags: osint,osint-coding,codecademy,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: codecademy
+        cpe: cpe:2.3:a:codecademy:codecademy:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>  Profile - "
-# digest: 4a0a00473045022100e50fffdd112976d7b81edd00197a121952874af73c7736f965629a2ece4d3dbe022072f5c440ed165d46f0f0a5da7c10d83b9fdba3af91e544c6239aa713494011b9:922c64590222798bb761d5b6d8e72950

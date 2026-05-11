@@ -8,8 +8,12 @@ info:
     A Robinhood phishing website was detected
   reference:
     - https://robinhood.com
+  classification:
+    cpe: cpe:2.3:a:robinhood:robinhood:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: robinhood
+    product: robinhood
   tags: phishing,robinhood,trading,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: robinhood
+        cpe: cpe:2.3:a:robinhood:robinhood:*:*:*:*:*:*:*:*
         words:
           - "Robinhood: 24/5 Commission-Free Stock Trading & Investing"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: robinhood-2
+        cpe: cpe:2.3:a:robinhood:robinhood:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"robinhood.com")'
-# digest: 4a0a00473045022019c8844ff110f4f8f42cd057fbfa372de478f2e41f0cd93d7e8af7bcb6383d98022100cc952f2fdd812130daad8cec6fd9f3dca08ad14a2e3c4161fd7b770af1d63583:922c64590222798bb761d5b6d8e72950

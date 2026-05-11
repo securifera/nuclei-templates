@@ -6,11 +6,14 @@ info:
   severity: info
   description: FriendFinder user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:friendfinder:friendfinder:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: friendfinder
+    product: friendfinder
   tags: osint,osint-dating,friendfinder,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: friendfinder
+        cpe: cpe:2.3:a:friendfinder:friendfinder:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Last Visit:"
-# digest: 4b0a004830460221009007fa1d2548d6866736fb2368e027f4660d3559211b4eeb96872e2a60ef3ff6022100d868547db787852aa71991b191391ee1cdc45f768660584e81e4d3965b3fe3d7:922c64590222798bb761d5b6d8e72950

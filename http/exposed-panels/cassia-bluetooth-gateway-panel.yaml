@@ -8,10 +8,14 @@ info:
     Cassia Bluetooth Gateway Management Platform login page was discovered.
   reference:
     - https://www.cassianetworks.com/products/x1000-outdoor-bluetooth-router/
+  classification:
+    cpe: cpe:2.3:a:gateway:gateway:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Cassia Bluetooth Gateway Management Platform"
+    vendor: gateway
+    product: gateway
   tags: cassia,gateway,login,panel,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gateway
+        cpe: cpe:2.3:a:gateway:gateway:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Cassia Bluetooth Gateway Management Platform"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008970508c2de89ef617cd3cb5a87e211576e6903026670089d6059532f6d24d96022100b37db5ff7a7c009c0a3cc940ec2878113ca6c721e471f842379f22dcc39efa22:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,13 @@ info:
   severity: info
   description: BMC Discovery Outpost admin panel was detected.
   classification:
+    cpe: cpe:2.3:a:bmc:bmc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: bmc
+    product: bmc
   tags: panel,bmc,discovery
 
 http:
@@ -19,7 +22,8 @@ http:
 
     matchers:
       - type: word
+        name: bmc
+        cpe: cpe:2.3:a:bmc:bmc:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>BMC Discovery Outpost: Login</title>"
-# digest: 490a00463044022034359f735eeef0938937abdc3d9d35725054d112abc774072f42880ad3ffee4702202e38338d32203b14a65abbf7918c8f87b9bbe2e4e1b763bc2ddc06351a898f32:922c64590222798bb761d5b6d8e72950

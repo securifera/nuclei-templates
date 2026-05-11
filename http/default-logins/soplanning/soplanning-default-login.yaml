@@ -8,6 +8,8 @@ info:
     SOPlanning contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
   reference:
     - https://www.soplanning.org/en/
+  classification:
+    cpe: cpe:2.3:a:soplanning:soplanning:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -40,6 +42,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: soplanning
+        cpe: cpe:2.3:a:soplanning:soplanning:*:*:*:*:*:*:*:*
         words:
           - 'title="Logout"'
           - 'title="Modify my profile"'
@@ -49,4 +53,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203ea10ee3d655eb2af573f0dc0170f6afda9136c8c5a9738f101516ed8ec4e3ed02205720293e35940f13fd7083c8df5d9a810bc35f66176c41aec69f62f8ceaf2e95:922c64590222798bb761d5b6d8e72950

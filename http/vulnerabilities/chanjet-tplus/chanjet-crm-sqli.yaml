@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.chanjet.com/
   classification:
+    cpe: cpe:2.3:a:chanjet:chanjet_crm:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     max-request: 1
@@ -29,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: chanjet_crm
+        cpe: cpe:2.3:a:chanjet:chanjet_crm:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<result>{{md5(num)}}'
@@ -36,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022022d6c0fe00ade1cc5df45236ba21710cc9201f94165fe9f505aa79604342f81302205cb5cc7ae5dc0b53ddfb38a2f72eadb598d97471c9103c63ea9fef965e3b795b:922c64590222798bb761d5b6d8e72950

@@ -4,9 +4,13 @@ info:
   name: robots.txt endpoint prober
   author: CasperGN,pdteam,TheZakMan
   severity: info
+  classification:
+    cpe: cpe:2.3:a:robots-txt-endpoint:robots-txt-endpoint:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
+    vendor: robots-txt-endpoint
+    product: robots-txt-endpoint
   tags: miscellaneous,misc,generic,discovery
 
 http:
@@ -24,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: robots-txt-endpoint
+        cpe: cpe:2.3:a:robots-txt-endpoint:robots-txt-endpoint:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'User-agent:'
 
       - type: word
+        name: robots-txt-endpoint-2
+        cpe: cpe:2.3:a:robots-txt-endpoint:robots-txt-endpoint:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - text/plain
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202954b12f564fb4fe2c1a8806f87edbc65991a3993c2bd86422d77c871100b4e60220029b78a01a1929151d2a554765c2c517078708cf1536aec0d73d51186784b004:922c64590222798bb761d5b6d8e72950

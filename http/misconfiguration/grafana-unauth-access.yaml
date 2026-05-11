@@ -7,6 +7,7 @@ info:
   description: |
     Detects Grafana instances configured with anonymous access enabled, allowing unauthenticated users to access dashboards, data sources, organization info, and potentially sensitive monitoring data without any credentials.
   classification:
+    cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-306
@@ -15,6 +16,8 @@ info:
     max-request: 7
     shodan-query: title:"Grafana"
     fofa-query: title="Grafana"
+    vendor: grafana
+    product: grafana
   tags: grafana,misconfig,unauth,exposure,dashboard
 
 http:
@@ -33,6 +36,7 @@ http:
     matchers:
       - type: dsl
         name: dashboards-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "dashboards:read", "name\":\"Dashboard list")'
@@ -40,6 +44,7 @@ http:
 
       - type: dsl
         name: dashboard-search-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -49,6 +54,7 @@ http:
 
       - type: dsl
         name: home-dashboard-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -57,6 +63,7 @@ http:
 
       - type: dsl
         name: organization-info-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -66,6 +73,7 @@ http:
 
       - type: dsl
         name: users-list-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -75,6 +83,7 @@ http:
 
       - type: dsl
         name: datasources-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -84,10 +93,10 @@ http:
 
       - type: dsl
         name: frontend-settings-exposed
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains_any(body, "\"allowOrgCreate\"", "\"authProxyEnabled\"")'
           - 'contains_any(body, "\"buildInfo\"", "\"datasources\"")'
         condition: and
-# digest: 490a00463044022006d6ca522128b53cf4345cd48c4dfa033ed3817d11a09b1e5a07f98f2230f15b02207f2f10b39105b8a4a7950f65d004ebff484b6780cc7c5ffa787271c13899a6c5:922c64590222798bb761d5b6d8e72950

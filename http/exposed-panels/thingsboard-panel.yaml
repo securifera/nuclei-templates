@@ -9,10 +9,14 @@ info:
   reference:
     - https://github.com/thingsboard/thingsboard
     - https://thingsboard.io/
+  classification:
+    cpe: cpe:2.3:a:thingsboard:thingsboard:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"ThingsBoard"
+    vendor: thingsboard
+    product: thingsboard
   tags: panel,thingsboard,detect,discovery
 
 http:
@@ -22,8 +26,9 @@ http:
 
     matchers:
       - type: dsl
+        name: thingsboard
+        cpe: cpe:2.3:a:thingsboard:thingsboard:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(to_lower(body), "<title>thingsboard</title>")'
         condition: and
-# digest: 4a0a00473045022006746ac5eb8a11e39908c0a8ab5157850b02c91d101a1634c802842f968dd48a022100b2116f5e789c605e973bb1ee9338e987ba16905476c64aa0c32e239736bfd31b:922c64590222798bb761d5b6d8e72950

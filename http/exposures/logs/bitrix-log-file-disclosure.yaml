@@ -10,6 +10,7 @@ info:
     - https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2795
     - https://dev.1c-bitrix.ru/api_help/main/general/error.php
   classification:
+    cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-532
@@ -18,6 +19,8 @@ info:
     max-request: 2
     shodan-query: http.html:"bitrix"
     fofa-query: body="/bitrix/modules/"
+    vendor: bitrix
+    product: bitrix
   tags: exposure,bitrix,logs,files,disclosure
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bitrix
+        cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
         words:
           - "LICENSE_KEY"
           - "CUpdateClient"
@@ -41,6 +46,8 @@ http:
         condition: or
 
       - type: word
+        name: bitrix-2
+        cpe: cpe:2.3:a:bitrix:bitrix:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/plain"
@@ -48,4 +55,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ad10a6ddf299c33488657f2ef28b3720e744a457b5385b804b1577e8d663d8a4022100f9400e78be6a3029b354685827c3c6416fe4eb7a1e3ce2e0b55b5636d3ffcc30:922c64590222798bb761d5b6d8e72950

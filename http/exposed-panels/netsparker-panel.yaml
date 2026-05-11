@@ -9,12 +9,15 @@ info:
   reference:
     - https://www.invicti.com/
   classification:
+    cpe: cpe:2.3:a:netsparker:netsparker:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Sign in to Netsparker Enterprise"
+    vendor: netsparker
+    product: netsparker
   tags: panel,netsparker,discovery
 
 http:
@@ -25,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: netsparker
+        cpe: cpe:2.3:a:netsparker:netsparker:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Netsparker Ltd"
@@ -34,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220127402bfa1a3e4ac46aaa187b2ec4bf1bc67830c1fa88be21c8a269a0a176bfc022100a2bc5e2790db202a96aaa424935ca034ceb3ad134cb00ad833d2738166dead90:922c64590222798bb761d5b6d8e72950

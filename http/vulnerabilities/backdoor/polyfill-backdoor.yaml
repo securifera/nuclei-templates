@@ -10,10 +10,14 @@ info:
     - https://sansec.io/research/polyfill-supply-chain-attack
     - https://web.archive.org/web/20240229113710/https://github.com/polyfillpolyfill/polyfill-service/issues/2834
     - https://blog.cloudflare.com/polyfill-io-now-available-on-cdnjs-reduce-your-supply-chain-risk
+  classification:
+    cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"polyfill.io"
+    vendor: backdoor
+    product: backdoor
   tags: cdn,polyfill-io,backdoor,malware,vuln
 
 http:
@@ -27,7 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: backdoor
+        cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "<script[^>]* src=['\"]https?://([a-zA-Z0-9-]*.)?polyfill.io[/'\"]"
-# digest: 4a0a00473045022014d953f8a3bc4a54514317d0b8f0847eaf1cfd194baf9f4bfa6de84ff52f3015022100bf88dc0eb9c0f19091861dd2a15da9f88346e8cff94a227c8b69723d0eae34aa:922c64590222798bb761d5b6d8e72950

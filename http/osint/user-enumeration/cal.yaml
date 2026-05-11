@@ -6,11 +6,14 @@ info:
   severity: info
   description: Cal user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:cal:cal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: cal
+    product: cal
   tags: osint,osint-social,cal,caldotcom,discovery
 
 self-contained: true
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cal
+        cpe: cpe:2.3:a:cal:cal:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'username":"{{user}}"'
@@ -32,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200d49f0d4463965d7b84d4809713f7dae06c7bb271331dbbf645814764db654d2022100c7b60980479f8fcb2138c303092f9e2724cd81fc828aa6fda71862857aad8733:922c64590222798bb761d5b6d8e72950

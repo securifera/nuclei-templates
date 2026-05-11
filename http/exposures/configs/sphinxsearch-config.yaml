@@ -9,9 +9,13 @@ info:
     An attacker can use leaked credentials to gain access to database.
   reference:
     - https://github.com/manticorp/SphinxSearch/blob/master/sphinx.conf.example
+  classification:
+    cpe: cpe:2.3:a:sphinxsearch:sphinxsearch:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 7
+    vendor: sphinxsearch
+    product: sphinxsearch
   tags: sphinx,sphinxsearch,exposure,config,vuln
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sphinxsearch
+        cpe: cpe:2.3:a:sphinxsearch:sphinxsearch:*:*:*:*:*:*:*:*
         part: body
         words:
           - "sql_user"
@@ -39,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022049ab1652f5acfe50b74bfa7e5dd5745681fd39ce4c2482b743dbe6e7f3f98523022100a8433ec7f79fc13fa7815654cafd91ecd83a23154c34f488716be4ae347889d4:922c64590222798bb761d5b6d8e72950

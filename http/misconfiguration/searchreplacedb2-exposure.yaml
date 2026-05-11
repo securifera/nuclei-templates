@@ -8,11 +8,15 @@ info:
   reference:
     - https://interconnectit.com/search-and-replace-for-wordpress-databases/
     - https://github.com/interconnectit/Search-Replace-DB
+  classification:
+    cpe: cpe:2.3:a:searchreplacedb2:searchreplacedb2:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"searchreplacedb2.php"
     fofa-query: body="searchreplacedb2.php"
+    vendor: searchreplacedb2
+    product: searchreplacedb2
   tags: misconfig,searchreplacedb2,exposure,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: searchreplacedb2
+        cpe: cpe:2.3:a:searchreplacedb2:searchreplacedb2:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Database details"
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: searchreplacedb2-2
+        cpe: cpe:2.3:a:searchreplacedb2:searchreplacedb2:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b86c939931fedb3502245929f42267f90508ef62878167bd8108cd8aaef346c2022100939d5fd36dc0e7ccbc9f3a092f6acdeeb4c97bd822f462776097e8ccf2a9bf6a:922c64590222798bb761d5b6d8e72950

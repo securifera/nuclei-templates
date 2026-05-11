@@ -8,8 +8,12 @@ info:
     A teamviewer phishing website was detected
   reference:
     - https://teamviewer.com
+  classification:
+    cpe: cpe:2.3:a:teamviewer:teamviewer:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: teamviewer
+    product: teamviewer
   tags: phishing,teamviewer,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: teamviewer
+        cpe: cpe:2.3:a:teamviewer:teamviewer:*:*:*:*:*:*:*:*
         words:
           - 'TeamViewer – The Remote Connectivity Software'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: teamviewer-2
+        cpe: cpe:2.3:a:teamviewer:teamviewer:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"teamviewer.com")'
-# digest: 4a0a00473045022100f7ea49fe029f6c630bcd30c3ed661f48886626b8b52a216c85b033934ea38540022020e834c60366e65759b2d6582594a486ff7b0b2a45c060fdc35f942abc3daaee:922c64590222798bb761d5b6d8e72950

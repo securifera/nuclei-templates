@@ -5,8 +5,12 @@ info:
   author: Wlayzz
   severity: info
   description: Some Microsoft IIS servers have the version on the response header. Useful when you need to find specific CVEs on your targets.
+  classification:
+    cpe: cpe:2.3:a:microsoft:internet_information_services:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: microsoft
+    product: internet_information_services
   tags: tech,microsoft,iis,discovery
 
 
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: internet_information_services
+        cpe: cpe:2.3:a:microsoft:internet_information_services:*:*:*:*:*:*:*:*
         part: header
         words:
           - "IIS"
@@ -29,4 +35,3 @@ http:
         part: header
         kval:
           - Server
-# digest: 4a0a0047304502201e14c3fb026b5b1cebe7ec4a373f867e137e439170982ef87e4a89e7d73d5134022100fda62ce42a61c0d07abb45b6774ed558605cc660fd20a305ef2ad25ac2711d61:922c64590222798bb761d5b6d8e72950

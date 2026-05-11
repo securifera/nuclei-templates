@@ -6,11 +6,14 @@ info:
   severity: info
   description: BIGO Live user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:bigo-live:bigo-live:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: bigo-live
+    product: bigo-live
   tags: osint,osint-gaming,bigo-live,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: bigo-live
+        cpe: cpe:2.3:a:bigo-live:bigo-live:*:*:*:*:*:*:*:*
         part: body
         words:
           - "userInfo:{nickName"
-# digest: 4a0a004730450220691cfe7511ed841e5193602021ee2a7a52e8ee5046fd973f4ee35d72d7f43a25022100aa823b4241a16219906cd1214727df442a99d3c0e92dd308a136568897c2f1a6:922c64590222798bb761d5b6d8e72950

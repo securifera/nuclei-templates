@@ -6,11 +6,15 @@ info:
   severity: high
   description: |
     AVTECH Video Surveillance Products password disclosure through /cgi-bin/user/Config.cgi.
+  classification:
+    cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"login" product:"Avtech"
     fofa-query: app="AVTECH-视频监控"
+    vendor: avtech
+    product: avtech
   tags: exposure,avtech,auth-bypass,password,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avtech
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Account.Maxuser='
@@ -31,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: avtech-2
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/plain
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100888a52fd7d6f416cdc331d68dc6d362da55a0a40d370064641ba3b8dfa73bf39022043b3caf7a83a78216fc1c3318fc0d9b9ad4884e869a337c609e50e93097c43fe:922c64590222798bb761d5b6d8e72950

@@ -27,6 +27,8 @@ http:
 
     matchers:
       - type: dsl
+        name: roadiz
+        cpe: cpe:2.3:a:roadiz:roadiz:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(to_lower(body), "<meta name=\"generator\" content=\"roadiz ")'

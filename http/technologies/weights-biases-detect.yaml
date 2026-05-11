@@ -30,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: weights-and-biases
+        cpe: cpe:2.3:a:wandb:weights-and-biases:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Weights & Biases"

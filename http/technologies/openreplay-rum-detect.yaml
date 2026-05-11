@@ -9,10 +9,14 @@ info:
   reference:
     - https://github.com/openreplay/openreplay
     - https://docs.openreplay.com/en/sdk/
+  classification:
+    cpe: cpe:2.3:a:openreplay:openreplay:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"static.openreplay.com"
+    vendor: openreplay
+    product: openreplay
   tags: tech,discovery,rum,openreplay
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: openreplay
+        cpe: cpe:2.3:a:openreplay:openreplay:*:*:*:*:*:*:*:*
         dsl:
           - "status_code >= 200 && status_code < 400"
           - "contains(tolower(all_headers), 'text/html')"
@@ -34,6 +40,7 @@ http:
       - type: regex
         part: body
         name: sdk_implementation
+        cpe: cpe:2.3:a:openreplay:openreplay:*:*:*:*:*:*:*:*
         regex:
           - "static\\.openreplay\\.com/(?:latest|[0-9.]+)/openreplay\\.js"
           - "projectKey[\"']?\\s*:\\s*[\"'][A-Za-z0-9]{10,}[\"']"
@@ -44,4 +51,3 @@ http:
           - "window\\.asayer\\s*=\\s*\\["
           - "asayer\\.io/ingest"
         condition: or
-# digest: 490a0046304402207465b0429c957e3da2795fa60294953646f37f99ff18dfccbeee2c46d1aa63f3022020ef91c5ad67a63dfa973b5072bbb9312c869e955cfd9fead34af1952dfdc3db:922c64590222798bb761d5b6d8e72950

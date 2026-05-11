@@ -6,11 +6,14 @@ info:
   severity: info
   description: Imagefap user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:imagefap:imagefap:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: imagefap
+    product: imagefap
   tags: osint,osint-porn,imagefap,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: imagefap
+        cpe: cpe:2.3:a:imagefap:imagefap:*:*:*:*:*:*:*:*
         part: body
         words:
           - "s Profile"
-# digest: 4a0a00473045022100d1023d81444967305d150a1d4db9068c3373c43c214e22f7fee2c03608b6a65402202e89fa34abddcc559aa58cf8083b35cb23c24f1cc704f9b57b693a38442a15fe:922c64590222798bb761d5b6d8e72950

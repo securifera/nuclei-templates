@@ -8,9 +8,13 @@ info:
     - https://www.cisco.com/c/en_uk/products/unified-communications/unified-communications-manager-callmanager/index.html
   description: |
     Cisco Unified CM Console panel was discovered.
+  classification:
+    cpe: cpe:2.3:a:cisco:cisco:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: html:"/ccmadmin/"
+    vendor: cisco
+    product: cisco
   tags: cisco,ciscocm,panel,login,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cisco
+        cpe: cpe:2.3:a:cisco:cisco:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Cisco Unified CM Console"
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022042d8561b858d7362996607618af62e9a3de64190bb6127a908d28897e9c13d21022100b24c3e6b056f5b049d5122ebd9a79481a5196368d42c36151b84dd3b365c8604:922c64590222798bb761d5b6d8e72950

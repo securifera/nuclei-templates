@@ -7,10 +7,14 @@ info:
   description: Parameters.yml was discovered.
   reference:
     - https://www.exploit-db.com/ghdb/5986
+  classification:
+    cpe: cpe:2.3:a:parameters-config:parameters-config:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: html:"parameters.yml"
+    vendor: parameters-config
+    product: parameters-config
   tags: exposure,cloud,devops,vuln
 
 http:
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: parameters-config
+        cpe: cpe:2.3:a:parameters-config:parameters-config:*:*:*:*:*:*:*:*
         words:
           - 'parameters:'
           - 'database_user'
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100aa580c5c6bb749a449210584d12c7a959a8625df30f232f228995f026033d45a022100e787080e7f62557ca1160d186f15e76eaef5e42de4958dfa42228ed1d23bcba0:922c64590222798bb761d5b6d8e72950

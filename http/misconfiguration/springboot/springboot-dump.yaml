@@ -5,8 +5,12 @@ info:
   author: pussycat0x
   severity: low
   description: Performs a thread dump
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: springboot,exposure,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "threadName"
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100897d2df35130ed4cc6eae48b12e5713c229d82edcc50c708977119ab7d159da502206d40195e6c9f5dbefa61990d0e17fd5a2651f2b2af6a077df26400443e7ddc86:922c64590222798bb761d5b6d8e72950

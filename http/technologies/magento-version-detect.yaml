@@ -33,6 +33,8 @@ http:
     matchers-condition: or
     matchers:
       - type: regex
+        name: magento
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         regex:
           - '^Magento/.*$'
 

@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: inpost-for-woocommerce
+        cpe: cpe:2.3:a:inpost-for-woocommerce:inpost-for-woocommerce:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

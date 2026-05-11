@@ -37,6 +37,8 @@ http:
 
     matchers:
       - type: word
+        name: mcms
+        cpe: cpe:2.3:a:mingsoft:mcms:*:*:*:*:*:*:*:*
         words:
           - "mingsoft.net"
         internal: true
@@ -52,11 +54,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mcms-2
+        cpe: cpe:2.3:a:mingsoft:mcms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "><sVg/Onload=alert`document.domain`>"
 
       - type: word
+        name: mcms-3
+        cpe: cpe:2.3:a:mingsoft:mcms:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - text/html
@@ -64,4 +70,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100fd8eba93a09adcb96f4382ee81130eec15e2e624a87cce53368b3fc9b3ae65ba022100fdbd4f6f0fdd589143e1a514867867bd4842f7fc9595d25577a27edbfe839cb8:922c64590222798bb761d5b6d8e72950

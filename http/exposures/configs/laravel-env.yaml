@@ -10,11 +10,14 @@ info:
     - https://laravel.com/docs/master/configuration#environment-configuration
     - https://stackoverflow.com/questions/38331397/how-to-protect-env-file-in-laravel
   classification:
+    cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 22
+    vendor: laravel
+    product: laravel
   tags: config,exposure,laravel,vuln
 
 http:
@@ -49,6 +52,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: laravel
+        cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "(?mi)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD)="
@@ -56,10 +61,11 @@ http:
         condition: or
 
       - type: dsl
+        name: laravel-2
+        cpe: cpe:2.3:a:laravel:laravel:*:*:*:*:*:*:*:*
         dsl:
           - "!contains(tolower(content_type), 'text/html')"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201fe182bc5b716fb15cc168d7ca597178c6dd0bba60f826aae4f3490d6b566044022100f50021648bb38e51bdaff1a5d18e5f18edf95d280604b77da04d368e08fa9579:922c64590222798bb761d5b6d8e72950

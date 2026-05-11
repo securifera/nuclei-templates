@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/exploits/49853
   classification:
+    cpe: cpe:2.3:a:php:timeclock:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 1
+    vendor: php
+    product: timeclock
   tags: xss,php,timeclock,edb,intrusive,vuln
 
 http:
@@ -27,6 +30,8 @@ http:
           - 200
 
       - type: word
+        name: timeclock
+        cpe: cpe:2.3:a:php:timeclock:*:*:*:*:*:*:*:*
         words:
           - "<svg/onload=alert`{{randstr}}`>"
           - "PHP Timeclock Admin Login"
@@ -34,7 +39,8 @@ http:
         condition: and
 
       - type: word
+        name: timeclock-2
+        cpe: cpe:2.3:a:php:timeclock:*:*:*:*:*:*:*:*
         words:
           - "text/html"
         part: header
-# digest: 4a0a00473045022100cfb64c2a98c2aa8e3b3d30a35a9dd3e5224f757bf989c7fa43e8f7b3ad3a317c02206881c753c42664dd4242418aab6dcdc1b4b09bc25941d8742503864eabcccc08:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Eyeem user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:eyeem:eyeem:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: eyeem
+    product: eyeem
   tags: osint,osint-art,eyeem,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: eyeem
+        cpe: cpe:2.3:a:eyeem:eyeem:*:*:*:*:*:*:*:*
         part: body
         words:
           - "| EyeEm Photographer"
-# digest: 490a0046304402203c48209336df3738dbd13e5dc08f59289545251cbd9787b671106c155b826c1f022066c87f6cde14d4060042084cd46439ea31b6f327f85c7ed6734c2ba21a1b875a:922c64590222798bb761d5b6d8e72950

@@ -6,8 +6,12 @@ info:
   severity: info
   description: |
     This template searches for missing HTTP security headers. The impact of these missing headers can vary.
+  classification:
+    cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: headers
+    product: headers
   tags: misconfig,headers,generic,vuln
 
 http:
@@ -22,6 +26,7 @@ http:
     matchers:
       - type: dsl
         name: strict-transport-security
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)strict-transport-security', header)"
           - "status_code != 301 && status_code != 302"
@@ -29,6 +34,7 @@ http:
 
       - type: dsl
         name: content-security-policy
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)content-security-policy', header)"
           - "status_code != 301 && status_code != 302"
@@ -36,6 +42,7 @@ http:
 
       - type: dsl
         name: permissions-policy
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)permissions-policy', header)"
           - "status_code != 301 && status_code != 302"
@@ -43,6 +50,7 @@ http:
 
       - type: dsl
         name: x-frame-options
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)x-frame-options', header)"
           - "status_code != 301 && status_code != 302"
@@ -50,6 +58,7 @@ http:
 
       - type: dsl
         name: x-content-type-options
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)x-content-type-options', header)"
           - "status_code != 301 && status_code != 302"
@@ -57,6 +66,7 @@ http:
 
       - type: dsl
         name: x-permitted-cross-domain-policies
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)x-permitted-cross-domain-policies', header)"
           - "status_code != 301 && status_code != 302"
@@ -64,6 +74,7 @@ http:
 
       - type: dsl
         name: referrer-policy
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)referrer-policy', header)"
           - "status_code != 301 && status_code != 302"
@@ -71,6 +82,7 @@ http:
 
       - type: dsl
         name: clear-site-data
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)clear-site-data', header)"
           - "status_code != 301 && status_code != 302"
@@ -78,6 +90,7 @@ http:
 
       - type: dsl
         name: cross-origin-embedder-policy
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)cross-origin-embedder-policy', header)"
           - "status_code != 301 && status_code != 302"
@@ -85,6 +98,7 @@ http:
 
       - type: dsl
         name: cross-origin-opener-policy
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)cross-origin-opener-policy', header)"
           - "status_code != 301 && status_code != 302"
@@ -92,6 +106,7 @@ http:
 
       - type: dsl
         name: cross-origin-resource-policy
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)cross-origin-resource-policy', header)"
           - "status_code != 301 && status_code != 302"
@@ -99,6 +114,7 @@ http:
 
       - type: dsl
         name: missing-content-type
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "!regex('(?i)^content-type:', header)"
           - "status_code == 200"
@@ -106,9 +122,9 @@ http:
 
       - type: dsl
         name: content-type-charset-specification
+        cpe: cpe:2.3:a:headers:headers:*:*:*:*:*:*:*:*
         dsl:
           - "regex('(?i)^content-type:\\s*text/html', header)"
           - "!regex('(?i)^content-type:.*charset=', header)"
           - "status_code == 200"
         condition: and
-# digest: 4a0a0047304502210099a376d05d223e6185ca25188b34c5152f45d44d254e2fbcd8adbfde4158550c02207f5fe92bab031bde76e02f5dac32fac0f3417890ee490d5d104ed0267fdf2ddd:922c64590222798bb761d5b6d8e72950

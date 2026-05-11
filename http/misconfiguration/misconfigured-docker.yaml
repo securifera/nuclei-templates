@@ -7,8 +7,12 @@ info:
   description: A Docker container misconfiguration was discovered. The Docker daemon can listen for Docker Engine API requests via three different types of Socket - unix, tcp, and fd. With tcp enabled, the default setup provides un-encrypted and un-authenticated direct access to the Docker daemon. It is conventional to use port 2375 for un-encrypted, and port 2376 for encrypted communication with the daemon.
   reference:
     - https://madhuakula.com/content/attacking-and-auditing-docker-containers-using-opensource/attacking-docker-containers/misconfiguration.html
+  classification:
+    cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: docker
+    product: docker
   tags: misconfig,docker,unauth,devops,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: docker
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         words:
           - '"ParentId":'
           - '"Containers":'
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207ac26b4454ceed7bca3a78039b93d1788a3c00b6a81133872aeca1b863587a0a0220408d75907d2d7aae3a8dc3767a911adabad1e78258bf750e6def8e3e4a10b36d:922c64590222798bb761d5b6d8e72950

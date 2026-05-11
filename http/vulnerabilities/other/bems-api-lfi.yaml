@@ -9,11 +9,14 @@ info:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5657.php
     - https://packetstormsecurity.com/files/163702/
   classification:
+    cpe: cpe:2.3:a:bems-api:bems-api:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
+    vendor: bems-api
+    product: bems-api
   tags: lfi,packetstorm,vuln
 
 http:
@@ -24,10 +27,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: bems-api
+        cpe: cpe:2.3:a:bems-api:bems-api:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210088ee75aee1bd83c8ca63e6da159f3f092d15eb6f64849c244cda1b3b7a52ba27022100f91f1c57a43129fa9868dc6f851099d5b1e48019eaa8748af4cea658729840a1:922c64590222798bb761d5b6d8e72950

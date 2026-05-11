@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/jenaye/PMB
   classification:
+    cpe: cpe:2.3:a:sigb:pmb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
@@ -37,11 +38,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pmb
+        cpe: cpe:2.3:a:sigb:pmb:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<script>alert(1337)</script>'
 
       - type: word
+        name: pmb-2
+        cpe: cpe:2.3:a:sigb:pmb:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'PMB Group'
@@ -49,6 +54,8 @@ http:
         condition: or
 
       - type: word
+        name: pmb-3
+        cpe: cpe:2.3:a:sigb:pmb:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -56,4 +63,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100db372c6ad18e813581501bc4b66fea1eb41f0fd8431b0be08ebb6c7ce953839f022100d9cebbb183508c93350a596e9a1ae3b8e31109889dbc22ba7b4d789932684b8a:922c64590222798bb761d5b6d8e72950

@@ -27,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: netman_204_firmware
+        cpe: cpe:2.3:o:riello-ups:netman_204_firmware:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
 
       - type: word
+        name: netman_204_firmware-2
+        cpe: cpe:2.3:o:riello-ups:netman_204_firmware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/octet-stream"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a0b3dd5d6dfa7cbc05469e53038c6a6969166015b20de775febffe257586df310220440ff21fa8848d162af4c9b405ccaa42c6db763f5aa9fa25931e3e86389b54e4:922c64590222798bb761d5b6d8e72950

@@ -22,10 +22,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gocd
+        cpe: cpe:2.3:a:thoughtworks:gocd:*:*:*:*:*:*:*:*
         words:
           - '<title>Create a pipeline - Go</title>'
 
       - type: word
+        name: gocd-2
+        cpe: cpe:2.3:a:thoughtworks:gocd:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fa551d88f5efbd68b4573be0d417f5996e4e7c0ee85bd907849f5697a7eef30802205aad0b259a2ef1faced2b1bd4e2637638514a00c4587ab5640a33fee7966c918:922c64590222798bb761d5b6d8e72950

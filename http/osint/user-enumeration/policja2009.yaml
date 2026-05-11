@@ -6,11 +6,14 @@ info:
   severity: info
   description: Policja2009 user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:policja2009:policja2009:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: policja2009
+    product: policja2009
   tags: osint,osint-misc,policja2009,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: policja2009
+        cpe: cpe:2.3:a:policja2009:policja2009:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Znaleziono"
-# digest: 4a0a00473045022100d8b545c43491debce361c71d48ddd2c50e3c16a1bb67cf500082654f64d76b38022009b1d6e9441b93f36f573104d5d98d3d64cd76db5d9e0f194537ef142da60988:922c64590222798bb761d5b6d8e72950

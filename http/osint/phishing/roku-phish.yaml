@@ -8,8 +8,12 @@ info:
     A Roku phishing website was detected
   reference:
     - https://roku.com
+  classification:
+    cpe: cpe:2.3:a:roku:roku:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: roku
+    product: roku
   tags: phishing,roku,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: roku
+        cpe: cpe:2.3:a:roku:roku:*:*:*:*:*:*:*:*
         words:
           - '<title>Roku: Streaming TV Players, Streaming Media Players &amp; Smart TVs'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: roku-2
+        cpe: cpe:2.3:a:roku:roku:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"roku.com")'
-# digest: 4a0a00473045022100a4b020859fee6a732a41f9621183bddd1fff271e88eb74bdeec302b5b6c1e5990220046d5b633c807d740251c5e9a80a7339a349569ce525e8760e0c4edb41afc26c:922c64590222798bb761d5b6d8e72950

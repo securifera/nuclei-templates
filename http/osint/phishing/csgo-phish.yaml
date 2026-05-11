@@ -8,8 +8,12 @@ info:
     A CS:GO phishing website was detected
   reference:
     - https://counter-strike.net
+  classification:
+    cpe: cpe:2.3:a:csgo:csgo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: csgo
+    product: csgo
   tags: phishing,csgo,steam,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: csgo
+        cpe: cpe:2.3:a:csgo:csgo:*:*:*:*:*:*:*:*
         words:
           - 'VALVE_PUBLIC_PATH = "https:\/\/www.counter-strike.net\/\/public\/"'
           - 'https://www.counter-strike.net/public/'
@@ -32,7 +38,8 @@ http:
           - 200
 
       - type: dsl
+        name: csgo-2
+        cpe: cpe:2.3:a:csgo:csgo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"counter-strike.net")'
           - '!contains(host,"steampowered.com")'
-# digest: 4a0a0047304502200e1b33577c0f3502977c3a6067719bca945b780be6da9d2ed0fcc3dc8879ad40022100ec8dc99d3f4407cb0823dd80c1398b68e0633d0ec529fb971c5cc117a40a100c:922c64590222798bb761d5b6d8e72950

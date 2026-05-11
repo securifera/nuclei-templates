@@ -10,10 +10,13 @@ info:
     - https://www.exploit-db.com/exploits/29604
     - https://github.com/OWASP/vbscan/
   classification:
+    cpe: cpe:2.3:a:arcade:php:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
+    vendor: arcade
+    product: php
   tags: arcade,php,vbulletin,sqli,vuln
 
 http:
@@ -26,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: php
+        cpe: cpe:2.3:a:arcade:php:*:*:*:*:*:*:*:*
         part: body
         words:
           - "mySQL query error"
@@ -33,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100abc2db9a695e350524673b69d7ddcf734952048ca336424e2992014b17fe9c09022100e9202bfdc3e85b7ebbaf6bd3f79ac062f6f77be0bf781c53af6bd23f15b25da5:922c64590222798bb761d5b6d8e72950

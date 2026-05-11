@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: monstra_cms
+        cpe: cpe:2.3:a:monstra:monstra_cms:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'content="Powered by Monstra'

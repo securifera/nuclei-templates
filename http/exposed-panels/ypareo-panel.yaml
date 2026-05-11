@@ -9,10 +9,14 @@ info:
   reference:
     - https://www.ypareo.com/legacy
     - https://www.ymag.fr/
+  classification:
+    cpe: cpe:2.3:a:ypareo:ypareo:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: http.html:"ypareo"
+    vendor: ypareo
+    product: ypareo
   tags: panel,ymag,login,detect,discovery
 
 http:
@@ -27,6 +31,8 @@ http:
 
     matchers:
       - type: dsl
+        name: ypareo
+        cpe: cpe:2.3:a:ypareo:ypareo:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "<title>ypareo", "<title>NetYParéo")'
@@ -38,4 +44,3 @@ http:
         group: 1
         regex:
           - 'script.js\?v=([0-9.]+)'
-# digest: 4a0a004730450221008c680633d1b68b6216b0c848719eea17b6837cdcf4156344d1fde9dc305426dc02200eb838ec85fb14d49f9b6558c90fb25a5c9dc368ea104e4c853819d7de6c4f96:922c64590222798bb761d5b6d8e72950

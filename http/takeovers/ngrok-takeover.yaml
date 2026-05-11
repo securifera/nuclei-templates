@@ -7,8 +7,12 @@ info:
   description: Ngrok takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/92
+  classification:
+    cpe: cpe:2.3:a:ngrok:ngrok:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ngrok
+    product: ngrok
   tags: takeover,ngrok,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: ngrok
+        cpe: cpe:2.3:a:ngrok:ngrok:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: ngrok-2
+        cpe: cpe:2.3:a:ngrok:ngrok:*:*:*:*:*:*:*:*
         words:
           - ngrok.io not found
           - Tunnel *.ngrok.io not found
@@ -31,4 +39,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100af7e211c623e78f99a965349bc02aa60eef0c7418f72debd7c3cffda3aff0ee30220349c1503f89c6626b6e87f9cede476e5cd7403219f4dc2f43777a6f731734e12:922c64590222798bb761d5b6d8e72950

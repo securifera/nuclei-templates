@@ -7,8 +7,12 @@ info:
   description: Pyramid Debug Toolbar provides a debug toolbar useful while you are developing your Pyramid application.
   reference:
     - https://github.com/Pylons/pyramid_debugtoolbar
+  classification:
+    cpe: cpe:2.3:a:pyramid:pyramid:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pyramid
+    product: pyramid
   tags: pyramid,logs,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pyramid
+        cpe: cpe:2.3:a:pyramid:pyramid:*:*:*:*:*:*:*:*
         words:
           - "<title>Pyramid Debug Toolbar</title>"
           - "Pyramid DebugToolbar</a>"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f0c5bde3bbca40cc322c7d3d64a4f56f462fed5cc70ff8e81c4de661110aa1e8022033af2a8a46e8ea333e350fe7cbf77df2987c3f0ebbeadb34e5500b025c6022c3:922c64590222798bb761d5b6d8e72950

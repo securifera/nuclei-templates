@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nport_6450-t_firmware
+        cpe: cpe:2.3:o:moxa:nport_6450-t_firmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - "NPort Web Console"
@@ -34,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d5f5a75fc7596ae0d4c7ec3560b436f7f56a6730112895a9eeb133726c4daa4c0220193904b0ec94fd0cf37479aec58b5fef91208a013645b7e0f0c3c67f6307a4c5:922c64590222798bb761d5b6d8e72950

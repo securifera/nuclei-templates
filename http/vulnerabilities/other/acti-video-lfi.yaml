@@ -28,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: camera_firmware
+        cpe: cpe:2.3:o:acti:camera_firmware:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
 
       - type: word
+        name: camera_firmware-2
+        cpe: cpe:2.3:o:acti:camera_firmware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/octet-stream"
@@ -40,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009a2cd80d21fb10071dea4ae88401c96bb21468f06970461bc282bd7cc7d3a69502210094a33b3692ca9ca93a59a1a6baa81aeed142f281195655d0f736a3d1b4d24ced:922c64590222798bb761d5b6d8e72950

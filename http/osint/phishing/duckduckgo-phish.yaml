@@ -8,8 +8,12 @@ info:
     A duckduckgo phishing website was detected
   reference:
     - https://duckduckgo.com
+  classification:
+    cpe: cpe:2.3:a:duckduckgo:duckduckgo:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: duckduckgo
+    product: duckduckgo
   tags: phishing,duckduckgo,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: duckduckgo
+        cpe: cpe:2.3:a:duckduckgo:duckduckgo:*:*:*:*:*:*:*:*
         words:
           - 'DuckDuckGo — Privacy, simplified.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: duckduckgo-2
+        cpe: cpe:2.3:a:duckduckgo:duckduckgo:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"duckduckgo.com")'
-# digest: 4a0a00473045022100f2e7b31fa827f15a01e3e3a870332f347462450244151e01d0e84c80dbfdf38c022064c4e1a7e01f27d34e4bd484d0150d4c726b5c378ce28a15755cf858cfe6cfe8:922c64590222798bb761d5b6d8e72950

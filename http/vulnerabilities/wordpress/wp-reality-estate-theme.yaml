@@ -11,6 +11,7 @@ info:
     - https://wpscan.com/vulnerability/10064
     - https://www.exploitalert.com/view-details.html?id=34777
   classification:
+    cpe: cpe:2.3:a:reality:reality:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-79
@@ -19,6 +20,8 @@ info:
     max-request: 1
     publicwww-query: /wp-content/themes/reality/
     google-query: inurl:"/wp-content/themes/reality/"
+    vendor: reality
+    product: reality
   tags: wpscan,xss,wordpress,wp,wp-theme,reality,estate,vuln
 
 http:
@@ -28,9 +31,10 @@ http:
 
     matchers:
       - type: dsl
+        name: reality
+        cpe: cpe:2.3:a:reality:reality:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains_all(body, "reality", "estate", "><img src=x onerror=(alert)(document.domain)")'
         condition: and
-# digest: 4b0a004830460221009b2261dc39719c8ac9dfff4e15b588d0a26c38ad636adb20f2a8151b4c83ee89022100c970fc1ee83fdd386cd571b0c9129e41e3687026967dfe744ce41ba346424a56:922c64590222798bb761d5b6d8e72950

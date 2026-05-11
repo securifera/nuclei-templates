@@ -7,10 +7,14 @@ info:
   description: Opinio login panel was detected.
   reference:
     - https://www.objectplanet.com/opinio/
+  classification:
+    cpe: cpe:2.3:a:opinio:opinio:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.title:"Opinio"
+    vendor: opinio
+    product: opinio
   tags: panel,opinio,login,detect,discovery
 
 http:
@@ -24,6 +28,8 @@ http:
 
     matchers:
       - type: dsl
+        name: opinio
+        cpe: cpe:2.3:a:opinio:opinio:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_2 == 200'
           - 'contains_any(body_2, "<title>Opinio", ">Opinio ")'
@@ -35,4 +41,3 @@ http:
         group: 1
         regex:
           - 'Opinio\s+([0-9.]+)'
-# digest: 490a00463044022048cc84b02890476b78552b5cf14a93949bb132fdcd8410874ac6b978341a671202206abc7ed979111e356216629719c2883c5bca2a30946b0014a6f872d09ccb4e09:922c64590222798bb761d5b6d8e72950

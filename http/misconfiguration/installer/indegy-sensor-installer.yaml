@@ -5,10 +5,14 @@ info:
   author: ritikchaddha
   severity: high
   description: Indegy Sensor is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:indegy:sensor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Setup Wizard" http.favicon.hash:-1851491385
+    vendor: indegy
+    product: sensor
   tags: misconfig,indegy,sensor,installer,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sensor
+        cpe: cpe:2.3:a:indegy:sensor:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Setup Wizard</title>'
@@ -26,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022006aa6621aa1fa1237ed462b8f154a5422fff197e3e5b75b40a283ca7638075100220078b9285757c2918dd988523ae36c3dabf695010b914aa1216431c81808aa0df:922c64590222798bb761d5b6d8e72950

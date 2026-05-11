@@ -8,8 +8,12 @@ info:
     A CVS phishing website was detected
   reference:
     - https://cvs.com
+  classification:
+    cpe: cpe:2.3:a:cvs:cvs:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: cvs
+    product: cvs
   tags: phishing,cvs,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cvs
+        cpe: cpe:2.3:a:cvs:cvs:*:*:*:*:*:*:*:*
         words:
           - 'CVS'
           - 'Refill and transfer prescriptions online or find a CVS Pharmacy near you. Shop online, see ExtraCare deals, find MinuteClinic locations and more.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: cvs-2
+        cpe: cpe:2.3:a:cvs:cvs:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"cvs.com")'
-# digest: 4a0a00473045022100b9214f688d1fda6fe65764277608835342d863f074094abdf4a3a12638c0e0f702201f4c5a40a6cb3db9da7687532cd4eb0463bff602f6c782239228d25c19f62501:922c64590222798bb761d5b6d8e72950

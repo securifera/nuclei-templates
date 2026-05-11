@@ -6,11 +6,14 @@ info:
   severity: info
   description: SFD user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:sfd:sfd:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: sfd
+    product: sfd
   tags: osint,osint-health,sfd,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: sfd
+        cpe: cpe:2.3:a:sfd:sfd:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Tematy użytkownika"
-# digest: 4a0a00473045022100ab1b1178dec3679b9cfd83779509b32a6e2c29a7824abc3b2869c75cdc70192002202c03865433b69990bb3b031c1727af75d95a34b165783de62aff20ec2e2b349d:922c64590222798bb761d5b6d8e72950

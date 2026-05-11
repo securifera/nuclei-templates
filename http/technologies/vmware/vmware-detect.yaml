@@ -8,8 +8,12 @@ info:
   reference:
     - https://www.pwndefend.com/2021/09/23/exposed-vmware-vcenter-servers-around-the-world-cve-2021-22005/
     - https://svn.nmap.org/nmap/scripts/vmware-version.nse
+  classification:
+    cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: vmware
+    product: vmware
   tags: tech,vcenter,vmware,discovery
 
 http:
@@ -37,6 +41,8 @@ http:
           - 200
 
       - type: word
+        name: vmware
+        cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ha-folder-root'
@@ -44,6 +50,8 @@ http:
         condition: or
 
       - type: word
+        name: vmware-2
+        cpe: cpe:2.3:a:vmware:vmware:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/xml"
@@ -59,4 +67,3 @@ http:
           - "<osType>(.*?)</osType>"
           - "<productLineId>(.*?)</productLineId>"
           - "<apiType>(.*?)</apiType>"
-# digest: 4a0a00473045022100d6b26246fbf633b401cc425c45d4609e6cacab38a69104cfc13601cf5ad028c4022061ed0e4ba449622a089167e2a0a3cf2143abdb998c60488845c0406b2f99e7d2:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Yahoo! JAPAN Auction user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:yahoo-japan-auction:yahoo-japan-auction:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: yahoo-japan-auction
+    product: yahoo-japan-auction
   tags: osint,osint-shopping,yahoo-japan-auction,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: yahoo-japan-auction
+        cpe: cpe:2.3:a:yahoo-japan-auction:yahoo-japan-auction:*:*:*:*:*:*:*:*
         part: body
         words:
           - "出品者"
-# digest: 4a0a00473045022064c502bc4da9246777287c666cd5bba92dc614872a415b1724773a6e1f23a37d022100dcc344fe5b418a79e3a50dd5c65cbe0f7289352a1a7d14472f4d13b111030b64:922c64590222798bb761d5b6d8e72950

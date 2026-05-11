@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://cloud.google.com/run/docs/overview/what-is-cloud-run
+  classification:
+    cpe: cpe:2.3:a:google:cloud_run:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Congratulations | Cloud Run"
+    vendor: google
+    product: cloud_run
   tags: tech,cloudrun,google,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cloud_run
+        cpe: cpe:2.3:a:google:cloud_run:*:*:*:*:*:*:*:*
         words:
           - 'Congratulations | Cloud Run'
           - 'alt="A group celebrating'
@@ -28,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210094c1451c9f5c2999ef568a8e5adce651c22770de2be5f519dcaf61684aa91770022001d9c503e4922787cba4a4c46943604f319488acbe07b08fa9e2facbaa83b989:922c64590222798bb761d5b6d8e72950

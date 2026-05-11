@@ -6,9 +6,13 @@ info:
   severity: info
   description: |
     TecCom TecConnect OpenMessaging webservice was detected.
+  classification:
+    cpe: cpe:2.3:a:teccom:tecconnect:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     shodan-query: html:"www.teccom-eu.net/wsdl"
+    vendor: teccom
+    product: tecconnect
   tags: tech,teccom,tecconnect,eol,wsdl,discovery
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tecconnect
+        cpe: cpe:2.3:a:teccom:tecconnect:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ProcessRequestResponse'
@@ -32,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: tecconnect-2
+        cpe: cpe:2.3:a:teccom:tecconnect:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'text/xml'
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022021136d2cfb3217689309a780f628ba1e67502f8dda474e331608ac0dbc4babd6022016012a24d7a94ccb3cac9715926681196c2418e48f9833602404913fb0035cb0:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Hotels.com phishing website was detected
   reference:
     - https://hotels.com
+  classification:
+    cpe: cpe:2.3:a:hotels:hotels:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: hotels
+    product: hotels
   tags: phishing,hotels,travel,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hotels
+        cpe: cpe:2.3:a:hotels:hotels:*:*:*:*:*:*:*:*
         words:
           - 'Hotels.com'
           - '<title>Hotels.com - Deals &amp; Discounts for Hotel Reservations from Luxury Hotels to Budget Accommodations'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: hotels-2
+        cpe: cpe:2.3:a:hotels:hotels:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"hotels.com")'
-# digest: 4a0a00473045022100e7d2b443f370a2ea045153139acff4b1f77f21af6b93e1080b25d574517aa93a022065237f642bf87f00c66281fa29a561e9fb71baec4d1e9502a570835474b31cc4:922c64590222798bb761d5b6d8e72950

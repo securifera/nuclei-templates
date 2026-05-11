@@ -6,10 +6,13 @@ info:
   severity: info
   description: Sitecore admin login panel was detected.
   classification:
+    cpe: cpe:2.3:a:sitecore:sitecore:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: sitecore
+    product: sitecore
   tags: panel,sitecore,login,discovery
 
 http:
@@ -24,7 +27,8 @@ http:
           - 200
 
       - type: word
+        name: sitecore
+        cpe: cpe:2.3:a:sitecore:sitecore:*:*:*:*:*:*:*:*
         words:
           - "Sitecore Login"
         part: body
-# digest: 490a0046304402203e6612e8e32daed5338f021ceb5b33d7a8cfbf8acf49ca40f78fc2806cde3e50022015aa69193ee155d063af0b48bd1f8019893c03522486928e99602fc781f60897:922c64590222798bb761d5b6d8e72950

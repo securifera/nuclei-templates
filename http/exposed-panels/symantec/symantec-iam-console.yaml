@@ -24,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: symantec_identity_manager
+        cpe: cpe:2.3:a:broadcom:symantec_identity_manager:*:*:*:*:*:*:*:*
         words:
           - "<title>Management Console</title>"
         part: body
@@ -31,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009891d675c9005dd201ab502949a049900c9427857de3b70b27235d0da5d471b4022100d95f67fb4dc02c8ee5e253b5f8597b3389c55084283dafa625a6457902aea69e:922c64590222798bb761d5b6d8e72950

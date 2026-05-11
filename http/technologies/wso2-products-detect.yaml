@@ -5,8 +5,12 @@ info:
   author: righettod
   severity: info
   description: Try to detect the presence of a WSO2 products instance via the version endpoint
+  classification:
+    cpe: cpe:2.3:a:wso2:wso2:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wso2
+    product: wso2
   tags: tech,wso2,discovery
 
 http:
@@ -17,10 +21,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wso2
+        cpe: cpe:2.3:a:wso2:wso2:*:*:*:*:*:*:*:*
         words:
           - "version.services.core.carbon.wso2.org"
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201af8a8158a59d6951259470830816c46ceb3cf871590a8f51ef30a67d6018ae8022100aa26ddeed83c9f191c4e8ada801ec0cfc3c4fa755002b7d098ce933486d81cc6:922c64590222798bb761d5b6d8e72950

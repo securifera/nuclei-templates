@@ -8,8 +8,12 @@ info:
     A Pep Boys phishing website was detected
   reference:
     - https://pepboys.com
+  classification:
+    cpe: cpe:2.3:a:pepboys:pepboys:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pepboys
+    product: pepboys
   tags: phishing,pepboys,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pepboys
+        cpe: cpe:2.3:a:pepboys:pepboys:*:*:*:*:*:*:*:*
         words:
           - "px-captcha"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: pepboys-2
+        cpe: cpe:2.3:a:pepboys:pepboys:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"pepboys.com")'
-# digest: 4a0a004730450220430d887c82a9043295edfdb20cebbc2b41a12251142825e7c3704fb0b0f04471022100d7e5abc609723612326ce13e55665ab3d0f35f859bb8472802f194a525548135:922c64590222798bb761d5b6d8e72950

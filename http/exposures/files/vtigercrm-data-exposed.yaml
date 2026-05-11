@@ -8,10 +8,14 @@ info:
   reference:
     - https://github.com/vtiger-crm/vtigercrm
     - https://code.vtiger.com/vtiger/vtigercrm
+  classification:
+    cpe: cpe:2.3:a:vtiger:vtiger:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
     shodan-query: html:"Powered by vtiger CRM"
+    vendor: vtiger
+    product: vtiger
   tags: vtiger,exposure,vtiger-crm,vuln
 
 flow: http(1) && http(2)
@@ -24,6 +28,8 @@ http:
 
     matchers:
       - type: dsl
+        name: vtiger
+        cpe: cpe:2.3:a:vtiger:vtiger:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "<title>vTiger")'
           - 'status_code == 200'
@@ -46,8 +52,9 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: vtiger-2
+        cpe: cpe:2.3:a:vtiger:vtiger:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "<title>Index of")'
           - 'status_code == 200'
         condition: and
-# digest: 4b0a00483046022100e511253a17a39b536ab9c013a7c5d709042b61bfb338bedc26785c75279b895a022100912efe4f2aa5709ea90e4abb398e8f790c2c662410f79efb91196fa169115e5a:922c64590222798bb761d5b6d8e72950

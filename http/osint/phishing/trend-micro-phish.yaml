@@ -8,8 +8,12 @@ info:
     A trend micro phishing website was detected
   reference:
     - https://trendmicro.com
+  classification:
+    cpe: cpe:2.3:a:trend-micro:trend-micro:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: trend-micro
+    product: trend-micro
   tags: phishing,trend-micro,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: trend-micro
+        cpe: cpe:2.3:a:trend-micro:trend-micro:*:*:*:*:*:*:*:*
         words:
           - 'Trend Micro (UK) | Internet Security Antivirus - PC &amp; Mac'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: trend-micro-2
+        cpe: cpe:2.3:a:trend-micro:trend-micro:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"trendmicro.com")'
-# digest: 4a0a004730450220219943c0c5ae1ab5e9e47b54d31caf28441566f7de10e43a103fcff683771435022100b55c12ed80e1949e8afac3376d9841848c5be7a7a435da9a9c5804348ee1a054:922c64590222798bb761d5b6d8e72950

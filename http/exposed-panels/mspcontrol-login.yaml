@@ -9,12 +9,15 @@ info:
     - https://mspcontrol.org/
     - https://mspcontrol.org/downloads/
   classification:
+    cpe: cpe:2.3:a:mspcontrol:mspcontrol:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"MSPControl - Sign In"
     google-query: intitle:"MSPControl - Sign In"
+    vendor: mspcontrol
+    product: mspcontrol
   tags: panel,mspcontrol,discovery
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mspcontrol
+        cpe: cpe:2.3:a:mspcontrol:mspcontrol:*:*:*:*:*:*:*:*
         part: body
         words:
           - "MSPControl - Sign In"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204c3b1bae42f807d3e3024d0d12e622eb9c5b57d0f51e4fd3041263097061d22802206de9c894c6242228ba097ce3fe69796bb89bc2f248569ee57d09df404069967e:922c64590222798bb761d5b6d8e72950

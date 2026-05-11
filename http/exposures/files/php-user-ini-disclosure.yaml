@@ -7,8 +7,12 @@ info:
   description: PHP user.ini file is exposed.
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/php-user-ini-disclosure.json
+  classification:
+    cpe: cpe:2.3:a:php-user-ini:php-user-ini:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: php-user-ini
+    product: php-user-ini
   tags: exposure,config,files,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: php-user-ini
+        cpe: cpe:2.3:a:php-user-ini:php-user-ini:*:*:*:*:*:*:*:*
         words:
           - "assert"
           - "highlight"
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100cfd532d40ffe425d2e32e330f183a7262f3743440fa2a9d9e7bcdac04cdf9801022070d29983da005a380a48ab1e3ae8233183a98aa1962cca24dd0975cc9cfeae91:922c64590222798bb761d5b6d8e72950

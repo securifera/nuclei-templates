@@ -4,9 +4,13 @@ info:
   name: hanwang-detect
   author: ffffffff0x
   severity: info
+  classification:
+    cpe: cpe:2.3:a:hanwang:hanwang:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     fofa-query: 汉王人脸考勤管理系统
+    vendor: hanwang
+    product: hanwang
   tags: hanwang,tech,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: hanwang
+        cpe: cpe:2.3:a:hanwang:hanwang:*:*:*:*:*:*:*:*
         words:
           - "汉王人脸考勤管理系统"
         part: body
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022005632268f53171a4d980c04b6d2b566fd403184b5b73a18004f21d1cb816b3d902203d8e81968eb6c004e4775b3854fd23e8f20c58357131209c213f45f412a67333:922c64590222798bb761d5b6d8e72950

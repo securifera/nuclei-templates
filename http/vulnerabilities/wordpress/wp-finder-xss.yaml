@@ -8,11 +8,14 @@ info:
   reference:
     - https://packetstormsecurity.com/files/115902/WordPress-Finder-Cross-Site-Scripting.html
   classification:
+    cpe: cpe:2.3:a:wp-finder:wp-finder:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 2
+    vendor: wp-finder
+    product: wp-finder
   tags: xss,wp-plugin,packetstorm,wordpress,vuln
 
 flow: http(1) && http(2)
@@ -25,6 +28,8 @@ http:
 
     matchers:
       - type: word
+        name: wp-finder
+        cpe: cpe:2.3:a:wp-finder:wp-finder:*:*:*:*:*:*:*:*
         internal: true
         words:
           - '/wp-content/plugins/finder/'
@@ -36,11 +41,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-finder-2
+        cpe: cpe:2.3:a:wp-finder:wp-finder:*:*:*:*:*:*:*:*
         words:
           - "</script><script>alert(document.domain)</script>"
         part: body
 
       - type: word
+        name: wp-finder-3
+        cpe: cpe:2.3:a:wp-finder:wp-finder:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -48,4 +57,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210093c6d1f0495c4d1b9b3a294b468418f4b1650492006300d1785383f76c3794f80221009487ef2251e7ce177218beda7b8a8bb22caf73f59481bead18334b01c37a45eb:922c64590222798bb761d5b6d8e72950

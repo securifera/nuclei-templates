@@ -7,8 +7,12 @@ info:
   description: Readme.io takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/41
+  classification:
+    cpe: cpe:2.3:a:readme:readme:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: readme
+    product: readme
   tags: takeover,readme,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: readme
+        cpe: cpe:2.3:a:readme:readme:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: readme-2
+        cpe: cpe:2.3:a:readme:readme:*:*:*:*:*:*:*:*
         words:
           - 'Project doesnt exist... yet!'
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100b6ee41c320903da131ffba910ea6e79d6e7ec1158a2b25fb82a9a09b911d290402206b289c03e6b770bdda74417f58db4192d5f958df938893d0104a3185e84c2acb:922c64590222798bb761d5b6d8e72950

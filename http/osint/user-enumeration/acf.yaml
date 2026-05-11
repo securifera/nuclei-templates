@@ -6,11 +6,14 @@ info:
   severity: info
   description: ACF user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:acf:acf:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: acf
+    product: acf
   tags: osint,osint-coding,acf,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: acf
+        cpe: cpe:2.3:a:acf:acf:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>ACF Support"
-# digest: 490a0046304402203b3890a2bf97a155d74f492391b5e7e0959507b342bc1aefbcc853ca8ec1ef4402201d307bc7f19b3928716b6a09f2de533aca13212bcf6890cc85a7c5cddbc16a5b:922c64590222798bb761d5b6d8e72950

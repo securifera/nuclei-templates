@@ -10,6 +10,7 @@ info:
     - https://www.polycom.com/products-services/hd-telepresence-video-conferencing.html
     - https://support.polycom.com/content/support/north-america/usa/en/support/video.html
   classification:
+    cpe: cpe:2.3:a:polycom:polycom:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5
     cwe-id: CWE-200
@@ -18,6 +19,8 @@ info:
     max-request: 1
     shodan-query: http.title:"Polycom HDX"
     fofa-query: title="Polycom" && body="HDX"
+    vendor: polycom
+    product: polycom
   tags: polycom,hdx,iot,exposure,video-conferencing
 
 http:
@@ -27,8 +30,9 @@ http:
 
     matchers:
       - type: dsl
+        name: polycom
+        cpe: cpe:2.3:a:polycom:polycom:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Polycom", "u_keepalive.htm", "u_status.xml", "contentFrame")'
         condition: and
-# digest: 4a0a0047304502201d8b7cb20edb987dac93cbba7a58994d099561d40685dd25d3e9932d9424a3ae022100810f6f3a4dff59ec6f36c388cf0502975d2cdc4134e3254e31a9bf9b1033c96b:922c64590222798bb761d5b6d8e72950

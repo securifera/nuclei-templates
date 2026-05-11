@@ -9,9 +9,13 @@ info:
   reference:
     - https://owasp.org/www-project-secure-headers/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+  classification:
+    cpe: cpe:2.3:a:hsts:hsts:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: hsts
+    product: hsts
   tags: misconfig,headers,hsts
 
 http:
@@ -24,6 +28,8 @@ http:
 
     matchers:
       - type: regex
+        name: hsts
+        cpe: cpe:2.3:a:hsts:hsts:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?i)strict-transport-security:\s*max-age=([0-9]{1,7}|[12][0-9]{7}|30[0-9]{6}|31[0-4][0-9]{5}|315[0-2][0-9]{4}|3153[0-5][0-9]{3})\b'
@@ -35,4 +41,3 @@ http:
         group: 1
         regex:
           - "(?i)Strict-Transport-Security:\\s*([^\\r\\n]+)"
-# digest: 490a00463044022042e8b7ac5b4c1c3b15d455441286fdee0d22470e332ddd7ed3d25347e913059b02200732a1f4dadd18c81f3051dfeb58a58c119d4e9165e16445cdd43f1800516bac:922c64590222798bb761d5b6d8e72950

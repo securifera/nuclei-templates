@@ -9,6 +9,7 @@ info:
   reference:
     - https://huntr.com/bounties/936ef084-45e1-4dc5-a419-bca071189565
   classification:
+    cpe: cpe:2.3:a:gradio_app:gradio:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22,CWE-73
@@ -37,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gradio
+        cpe: cpe:2.3:a:gradio_app:gradio:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'url":'
@@ -46,6 +49,8 @@ http:
         condition: and
 
       - type: word
+        name: gradio-2
+        cpe: cpe:2.3:a:gradio_app:gradio:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - application/json
@@ -53,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100869e09759e1ba5f3e9598e980905e4a17043f7ce8dc5ba7d4df2bfc23f6f098a022100abc5bd886b3ebdc0fb8f90e72c026d4bbaccc281ec8b8089fe1879c809f71a01:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Deutsche Bank phishing website was detected
   reference:
     - https://db.com
+  classification:
+    cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank
+    product: bank
   tags: phishing,deutsche-bank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         words:
           - 'Deutsche Bank'
           - "Discover Deutsche Bank, one of the world’s leading financial services providers. News and Information about the bank and its products"
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-2
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"db.com")'
-# digest: 4a0a004730450220466201c1ce4e4c80081588db509e50d71dbf58d29f32947e62c000608bc67b78022100b49345e47338f7a1c43d03a100fe27f3198cfa99eb92efd84123e5863fac8fd6:922c64590222798bb761d5b6d8e72950

@@ -9,6 +9,7 @@ info:
   reference:
     - https://discuss.elastic.co/t/apache-log4j2-remote-code-execution-rce-vulnerability-cve-2021-44228-esa-2021-31/291476
   classification:
+    cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -17,6 +18,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"F-Secure Policy Manager"
+    vendor: log4j
+    product: log4j
   tags: cve,cve2021,rce,jndi,log4j,fsecure,oast,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -33,11 +36,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: log4j
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: log4j-2
+        cpe: cpe:2.3:a:log4j:log4j:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -58,4 +65,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 490a00463044022055fb92fff323da0d79f3ab3247690b2dbc59391106593e19632ee8e5000e3cde02204b90b0b4ec5789033f95011f3bdb886769c67cdf60f079fa6a2460c929894119:922c64590222798bb761d5b6d8e72950

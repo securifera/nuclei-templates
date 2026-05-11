@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects Windows Remote Management (WinRM) by checking HTTP response headers on ports 5985 (HTTP) and 5986 (HTTPS).
+  classification:
+    cpe: cpe:2.3:a:microsoft:windows_remote_management:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: product:"WinRM"
+    vendor: microsoft
+    product: windows_remote_management
   tags: network,winrm,windows,discovery
 
 http:
@@ -24,14 +28,17 @@ http:
           - 401
 
       - type: regex
+        name: windows_remote_management
+        cpe: cpe:2.3:a:microsoft:windows_remote_management:*:*:*:*:*:*:*:*
         part: header
         regex:
           - 'Microsoft-HTTPAPI\/[0-9\.]+'
 
       - type: word
+        name: windows_remote_management-2
+        cpe: cpe:2.3:a:microsoft:windows_remote_management:*:*:*:*:*:*:*:*
         part: header
         words:
           - "Www-Authenticate: NTLM"
           - "Www-Authenticate: Negotiate"
         condition: or
-# digest: 4a0a00473045022056692946082ce6e6d1e838106b03143dbb822f31b3c2114cc6a06775093abc140221008ac3d359d78e8e1c60dff6650ab7cbbb61ce372e63d8c11bd737fb4faf2d36d1:922c64590222798bb761d5b6d8e72950

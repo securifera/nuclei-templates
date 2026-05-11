@@ -9,9 +9,12 @@ info:
   reference:
     - https://www.dell.com/support/kbdoc/en-us/000177787/how-to-change-the-default-login-password-of-the-idrac-9
   classification:
+    cpe: cpe:2.3:a:idrac:idrac:*:*:*:*:*:*:*:*
     cwe-id: cwe-798
   metadata:
     max-request: 1
+    vendor: idrac
+    product: idrac
   tags: dell,idrac,default-login,vuln
 
 http:
@@ -33,6 +36,7 @@ http:
     matchers:
       - type: regex
         name: authresult
+        cpe: cpe:2.3:a:idrac:idrac:*:*:*:*:*:*:*:*
         regex:
           - '"authResult"\s*:\s*0'
 
@@ -40,4 +44,3 @@ http:
         status:
           - 201
           - 200
-# digest: 490a0046304402205c471e3c04992a1712056e0a74d45f8fc75b4b27b01ae2d399b884bce966778f022008749d741ec6b660f9744f6e94d907e6f71f6286eec6cde6ac32be6ef0c0ad11:922c64590222798bb761d5b6d8e72950

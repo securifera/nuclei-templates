@@ -6,11 +6,14 @@ info:
   severity: info
   description: Truth Social user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:truth-social:truth-social:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: truth-social
+    product: truth-social
   tags: osint,osint-social,truth-social,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: truth-social
+        cpe: cpe:2.3:a:truth-social:truth-social:*:*:*:*:*:*:*:*
         part: body
         words:
           - "display_name"
-# digest: 490a0046304402201737053fa8df4acb91d38bf5247cae3c26445db9de417ca8ae859516e2fd657b02207fb7a852c07f06d6cffc88995571139513848147dbbc79a2d2df07d9c7ecf449:922c64590222798bb761d5b6d8e72950

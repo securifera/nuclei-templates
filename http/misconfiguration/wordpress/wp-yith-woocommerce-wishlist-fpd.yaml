@@ -8,6 +8,8 @@ info:
     WordPress YITH WooCommerce Wishlist plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/yith-woocommerce-wishlist/
+  classification:
+    cpe: cpe:2.3:a:yithemes:yith-woocommerce-wishlist:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: yith-woocommerce-wishlist
+        cpe: cpe:2.3:a:yithemes:yith-woocommerce-wishlist:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fatal error"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203c6275460538cd6e0deb8ca2d73e8470c04c909b67eb57de9c4531433184a40c02205928ded34df7c1c7341bd3193a7140985997018d9c4a8a963dd9ef502d49d6fd:922c64590222798bb761d5b6d8e72950

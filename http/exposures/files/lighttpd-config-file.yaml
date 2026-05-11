@@ -6,10 +6,14 @@ info:
   severity: low
   description: |
     Lighttpd Config file is exposed.
+  classification:
+    cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"lighttpd.conf"
+    vendor: lighttpd
+    product: lighttpd
   tags: exposure,files,lighttpd,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lighttpd
+        cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'server.document-root ='
@@ -28,7 +34,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: lighttpd-2
+        cpe: cpe:2.3:a:lighttpd:lighttpd:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/octet-stream'
-# digest: 4b0a00483046022100808a7bdca50454b11308ab849b10387e98f55716ea2b9762fedc750d0cb8dab0022100ba224d9946ab7ff12bf90237af562c5a8631bb0cc9d68172b81a077a4b17282a:922c64590222798bb761d5b6d8e72950

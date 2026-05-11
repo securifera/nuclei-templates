@@ -28,6 +28,8 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: logrocket
+        cpe: cpe:2.3:a:logrocket:logrocket:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "LogRocket.min.js")'

@@ -8,10 +8,13 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6883
   classification:
+    cpe: cpe:2.3:a:sauter:sauter:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: sauter
+    product: sauter
   tags: panel,sauter,edb,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sauter
+        cpe: cpe:2.3:a:sauter:sauter:*:*:*:*:*:*:*:*
         words:
           - <title>Sauter moduWeb - Login</title>
         part: body
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022059bff7fafbd6e499a8eb0f660d790489023df224fbd15b91640f3f38bfadc4e0022100b421a205d8595e771d51c44fdd0ec293813fde7346571c3bcae34a0e13e998c3:922c64590222798bb761d5b6d8e72950

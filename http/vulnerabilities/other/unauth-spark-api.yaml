@@ -9,11 +9,14 @@ info:
   reference:
     - https://xz.aliyun.com/t/2490
   classification:
+    cpe: cpe:2.3:a:spark:spark:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 1
+    vendor: spark
+    product: spark
   tags: spark,unauth,vuln
 
 http:
@@ -28,9 +31,10 @@ http:
           - 400
 
       - type: word
+        name: spark
+        cpe: cpe:2.3:a:spark:spark:*:*:*:*:*:*:*:*
         words:
           - "Missing an action"
           - "serverSparkVersion"
         part: body
         condition: and
-# digest: 4a0a00473045022100ad070edf2016fe56f99c72bab062e82b3d28d08f8af3a86eee69e2953f6af78102204b939f12a57df30728c36586e110498f705ab3ceee0704a01bd39dd32b92c5d7:922c64590222798bb761d5b6d8e72950

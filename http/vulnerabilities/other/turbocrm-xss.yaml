@@ -8,11 +8,14 @@ info:
   reference:
     - https://gist.github.com/pikpikcu/9689c5220abbe04d4927ffa660241b4a
   classification:
+    cpe: cpe:2.3:a:turbocrm:turbocrm:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-79
   metadata:
     max-request: 1
+    vendor: turbocrm
+    product: turbocrm
   tags: xss,turbocrm,vuln
 
 http:
@@ -23,11 +26,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: turbocrm
+        cpe: cpe:2.3:a:turbocrm:turbocrm:*:*:*:*:*:*:*:*
         words:
           - '"><script>alert(document.domain)</script>'
         part: body
 
       - type: word
+        name: turbocrm-2
+        cpe: cpe:2.3:a:turbocrm:turbocrm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -35,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100ba50458a878fdfbbbb16ba7324dadeee1deda737d7661d01406138d1f40e277c022100a2a589fdfedf16b433551bf1c62b99b843c457a72fe9d61ee8462dc07917f5e6:922c64590222798bb761d5b6d8e72950

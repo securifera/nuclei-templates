@@ -23,6 +23,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: phpmyfaq
+        cpe: cpe:2.3:a:phpmyfaq:phpmyfaq:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>phpMyFAQ'
@@ -30,7 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: phpmyfaq-2
+        cpe: cpe:2.3:a:phpmyfaq:phpmyfaq:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'phpmyfaq-setup'
-# digest: 490a0046304402203fcd96df8e84c7b39e879f347a8ad2c13dac99bd40088d128879836265500abf02201940fe60e89c13128e076f6db2f0ba8105996bd5de747f6b78aaa6e932fd84ab:922c64590222798bb761d5b6d8e72950

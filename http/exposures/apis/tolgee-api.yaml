@@ -7,10 +7,14 @@ info:
   description: Tolgee API was detected.
   reference:
     - https://docs.tolgee.io/api
+  classification:
+    cpe: cpe:2.3:a:tolgee:api:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"tolgee"
+    vendor: tolgee
+    product: api
   tags: exposure,api,tolgee,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: api
+        cpe: cpe:2.3:a:tolgee:api:*:*:*:*:*:*:*:*
         part: body
         words:
           - Tolgee
@@ -28,6 +34,8 @@ http:
         condition: and
 
       - type: word
+        name: api-2
+        cpe: cpe:2.3:a:tolgee:api:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - application/json
@@ -43,4 +51,3 @@ http:
           - '"version"\s*:\s*"([^"]+)"'
         group: 1
         name: version
-# digest: 4b0a00483046022100e2f6126d1be4fb045010d3502bc1a08b7d7f81e5f8f0bff3a02d7579d98a4f11022100b9e29a4e872be541b19ec56425ec9b0880e16d1e6f8926e87799052707587d6c:922c64590222798bb761d5b6d8e72950

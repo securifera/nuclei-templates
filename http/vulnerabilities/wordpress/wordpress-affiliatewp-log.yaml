@@ -5,8 +5,12 @@ info:
   author: dhiyaneshDK
   severity: low
   description: Exposed debug log in AffiliateWP Wordpress Plugin
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wordpress
+    product: wordpress
   tags: wordpress,log,plugin,vuln
 
 http:
@@ -17,11 +21,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wordpress
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - 'Referral could not be retrieved'
           - 'Affiliate CSV'
 
       - type: word
+        name: wordpress-2
+        cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
         words:
           - 'text/plain'
         part: header
@@ -29,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220495c4c7576c578b12a44dca3eaff6663d6ba2a01298e5f8a47381189d6619cab022100d02003a8a316cd3d6ca21502e8dbff5ed3b827deae8f014579a94fff123b6c83:922c64590222798bb761d5b6d8e72950

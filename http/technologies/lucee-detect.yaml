@@ -5,10 +5,14 @@ info:
   author: geeknik,DhiyaneshDK
   severity: info
   description: Lucee Server is a dynamic, Java based (JSR-223), tag and scripting language used for rapid web application development -- https://github.com/lucee/Lucee/
+  classification:
+    cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     shodan-query: "html:\"Lucee\""
     fofa-query: "app=\"Lucee-Engine\""
+    vendor: lucee
+    product: lucee
   tags: tech,lucee,discovery
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: or
     matchers:
       - type: regex
+        name: lucee
+        cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "(?i)X-Lucee-Version"
@@ -29,7 +35,8 @@ http:
         condition: or
 
       - type: word
+        name: lucee-2
+        cpe: cpe:2.3:a:lucee:lucee:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Lucee Function Reference"
-# digest: 490a0046304402206c24e148bc8afa4cf7aef39185f2a0a571c02b39a2ee1e20717822b6895af79d022021bcfdc2c67c3332689148e27d9bb87158d14c0c0e3a481e478103303506fcd8:922c64590222798bb761d5b6d8e72950

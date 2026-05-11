@@ -6,11 +6,14 @@ info:
   severity: info
   description: InsaneJournal user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:insanejournal:insanejournal:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: insanejournal
+    product: insanejournal
   tags: osint,osint-social,insanejournal,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: insanejournal
+        cpe: cpe:2.3:a:insanejournal:insanejournal:*:*:*:*:*:*:*:*
         part: body
         words:
           - "User:"
-# digest: 4b0a00483046022100bda919c0232f493ccd61b09023cd9f9e4023b63b514aa26c6b52bec9e80b992e022100d225e6316b3476de9fd940315b701d84b1da47fe342894a1aa2799771d9d3c7a:922c64590222798bb761d5b6d8e72950

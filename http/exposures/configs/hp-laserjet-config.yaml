@@ -11,6 +11,7 @@ info:
     - https://h10032.www1.hp.com/ctg/Manual/c03137192.pdf
     - https://www.exploit-db.com/ghdb/6459
   classification:
+    cpe: cpe:2.3:a:hp:laserjet:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -36,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: laserjet
+        cpe: cpe:2.3:a:hp:laserjet:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Configuration Page"
@@ -46,4 +49,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100c86818d2ec705c56eb0da64fd937ab91fcb04736fc62da52306bb1c53db9f72f022079bf623eb860aba0ca4ebd2d80cee3d15aa4ce3c6d46c602b354a06ebdb98868:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     Domibus was detected.
   reference:
     - https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus
+  classification:
+    cpe: cpe:2.3:a:europa:domibus:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Domibus"
+    vendor: europa
+    product: domibus
   tags: tech,domibus,detect,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: dsl
+        name: domibus
+        cpe: cpe:2.3:a:europa:domibus:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "<title>domibus", "domibus-msh")'
@@ -34,4 +40,3 @@ http:
         group: 1
         regex:
           - '"versionNumber":\s*"([0-9.]+)"'
-# digest: 4b0a004830460221009dc7b4bf513c2411062ef6a4d2f5590822266948de31f4df4367cef722430e7a022100db55244c9216f23acfe3557d17f1b3fa432760a3daeb573d486a28ee1d685dab:922c64590222798bb761d5b6d8e72950

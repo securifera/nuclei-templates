@@ -10,10 +10,14 @@ info:
     Ensure that file uploads are properly validated and sanitized. Implement strict access controls and monitoring to detect and prevent unauthorized file uploads.
   reference:
     - https://github.com/wy876/POC/blob/a9e4000fc76d0157b53ade916323b7b8256b17c3/%E8%8B%B1%E9%A3%9E%E8%BE%BE%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%98%E6%A1%A3%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/%E8%8B%B1%E9%A3%9E%E8%BE%BE%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%98%E6%A1%A3%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9FWebJobUpload%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
+  classification:
+    cpe: cpe:2.3:a:infinitt:infinitt:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="1474455751" || icon_hash="702238928"
+    vendor: infinitt
+    product: infinitt
   tags: infinitt,file-upload,intrusive,rce,vuln
 
 variables:
@@ -42,11 +46,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: infinitt
+        cpe: cpe:2.3:a:infinitt:infinitt:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<jobUploadResult>"
 
       - type: word
+        name: infinitt-2
+        cpe: cpe:2.3:a:infinitt:infinitt:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "text/xml"
@@ -54,4 +62,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402201b29ca2b8af151097ea011bdaddb3786cccb924c21f01dee9e9b13241a7658f302203cbf3b8ab6231d5e37037a2af7bee8c6e137f00eab971f6945e579defc950647:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Bandcamp phishing website was detected
   reference:
     - https://bandcamp.com
+  classification:
+    cpe: cpe:2.3:a:bandcamp:bandcamp:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bandcamp
+    product: bandcamp
   tags: phishing,bandcamp,streaming,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bandcamp
+        cpe: cpe:2.3:a:bandcamp:bandcamp:*:*:*:*:*:*:*:*
         words:
           - 'Bandcamp'
           - 'Discover amazing music and directly support the artists who make it.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: bandcamp-2
+        cpe: cpe:2.3:a:bandcamp:bandcamp:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bandcamp.com")'
-# digest: 4b0a004830460221008560b61b16c5c2d19f10155835c1148be3ead361433f626343bca43f981c619c022100f0f17afef0f864f0296072c281b915d2635e8066e2901f34d269203808399555:922c64590222798bb761d5b6d8e72950

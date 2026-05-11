@@ -5,8 +5,12 @@ info:
   author: Cristi vlad (@cristivlad25)
   severity: info
   description: Finds Application YAML files which often contain sensitive information.
+  classification:
+    cpe: cpe:2.3:a:application-yaml:application-yaml:*:*:*:*:*:*:*:*
   metadata:
     max-request: 4
+    vendor: application-yaml
+    product: application-yaml
   tags: misconfig,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: application-yaml
+        cpe: cpe:2.3:a:application-yaml:application-yaml:*:*:*:*:*:*:*:*
         condition: or
         words:
           - "runtime:"
@@ -36,6 +42,8 @@ http:
           - 200
 
       - type: dsl
+        name: application-yaml-2
+        cpe: cpe:2.3:a:application-yaml:application-yaml:*:*:*:*:*:*:*:*
         dsl:
           - "!contains(tolower(body), '<html')"
           - "!contains(tolower(body), '<body')"
@@ -44,4 +52,3 @@ http:
           - "!contains(tolower(body), '</h3>')"
           - "!contains(tolower(body), '<?xml')"
         condition: and
-# digest: 4a0a0047304502210098c19d5aca29d58784863a3ceb7f6b5ab508c186a9622aa64130db359f929e070220466c1007e1928871d583961701f11b6e559c2eac5e41572a05fcb5022a4429f9:922c64590222798bb761d5b6d8e72950

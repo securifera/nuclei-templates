@@ -9,10 +9,13 @@ info:
     - https://create-react-app.dev/docs/adding-custom-environment-variables/
     - https://stackoverflow.com/questions/48699820/how-do-i-hide-an-api-key-in-create-react-app
   classification:
+    cpe: cpe:2.3:a:react:react:*:*:*:*:*:*:*:*
     cwe-id: CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: react
+    product: react
   tags: react,exposure,tokens,vuln
 
 http:
@@ -25,4 +28,3 @@ http:
         part: body
         regex:
           - \bREACT_APP(?:_[A-Z0-9]+)*_USER(?:\s+NAME)?\s*=\s*['"]?([^\s'"$]{3,})(?:[\s'"$]|$)
-# digest: 4a0a00473045022100d14c8170e4ffba45b4a9f6477354ec0689b4d73e6416c0e04fc9b16f234b8476022022393f512840dac6cb21f8becf18b69c14c16bdd741b3bb391664f40488061bf:922c64590222798bb761d5b6d8e72950

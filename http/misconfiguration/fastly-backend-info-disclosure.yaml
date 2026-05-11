@@ -9,6 +9,7 @@ info:
   reference:
     - https://developer.fastly.com/reference/http/http-headers/
   classification:
+    cpe: cpe:2.3:a:fastly:fastly:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
@@ -16,6 +17,8 @@ info:
     max-request: 1
     shodan-query: "X-backend-server"
     verified: true
+    vendor: fastly
+    product: fastly
   tags: exposure,fastly,cdn,misconfig
 
 http:
@@ -28,6 +31,8 @@ http:
 
     matchers:
       - type: dsl
+        name: fastly
+        cpe: cpe:2.3:a:fastly:fastly:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(tolower(header), "x-served-by", "x-cache-hits", "fastly")'
           - 'contains(tolower(header), "x-backend-server")'
@@ -38,4 +43,3 @@ http:
       - type: kval
         kval:
           - x_backend_server
-# digest: 4a0a004730450220752b2a3ff9eb395a391038ad4f0f7896528f9e3731bef1df5075b8609d2fe80d022100bd856e7b41a2dcf49c9559e15be74612d7007f7c2b81b5b4bcee805fcc1e7a4d:922c64590222798bb761d5b6d8e72950

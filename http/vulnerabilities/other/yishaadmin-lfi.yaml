@@ -9,11 +9,14 @@ info:
     - https://huntr.dev/bounties/2acdd87a-12bd-4ce4-994b-0081eb908128/
     - https://github.com/liukuo362573/YiShaAdmin/blob/master/YiSha.Util/YiSha.Util/FileHelper.cs#L181-L186
   classification:
+    cpe: cpe:2.3:a:yishaadmin:yishaadmin:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: yishaadmin
+    product: yishaadmin
   tags: lfi,yishaadmin,huntr,vuln
 
 http:
@@ -25,10 +28,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: yishaadmin
+        cpe: cpe:2.3:a:yishaadmin:yishaadmin:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402200545bf7a7e2c998cfd6b2a20c6caab48c12df555883bde331b0e18e579b3c0970220625d3c729cb91fa7534e139bfa440bd42352b003572aa00f9398443234ab2e43:922c64590222798bb761d5b6d8e72950

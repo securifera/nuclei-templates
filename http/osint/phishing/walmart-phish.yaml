@@ -8,8 +8,12 @@ info:
     A walmart phishing website was detected
   reference:
     - https://walmart.com
+  classification:
+    cpe: cpe:2.3:a:walmart:walmart:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: walmart
+    product: walmart
   tags: phishing,walmart,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: walmart
+        cpe: cpe:2.3:a:walmart:walmart:*:*:*:*:*:*:*:*
         words:
           - 'Walmart | Save Money. Live better.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: walmart-2
+        cpe: cpe:2.3:a:walmart:walmart:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"walmart.com")'
-# digest: 4a0a0047304502210081bf842c2136babdd47ae3706845ce351c6773d56bb4d6ccf9df573c21b24ac102203d046bd9a2dc3e76a3523037588c74d590555f52d22f0648bee3cbd8a0793294:922c64590222798bb761d5b6d8e72950

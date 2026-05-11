@@ -6,10 +6,14 @@ info:
   severity: high
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2017-06001
+  classification:
+    cpe: cpe:2.3:a:dahua:dss:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     fofa-query: "app=\"dahua-DSS\""
+    vendor: dahua
+    product: dss
   tags: cnvd,cnvd2017,sqli,dahua,vuln
 variables:
   num: "999999999"
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dss
+        cpe: cpe:2.3:a:dahua:dss:*:*:*:*:*:*:*:*
         part: body
         words:
           - "XPATH syntax error:"
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502201cbad3efd3a310ebaaa7b7f2982245c3e51b4f6a984676f348150e745a354a55022100915c92eac10ccc4604a8e6f64460d5d2bdb18b036054d205eb044435bee55cae:922c64590222798bb761d5b6d8e72950

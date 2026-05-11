@@ -7,8 +7,12 @@ info:
   description: vend takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:vend:vend:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: vend
+    product: vend
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: vend
+        cpe: cpe:2.3:a:vend:vend:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: vend-2
+        cpe: cpe:2.3:a:vend:vend:*:*:*:*:*:*:*:*
         words:
           - Looks like you've traveled too far into cyberspace.
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a00473045022100b474d4c1a807cb8469510d1396dac8f15f55118ec4cef46de2d71c384c4a346d02206f1de630204469ef72aa37275756ad7b53c19b96cb2e830f3dca2e7c0517fc4f:922c64590222798bb761d5b6d8e72950

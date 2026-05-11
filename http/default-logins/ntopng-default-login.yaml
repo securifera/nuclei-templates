@@ -9,6 +9,8 @@ info:
   reference:
     - https://www.ntop.org/guides/ntopng/faq.html
     - https://www.ntop.org/guides/ntopng/api/rest/api_v2.html
+  classification:
+    cpe: cpe:2.3:a:ntop:ntopng:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -48,6 +50,8 @@ http:
 
     matchers:
       - type: dsl
+        name: ntopng
+        cpe: cpe:2.3:a:ntop:ntopng:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 302'
@@ -63,8 +67,9 @@ http:
     max-redirects: 3
     matchers:
       - type: dsl
+        name: ntopng-2
+        cpe: cpe:2.3:a:ntop:ntopng:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "loggedUser = \"admin\"", "isAdministrator = true")'
         condition: and
-# digest: 4b0a00483046022100f1f21efb132c8f53421f14998c11e5a415be7fbaf3d12c2aeb0caf814a63e77b02210080276cf0bc2f37d5b5dec1899d2d6676ea4d0ca36290ff5958adffb0c87c2b86:922c64590222798bb761d5b6d8e72950

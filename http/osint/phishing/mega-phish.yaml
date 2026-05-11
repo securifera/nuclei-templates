@@ -8,8 +8,12 @@ info:
     A mega phishing website was detected
   reference:
     - https://mega.io
+  classification:
+    cpe: cpe:2.3:a:mega:mega:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mega
+    product: mega
   tags: phishing,mega,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mega
+        cpe: cpe:2.3:a:mega:mega:*:*:*:*:*:*:*:*
         words:
           - 'Home - MEGA'
           - 'Secure and private cloud storage for everyone. Store and share files, chat, meet, back up, sync, and more.'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: mega-2
+        cpe: cpe:2.3:a:mega:mega:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"mega.io")'
-# digest: 4a0a00473045022100f8c8c3e2605f6d7f339919185880edb9027363477cdff7cd411e46668371b3a4022047aee17e6ad7db17804aa6e0811a179c7b5b71d24d376de8ec393fb1e54234e1:922c64590222798bb761d5b6d8e72950

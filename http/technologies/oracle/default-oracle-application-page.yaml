@@ -4,9 +4,13 @@ info:
   name: Oracle Application Server Containers
   author: dhiyaneshDk,righettod
   severity: info
+  classification:
+    cpe: cpe:2.3:a:oracle:application_server:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: http.title:"Oracle Application Server Containers"
+    vendor: oracle
+    product: application_server
   tags: tech,oracle,discovery
 
 http:
@@ -16,6 +20,8 @@ http:
 
     matchers:
       - type: word
+        name: application_server
+        cpe: cpe:2.3:a:oracle:application_server:*:*:*:*:*:*:*:*
         words:
           - "<TITLE>Oracle Application Server"
         part: body
@@ -26,4 +32,3 @@ http:
         group: 1
         regex:
           - '(?i)\s+\(([0-9.]+)\)'
-# digest: 4a0a0047304502201fa404b332f51eb70c887dddda7b6b99dc81b1d450b6325afe3b1b043b294274022100f0651fe10115cf49ab157d3e3c729b12e107c7f0bd933d8b20f52db9fe363d21:922c64590222798bb761d5b6d8e72950

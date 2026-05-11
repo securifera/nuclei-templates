@@ -10,9 +10,12 @@ info:
     - https://pulsesecurity.co.nz/articles/R-Shells
     - https://github.com/opencpu/opencpu/
   classification:
+    cpe: cpe:2.3:a:opencpu:opencpu:*:*:*:*:*:*:*:*
     cwe-id: CWE-78,CWE-95
   metadata:
     max-request: 1
+    vendor: opencpu
+    product: opencpu
   tags: rce,opencpu,oss,vuln
 
 http:
@@ -31,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: opencpu
+        cpe: cpe:2.3:a:opencpu:opencpu:*:*:*:*:*:*:*:*
         words:
           - uid=
           - gid=
@@ -45,4 +50,3 @@ http:
         group: 1
         regex:
           - \(([a-z-]+)\)
-# digest: 490a0046304402202435017bdf99576a7d5f83b2e9429495f563a2f79ce59cf9676d40df6280e02602201b99485e755976502dc07cabd062f2a2399071c55b404a86b749a428d2f41c2a:922c64590222798bb761d5b6d8e72950

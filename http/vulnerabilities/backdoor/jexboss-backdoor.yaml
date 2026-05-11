@@ -8,9 +8,13 @@ info:
   reference:
     - https://us-cert.cisa.gov/ncas/analysis-reports/AR18-312A
     - https://github.com/joaomatosf/jexboss
+  classification:
+    cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 8
+    vendor: backdoor
+    product: backdoor
   tags: backdoor,jboss,rce,vuln
 
 http:
@@ -30,6 +34,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: backdoor
+        cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
@@ -37,7 +43,8 @@ http:
         condition: or
 
       - type: word
+        name: backdoor-2
+        cpe: cpe:2.3:a:backdoor:backdoor:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Powered-By: Servlet"
-# digest: 4b0a00483046022100e8da5572d70996504225248e8dd7fa2e93676ae568cdba0d61c94d3d9fe4c2a2022100adaaf282cf41bb170bd53dfd35a67cbb7c8df294d9ba87cd27353e5bd24ec54a:922c64590222798bb761d5b6d8e72950

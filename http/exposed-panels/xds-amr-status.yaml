@@ -6,11 +6,14 @@ info:
   severity: info
   description: XDS-AMR Status login panel was detected.
   classification:
+    cpe: cpe:2.3:a:xds:xds:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"XDS-AMR - status"
+    vendor: xds
+    product: xds
   tags: panel,tech,xamr,xds,discovery
 
 http:
@@ -21,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xds
+        cpe: cpe:2.3:a:xds:xds:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>XDS-AMR - Status</title>'
@@ -34,4 +39,3 @@ http:
         part: body
         regex:
           - 'XAMR\-([0-9]+)'
-# digest: 4b0a00483046022100c5c5f5117cda788ac8b3c9ba4cdba3726e0f26658aa3ced8736bf65036076107022100d5b6a80f2d11b52f43dda0494e488b307bd10a64195150383d2d6cc0d3c7612e:922c64590222798bb761d5b6d8e72950

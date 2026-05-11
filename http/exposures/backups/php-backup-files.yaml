@@ -5,8 +5,12 @@ info:
   author: StreetOfHackerR007,pwnhxl,mastercho,0xpugal
   severity: medium
   description: PHP Source File is disclosed to external users.
+  classification:
+    cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1512
+    vendor: backup
+    product: backup
   tags: exposure,backup,php,disclosure,fuzz,vuln
 
 http:
@@ -112,6 +116,8 @@ http:
           - 200
 
       - type: word
+        name: backup
+        cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<?php"
@@ -119,6 +125,8 @@ http:
         condition: or
 
       - type: word
+        name: backup-2
+        cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
         part: body
         words:
           - "?>"
@@ -138,9 +146,10 @@ http:
         condition: or
 
       - type: word
+        name: backup-3
+        cpe: cpe:2.3:a:backup:backup:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/plain"
           - "bytes"
         condition: or
-# digest: 4a0a00473045022100e6805b377674e29befb9797324039427a8de1ab886ea30fc90a78d3a49569cd8022027be33580dffe7f3587b816fe4babd4674c26538d3c132a5c482fe6d7497efcc:922c64590222798bb761d5b6d8e72950

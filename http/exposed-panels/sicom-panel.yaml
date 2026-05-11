@@ -7,10 +7,13 @@ info:
   description: |
     Sicom MGRNG administrative login page found.
   classification:
+    cpe: cpe:2.3:a:sicom:sicom:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-668
   metadata:
     max-request: 1
+    vendor: sicom
+    product: sicom
   tags: sicom,mgrng,panel,discovery
 
 http:
@@ -25,7 +28,8 @@ http:
           - 200
 
       - type: word
+        name: sicom
+        cpe: cpe:2.3:a:sicom:sicom:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>MGRNG Login</title>'
-# digest: 490a004630440220509d5ddbcf3379df5cf25328a476c7ed4aae576499d98994ff6dd6ee8e36cfc802204cf83a83d20cb5418c86f698d57881b9814bae9ced71d1c70d2359a17ab94991:922c64590222798bb761d5b6d8e72950

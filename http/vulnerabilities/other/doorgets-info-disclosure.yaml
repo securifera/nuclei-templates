@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: doorgets
+        cpe: cpe:2.3:a:doorgets:doorgets:*:*:*:*:*:*:*:*
         part: body
         words:
           - ':"email";'
@@ -34,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: doorgets-2
+        cpe: cpe:2.3:a:doorgets:doorgets:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -41,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c9184fe2c3e89f6479a95b6e8e723d869bd4026a193a0641db1aa69d5c0ad1ed022100c63dcaa1b53d88e54a4acfcca52643a9f35a6cbd4194df4e7df6fba6b35f5187:922c64590222798bb761d5b6d8e72950

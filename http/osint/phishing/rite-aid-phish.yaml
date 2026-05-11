@@ -8,8 +8,12 @@ info:
     A Rite Aid phishing website was detected
   reference:
     - https://riteaid.com
+  classification:
+    cpe: cpe:2.3:a:rite-aid:rite-aid:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rite-aid
+    product: rite-aid
   tags: phishing,rite-aid,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rite-aid
+        cpe: cpe:2.3:a:rite-aid:rite-aid:*:*:*:*:*:*:*:*
         words:
           - "Rite Aid pharmacy offers products and services to help you lead a healthy, happy life. Visit our online pharmacy, shop now, or find a store near you."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: rite-aid-2
+        cpe: cpe:2.3:a:rite-aid:rite-aid:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"riteaid.com")'
-# digest: 4b0a00483046022100a8341ccd82b679fd470ac18b2efed621e2c83603025c896fc13349bf8d6c9f62022100e4560e6ec7f5f536d23906605246a6512560f64ddad552a9b2b65f70aaf00041:922c64590222798bb761d5b6d8e72950

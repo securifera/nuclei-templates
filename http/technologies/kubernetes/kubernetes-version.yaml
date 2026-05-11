@@ -8,9 +8,13 @@ info:
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/release-notes
     - https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+  classification:
+    cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     shodan-query: product:"Kubernetes" version:"1.21.5-eks-bc4871b"
+    vendor: kubernetes
+    product: kubernetes
   tags: tech,k8s,kubernetes,devops,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
 
     matchers:
       - type: word
+        name: kubernetes
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         words:
           - "gitVersion"
           - "goVersion"
@@ -30,4 +36,3 @@ http:
       - type: json
         json:
           - '.gitVersion'
-# digest: 4a0a0047304502203ab3c01aef875290a3ea06126277bcbdd62fcd99807b0fb72773a79458d526eb02210081ad34fe0916c6b4c2cabebd5059c319c73adc9792fc9652e1f0828d82b4835c:922c64590222798bb761d5b6d8e72950

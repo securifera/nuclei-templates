@@ -6,11 +6,14 @@ info:
   severity: info
   description: Themeforest user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:themeforest:themeforest:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: themeforest
+    product: themeforest
   tags: osint,osint-art,themeforest,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: themeforest
+        cpe: cpe:2.3:a:themeforest:themeforest:*:*:*:*:*:*:*:*
         part: body
         words:
           - "s profile on ThemeForest"
-# digest: 4a0a00473045022100fa763f8c72de894f63e578e91366573d88a625361119bedcf9e12fa7b7905c7002206572a50282b0c408edccd212394baae018d55be32efa6917b51c6e96b1533ac9:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     WordPress Plugin Ivory Search plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
   reference:
     - https://wordpress.org/plugins/add-search-to-menu/
+  classification:
+    cpe: cpe:2.3:a:add-search-to-menu:add-search-to-menu:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     publicwww-query: "/plugins/add-search-to-menu"
+    vendor: add-search-to-menu
+    product: add-search-to-menu
   tags: wp,wordpress,wp-plugin,fpd,add-search-to-menu,misconfig
 
 http:
@@ -29,9 +33,10 @@ http:
 
     matchers:
       - type: dsl
+        name: add-search-to-menu
+        cpe: cpe:2.3:a:add-search-to-menu:add-search-to-menu:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "Fatal error", "Uncaught Error") || contains_all(body, "Warning:","failed to open stream")'
           - 'contains(body, "add-search-to-menu")'
           - 'status_code == 200 || status_code == 500'
         condition: and
-# digest: 4b0a0048304602210099e2c2fe6c26c888c697642c57b94a2e89377f9788dafc1fd451418bcb78ca1b02210088fbb4abfa4b23d381bce9622502d57b14540938a101cfe0b004044a00eed37b:922c64590222798bb761d5b6d8e72950

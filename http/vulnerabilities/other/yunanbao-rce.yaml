@@ -8,10 +8,14 @@ info:
     The authService interface of Cloud Box uses the vulnerable fastjson component. Unauthorized attackers can launch attacks on Cloud Box through the fastjson serialization vulnerability to obtain server permissions.
   reference:
     - https://github.com/wy876/POC/blob/main/%E4%BA%91%E5%8C%A3%E5%AD%90%E5%A0%A1%E5%9E%92%E6%9C%BAfastjson%E6%BC%8F%E6%B4%9E.md
+  classification:
+    cpe: cpe:2.3:a:yunanbao:yunanbao:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="云安宝-云匣子"
+    vendor: yunanbao
+    product: yunanbao
   tags: yunanbao,rce,cloud-box,vuln
 
 http:
@@ -39,6 +43,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: yunanbao
+        cpe: cpe:2.3:a:yunanbao:yunanbao:*:*:*:*:*:*:*:*
         part: body
         regex:
           - 'uid=([a-z=0-9() ]+) gid=([a-z=0-9() ]+) groups=([a-z=0-9() ]+)'
@@ -46,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022017e599be3cba7dcfdb481fb6aa5691a5e24a12c1b612607679c6b38ab8291d3f022100994d349bdd2e4777d1a72538f8d74f08d861835fcd88483a02f549c1df78e694:922c64590222798bb761d5b6d8e72950

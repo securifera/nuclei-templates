@@ -9,11 +9,14 @@ info:
   reference:
     - https://www.ssh.com/academy/ssh/authorized-key
   classification:
+    cpe: cpe:2.3:a:ssh:ssh:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: ssh
+    product: ssh
   tags: config,exposure,ssh,vuln
 
 http:
@@ -27,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ssh
+        cpe: cpe:2.3:a:ssh:ssh:*:*:*:*:*:*:*:*
         words:
           - "ssh-dss"
           - "ssh-ed25519"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502207b9f1ef8cdb5f962f5de5ca68fd2718be191051a1d68f47d4672d3bfddaae141022100b8a985d894550280d0d09f3f88e5f0a21e3228da1e1a046034eefd5c5b624b4b:922c64590222798bb761d5b6d8e72950

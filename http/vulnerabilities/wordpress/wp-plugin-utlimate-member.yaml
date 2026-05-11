@@ -7,8 +7,12 @@ info:
   description: Searches for sensitive directories present in the ultimate-member plugin.
   reference:
     - https://www.exploit-db.com/ghdb/6998
+  classification:
+    cpe: cpe:2.3:a:wp-plugin-utlimate-member:wp-plugin-utlimate-member:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: wp-plugin-utlimate-member
+    product: wp-plugin-utlimate-member
   tags: wordpress,listing,plugin,edb,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-plugin-utlimate-member
+        cpe: cpe:2.3:a:wp-plugin-utlimate-member:wp-plugin-utlimate-member:*:*:*:*:*:*:*:*
         words:
           - "Index of"
           - "/wp-content/plugins/ultimate-member/"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202d3d3abf73a792aafc30895e67db9a4c1f4ec6daa28b846f3fbb854f76afcd30022100a1a4699b6b2c9e6aae04ad8a806bd807e53354ea32384266cd9aa6840636d3a3:922c64590222798bb761d5b6d8e72950

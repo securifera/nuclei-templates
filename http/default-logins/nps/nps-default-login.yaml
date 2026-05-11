@@ -8,11 +8,14 @@ info:
   reference:
     - https://docs.microfocus.com/NNMi/10.30/Content/Administer/Hardening/confCC2b_pwd.htm
   classification:
+    cpe: cpe:2.3:a:nps:nps:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: nps
+    product: nps
   tags: nps,default-login,vuln
 
 http:
@@ -35,12 +38,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nps
+        cpe: cpe:2.3:a:nps:nps:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         part: header
         condition: and
 
       - type: word
+        name: nps-2
+        cpe: cpe:2.3:a:nps:nps:*:*:*:*:*:*:*:*
         words:
           - '"msg": "login success"'
           - '"status": 1'
@@ -50,4 +57,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210090b24882224d2a6956d8f09ac3812dd25dfe64c57983985a8805cf6756c53260022100c09aa061ab036987ab4b568257ca38453c4472aeab2d665a81aed3d61b4016df:922c64590222798bb761d5b6d8e72950

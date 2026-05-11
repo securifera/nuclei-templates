@@ -8,11 +8,14 @@ info:
   reference:
     - http://wiki.peiqi.tech/PeiQi_Wiki/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/%E6%9E%81%E9%80%9AEWEBS/%E6%9E%81%E9%80%9AEWEBS%20casmain.xgi%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.html
   classification:
+    cpe: cpe:2.3:a:ewebs:ewebs:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 1
+    vendor: ewebs
+    product: ewebs
   tags: ewebs,lfi,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ewebs
+        cpe: cpe:2.3:a:ewebs:ewebs:*:*:*:*:*:*:*:*
         words:
           - "[Edition]"
           - "[LocalInfo]"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205360d067bd026618934254ddf9db7c5c35246b002ab8f42261570d0742e59145022100d5dcf9b5149eb0d3993fb7c77aa080ed19913633c296c2f1d2098d81bfe3664d:922c64590222798bb761d5b6d8e72950

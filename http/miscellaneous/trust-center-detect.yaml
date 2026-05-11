@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detected the presence of Trust Center pages or subdomains provided by Safebase, Vanta, or TrustCloud.
+  classification:
+    cpe: cpe:2.3:a:trust:center:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 6
     shodan-query: http.title:"Trust Center"
+    vendor: trust
+    product: center
   tags: misc,trust,center,generic,vuln
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: center
+        cpe: cpe:2.3:a:trust:center:*:*:*:*:*:*:*:*
         words:
           - "Trust Center"
           - "Powered by Safebase"
@@ -40,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402203ce3d93e4fbfadc6fb181a38a03bab9ba14b9d61721926f22c802fc509a29de10220542abb9bd12ebd3a85e4dc40f3b4d74a57173e3b397e6878dbf3b2ae1031617f:922c64590222798bb761d5b6d8e72950

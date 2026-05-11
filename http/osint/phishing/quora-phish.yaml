@@ -8,8 +8,12 @@ info:
     A quora phishing website was detected
   reference:
     - https://quora.com
+  classification:
+    cpe: cpe:2.3:a:quora:quora:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: quora
+    product: quora
   tags: phishing,quora,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: quora
+        cpe: cpe:2.3:a:quora:quora:*:*:*:*:*:*:*:*
         words:
           - 'Quora - A place to share knowledge and better understand the world'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: quora-2
+        cpe: cpe:2.3:a:quora:quora:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"quora.com")'
-# digest: 4b0a004830460221008a830c4ccb390ff51b9ea0a8600b16e692342df9b8b6c259aad847f0b88a557b022100dd8e41a57276d857455cf348b998ba2ed3e899eda5aed434e4b43201b808be96:922c64590222798bb761d5b6d8e72950

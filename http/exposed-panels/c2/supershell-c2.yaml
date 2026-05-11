@@ -9,10 +9,14 @@ info:
   reference:
     - https://twitter.com/S4nsLimit3/status/1693619836339859497
     - https://github.com/tdragon6/Supershell/blob/main/README_EN.md
+  classification:
+    cpe: cpe:2.3:a:supershell:supershell:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-1010228102"
+    vendor: supershell
+    product: supershell
   tags: c2,ir,osint,supershell,panel,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: supershell
+        cpe: cpe:2.3:a:supershell:supershell:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Supershell - 登录</title>'
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502202257ce332fe3780866c51a4fc394b9c8ef8b6e6f64155677cb01161652fe0090022100f5f1ebe852b82d5b34bf72be026e3234b82d3a9011019fac108f9c9d533d6ab8:922c64590222798bb761d5b6d8e72950

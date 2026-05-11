@@ -31,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: llama.cpp
+        cpe: cpe:2.3:a:ggerganov:llama.cpp:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"status":"ok"'
 
       - type: dsl
+        name: llama.cpp-2
+        cpe: cpe:2.3:a:ggerganov:llama.cpp:*:*:*:*:*:*:*:*
         dsl:
           - contains(header, "llama.cpp")
           - status_code == 200

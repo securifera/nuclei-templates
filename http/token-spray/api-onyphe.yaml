@@ -7,9 +7,13 @@ info:
   description: Cyber Defense Search Engine and Attack Surface Management
   reference:
     - https://www.onyphe.io/docs
+  classification:
+    cpe: cpe:2.3:a:onyphe:onyphe:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: onyphe
+    product: onyphe
   tags: token-spray,onyphe
 
 self-contained: true
@@ -26,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: onyphe
+        cpe: cpe:2.3:a:onyphe:onyphe:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"apikey":"'
@@ -35,6 +41,8 @@ http:
         condition: and
 
       - type: word
+        name: onyphe-2
+        cpe: cpe:2.3:a:onyphe:onyphe:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -42,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204193277acccfa5c970e66576ecf9b79533d25c3520b7830e113eb15212e412d4022100a8351c6fb28fa2f5404129eba6e1c727b313c3445e0524d912f436ccf624b700:922c64590222798bb761d5b6d8e72950

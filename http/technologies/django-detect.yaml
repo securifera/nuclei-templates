@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     An instance running Django is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+  classification:
+    cpe: cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 9
     shodan-query: http.component:"django"
+    vendor: djangoproject
+    product: django
   tags: django,detect,tech
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: django
+        cpe: cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Powered by Django"
@@ -58,4 +64,3 @@ http:
         regex:
           - 'django-site-id=([a-z0-9]+)'
           - 'django\.org/([^/]+)'
-# digest: 490a0046304402204a4554b9174657f24653d9ee2779ed1194908eb4a09a496ca31b92f12076475a02204882f5ba1ba700b48c745a2a9b8d8753f51edb248f9478ea595634aa7eb4f647:922c64590222798bb761d5b6d8e72950

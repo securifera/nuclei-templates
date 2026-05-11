@@ -9,8 +9,12 @@ info:
   reference:
     - https://nid.naver.com
     - https://www.navercorp.com
+  classification:
+    cpe: cpe:2.3:a:naver:naver:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: naver
+    product: naver
   tags: phishing,naver,osint,discovery
 http:
   - method: GET
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: naver
+        cpe: cpe:2.3:a:naver:naver:*:*:*:*:*:*:*:*
         words:
           - '네이버 : 로그인'
           - '로그인'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: naver-2
+        cpe: cpe:2.3:a:naver:naver:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"nid.naver.com")'
-# digest: 490a00463044022000a3e1788477917b36e2e0c6ad818161006fd0ea9f5262acebddeaaba070294802204e703b029f7c00a35a18374c892a3cd70c39aa133541245b044e4b71f5e3f9cb:922c64590222798bb761d5b6d8e72950

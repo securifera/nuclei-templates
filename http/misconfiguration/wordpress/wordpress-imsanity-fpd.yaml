@@ -8,6 +8,8 @@ info:
     WordPress Imsanity plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/imsanity/
+  classification:
+    cpe: cpe:2.3:a:developer:imsanity:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: imsanity
+        cpe: cpe:2.3:a:developer:imsanity:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fatal error"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204c27646bb32460cef71534320224f9347da1709c548589532794559af850df9b022060a52fa46566e764f38bab40c350ebd52a2644e8c421dbb00dbeb9ac6dae78cf:922c64590222798bb761d5b6d8e72950

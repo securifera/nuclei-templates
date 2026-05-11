@@ -8,8 +8,12 @@ info:
     A PNC Bank phishing website was detected
   reference:
     - https://pnc.com
+  classification:
+    cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank
+    product: bank
   tags: phishing,pnc-bank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         words:
           - "PNC Bank offers a wide range of personal banking services including checking and savings accounts, credit cards, mortgage loans, auto loans and much more."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-2
+        cpe: cpe:2.3:a:bank:bank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"pnc.com")'
-# digest: 4a0a004730450220562ab827e18157d984e621567ad940ddae7e76b8aea4ba9b3eee6aaeff69a4f6022100e7fe80b154412d98cc3f73eafbad46be999a6bf9ee3307fc32c87b6d6caac313:922c64590222798bb761d5b6d8e72950

@@ -8,6 +8,7 @@ info:
   reference:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
   classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
@@ -15,6 +16,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: title:"Eureka"
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -28,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '["loggingConfig"]'
@@ -35,6 +40,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -45,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220692b77b52903d1efbb72fa1fd612e8b5eb8ff31e9c104df58660f8ef46f38ade02203c163539285e575934a77f1dd4c3b209dcf63d0acdce98dee41bc65d9d36218f:922c64590222798bb761d5b6d8e72950

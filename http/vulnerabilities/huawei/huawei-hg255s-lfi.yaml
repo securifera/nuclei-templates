@@ -28,10 +28,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: hg255s
+        cpe: cpe:2.3:h:huawei:hg255s:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022015138aee9234088fc2e5f4d97fad17bdbd350a422543b688984563a775763a8f0221008df879931488637cbc8e9ec7c80762565de942638fa33c1346050126bb4c19a5:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects gabia web server.
+  classification:
+    cpe: cpe:2.3:a:gabia:gabia:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: "Server: gabia"
+    vendor: gabia
+    product: gabia
   tags: tech,gabia,detect,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: gabia
+        cpe: cpe:2.3:a:gabia:gabia:*:*:*:*:*:*:*:*
         part: header
         regex:
           - "Server: gabia"
@@ -33,4 +39,3 @@ http:
         part: header
         kval:
           - Server
-# digest: 490a00463044022056c2c5d916b9ea03edc5774b5359de2fabefe849c52395e4e661035c87aa5cb1022049ff92281a5cbb80c5aba268f08842be8c2b2b627fb21d7fe11d8c73f0a30607:922c64590222798bb761d5b6d8e72950

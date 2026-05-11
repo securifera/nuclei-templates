@@ -32,11 +32,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: black_duck_hub
+        cpe: cpe:2.3:a:synopsys:black_duck_hub:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?m)<title>Black Duck(.*)<\/title>'
 
       - type: word
+        name: black_duck_hub-2
+        cpe: cpe:2.3:a:synopsys:black_duck_hub:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ProtexLoginPage'
@@ -46,4 +50,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022077168c0a2924a1ee2245b203979ff05aac8c53895791fc121444535fbed509f7022100faa7de6232035e26fc584ce1f23ab1a82ee454bacdc06c7138ace1fbd764d9cc:922c64590222798bb761d5b6d8e72950

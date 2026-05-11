@@ -6,11 +6,14 @@ info:
   severity: info
   description: Tripadvisor user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:tripadvisor:tripadvisor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: tripadvisor
+    product: tripadvisor
   tags: osint,osint-social,tripadvisor,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: tripadvisor
+        cpe: cpe:2.3:a:tripadvisor:tripadvisor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Contributions"
-# digest: 490a0046304402203bf6bcc6de7725fc6560d59e70a7d314abadd155b52a3fff744f0db5f064420202207d9fb560ac7054be85ccbcb3ca6e018b08ff5fca97ab918c05b8a49a7eb82eae:922c64590222798bb761d5b6d8e72950

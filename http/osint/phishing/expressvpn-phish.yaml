@@ -8,8 +8,12 @@ info:
     A ExpressVPN phishing website was detected
   reference:
     - https://expressvpn.com
+  classification:
+    cpe: cpe:2.3:a:expressvpn:expressvpn:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: expressvpn
+    product: expressvpn
   tags: phishing,expressvpn,vpn,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: expressvpn
+        cpe: cpe:2.3:a:expressvpn:expressvpn:*:*:*:*:*:*:*:*
         words:
           - '<title>ExpressVPN: Best VPN Service for Speed & Privacy in 2025'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: expressvpn-2
+        cpe: cpe:2.3:a:expressvpn:expressvpn:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"expressvpn.com")'
-# digest: 490a0046304402201f86154b7d7bfe6fb3528d550fd7fdc612fbfa2cedc024ff9e18aa65e3c5584302203e2f215c31fdeb64d28830eaf9f503f516fcc4e096375f359bd9048fab48ef1f:922c64590222798bb761d5b6d8e72950

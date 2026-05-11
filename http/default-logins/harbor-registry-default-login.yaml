@@ -9,6 +9,8 @@ info:
   reference:
     - https://goharbor.io/docs/1.10/install-config/run-installer-script/
     - https://goharbor.io/docs/latest/administration/managing-users/
+  classification:
+    cpe: cpe:2.3:a:goharbor:harbor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
@@ -33,6 +35,8 @@ http:
 
     matchers:
       - type: dsl
+        name: harbor
+        cpe: cpe:2.3:a:goharbor:harbor:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -49,9 +53,10 @@ http:
 
     matchers:
       - type: dsl
+        name: harbor-2
+        cpe: cpe:2.3:a:goharbor:harbor:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "\"username\"", "\"admin\"", "\"sysadmin_flag\"")'
         condition: and
-# digest: 4b0a00483046022100ed560f941b56c4cd0037c6b723593c5eb470e50915f06c7093f301dd94229d7c02210084a5e073178e3dad8148f582127c4a214734328c00cd768a222bb5c2bef7da2c:922c64590222798bb761d5b6d8e72950

@@ -6,11 +6,14 @@ info:
   severity: info
   description: Zmarsa.com user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:zmarsacom:zmarsacom:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: zmarsacom
+    product: zmarsacom
   tags: osint,osint-porn,zmarsacom,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: zmarsacom
+        cpe: cpe:2.3:a:zmarsacom:zmarsacom:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Galeria użytkownika"
-# digest: 490a004630440220440c0af26327d3200662f03f43f13c52e73a31a09286c51f04f2610c86ae90b2022075c8c569db27703c27f4a2ba8f5e1ce2aca1bf3b266ac58fccadd95aed730b62:922c64590222798bb761d5b6d8e72950

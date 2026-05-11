@@ -6,11 +6,14 @@ info:
   severity: info
   description: Wikidot user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:wikidot:wikidot:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: wikidot
+    product: wikidot
   tags: osint,osint-social,wikidot,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: wikidot
+        cpe: cpe:2.3:a:wikidot:wikidot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Wikidot.com:"
-# digest: 4a0a00473045022053419f159b6b72df1b2f8452cb17407af107f3ef9d696bd58d8c62a897437e9c022100bb45123c6b56c064b513efe958a150a71d7291ae0523ccc5d469ed5a5e7aedfe:922c64590222798bb761d5b6d8e72950

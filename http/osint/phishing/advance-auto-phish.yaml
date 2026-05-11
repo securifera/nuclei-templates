@@ -8,8 +8,12 @@ info:
     An Advance Auto Parts phishing website was detected
   reference:
     - https://advanceautoparts.com
+  classification:
+    cpe: cpe:2.3:a:advance-auto:advance-auto:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: advance-auto
+    product: advance-auto
   tags: phishing,advance-auto,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: advance-auto
+        cpe: cpe:2.3:a:advance-auto:advance-auto:*:*:*:*:*:*:*:*
         words:
           - 'Advance Auto Parts: Car, Engine, Batteries, Brakes, Replacement, Performance &amp; Accessories'
           - 'Advance Auto '
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: advance-auto-2
+        cpe: cpe:2.3:a:advance-auto:advance-auto:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"advanceautoparts.com")'
-# digest: 4b0a004830460221009712cde6f5326827600e4f04ebab3d8f5dec52f628f797e65142e9cf1a07449f022100b165fa75d8ea342cbb63509818bbf3cd8f81b109e195c16c05c156e0950e08ff:922c64590222798bb761d5b6d8e72950

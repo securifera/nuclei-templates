@@ -11,10 +11,13 @@ info:
     - https://wpscan.com/vulnerability/bac7b590-70de-45b3-bdc2-19f90524ca39
     - https://wordpress.org/plugins/advanced-booking-calendar/
   classification:
+    cpe: cpe:2.3:a:advanced-booking-calendar:advanced-booking-calendar:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
+    vendor: advanced-booking-calendar
+    product: advanced-booking-calendar
   tags: time-based-sqli,sqli,wpscan,wordpress,wp-plugin,wp,advanced-booking-calendar,unauthenticated,vuln
 
 http:
@@ -29,10 +32,11 @@ http:
 
     matchers:
       - type: dsl
+        name: advanced-booking-calendar
+        cpe: cpe:2.3:a:advanced-booking-calendar:advanced-booking-calendar:*:*:*:*:*:*:*:*
         dsl:
           - 'duration>=6'
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains(body, "abc-result-header")'
         condition: and
-# digest: 490a0046304402203db9ea4a41a4789a09b0b3c6dbf841a08ca74a8038b6021c834408b02501f72402201f4248dc9b1766d527ff5d64f4eccfbac976c56dc37586a8a47e55eeb2cfa274:922c64590222798bb761d5b6d8e72950

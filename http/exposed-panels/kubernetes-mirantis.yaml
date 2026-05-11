@@ -26,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kubernetes_engine
+        cpe: cpe:2.3:a:mirantis:kubernetes_engine:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Mirantis Kubernetes Engine"
@@ -33,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204718e3317e3f73bc6b890dd5f1f4cc1bc3597fa5c92e23af11bae7a2a544eb8802204918bf222c6c8c366b0f41438465dc7374118ce6490957879dcd463f87e2bbef:922c64590222798bb761d5b6d8e72950

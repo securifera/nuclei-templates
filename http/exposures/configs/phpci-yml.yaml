@@ -8,10 +8,14 @@ info:
     PHPCI Configuration "phpci.yml" File was exposed.
   reference:
     - https://github.com/dancryer/PHPCI/blob/master/.phpci.yml
+  classification:
+    cpe: cpe:2.3:a:phpci:phpci:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="phpci.yml"
+    vendor: phpci
+    product: phpci
   tags: phpci,misconfig,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpci
+        cpe: cpe:2.3:a:phpci:phpci:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'build_settings:'
@@ -32,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: phpci-2
+        cpe: cpe:2.3:a:phpci:phpci:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/octet-stream'
@@ -43,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a3a11da8e5b4efea4b9df458b6fb02b9f1a434102e2144b518693b242ed34869022044eb3777907cd2cfd6059c27c2678387ca9c95345b7dd6e7f4f54cebbf473dd5:922c64590222798bb761d5b6d8e72950

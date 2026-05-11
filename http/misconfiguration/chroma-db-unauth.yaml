@@ -9,9 +9,13 @@ info:
   reference:
     - https://www.trychroma.com/security
     - https://github.com/shaybentk/chroma-db-unauthorized-info-disclosure
+  classification:
+    cpe: cpe:2.3:a:chroma-db-unauth:chroma-db-unauth:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
+    vendor: chroma-db-unauth
+    product: chroma-db-unauth
   tags: misconfig,api,info-leak,unauth
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: chroma-db-unauth
+        cpe: cpe:2.3:a:chroma-db-unauth:chroma-db-unauth:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"sync_threshold":'
@@ -32,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: chroma-db-unauth-2
+        cpe: cpe:2.3:a:chroma-db-unauth:chroma-db-unauth:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - "application/json"
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502204460be0fb890034abd429730a80d56f30864c9765b245b1bed5dd12c61bb6a3d022100c95366b551a716a5fe5812530c5f48686cf0563d518dfc3d8b296a97a019fac9:922c64590222798bb761d5b6d8e72950

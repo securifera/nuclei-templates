@@ -8,8 +8,12 @@ info:
     A BigCommerce phishing website was detected
   reference:
     - https://bigcommerce.com
+  classification:
+    cpe: cpe:2.3:a:bigcommerce:bigcommerce:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bigcommerce
+    product: bigcommerce
   tags: phishing,bigcommerce,ecommerce,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bigcommerce
+        cpe: cpe:2.3:a:bigcommerce:bigcommerce:*:*:*:*:*:*:*:*
         words:
           - '<title>Shape Your Future On Your Terms | BigCommerce'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bigcommerce-2
+        cpe: cpe:2.3:a:bigcommerce:bigcommerce:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bigcommerce.com")'
-# digest: 4a0a00473045022100df0ebf2bbf81a4afbe43ed23549979966e337877db8ed778d6f1d96738915e690220080c922b072cf7c089f9f7071f44601cd483cad7dea8056a63711066f366fca9:922c64590222798bb761d5b6d8e72950

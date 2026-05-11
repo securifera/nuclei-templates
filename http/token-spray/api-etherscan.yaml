@@ -8,8 +8,12 @@ info:
   reference:
     - https://docs.etherscan.io/
     - https://github.com/daffainfo/all-about-apikey/tree/main/etherscan
+  classification:
+    cpe: cpe:2.3:a:etherscan:etherscan:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: etherscan
+    product: etherscan
   tags: token-spray,etherscan
 
 self-contained: true
@@ -22,15 +26,18 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: etherscan
+        cpe: cpe:2.3:a:etherscan:etherscan:*:*:*:*:*:*:*:*
         part: body
         negative: true
         words:
           - 'Invalid API Key'
 
       - type: word
+        name: etherscan-2
+        cpe: cpe:2.3:a:etherscan:etherscan:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"status":'
           - '"message":"OK"'
         condition: and
-# digest: 490a00463044022040e9a1122322b50d41afffe304f38b51107bdead31e26e56c404e376d5b6e7650220587d2512a60da72984ec4786c62bc6ebaa8224a8e3413076fc1c84a94cf2ee30:922c64590222798bb761d5b6d8e72950

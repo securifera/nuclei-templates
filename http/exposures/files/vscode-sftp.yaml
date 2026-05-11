@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: visual_studio_code
+        cpe: cpe:2.3:a:microsoft:visual_studio_code:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"name":'
@@ -36,6 +38,8 @@ http:
         condition: and
 
       - type: word
+        name: visual_studio_code-2
+        cpe: cpe:2.3:a:microsoft:visual_studio_code:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -43,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210091514d54631afece9c873ce8cce438ffaea3c2139099371e79dc08737c3be154022039a0d14b55873a7432b0d93d1f18a33a7c13f1c4fa1b476cb29882db93c8b590:922c64590222798bb761d5b6d8e72950

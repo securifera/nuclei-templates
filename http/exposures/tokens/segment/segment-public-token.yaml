@@ -9,10 +9,13 @@ info:
     - https://segment.com/docs/api/public-api/
     - https://segment.com/blog/how-segment-proactively-protects-customer-api-tokens/
   classification:
+    cpe: cpe:2.3:a:segment:segment:*:*:*:*:*:*:*:*
     cwe-id: CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: segment
+    product: segment
   tags: segment,token,exposure,vuln
 
 http:
@@ -25,4 +28,3 @@ http:
         part: body
         regex:
           - '(sgp_[a-zA-Z0-9]{64})'
-# digest: 4b0a0048304602210081567aaef2abddc85138b9e7c1ec75900d9986a5a9e2609f2ad4d6cec1032060022100fbe309da1398e52f96eea6d072484b1b85868a2ac9c5a4a1ba4587db91cda4d4:922c64590222798bb761d5b6d8e72950

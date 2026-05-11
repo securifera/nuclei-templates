@@ -8,8 +8,12 @@ info:
     A digital-ocean phishing website was detected
   reference:
     - https://digitalocean.com
+  classification:
+    cpe: cpe:2.3:a:digital-ocean:digital-ocean:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: digital-ocean
+    product: digital-ocean
   tags: phishing,digital-ocean,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: digital-ocean
+        cpe: cpe:2.3:a:digital-ocean:digital-ocean:*:*:*:*:*:*:*:*
         words:
           - 'DigitalOcean | Cloud Infrastructure for Developers'
           - 'DigitalOcean'
@@ -33,6 +39,7 @@ http:
           - 200
 
       - type: dsl
+        name: digital-ocean-2
+        cpe: cpe:2.3:a:digital-ocean:digital-ocean:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"digitalocean.com")'
-# digest: 4a0a004730450220507bde964a9e42d168755c442ddec4d7ceedfc23c574775b6e2d7231486a277b022100db14ee21c9b5e0c17d15e38bf8f7b0e0e4cc81331c56919eb0beee898d3c6fb0:922c64590222798bb761d5b6d8e72950

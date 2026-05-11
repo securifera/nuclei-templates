@@ -10,9 +10,13 @@ info:
     - https://api.slack.com/authentication
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/slack-user-token.yaml
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/slack-user-token.txt
+  classification:
+    cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
+    vendor: slack
+    product: slack
   tags: exposure,token,slack,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +30,7 @@ http:
       - type: regex
         part: body
         name: token
+        cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
         regex:
           - 'xoxp-[0-9A-Za-z\\-]{74}'
           - '(xox[pe](?:-[0-9]{10,13}){3}-[a-zA-Z0-9-]{28,34})'
@@ -51,6 +56,8 @@ http:
 
     matchers:
       - type: dsl
+        name: slack
+        cpe: cpe:2.3:a:slack:slack:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains_all(body, "is_admin", "is_app_user", "is_email_confirmed")
@@ -61,4 +68,3 @@ http:
       - type: dsl
         dsl:
           - token
-# digest: 4b0a004830460221009f621f36363e8e164862c9d74c0fad658f7d3bb17097a66017b72b85c87b0efa022100dea63c6babcc7fb5850acf66106e8de1622279ab8068fc3381bf5c92557f2562:922c64590222798bb761d5b6d8e72950

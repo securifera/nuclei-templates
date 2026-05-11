@@ -10,11 +10,14 @@ info:
     - https://www.exploit-db.com/expl oits/38568
     - https://wpscan.com/vulnerability/c465e5c1-fe43-40e9-894a-97b8ac462381
   classification:
+    cpe: cpe:2.3:a:wp-ambience:wp-ambience:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 5.4
     cwe-id: CWE-80
   metadata:
     max-request: 2
+    vendor: wp-ambience
+    product: wp-ambience
   tags: wp-plugin,wp,edb,wpscan,wordpress,xss,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +29,8 @@ http:
 
     matchers:
       - type: word
+        name: wp-ambience
+        cpe: cpe:2.3:a:wp-ambience:wp-ambience:*:*:*:*:*:*:*:*
         internal: true
         words:
           - '/wp-content/themes/ambience/'
@@ -37,11 +42,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: wp-ambience-2
+        cpe: cpe:2.3:a:wp-ambience:wp-ambience:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<body onload=alert(1)>"
 
       - type: word
+        name: wp-ambience-3
+        cpe: cpe:2.3:a:wp-ambience:wp-ambience:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -49,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b91fc8cb1dbd31f32de816d5989b156ff3960df244af28df970cdad2ee395c1c022100a2ff983e317df381140acc7eb5e85b00f8f4b184030d961c92dad18769563093:922c64590222798bb761d5b6d8e72950

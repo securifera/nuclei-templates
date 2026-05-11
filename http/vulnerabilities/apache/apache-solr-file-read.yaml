@@ -10,11 +10,14 @@ info:
     - https://nsfocusglobal.com/apache-solr-arbitrary-file-read-and-ssrf-vulnerability-threat-alert/
     - https://twitter.com/sec715/status/1373472323538362371
   classification:
+    cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 3
+    vendor: apache
+    product: solr
   tags: apache,solr,lfi,vuln
 
 http:
@@ -40,6 +43,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: solr
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "bit app support"
@@ -48,6 +53,8 @@ http:
         condition: and
 
       - type: regex
+        name: solr-2
+        cpe: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
@@ -58,4 +65,3 @@ http:
         regex:
           - '"name"\:"(.*?)"'
         internal: true
-# digest: 490a004630440220417b8742255aa140dafc68f37a608e18d468fb6bc96bf1e038a292b801067eb202202efdbf89c4c5a29bb929b191fefcbb003e2fae04b1761ca1d2ea6b6bd1d869ab:922c64590222798bb761d5b6d8e72950

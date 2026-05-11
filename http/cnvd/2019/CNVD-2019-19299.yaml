@@ -9,11 +9,14 @@ info:
     - https://www.cxyzjd.com/article/guangying177/110177339
     - https://github.com/sectestt/CNVD-2019-19299
   classification:
+    cpe: cpe:2.3:a:seeyon:zhiyuan_a8:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-77
   metadata:
     max-request: 2
+    vendor: seeyon
+    product: zhiyuan_a8
   tags: cnvd2019,cnvd,zhiyuan,rce,intrusive,vuln
 
 http:
@@ -45,9 +48,10 @@ http:
 
     matchers:
       - type: dsl
+        name: zhiyuan_a8
+        cpe: cpe:2.3:a:seeyon:zhiyuan_a8:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code_2 == 200'
           - 'contains(body_1, "htmoffice operate")'
           - 'contains(body_2, "Windows IP")'
         condition: and
-# digest: 4a0a004730450220122bc408c250aa2cd82f1d8e0e6d91a214b4ee76192af64f0bfc0bb9133b3039022100c0c90f184eedf4876b92e93eb7b3d140f85a60e1dbc6b05f713bbe316f53f849:922c64590222798bb761d5b6d8e72950

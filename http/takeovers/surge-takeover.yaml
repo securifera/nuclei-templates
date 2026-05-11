@@ -7,8 +7,12 @@ info:
   description: surge takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/198
+  classification:
+    cpe: cpe:2.3:a:surge:surge:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: surge
+    product: surge
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: surge
+        cpe: cpe:2.3:a:surge:surge:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: surge-2
+        cpe: cpe:2.3:a:surge:surge:*:*:*:*:*:*:*:*
         words:
           - project not found
 
@@ -34,4 +42,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4b0a00483046022100c41aefb8b76f18692065d1f45ba5242af385481d1622be2c4038ef8937768521022100895ce7f7cc7f964e01025e3754e3f45b018573b89804f92dea2ae530225deeed:922c64590222798bb761d5b6d8e72950

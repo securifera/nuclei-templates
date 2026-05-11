@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: facturascripts
+        cpe: cpe:2.3:a:facturascripts:facturascripts:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'FacturaScripts installer'
@@ -30,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: facturascripts-2
+        cpe: cpe:2.3:a:facturascripts:facturascripts:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -37,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022023c9fd17da92444575b619bff2796db0d0b88eb616e2ae913ef223991ae9822302201f026ad2edee67508a1afeadff834f851d9e43dca10e5a7e6e2ca1f8bb33890e:922c64590222798bb761d5b6d8e72950

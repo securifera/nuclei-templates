@@ -6,12 +6,15 @@ info:
   severity: info
   description: Apple Discussions user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
     verified: true
+    vendor: apple
+    product: apple
   tags: osint,osint-social,apple,discovery
 
 self-contained: true
@@ -28,9 +31,10 @@ http:
           - 200
 
       - type: word
+        name: apple
+        cpe: cpe:2.3:a:apple:apple:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Apple Community"
           - "communities.apple.com"
         condition: and
-# digest: 490a00463044022016217ad19dba57a479fa598dee7ba788eaac631faffcd7dff12eeb1348532b28022043c935ce57d19a0a918bc3489353e15d307bee81d31aecb9840a6568a33a27e3:922c64590222798bb761d5b6d8e72950

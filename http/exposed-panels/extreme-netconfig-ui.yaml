@@ -6,11 +6,14 @@ info:
   severity: info
   description: Extreme NetConfig UI panel was detected.
   classification:
+    cpe: cpe:2.3:a:extreme:extreme:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
     shodan-query: http.title:"Extreme NetConfig UI"
+    vendor: extreme
+    product: extreme
   tags: panel,tech,hiveos,extreme,discovery
 
 http:
@@ -21,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: extreme
+        cpe: cpe:2.3:a:extreme:extreme:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Extreme NetConfig UI</title>'
@@ -36,4 +41,3 @@ http:
         group: 1
         regex:
           - 'version" align="right" valign="bottom">([0-9.a-z]+)<\/td>'
-# digest: 490a00463044022011270cff67c98659703d2384940fa014398f96e042615b959ad3302308168aec02200ac02aa66c9ebfbbd05d9d3ec0ee0a2869ae449f59c5075345707eed3a91d29e:922c64590222798bb761d5b6d8e72950

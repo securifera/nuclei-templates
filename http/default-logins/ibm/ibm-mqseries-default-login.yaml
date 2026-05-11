@@ -9,11 +9,14 @@ info:
     - https://github.com/ibm-messaging/mq-container/blob/master/etc/mqm/mq.htpasswd
     - https://vulners.com/nessus/IBM_MQ_DEFAULT_CREDENTIALS.NASL
   classification:
+    cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 3
+    vendor: ibm
+    product: ibm
   tags: ibm,default-login,vuln
 
 http:
@@ -41,6 +44,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ibm
+        cpe: cpe:2.3:a:ibm:ibm:*:*:*:*:*:*:*:*
         part: header
         words:
           - "LtpaToken2_"
@@ -48,4 +53,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4a0a004730450221009ee6726fdf0ed109eeeb4520c75bf255c14e1ea6254b278afec0635c7f498d0602207b1d6aaed810a78ab5a6659a4bfea253f71245431d6911c4984417becbfa0b25:922c64590222798bb761d5b6d8e72950

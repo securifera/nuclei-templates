@@ -6,11 +6,14 @@ info:
   severity: info
   description: Independent academia user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:independent-academia:independent-academia:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: independent-academia
+    product: independent-academia
   tags: osint,osint-hobby,independent-academia,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: independent-academia
+        cpe: cpe:2.3:a:independent-academia:independent-academia:*:*:*:*:*:*:*:*
         part: body
         words:
           - "- Academia.edu"
-# digest: 490a004630440220130f29ab97627b99ff54c8727765f7cd053f6feb695e9bcefddf7a9be0b0ba71022079f217db6baf5462518a246946913e38cd7792bdd2247c9d82b1ebb79e74ecb0:922c64590222798bb761d5b6d8e72950

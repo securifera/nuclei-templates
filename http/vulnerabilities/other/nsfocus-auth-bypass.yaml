@@ -8,10 +8,14 @@ info:
     Nsfocus bastion host has an arbitrary user login vulnerability. Attackers can use the vulnerability to log in any user by including www/local_user.php
   reference:
     - https://forum.butian.net/article/251
+  classification:
+    cpe: cpe:2.3:a:nsfocus:nsfocus:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
     fofa-query: body="/needUsbkey.php?username=" && "NSFOCUS"
+    vendor: nsfocus
+    product: nsfocus
   tags: nsfocus,auth-bypass,vuln
 
 flow: http(1) && http(2)
@@ -26,6 +30,8 @@ http:
     max-redirects: 2
     matchers:
       - type: dsl
+        name: nsfocus
+        cpe: cpe:2.3:a:nsfocus:nsfocus:*:*:*:*:*:*:*:*
         dsl:
           - "contains(tolower(body), 'nsfocus')"
           - "contains(header, 'NSFOCUS')"
@@ -41,12 +47,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nsfocus-2
+        cpe: cpe:2.3:a:nsfocus:nsfocus:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'status": 200'
 
       - type: word
+        name: nsfocus-3
+        cpe: cpe:2.3:a:nsfocus:nsfocus:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - application/json
-# digest: 4a0a0047304502207764dbdfd3de1f4c55fd7c86ac35bb900f5da28465c0c33091b038811be6aaf6022100ff98ac93cb98b7ac484bc093716f02f3530f8b313969f181c3d2bb97716bfbf8:922c64590222798bb761d5b6d8e72950

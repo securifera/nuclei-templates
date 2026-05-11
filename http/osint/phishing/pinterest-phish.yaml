@@ -8,8 +8,12 @@ info:
     A Pinterest phishing website was detected
   reference:
     - https://pinterest.com
+  classification:
+    cpe: cpe:2.3:a:pinterest:pinterest:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: pinterest
+    product: pinterest
   tags: phishing,pinterest,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pinterest
+        cpe: cpe:2.3:a:pinterest:pinterest:*:*:*:*:*:*:*:*
         words:
           - 'Log in to Pinterest'
           - 'Pinterest'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: pinterest-2
+        cpe: cpe:2.3:a:pinterest:pinterest:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"pinterest.com")'
-# digest: 490a00463044022061d74b162e18d2c6c6656f327dc29b21ebde841db5799857ef1a91f6f5a40ae602200aeab4f1ea37f74d70b91678d93e7d0b6b8b36949f7470593603facbaab1e548:922c64590222798bb761d5b6d8e72950

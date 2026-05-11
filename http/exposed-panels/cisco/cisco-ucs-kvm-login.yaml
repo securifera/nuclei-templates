@@ -30,6 +30,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: unified_computing_system
+        cpe: cpe:2.3:a:cisco:unified_computing_system:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Cisco UCS KVM Direct</title>'
@@ -37,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100895dfb53248da4e2e62abd862648f13b6c3f3c007530a0afb1b20ae92b040f65022100b1d29b133ab5111cab62db387e80ff7045d77f5c9bf56aa9efe45c4fb611324f:922c64590222798bb761d5b6d8e72950

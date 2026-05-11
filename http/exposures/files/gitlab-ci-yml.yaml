@@ -32,6 +32,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: gitlab
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         part: body
         words:
           - "variables:"
@@ -39,6 +41,8 @@ http:
         condition: and
 
       - type: word
+        name: gitlab-2
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         part: body
         words:
           - "stage: build"
@@ -47,10 +51,11 @@ http:
         condition: and
 
       - type: word
+        name: gitlab-3
+        cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
         part: body
         words:
           - "variables:"
           - "releasePath:"
           - "sshUser:"
         condition: and
-# digest: 4a0a00473045022100c877bd4fb88365607b2966eb9742a2aac22dff1a851dab47090c4c7c31be4edd02207d445bfa36816c2fb91dd975b72cf9cf14d5887a5ee20576b14c0604cb3d0f1c:922c64590222798bb761d5b6d8e72950

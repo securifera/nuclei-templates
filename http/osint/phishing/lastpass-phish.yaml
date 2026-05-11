@@ -8,8 +8,12 @@ info:
     A lastpass phishing website was detected
   reference:
     - https://lastpass.com
+  classification:
+    cpe: cpe:2.3:a:lastpass:lastpass:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: lastpass
+    product: lastpass
   tags: phishing,lastpass,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: lastpass
+        cpe: cpe:2.3:a:lastpass:lastpass:*:*:*:*:*:*:*:*
         words:
           - '#1 Password Manager &amp; Vault App with Single-Sign On &amp; MFA Solutions - LastPass'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: lastpass-2
+        cpe: cpe:2.3:a:lastpass:lastpass:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"lastpass.com")'
-# digest: 4a0a00473045022061e7c6d529e611a7c7223a74e6273e878f7e9c42f3bfb0ec35cb3f78205b5da80221008619aa5599ed93a02ae34c3f2dba90536e2f15d94077b56250f8b8d7fc71b2d6:922c64590222798bb761d5b6d8e72950

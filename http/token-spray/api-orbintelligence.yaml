@@ -8,8 +8,12 @@ info:
   reference:
     - https://api.orb-intelligence.com/docs/
     - https://github.com/daffainfo/all-about-apikey/tree/main/orb-intelligence
+  classification:
+    cpe: cpe:2.3:a:orbintelligence:orbintelligence:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: orbintelligence
+    product: orbintelligence
   tags: token-spray,orbintelligence
 
 self-contained: true
@@ -21,10 +25,11 @@ http:
 
     matchers:
       - type: word
+        name: orbintelligence
+        cpe: cpe:2.3:a:orbintelligence:orbintelligence:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"entity_type":'
           - '"company_status":'
           - '"orb_num":'
         condition: and
-# digest: 4b0a00483046022100bb7c698c1600633bd2f5d77726d600664fde0b7f93e12e05a886aa4b66f35bf2022100c526b1d84c87bd4a599693b10991639c80659712b4c53e3964133af7045e25f8:922c64590222798bb761d5b6d8e72950

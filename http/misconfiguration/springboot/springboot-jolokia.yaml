@@ -7,10 +7,14 @@ info:
   description: Springboot Jolokia Actuator is exposed.
   reference:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"Eureka"
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"config":{'
@@ -31,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -44,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202f947c88823cb5ec0b0e326936467ac0525bee5ec61e9ba1a21a5a8d018a61a80220741fcebde48c28ee20fd31bbabd5574e2f44413da1214b02fcb57bd8b1a1ce4c:922c64590222798bb761d5b6d8e72950

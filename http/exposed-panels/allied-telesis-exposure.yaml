@@ -8,6 +8,7 @@ info:
   reference:
     - https://www.alliedtelesis.com/in/en
   classification:
+    cpe: cpe:2.3:a:allied_telesis:device_gui:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -30,11 +31,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: device_gui
+        cpe: cpe:2.3:a:allied_telesis:device_gui:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Allied Telesis Device GUI</title>"
 
       - type: word
+        name: device_gui-2
+        cpe: cpe:2.3:a:allied_telesis:device_gui:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -42,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220444ac1726a86c521f1c13749b6cc03fa79b9ac5ba75fb0be7e059ba7fb218a10022030eb6c58a40a182552b43a4153817dc69957a31db1a218b02752d59da12b34b0:922c64590222798bb761d5b6d8e72950

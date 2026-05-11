@@ -10,9 +10,13 @@ info:
     - https://www.exploit-db.com/exploits/51640
     - https://cxsecurity.com/issue/WLB-2023070076
     - https://extensions.joomla.org/extension/vertical-markets/real-estate/iproperty/
+  classification:
+    cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
+    vendor: joomla
+    product: joomla
   tags: joomla,xss,unauth,vuln
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: joomla
+        cpe: cpe:2.3:a:joomla:joomla:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'onmouseover="alert(document.domain)"style='
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210099df7d29c95c6e8a2b4f1543fd6f69becfb817838b0042330065f7f86c47b41602202cca1381089377c21d156ea6350632a4e476ca9552962c480e872f31c21b601f:922c64590222798bb761d5b6d8e72950

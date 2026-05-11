@@ -8,8 +8,12 @@ info:
     An EA phishing website was detected
   reference:
     - https://ea.com
+  classification:
+    cpe: cpe:2.3:a:ea:ea:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: ea
+    product: ea
   tags: phishing,ea,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ea
+        cpe: cpe:2.3:a:ea:ea:*:*:*:*:*:*:*:*
         words:
           - "We exist to inspire the world through Play. Electronic Arts is a leading publisher of games on Console, PC and Mobile."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: ea-2
+        cpe: cpe:2.3:a:ea:ea:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"ea.com")'
-# digest: 4b0a004830460221009fb4ad2426026b1dcad1f17010279325a19ffbed52dc57e41887f35197616b82022100f6afd438cf068312f92563525ffc05b6fd3577d7e634d7a5a6a269cfc6b8c99e:922c64590222798bb761d5b6d8e72950

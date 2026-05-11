@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/nocobase/nocobase/
     - https://www.nocobase.com/
+  classification:
+    cpe: cpe:2.3:a:nocobase:nocobase:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     vendor: nocobase
@@ -25,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: nocobase
+        cpe: cpe:2.3:a:nocobase:nocobase:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"authType":'
@@ -35,6 +39,8 @@ http:
         condition: and
 
       - type: word
+        name: nocobase-2
+        cpe: cpe:2.3:a:nocobase:nocobase:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - 'application/json'
@@ -51,4 +57,3 @@ http:
           - '"version: " + .version'
           - '"ncSiteUrl: " + .ncSiteUrl'
           - '"mainSubDomain: " + .mainSubDomain'
-# digest: 4b0a0048304602210081298239c5423347a8f589dabd27da684d11653fb05253a040acd4d3e0a8bd64022100b94acd4199acaea84e1a6c24c898c0b323efab8e2cd02fbc10c23b9ca695f746:922c64590222798bb761d5b6d8e72950

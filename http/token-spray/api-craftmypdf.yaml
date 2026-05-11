@@ -8,8 +8,12 @@ info:
   reference:
     - https://pdflayer.com/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/craftmypdf
+  classification:
+    cpe: cpe:2.3:a:craftmypdf:craftmypdf:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: craftmypdf
+    product: craftmypdf
   tags: token-spray,craftmypdf
 
 self-contained: true
@@ -24,9 +28,10 @@ http:
 
     matchers:
       - type: word
+        name: craftmypdf
+        cpe: cpe:2.3:a:craftmypdf:craftmypdf:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"template_id":'
           - '"name":'
         condition: and
-# digest: 4a0a00473045022100faefff51ce7ea30b00a9f8e0751e3b0349590b931a7fbe4af5f532e8e91f19ed02201c3fe36b9d0771252a21ee2748913610dda4392f51a9c37fd6cea784db5b2dda:922c64590222798bb761d5b6d8e72950

@@ -8,11 +8,14 @@ info:
   reference:
     - https://iryl.info/2020/11/27/exploiting-samsung-router-wlan-ap-wea453e/
   classification:
+    cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
     cwe-id: CWE-80
   metadata:
     max-request: 1
+    vendor: samsung
+    product: samsung
   tags: xss,samsung,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: samsung
+        cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
         words:
           - "/tmp/www/<script>alert(document.domain)</script>"
         part: body
@@ -32,7 +37,8 @@ http:
           - 404
 
       - type: word
+        name: samsung-2
+        cpe: cpe:2.3:a:samsung:samsung:*:*:*:*:*:*:*:*
         words:
           - "text/html"
         part: header
-# digest: 4b0a00483046022100f6eb8639395a7c12aa54c7a1aba6ca5611a926c19de23e09543518583b29452c022100d6fc0e7c561c883f763ad23f178194dfc3142877318fefc539d895b1490bddbf:922c64590222798bb761d5b6d8e72950

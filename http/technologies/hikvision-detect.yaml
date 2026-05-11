@@ -26,6 +26,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: ds-2cd2026g2-iu\/sl_firmware
+        cpe: cpe:2.3:a:hikvision:ds-2cd2026g2-iu\/sl_firmware:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Hikvision Digital Technology"

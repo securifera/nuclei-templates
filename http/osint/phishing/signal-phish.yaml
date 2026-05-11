@@ -8,8 +8,12 @@ info:
     A signal phishing website was detected
   reference:
     - https://signal.org
+  classification:
+    cpe: cpe:2.3:a:signal:signal:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: signal
+    product: signal
   tags: phishing,signal,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: signal
+        cpe: cpe:2.3:a:signal:signal:*:*:*:*:*:*:*:*
         words:
           - 'Say &quot;hello&quot; to a different messaging experience. An unexpected focus on privacy, combined with all of the features you expect.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: signal-2
+        cpe: cpe:2.3:a:signal:signal:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"signal.org")'
-# digest: 490a0046304402207d365f6e278f207b64d35cae42894255e407bdb0a8cddadc7141755fb963639002204b8a8473ce87c2cac8d7ee938860af001fcba0ed6e1b3da2e20013afc9bc173e:922c64590222798bb761d5b6d8e72950

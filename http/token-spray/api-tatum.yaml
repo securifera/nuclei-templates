@@ -7,8 +7,12 @@ info:
   reference:
     - https://apidoc.tatum.io/#tag/Node-RPC
     - https://docs.tatum.io
+  classification:
+    cpe: cpe:2.3:a:tatum:tatum:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: tatum
+    product: tatum
   tags: defi,dapp,token-spray,blockchain
 
 self-contained: true
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tatum
+        cpe: cpe:2.3:a:tatum:tatum:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"baseCommit":'
@@ -31,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: tatum-2
+        cpe: cpe:2.3:a:tatum:tatum:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402206deda071bf82bc59d9707a68dafaf73b5882d41a7c9438c6c69347f633cad1f2022028ab5ef55e769f797ead4d378964914ed09b1a2e8e0436805bc2e3b7c19c2fcf:922c64590222798bb761d5b6d8e72950

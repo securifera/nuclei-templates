@@ -8,9 +8,13 @@ info:
     Netpower NPFW firewall has an arbitrary file read vulnerability. Due to insufficient code filtering, it can read any file on the server
   reference:
     - https://forum.butian.net/article/241
+  classification:
+    cpe: cpe:2.3:a:netpower:npfw:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     fofa-query: '"Netpower" && "/direct"'
+    vendor: netpower
+    product: npfw
   tags: netpower,npfw,lfi,vuln
 
 http:
@@ -25,10 +29,14 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: npfw
+        cpe: cpe:2.3:a:netpower:npfw:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
 
       - type: word
+        name: npfw-2
+        cpe: cpe:2.3:a:netpower:npfw:*:*:*:*:*:*:*:*
         part: body
         words:
           - '{"type":"event"'
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100b13baa719e5363856e0f6e3962c8534417ecc30acef70ac1b208e5e54015008602210098220b2a211334a2f841d2ba30a7426d4f661cb07364fee01725b876f33292d7:922c64590222798bb761d5b6d8e72950

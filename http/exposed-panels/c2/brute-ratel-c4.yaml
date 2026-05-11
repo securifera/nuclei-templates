@@ -8,10 +8,14 @@ info:
     Brute Ratel C4 (BRc4) is a legit red-teaming tool designed from the ground up with evasion capabilities in mind, but in the wrong hands can cause significant damage. Learn how to protect your organization with our Brute Ratel C4 Spotlight.
   reference:
     - https://bruteratel.com/
+  classification:
+    cpe: cpe:2.3:a:brute-ratel-c4:brute-ratel-c4:*:*:*:*:*:*:*:*
   metadata:
     verified: "true"
     max-request: 1
     shodan-query: http.html_hash:-1957161625
+    vendor: brute-ratel-c4
+    product: brute-ratel-c4
   tags: c2,bruteratel,c4,panel,vuln
 
 http:
@@ -22,8 +26,9 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: brute-ratel-c4
+        cpe: cpe:2.3:a:brute-ratel-c4:brute-ratel-c4:*:*:*:*:*:*:*:*
         dsl:
           - "contains(body, '404 file not found')"
           - "(\"1a279f5df4103743b823ec2a6a08436fdf63fe30\" == sha1(body))"
         condition: and
-# digest: 4a0a0047304502204568e77fa8f6a7b5dc990367242ee06c3cdd7288412cff7a6eba04ad1c7819a7022100f5db224e0bee469c1e6d7a4c225028f2e83877399a8c351f5c037ea202d740aa:922c64590222798bb761d5b6d8e72950

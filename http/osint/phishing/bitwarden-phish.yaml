@@ -8,8 +8,12 @@ info:
     A bitwarden phishing website was detected
   reference:
     - https://bitwarden.com
+  classification:
+    cpe: cpe:2.3:a:bitwarden:bitwarden:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bitwarden
+    product: bitwarden
   tags: phishing,bitwarden,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bitwarden
+        cpe: cpe:2.3:a:bitwarden:bitwarden:*:*:*:*:*:*:*:*
         words:
           - 'The password manager trusted by millions | Bitwarden'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bitwarden-2
+        cpe: cpe:2.3:a:bitwarden:bitwarden:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bitwarden.com")'
-# digest: 4b0a00483046022100daa0035de7a8077e8f6e2aa3422582c63eb6c4d2b426ba7515c878f5eaf61553022100d11b450061d051434273f4d96a55536bb42cb4a510694a6e0bd421a2d164115f:922c64590222798bb761d5b6d8e72950

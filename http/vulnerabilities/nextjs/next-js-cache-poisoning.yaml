@@ -10,6 +10,8 @@ info:
     - https://github.com/vercel/next.js/compare/v13.4.20-canary.12...v13.4.20-canary.13
     - https://github.com/valentin-panov/nextjs-no-cache-issue
     - https://zhero-web-sec.github.io/research-and-things/nextjs-and-cache-poisoning-a-quest-for-the-black-hole
+  classification:
+    cpe: cpe:2.3:a:vercel:next.js:*:*:*:*:*:*:*:*
   metadata:
     vendor: vercel
     product: next.js
@@ -38,8 +40,9 @@ http:
 
     matchers:
       - type: dsl
+        name: next.js
+        cpe: cpe:2.3:a:vercel:next.js:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1 == 888 && contains(body_1, '/_error') && !contains(cache_control_1, 'no-cache') && !contains(pragma_1, 'no-cache')"
           - "status_code_2 == 888 && contains(body_2, '/_error') && !contains(cache_control_2, 'no-cache') && !contains(pragma_2, 'no-cache')"
         condition: and
-# digest: 4a0a0047304502201be1ca339cb1b87c8d234708ba283ea73787b31aa89162f2e030e89b2395b557022100e8197e03633b5f0b9feb3bb22203bdc52eeb6205f6f5678575739edfe6d1e6ab:922c64590222798bb761d5b6d8e72950

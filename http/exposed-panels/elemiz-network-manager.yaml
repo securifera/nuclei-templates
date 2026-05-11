@@ -6,12 +6,15 @@ info:
   severity: info
   description: Elemiz Network Manager login panel was detected.
   classification:
+    cpe: cpe:2.3:a:elemiz:elemiz:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Elemiz Network Manager"
+    vendor: elemiz
+    product: elemiz
   tags: elemiz,manager,login,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: elemiz
+        cpe: cpe:2.3:a:elemiz:elemiz:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Elemiz Network Manager"
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f26ab6c378a6ed1c03e3081adbbe85b029a7ab09b58e9731aa3cf5250c87b963022100bd3d0570d1701c5ee641989249a96f3c2131a1d53f3270e6f758aa77be80ef19:922c64590222798bb761d5b6d8e72950

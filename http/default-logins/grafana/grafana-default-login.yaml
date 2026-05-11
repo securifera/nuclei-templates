@@ -45,11 +45,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: grafana
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         words:
           - "grafana_session" # Login cookie
         part: header
 
       - type: word
+        name: grafana-2
+        cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Logged in" # Logged in keyword
@@ -57,4 +61,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022014c874a60b3ef240fe9880b2bf53d7a9578a27f293c974e9cdec89673aa0e5af02204feb1f3c604d47aef55c26b304fe4e9fd8c514463c49957f57b275f1abbdceff:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
   reference:
     - https://github.com/onMey/WH/blob/main/poc.py
     - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20OfficeServer.jsp%20任意文件上传漏洞.html
+  classification:
+    cpe: cpe:2.3:a:officeserver:officeserver:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: app="万户网络-ezOFFICE"
+    vendor: officeserver
+    product: officeserver
   tags: wanhu,oa,officeserver,fileupload,intrusive,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: officeserver
+        cpe: cpe:2.3:a:officeserver:officeserver:*:*:*:*:*:*:*:*
         words:
           - "DBSTEP V3.0"
           - "Post"
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502205cf6a801baf90ddc9837b11ec303ea4c571a3c8db0b4fcf5c5c1b4f495f49d6d0221009d1f6f0a58507b867e818910bc528c6d2cb6876c5315ea00f235ad9aa7978a41:922c64590222798bb761d5b6d8e72950

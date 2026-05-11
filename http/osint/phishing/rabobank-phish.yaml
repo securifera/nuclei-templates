@@ -8,8 +8,12 @@ info:
     A Rabobank phishing website was detected
   reference:
     - https://rabobank.com
+  classification:
+    cpe: cpe:2.3:a:rabobank:rabobank:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rabobank
+    product: rabobank
   tags: phishing,rabobank,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rabobank
+        cpe: cpe:2.3:a:rabobank:rabobank:*:*:*:*:*:*:*:*
         words:
           - "Looks like something went wrong…"
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: rabobank-2
+        cpe: cpe:2.3:a:rabobank:rabobank:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"rabobank.com")'
-# digest: 4a0a00473045022064955702a3dcd03c5c4d910fc89b98127a9c37988ea2306d8f67dc2705a286cb02210096f817efd4bea1cafc37cf8272cd794ab7d88e2337808458d80b9dfe5f558a59:922c64590222798bb761d5b6d8e72950

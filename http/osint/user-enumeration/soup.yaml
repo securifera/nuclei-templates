@@ -6,11 +6,14 @@ info:
   severity: info
   description: Soup user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:soup:soup:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: soup
+    product: soup
   tags: osint,osint-blog,soup,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: soup
+        cpe: cpe:2.3:a:soup:soup:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Author at Soup.io"
-# digest: 4a0a0047304502202679668cfc36b6b9b1a4be244569976c0342cad1c2ceaf7fe4257aff8619e1650221009b3a7ffac90d231a9cf457ee3e488a8497b6fdf5d846d82eb105fa65a32316ec:922c64590222798bb761d5b6d8e72950

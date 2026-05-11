@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6843
   classification:
+    cpe: cpe:2.3:a:axis:axis:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: axis
+    product: axis
   tags: axis,edb,iot,discovery
 
 http:
@@ -29,6 +32,7 @@ http:
     matchers:
       - type: dsl
         name: stream-view
+        cpe: cpe:2.3:a:axis:axis:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(tolower(body), "live view  - axis")'
           - 'contains(tolower(body), "live view - axis")'
@@ -36,6 +40,7 @@ http:
 
       - type: dsl
         name: logo
+        cpe: cpe:2.3:a:axis:axis:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - '"1106649083" == mmh3(base64_py(body))'
@@ -47,4 +52,3 @@ http:
         group: 1
         regex:
           - 'AXIS (.*) Network Camera</title>'
-# digest: 4a0a004730450221009a4bec59864aa95686d91bda2171822c38438787cee7cf68aa4ab157f3896be3022004849d82cdfa618562a6060fba8bbf94adaa39d3918e8299f452a9cefc0abef0:922c64590222798bb761d5b6d8e72950

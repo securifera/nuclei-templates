@@ -5,8 +5,12 @@ info:
   author: geeknik,daffainfo,ELSFA7110,Hardik-Solanki
   severity: low
   description: Error log files were exposed.
+  classification:
+    cpe: cpe:2.3:a:error:logs:*:*:*:*:*:*:*:*
   metadata:
     max-request: 29
+    vendor: error
+    product: logs
   tags: logs,exposure,error,vuln
 
 http:
@@ -50,6 +54,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: logs
+        cpe: cpe:2.3:a:error:logs:*:*:*:*:*:*:*:*
         words:
           - "Segmentation Fault"
           - "coredump"
@@ -60,10 +66,11 @@ http:
         condition: or
 
       - type: dsl
+        name: logs-2
+        cpe: cpe:2.3:a:error:logs:*:*:*:*:*:*:*:*
         dsl:
           - "contains(tolower(header), 'content-type: text/plain') || contains(tolower(header), 'content-type: application/octet-stream') || !contains(tolower(header), 'content-type:')"
 
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009422fd88ed74c47556fe2c4293182f43f2e20e783a035841b791067a18f5e78e022100821262b267f7305aeac334e919ab3755b271e9ab5b0d9fe601d7727d3768903f:922c64590222798bb761d5b6d8e72950

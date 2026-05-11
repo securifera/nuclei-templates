@@ -6,11 +6,15 @@ info:
   severity: high
   description: |
     AVTECH video surveillance products unauthenticated file download from web root through /cgi-bin/cgibox, Since the .cab string is verified by the strstr method, the file download can be realized by adding ?.cab at the end of the file name.
+  classification:
+    cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"login" product:"Avtech"
     fofa-query: app="AVTECH-视频监控"
+    vendor: avtech
+    product: avtech
   tags: exposure,avtech,unauth,download,iot,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: avtech
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'ELF'
@@ -31,6 +37,8 @@ http:
         condition: and
 
       - type: word
+        name: avtech-2
+        cpe: cpe:2.3:a:avtech:avtech:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/plain
@@ -38,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450220672d659c96f3134ac75bc53557b95c01faa67cefd84634fb188c354f566778f5022100f9cbd58ce4e9115544423428538a46ee548ad0c60456f25eb301c898ce71cda4:922c64590222798bb761d5b6d8e72950

@@ -6,10 +6,14 @@ info:
   severity: low
   description: |
     Laragon phpinfo file was exposed.
+  classification:
+    cpe: cpe:2.3:a:laragon:laragon:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Laragon" html:"phpinfo"
+    vendor: laragon
+    product: laragon
   tags: laragon,exposure,misconfig,vuln
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: laragon
+        cpe: cpe:2.3:a:laragon:laragon:*:*:*:*:*:*:*:*
         words:
           - "PHP Extension"
           - "PHP Version"
@@ -35,4 +41,3 @@ http:
         regex:
           - '>PHP Version <\/td><td class="v">([0-9.]+)'
         part: body
-# digest: 4a0a00473045022100c608d80507b4f192f82e5e9f68bd416193f79e8ae4f8fd7cd54b2f9e0e04487e02202895d47ef6fd03d48fa89d9b042cac55ad814e4ffd7b34b97f7a5033f93dd94b:922c64590222798bb761d5b6d8e72950

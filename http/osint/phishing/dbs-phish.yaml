@@ -8,8 +8,12 @@ info:
     A DBS Bank phishing website was detected
   reference:
     - https://dbs.com
+  classification:
+    cpe: cpe:2.3:a:dbs:dbs:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: dbs
+    product: dbs
   tags: phishing,dbs,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dbs
+        cpe: cpe:2.3:a:dbs:dbs:*:*:*:*:*:*:*:*
         words:
           - 'DBS Bank'
           - "<title>DBS: Trusted as the World’s Best Bank | DBS Bank"
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: dbs-2
+        cpe: cpe:2.3:a:dbs:dbs:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"dbs.com")'
-# digest: 4a0a004730450220190066237e3e2224d22496b290b9972636caa7a5b4dd6bfd8ac44dbeebb60fe7022100acead318514c53800d47d0c291d8890337d783192e6e7296a67f868f81357956:922c64590222798bb761d5b6d8e72950

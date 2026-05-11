@@ -13,10 +13,14 @@ info:
   reference:
     - https://dumpco.re/blog/xss-instagram-feed
     - https://wordpress.org/plugins/instagram-feed
+  classification:
+    cpe: cpe:2.3:a:instagram-feed:instagram-feed:*:*:*:*:*:*:*:*
   metadata:
     verified: false
     max-requests: 2
     public-www: "/wp-content/plugins/instagram-feed/"
+    vendor: instagram-feed
+    product: instagram-feed
   tags: wordpress,wp,instagram-feed,xss,authenticated
 
 flow: http(1) && http(2)
@@ -32,6 +36,8 @@ http:
 
     matchers:
       - type: dsl
+        name: instagram-feed
+        cpe: cpe:2.3:a:instagram-feed:instagram-feed:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 302
           - contains(header, "wordpress_logged_in")
@@ -48,9 +54,10 @@ http:
 
     matchers:
       - type: dsl
+        name: instagram-feed-2
+        cpe: cpe:2.3:a:instagram-feed:instagram-feed:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "text/html")'
           - 'contains_all(body, "<script>alert(document.domain)</script>")'
         condition: and
-# digest: 4a0a00473045022100aee2c95f99b9acfc8b8a7707dbe9154630485ee74122eb30b7e701dc841faacc0220425408a56c5f23d1813ea83dbe5265ee4f861623d69aa3606a1c73d11a14bb2a:922c64590222798bb761d5b6d8e72950

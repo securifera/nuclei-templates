@@ -10,6 +10,7 @@ info:
     - https://logging.apache.org/log4j/2.x/security.html
     - https://nvd.nist.gov/vuln/detail/CVE-2021-44228
   classification:
+    cpe: cpe:2.3:a:goanywhere:goanywhere:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cve-id: CVE-2021-44228
@@ -18,6 +19,8 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.html:"GoAnywhere Managed File Transfer"
+    vendor: goanywhere
+    product: goanywhere
   tags: cve,cve2021,jndi,log4j,rce,oast,goanywhere,kev,vuln
 variables:
   rand1: '{{rand_int(111, 999)}}'
@@ -40,11 +43,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: goanywhere
+        cpe: cpe:2.3:a:goanywhere:goanywhere:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: goanywhere-2
+        cpe: cpe:2.3:a:goanywhere:goanywhere:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -73,4 +80,3 @@ http:
           - 'javax\.faces\.ViewState:1" value="(.*)" autocomplete'
         internal: true
         part: body
-# digest: 4a0a00473045022053b60a2ea5fe70e029c007b2372db7a869045f905c643a93112ea04a9524f7790221009a19cb1c0b8db4f23ecf48986c7b8ee16f2511495896c7863dc5c9b6470ff56f:922c64590222798bb761d5b6d8e72950

@@ -29,10 +29,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gnuboard5
+        cpe: cpe:2.3:a:gnuboard:gnuboard5:*:*:*:*:*:*:*:*
         words:
           - 'header\"><script>alert(document.domain)</script>.css?'
 
       - type: word
+        name: gnuboard5-2
+        cpe: cpe:2.3:a:gnuboard:gnuboard5:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -40,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220216406cd3ab5af5d71e0b34014774c4b4230fe6c19b19ed0f0e69d88dca7e213022059ed248568d7f5a36f1562111f4de18371baae046bef17463bbb067bf39b29c0:922c64590222798bb761d5b6d8e72950

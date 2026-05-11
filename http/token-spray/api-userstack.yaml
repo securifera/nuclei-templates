@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://userstack.com/documentation
+  classification:
+    cpe: cpe:2.3:a:userstack:userstack:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: userstack
+    product: userstack
   tags: token-spray,userstack
 
 self-contained: true
@@ -19,10 +23,11 @@ http:
 
     matchers:
       - type: word
+        name: userstack
+        cpe: cpe:2.3:a:userstack:userstack:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"ua":'
           - '"name":'
           - '"brand":'
         condition: and
-# digest: 4a0a00473045022100fccfb8ec1a71f7fb79aaf1e502ad68d3f82d157db2f5b7ada87c6bc3878b086a02202497155729ed5dc364b323f45b00964d4b6dfc103522c93d661393d56477a600:922c64590222798bb761d5b6d8e72950

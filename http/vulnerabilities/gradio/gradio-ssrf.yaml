@@ -38,6 +38,8 @@ http:
 
     matchers:
       - type: dsl
+        name: gradio
+        cpe: cpe:2.3:a:gradio_project:gradio:*:*:*:*:python:*:*:*
         dsl:
           - 'contains_any(tolower(body), "content=\"gradio", "gradio_mode", "gradio-app", "https://gradio.app")'
           - 'contains(tolower(body), "\"method not allowed")'
@@ -72,6 +74,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gradio-2
+        cpe: cpe:2.3:a:gradio_project:gradio:*:*:*:*:python:*:*:*
         part: body_2
         words:
           - "<h1> Interactsh Server </h1>"
@@ -79,4 +83,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100888a89f042d61721c6cd5d2c6650334bf08de571072d85d2329f813dd9685405022014731391b454ea9d5637de7f14fcbf6332e509d151116494479915eb3b86eed3:922c64590222798bb761d5b6d8e72950

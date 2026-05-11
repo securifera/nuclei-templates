@@ -28,11 +28,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: next-gen_application_firewall
+        cpe: cpe:2.3:a:sangfor:next-gen_application_firewall:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:[x*]:0:0"
 
       - type: word
+        name: next-gen_application_firewall-2
+        cpe: cpe:2.3:a:sangfor:next-gen_application_firewall:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'filename="passwd"'
@@ -42,4 +46,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402204413515627824bb4032b1ee77a78a3d6758e78b56e619e7408ce4486d7013a0202200e02f7872f2e3a3e4a1ac4c678f56ba41bfd18c50ad2c9af543ef89f470f91b2:922c64590222798bb761d5b6d8e72950

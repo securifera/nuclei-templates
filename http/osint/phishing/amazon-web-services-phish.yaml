@@ -8,8 +8,12 @@ info:
     An amazon-web-services phishing website was detected
   reference:
     - https://signin.aws.amazon.com
+  classification:
+    cpe: cpe:2.3:a:amazon-web-services:amazon-web-services:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: amazon-web-services
+    product: amazon-web-services
   tags: phishing,amazon-web-services,aws,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: amazon-web-services
+        cpe: cpe:2.3:a:amazon-web-services:amazon-web-services:*:*:*:*:*:*:*:*
         words:
           - 'Amazon Web Services Sign-In'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: amazon-web-services-2
+        cpe: cpe:2.3:a:amazon-web-services:amazon-web-services:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"amazon.com")'
-# digest: 4b0a00483046022100abe36d5af2d84be7d2efe48a655694b259922bf9807efaceff37b6d5f3994f83022100a2e098e59da1f67c634b14df692bcdc8806fe96c7db43e9b293dbb3cbbfe5793:922c64590222798bb761d5b6d8e72950

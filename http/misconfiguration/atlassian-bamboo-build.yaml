@@ -22,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bamboo
+        cpe: cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*
         words:
           - "<th>Project</th>"
           - "<th>Plan</th>"
@@ -29,6 +31,8 @@ http:
         condition: and
 
       - type: word
+        name: bamboo-2
+        cpe: cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -36,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022004becea0b0db535b03906e6943583fe99f64b64978beeebf38ca768057cec1c902210099f05ffb6a1ae619ed65a5d388bfbdb7ad76121d8982d697426ef4efc450d23e:922c64590222798bb761d5b6d8e72950

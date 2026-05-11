@@ -27,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: froxlor
+        cpe: cpe:2.3:a:froxlor:froxlor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "javascript&colon;alert(document.domain);dd&sol;&sol;"
@@ -34,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: froxlor-2
+        cpe: cpe:2.3:a:froxlor:froxlor:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -41,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c67d729e80b8c5d9767ed1982f341321db03d324132a7c6c63dc2cf3ee1d18cb02210094f86f4e13190f4888095b1912b82ec2899dba984a9fef45060ec0f51b38181a:922c64590222798bb761d5b6d8e72950

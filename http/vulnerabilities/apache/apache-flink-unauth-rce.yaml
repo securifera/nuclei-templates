@@ -10,11 +10,14 @@ info:
     - https://adamc95.medium.com/apache-flink-1-9-x-part-1-set-up-5d85fd2770f3
     - https://github.com/LandGrey/flink-unauth-rce
   classification:
+    cpe: cpe:2.3:a:apache:flink:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-94,CWE-434
   metadata:
     max-request: 1
+    vendor: apache
+    product: flink
   tags: apache,flink,rce,intrusive,unauth,vuln
 
 http:
@@ -34,12 +37,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: flink
+        cpe: cpe:2.3:a:apache:flink:*:*:*:*:*:*:*:*
         words:
           - "application/json"
         part: header
         condition: and
 
       - type: word
+        name: flink-2
+        cpe: cpe:2.3:a:apache:flink:*:*:*:*:*:*:*:*
         words:
           - "success"
           - "_poc.jar"
@@ -49,4 +56,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022047a9f7680854b830ef29597aa091ea3a23e2c714a9178eabe448a7480aa95be6022100c0a3fbf852a58b2c775101711ce606de5b4e17dfdedc79503d3f372c42dfcee0:922c64590222798bb761d5b6d8e72950

@@ -16,6 +16,7 @@ info:
     - https://docs.graylog.org/docs/authentication
     - https://archivedocs.graylog.org/en/2.5/pages/installation/virtual_machine_appliances.html
   classification:
+    cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
     cvss-score: 9.1
     cwe-id: CWE-798
@@ -43,6 +44,8 @@ http:
 
     matchers:
       - type: dsl
+        name: graylog
+        cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
         internal: true
         dsl:
           - 'status_code == 200'
@@ -62,6 +65,8 @@ http:
 
     matchers:
       - type: dsl
+        name: graylog-2
+        cpe: cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -74,4 +79,3 @@ http:
         part: body
         regex:
           - '"session_id"\s*:\s*"([^"]+)"'
-# digest: 4a0a00473045022100e00306b41b81eea00c263b49f012117e604bb7537173fb5fac66eec0538a801402205d8125a741df7c9b3d9558186a257f48dd04d8a1e5f7e89364cb10478d576de1:922c64590222798bb761d5b6d8e72950

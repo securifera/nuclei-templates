@@ -8,10 +8,14 @@ info:
     Administrate Dashboard was exposed.
   reference:
     - https://github.com/thoughtbot/administrate
+  classification:
+    cpe: cpe:2.3:a:administrate:administrate:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     fofa-query: body="Administrate"
+    vendor: administrate
+    product: administrate
   tags: exposure,administrate,misconfig
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: administrate
+        cpe: cpe:2.3:a:administrate:administrate:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Search Customers'
@@ -32,4 +38,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221009731cccf1c88e5a1c56dbf83d90110d901edc38fc27be7678eb789e822fa9a060221009d7c75ddde9c11b8ae24703e26cec5defc71ddd048c1eab2b052719739249882:922c64590222798bb761d5b6d8e72950

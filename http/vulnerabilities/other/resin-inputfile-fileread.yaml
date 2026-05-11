@@ -7,8 +7,12 @@ info:
   description: A vulnerability in Caucho Resin allows remote unauthenticated users to utilize the 'inputFile' variable to include the content of locally stored files and disclose their content.
   reference:
     - https://blkstone.github.io/2017/10/30/resin-attack-vectors/
+  classification:
+    cpe: cpe:2.3:a:resin:resin:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: resin
+    product: resin
   tags: resin,caucho,lfr,vuln
 
 http:
@@ -23,7 +27,8 @@ http:
           - 200
 
       - type: word
+        name: resin
+        cpe: cpe:2.3:a:resin:resin:*:*:*:*:*:*:*:*
         words:
           - "%@ page session=\"false\" import=\"com.caucho.vfs.*, com.caucho.server.webapp.*\" %"
         part: body
-# digest: 4b0a00483046022100a211b5d8551504ce85fce6cf4b71963da28de7a0fe9a7aad764fa267d089bbc3022100d841fce7ec4e90161b97399af18a2519436beceb28d6a00fa26db5c3abf91817:922c64590222798bb761d5b6d8e72950

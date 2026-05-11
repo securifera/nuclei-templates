@@ -11,10 +11,13 @@ info:
     - https://wpscan.com/vulnerability/b625aee5-8fd1-4f3e-9a9c-d41bdec13243
     - https://wordpress.org/plugins/photo-gallery/
   classification:
+    cpe: cpe:2.3:a:contus-video-gallery:contus-video-gallery:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
+    vendor: contus-video-gallery
+    product: contus-video-gallery
   tags: sqli,wpscan,wordpress,contus-video-gallery,unauth,vuln
 variables:
   num: '999999999'
@@ -32,11 +35,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: contus-video-gallery
+        cpe: cpe:2.3:a:contus-video-gallery:contus-video-gallery:*:*:*:*:*:*:*:*
         part: body
         words:
           - "c8c605999f3d8352d7bb792cf3fdb25b"
 
       - type: word
+        name: contus-video-gallery-2
+        cpe: cpe:2.3:a:contus-video-gallery:contus-video-gallery:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -44,4 +51,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100951c90876646b7c94d7cb59579be5ff70ea95f1a0a3b74cbbb07abed766a211d022100feeb4e817c168b2bc3639340ee8bffe3fddce1f3a86b169b99c1362db827392b:922c64590222798bb761d5b6d8e72950

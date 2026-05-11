@@ -7,8 +7,12 @@ info:
   description: proposify takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
+  classification:
+    cpe: cpe:2.3:a:proposify:proposify:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: proposify
+    product: proposify
   tags: takeover,vuln
 
 http:
@@ -19,10 +23,14 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: proposify
+        cpe: cpe:2.3:a:proposify:proposify:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: proposify-2
+        cpe: cpe:2.3:a:proposify:proposify:*:*:*:*:*:*:*:*
         words:
           - If you need immediate assistance, please contact <a href="mailto:support@proposify.biz
 
@@ -30,4 +38,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4a0a0047304502207ddda2f7d286336b630d1639494e6c1e5de262d70a05500d4721a075f58e8717022100b3be7ea82d0e9a99d4a764ea23f5cdccbe911a552117b9c12ea06ac5836f4acc:922c64590222798bb761d5b6d8e72950

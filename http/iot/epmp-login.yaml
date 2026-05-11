@@ -8,11 +8,14 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6826
   classification:
+    cpe: cpe:2.3:a:epmp:epmp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: epmp
+    product: epmp
   tags: panel,edb,iot,discovery
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: epmp
+        cpe: cpe:2.3:a:epmp:epmp:*:*:*:*:*:*:*:*
         words:
           - '<title>ePMP</title>'
         part: body
@@ -30,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022026b0b1e61489a3777cf0c0f29c49521ed4f1a1823d1cc879fac2d470e68c2f91022010af46888fd129663520d766cc5beaec1869d5efe6a2201750ff2187ffcc26f0:922c64590222798bb761d5b6d8e72950

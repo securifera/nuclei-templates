@@ -6,11 +6,14 @@ info:
   severity: info
   description: Vibilagare user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:vibilagare:vibilagare:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: vibilagare
+    product: vibilagare
   tags: osint,osint-misc,vibilagare,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: vibilagare
+        cpe: cpe:2.3:a:vibilagare:vibilagare:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Profil på vibilagare.se"
-# digest: 4a0a0047304502202e9bf973d6d6f1498d2fe766455b5999a0273c7d7a5293af21ab526e9425b545022100cd04b3d8306c4d71514511ec71441945c451e04a3acdaf042d4c04ac04b31e37:922c64590222798bb761d5b6d8e72950

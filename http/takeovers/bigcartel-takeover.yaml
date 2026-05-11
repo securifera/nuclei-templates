@@ -7,8 +7,12 @@ info:
   description: Bigcartel takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/158
+  classification:
+    cpe: cpe:2.3:a:bigcartel:bigcartel:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bigcartel
+    product: bigcartel
   tags: takeover,vuln
 
 http:
@@ -19,14 +23,20 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
+        name: bigcartel
+        cpe: cpe:2.3:a:bigcartel:bigcartel:*:*:*:*:*:*:*:*
         dsl:
           - Host != ip
 
       - type: word
+        name: bigcartel-2
+        cpe: cpe:2.3:a:bigcartel:bigcartel:*:*:*:*:*:*:*:*
         words:
           - "<h1>Oops! We couldn&#8217;t find that page.</h1>"
 
       - type: dsl
+        name: bigcartel-3
+        cpe: cpe:2.3:a:bigcartel:bigcartel:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bigcartel.com")'
 
@@ -34,4 +44,3 @@ http:
       - type: dsl
         dsl:
           - cname
-# digest: 4b0a0048304602210095db7a05df85c8e352fda8db6dfa388a60ebb334049d0d675217756833233ba2022100812cf1bd36fae20099084e6111ea13e488ab4d0966c1cf16e890314fad37c2b3:922c64590222798bb761d5b6d8e72950

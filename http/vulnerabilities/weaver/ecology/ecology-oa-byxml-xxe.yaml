@@ -7,12 +7,15 @@ info:
   description: |
     EcologyOA deleteUserRequestInfoByXml interface has XXE
   classification:
+    cpe: cpe:2.3:a:ecology-oa:ecology-oa:*:*:*:*:*:*:*:*
     cwe-id: CWE-611,CWE-918
   metadata:
     verified: true
     max-request: 1
     shodan-query: ecology_JSessionid
     fofa-query: app="泛微-协同办公OA"
+    vendor: ecology-oa
+    product: ecology-oa
   tags: ecology-oa,xxe,vuln
 
 http:
@@ -30,17 +33,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ecology-oa
+        cpe: cpe:2.3:a:ecology-oa:ecology-oa:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'WfData'
 
       - type: word
+        name: ecology-oa-2
+        cpe: cpe:2.3:a:ecology-oa:ecology-oa:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/xml'
 
       - type: word
+        name: ecology-oa-3
+        cpe: cpe:2.3:a:ecology-oa:ecology-oa:*:*:*:*:*:*:*:*
         part: interactsh_protocol
         words:
           - "dns"
-# digest: 4a0a00473045022100c84427b6b8d181a177e349cf829f67df5954468df7b251f981f9273a001fab0a0220261a41b841bab4b26109c55dceb1b5f952804c121bdd671b9bf1891265e1c043:922c64590222798bb761d5b6d8e72950

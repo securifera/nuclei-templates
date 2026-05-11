@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detected the exposed default page of the OpenSpeedTest service.
+  classification:
+    cpe: cpe:2.3:a:openspeedtest:openspeedtest:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"Openspeedtest"
+    vendor: openspeedtest
+    product: openspeedtest
   tags: tech,openspeedtest,discovery
 
 http:
@@ -19,7 +23,8 @@ http:
 
     matchers:
       - type: word
+        name: openspeedtest
+        cpe: cpe:2.3:a:openspeedtest:openspeedtest:*:*:*:*:*:*:*:*
         words:
           - "SpeedTest by OpenSpeedTest"
         part: body
-# digest: 490a004630440220719cf37db22cd9c8ac62032ef4f7efe738c4b611d9464f9ba32bedc458b1ce49022020fc0f640457f7b76df972d93bacc1d94d34be519f15e63db6a9042c67fc013b:922c64590222798bb761d5b6d8e72950

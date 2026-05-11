@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/paperless-ngx/paperless-ngx
     - https://docs.paperless-ngx.com/
+  classification:
+    cpe: cpe:2.3:a:paperless-ngx:paperless-ngx:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -25,8 +27,9 @@ http:
 
     matchers:
       - type: dsl
+        name: paperless-ngx
+        cpe: cpe:2.3:a:paperless-ngx:paperless-ngx:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Paperless-ngx", "Paperless-ngx project and contributors")'
         condition: and
-# digest: 4a0a00473045022100bb8494c87144cb86ff3ccec221dcc58a1adcacd44969e6dfc66cdd4ece35c44a02201733b4c5582312cb21720e77710b81c9e711723de46aaa33004cd4a288952989:922c64590222798bb761d5b6d8e72950

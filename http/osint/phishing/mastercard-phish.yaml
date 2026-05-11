@@ -8,8 +8,12 @@ info:
     A Mastercard phishing website was detected
   reference:
     - https://mastercard.com
+  classification:
+    cpe: cpe:2.3:a:mastercard:mastercard:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mastercard
+    product: mastercard
   tags: phishing,mastercard,credit-card,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mastercard
+        cpe: cpe:2.3:a:mastercard:mastercard:*:*:*:*:*:*:*:*
         words:
           - 'Mastercard'
           - '<title>Mastercard - A global technology company in the payments industry'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: mastercard-2
+        cpe: cpe:2.3:a:mastercard:mastercard:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"mastercard.com")'
-# digest: 4b0a00483046022100f4adce8c3be905cee22faa73bffba99d7da2dbdc167a1bc32b334cf12b002dce02210080c5126ca98bcd937115466162475ef06e2222cf74e919ee4cb8bf198f9cbba2:922c64590222798bb761d5b6d8e72950

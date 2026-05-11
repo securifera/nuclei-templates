@@ -9,11 +9,14 @@ info:
     - https://wpscan.com/vulnerability/8997
     - https://id.wordpress.org/plugins/church-admin/
   classification:
+    cpe: cpe:2.3:a:church:church:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-23
   metadata:
     max-request: 1
+    vendor: church
+    product: church
   tags: wordpress,wp-plugin,lfi,wpscan,vuln
 
 http:
@@ -24,10 +27,11 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: church
+        cpe: cpe:2.3:a:church:church:*:*:*:*:*:*:*:*
         regex:
           - "root:[x*]:0:0"
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402203d20cba48915d4d061171dc13d4a0a9a2859a0278b98046b6508e7bbaad834d90220464b1e890dca5bf7456c927e542cf5aea61fe70ed5a51e99a67ab4dc4ea29e3a:922c64590222798bb761d5b6d8e72950

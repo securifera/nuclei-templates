@@ -4,10 +4,14 @@ info:
   name: Hetzner Cloud Detect
   author: DhiyaneshDk
   severity: info
+  classification:
+    cpe: cpe:2.3:a:hetzner:cloud:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Hetzner Cloud"
+    vendor: hetzner
+    product: cloud
   tags: tech,hetzner,discovery
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: cloud
+        cpe: cpe:2.3:a:hetzner:cloud:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Hetzner Cloud'
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f7bfca47df2b21440fa2c9685fb85393aca73744dc1d35e2976c5eb88cff8787022100d1761d95b5c0b6b55ef369e9bbb69cbdd9b0a8bd17cbe3fcdfdc357bfb75df2d:922c64590222798bb761d5b6d8e72950

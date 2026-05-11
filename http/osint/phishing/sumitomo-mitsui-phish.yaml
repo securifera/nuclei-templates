@@ -8,8 +8,12 @@ info:
     A Sumitomo Mitsui Bank phishing website was detected
   reference:
     - https://smbc.co.jp
+  classification:
+    cpe: cpe:2.3:a:sumitomo-mitsui:sumitomo-mitsui:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: sumitomo-mitsui
+    product: sumitomo-mitsui
   tags: phishing,sumitomo-mitsui,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sumitomo-mitsui
+        cpe: cpe:2.3:a:sumitomo-mitsui:sumitomo-mitsui:*:*:*:*:*:*:*:*
         words:
           - 'Sumitomo Mitsui'
           - 'Sign On'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: sumitomo-mitsui-2
+        cpe: cpe:2.3:a:sumitomo-mitsui:sumitomo-mitsui:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"smbc.co.jp")'
-# digest: 4a0a00473045022010b897beba37d86635b7efa9a480f68ad3d534115fccd9f1d57fda97bddf2b9b022100e2a6a1a2429565c379438900e65b4170aacaec78f7cb7d45bd062f5125c834cf:922c64590222798bb761d5b6d8e72950

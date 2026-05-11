@@ -6,11 +6,14 @@ info:
   severity: critical
   description: A SQL injection vulnerability was identified based on an error message returned by the server.
   classification:
+    cpe: cpe:2.3:a:error:error:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
     cwe-id: CWE-89
   metadata:
     max-request: 1
+    vendor: error
+    product: error
   tags: sqli,generic,error,vuln
 
 http:
@@ -21,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: error
+        cpe: cpe:2.3:a:error:error:*:*:*:*:*:*:*:*
         words:
           - "Adminer"
         # False Positive
@@ -28,6 +33,8 @@ http:
         negative: true
 
       - type: regex
+        name: error-2
+        cpe: cpe:2.3:a:error:error:*:*:*:*:*:*:*:*
         regex:
           # MySQL
           - "SQL syntax.{0,200}?MySQL"
@@ -480,4 +487,3 @@ http:
           - "SQ200: No table "
           - "Virtuoso S0002 Error"
           - "\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\]"
-# digest: 490a004630440220397227fab9ee09c0ee724425d95810d9d929f966eb7f26ecfa6ab15c2ce2289c02203a70b5f7781252787f102ec443fe7dfd775687c8c27e88c16f633a9843195363:922c64590222798bb761d5b6d8e72950

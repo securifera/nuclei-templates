@@ -6,9 +6,13 @@ info:
   severity: info
   description: |
     An instance running Concrete5 is detected by looking for specific HTTP headers, HTML tags, and known endpoints.
+  classification:
+    cpe: cpe:2.3:a:concretecms:concrete_cms:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 8
+    vendor: concretecms
+    product: concrete_cms
   tags: concrete5,detect,tech
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: concrete_cms
+        cpe: cpe:2.3:a:concretecms:concrete_cms:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Powered by Concrete5"
@@ -52,4 +58,3 @@ http:
         regex:
           - 'concrete5-site-id=([a-z0-9]+)'
           - 'concrete5\.org/([^/]+)'
-# digest: 4a0a00473045022042f6aaa341307029cb4e184753b71c5b9572562466a0bb8266bdbd50603f2c41022100f1c84e7dd7c0a1b9ffe2af2cb356f060f18c188e605699a599ef4ca96cc9c530:922c64590222798bb761d5b6d8e72950

@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: erxes
+        cpe: cpe:2.3:a:erxes:erxes:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "<title>erxes(.*)</title>"

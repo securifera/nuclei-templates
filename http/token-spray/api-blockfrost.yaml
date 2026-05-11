@@ -8,8 +8,12 @@ info:
   reference:
     - https://docs.blockfrost.io/
     - https://github.com/daffainfo/all-about-apikey/tree/main/blockfrost
+  classification:
+    cpe: cpe:2.3:a:blockfrost:blockfrost:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: blockfrost
+    product: blockfrost
   tags: token-spray,blockfrost
 
 self-contained: true
@@ -23,9 +27,10 @@ http:
 
     matchers:
       - type: word
+        name: blockfrost
+        cpe: cpe:2.3:a:blockfrost:blockfrost:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"url":'
           - '"version":'
         condition: and
-# digest: 4a0a00473045022062029fcf7d154b49e6a0330722787b6f451582380f23f212bf12b6dfd93f6258022100e9f86de6b9cb4496ecf72aa6b7520f400fc22effab9ce0a05a87336ff3aa7dc5:922c64590222798bb761d5b6d8e72950

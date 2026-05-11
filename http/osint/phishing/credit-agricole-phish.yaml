@@ -8,8 +8,12 @@ info:
     A Crédit Agricole phishing website was detected
   reference:
     - https://credit-agricole.com
+  classification:
+    cpe: cpe:2.3:a:credit-agricole:credit-agricole:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: credit-agricole
+    product: credit-agricole
   tags: phishing,credit-agricole,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: credit-agricole
+        cpe: cpe:2.3:a:credit-agricole:credit-agricole:*:*:*:*:*:*:*:*
         words:
           - 'Crédit Agricole'
           - 'Crédit Agricole 1re banque de l&#039;habitat, de l&#039;agriculture, des entreprises, des pros, des collectivites territoriales'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: credit-agricole-2
+        cpe: cpe:2.3:a:credit-agricole:credit-agricole:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"credit-agricole.com")'
-# digest: 490a004630440220043fa76fbcaf87b0508429064498f5d26f3977592786e8b73baae4dfd123aec3022074c6af771b7560dfe3a87f2f4f326acf5dcc2c146ce6f81906cd416ed453cd26:922c64590222798bb761d5b6d8e72950

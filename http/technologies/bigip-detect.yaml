@@ -7,8 +7,12 @@ info:
   reference:
     - https://www.intelisecure.com/how-to-decode-big-ip-f5-persistence-cookie-values
     - https://support.f5.com/csp/article/K23254150
+  classification:
+    cpe: cpe:2.3:a:f5:big-ip:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
+    vendor: f5
+    product: big-ip
   tags: bigip,tech,f5,discovery
 
 http:
@@ -21,16 +25,22 @@ http:
     host-redirects: true
     matchers:
       - type: word
+        name: big-ip
+        cpe: cpe:2.3:a:f5:big-ip:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'BIGipServer'
 
       - type: word
+        name: big-ip-2
+        cpe: cpe:2.3:a:f5:big-ip:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'BigIP'
 
       - type: word
+        name: big-ip-3
+        cpe: cpe:2.3:a:f5:big-ip:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'F5 Networks.'
@@ -41,4 +51,3 @@ http:
         group: 1
         regex:
           - '(BIGipServer[a-z\_\.\-\~0-9A-Z]*)=([!a-z0-9A-Z/.=]+)'
-# digest: 4a0a00473045022100aeb94f95ba2e9d7b9096ab1a48abe908c82fe37ef92e62b58d435117708f15d2022019eead6ad9ce07158b2681a04103e713665f093b01c21293515d2741f0b59c49:922c64590222798bb761d5b6d8e72950

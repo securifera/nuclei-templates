@@ -5,10 +5,14 @@ info:
   author: DhiyaneshDk
   severity: low
   description: Piwik is susceptible to the Installation page exposure due to misconfiguration.
+  classification:
+    cpe: cpe:2.3:a:piwik:piwik:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Piwik &rsaquo; Installation"
+    vendor: piwik
+    product: piwik
   tags: misconfig,piwik,install,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: piwik
+        cpe: cpe:2.3:a:piwik:piwik:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Piwik"
@@ -26,6 +32,8 @@ http:
         condition: and
 
       - type: word
+        name: piwik-2
+        cpe: cpe:2.3:a:piwik:piwik:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100f967ce86aaf4e1c63485215fd5917710bea1484bb6241499b7824aa79afd6924022006e45d5d19803849b1d5293932d65829cd05427fc7e212df54ec086b5da61c11:922c64590222798bb761d5b6d8e72950

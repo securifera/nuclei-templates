@@ -6,11 +6,14 @@ info:
   severity: info
   description: Heylink user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:heylink:heylink:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: heylink
+    product: heylink
   tags: osint,osint-misc,heylink,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: heylink
+        cpe: cpe:2.3:a:heylink:heylink:*:*:*:*:*:*:*:*
         part: body
         words:
           - "HeyLink.me |"
-# digest: 4b0a00483046022100cd488c48bf14ff9d67b70162de64ae5e131383bfe8d49373484194b84b295eff022100f2fa580c692777da2f3e27930e9bfdafddf52ec7e5d33bb412377e2ea1b1735e:922c64590222798bb761d5b6d8e72950

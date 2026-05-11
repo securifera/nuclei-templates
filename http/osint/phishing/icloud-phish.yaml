@@ -8,8 +8,12 @@ info:
     A iCloud phishing website was detected
   reference:
     - https://icloud.com
+  classification:
+    cpe: cpe:2.3:a:icloud:icloud:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: icloud
+    product: icloud
   tags: phishing,icloud,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: icloud
+        cpe: cpe:2.3:a:icloud:icloud:*:*:*:*:*:*:*:*
         words:
           - 'Log in to iCloud to access your photos, mail, notes, documents and more. Sign in with your Apple&nbsp;ID or create a new account to start using Apple services.'
 
@@ -30,8 +36,9 @@ http:
           - 200
 
       - type: dsl
+        name: icloud-2
+        cpe: cpe:2.3:a:icloud:icloud:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"icloud.com")'
           - '!contains(host,"apple.com")'
         condition: and
-# digest: 4a0a00473045022100feb1ea52ab7979c5f027d1625e27ea2a2d17122e59c7b15f0ab61dda72d9b09b02203918784a58442b4ddabd7897a1ac4902a0c8e8f1010c2f722ec06acf580ba918:922c64590222798bb761d5b6d8e72950

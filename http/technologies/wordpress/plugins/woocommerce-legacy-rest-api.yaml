@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: woocommerce-legacy-rest-api
+        cpe: cpe:2.3:a:woocommerce-legacy-rest-api:woocommerce-legacy-rest-api:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

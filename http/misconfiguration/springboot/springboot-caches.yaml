@@ -7,9 +7,13 @@ info:
   description: The caches endpoint provides access to the application's caches.
   reference:
     - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#caches
+  classification:
+    cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: springboot
+    product: springboot
   tags: misconfig,springboot,exposure,vuln
 
 http:
@@ -23,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: springboot
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: body
         words:
           - "cacheManagers"
 
       - type: word
+        name: springboot-2
+        cpe: cpe:2.3:a:springboot:springboot:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -39,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100fd94564ccaefbfd90b0b23c0582a29b95bd9e8e0f74e52e11db876c1eec05d1f02206ccd1ce6668646be50b6815e730caf0f102ebf3fd636081d603cebcc6af5a385:922c64590222798bb761d5b6d8e72950

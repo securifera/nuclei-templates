@@ -8,11 +8,14 @@ info:
   reference:
     - https://azure.microsoft.com
   classification:
+    cpe: cpe:2.3:a:azure:azure:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: azure
+    product: azure
   tags: azure,microsoft,cloud,exposure,vuln
 
 http:
@@ -29,6 +32,8 @@ http:
           - 200
 
       - type: word
+        name: azure
+        cpe: cpe:2.3:a:azure:azure:*:*:*:*:*:*:*:*
         words:
           - "token_endpoint"
 
@@ -38,4 +43,3 @@ http:
         group: 1
         regex:
           - "\"https:\\/\\/login\\.microsoftonline\\.com\\/([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-# digest: 4a0a0047304502207835573e7a5dff55a76f662014fab6aaf940501dae8ba0b8a97216efd3fdd96e022100c1782045c7eca4ed42b33b108beab8d0e3a5c8d9c577fd707c57bb266277a489:922c64590222798bb761d5b6d8e72950

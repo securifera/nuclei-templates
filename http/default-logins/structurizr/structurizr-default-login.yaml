@@ -8,6 +8,8 @@ info:
     Structurizr contains default credentials.
   reference:
     - https://docs.structurizr.com/onpremises/quickstart
+  classification:
+    cpe: cpe:2.3:a:structurizr:on-premises_installation:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -44,6 +46,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: on-premises_installation
+        cpe: cpe:2.3:a:structurizr:on-premises_installation:*:*:*:*:*:*:*:*
         part: body_3
         words:
           - '<a href="/dashboard">'
@@ -61,4 +65,3 @@ http:
         regex:
           - 'name="_csrf" value="([0-9a-z-]+)"'
         internal: true
-# digest: 4b0a00483046022100e2b7cc2c2b2ddb1622f0b084cee0551a907cc555520d19c2bae219ae7565a19c022100eb9d7ccb2a0d82328996f59c6237a1625b80c2bc01afa1f93441a1bee5a6170e:922c64590222798bb761d5b6d8e72950

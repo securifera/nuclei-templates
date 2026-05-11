@@ -9,11 +9,14 @@ info:
   reference:
     - https://github.com/AntSwordProject/AntSword-Labs/tree/master/bypass_disable_functions/9
   classification:
+    cpe: cpe:2.3:a:antsword:backdoor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-553
   metadata:
     max-request: 1
+    vendor: antsword
+    product: backdoor
   tags: backdoor,antsword,vuln
 
 http:
@@ -29,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: backdoor
+        cpe: cpe:2.3:a:antsword:backdoor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "951d11e51392117311602d0c25435d7f"
@@ -36,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f09b74589098cae216fdc43b6d72324266a41344ae871c6e6dfe9c84e75cff9502210088af9b34494763a16c7b98ecb31b57b79d0383af38ecf62545327d93a5c2d7f7:922c64590222798bb761d5b6d8e72950

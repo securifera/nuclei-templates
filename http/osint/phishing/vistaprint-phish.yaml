@@ -8,8 +8,12 @@ info:
     A Vistaprint phishing website was detected
   reference:
     - https://vistaprint.com
+  classification:
+    cpe: cpe:2.3:a:vistaprint:vistaprint:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: vistaprint
+    product: vistaprint
   tags: phishing,vistaprint,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vistaprint
+        cpe: cpe:2.3:a:vistaprint:vistaprint:*:*:*:*:*:*:*:*
         words:
           - 'Vistaprint'
           - '<title>VistaPrint Official Website: Online Printing Services'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: vistaprint-2
+        cpe: cpe:2.3:a:vistaprint:vistaprint:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"vistaprint.com")'
-# digest: 4a0a0047304502205358254e7dea8e0f79b2eadf4dbecde18b8bab2f1d62e0a98ae0eb28533bd65f022100a0c0fdb47335271f89643f3bb1ee3c5b9c44012e04d0809a6d1b9abc7cf0a5b8:922c64590222798bb761d5b6d8e72950

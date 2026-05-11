@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: ssl-insecure-content-fixer
+        cpe: cpe:2.3:a:ssl-insecure-content-fixer:ssl-insecure-content-fixer:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

@@ -32,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jboss_soa_platform
+        cpe: cpe:2.3:a:redhat:jboss_soa_platform:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Welcome to the JBoss SOA Platform'
@@ -48,4 +50,3 @@ http:
         group: 1
         regex:
           - '(?i)Version\s+([A-Z0-9.]+)'
-# digest: 4b0a00483046022100d07300f3b5114b23faff32c9707c0430a3707c8874c6e62082b628b86f0a99920221008e708297a9f08739520f017f454f94d186bbca0f09d1d5bf269ecf82061db9b9:922c64590222798bb761d5b6d8e72950

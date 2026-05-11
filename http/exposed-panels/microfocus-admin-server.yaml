@@ -34,6 +34,8 @@ http:
 
     matchers:
       - type: dsl
+        name: enterprise_server
+        cpe: cpe:2.3:a:microfocus:enterprise_server:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200 && contains(to_lower(header), "micro focus dsd")'
           - 'status_code == 200 && contains_any(to_lower(body), "micro focus imanager", "micro focus imonitor", "micro focus remote manager", "micro focus open enterprise server")'
@@ -46,4 +48,3 @@ http:
         regex:
           - '(?i)Micro\s+Focus\s+Open\s+Enterprise\s+Server\s+([A-Z0-9\s]+)'
           - '(?i)Copyright\s+([0-9]+)\s+Micro\s+Focus'
-# digest: 4a0a0047304502201943609afe7ec854bae7dfb301e32749735164b3ebaff14c3f33a92d56e7586e0221008802e5c15f3c4585c5262dccce29f9f6de7b9a190ca258cc899409168026b79d:922c64590222798bb761d5b6d8e72950

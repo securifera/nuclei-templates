@@ -8,11 +8,14 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/w2pkj5ADN7b5uxe-wmfGbw
   classification:
+    cpe: cpe:2.3:a:hjtcloud:hjtcloud:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 2
+    vendor: hjtcloud
+    product: hjtcloud
   tags: hjtcloud,lfi,vuln
 
 http:
@@ -35,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: hjtcloud
+        cpe: cpe:2.3:a:hjtcloud:hjtcloud:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
           - "bit app support"
@@ -43,4 +48,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a30be9d30294d90f9a9c0a6f87bc24bb1bdd60cc8e1ad8cd016e7ad529fff4620220733eb5c682c16f688c2e3e5ea6b543a6bd5651e8ab41d321b5c5de968759c19d:922c64590222798bb761d5b6d8e72950

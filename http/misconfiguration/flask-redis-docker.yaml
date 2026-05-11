@@ -7,10 +7,14 @@ info:
   description: Flask Redis Queue Docker is exposed.
   reference:
     - https://www.facebook.com/photo/?fbid=623621413141715&set=a.467014098802448
+  classification:
+    cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Flask + Redis Queue + Docker"
+    vendor: docker
+    product: docker
   tags: misconfig,exposure,flask,redis,docker,vuln
 
 http:
@@ -24,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: docker
+        cpe: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>Flask + Redis Queue + Docker</title>'
@@ -31,4 +37,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502203c8fb8336b3dcb9e676860fd05d9c74833ad16e9720bc855913b7ca2fa036de0022100b87928d4fb73e651d94a4edd0f6f67f23809b9362db934a0c19383f87ccad018:922c64590222798bb761d5b6d8e72950

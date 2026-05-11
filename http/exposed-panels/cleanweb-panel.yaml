@@ -8,10 +8,14 @@ info:
     CleanWeb login panel was detected.
   reference:
     - https://tentelemed.com/
+  classification:
+    cpe: cpe:2.3:a:cleanweb:cleanweb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"CleanWeb"
+    vendor: cleanweb
+    product: cleanweb
   tags: panel,cleanweb,login,detect,discovery
 
 http:
@@ -24,6 +28,8 @@ http:
 
     matchers:
       - type: dsl
+        name: cleanweb
+        cpe: cpe:2.3:a:cleanweb:cleanweb:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_any(to_lower(body), "<title>cleanweb","logo cleanweb", "-cleanweb-")'
@@ -35,4 +41,3 @@ http:
         group: 1
         regex:
           - 'title="version\s+([0-9A-Za-z\s\.\-]+)"'
-# digest: 4a0a004730450220582c0696047286b8d679f58a306d39e2d7005d9f8b30947febfadeaa35302852022100c891cb285d0d694592eb6926619ffbdb57f57d5e6eaa8904f0cb68651e2653a0:922c64590222798bb761d5b6d8e72950

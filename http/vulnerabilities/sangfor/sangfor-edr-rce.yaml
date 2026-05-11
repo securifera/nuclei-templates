@@ -8,12 +8,15 @@ info:
   reference:
     - https://www.cnblogs.com/0day-li/p/13650452.html
   classification:
+    cpe: cpe:2.3:a:sangfor:sangfor:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10
     cwe-id: CWE-78
   metadata:
     max-request: 1
     fofa-query: app="sangfor"
+    vendor: sangfor
+    product: sangfor
   tags: rce,sangfor,vuln
 
 http:
@@ -30,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: sangfor
+        cpe: cpe:2.3:a:sangfor:sangfor:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "root:.*:0:0:"
@@ -37,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100d5095c7e8726c1caf25168067fdf7e4827a08d26e6487e9f934074f95f2316b7022100877f0f597654d5c219e3669352156976866823f137c8a21f91ceef64663702c6:922c64590222798bb761d5b6d8e72950

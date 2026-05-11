@@ -8,8 +8,12 @@ info:
     An RBC phishing website was detected
   reference:
     - https://rbc.com
+  classification:
+    cpe: cpe:2.3:a:rbc:rbc:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: rbc
+    product: rbc
   tags: phishing,rbc,bank,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rbc
+        cpe: cpe:2.3:a:rbc:rbc:*:*:*:*:*:*:*:*
         words:
           - 'RBC'
           - 'Sign On'
@@ -32,6 +38,7 @@ http:
           - 200
 
       - type: dsl
+        name: rbc-2
+        cpe: cpe:2.3:a:rbc:rbc:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"rbc.com")'
-# digest: 4a0a00473045022100ecb67484e747f59f17a65fc7a0a00b1339156d0bc8e93174d2c82434579141f602201b86aa2130e59466d4a148cd1c6556a926b731b5a1e6595e8277911c38881b97:922c64590222798bb761d5b6d8e72950

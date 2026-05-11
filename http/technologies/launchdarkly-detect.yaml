@@ -9,10 +9,14 @@ info:
   reference:
     - https://launchdarkly.com/
     - https://launchdarkly.com/docs/sdk/client-side/javascript
+  classification:
+    cpe: cpe:2.3:a:launchdarkly:launchdarkly:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"LDClient.initialize"
+    vendor: launchdarkly
+    product: launchdarkly
   tags: tech,discovery,launchdarkly
 
 http:
@@ -24,10 +28,11 @@ http:
 
     matchers:
       - type: word
+        name: launchdarkly
+        cpe: cpe:2.3:a:launchdarkly:launchdarkly:*:*:*:*:*:*:*:*
         part: body
         words:
           - "LDClient.initialize"
           - "ldclient.min.js"
           - "launchdarkly-js-client-sdk"
         condition: or
-# digest: 4b0a00483046022100bd1cf54279b3fbf8eb583f4d4eef5f2ac8e69d493e3362da4a15c11000e582fa022100b7829276bcda635b3ac20449ea2aaff91f7a22009ace02e0c695bab6e66c0e44:922c64590222798bb761d5b6d8e72950

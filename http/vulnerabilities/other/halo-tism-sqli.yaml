@@ -9,11 +9,14 @@ info:
   reference:
     - https://slcyber.io/assetnote-security-research-center/loose-types-sink-ships-pre-authentication-sql-injection-in-halo-itsm/
   classification:
+    cpe: cpe:2.3:a:halo:halo:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:489905671
+    vendor: halo
+    product: halo
   tags: halo,itsm,sqli,time-based-sqli,vuln
 
 variables:
@@ -38,10 +41,11 @@ http:
 
     matchers:
       - type: dsl
+        name: halo
+        cpe: cpe:2.3:a:halo:halo:*:*:*:*:*:*:*:*
         dsl:
           - 'duration>=6'
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains(body, "ok")'
         condition: and
-# digest: 490a0046304402204c482b0e133ea41cfc0d718c3b1658df2db2ffa25cc56dc61dae57f23d0b147b02201a97058ab98129bbd55438d69258b52e82910ec8bb37f9fe91f1567ddf1a90ba:922c64590222798bb761d5b6d8e72950

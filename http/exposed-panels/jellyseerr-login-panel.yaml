@@ -6,10 +6,14 @@ info:
   severity: info
   reference:
     - https://github.com/Fallenbagel/jellyseerr
+  classification:
+    cpe: cpe:2.3:a:jellyseerr:jellyseerr:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.favicon.hash:-2017604252
+    vendor: jellyseerr
+    product: jellyseerr
   tags: panel,jellyseerr,detect,discovery
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jellyseerr
+        cpe: cpe:2.3:a:jellyseerr:jellyseerr:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Jellyseerr</title>'
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a004830460221008ca657e7dc912996133202bc32d410c103db877039d837c5a3bed00527ad6bb802210083312bc7e394993cc3f080ce82a042dff457438fdd6b61abd4fce447848517ce:922c64590222798bb761d5b6d8e72950

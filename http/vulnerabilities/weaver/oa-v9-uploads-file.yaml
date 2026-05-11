@@ -8,11 +8,14 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
   classification:
+    cpe: cpe:2.3:a:oa-v9-uploads-file:oa-v9-uploads-file:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 8.8
     cwe-id: CWE-94,CWE-434
   metadata:
     max-request: 2
+    vendor: oa-v9-uploads-file
+    product: oa-v9-uploads-file
   tags: rce,jsp,fileupload,intrusive,vuln
 
 http:
@@ -35,8 +38,9 @@ http:
 
     matchers:
       - type: dsl
+        name: oa-v9-uploads-file
+        cpe: cpe:2.3:a:oa-v9-uploads-file:oa-v9-uploads-file:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body_2, "2be8e556fee1a876f10fa086979b8c7c")'
           - 'status_code_2 == 200'
         condition: and
-# digest: 4a0a0047304502201c1cdf32f1bb754ed06274ee58376d029fba959308cade36680b5983d754505d022100d3ba0f19509088655f79021cc3aa61119aaaf0988b5b7b14d86afcc61f5eebbb:922c64590222798bb761d5b6d8e72950

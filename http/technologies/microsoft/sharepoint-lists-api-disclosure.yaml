@@ -26,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: sharepoint
+        cpe: cpe:2.3:a:microsoft:sharepoint:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "TemplateFeatureId","d:ParentWebUrl", "Web/Lists")'

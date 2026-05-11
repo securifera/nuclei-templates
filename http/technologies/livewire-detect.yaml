@@ -27,6 +27,8 @@ http:
 
     matchers:
       - type: word
+        name: livewire
+        cpe: cpe:2.3:a:laravel:livewire:*:*:*:*:*:*:*:*
         part: body
         words:
           - "wire:id="

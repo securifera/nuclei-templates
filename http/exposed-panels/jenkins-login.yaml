@@ -30,10 +30,11 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: jenkins
+        cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
         words:
           - 'Sign in [Jenkins]'
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502210084d642c326adc8755ccaa81a23a3b0a3f3243e771949313e406b85d39f5de3ba02207c65d9dadb4c9cc8320e223fe5bc81598f3034e3b1c6aa4cf475b0358be04c8a:922c64590222798bb761d5b6d8e72950

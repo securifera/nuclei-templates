@@ -8,10 +8,14 @@ info:
     ESPHome is a powerful smart home devices with simple YAML configuration.
   reference:
     - https://esphome.io/components/web_server/
+  classification:
+    cpe: cpe:2.3:a:esphome:esphome:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"ESPHome"
+    vendor: esphome
+    product: esphome
   tags: esphome,iot,unauth,misconfig,vuln
 
 http:
@@ -21,8 +25,9 @@ http:
 
     matchers:
       - type: dsl
+        name: esphome
+        cpe: cpe:2.3:a:esphome:esphome:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(body, "<title>Dashboard - ESPHome")'
         condition: and
-# digest: 490a0046304402200a28977cb53da03157e862c2a093823bfb9d06670f81861df217401fd0265a3802201b2fc4ccd42052bccbd78948471be6723af22640390b7ff68a38c6a17347daa4:922c64590222798bb761d5b6d8e72950

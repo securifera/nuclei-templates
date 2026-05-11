@@ -9,10 +9,14 @@ info:
   reference:
     - https://immich.app/
     - https://github.com/immich-app/immich
+  classification:
+    cpe: cpe:2.3:a:immich:immich:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-43504595
+    vendor: immich
+    product: immich
   tags: panel,immich,detect,discovery
 
 http:
@@ -23,6 +27,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: immich
+        cpe: cpe:2.3:a:immich:immich:*:*:*:*:*:*:*:*
         words:
           - '<title>Login - Immich'
           - '"PUBLIC_IMMICH_'
@@ -33,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e9854d8f193d80ef77a06c964d674955564160f995d34d26197da5eb6d6065770220517b079f9fc10420ad55b425888c4f5b818a6517ec3beccf0230231ebd08a569:922c64590222798bb761d5b6d8e72950

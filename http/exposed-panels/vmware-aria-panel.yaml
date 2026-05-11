@@ -6,10 +6,14 @@ info:
   severity: info
   description: |
     Detects VMware Aria Operations Panel.
+  classification:
+    cpe: cpe:2.3:a:aria:aria:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"VMware Aria Operations"
+    vendor: aria
+    product: aria
   tags: panel,aria,login,detect,discovery
 
 http:
@@ -20,6 +24,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: aria
+        cpe: cpe:2.3:a:aria:aria:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>VMware Aria Operations</title>"
@@ -27,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e2412fc0dc6a2c06bb3bb2afe0801dd7237445ddc26f6f52f8d31cfca6a9916b022027700bed0c268f1a385dd38f7ae767a8434ba849e80b782024c5fbe895ab4c92:922c64590222798bb761d5b6d8e72950

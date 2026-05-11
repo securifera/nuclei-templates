@@ -9,6 +9,7 @@ info:
   reference:
     - https://meddream.com/products/meddream-dicom-viewer/
   classification:
+    cpe: cpe:2.3:a:meddream:dicom-viewer:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -29,12 +30,16 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: dicom-viewer
+        cpe: cpe:2.3:a:meddream:dicom-viewer:*:*:*:*:*:*:*:*
         words:
           - 'src="js/md.main.min.'
           - "unsupported-browser-msg"
         condition: and
 
       - type: word
+        name: dicom-viewer-2
+        cpe: cpe:2.3:a:meddream:dicom-viewer:*:*:*:*:*:*:*:*
         part: header
         words:
           - "MEDDREAMSESSID"
@@ -42,4 +47,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e5bc0aa733e4ae1180dd46848655cece5d969717dac9f6b28743c6dc6835f914022100c8b149f733dd04a883b9e922ae5bf73e278639a3b5a02bacd041d79df82c5ea9:922c64590222798bb761d5b6d8e72950

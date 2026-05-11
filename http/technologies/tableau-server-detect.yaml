@@ -32,6 +32,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: tableau_server
+        cpe: cpe:2.3:a:salesforce:tableau_server:*:*:*:*:*:*:*:*
         part: header
         words:
           - "X-Tableau: Tableau Server"
@@ -39,6 +41,8 @@ http:
         condition: or
 
       - type: word
+        name: tableau_server-2
+        cpe: cpe:2.3:a:salesforce:tableau_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "VizPortalRun"

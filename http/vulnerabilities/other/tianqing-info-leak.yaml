@@ -7,8 +7,12 @@ info:
   description: Information exposed in Tianqing.
   reference:
     - https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
+  classification:
+    cpe: cpe:2.3:a:tianqing:tianqing:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: tianqing
+    product: tianqing
   tags: tianqing,exposure,vuln
 
 http:
@@ -19,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tianqing
+        cpe: cpe:2.3:a:tianqing:tianqing:*:*:*:*:*:*:*:*
         part: body
         words:
           - "schema_name"
@@ -27,6 +33,8 @@ http:
         condition: and
 
       - type: word
+        name: tianqing-2
+        cpe: cpe:2.3:a:tianqing:tianqing:*:*:*:*:*:*:*:*
         part: header
         words:
           - "application/json"
@@ -34,4 +42,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502206630b33e2b6c7caee587df5af9f783bc1fd5cd054e3703e85cf03120e70487e2022100dcfa10c5b05f99a3690fe79b652b85c057ad85e7999667c6866f943ebddd2818:922c64590222798bb761d5b6d8e72950

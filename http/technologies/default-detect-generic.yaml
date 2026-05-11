@@ -5,8 +5,12 @@ info:
   author: andydoering
   severity: info
   description: Catch-all for detecting default installations of web applications using common phrases found in default install pages
+  classification:
+    cpe: cpe:2.3:a:generic:default_page:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: generic
+    product: default_page
   tags: tech,discovery
 
 http:
@@ -16,9 +20,10 @@ http:
 
     matchers:
       - type: word
+        name: default_page
+        cpe: cpe:2.3:a:generic:default_page:*:*:*:*:*:*:*:*
         part: body
         condition: or
         words:
           - "<title>Default</title>"
           - "<title>Welcome to</title>"
-# digest: 490a00463044022046819406a78e0a3d9929cc47873ce197859d3e8c960641b4f462d4c29767cc51022026edb45477f5d25173c4273cfe1f6602b140012b4d1f4ddbed8d7bf151dc3d4f:922c64590222798bb761d5b6d8e72950

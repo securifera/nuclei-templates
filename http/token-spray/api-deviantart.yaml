@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://www.deviantart.com/developers/authentication
+  classification:
+    cpe: cpe:2.3:a:deviantart:deviantart:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: deviantart
+    product: deviantart
   tags: token-spray,deviantart
 
 self-contained: true
@@ -20,7 +24,8 @@ http:
     body: "access_token={{token}}"
     matchers:
       - type: word
+        name: deviantart
+        cpe: cpe:2.3:a:deviantart:deviantart:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"status" : "success"'
-# digest: 4a0a00473045022100f3300e99b27be7880fe166a5c11397192c5bcba24dede83f83d5da290fa058d8022079fe709bd11ac36cbc68ba6f6587ef8586a738e3a0087991e5661ad344828814:922c64590222798bb761d5b6d8e72950

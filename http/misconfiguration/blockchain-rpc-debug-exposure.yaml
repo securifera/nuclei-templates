@@ -14,6 +14,7 @@ info:
     - https://geth.ethereum.org/docs/developers/dapp-developer/native
     - https://github.com/ledgerwatch/erigon
   classification:
+    cpe: cpe:2.3:a:blockchain:rpc:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
     cvss-score: 6.5
     cwe-id: CWE-200
@@ -21,6 +22,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: "jsonrpc"
+    vendor: blockchain
+    product: rpc
   tags: misconfig,blockchain,rpc,debug,trace,web3
 
 http:
@@ -35,6 +38,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rpc
+        cpe: cpe:2.3:a:blockchain:rpc:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"jsonrpc"'
@@ -43,6 +48,8 @@ http:
         condition: and
 
       - type: word
+        name: rpc-2
+        cpe: cpe:2.3:a:blockchain:rpc:*:*:*:*:*:*:*:*
         part: body
         words:
           - "does not exist"
@@ -54,4 +61,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210088f0a2af8d5201bbf96337f6e2b7f6e3ac5f0643bba66b00467eadd2a31f18720221009e8055c49c838f2d567789dc4d3cc6c0124b720e3c121dcc7731bf3429dd4ea2:922c64590222798bb761d5b6d8e72950

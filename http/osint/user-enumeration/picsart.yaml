@@ -6,11 +6,14 @@ info:
   severity: info
   description: Picsart user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:picsart:picsart:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: picsart
+    product: picsart
   tags: osint,osint-art,picsart,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: picsart
+        cpe: cpe:2.3:a:picsart:picsart:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Profiles on Picsart"
-# digest: 4a0a0047304502203409060fc56bc6340590f368b15930c69220e3b3cddc87956ac2d1a91c669fbc022100d019f302efde4428986640360a1b5a93eb21993fbac487b4a5cd8838a14d60e1:922c64590222798bb761d5b6d8e72950

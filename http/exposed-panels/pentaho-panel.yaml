@@ -6,6 +6,7 @@ info:
   severity: info
   description: Pentaho User Console login panel was detected.
   classification:
+    cpe: cpe:2.3:a:hitachi:vantara_pentaho:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -22,6 +23,7 @@ http:
 
     matchers:
       - type: word
+        name: vantara_pentaho
+        cpe: cpe:2.3:a:hitachi:vantara_pentaho:*:*:*:*:*:*:*:*
         words:
           - '<title>Pentaho User Console - Login</title>'
-# digest: 490a004630440220722ba1ccec5608116630a233e69273bc99c5b17343ee1e724c74a54a8485121502202fac7348b7d9f940432fae55208fa8989a37cc8cda20a028a52dcb088f3f584e:922c64590222798bb761d5b6d8e72950

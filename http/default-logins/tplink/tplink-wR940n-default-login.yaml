@@ -4,10 +4,14 @@ info:
   name: TP-Link Wireless N Router WR940N - Default-Login
   author: ritikchaddha
   severity: high
+  classification:
+    cpe: cpe:2.3:a:tplink:wr940n:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"/userRpm/"
+    vendor: tplink
+    product: wr940n
   tags: tplink,wR940n,default-login,misconfig,vuln
 
 variables:
@@ -28,11 +32,15 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: wr940n
+        cpe: cpe:2.3:a:tplink:wr940n:*:*:*:*:*:*:*:*
         part: body
         regex:
           - 'location\.href(.*)\/([A-Z]+)\/userRpm\/Index\.htm";'
 
       - type: word
+        name: wr940n-2
+        cpe: cpe:2.3:a:tplink:wr940n:*:*:*:*:*:*:*:*
         part: header
         words:
           - text/html
@@ -41,4 +49,3 @@ http:
         part: header
         status:
           - 200
-# digest: 4a0a00473045022100d76e9029aabe95c73fff0d3356155067df232a0bf9b0f1b808472121bfa69b2f0220654d92f9d3bd4b62389f0f474ed363c1f9c6060636c121f5fb989451345dbd55:922c64590222798bb761d5b6d8e72950

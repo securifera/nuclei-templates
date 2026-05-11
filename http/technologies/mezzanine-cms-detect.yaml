@@ -6,11 +6,15 @@ info:
   severity: info
   description: |
     Detects instances of Mezzanine CMS based on unique fingerprints and identifiers.
+  classification:
+    cpe: cpe:2.3:a:mezzanine:mezzanine:*:*:*:*:*:*:*:*
   metadata:
     shodan-query:
       - http.component:"Mezzanine"
       - http.component:"mezzanine"
       - cpe:"cpe:2.3:a:mezzanine:mezzanine"
+    vendor: mezzanine
+    product: mezzanine
   tags: detect,mezzanine,cms,tech
 
 http:
@@ -31,6 +35,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: mezzanine
+        cpe: cpe:2.3:a:mezzanine:mezzanine:*:*:*:*:*:*:*:*
         words:
           - "powered by Mezzanine"
           - "Welcome to Mezzanine"
@@ -39,7 +45,8 @@ http:
         case-insensitive: true
 
       - type: regex
+        name: mezzanine-2
+        cpe: cpe:2.3:a:mezzanine:mezzanine:*:*:*:*:*:*:*:*
         regex:
           - "(?i)mezzanine\\s+(v[0-9.]+)"
           - "(?i)<title>Mezzanine CMS"
-# digest: 490a0046304402206ea552e5c5820d2a0ca71796473169e367a938c374573e7f9470d0d3ef9e6c7d022040b47b3fdc38fb07458b531b54f256daad853f2f30a45138d6e1424b67da6c87:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A vultr phishing website was detected
   reference:
     - https://my.vultr.com/
+  classification:
+    cpe: cpe:2.3:a:vultr:vultr:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: vultr
+    product: vultr
   tags: phishing,vultr,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: vultr
+        cpe: cpe:2.3:a:vultr:vultr:*:*:*:*:*:*:*:*
         words:
           - 'Log In to your Vultr Account - Vultr.com'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: vultr-2
+        cpe: cpe:2.3:a:vultr:vultr:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"vultr.com")'
-# digest: 4a0a0047304502206c339f66250aa40aab7dacbd91aa0b82b79b75e311d755443b9422720530d6090221008b86c7b3fe5ea9c0c36f4c836658b8e0a0b1ddbf0c611e5ef44806d5f2ad2daa:922c64590222798bb761d5b6d8e72950

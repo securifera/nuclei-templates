@@ -8,11 +8,14 @@ info:
   reference:
     - https://docs.couchdb.org/en/stable/intro/security.html#authentication-database
   classification:
+    cpe: cpe:2.3:a:couchdb:couchdb:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: couchdb
+    product: couchdb
   tags: couchdb,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: couchdb
+        cpe: cpe:2.3:a:couchdb:couchdb:*:*:*:*:*:*:*:*
         words:
           - CouchDB/
           - Erlang OTP/
@@ -30,9 +35,10 @@ http:
         condition: and
 
       - type: word
+        name: couchdb-2
+        cpe: cpe:2.3:a:couchdb:couchdb:*:*:*:*:*:*:*:*
         words:
           - total_rows
           - offset
         part: body
         condition: and
-# digest: 490a00463044022003c46cd765de10afe97f9c835168d77ae6f03fef1b470a0b7f05aac560841c2302205ffb8552de5c6e5d469bd08ab267be7519f165488e7278d0d9b462ae5c74ef9f:922c64590222798bb761d5b6d8e72950

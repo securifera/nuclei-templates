@@ -6,10 +6,14 @@ info:
   severity: medium
   description: |
     Exposure of Prowlarr dashboard which can lead to sensitive information disclosure.
+  classification:
+    cpe: cpe:2.3:a:prowlarr:prowlarr:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"<title>prowlarr</title>"
+    vendor: prowlarr
+    product: prowlarr
   tags: prowlarr,dashboard,unauth,misconfig,vuln
 
 http:
@@ -23,11 +27,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: prowlarr
+        cpe: cpe:2.3:a:prowlarr:prowlarr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>Prowlarr</title>"
 
       - type: word
+        name: prowlarr-2
+        cpe: cpe:2.3:a:prowlarr:prowlarr:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Login - Prowlarr"
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100ac7dbf674b6da85ec75b7b3da168d3987a77003d99e15ccbaa8df9e39f3ff2b602206c4474afc68af1ecf122df3757453382c34dc2581a3bcfbc874758457b56bbb6:922c64590222798bb761d5b6d8e72950

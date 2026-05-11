@@ -7,10 +7,14 @@ info:
   description: V2X Control Dashboard is exposed.
   reference:
     - https://www.facebook.com/photo/?fbid=606940284809828&set=a.467014098802448
+  classification:
+    cpe: cpe:2.3:a:v2x:control:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"V2X Control"
+    vendor: v2x
+    product: control
   tags: misconfig,exposure,v2x,control,vuln
 
 http:
@@ -21,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: control
+        cpe: cpe:2.3:a:v2x:control:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<title>V2X control</title>'
@@ -30,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220411c65b622bcf4295982f22e7983aa766c9f8b6167a24a8796c08c06f665b76302205e13160d2df36328944b088dd2e1d7e972ecc51676e49cb4a1943af574a1df44:922c64590222798bb761d5b6d8e72950

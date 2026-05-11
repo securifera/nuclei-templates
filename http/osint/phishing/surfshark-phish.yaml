@@ -8,8 +8,12 @@ info:
     A Surfshark phishing website was detected
   reference:
     - https://surfshark.com
+  classification:
+    cpe: cpe:2.3:a:surfshark:surfshark:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: surfshark
+    product: surfshark
   tags: phishing,surfshark,vpn,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: surfshark
+        cpe: cpe:2.3:a:surfshark:surfshark:*:*:*:*:*:*:*:*
         words:
           - 'Surfshark VPN &amp; all-in-one cybersecurity suites - Official Site'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: surfshark-2
+        cpe: cpe:2.3:a:surfshark:surfshark:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"surfshark.com")'
-# digest: 490a0046304402201e8d5ed1c859be373a433a16a616885e91ee59d2bf5cb06b6c45c60a8a9c9b1302204ae9c36279c677587f7280a45c2bcab0709b41446d40ab6557e0d2c433d967be:922c64590222798bb761d5b6d8e72950

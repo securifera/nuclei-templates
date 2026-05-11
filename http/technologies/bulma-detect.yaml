@@ -27,6 +27,8 @@ http:
 
     matchers:
       - type: regex
+        name: bulma
+        cpe: cpe:2.3:a:bulma:bulma:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '(?i)(/|")bulma(\.min)?\.css'

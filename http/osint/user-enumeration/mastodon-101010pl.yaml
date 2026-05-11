@@ -6,11 +6,14 @@ info:
   severity: info
   description: Mastodon-101010.pl user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:mastodon-101010pl:mastodon-101010pl:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: mastodon-101010pl
+    product: mastodon-101010pl
   tags: osint,osint-social,mastodon-101010pl,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: mastodon-101010pl
+        cpe: cpe:2.3:a:mastodon-101010pl:mastodon-101010pl:*:*:*:*:*:*:*:*
         part: body
         words:
           - "@101010.pl"
-# digest: 4b0a00483046022100d46d5e6881ffcda4aa21bf3ce44e4dc1397060ede1d993d4844b0ec88492175f022100d84ce449b023ef2ffee4534ff540b2dfbed127ca676dd92c67bc9e3f478e97d5:922c64590222798bb761d5b6d8e72950

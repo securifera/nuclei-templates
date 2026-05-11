@@ -64,6 +64,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rconfig
+        cpe: cpe:2.3:a:rconfig:rconfig:*:*:*:*:*:*:*:*
         words:
           - "User {{randstr}} successfully added to Database"
         part: body
@@ -71,4 +73,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4b0a00483046022100be21844f3b2ca9e15ad00771d6cb7c399d5792bdbbf5be851b09d212095fcf44022100edb7b8eebded73f8a6696c192152c7bb5ea6be1b15219f7f71fa00745c30676c:922c64590222798bb761d5b6d8e72950

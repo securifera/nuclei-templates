@@ -8,11 +8,14 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/ylOuWc8elD2EtM-1LiJp9g
   classification:
+    cpe: cpe:2.3:a:jeewms:jeewms:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-22
   metadata:
     max-request: 2
+    vendor: jeewms
+    product: jeewms
   tags: jeewms,lfi,vuln
 
 http:
@@ -29,6 +32,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: jeewms
+        cpe: cpe:2.3:a:jeewms:jeewms:*:*:*:*:*:*:*:*
         regex:
           - "root:.*:0:0:"
           - "\\[(font|extension|file)s\\]"
@@ -38,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210080bce89246cba99d739c89a24c75e86215aac59121bca7adefdbe6d045b5af740221009c23bcd613d45a2a565a85b5d82cd7b48ac90576c949819962eb8927bb8006c0:922c64590222798bb761d5b6d8e72950

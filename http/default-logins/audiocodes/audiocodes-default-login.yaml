@@ -8,9 +8,12 @@ info:
   reference:
     - https://wiki.freepbx.org/display/FPG/Supported+Devices-Audio+Codes#:~:text=Reset%20to%20Factory%20Defaults,-Press%20the%20Menu&text=Then%2C%20enter%20the%20Admin%20password,is%20%221234%22%20by%20default
   classification:
+    cpe: cpe:2.3:a:audiocodes:audiocodes:*:*:*:*:*:*:*:*
     cwe-id: CWE-798
   metadata:
     max-request: 1
+    vendor: audiocodes
+    product: audiocodes
   tags: iot,audiocodes,default-login,vuln
 
 http:
@@ -33,10 +36,14 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: audiocodes
+        cpe: cpe:2.3:a:audiocodes:audiocodes:*:*:*:*:*:*:*:*
         words:
           - "redirect('/mainform.cgi?go=mainframe.htm')"
 
       - type: word
+        name: audiocodes-2
+        cpe: cpe:2.3:a:audiocodes:audiocodes:*:*:*:*:*:*:*:*
         part: body
         negative: true
         words:
@@ -45,4 +52,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100a268ec475306e9e2fc315d2e4a075fefcd61a89f782d5e761433355647498c2e022006ef816272b75a2033606812b7e0805130493d9e4242f0a4b6f859e90fb66b69:922c64590222798bb761d5b6d8e72950

@@ -8,10 +8,14 @@ info:
     Detects exposed Ubersmith Setup page.
   reference:
     - https://ubersmith.com/
+  classification:
+    cpe: cpe:2.3:a:ubersmith:ubersmith:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Ubersmith Setup"
+    vendor: ubersmith
+    product: ubersmith
   tags: misconfig,install,exposure,ubersmith,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ubersmith
+        cpe: cpe:2.3:a:ubersmith:ubersmith:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Ubersmith Setup"
@@ -29,4 +35,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100942c4fa5b1a36f7902adb8859b6e1072d1f1eb5ddf8785fa178c0e7521a19fc0022072c103c8b45a3fb68644d16fb001dd523c1ed5b7c3c4343b71a11135662c6afe:922c64590222798bb761d5b6d8e72950

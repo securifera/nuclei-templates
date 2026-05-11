@@ -5,10 +5,14 @@ info:
   author: tess
   severity: medium
   description: QVidium Management System is Exposed.
+  classification:
+    cpe: cpe:2.3:a:qvidium:qvidium:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"QVidium Management"
+    vendor: qvidium
+    product: qvidium
   tags: misconfig,qvidium,vuln
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: qvidium
+        cpe: cpe:2.3:a:qvidium:qvidium:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'QVidium Management'
@@ -29,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: qvidium-2
+        cpe: cpe:2.3:a:qvidium:qvidium:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'text/html'
@@ -36,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100c978d4f0677f52c6b4b875757116442b190ddcdba5f36532c3702448012e0f2a022100e04c21112ea2b144ae4f879fe6b36f592e69fc37570c7a888ef593c470a3c236:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     An IRS phishing website was detected
   reference:
     - https://irs.gov
+  classification:
+    cpe: cpe:2.3:a:irs:irs:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: irs
+    product: irs
   tags: phishing,irs,government,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: irs
+        cpe: cpe:2.3:a:irs:irs:*:*:*:*:*:*:*:*
         words:
           - "Pay your taxes. Get your refund status. Find IRS forms and answers to tax questions. We help you understand and meet your federal tax responsibilities."
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: irs-2
+        cpe: cpe:2.3:a:irs:irs:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"irs.gov")'
-# digest: 4a0a00473045022100d7602899917c173252bc4e25fab08422a8c374c773c8189b9e118c333b6b115b022068322aa6a595148be6e5a36e812a3c0b309f27e7391caa4f1f0de14c3100007c:922c64590222798bb761d5b6d8e72950

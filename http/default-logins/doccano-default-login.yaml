@@ -9,6 +9,8 @@ info:
   reference:
     - https://github.com/doccano/doccano
     - https://doccano.github.io/doccano/
+  classification:
+    cpe: cpe:2.3:a:doccano:doccano:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
 
     matchers:
       - type: dsl
+        name: doccano
+        cpe: cpe:2.3:a:doccano:doccano:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "doccano", "/_nuxt/")'
@@ -45,6 +49,8 @@ http:
 
     matchers:
       - type: dsl
+        name: doccano-2
+        cpe: cpe:2.3:a:doccano:doccano:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
@@ -69,9 +75,10 @@ http:
 
     matchers:
       - type: dsl
+        name: doccano-3
+        cpe: cpe:2.3:a:doccano:doccano:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains(content_type, "application/json")'
           - 'contains_all(body, "\"username\"", "\"is_superuser\"", "admin")'
         condition: and
-# digest: 4a0a00473045022100f8e379e1cb9723a5e997e5e84f883f6296651c0daa49fceb1f10c327299c787202203d208f724e8f0a6fe0179e66f0c8a03c35bc16ea4cad2646aa721a4cf9c524ee:922c64590222798bb761d5b6d8e72950

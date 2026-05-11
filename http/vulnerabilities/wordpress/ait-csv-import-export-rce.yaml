@@ -10,11 +10,14 @@ info:
     - https://wpscan.com/vulnerability/10471
     - https://github.com/rapid7/metasploit-framework/blob/master//modules/exploits/multi/http/wp_ait_csv_rce.rb
   classification:
+    cpe: cpe:2.3:a:ait-csv:ait-csv:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 9.8
     cwe-id: CWE-434
   metadata:
     max-request: 2
+    vendor: ait-csv
+    product: ait-csv
   tags: wp-plugin,rce,fileupload,unauth,wpscan,msf,wordpress,ait-csv,wp,intrusive,vuln
 
 variables:
@@ -42,7 +45,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ait-csv
+        cpe: cpe:2.3:a:ait-csv:ait-csv:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '{{md5(string)}}'
-# digest: 4b0a004830460221009d491c6a5aee6cdc14c3068713d7d238c0ec1df4a7cc5e691a7624a1e09d65eb022100af80f6b46bd9fb9630b9af9de1399a3ca5dc7d666c55b859b422c77ff1018230:922c64590222798bb761d5b6d8e72950

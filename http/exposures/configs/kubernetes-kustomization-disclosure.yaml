@@ -8,11 +8,14 @@ info:
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/kubernetes-kustomization-disclosure.json
   classification:
+    cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: kubernetes
+    product: kubernetes
   tags: exposure,config,kubernetes,vuln
 
 http:
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: kubernetes
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         part: body
         condition: or
         words:
@@ -33,10 +38,11 @@ http:
           - "Kustomization"
 
       - type: dsl
+        name: kubernetes-2
+        cpe: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
         dsl:
           - "contains(tolower(header), 'application/yaml')"
 
       - type: status
         status:
           - 200
-# digest: 490a0046304402201fa920539d972b712775ef58b9c15c8e5c598ade0159a1f522717cc8a03776e602206dde06d8fa49c635921bc3ccfa31b9368d1c856e7b44d6e9229a93aa447602cd:922c64590222798bb761d5b6d8e72950

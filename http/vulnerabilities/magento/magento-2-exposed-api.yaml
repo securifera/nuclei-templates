@@ -26,6 +26,8 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
+        name: magento
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "searchCriteria")'
           - 'contains(body, "parameters")'
@@ -34,6 +36,8 @@ http:
         condition: and
 
       - type: dsl
+        name: magento-2
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "secure_base_link_url")'
           - 'contains(body, "timezone")'
@@ -42,10 +46,11 @@ http:
         condition: and
 
       - type: dsl
+        name: magento-3
+        cpe: cpe:2.3:a:magento:magento:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "name")'
           - 'contains(body, "website_id")'
           - 'contains(tolower(header), "application/json")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a0047304502206a71a2bbc762ba1c1f301f48a795691ded148296170f02d5bb9766feaaf697ae022100a1375ee97e3f71ac15bfefdad845ed5cd552c85b7aa0558a26a8855480731131:922c64590222798bb761d5b6d8e72950

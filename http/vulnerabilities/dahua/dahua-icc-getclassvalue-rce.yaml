@@ -9,10 +9,13 @@ info:
   reference:
     - https://github.com/zan8in/afrog/blob/main/pocs/afrog-pocs/vulnerability/dahua-icc-getclassvalue-rce.yaml
   classification:
+    cpe: cpe:2.3:a:dahua:dahua:*:*:*:*:*:*:*:*
     cwe-id: CWE-78,CWE-94,CWE-470
   metadata:
     fofa-query: app="dahua-智能物联综合管理平台"
     max-request: 1
+    vendor: dahua
+    product: dahua
   tags: rce,java,dahua,iot,unauth,vuln
 
 http:
@@ -33,6 +36,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: dahua
+        cpe: cpe:2.3:a:dahua:dahua:*:*:*:*:*:*:*:*
         part: body
         regex:
           - "uid=([0-9(a-z)]+) gid=([0-9(a-z)]+)"
@@ -40,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220605971f2a72a5df68ace8a90481fd80cbe0b5dadc6df9e480c752d4268c19cf60220121f6c02a23bbf76cb66e42580a2f7603665bab6f546929a8b38f6f1c3b4e461:922c64590222798bb761d5b6d8e72950

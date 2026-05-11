@@ -11,12 +11,15 @@ info:
     - https://wpscan.com/vulnerability/c46ecd0d-a132-4ad6-b936-8acde3a09282
     - https://www.exploit-db.com/exploits/50321
   classification:
+    cpe: cpe:2.3:a:3dprint:3dprint:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 8.8
     cwe-id: CWE-434
   metadata:
     verified: true
     max-request: 2
+    vendor: 3dprint
+    product: 3dprint
   tags: wpscan,edb,wordpress,wp,wp-plugin,fileupload,intrusive,3dprint,vuln
 
 variables:
@@ -46,7 +49,8 @@ http:
 
     matchers:
       - type: word
+        name: 3dprint
+        cpe: cpe:2.3:a:3dprint:3dprint:*:*:*:*:*:*:*:*
         part: body_2
         words:
           - '{{md5(string)}}'
-# digest: 490a0046304402200dd1de57a608841bd8482c167444d8369e0639f5021a11e7303e04595b0ba37702207ce7bd3b7dc8b3cb5e7fa0cdd1187872ec06f133bc19d2e8b68550a38d634f16:922c64590222798bb761d5b6d8e72950

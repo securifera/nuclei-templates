@@ -8,8 +8,12 @@ info:
     A Webex phishing website was detected
   reference:
     - https://webex.com
+  classification:
+    cpe: cpe:2.3:a:webex:webex:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: webex
+    product: webex
   tags: phishing,webex,cisco,video,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: webex
+        cpe: cpe:2.3:a:webex:webex:*:*:*:*:*:*:*:*
         words:
           - '<title>Webex: Video Conferencing, Online Meetings, Screen Share | Cisco Webex'
 
@@ -30,7 +36,8 @@ http:
           - 200
 
       - type: dsl
+        name: webex-2
+        cpe: cpe:2.3:a:webex:webex:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"webex.com")'
           - '!contains(host,"cisco.com")'
-# digest: 4a0a0047304502210080e28b8e6a0b37d54368cac0d840f695f45a08a64b7acfdc035e84fb3b327c5502204f59afd043227253a6516cd4c16ffb634ac6c5a50118292e0712393b90a41549:922c64590222798bb761d5b6d8e72950

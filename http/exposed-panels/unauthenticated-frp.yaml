@@ -8,10 +8,13 @@ info:
   reference:
     - https://github.com/fatedier/frp/
   classification:
+    cpe: cpe:2.3:a:frp:frp:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: frp
+    product: frp
   tags: frp,unauth,panel,discovery
 
 http:
@@ -22,6 +25,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: frp
+        cpe: cpe:2.3:a:frp:frp:*:*:*:*:*:*:*:*
         words:
           - "<title>frps dashboard</title>"
         part: body
@@ -29,4 +34,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022023766f5b4ed36da317f0a9f91fad9d28cead5e043a22030a6835ded0004d556102202fab3072fecbdf4ae6445d0243e618e260bbe062ac4b31e7a1b347104d1ea27f:922c64590222798bb761d5b6d8e72950

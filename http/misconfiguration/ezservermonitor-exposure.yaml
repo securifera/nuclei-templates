@@ -9,11 +9,15 @@ info:
   reference:
     - https://github.com/shevabam/ezservermonitor-web
     - https://www.ezservermonitor.com/esm-web/features
+  classification:
+    cpe: cpe:2.3:a:ezservermonitor:ezservermonitor:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     shodan-query: title:"eZ Server Monitor"
     fofa-query: title="eZ Server Monitor"
+    vendor: ezservermonitor
+    product: ezservermonitor
   tags: misconfig,exposure,ezservermonitor,monitoring
 
 http:
@@ -29,6 +33,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: ezservermonitor
+        cpe: cpe:2.3:a:ezservermonitor:ezservermonitor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>eZ Server Monitor"
@@ -36,6 +42,8 @@ http:
         condition: and
 
       - type: word
+        name: ezservermonitor-2
+        cpe: cpe:2.3:a:ezservermonitor:ezservermonitor:*:*:*:*:*:*:*:*
         part: body
         words:
           - "web/css/frontend.css"
@@ -53,4 +61,3 @@ http:
         group: 1
         regex:
           - 'eZ Server Monitor - v([0-9.]+)'
-# digest: 490a00463044022078009653147f6533fe7ecc3954330bdf16c6e4bf8ea986bfb3c351828d782e78022019b6ac34579fdae69291dc5ec905ec1b6ab7a972a2f3e37a3713eb5044e87699:922c64590222798bb761d5b6d8e72950

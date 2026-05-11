@@ -6,11 +6,14 @@ info:
   severity: high
   description: Multiple fuzzes for /etc/passwd on passed URLs were conducted, leading to multiple instances of local file inclusion vulnerability.
   classification:
+    cpe: cpe:2.3:a:linux:linux:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
     cwe-id: CWE-200
   metadata:
     max-request: 22
+    vendor: linux
+    product: linux
   tags: linux,lfi,fuzz,fuzzing,vuln
 
 http:
@@ -42,7 +45,8 @@ http:
     stop-at-first-match: true
     matchers:
       - type: regex
+        name: linux
+        cpe: cpe:2.3:a:linux:linux:*:*:*:*:*:*:*:*
         regex:
           - "root:.{0,20}:0:0:"
         part: body
-# digest: 490a00463044022073c5452b3772979586d9e67de6e1e8c024f381f5663a1aa21d0194a04086fa0602203e22833f20a8d48e091ff88728c890d2588ae2d082b08a1664c9d06059fdb206:922c64590222798bb761d5b6d8e72950

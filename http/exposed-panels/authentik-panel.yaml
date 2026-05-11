@@ -8,10 +8,14 @@ info:
     An Authentik search engine was detected.
   reference:
     - https://github.com/goauthentik/authentik
+  classification:
+    cpe: cpe:2.3:a:authentik:authentik:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.favicon.hash:-178113786
+    vendor: authentik
+    product: authentik
   tags: authentik,sso,mfa,panel,detect,discovery
 
 http:
@@ -27,6 +31,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: authentik
+        cpe: cpe:2.3:a:authentik:authentik:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<title>authentik</title>"
@@ -36,6 +42,7 @@ http:
         case-insensitive: true
 
       - type: dsl
+        name: authentik-2
+        cpe: cpe:2.3:a:authentik:authentik:*:*:*:*:*:*:*:*
         dsl:
           - "(\"-178113786\" == mmh3(base64_py(body)))"
-# digest: 490a0046304402205d1941f6e08762dc99b5102c291f37c061b500102b7e2688084943b64be52cb80220141855f541567e4035ca6d06d2b97533d6aac76e6624a20585a8169a93f206c1:922c64590222798bb761d5b6d8e72950

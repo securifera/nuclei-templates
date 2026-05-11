@@ -47,6 +47,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: all-404-redirect-to-homepage
+        cpe: cpe:2.3:a:all-404-redirect-to-homepage:all-404-redirect-to-homepage:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

@@ -6,6 +6,7 @@ info:
   severity: info
   description: Proofpoint Protection Server panel was detected.
   classification:
+    cpe: cpe:2.3:a:proofpoint:proofpoint_protection_server:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
@@ -30,6 +31,8 @@ http:
     matchers-condition: or
     matchers:
       - type: word
+        name: proofpoint_protection_server
+        cpe: cpe:2.3:a:proofpoint:proofpoint_protection_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - '<TITLE>Proofpoint Protection Server'
@@ -38,7 +41,8 @@ http:
         condition: or
 
       - type: word
+        name: proofpoint_protection_server-2
+        cpe: cpe:2.3:a:proofpoint:proofpoint_protection_server:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'PPSAUTH='
-# digest: 4a0a00473045022100e2a8fa45d03ce377a18be1a7a7d8cdb96cbb0a74aa61beb95ec3914de0aba8c6022034d61141c0a855824d221e9a885f0255ef810a742c75400b060d429d6662e320:922c64590222798bb761d5b6d8e72950

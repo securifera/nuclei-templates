@@ -46,6 +46,8 @@ http:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 
       - type: regex
+        name: google-analytics-for-wordpress
+        cpe: cpe:2.3:a:google-analytics-for-wordpress:google-analytics-for-wordpress:*:*:*:*:*:wordpress:*:*
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'

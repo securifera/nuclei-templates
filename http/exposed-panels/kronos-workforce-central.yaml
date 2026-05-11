@@ -6,10 +6,13 @@ info:
   severity: info
   description: Kronos Workforce Central login panel was detected.
   classification:
+    cpe: cpe:2.3:a:kronos:kronos:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 2
+    vendor: kronos
+    product: kronos
   tags: panel,kronos,discovery
 
 http:
@@ -22,8 +25,9 @@ http:
 
     matchers:
       - type: regex
+        name: kronos
+        cpe: cpe:2.3:a:kronos:kronos:*:*:*:*:*:*:*:*
         regex:
           - 'Kronos'
           - 'Workforce Central(R)'
         condition: or
-# digest: 4a0a00473045022100b4a50bf7c3164fac02f7a92624940e75ef53236d940947f4fba892b1f221458f022035316e9a3e6d4f92fd24274083020855d51b3b4889b9ee2007927908a6360578:922c64590222798bb761d5b6d8e72950

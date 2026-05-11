@@ -5,8 +5,12 @@ info:
   author: dhiyaneshDk
   severity: high
   description: Tensorflow Tensorboard was able to be accessed with no authentication requirements in place.
+  classification:
+    cpe: cpe:2.3:a:tensorboard:tensorboard:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: tensorboard
+    product: tensorboard
   tags: tensorflow,tensorboard,unauth,misconfig,vuln
 
 http:
@@ -17,6 +21,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: tensorboard
+        cpe: cpe:2.3:a:tensorboard:tensorboard:*:*:*:*:*:*:*:*
         words:
           - 'scalars'
           - 'loading_mechanism'
@@ -26,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100cded55c9fbe2c06ed5180d5b2449515d7cb1ec5c66ad17dd6c970a795e29cb3b022005dbbdfd5b3b8a2766f4e496e237c78f08c1dfbffdad3d6aa8239ea93eae5da4:922c64590222798bb761d5b6d8e72950

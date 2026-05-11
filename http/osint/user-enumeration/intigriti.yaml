@@ -6,11 +6,14 @@ info:
   severity: info
   description: Intigriti user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:intigriti:intigriti:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: intigriti
+    product: intigriti
   tags: osint,osint-tech,intigriti,discovery
 
 self-contained: true
@@ -23,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: intigriti
+        cpe: cpe:2.3:a:intigriti:intigriti:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Rep. all time</h5>'
@@ -30,6 +35,8 @@ http:
         condition: and
 
       - type: word
+        name: intigriti-2
+        cpe: cpe:2.3:a:intigriti:intigriti:*:*:*:*:*:*:*:*
         part: body
         words:
           - "We didn't find what you're looking for"
@@ -38,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100e3d8f66d8e7b9b64e644b333325631058ee668f4508411ee0e305b000a74184702203955347b2e5fa579ea4721b494d1b41e77b4530c50d8f6d1703235af137bfe03:922c64590222798bb761d5b6d8e72950

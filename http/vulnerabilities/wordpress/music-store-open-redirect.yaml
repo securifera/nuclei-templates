@@ -9,11 +9,14 @@ info:
     - https://wpscan.com/vulnerability/d73f6575-eb86-480c-bde1-f8765870cdd1
     - https://seclists.org/fulldisclosure/2015/Jul/113
   classification:
+    cpe: cpe:2.3:a:music-store-open:music-store-open:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     max-request: 1
+    vendor: music-store-open
+    product: music-store-open
   tags: musicstore,wp,wpscan,seclists,wordpress,redirect,wp-plugin,vuln
 
 http:
@@ -25,7 +28,8 @@ http:
 
     matchers:
       - type: regex
+        name: music-store-open
+        cpe: cpe:2.3:a:music-store-open:music-store-open:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)interact\.sh\/?(\/|[^.].*)?$' # https://regex101.com/r/L403F0/1
-# digest: 4b0a00483046022100db20efbad6b160f48acd77df26c4c002174f2fe7dcd5aa252fa8feb53ced55ed022100f317baa1945ec20278751d57b53ca4a8807351487ab0a3e4548d7d22021540be:922c64590222798bb761d5b6d8e72950

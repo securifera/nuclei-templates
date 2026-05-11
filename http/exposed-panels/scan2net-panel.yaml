@@ -6,12 +6,16 @@ info:
   severity: info
   description: |
     Scan2Net Login was detected. This software is used to manage ImageAccess devices.Universities and public institutions often use ImageAccess devices.
+  classification:
+    cpe: cpe:2.3:a:scan2net:scan2net:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
     shodan-query:
       - http.favicon.hash:1780061475
       - http.title:"Scan2Net"
+    vendor: scan2net
+    product: scan2net
   tags: panel,scan2net,login,discovery
 
 http:
@@ -25,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: scan2net
+        cpe: cpe:2.3:a:scan2net:scan2net:*:*:*:*:*:*:*:*
         part: body
         words:
           - "/cgi/index.cgi"
@@ -35,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100f7cc0f0a31090d69eecb74d3717f380fbc832121737c606202e0299baa4e263c022100b63a856ab13b949181054cb43994e260b83500d175d64eeec5cfb90ddba472d3:922c64590222798bb761d5b6d8e72950

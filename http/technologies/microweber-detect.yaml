@@ -28,6 +28,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: microweber
+        cpe: cpe:2.3:a:microweber:microweber:*:*:*:*:*:*:*:*
         part: body
         words:
           - '"generator" content="Microweber" />'

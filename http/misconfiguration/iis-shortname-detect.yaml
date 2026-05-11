@@ -11,11 +11,14 @@ info:
     - https://www.exploit-db.com/exploits/19525
     - http://soroush.secproject.com/blog/2012/06/microsoft-iis-tilde-character-vulnerabilityfeature-short-filefolder-name-disclosure/
   classification:
+    cpe: cpe:2.3:a:iis:iis:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 7
+    vendor: iis
+    product: iis
   tags: iis,edb,vuln
 
 variables:
@@ -30,6 +33,8 @@ http:
 
     matchers:
       - type: regex
+        name: iis
+        cpe: cpe:2.3:a:iis:iis:*:*:*:*:*:*:*:*
         regex:
           - "(?i)Microsoft-IIS"
           - "(?i)ASP\\.NET"
@@ -72,6 +77,7 @@ http:
 
     matchers:
       - type: dsl
+        name: iis-2
+        cpe: cpe:2.3:a:iis:iis:*:*:*:*:*:*:*:*
         dsl:
           - "status_code_1!=404 && status_code_2 == 404 || status_code_3 != 404 && status_code_4 == 404 || status_code_5 != 404 && status_code_6 == 404"
-# digest: 4a0a00473045022100e886853272dacc3bab4867ebae9383ab03ffec8ad4f3dbc3829bae2409d089ec02201cec513c4b3b8f9e072d93611bb89a11b0339b88c1d70c5d2cdd6099ba4e992b:922c64590222798bb761d5b6d8e72950

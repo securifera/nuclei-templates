@@ -8,8 +8,12 @@ info:
     An Audible phishing website was detected
   reference:
     - https://audible.com
+  classification:
+    cpe: cpe:2.3:a:audible:audible:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: audible
+    product: audible
   tags: phishing,audible,amazon,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: audible
+        cpe: cpe:2.3:a:audible:audible:*:*:*:*:*:*:*:*
         words:
           - 'Audible'
           - 'Try Audible free for 30 days! Start listening to best-selling audiobooks, exclusive Originals, and free podcasts with the Audible app.'
@@ -32,7 +38,8 @@ http:
           - 200
 
       - type: dsl
+        name: audible-2
+        cpe: cpe:2.3:a:audible:audible:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"audible.com")'
           - '!contains(host,"amazon.com")'
-# digest: 4a0a00473045022011b4c720b2d3e731286956110f541bbc922ce42d6ebb24b85b8ab25689b6bff9022100e20bee3783bba2630223f60bfee0c0ff3936c33f991625009a711401a3791e36:922c64590222798bb761d5b6d8e72950

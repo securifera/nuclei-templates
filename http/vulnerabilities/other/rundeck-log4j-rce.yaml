@@ -41,16 +41,22 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: rundeck
+        cpe: cpe:2.3:a:pagerduty:rundeck:*:*:*:*:*:*:*:*
         part: location
         words:
           - '{{BaseURL}}/user/error'
 
       - type: word
+        name: rundeck-2
+        cpe: cpe:2.3:a:pagerduty:rundeck:*:*:*:*:*:*:*:*
         part: interactsh_protocol # Confirms the DNS Interaction
         words:
           - "dns"
 
       - type: regex
+        name: rundeck-3
+        cpe: cpe:2.3:a:pagerduty:rundeck:*:*:*:*:*:*:*:*
         part: interactsh_request
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
@@ -71,4 +77,3 @@ http:
         group: 1
         regex:
           - '\d{6}\.([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
-# digest: 4a0a00473045022100bb89e972f32d7fc9309fc8241f6de7dff830aab3c29126ab111e13b9ae4f25fc022064f1526f003d02df16f9f0a16e8d8e3075c4fda50d2a73931529b13514322d0a:922c64590222798bb761d5b6d8e72950

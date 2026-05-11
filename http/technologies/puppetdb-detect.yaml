@@ -6,8 +6,12 @@ info:
   severity: info
   reference:
     - https://puppet.com/docs/puppetdb/7/api/meta/v1/version.html#pdbmetav1version
+  classification:
+    cpe: cpe:2.3:a:puppet:puppetdb:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: puppet
+    product: puppetdb
   tags: puppet,tech,exposure,discovery
 
 http:
@@ -22,11 +26,15 @@ http:
           - 200
 
       - type: word
+        name: puppetdb
+        cpe: cpe:2.3:a:puppet:puppetdb:*:*:*:*:*:*:*:*
         part: header
         words:
           - 'application/json'
 
       - type: regex
+        name: puppetdb-2
+        cpe: cpe:2.3:a:puppet:puppetdb:*:*:*:*:*:*:*:*
         part: body
         regex:
           - '"version"\s:\s"([0-9.]+)"'
@@ -36,4 +44,3 @@ http:
         group: 1
         regex:
           - '"version"\s:\s"([0-9.]+)"'
-# digest: 4a0a00473045022100ad6e45930dd32d97b7a57a11b8f398b1fd46239af7f925fe3c994cfa22ea5d0702206e8b58a566658e9d5987e8fc604a2afe19bf36eb6c550642bab6ea60a501b15f:922c64590222798bb761d5b6d8e72950

@@ -8,8 +8,12 @@ info:
     A Obsidian phishing website was detected
   reference:
     - https://obsidian.md
+  classification:
+    cpe: cpe:2.3:a:obsidian:obsidian:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: obsidian
+    product: obsidian
   tags: phishing,obsidian,notes,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: obsidian
+        cpe: cpe:2.3:a:obsidian:obsidian:*:*:*:*:*:*:*:*
         words:
           - '<title>Obsidian - Sharpen your thinking'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: obsidian-2
+        cpe: cpe:2.3:a:obsidian:obsidian:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"obsidian.md")'
-# digest: 4a0a00473045022100d829b5e5766126e9654b3c6fb27637a370e7dd8a3a8ed5d5aa4d1f0d516d8f30022054358a3eec26c1448e040f4e3053454692828d747235e64e332dc96dafe11fb5:922c64590222798bb761d5b6d8e72950

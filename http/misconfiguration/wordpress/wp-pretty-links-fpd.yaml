@@ -8,6 +8,8 @@ info:
     WordPress Pretty Links plugin is vulnerable to full path disclosure via direct access to plugin files.
   reference:
     - https://wordpress.org/plugins/pretty-link/
+  classification:
+    cpe: cpe:2.3:a:developer:pretty-link:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 3
@@ -29,6 +31,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: pretty-link
+        cpe: cpe:2.3:a:developer:pretty-link:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Fatal error"
@@ -39,4 +43,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009232b4ab96468d9f756632e92dd476e677697d96bf3fbf76381c1faca0ed0f9b02204b2783f683f3e4943c8d9ead4a1036ec19eac640439922f9697218e7b063aa89:922c64590222798bb761d5b6d8e72950

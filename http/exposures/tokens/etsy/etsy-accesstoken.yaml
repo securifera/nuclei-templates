@@ -8,10 +8,13 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/etsy-access-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/etsy-access-token.go
   classification:
+    cpe: cpe:2.3:a:etsy:etsy:*:*:*:*:*:*:*:*
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
     max-request: 1
+    vendor: etsy
+    product: etsy
   tags: etsy,exposure,tokens,accesskey,vuln
 
 http:
@@ -24,4 +27,3 @@ http:
         part: body
         regex:
           - (?i)(?:etsy)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{24})(?:['|\"|\n|\r|\s|\x60|;]|$)
-# digest: 4a0a00473045022100c45003a92cc413e15e3899c809a07e21ff2b62e8463834840691ac65dd98e6240220255b7e4eff110d11583d0a0c07ad89bd9cefc8c22467525ce5101da6dc405410:922c64590222798bb761d5b6d8e72950

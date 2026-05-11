@@ -24,11 +24,15 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: playground
+        cpe: cpe:2.3:a:graphql:playground:*:*:*:*:node.js:*:*:*
         part: body
         words:
           - '<title>GraphQL playground</title>'
 
       - type: word
+        name: playground-2
+        cpe: cpe:2.3:a:graphql:playground:*:*:*:*:node.js:*:*:*
         part: header
         words:
           - text/html
@@ -36,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d82950a859ca8847bddf45a76f6550a340a4ec037e44e996d1ee32ef1c427308022014a59b7957bc312677630bba2589b73499072f582cf8d026e554f61b5e96c818:922c64590222798bb761d5b6d8e72950

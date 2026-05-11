@@ -8,6 +8,8 @@ info:
    Devtron JavaScript environment configuration file was identified at /dashboard/env-config.js, exposing internal API endpoints and feature flag settings.
   reference:
     - https://github.com/devtron-labs/devtron
+  classification:
+    cpe: cpe:2.3:a:devtron-labs:devtron:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 1
@@ -24,9 +26,10 @@ http:
 
     matchers:
       - type: dsl
+        name: devtron
+        cpe: cpe:2.3:a:devtron-labs:devtron:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "window._env_", "CENTRAL_API_ENDPOINT", "DEVTRON_APP_DETAILS_POLLING_INTERVAL")'
           - 'contains(content_type, "application/javascript")'
           - 'status_code == 200'
         condition: and
-# digest: 4a0a004730450220565f017b9128cd9d1929961a2d55da555553fc2c20393ba1375ae262307d7cb40221008ecc55baeaf618ac94843d1ab3b1d786d2a29b366fc5a77f4a4d78bae60726a7:922c64590222798bb761d5b6d8e72950

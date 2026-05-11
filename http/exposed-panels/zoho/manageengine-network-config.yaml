@@ -29,6 +29,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: manageengine_network_configuration_manager
+        cpe: cpe:2.3:a:zohocorp:manageengine_network_configuration_manager:*:*:*:*:*:*:*:*
         part: body
         words:
           - 'Network Configuration Manager'
@@ -38,4 +40,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202d33524f37f6cf8caf0a71bb90832558af53fab237392c061e1a1bd303f1e577022053b49c4ac14e2044adf03fa1e00ce40ab4a66cf73498f08db887b52b1a02fc95:922c64590222798bb761d5b6d8e72950

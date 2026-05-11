@@ -8,8 +8,12 @@ info:
     A Mullvad VPN phishing website was detected
   reference:
     - https://mullvad.net
+  classification:
+    cpe: cpe:2.3:a:mullvad:mullvad:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: mullvad
+    product: mullvad
   tags: phishing,mullvad,vpn,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: mullvad
+        cpe: cpe:2.3:a:mullvad:mullvad:*:*:*:*:*:*:*:*
         words:
           - '<title>Mullvad VPN - Privacy is for the people'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: mullvad-2
+        cpe: cpe:2.3:a:mullvad:mullvad:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"mullvad.net")'
-# digest: 4a0a0047304502207fa59430307cc7044e09e8de16b9702747944a432d36407f238df8577d51f87c02210087f2b7f8fdda6cd3abd4765c95ee5102528f7b0ee6288d4e40c6a8015d3c1118:922c64590222798bb761d5b6d8e72950

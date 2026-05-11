@@ -8,8 +8,12 @@ info:
     A Netlify phishing website was detected
   reference:
     - https://netlify.com
+  classification:
+    cpe: cpe:2.3:a:netlify:netlify:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: netlify
+    product: netlify
   tags: phishing,netlify,hosting,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: netlify
+        cpe: cpe:2.3:a:netlify:netlify:*:*:*:*:*:*:*:*
         words:
           - 'Build with AI or code, deploy instantly. One platform with everything you need to make real apps live.'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: netlify-2
+        cpe: cpe:2.3:a:netlify:netlify:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"netlify.com")'
-# digest: 490a0046304402200952dd830e24911d610fe2051c3d9b1a323f67734170fb39f4b3802f391dd1e702205114f7d7cfdc52cf0ba1427ccf9e6520e21bf9b27b8efb4b7be4b0996144d5ca:922c64590222798bb761d5b6d8e72950

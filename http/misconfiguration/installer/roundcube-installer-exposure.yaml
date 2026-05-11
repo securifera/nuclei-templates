@@ -9,9 +9,13 @@ info:
   reference:
     - https://roundcube.net/
     - https://github.com/roundcube/roundcubemail/wiki/Installation
+  classification:
+    cpe: cpe:2.3:a:roundcube:roundcube:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 2
+    vendor: roundcube
+    product: roundcube
   tags: roundcube,webmail,installer,config,misconfig,exposure
 
 http:
@@ -22,8 +26,9 @@ http:
 
     matchers:
       - type: dsl
+        name: roundcube
+        cpe: cpe:2.3:a:roundcube:roundcube:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(body, "Roundcube Webmail Installer", "wiki/Installation", "General configuration")'
         condition: and
-# digest: 4a0a0047304502206e0489078982f908a384c1e6305fdf87b0ec9fbd32d47978ebe2cab1d00f70c3022100cf32aab13a6f0772dc2a159336708585105dc54b7f86bf5a769720b6370b0a2b:922c64590222798bb761d5b6d8e72950

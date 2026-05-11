@@ -8,8 +8,12 @@ info:
     Detected the exposure of the Xymon monitoring system interface.
   reference:
     - https://xymon.com/
+  classification:
+    cpe: cpe:2.3:a:xymon:xymon:*:*:*:*:*:*:*:*
   metadata:
     shodan-query: http.title:"Xymon"
+    vendor: xymon
+    product: xymon
   tags: xymon,exposure,monitoring,panel
 
 http:
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: xymon
+        cpe: cpe:2.3:a:xymon:xymon:*:*:*:*:*:*:*:*
         part: body
         words:
           - "Xymon"
@@ -30,6 +36,8 @@ http:
         condition: and
 
       - type: word
+        name: xymon-2
+        cpe: cpe:2.3:a:xymon:xymon:*:*:*:*:*:*:*:*
         part: header
         words:
           - "text/html"
@@ -37,4 +45,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100af180bb496af5b27120760f2115f7866aadc40443123072508390d83bb22e008022100972d9e1acdd7388fb401333ecc092b635c7937e205ff6718bbb3f2bbbf8cf065:922c64590222798bb761d5b6d8e72950

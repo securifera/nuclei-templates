@@ -11,10 +11,13 @@ info:
     - https://cxsecurity.com/issue/WLB-2022100015
     - https://extensions.joomla.org/
   classification:
+    cpe: cpe:2.3:a:joomla:marvikshop:*:*:*:*:*:*:*:*
     cwe-id: CWE-89
   metadata:
     verified: true
     max-request: 1
+    vendor: joomla
+    product: marvikshop
   tags: joomla,marvikshop,sqli,unauth,vuln
 
 http:
@@ -24,9 +27,10 @@ http:
 
     matchers:
       - type: dsl
+        name: marvikshop
+        cpe: cpe:2.3:a:joomla:marvikshop:*:*:*:*:*:*:*:*
         dsl:
           - 'contains(body, "You have an error in your SQL syntax") && contains(body, "manufacturers_id") && contains(body, "products_price")'
           - 'contains(content_type, "text/html")'
           - 'status_code == 200'
         condition: and
-# digest: 490a0046304402201ebbb16a338d65eed0518aac8c05ee13ccee14c96787930d13ebcc7f1e7d721e022056a5981a5fdf80f6af2195e4cfb688dd6b3b152b241e99f991e48eb9426dd2a7:922c64590222798bb761d5b6d8e72950

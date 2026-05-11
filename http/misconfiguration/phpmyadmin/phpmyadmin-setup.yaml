@@ -47,6 +47,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: phpmyadmin
+        cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
         part: body
         words:
           - "You want to configure phpMyAdmin using web interface"
@@ -56,4 +58,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402202eb8c90ba1362448e6cf255cb28f7ed363fc63ea2738f57f765accbebf672327022065da87876ecb8cdd8b9831f910faae565c9bb14a7d23024381da0637268060de:922c64590222798bb761d5b6d8e72950

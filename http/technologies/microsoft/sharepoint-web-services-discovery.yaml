@@ -6,8 +6,12 @@ info:
   severity: info
   description: |
     Detected exposed SharePoint web services via /_vti_bin/spdisco.aspx endpoint
+  classification:
+    cpe: cpe:2.3:a:microsoft:sharepoint_server:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: microsoft
+    product: sharepoint_server
   tags: sharepoint,iis,microsoft,tech,discovery
 
 http:
@@ -18,6 +22,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: sharepoint_server
+        cpe: cpe:2.3:a:microsoft:sharepoint_server:*:*:*:*:*:*:*:*
         part: body
         words:
           - "<discovery"
@@ -26,6 +32,8 @@ http:
         case-insensitive: true
 
       - type: word
+        name: sharepoint_server-2
+        cpe: cpe:2.3:a:microsoft:sharepoint_server:*:*:*:*:*:*:*:*
         part: content_type
         words:
           - text/xml
@@ -33,4 +41,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a004730450221009256ec619cfe0061170b4656742dc0bf09f3e050e8543322a92122895a5b4eb602202cc796b48f6f382f23aab561aea5ae0c6a7e5941a22d188f77381c3c8c89c262:922c64590222798bb761d5b6d8e72950

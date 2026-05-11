@@ -8,11 +8,14 @@ info:
   reference:
     - https://orolia.com/manuals/NC/Content/NC_and_SS/Com/Topics/ADMIN/Passwords.htm
   classification:
+    cpe: cpe:2.3:a:spectracom:spectracom:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
     max-request: 1
+    vendor: spectracom
+    product: spectracom
   tags: spectracom,default-login,vuln
 
 http:
@@ -34,6 +37,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: spectracom
+        cpe: cpe:2.3:a:spectracom:spectracom:*:*:*:*:*:*:*:*
         words:
           - "spectracom"
           - "deleted"
@@ -43,4 +48,3 @@ http:
       - type: status
         status:
           - 302
-# digest: 4b0a00483046022100f0360657d52d58d58e07a5317155e802e64b3dc9f22b4a53ca2e24526aa00642022100a02c5370515b1417e911899a602ced7926c843bf012891db2a439920964d5d1b:922c64590222798bb761d5b6d8e72950

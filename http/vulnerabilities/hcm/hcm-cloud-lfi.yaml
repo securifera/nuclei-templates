@@ -10,11 +10,14 @@ info:
     - https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw
     - https://github.com/wy876/POC/blob/main/%E6%B5%AA%E6%BD%AE%E4%BA%91/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   classification:
+    cpe: cpe:2.3:a:hcm:hcm:*:*:*:*:*:*:*:*
     cwe-id: CWE-22,CWE-73
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-859381597"
+    vendor: hcm
+    product: hcm
   tags: hcm-cloud,lfi,hcm,vuln
 
 http:
@@ -24,9 +27,10 @@ http:
 
     matchers:
       - type: dsl
+        name: hcm
+        cpe: cpe:2.3:a:hcm:hcm:*:*:*:*:*:*:*:*
         dsl:
           - "regex('root:.*:0:0:', body)"
           - 'contains(content_type, "application/octet-stream")'
           - "status_code == 200"
         condition: and
-# digest: 4b0a00483046022100b66a58ff2f034f76f8c945f67b37d12ef31889c093ad948f818741ccc71d5dfa0221008bc655c9ad2ebfd5b0e31fd07581165ec1b0ce534522a655189025fe843ade32:922c64590222798bb761d5b6d8e72950

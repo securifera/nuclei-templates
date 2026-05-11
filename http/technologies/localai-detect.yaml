@@ -28,6 +28,8 @@ http:
     host-redirects: true
     matchers:
       - type: dsl
+        name: localai
+        cpe: cpe:2.3:a:mudler:localai:*:*:*:*:*:*:*:*
         dsl:
           - 'contains_all(body, "alt=\"LocalAI Logo\"", "<title>LocalAI")'
           - 'status_code == 200'

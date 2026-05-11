@@ -8,8 +8,12 @@ info:
     A DocuSign phishing website was detected
   reference:
     - https://docusign.com
+  classification:
+    cpe: cpe:2.3:a:docusign:docusign:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: docusign
+    product: docusign
   tags: phishing,docusign,esignature,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: docusign
+        cpe: cpe:2.3:a:docusign:docusign:*:*:*:*:*:*:*:*
         words:
           - 'title>Docusign | #1 in Electronic Signature and Intelligent Agreement Management'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: docusign-2
+        cpe: cpe:2.3:a:docusign:docusign:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"docusign.com")'
-# digest: 4a0a00473045022072230f73a40a8d1d507a594554ce280a26f9c6b0e720cc4b733a12a7078028440221008e237a4357b77f2bbfc7ca88b0e8b72de1decb0e42e9f10d4edd29b304d804d7:922c64590222798bb761d5b6d8e72950

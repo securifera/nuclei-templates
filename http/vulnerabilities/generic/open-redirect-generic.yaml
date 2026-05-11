@@ -6,11 +6,14 @@ info:
   severity: medium
   description: An open redirect vulnerability was detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
   classification:
+    cpe: cpe:2.3:a:generic:generic:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
     max-request: 93
+    vendor: generic
+    product: generic
   tags: redirect,generic,vuln
 
 http:
@@ -120,6 +123,8 @@ http:
     matchers-condition: and
     matchers:
       - type: regex
+        name: generic
+        cpe: cpe:2.3:a:generic:generic:*:*:*:*:*:*:*:*
         part: header
         regex:
           - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)oast\.me\/?(\/|[^.].*)?$' # https://regex101.com/r/ZDYhFh/1
@@ -131,4 +136,3 @@ http:
           - 307
           - 308
         condition: or
-# digest: 4b0a00483046022100bcd3d81fb53ddc5b41da41324c062c9570124cd0d31f75d94aa3bd1f683e0d45022100e3539360e622abd6808f1fbe5ad6889d6337a9e34e02900d98c219ca7d7efdf3:922c64590222798bb761d5b6d8e72950

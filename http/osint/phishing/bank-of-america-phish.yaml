@@ -8,8 +8,12 @@ info:
     A Bank Of America phishing website was detected
   reference:
     - https://bankofamerica.com
+  classification:
+    cpe: cpe:2.3:a:bank-of-america:bank-of-america:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
+    vendor: bank-of-america
+    product: bank-of-america
   tags: phishing,BankOfAmerica,osint,discovery
 http:
   - method: GET
@@ -22,6 +26,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: bank-of-america
+        cpe: cpe:2.3:a:bank-of-america:bank-of-america:*:*:*:*:*:*:*:*
         words:
           - 'Bank of America - Banking, Credit Cards, Loans and Merrill Investing'
 
@@ -30,6 +36,7 @@ http:
           - 200
 
       - type: dsl
+        name: bank-of-america-2
+        cpe: cpe:2.3:a:bank-of-america:bank-of-america:*:*:*:*:*:*:*:*
         dsl:
           - '!contains(host,"bankofamerica.com")'
-# digest: 4b0a00483046022100d28cb659b8c76af1eb16254efed8573abc7a29c4c4fdfd139019726131e7e0b40221009962d7f3bd6bdcd93c556b51967dd196a6417305518c4e7a9f9ebe1f2054673f:922c64590222798bb761d5b6d8e72950

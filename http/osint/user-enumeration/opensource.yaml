@@ -6,11 +6,14 @@ info:
   severity: info
   description: Opensource user name information check was conducted.
   classification:
+    cpe: cpe:2.3:a:opensource:opensource:*:*:*:*:*:*:*:*
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
     max-request: 1
+    vendor: opensource
+    product: opensource
   tags: osint,osint-tech,opensource,discovery
 
 self-contained: true
@@ -27,7 +30,8 @@ http:
           - 200
 
       - type: word
+        name: opensource
+        cpe: cpe:2.3:a:opensource:opensource:*:*:*:*:*:*:*:*
         part: body
         words:
           - "| Opensource.com"
-# digest: 4b0a004830460221008f984d1786902231a84af0256687e40c2d8ed89c0e686f81d1b2856cbcfada8f022100c90fdb0e44ed80ba6994a5c94e30b2d29f74d662d05b98bd240906397857a136:922c64590222798bb761d5b6d8e72950

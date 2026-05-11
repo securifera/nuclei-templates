@@ -8,11 +8,15 @@ info:
     Detected exposed SharePoint Master Page endpoints.
   reference:
     - https://sharepointstuff.com/2021/03/30/useful-sharepoint-urls/
+  classification:
+    cpe: cpe:2.3:a:sharepoint:sharepoint:*:*:*:*:*:*:*:*
   metadata:
     max-request: 2
     verified: true
     shodan-query: http.title:"SharePoint"
     fofa-query: title="SharePoint"
+    vendor: sharepoint
+    product: sharepoint
   tags: sharepoint,microsoft,exposure,misconfig
 
 http:
@@ -25,8 +29,9 @@ http:
 
     matchers:
       - type: dsl
+        name: sharepoint
+        cpe: cpe:2.3:a:sharepoint:sharepoint:*:*:*:*:*:*:*:*
         dsl:
           - status_code == 200
           - contains_all(body, "Master Page Gallery", "Recycle")
         condition: and
-# digest: 490a0046304402203657ee34bc9b960fb78fdebe6de0781075669ea74ae5cebed712fbfdc6a2a005022003d10e0d95f2344ee98e75525f81a7794b9c5a32658c48b705c223f7abf1b594:922c64590222798bb761d5b6d8e72950

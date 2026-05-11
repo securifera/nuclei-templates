@@ -23,6 +23,8 @@ http:
     matchers-condition: and
     matchers:
       - type: word
+        name: gravitino
+        cpe: cpe:2.3:a:apache:gravitino:*:*:*:*:*:*:*:*
         words:
           - '<title>Gravitino'
 

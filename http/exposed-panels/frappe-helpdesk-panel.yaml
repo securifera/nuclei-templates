@@ -9,10 +9,14 @@ info:
   reference:
     - https://frappe.io/helpdesk
     - https://github.com/frappe/helpdesk
+  classification:
+    cpe: cpe:2.3:a:frappe:frappe:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"window.frappe_version"
+    vendor: frappe
+    product: frappe
   tags: panel,frappe,login,discovery
 
 http:
@@ -22,6 +26,8 @@ http:
 
     matchers:
       - type: dsl
+        name: frappe
+        cpe: cpe:2.3:a:frappe:frappe:*:*:*:*:*:*:*:*
         dsl:
           - 'status_code == 200'
           - 'contains_all(to_lower(body), "/helpdesk/", "frappe")'
@@ -33,4 +39,3 @@ http:
         group: 1
         regex:
           - '(?i)helpdesk_version\s*=\s*"([0-9.]+)"'
-# digest: 4a0a00473045022012eac45d7bbc4c7e6e0c6f0d19c5aabe0842d9a2569e8512867b0a4b7cae094d022100b5d1773bb4a2ee02ce4a719ea7ab0020ca26990ad5197087263f81df678b9353:922c64590222798bb761d5b6d8e72950
